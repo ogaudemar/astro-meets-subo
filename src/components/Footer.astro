@@ -1,62 +1,261 @@
 ---
-const today = new Date();
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  {
+    title: 'Subo',
+    links: [
+      { text: 'Add to Discord', href: '/invite', external: true },
+      { text: 'Pricing', href: '/pricing' },
+      { text: 'Custom Bot', href: '/custom-survey-bot' },
+      { text: 'Tutorials', href: '/tutorial', external: true }
+    ]
+  },
+  {
+    title: 'Resources',
+    links: [
+      { text: 'Support Server', href: '/support', external: true },
+      { text: 'Tutorials', href: '/tutorial' },
+      { text: 'Stripe billing portal', href: '/app' },
+      { text: 'Contact Us', href: '/support', external: true }
+    ]
+  },
+  {
+    title: 'Legal',
+    links: [
+      { text: 'Terms of Service', href: '/terms' },
+      { text: 'Privacy Policy', href: '/privacy' },
+      { text: 'Cookie Policy', href: '/cookies' }
+    ]
+  },
+  {
+    title: 'Socials',
+    links: [
+      { text: 'Discord Server', href: '/support', external: true },
+      { text: 'X', href: 'https://x.com/subo_app', external: true },
+      { text: 'Blog', href: '/blog' },
+      { text: 'Top.gg Reviews', href: 'https://top.gg/bot/946888973035380806', external: true }
+    ]
+  }
+];
 ---
 
-<footer>
-	&copy; {today.getFullYear()} Your name here. All rights reserved.
-	<div class="social-links">
-		<a href="https://m.webtoo.ls/@astro" target="_blank">
-			<span class="sr-only">Follow Astro on Mastodon</span>
-			<svg
-				viewBox="0 0 16 16"
-				aria-hidden="true"
-				width="32"
-				height="32"
-				astro-icon="social/mastodon"
-				><path
-					fill="currentColor"
-					d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"
-				></path></svg
-			>
-		</a>
-		<a href="https://twitter.com/astrodotbuild" target="_blank">
-			<span class="sr-only">Follow Astro on Twitter</span>
-			<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/twitter"
-				><path
-					fill="currentColor"
-					d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-				></path></svg
-			>
-		</a>
-		<a href="https://github.com/withastro/astro" target="_blank">
-			<span class="sr-only">Go to Astro's GitHub repo</span>
-			<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github"
-				><path
-					fill="currentColor"
-					d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-				></path></svg
-			>
-		</a>
-	</div>
+<footer class="footer bg-black">
+  <div class="container">
+    <div class="footer__content">
+      <!-- Brand section -->
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img 
+            src="/images/subo-logo-32.png" 
+            alt="Subo the Survey Bot" 
+            height="32"
+            class="footer__logo-img"
+          />
+        </div>
+        <p class="footer__description text-white">
+          The best survey bot for Discord. Collect feedback, run polls, and understand your community with XP rewards.
+        </p>
+        <div class="footer__stats text-white">
+          <p>Trusted by 15,000+ Discord servers</p>
+        </div>
+      </div>
+
+      <!-- Links sections -->
+      <div class="footer__links">
+        {footerLinks.map(section => (
+          <div class="footer__section">
+            <h3 class="footer__section-title text-white">{section.title}</h3>
+            <ul class="footer__section-links">
+              {section.links.map(link => (
+                <li class="footer__link-item">
+                  <a 
+                    href={link.href} 
+                    class="footer__link text-white"
+                    target={link.external ? '_blank' : '_self'}
+                    rel={link.external ? 'noopener noreferrer' : undefined}
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bottom section -->
+    <div class="footer__bottom">
+      <div class="footer__bottom-content">
+        <p class="footer__copyright text-white">
+          © {currentYear} Subo. All rights reserved.
+        </p>
+        <div class="footer__social">
+          <a 
+            href="https://x.com/subo_app" 
+            class="footer__social-link text-white" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Follow us on Twitter"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a 
+            href="/support" 
+            class="footer__social-link text-white" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Join our Discord server"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
+
 <style>
-	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
+  .footer {
+    padding: 60px 0 30px;
+    border-top: 1px solid #333;
+  }
+
+  .footer__content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer__brand {
+    max-width: 400px;
+  }
+
+  .footer__logo {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer__logo-img {
+    height: 40px;
+    width: auto;
+  }
+
+  .footer__description {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer__stats {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+  .footer__links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .footer__section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--accent);
+  }
+
+  .footer__section-links {
+    list-style: none;
+  }
+
+  .footer__link-item {
+    margin-bottom: 0.75rem;
+  }
+
+  .footer__link {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+  }
+
+  .footer__link:hover {
+    opacity: 1;
+    color: var(--accent);
+  }
+
+  .footer__bottom {
+    border-top: 1px solid #333;
+    padding-top: 2rem;
+  }
+
+  .footer__bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer__copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+  .footer__social {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .footer__social-link {
+    color: white;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .footer__social-link:hover {
+    opacity: 1;
+    background: var(--accent);
+    color: white;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 40px 0 20px;
+    }
+
+    .footer__content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer__links {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer__bottom-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer__links {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
