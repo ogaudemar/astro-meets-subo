@@ -1,0 +1,205 @@
+---
+const navItems = [
+  { text: 'Custom Bot', href: '/custom-survey-bot' },
+  { text: 'Tutorials', href: '/tutorial', external: true },
+  { text: 'Support Server', href: '/support', external: true },
+  { text: 'Pricing', href: '/pricing' },
+];
+---
+
+<nav class="nav">
+  <div class="container nav__container">
+    <div class="nav__brand">
+      <a href="/" class="nav__logo" aria-label="Home">
+        <img 
+          src="/images/subo-logo.png" 
+          alt="Subo the Survey Bot" 
+          height="50"
+          class="nav__logo-img"
+        />
+      </a>
+    </div>
+    
+    <div class="nav__content">
+      <ul class="nav__list nav__list--desktop">
+        {navItems.map(item => (
+          <li class="nav__item">
+            <a 
+              href={item.href} 
+              class="button button--white-outline button--empty"
+              target={item.external ? '_blank' : '_self'}
+              rel={item.external ? 'noopener noreferrer' : undefined}
+            >
+              {item.text}
+            </a>
+          </li>
+        ))}
+        <li class="nav__item">
+          <div class="nav__cta">
+            <a href="/invite" class="button button--white-bg" target="_blank" rel="noopener noreferrer">
+              ➕ Add to Discord
+            </a>
+            <a href="/subscriptions" class="button button--white-outline" target="_blank" rel="noopener noreferrer">
+              Upgrade
+            </a>
+          </div>
+        </li>
+      </ul>
+      
+      <!-- Mobile menu button -->
+      <button class="nav__toggle" type="button" aria-label="Toggle menu">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile menu -->
+  <div class="nav__mobile">
+    <ul class="nav__list nav__list--mobile">
+      {navItems.map(item => (
+        <li class="nav__item">
+          <a 
+            href={item.href} 
+            class="button button--white-outline button--empty"
+            target={item.external ? '_blank' : '_self'}
+            rel={item.external ? 'noopener noreferrer' : undefined}
+          >
+            {item.text}
+          </a>
+        </li>
+      ))}
+      <li class="nav__item">
+        <div class="nav__cta nav__cta--mobile">
+          <a href="/invite" class="button button--white-bg" target="_blank" rel="noopener noreferrer">
+            ➕ Add to Discord
+          </a>
+          <a href="/subscriptions" class="button button--white-outline" target="_blank" rel="noopener noreferrer">
+            Upgrade
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+  }
+
+  .nav__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav__logo-img {
+    height: 50px;
+    width: auto;
+  }
+
+  .nav__content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav__list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  .nav__list--mobile {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+
+  .nav__cta {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .nav__cta--mobile {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav__toggle {
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 4px;
+  }
+
+  .nav__toggle-line {
+    width: 25px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+  }
+
+  .nav__mobile {
+    display: none;
+    background: rgba(0, 0, 0, 0.98);
+    padding: 0 20px;
+  }
+
+  .nav__mobile.active {
+    display: block;
+  }
+
+  .button--empty {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .nav__list--desktop {
+      display: none;
+    }
+
+    .nav__toggle {
+      display: flex;
+    }
+
+    .nav__mobile.active .nav__list--mobile {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const toggle = document.querySelector('.nav__toggle');
+  const mobileMenu = document.querySelector('.nav__mobile');
+  
+  toggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('active');
+    toggle.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav') && mobileMenu?.classList.contains('active')) {
+      mobileMenu.classList.remove('active');
+      toggle?.classList.remove('active');
+    }
+  });
+</script>

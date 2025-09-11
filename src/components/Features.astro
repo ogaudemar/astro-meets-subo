@@ -1,0 +1,172 @@
+---
+const features = [
+  {
+    icon: '🔬',
+    title: 'CREATE',
+    content: [
+      '<strong>Surveys</strong>: Ask multiple types of questions - your members answer privately without leaving your Discord server.',
+      '<strong>Advanced polls</strong>: 1 question, tons of options to make your polls unique and fun to answer!'
+    ]
+  },
+  {
+    icon: '📊',
+    title: 'ANALYZE & SHARE',
+    content: [
+      'View results privately in Discord or repost them in the server.',
+      'Let Subo summarize open answers',
+      'Export the <strong>full data set</strong> for further analysis.'
+    ]
+  },
+  {
+    icon: '🏆',
+    title: 'REWARD',
+    content: [
+      '<strong>Role rewards</strong> for answering a survey',
+      '<strong>XP system</strong>: members earn points as they answer questions, level up to unlock roles.',
+      '<strong>Leaderboard</strong> featuring active participants'
+    ]
+  }
+];
+---
+
+<section class="features">
+  <div class="container">
+    <div class="features__header">
+      <h2 class="features__title heading">UNDERSTAND YOUR COMMUNITY</h2>
+      <p class="features__subtitle">Collect input, feedback and data in Discord.</p>
+    </div>
+    
+    <div class="features__grid">
+      {features.map(feature => (
+        <div class="feature">
+          <div class="feature__header">
+            <div class="feature__icon">{feature.icon}</div>
+            <h3 class="feature__title">{feature.title}</h3>
+          </div>
+          <div class="feature__content">
+            <ul class="feature__list">
+              {feature.content.map(item => (
+                <li class="feature__item" set:html={item} />
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 50px 0;
+    background: var(--secondary-dark);
+    background: linear-gradient(black,var(--secondary-dark));
+
+  }
+
+  .features__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .features__title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .features__subtitle {
+    font-size: 1.2rem;
+    color: var(--dark);
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+  }
+
+  .feature__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature__icon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+  }
+
+  .feature__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .feature__list {
+    list-style: none;
+  }
+
+  .feature__item {
+    margin-bottom: 0.8rem;
+    color: var(--dark);
+    line-height: 1.6;
+  }
+
+  .feature__item:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .features {
+      padding: 30px 0;
+    }
+
+    .features__title {
+      font-size: 2rem;
+    }
+
+    .features__subtitle {
+      font-size: 1rem;
+    }
+
+    .features__grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .feature {
+      padding: 1.5rem;
+    }
+
+    .feature__header {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
+    }
+
+    .feature__icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+  }
+</style>
