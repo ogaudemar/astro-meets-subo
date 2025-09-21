@@ -1,29 +1,29 @@
 ---
 const features = [
   {
-    icon: '🔬',
-    title: 'CREATE',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-more-icon lucide-message-square-more"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M12 11h.01"/><path d="M16 11h.01"/><path d="M8 11h.01"/></svg>',
+    title: 'ASK QUESTIONS',
     content: [
-      '<strong>Surveys</strong>: Ask multiple types of questions - your members answer privately without leaving your Discord server.',
-      '<strong>Advanced polls</strong>: 1 question, tons of options to make your polls unique and fun to answer!'
+      '<strong>Advanced polls</strong>: Ask 1 question publicly. Make your polls unique and fun with multiple ways to answer and share results!',
+      '<strong>Survey convos</strong>: Ask all the questions you want, open or closed. Your members answer in a private chat with Subo.'
     ]
   },
-  {
-    icon: '📊',
-    title: 'ANALYZE & SHARE',
-    content: [
-      'View results privately in Discord or repost them in the server.',
-      'Let Subo summarize open answers',
-      'Export the <strong>full data set</strong> for further analysis.'
-    ]
-  },
-  {
-    icon: '🏆',
-    title: 'REWARD',
+    {
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy-icon lucide-trophy"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/><path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/></svg>',
+    title: 'REWARD PARTICIPATION',
     content: [
       '<strong>Role rewards</strong> for answering a survey',
       '<strong>XP system</strong>: members earn points as they answer questions, level up to unlock roles.',
       '<strong>Leaderboard</strong> featuring active participants'
+    ]
+  },
+  {
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-no-axes-combined-icon lucide-chart-no-axes-combined"><path d="M12 16v5"/><path d="M16 14v7"/><path d="M20 10v11"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18v3"/><path d="M8 14v7"/></svg>',
+    title: 'ANALYZE & SHARE',
+    content: [
+      'View aggregated results and individual responses, privately or privately. Share/repost them in the server.',
+      'Let Subo summarize open answers with AI',
+      'Export the <strong>full data set</strong> for further analysis.'
     ]
   }
 ];
@@ -32,15 +32,15 @@ const features = [
 <section class="features">
   <div class="container">
     <div class="features__header">
-      <h2 class="features__title heading">UNDERSTAND YOUR COMMUNITY</h2>
-      <p class="features__subtitle">Collect input, feedback and data in Discord.</p>
+      <h2 class="features__title heading text-white">ASK SMARTER. LEARN FASTER.</h2>
+      <p class="features__subtitle">From convo-style surveys to instant results, Subo keeps the signal high and the effort low.</p>
     </div>
     
     <div class="features__grid">
       {features.map(feature => (
         <div class="feature">
           <div class="feature__header">
-            <div class="feature__icon">{feature.icon}</div>
+            <div class="feature__icon" set:html={feature.icon}></div>
             <h3 class="feature__title">{feature.title}</h3>
           </div>
           <div class="feature__content">
@@ -60,19 +60,21 @@ const features = [
   .features {
     padding: 50px 0;
     background: var(--secondary-dark);
-    background: linear-gradient(black,var(--secondary-dark));
+    background: linear-gradient(var(--primary),var(--secondary));
 
   }
 
   .features__header {
     text-align: center;
     margin-bottom: 3rem;
+    
   }
 
   .features__title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--dark);
+    font-family: 'Source Code Pro', monospace;
+   
   }
 
   .features__subtitle {
@@ -110,7 +112,7 @@ const features = [
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--primary);
     border-radius: 50%;
   }
 

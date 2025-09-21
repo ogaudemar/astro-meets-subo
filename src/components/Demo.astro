@@ -1,23 +1,43 @@
-
+---
+import "lite-youtube-embed/src/lite-yt-embed.css";
+---
 
 <html>
-    <div class="container">
-<div class="chat-container">
+    
+    
+  <div class="yt-video">
+    
+    
+    <lite-youtube videoid="2ugbLJdU_ss" id="youtube-demo"></lite-youtube>
+    </div>
+ 
+<!-- <div class="chat-container">
     <div class="message bot">How did you like the event?</div>
-    <div class="message user">Love it! 🔥</div>
+ <div class="message user">Love it! 🔥</div>
     <div class="message bot">Awesome - I'm glad you liked it?</div>
-    <div class="message bot">What changes should we make for the event to be even better next time?</div>
-    <div class="input-area">I think it would be great next time to start a little earlier</div>
-    </div>
-    </div>
+   <div class="message bot">What changes should we make for the event to be even better next time?</div>
+    <div class="input-area">I think it would be great next time to start a little earlier</div> 
+    </div> --> 
+ 
 </html>
 
-
+<script>
+  import 'lite-youtube-embed';
+</script>
 
 <style>
 
-.container {
-    margin: 0 auto;
+.yt-video {
+    height: auto;
+    width: 100%;
+    margin: 12px 6px;
+    padding: 12px 6px;
+}
+
+#youtube-demo {
+    border-radius: 1rem;
+    margin:auto;
+
 }
 
 .chat-container {

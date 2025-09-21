@@ -1,0 +1,111 @@
+---
+const allUseCases = [
+  { icon: "💡", text: "Get feedback on a new idea or product" },
+  { icon: "🔬", text: "Understand who your community members are" },
+  { icon: "🔬", text: "Understand what gets your community fired up!" },
+  { icon: "🧑‍💻", text: "Track member activities or satisfaction at regular intervals" },
+  { icon: "🧑‍💻", text: "Onboard new members with interactive checklists" },
+  { icon: "🧑‍💻", text: "Interview members who apply for a staff role" },
+  { icon: "🧑‍💻", text: "Collect RSVPs, attendee info and questions before events" },
+  { icon: "📊", text: "Engagement polls just for fun" },
+  { icon: "🎉", text: "Have members predict future games and events" },
+  { icon: "🛠️", text: "Get feedback on a past community event" },
+];
+
+// Shuffle and select 4 random use cases
+function getRandomUseCases(arr, n) {
+  return arr
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .slice(0, n)
+    .map(({ value }) => value);
+}
+
+const useCases = getRandomUseCases(allUseCases, 4);
+---
+
+<!-- Brief intro section -->
+    <section class="usecases">
+      <div class="container text-center">
+        <img src="/images/subo-neon2-100.png" alt="Subo the Survey Bot" height="100" class="intro__icon" />
+        <h2 class="title text-white"><strong>HOW WILL YOU LISTEN TODAY?</strong></h2>
+        <p class'"subtitle text-white">There are endless possibilities to use Subo polls and surveys to interact with, engage and understand your community.</p>
+        <div class="usecases__content">
+          <div class="usecases-grid">
+            {useCases.map(usecase => (
+          <div class="usecase-card">{usecase.icon}<span>{usecase.text}</span></div>
+        ))}
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+<style>
+
+.usecases {
+  background: linear-gradient(var(--secondary-dark), var(--primary));
+  padding: 1rem;
+}
+
+.container.text-center {
+  text-align: center;
+  max-width: 900px;
+  
+}
+
+
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--dark);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.usecases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Maximum 2 cards per row */
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.usecase-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  padding: 1.5rem 1rem;
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1.1rem;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.usecase-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.10);
+}
+
+.usecase-card span {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.usecase-card:first-child {
+  font-size: 1.3rem;
+}
+
+.intro__icon {
+  margin-bottom: 1.5rem;
+}
+
+.usecases__content {
+  margin: 2rem 0;
+  padding: 2rem;
+}
+
+</style>

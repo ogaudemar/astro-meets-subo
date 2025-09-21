@@ -35,7 +35,7 @@
   }
 
   html {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     scroll-behavior: smooth;
   }
 
@@ -89,7 +89,7 @@
 
   .button--accent-bg {
     background: var(--accent);
-    color: white;
+    color: black;
   }
 
 
@@ -193,6 +193,15 @@ h4 {
 h5 {
   font-size: 1.25em;
 }
+
+h1, h2, h3 {
+    font-family: 'Source Code Pro', monospace;
+}
+
+h4, h5, h6 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 strong,
 b {
   font-weight: 700;
@@ -209,6 +218,10 @@ p {
 .prose p {
   margin-bottom: 2em;
 }
+.mono {
+  font-family: 'Source Code Pro', monospace;
+}
+
 textarea {
   width: 100%;
   font-size: 16px;

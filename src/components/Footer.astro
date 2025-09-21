@@ -5,35 +5,37 @@ const footerLinks = [
   {
     title: 'Subo',
     links: [
-      { text: 'Add to Discord', href: '/invite', external: true },
-      { text: 'Pricing', href: '/pricing' },
       { text: 'Custom Bot', href: '/custom-survey-bot' },
-      { text: 'Tutorials', href: '/tutorial', external: true }
+      { text: 'Polls', href: '/polls'},
+      { text: 'Pricing', href: '/pricing' },
+      { text: 'Add to Discord', href: '/invite', external: true },
+
     ]
   },
   {
     title: 'Resources',
     links: [
       { text: 'Support Server', href: '/support', external: true },
-      { text: 'Tutorials', href: '/tutorial' },
+      { text: 'Tutorials', href: '/tutorial', external: true },
       { text: 'Stripe billing portal', href: '/app' },
-      { text: 'Contact Us', href: '/support', external: true }
+      { text: 'Blog', href: '/blog' }
     ]
   },
   {
     title: 'Legal',
     links: [
       { text: 'Terms of Service', href: '/terms' },
-      { text: 'Privacy Policy', href: '/privacy' },
-      { text: 'Cookie Policy', href: '/cookies' }
+      { text: 'Privacy Policy', href: '/privacy' } /* Add cookie policy later,
+      { text: 'Cookie Policy', href: '/cookies' } */
     ]
   },
   {
     title: 'Socials',
     links: [
-      { text: 'Discord Server', href: '/support', external: true },
+      
+      
       { text: 'X', href: 'https://x.com/subo_app', external: true },
-      { text: 'Blog', href: '/blog' },
+      { text: 'Bluesky', href: 'https://bsky.app/profile/subo.ai', external: true },
       { text: 'Top.gg Reviews', href: 'https://top.gg/bot/946888973035380806', external: true }
     ]
   }
@@ -54,7 +56,7 @@ const footerLinks = [
           />
         </div>
         <p class="footer__description text-white">
-          The best survey bot for Discord. Collect feedback, run polls, and understand your community with XP rewards.
+          The best survey bot for Discord communities. Collect feedback, run polls, reward participants with XP and roles.
         </p>
         <div class="footer__stats text-white">
           <p>Trusted by 15,000+ Discord servers</p>
@@ -88,21 +90,21 @@ const footerLinks = [
     <!-- Bottom section -->
     <div class="footer__bottom">
       <div class="footer__bottom-content">
-        <p class="footer__copyright text-white">
+        <p class="footer__copyright text-white mono">
           © {currentYear} Subo. All rights reserved.
         </p>
         <div class="footer__social">
-          <a 
+          <!-- <a 
             href="https://x.com/subo_app" 
             class="footer__social-link text-white" 
             target="_blank" 
             rel="noopener noreferrer"
-            aria-label="Follow us on Twitter"
+            aria-label="Follow us on X"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
-          </a>
+          </a> -->
           <a 
             href="/support" 
             class="footer__social-link text-white" 
@@ -169,6 +171,7 @@ const footerLinks = [
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--accent);
+    font-family: 'Source Code Pro', monospace;
   }
 
   .footer__section-links {
@@ -227,7 +230,7 @@ const footerLinks = [
   .footer__social-link:hover {
     opacity: 1;
     background: var(--accent);
-    color: white;
+    color: var(--dark);
   }
 
   /* Mobile responsiveness */
