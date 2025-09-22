@@ -1,0 +1,81 @@
+---
+import { trackedRedirects } from '../config/redirects.js';
+import BaseHead from '../components/BaseHead.astro';
+
+export function getStaticPaths() {
+  return Object.keys(trackedRedirects).map(key => ({
+    params: { redirect: key },
+  }));
+}
+
+const { redirect } = Astro.params;
+const redirectData = trackedRedirects[redirect];
+
+if (!redirectData) {
+  return new Response(null, { status: 404 });
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <BaseHead title={`Redirecting to ${redirectData.description}`} />
+  <meta http-equiv="refresh" content="1;url={redirectData.url}">
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #000000 0%, #3C2B50 100%);
+      color: white;
+      text-align: center;
+    }
+    .spinner {
+      border: 3px solid var(--accent, lightgray);
+      border-top: 3px solid white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    a {
+      color: white;
+      text-decoration: underline;
+      margin-top: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="spinner"></div>
+  <h3>Redirecting to {redirectData.description}...</h3>
+  <p>You'll be redirected automatically in a moment.</p>
+  <a href="{redirectData.url}">Click here if you're not redirected automatically</a>
+
+  <script define:inline>
+    // Track the redirect (assuming gtag is available from BaseHead)
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'redirect_click', {
+        redirect_destination: '{redirectData.name}',
+        redirect_url: '{redirectData.url}',
+        redirect_description: '{redirectData.description}'
+      });
+    }
+    
+    // Redirect after tracking
+    setTimeout(() => {
+      window.location.href = '{redirectData.url}';
+    }, 1000);
+  </script>
+</body>
+</html>

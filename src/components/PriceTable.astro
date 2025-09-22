@@ -1,0 +1,572 @@
+---
+// Pricing tiers data
+const tiers = [
+  {
+    name: "FREE",
+    description: "For smaller servers",
+    price: "Free",
+    image: "/images/subo-neon2-100.png",
+  },
+  {
+    name: "PREMIUM",
+    description: "For power users and mid-sized servers!",
+    price: "$2.99/month<br>$29.99/year",
+    image: "/images/subo-premium-100.png",
+  },
+  {
+    name: "VIP",
+    description: "For larger servers and generous supporters!",
+    price: "$4.99/month<br>$49.99/year",
+    image: "/images/subo-vip-100.png",
+  },
+  {
+    name: "CUSTOM",
+    description: "Your own bot, avatar and description with VIP features!",
+    price: "$99.99/year",
+    image: "/images/custom-bot.png",
+  }
+];
+
+// Table data rows
+const tableData = [
+  [
+    "Support",
+    "✓<br>Ticket system",
+    "✓<br>Premium support",
+    "✓<br>Premium support",
+    "✓<br>Premium Support",
+  ],
+  [
+    "Respondents",
+    "250 / survey",
+    "1000 / survey",
+    "10000 / survey",
+    "10000 / survey",
+  ],
+  [
+    "Answers<br><small>Answer = Respondent x Question (e.g. 60 respondents answering 5 questions = 300 answers)</small>",
+    "1,000 / survey",
+    "5,000 / survey", 
+    "50,000 / survey",
+    "50,000 / survey",
+  ],
+  [
+    "Active surveys<br><small>Total surveys & polls stored. Delete old surveys to stay in a smaller tier.</small>",
+    "10 / server",
+    "200 / server",
+    "400 / server",
+    "400 / server",
+  ],
+  [
+    "Concurrent surveys<br><small>Surveys open or scheduled at the same time</small>",
+    "5 / server",
+    "20 / server",
+    "40 / server",
+    "40 / server",
+  ],
+  [
+    "Survey questions",
+    "10 / survey",
+    "30 / survey",
+    "50 / survey",
+    "50 / survey",
+  ],
+  [
+    "Remove self-promotion",
+    "✗",
+    "✓",
+    "✓",
+    "✓",
+  ],
+  [
+    "Invitation / Thank You Customization<br><small>Customize invitations (footer, thumbnail, color), results and thank you messages</small>",
+    "✗",
+    "✓",
+    "✓",
+    "✓",
+  ],
+  [
+    "New response Notifications<br><small>New responses posted in a private channel with optional ping</small>",
+    "✗",
+    "✓",
+    "✓",
+    "✓",
+  ],
+  [
+    "Cloning<br><small>Duplicate your polls and surveys</small>",
+    "✗",
+    "✓",
+    "✓",
+    "✓",
+  ],
+  [
+    "Delete some responses<br><small>Delete some or all responses from a survey or poll</small>",
+    "✗",
+    "✓",
+    "✓",
+    "✓",
+  ],
+  [
+    "Advanced survey builder: min/max open text length & numeric values",
+    "✗",
+    "✗",
+    "✓",
+    "✓",
+  ],
+  [
+    "Advanced survey builder: Skip Logic",
+    "✗",
+    "✓",
+    "✓",
+    "✓",
+  ],
+  [
+    "AI credits<br><small>Credits are needed to generate survey drafts with /draft and to summarize open-ended responses</small>",
+    "10k one-off trial",
+    "✓<br>500k / mo",
+    "✓<br>1 million / mo",
+    "✓<br>1 million / mo",
+  ],
+  [
+    "Role reward",
+    "✗<br><small>1 role server-wise for ever answering any poll/survey</small>",
+    "✓<br>poll or survey-level",
+    "✓<br>poll or survey-level",
+    "✓<br>poll or survey-level",
+  ],
+  [
+    "Role rewards based on monthly XP",
+    "✗",
+    "✓",
+    "✓",
+    "✓",
+  ],
+  [
+    "XP system<br><small>including leaderboard and up to 5 role rewards based on overall XP</small>",
+    "✓",
+    "✓",
+    "✓",
+    "✓",
+  ],
+  [
+    "Custom XP name, value",
+    "✗",
+    "✓",
+    "✓",
+    "✓",
+  ],
+  [
+    "Custom bot name, avatar & bio",
+    "✗",
+    "✗",
+    "✗",
+    "✓",
+  ],
+];
+
+// Button row data
+const buttonRow = [
+  {
+    text: "Free Install",
+    class: "button button--dark-accent-border",
+    href: "/invite"
+  },
+  {
+    text: "Upgrade",
+    class: "button button--dark-premium-border",
+    href: "/subscriptions"
+  },
+  {
+    text: "Upgrade",
+    class: "button button--dark-vip-border",
+    href: "/subscriptions"
+  },
+  {
+    text: "Make It Your Own",
+    class: "button button--primary-border",
+    href: "/subscriptions"
+  }
+];
+---
+
+<div class="pricing-table">
+  <!-- Desktop table view -->
+  <div class="table-desktop">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th class="feature-column">Features</th>
+          {tiers.map(tier => (
+            <th class="tier-column">
+              <div class="tier-header">
+                <img src={tier.image} alt={tier.name} class="tier-image" />
+                <h3 class="tier-name">{tier.name}</h3>
+                <p class="tier-description">{tier.description}</p>
+                <div class="tier-price" set:html={tier.price}></div>
+              </div>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {tableData.map(row => (
+          <tr>
+            <td class="feature-name" set:html={row[0]}></td>
+            {row.slice(1).map((cell, index) => (
+              <td class="feature-value" set:html={cell}></td>
+            ))}
+          </tr>
+        ))}
+        <tr class="button-row">
+          <td></td>
+          {buttonRow.map(button => (
+            <td>
+              <a href={button.href} class={button.class}>{button.text}</a>
+            </td>
+          ))}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Mobile card view -->
+  <div class="table-mobile">
+    {tiers.map((tier, tierIndex) => (
+      <div class="pricing-card">
+        <div class="card-header">
+          <img src={tier.image} alt={tier.name} class="tier-image" />
+          <h3 class="tier-name">{tier.name}</h3>
+          <p class="tier-description">{tier.description}</p>
+          <div class="tier-price" set:html={tier.price}></div>
+          <a href={buttonRow[tierIndex].href} class={buttonRow[tierIndex].class}>
+            {buttonRow[tierIndex].text}
+          </a>
+        </div>
+        <div class="card-features">
+          {tableData.map(row => (
+            <div class="feature-row">
+              <div class="feature-name" set:html={row[0]}></div>
+              <div class="feature-value" set:html={row[tierIndex + 1]}></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .pricing-table {
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+
+  /* Desktop table styles */
+  .table-desktop {
+    display: block;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .comparison-table th {
+    background: #1a1a1a;
+    padding: 2rem 1.5rem;
+    vertical-align: top;
+    border-bottom: 1px solid #333;
+  }
+
+  .feature-column {
+    width: 25%;
+    text-align: left;
+    font-weight: 600;
+    color: white;
+    font-size: 1.1rem;
+  }
+
+  .tier-column {
+    width: 18.75%;
+    text-align: center;
+    border-left: 1px solid #333;
+  }
+
+  .tier-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .tier-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  .tier-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  .tier-description {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .tier-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 0.5rem;
+  }
+
+  .comparison-table td {
+    padding: 1.5rem;
+    border-bottom: 1px solid #333;
+    vertical-align: middle;
+  }
+
+  .feature-name {
+    font-weight: 500;
+    color: white;
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  .feature-name small {
+    display: block;
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    font-weight: normal;
+  }
+
+  .feature-value {
+    text-align: center;
+    border-left: 1px solid #333;
+    color: white;
+    font-weight: 500;
+  }
+
+  .feature-value small {
+    color: #888;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  .button-row td {
+    padding: 2rem 1.5rem;
+    background: #1a1a1a;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    min-width: 140px;
+  }
+
+
+  .button--dark-accent-border {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--accent);
+  }
+
+  .button--dark-accent-border:hover {
+    background: var(--accent);
+    color: black;
+  }
+  
+
+  .button--dark-premium-border {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--premium);
+  }
+
+  .button--dark-premium-border:hover {
+    background: var(--premium);
+    color: black;
+  }
+
+    .button--dark-vip-border {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--yellow-vip, #ffff00);
+  }
+
+  .button--dark-vip-border:hover {
+    color: black;
+    background: var(--yellow-vip, #ffff00); */var--yellow-VIP: #ffff00 */
+    
+  }
+  
+
+
+
+  /* Mobile card styles */
+  .table-mobile {
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .pricing-card {
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-header {
+    background: #1a1a1a;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+
+  .card-header .tier-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .card-header .tier-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .card-header .tier-description {
+    color: #ccc;
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+  }
+
+  .card-header .tier-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-features {
+    padding: 1.5rem;
+  }
+
+  .feature-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .feature-row:last-child {
+    border-bottom: none;
+  }
+
+  .feature-row .feature-name {
+    flex: 1;
+    text-align: left;
+    padding-right: 1rem;
+  }
+
+  .feature-row .feature-value {
+    flex: 0 0 auto;
+    text-align: right;
+    border: none;
+    min-width: 100px;
+  }
+
+  /* Responsive breakpoints */
+  @media (max-width: 1200px) {
+    .comparison-table {
+      font-size: 0.9rem;
+    }
+    
+    .tier-column {
+      width: 16%;
+    }
+    
+    .feature-column {
+      width: 32%;
+    }
+  }
+
+  @media (max-width: 968px) {
+    .table-desktop {
+      display: none;
+    }
+
+    .table-mobile {
+      display: grid;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .pricing-card {
+      margin: 0 -1rem;
+    }
+
+    .card-header {
+      padding: 1.5rem;
+    }
+
+    .card-features {
+      padding: 1rem;
+    }
+
+    .feature-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .feature-row .feature-value {
+      text-align: left;
+      min-width: auto;
+    }
+  }
+
+  /* Visual enhancements */
+  .feature-value:has-text("✓") {
+    color: var(--accent);
+  }
+
+  .feature-value:has-text("✗") {
+    color: #888;
+  }
+
+  .comparison-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .pricing-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  }
+</style>

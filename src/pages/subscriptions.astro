@@ -1,0 +1,38 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+
+import StripeSub from '../components/StripeSub.astro';
+
+import Footer from '../components/Footer.astro';
+
+
+---
+
+<!doctype html>
+<html lang="en" title="Pricing - Subo the Survey Bot: Plans for Every Server">
+	<head>
+		<BaseHead title="Pricing - Subo the Survey Bot: Plans for Every Server" description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+            <main>
+                <div class="stripe-table-container">
+                  <StripeSub />
+                </div>
+             </main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+
+
+.stripe-table-container {
+  background: linear-gradient(var(--dark), #222); 
+  padding: 8rem 2rem;
+  
+}
+</style>

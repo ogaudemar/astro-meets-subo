@@ -1,0 +1,113 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+
+import PriceTable from '../components/PriceTable.astro';
+
+import Footer from '../components/Footer.astro';
+
+
+---
+
+<!doctype html>
+<html lang="en" title="Pricing - Subo the Survey Bot: Plans for Every Server">
+	<head>
+		<BaseHead title="Pricing - Subo the Survey Bot: Plans for Every Server" description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+            <main>
+                <section class="pricing-hero">
+                <div class="container">
+                    <div class="pricing-hero__content">
+                    <h2 class="pricing-hero__title">
+                        LEVEL UP WITH PAID PLANS
+                    </h2>
+                    <p class="subtitle">
+                        Whether you're running a small group or a large, active community, Subo has a plan that fits.<br>
+                        Start free. Upgrade to unlock more features and support future development.
+                    </p>
+                    </div>
+                </div>
+                </section>
+                <section class="decoration">
+                </section>
+                <section class="pricing-section">
+                <div class="container">
+                    <PriceTable />
+                </div>
+                </section>
+            </main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+
+body {
+    background: linear-gradient(var(--dark), var(--secondary-dark));
+}
+
+  .pricing-hero {
+    
+    padding: 100px 0 60px;
+    text-align: center;
+  }
+
+  .pricing-hero__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .pricing-hero__title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .pricing-hero__subtitle {
+    font-size: 1.25rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .pricing-section {
+    padding: 60px 0;
+    margin-bottom: 3rem;
+    
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .pricing-hero {
+      padding: 60px 0 40px;
+    }
+
+    .pricing-hero__title {
+      font-size: 2.25rem;
+    }
+
+    .pricing-hero__subtitle {
+      font-size: 1.1rem;
+    }
+
+    .pricing-section {
+      padding: 40px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .pricing-hero__title {
+      font-size: 2rem;
+    }
+
+    .pricing-hero__subtitle {
+      font-size: 1rem;
+    }
+  }
+</style>

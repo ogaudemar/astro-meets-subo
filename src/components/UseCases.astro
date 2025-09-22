@@ -22,14 +22,15 @@ function getRandomUseCases(arr, n) {
 }
 
 const useCases = getRandomUseCases(allUseCases, 4);
+
 ---
 
 <!-- Brief intro section -->
     <section class="usecases">
       <div class="container text-center">
-        <img src="/images/subo-neon2-100.png" alt="Subo the Survey Bot" height="100" class="intro__icon" />
+        <img src="/images/subo-neon2-100.png" alt="Subo the Survey Bot" height="100" class="intro__icon" id="avatar"/>
         <h2 class="title text-white"><strong>HOW WILL YOU LISTEN TODAY?</strong></h2>
-        <p class'"subtitle text-white">There are endless possibilities to use Subo polls and surveys to interact with, engage and understand your community.</p>
+        <p class="subtitle text-white">Subo polls and survey convos give you endless ways to interact with, engage and understand your community.</p>
         <div class="usecases__content">
           <div class="usecases-grid">
             {useCases.map(usecase => (
@@ -56,13 +57,13 @@ const useCases = getRandomUseCases(allUseCases, 4);
 
 
 
-.subtitle {
+/*.subtitle {
   font-size: 1.2rem;
   color: var(--dark);
   opacity: 0.8;
   max-width: 600px;
   margin: 0 auto;
-}
+}*/
 
 .usecases-grid {
   display: grid;
@@ -109,3 +110,25 @@ const useCases = getRandomUseCases(allUseCases, 4);
 }
 
 </style>
+
+<script>
+
+ 	const avatar = document.querySelector('.intro__icon');
+        
+        const originalSrc = 'images/subo-neon2-100.png';
+        const hoverSrc = 'images/subo-open.png';
+        
+        avatar.addEventListener('mouseenter', function() {
+            this.src = hoverSrc;
+        });
+        
+        avatar.addEventListener('mouseleave', function() {
+            this.src = originalSrc;
+        });
+        
+        // Handle image loading errors
+        avatar.addEventListener('error', function() {
+            console.log('Image failed to load:', this.src);
+        });
+
+</script>

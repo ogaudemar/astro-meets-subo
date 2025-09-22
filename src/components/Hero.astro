@@ -21,7 +21,7 @@ import Demo from './Demo.astro';
         <span class="hero__rotating-text text-typing" data-words='["COMMUNITY", "MEMBERS", "USERS", "FANS", "PATRONS", "FRIENDS", "FOLLOWERS", "SUPPORTERS", "CUSTOMERS", "AUDIENCE"]'>COMMUNITY</span>
       </h1>
       <!-- No need for inline <script> here; logic moved below -->
-      <p class="hero__subtitle text-white">
+      <p class="subtitle text-white">
         Trusted by 15,000+ Discord server owners!
       </p>
       <div class="hero__cta">
@@ -121,11 +121,6 @@ typing 4s steps(22, end) forwards, blink 1s infinite;
     position: relative;
   }
 
-  .hero__subtitle {
-    font-size: 1.2rem;
-    margin: 4rem 0;
-    opacity: 0.9;
-  }
 
   .hero__cta {
     display: flex;
@@ -172,10 +167,7 @@ typing 4s steps(22, end) forwards, blink 1s infinite;
       font-size: 2rem;
     }
 
-    .hero__subtitle {
-      font-size: 1rem;
-    }
-
+ 
     .hero__cta {
       align-items: center;
     }

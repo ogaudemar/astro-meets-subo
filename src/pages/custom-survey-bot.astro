@@ -1,0 +1,559 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import Footer from '../components/Footer.astro';
+
+
+---
+
+<!doctype html>
+<html lang="en" title="Custom Survey Bot - Your Brand, Your Bot">
+	<head>
+		<BaseHead title="Custom Survey Bot - Your Brand, Your Bot" description="Everything you like about Subo, but with your own branding" />
+	</head>
+	<body>
+		<Header />
+            <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__text">
+            <div class="hero__badge">Custom Survey Bot</div>
+            <h1 class="hero__title">SUBO, WITH YOUR STYLE</h1>
+            <p class="hero__subtitle">
+              You like Subo but want your own Survey Bot, totally personalized for your server?
+            </p>
+            <p class="hero__description">
+              A Custom Survey Bot combines Subo's powerful and constantly-improving features, with <strong>your own app avatar and description</strong>.
+            </p>
+            <div class="hero__buttons">
+              <a href="/pricing" class="button button--primary-bg">
+                Create Your Own Survey Bot
+              </a>
+              <a href="/support" class="button button--white-outline">
+                Contact Us
+              </a>
+            </div>
+          </div>
+          <div class="hero__image">
+            <img 
+              src="/images/feedback-kitty.png" 
+              alt="Custom Survey Bot" 
+              class="hero__bot-image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Comparison -->
+    <section class="comparison">
+      <div class="container">
+        <h2 class="section-title">The best of Subo with your own branding</h2>
+        <p class="section-subtitle">
+          You like Subo features, hosting and support but want your own Survey Bot, totally personalized for your server? A Custom Survey bot is perfect for you!
+        </p>
+
+        <div class="comparison__grid">
+          <div class="comparison__card">
+            <div class="comparison__icon">🛠️</div>
+            <h3 class="comparison__title">The best of Subo</h3>
+            <ul class="comparison__list">
+              <li>All Subo features, hosting and support</li>
+              <li>All enhancements: when Subo gets better, so does your custom bot</li>
+              <li>Limits and AI credits at the VIP tier, the highest tier available</li>
+            </ul>
+          </div>
+
+          <div class="comparison__card">
+            <div class="comparison__icon">🎨</div>
+            <h3 class="comparison__title">Your own Brand</h3>
+            <ul class="comparison__list">
+              <li>Your own app</li>
+              <li>Your own avatar</li>
+              <li>Your own bot name</li>
+              <li>Your own bot description</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="section-title">How it Works</h2>
+        
+        <div class="steps">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h3 class="step__title">Subscribe</h3>
+              <p class="step__description">
+                Visit our subscriptions page and choose the Yearly 'Custom Bot' option.
+              </p>
+              <a href="/pricing" class="step__link">Subscribe Now</a>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h3 class="step__title">Create your own app</h3>
+              <p class="step__description">
+                Create your own app in the Discord App portal.
+              </p>
+              <a href="https://discord.com/developers/applications" class="step__link" target="_blank" rel="noopener noreferrer">
+                Create a Discord App
+              </a>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h3 class="step__title">Let the Subo team know</h3>
+              <p class="step__description">
+                Contact the Subo team to let us know about your new app. Share its name, token, and which server will invite it.
+              </p>
+              <a href="/support" class="step__link">Contact Us</a>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h3 class="step__title">Enjoy!</h3>
+              <p class="step__description">
+                Enjoy your new Custom Survey Bot. For more information, check our tutorial.
+              </p>
+              <a href="https://suboai.notion.site/Custom-Bot-make-your-own-Survey-Bot-742f26396f364c12b12b18d5fcc3ceaf" class="step__link" target="_blank" rel="noopener noreferrer">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        
+        <div class="faq__grid">
+          <div class="faq__item">
+            <h3 class="faq__question">What is the difference between the normal Subo bots and the Custom Survey Bot?</h3>
+            <p class="faq__answer">
+              The Subo bot is the default survey bot that you get when you invite Subo. It has some customization options, but it has a fixed app avatar, description, and name. The Custom Survey Bot is a way to get all the features of Subo, but with more personalization and customization options. You can choose your own app avatar, description, and name.
+            </p>
+          </div>
+
+          <div class="faq__item">
+            <h3 class="faq__question">How do I create my own survey bot with Subo?</h3>
+            <p class="faq__answer">
+              To create your own survey bot with Subo, you need to purchase the Custom Survey Bot option from our pricing page. You then create your own app on Discord in minutes and send us the required information. For more information, check our tutorials.
+            </p>
+          </div>
+
+          <div class="faq__item">
+            <h3 class="faq__question">How much does the Custom Survey Bot cost?</h3>
+            <p class="faq__answer">
+              The Custom Survey Bot costs $99.99 per year.
+            </p>
+          </div>
+
+          <div class="faq__item">
+            <h3 class="faq__question">Are there monthly subscriptions available for the Custom Survey Bot?</h3>
+            <p class="faq__answer">
+              No, because setting up a Custom Bot requires some custom set up by the development team, we only accept yearly subscriptions for the Custom Survey Bot.
+            </p>
+          </div>
+
+          <div class="faq__item">
+            <h3 class="faq__question">Is a Free Trial available for the Custom Survey Bot?</h3>
+            <p class="faq__answer">
+              No, because setting up a Custom Bot requires some custom set up work by the development team, we only accept yearly subscriptions for the Custom Survey Bot. If you want to try the bot, start with the other versions of Subo to get familiar with the experience, then upgrade to the Custom Bot when you are ready to change the branding.
+            </p>
+          </div>
+
+          <div class="faq__item">
+            <h3 class="faq__question">Do I need to know how to code to create my own app?</h3>
+            <p class="faq__answer">
+              No. The app creation on the Discord Developer portal is very simple. You will just need to fill a few fields and upload an image.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta__content">
+          <h2 class="cta__title">Ready to create your own branded survey bot?</h2>
+          <p class="cta__description">
+            Join the ranks of servers with their own custom-branded survey bots. Get all the power of Subo with your unique identity.
+          </p>
+          <div class="cta__buttons">
+            <a href="/pricing" class="button button--primary-bg">
+              Get Started - $99.99/year
+            </a>
+            <a href="/support" class="button button--white-outline">
+              Contact Support
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+   </main>
+		<Footer />
+	</body>
+</html>
+
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+    padding: 100px 0;
+    overflow: hidden;
+  }
+
+  .hero__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero__badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .hero__subtitle {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .hero__description {
+    font-size: 1.25rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .hero__buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .hero__image {
+    text-align: center;
+  }
+
+  .hero__bot-image {
+    width: 400px;
+    /*height: 200px;*/
+    border-radius: 5%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .button {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .button--accent {
+    background: var(--accent);
+    color: white;
+  }
+
+  .button--accent:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+  }
+
+  .button--white-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .button--white-outline:hover {
+    background: white;
+    color: black;
+  }
+
+  .comparison {
+    padding: 80px 0;
+    background: #0a0a0a;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.25rem;
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .comparison__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+  }
+
+  .comparison__card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+
+  .comparison__icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .comparison__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .comparison__list {
+    text-align: left;
+    color: #ccc;
+    line-height: 1.8;
+  }
+
+  .comparison__list li {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .comparison__list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  .how-it-works {
+    padding: 80px 0;
+    background: #111;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+  }
+
+  .step {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+
+  .step__number {
+    background: var(--accent);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .step__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .step__description {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .step__link {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent);
+    transition: all 0.3s ease;
+  }
+
+  .step__link:hover {
+    color: white;
+    border-color: white;
+  }
+
+  .faq {
+    padding: 80px 0;
+    background: #0a0a0a;
+  }
+
+  .faq__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+  }
+
+  .faq__item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .faq__question {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .faq__answer {
+    color: #ccc;
+    line-height: 1.6;
+  }
+
+  .cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+    text-align: center;
+  }
+
+  .cta__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta__description {
+    font-size: 1.25rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .cta__buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .hero__content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .hero__title {
+      font-size: 2.25rem;
+    }
+
+    .hero__subtitle {
+      font-size: 1.25rem;
+    }
+
+    .hero__buttons,
+    .cta__buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .comparison__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .steps {
+      grid-template-columns: 1fr;
+    }
+
+    .faq__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .cta__title {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero__title {
+      font-size: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+    }
+
+    .cta__title {
+      font-size: 1.75rem;
+    }
+  }
+</style>
