@@ -1,0 +1,482 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+---
+
+
+  <!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Subo le Survey Bot: votes, sondages et formulaires dans ton serveur Discord" description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+  <Header />
+  <main>
+    <!-- Hero Section Français -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__text">
+            <h1 class="hero__title">
+              Comprends ta communauté.
+            </h1>
+            <h2 class="hero__subtitle">
+              IL SUFFIT DE DEMANDER!
+            </h2>
+            <p class="hero__description">
+              Pourquoi essayer de deviner ce que veut ta communauté ? Prends des décisions en toute confiance en les faisant participer sur ton serveur Discord.
+            </p>
+            <div class="hero__buttons">
+              <a href="/invite" class="button button--accent">
+                Ajouter Subo à Discord
+              </a>
+              <a href="/pricing" class="button button--white-outline">
+                Voir les prix
+              </a>
+            </div>
+          </div>
+          <div class="hero__image">
+            <img 
+              src="/images/hero-survey.png" 
+              alt="Subo Survey Bot pour Discord" 
+              class="hero__screenshot"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='"case-study'>
+      <div class="container">
+        💡 Besoin de commentaires sur une nouvelle idée ?<br>
+              🔬 Besoin de savoir qui sont tes membres et ce qui les passionne ?<br>
+              🧑‍💻 Besoin d'un formulaire de candidature pour recruter de nouveaux modérateurs ?
+                    </div>
+                    
+    </section>
+
+    <!-- Features Section Français -->
+    <section class="features">
+      <div class="container">
+        <div class="features__grid">
+          <div class="feature-card">
+            <div class="feature-card__icon">📢</div>
+            <h3 class="feature-card__title">Sondages & enquêtes</h3>
+            <ul class="feature-card__list">
+              <li>Une seule question à poser? Organise un sondage de type <strong>vote rapide</strong>.</li>
+              <li>Tu veux en savoir plus? Crée un sondage de type <strong>enquête</strong> avec plusieurs questions (ouvertes ou fermées).</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">📊</div>
+            <h3 class="feature-card__title">Partage les résultats</h3>
+            <ul class="feature-card__list">
+              <li>Consulte les résultats en privé. Publie-les dans le salon de ton choix, manuellement ou automatiquement lorsque le sondage est terminé.</li>
+              <li>Exporte les données brutes pour des analyses plus fines.</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">🏆</div>
+            <h3 class="feature-card__title">Encourage la participation</h3>
+            <ul class="feature-card__list">
+              <li><strong>Système de points</strong> (XP) personnalisable: distribue des points pour chaque réponse à un sondage</li>
+              <li><strong>Récompense</strong> tes membres en leur attribuant des <strong>rôles</strong> pour avoir répondu à un sondage ou atteint un niveau de points XP</li>
+              <li><strong>Classement</strong> total et mensuel des membres les plus actifs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section Français -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats__content">
+          <h2 class="stats__title">Plus de 15 000 serveurs Discord utilisent déjà Subo !</h2>
+          <p class="stats__subtitle">❤️ par des modérateurs, community managers, créateurs, entrepreneurs, équipes Produit, UX et insights.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 Reasons Section Français -->
+    <section class="reasons">
+      <div class="container">
+        <h2 class="section-title">12 raisons de choisir Subo</h2>
+        <div class="reasons__grid">
+          <div class="reason-card">
+            <div class="reason-card__icon">😊</div>
+            <h3 class="reason-card__title">Facile à utiliser !</h3>
+            <p class="reason-card__description">
+              Créer/éditer un sondage ou un vote est aussi simple que discuter avec Subo. Dis à Subo ton objectif et laisse son IA générer un brouillon de sondage.
+            </p>
+          </div>
+          
+          <div class="reason-card">
+            <div class="reason-card__icon">🎮</div>
+            <h3 class="reason-card__title">Intégration avec ton serveur Discord</h3>
+            <p class="reason-card__description">
+              Pas besoin de sortir de ton beau serveur Discord pour remplir un formulaire. Pas besoin de demander leur ID Discord, on l'a déjà.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">📈</div>
+            <h3 class="reason-card__title">Résultats à partager</h3>
+            <p class="reason-card__description">
+              Consulte les résultats en privé, en temps réel. Partage-les si tu veux. Tu peux même demander à Subo de publier automatiquement les résultats finaux.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">📥</div>
+            <h3 class="reason-card__title">Exportation complète des données</h3>
+            <p class="reason-card__description">
+              Approfondis l'analyse en téléchargeant les données brutes avec toutes les réponses individuelles et les identifiants Discord.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">🪡</div>
+            <h3 class="reason-card__title">Super personnalisable</h3>
+            <p class="reason-card__description">
+              Découvre tout plein d'options de personnalisation pour rendre tes projets uniques et adaptés à leur objectif.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">🧸</div>
+            <h3 class="reason-card__title">Support rapide et réactif</h3>
+            <p class="reason-card__description">
+              Notre équipe couvre presque tous les fuseaux horaires pour offrir un support réactif en anglais et en français.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">☂️</div>
+            <h3 class="reason-card__title">Fiabilité 24/7</h3>
+            <p class="reason-card__description">
+              Hébergement Cloud sécurisé et stable 24/7. Ça marche, tout simplement.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">🔐</div>
+            <h3 class="reason-card__title">Confidentialité par conception</h3>
+            <p class="reason-card__description">
+              Les sondages sont répondus dans des fils de discussion privés. Tes membres peuvent consulter et supprimer leurs données à tout moment.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">🤓</div>
+            <h3 class="reason-card__title">Créé par des professionnels</h3>
+            <p class="reason-card__description">
+              Conçu par une équipe avec des décennies d'expérience dans la création de plateformes de sondage utilisées par des millions d'utilisateurs.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">✨</div>
+            <h3 class="reason-card__title">Une touche de magie</h3>
+            <p class="reason-card__description">
+              Donne à Subo ton objectif et laisse son IA générer un brouillon de sondage. Clique sur un bouton pour analyser des centaines de réponses !
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">👷</div>
+            <h3 class="reason-card__title">En amélioration constante !</h3>
+            <p class="reason-card__description">
+              Nouvelles fonctionnalités ajoutées régulièrement. Notre mission est de construire la meilleure plateforme d'études sur Discord.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">🎁</div>
+            <h3 class="reason-card__title">Version gratuite généreuse !</h3>
+            <p class="reason-card__description">
+              La version gratuite est suffisante pour la plupart des serveurs. Des upgrades abordables pour les utilisateurs plus avancés.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta__content">
+          <h2 class="cta__title">Prêt à comprendre ta communauté ?</h2>
+          <p class="cta__description">
+            Rejoins plus de 13 000 serveurs Discord qui utilisent Subo pour créer des sondages et des enquêtes engageantes.
+          </p>
+          <div class="cta__buttons">
+            <a href="/invite" class="button button--accent">
+              Ajouter Subo à Discord
+            </a>
+            <a href="/pricing" class="button button--white-outline">
+              Voir les prix
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  </body>
+</html>
+
+<style>
+  /* Reuse the same styles from the English version */
+  .hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+    padding: 100px 0;
+    overflow: hidden;
+  }
+
+  .hero__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .hero__subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__description {
+    font-size: 1.25rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .hero__buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .hero__image {
+    text-align: center;
+  }
+
+  .hero__screenshot {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .button {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .button--accent {
+    background: var(--accent);
+    color: white;
+  }
+
+  .button--accent:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+  }
+
+  .button--white-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .button--white-outline:hover {
+    background: white;
+    color: black;
+  }
+
+  .features {
+    padding: 80px 0;
+    background: #0a0a0a;
+  }
+
+  .features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
+  .feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+
+  .feature-card__icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-card__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-card__list {
+    text-align: left;
+    color: #ccc;
+    line-height: 1.8;
+  }
+
+  .feature-card__list li {
+    margin-bottom: 1rem;
+  }
+
+  .stats {
+    padding: 60px 0;
+    background: #111;
+    text-align: center;
+  }
+
+  .stats__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .stats__subtitle {
+    font-size: 1.25rem;
+    color: #ccc;
+  }
+
+  .reasons {
+    padding: 80px 0;
+    background: #0a0a0a;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .reasons__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .reason-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .reason-card__icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .reason-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .reason-card__description {
+    color: #ccc;
+    line-height: 1.6;
+  }
+
+  .cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+    text-align: center;
+  }
+
+  .cta__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta__description {
+    font-size: 1.25rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .cta__buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .hero__content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .hero__title {
+      font-size: 2rem;
+    }
+
+    .hero__subtitle {
+      font-size: 1.5rem;
+    }
+
+    .hero__buttons,
+    .cta__buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .features__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .reasons__grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+</style>

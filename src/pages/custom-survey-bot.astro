@@ -17,20 +17,17 @@ import Footer from '../components/Footer.astro';
 		<Header />
             <main>
     <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
+    <section class="hero dark2primary">
+      <div class="container ">
         <div class="hero__content">
           <div class="hero__text">
-            <div class="hero__badge">Custom Survey Bot</div>
-            <h1 class="hero__title">SUBO, WITH YOUR STYLE</h1>
-            <p class="hero__subtitle">
-              You like Subo but want your own Survey Bot, totally personalized for your server?
-            </p>
-            <p class="hero__description">
-              A Custom Survey Bot combines Subo's powerful and constantly-improving features, with <strong>your own app avatar and description</strong>.
+            
+            <h1 class="hero__title">___, YOUR SURVEY BOT</h1>
+            <p class="subtitle text-white">Everything you like about Subo, but with your own branding</p>
+            
             </p>
             <div class="hero__buttons">
-              <a href="/pricing" class="button button--primary-bg">
+              <a href="/pricing" class="button button--white-bg">
                 Create Your Own Survey Bot
               </a>
               <a href="/support" class="button button--white-outline">
@@ -50,7 +47,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Features Comparison -->
-    <section class="comparison">
+    <section class="comparison darkprimary2secondary">
       <div class="container">
         <h2 class="section-title">The best of Subo with your own branding</h2>
         <p class="section-subtitle">
@@ -83,7 +80,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- How it Works -->
-    <section class="how-it-works">
+    <section class="how-it-works darksecondary2secondary">
       <div class="container">
         <h2 class="section-title">How it Works</h2>
         
@@ -140,7 +137,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq">
+    <section class="faq secondary2dark">
       <div class="container">
         <h2 class="section-title">Frequently Asked Questions</h2>
         
@@ -191,7 +188,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
+    <section class="cta secondary2dark">
       <div class="container">
         <div class="cta__content">
           <h2 class="cta__title">Ready to create your own branded survey bot?</h2>
@@ -216,11 +213,37 @@ import Footer from '../components/Footer.astro';
 
 
 <style>
+  
+  .dark2primary {
+    background: linear-gradient(var(--dark), var(--primary-dark));
+  }
+
+  .darkprimary2secondary {
+    background: linear-gradient(var(--primary-dark), var(--secondary-dark));
+  }
+
+    .darkprimary2primary {
+    background: linear-gradient(var(--primary-dark), var(--primary));
+  }
+
+  .darksecondary2secondary {
+    background: linear-gradient(var(--secondary-dark), var(--secondary));
+  }
+
+  .secondary2dark {
+    background: linear-gradient(var(--secondary), var(--dark));
+  }
+
+      .darkprimary2primary {
+    background: linear-gradient(var(--primary-dark), var(--primary));
+  }
+
+  
   .hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-    padding: 100px 0;
+        padding: 100px 0;
     overflow: hidden;
   }
+
 
   .hero__content {
     display: grid;
@@ -229,16 +252,7 @@ import Footer from '../components/Footer.astro';
     align-items: center;
   }
 
-  .hero__badge {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-  }
+
 
   .hero__title {
     font-size: 3rem;
@@ -311,7 +325,7 @@ import Footer from '../components/Footer.astro';
 
   .comparison {
     padding: 80px 0;
-    background: #0a0a0a;
+    
   }
 
   .section-title {
@@ -399,7 +413,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .step__number {
-    background: var(--accent);
+    background: var(--primary);
     color: white;
     width: 60px;
     height: 60px;

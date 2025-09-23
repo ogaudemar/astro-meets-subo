@@ -1,4 +1,8 @@
 ---
+
+import { SITE_TITLE, SITE_DESCRIPTION, DISCORD_STORE_URL } from '../consts';
+
+
 // Pricing tiers data
 const tiers = [
   {
@@ -164,6 +168,8 @@ const tableData = [
   ],
 ];
 
+const discordSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="#5865F2" d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3.3a.08.08 0 0 0-.084.04c-.37.654-.78 1.507-1.07 2.18a18.233 18.233 0 0 0-5.462 0 12.683 12.683 0 0 0-1.088-2.18.077.077 0 0 0-.084-.04c-1.432.327-2.814.797-3.432 1.069a.073.073 0 0 0-.033.027C2.533 7.164 1.37 9.86 1.076 12.602c0 .01.002.02.007.028a19.933 19.933 0 0 0 5.993 3.03.08.08 0 0 0 .087-.027c.462-.634.874-1.304 1.226-2.01a.08.08 0 0 0-.045-.11c-.652-.247-1.274-.547-1.872-.892a.08.08 0 0 1-.008-.134c.126-.094.252-.19.372-.288a.08.08 0 0 1 .084-.01c3.927 1.793 8.18 1.793 12.062 0a.08.08 0 0 1 .085.009c.12.098.246.194.372.288a.08.08 0 0 1-.007.134 12.298 12.298 0 0 1-1.873.892.08.08 0 0 0-.044.11c.36.705.773 1.375 1.225 2.01a.08.08 0 0 0 .087.027 19.888 19.888 0 0 0 6.002-3.03.08.08 0 0 0 .007-.028c-.332-3.036-1.495-5.732-3.728-7.206a.076.076 0 0 0-.033-.027ZM8.02 13.317c-.786 0-1.432-.722-1.432-1.607 0-.885.634-1.607 1.432-1.607.805 0 1.45.73 1.432 1.607 0 .885-.634 1.607-1.432 1.607Zm7.974 0c-.786 0-1.432-.722-1.432-1.607 0-.885.634-1.607 1.432-1.607.805 0 1.45.73 1.432 1.607 0 .885-.634 1.607-1.432 1.607Z"/></svg>`;
+
 // Button row data
 const buttonRow = [
   {
@@ -171,16 +177,32 @@ const buttonRow = [
     class: "button button--dark-accent-border",
     href: "/invite"
   },
-  {
-    text: "Upgrade",
-    class: "button button--dark-premium-border",
-    href: "/subscriptions"
-  },
-  {
-    text: "Upgrade",
-    class: "button button--dark-vip-border",
-    href: "/subscriptions"
-  },
+  [
+    {
+      text: "Upgrade (via Discord)",
+      class: "button button--dark-premium-border",
+      href: "/discordstore",
+      icon: discordSVG
+    },
+    {
+      text: "Upgrade (via Stripe)",
+      class: "button button--dark-premium-border",
+      href: "/subscriptions"
+    }
+  ],
+  [
+    {
+      text: "Upgrade (via Discord)",
+      class: "button button--dark-vip-border",
+      href: "/discordstore",
+      icon: discordSVG
+    },
+    {
+      text: "Upgrade (via Stripe)",
+      class: "button button--dark-vip-border",
+      href: "/subscriptions"
+    }
+  ],
   {
     text: "Make It Your Own",
     class: "button button--primary-border",
@@ -195,7 +217,7 @@ const buttonRow = [
     <table class="comparison-table">
       <thead>
         <tr>
-          <th class="feature-column">Features</th>
+          <th class="feature-column">PLAN COMPARISON</th>
           {tiers.map(tier => (
             <th class="tier-column">
               <div class="tier-header">
@@ -212,16 +234,34 @@ const buttonRow = [
         {tableData.map(row => (
           <tr>
             <td class="feature-name" set:html={row[0]}></td>
-            {row.slice(1).map((cell, index) => (
-              <td class="feature-value" set:html={cell}></td>
-            ))}
+            {row.slice(1).map((cell, index) => {
+              const tierClass = ["tier-free", "tier-premium", "tier-vip", "tier-custom"][index];
+              // Replace ✓ and ✗ with colored spans
+              const cellHtml = cell
+                .replace(/✓/g, `<span class="icon icon-yes ${tierClass}">✓</span>`)
+                .replace(/✗/g, `<span class="icon icon-no ${tierClass}">✗</span>`);
+              return (
+                <td class={`feature-value ${tierClass}`} set:html={cellHtml}></td>
+              );
+            })}
           </tr>
         ))}
         <tr class="button-row">
           <td></td>
-          {buttonRow.map(button => (
+          {buttonRow.map((button, idx) => (
             <td>
-              <a href={button.href} class={button.class}>{button.text}</a>
+              {Array.isArray(button) ? (
+                <div class="button-group">
+                  {button.map(btn => (
+                    <a href={btn.href} class={btn.class}>
+                      {btn.icon && <span class="discord-icon" set:html={btn.icon}></span>}
+                      {btn.text}
+                    </a>
+                  ))}
+                </div>
+              ) : (
+                <a href={button.href} class={button.class}>{button.text}</a>
+              )}
             </td>
           ))}
         </tr>
@@ -313,9 +353,14 @@ const buttonRow = [
   .tier-name {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--accent);
+
     margin: 0;
   }
+
+.tier-name.tier-free { color: var(--accent); }
+.tier-name.tier-premium { color: var(--premium); }
+.tier-name.tier-vip { color: var(--yellow-vip); }
+.tier-name.tier-custom { color: var(--primary); }
 
   .tier-description {
     font-size: 0.9rem;
@@ -414,7 +459,7 @@ const buttonRow = [
 
   .button--dark-vip-border:hover {
     color: black;
-    background: var(--yellow-vip, #ffff00); */var--yellow-VIP: #ffff00 */
+    background: var(--yellow-vip, #ffff00); 
     
   }
   
@@ -549,13 +594,6 @@ const buttonRow = [
   }
 
   /* Visual enhancements */
-  .feature-value:has-text("✓") {
-    color: var(--accent);
-  }
-
-  .feature-value:has-text("✗") {
-    color: #888;
-  }
 
   .comparison-table tbody tr:hover {
     background: rgba(255, 255, 255, 0.02);
@@ -569,4 +607,29 @@ const buttonRow = [
     transform: translateY(-4px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   }
+
+.icon-yes.tier-free { color: var(--accent); }
+.icon-yes.tier-premium { color: var(--premium); }
+.icon-yes.tier-vip { color: var(--yellow-vip); }
+.icon-yes.tier-custom { color: var(--primary); }
+
+.icon-no.tier-free { color: var(--accent); opacity: 0.5; }
+.icon-no.tier-premium { color: var(--premium); opacity: 0.5; }
+.icon-no.tier-vip { color: var(--yellow-vip); opacity: 0.5; }
+.icon-no.tier-custom { color: var(--primary); opacity: 0.5; }
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.discord-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  height: 1.2em;
+  width: 1.2em;
+}
 </style>

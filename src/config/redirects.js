@@ -48,6 +48,11 @@ export const trackedRedirects = {
     url: 'https://billing.stripe.com/p/login/7sI3el1F61iu5RS8ww',
     name: 'stripe_billing_portal',
     description: 'Stripe Billing Portal'
+  },
+  discordstore: {
+    url: 'https://discord.com/discovery/applications/946888973035380806/store',
+    name: 'discord_app_store',
+    description: 'Discord App Store'
   }
 
 };
