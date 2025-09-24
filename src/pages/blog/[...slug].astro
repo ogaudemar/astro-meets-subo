@@ -14,8 +14,9 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+const allPosts = await getCollection('blog');
 ---
 
-<BlogPost {...post.data}>
+<BlogPost {...post.data} posts={allPosts}>
 	<Content />
 </BlogPost>

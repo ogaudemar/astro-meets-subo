@@ -1,0 +1,354 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+
+import Footer from '../components/Footer.astro';
+
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+    <section class="success-section">
+      <div class="container">
+        <div class="success-content">
+          <div class="success-icon">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="12" fill="var(--accent)"/>
+              <path d="M8 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h1 class="success-title">You're almost there!</h1>
+          <p class="success-message">Your payment was processed successfully.</p>
+          <p class="success-description">
+            Please contact the Team by email or on our Discord server with your Discord Server ID or name and we'll upgrade your server ASAP
+          </p>
+          
+
+
+          <div class="next-steps">
+            <h2>What's Next?</h2>
+            <div class="steps-grid">
+              <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Add Subo to Your Server</h3>
+                <p>If you haven't already, invite Subo to your Discord server and accept the suggested permissions.</p>
+                 <a href="/invite" class="button button--primary-bg">
+              Add Subo to Discord
+            </a>
+              </div>
+              <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Send your Server details to the Subo Team</h3>
+                <p>Notify the Subo Team with your Discord Server ID or name. You can contact the Support Team by <a href="mailto:hello@subo.ai">email</a> or on our <a href="/support">Discord server</a>.</p>
+              <a href="/support" class="button button--white-outline">
+              Contact Support
+            </a>
+              </div>
+              <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Join Our Support Server</h3>
+                <p>While you wait, join our support community to see examples, stay updated with new features or ask questions.</p>
+                <p>Check our <a href="/tutorial">Tutorials</a> to get started and make the most out of Subo.</p>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1rem;">
+                  <a href="/support" class="button button--white-bg">
+                    Join Support Server
+                  </a>
+                  <a href="/tutorial" class="button button--white-outline">
+                    View Tutorials
+                  </a>
+                </div>
+              </div>
+
+                <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Verify that your Subscription is Active</h3>
+                <p>Once you've sent your server details, the Subo Team will upgrade your server as soon as they can and will confirm your upgrade. Be patient, as it requires some manual verification.</p>
+                <p>You can verify your upgrade was activated by using the <code>/premium</code> command in your Discord server.</p>
+
+            </a>
+              </div>
+            </div>
+
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        {(() => {
+          const faqs = [
+            {
+              question: "Why do I need to choose between Stripe and Discord?",
+              answer: "We support Discord's native App Store, which is more convenient for many users, but the Discord App Store doesn't offer multiple server and annual subscriptions, so we also created a Stripe solution for that."
+            },
+            {
+              question: "Why do I have to wait for my premium subscription to become active?",
+              answer: "Stripe collects your email address to create an account for you, but we can't connect this email address with your Discord server. This means we need to manually verify your account before activating your premium subscription. We intend to automate this process in the future, but for now, we appreciate your patience."
+            },
+            {
+              question: "How do I find my server ID?",
+              answer: "You can find your server ID by right-clicking on your server name in Discord and selecting 'Copy Server ID'. If you don't see this option, you may need to enable Developer Mode in your Discord settings (which we recommend anyway)."
+            },
+            {
+              question: "How do I change or cancel a subscription?",
+              answer: "You can manage your subscription at any time via the Stripe Billing Portal or Discord Store, depending on how you upgraded. To access the Stripe Billing Portal, you will need to log in with the email address you used to pay for the upgrade. See links in footer."
+            },
+            {
+              question: "What happens if I cancel my premium subscription?",
+              answer: "Once the end of your subscription period (month, year) comes, your bot will be switched back to the free version of Subo. You will still be able to use Subo, but with the limitations of the free tier.  If you have a project live, it may stop if you reach your maximum allowance for respondents or responses. If you have too many projects on your account, you may have to delete some before you are allowed to create new ones."
+            }
+          ];
+          return (
+            <ul class="faq-list">
+              {faqs.map(faq => (
+                <li class="faq-item">
+                  <h3 class="faq-question">{faq.question}</h3>
+                  <p class="faq-answer">{faq.answer}</p>
+                </li>
+              ))}
+            </ul>
+          );
+        })()}
+      </div>
+    </section>
+    </main>
+		<Footer />
+	</body>
+<style>
+
+.faq-section {
+  background: linear-gradient(var(--secondary-dark), var(--dark));
+  padding: 3rem 0;
+}
+.faq-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.faq-list {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+.faq-item {
+  margin-bottom: 2rem;
+  background: rgba(255,255,255,0.08);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.faq-question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+.faq-answer {
+  font-size: 1.05rem;
+  color: #fff;
+}
+</style>
+</html>
+
+<style>
+  .success-section {
+    background: linear-gradient(var(--dark), var(--secondary-dark));
+    padding: 80px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .success-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .success-icon {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .success-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .success-message {
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .success-description {
+    font-size: 1.25rem;
+    color: #ccc;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  .success-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    min-width: 180px;
+  }
+
+  .button--accent {
+    background: var(--accent);
+    color: white;
+  }
+
+  .button--accent:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+  }
+
+  .button--white-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .button--white-outline:hover {
+    background: white;
+    color: black;
+  }
+
+  
+  .button--white-bg:hover {
+    background: var(--primary);
+    color: white;
+  
+  }
+
+
+  .next-steps {
+    text-align: left;
+    margin-top: 4rem;
+  }
+
+  .next-steps h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .step-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .step-number {
+    background: var(--primary);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .step-card h3 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .step-card p {
+    color: #ccc;
+    line-height: 1.6;
+  }
+
+  .step-card code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--accent);
+    font-family: monospace;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .success-section {
+      padding: 60px 0;
+    }
+
+    .success-title {
+      font-size: 2.25rem;
+    }
+
+    .success-message {
+      font-size: 1.25rem;
+    }
+
+    .success-description {
+      font-size: 1.1rem;
+    }
+
+    .success-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .success-title {
+      font-size: 2rem;
+    }
+
+    .button {
+      padding: 12px 24px;
+      min-width: 160px;
+    }
+  }
+</style>

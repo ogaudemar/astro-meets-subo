@@ -43,7 +43,7 @@
   body {
     line-height: 1.6;
     color: var(--text-white);
-    background: var(--bg-dark);
+    background: var(--secondary-dark);
   }
 
   .container {
@@ -206,6 +206,16 @@ h4 {
 h5 {
   font-size: 1.25em;
 }
+
+.prose h1 { font-size: 2.5rem !important; color: var(--accent);font-weight: 700 !important; margin: 1.5em 0 1em 0 !important; }
+.prose h2 { font-size: 2rem !important; ; color: var(--grey-light);font-weight: 600 !important; margin: 1.2em 0 0.8em 0 !important; }
+.prose h3 { font-size: 1.5rem !important; font-weight: 600 !important; margin: 1em 0 0.6em 0 !important; }
+
+.prose ul, .prose ol {
+  margin-left: 2em;
+  margin-bottom: 1.5em;
+}
+
 
 .subtitle {
   font-size: 1.25rem;

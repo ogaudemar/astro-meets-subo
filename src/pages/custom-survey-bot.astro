@@ -17,7 +17,7 @@ import Footer from '../components/Footer.astro';
 		<Header />
             <main>
     <!-- Hero Section -->
-    <section class="hero dark2primary">
+    <section class="hero dark">
       <div class="container ">
         <div class="hero__content">
           <div class="hero__text">
@@ -47,9 +47,9 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Features Comparison -->
-    <section class="comparison darkprimary2secondary">
+    <section class="comparison dark2secondarydark">
       <div class="container">
-        <h2 class="section-title">The best of Subo with your own branding</h2>
+        <h2 class="section-title">The best of Subo with <span class="accent">your own branding</span></h2>
         <p class="section-subtitle">
           You like Subo features, hosting and support but want your own Survey Bot, totally personalized for your server? A Custom Survey bot is perfect for you!
         </p>
@@ -80,7 +80,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- How it Works -->
-    <section class="how-it-works darksecondary2secondary">
+    <section class="how-it-works secondarydark2primarydark">
       <div class="container">
         <h2 class="section-title">How it Works</h2>
         
@@ -137,7 +137,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq secondary2dark">
+    <section class="faq primarydark2secondarydark">
       <div class="container">
         <h2 class="section-title">Frequently Asked Questions</h2>
         
@@ -188,7 +188,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- CTA Section -->
-    <section class="cta secondary2dark">
+    <section class="cta secondarydark2dark">
       <div class="container">
         <div class="cta__content">
           <h2 class="cta__title">Ready to create your own branded survey bot?</h2>
@@ -214,29 +214,51 @@ import Footer from '../components/Footer.astro';
 
 <style>
   
-  .dark2primary {
-    background: linear-gradient(var(--dark), var(--primary-dark));
+
+.accent {
+    color: var(--accent);
+}
+
+
+  .dark2secondarydark {
+    background: linear-gradient(var(--dark), var(--secondary-dark));
   }
 
-  .darkprimary2secondary {
-    background: linear-gradient(var(--primary-dark), var(--secondary-dark));
+
+  .secondarydark {
+    background: var(--secondary-dark);
   }
 
-    .darkprimary2primary {
-    background: linear-gradient(var(--primary-dark), var(--primary));
-  }
-
-  .darksecondary2secondary {
+  .secondarydark2secondary {
     background: linear-gradient(var(--secondary-dark), var(--secondary));
   }
 
-  .secondary2dark {
-    background: linear-gradient(var(--secondary), var(--dark));
+  .secondarydark2dark {
+    background: linear-gradient(var(--secondary-dark), var(--dark));
   }
 
-      .darkprimary2primary {
-    background: linear-gradient(var(--primary-dark), var(--primary));
+  
+  .secondarydark2primarydark {
+    background: linear-gradient(var(--secondary-dark), var(--primary-dark));
   }
+
+.primarydark2dark {
+    background: linear-gradient(var(--primary-dark), var(--dark));
+  }
+
+
+  .primary2secondarydark {
+    background: linear-gradient(var(--primary), var(--secondary-dark));
+  }
+
+
+
+  .primarydark2secondarydark {
+    background: linear-gradient(var(--primary-dark), var(--secondary-dark));
+  }
+
+
+
 
   
   .hero {
@@ -395,7 +417,7 @@ import Footer from '../components/Footer.astro';
 
   .how-it-works {
     padding: 80px 0;
-    background: #111;
+  
   }
 
   .steps {
@@ -455,7 +477,7 @@ import Footer from '../components/Footer.astro';
 
   .faq {
     padding: 80px 0;
-    background: #0a0a0a;
+   
   }
 
   .faq__grid {
@@ -485,7 +507,6 @@ import Footer from '../components/Footer.astro';
 
   .cta {
     padding: 80px 0;
-    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
     text-align: center;
   }
 

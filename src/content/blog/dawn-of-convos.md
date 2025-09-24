@@ -1,11 +1,14 @@
 ---
-title: "The End of Surveys, The Dawn of Convos"
+title: "The Dawn of Convos"
 description: "Why surveys are broken, and how convos represent the future of listening."
 pubDate: "Sep 11 2025"
-author: "Olivier de Gaudemar"
+author: "surveyChump"
+heroImage: "/images/subo-og.png"
+tags: ["survey", "convo", "roadmap"] 
+draft: false
 ---
 
-# The End of Surveys, The Dawn of Convos  
+# The Dawn of Convos  
 
 Every era has its dominant framework. Once it takes hold, it becomes invisible—so natural that we can hardly imagine another way of doing things. For decades, the survey has been that framework for listening at scale.  
 
@@ -82,7 +85,7 @@ We’re starting conversations.
 
 ---
 
-### 🚀 Join the movement  
+## 🚀 Join the movement  
 
-Surveys are over. Convos are the future.  
+Convos are the future of surveys.  
 Let’s build a new way of listening—together.  

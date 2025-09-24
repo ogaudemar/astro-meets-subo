@@ -24,8 +24,9 @@ import Footer from '../components/Footer.astro';
                     <div class="pricing-hero__content">
                     <h2 class="pricing-hero__title"><span class="accent">LEVEL UP</span> WITH PAID PLANS</h2>
                     <p class="subtitle">
-                        Whether you're running a small group or a large, active community, Subo has a plan that fits.<br>
-                        Start free. Upgrade to unlock more features and support future development.
+                        Start free. </br> Upgrade to unlock more features and support future development.</p>
+                        <p> Whether you're running a small group or a large, active community, Subo has the right plan for you.<br>
+                        
                     </p>
                     </div>
                 </div>
@@ -37,7 +38,7 @@ import Footer from '../components/Footer.astro';
                     </div>
                 </section>
 
-                <section class="pricing-section">
+                <section class="channels-section">
                     
                     <div class="pricing-hero__content">
                         <h2 class="pricing-hero__title">DISCORD OR STRIPE: <span class="accent">YOU DECIDE</span></h2>
@@ -52,7 +53,8 @@ import Footer from '../components/Footer.astro';
             </svg>
           </span>DISCORD</h3>
                             <li class="discount-desc">Upgrade effective immediately</li>
-                            <li class="discount-desc">Limited to monthly subscriptions</li>
+                            <li class="discount-desc">Monthly subscriptions only</li>
+                            <li class="discount-desc">One server only</li>
                             <li class="discount-desc">Upgrade, cancel or manage subscriptions via Discord</li>
                             <form action={DISCORD_STORE_URL} method="get" style="margin:0;">
                                 <button type="submit" class="button button--white-bg mono">Upgrade with Discord</button>
@@ -72,6 +74,40 @@ import Footer from '../components/Footer.astro';
 
                     </div>
                 </section>
+
+                <section class="faq-section">
+                  <div class="container">
+                    <h2 class="faq-title">Frequently Asked Questions</h2>
+                    {(() => {
+                      const faqs = [
+                        {
+                          question: "Why do I need to choose between Stripe and Discord?",
+                          answer: "We support Discord's native App Store, which is more convenient to many users, but Discord doesn't support multiple server and annual subscriptions, so we also created a Stripe solution for that."
+                        },
+                        {
+                          question: "What happens if I cancel my premium subscription?",
+                          answer: "Once the end of your subscription period (month, year) comes, your bot will be switched back to the free version of Subo. You will still be able to use Subo, but with the limitations of the free tier.  If you have a project live, it may stop if you reach your maximum allowance for respondents or responses. If you have too many projects on your account, you may have to delete some before you are allowed to create new ones."
+                        },
+                        {
+                          question: "How do I change or cancel a subscription?",
+                          answer: "You can manage your subscription at any time via the Stripe Billing Portal or Discord Store, depending on how you upgraded. See links in footer."
+                        }
+                      ];
+                      return (
+                        <ul class="faq-list">
+                          {faqs.map(faq => (
+                            <li class="faq-item">
+                              <h3 class="faq-question">{faq.question}</h3>
+                              <p class="faq-answer">{faq.answer}</p>
+                            </li>
+                          ))}
+                        </ul>
+                      );
+                    })()}
+                  </div>
+                </section>
+
+
             </main>
 		<Footer />
 	</body>
@@ -79,14 +115,15 @@ import Footer from '../components/Footer.astro';
 
 <style>
 
-body {
+/*body {
     background: linear-gradient(var(--dark), var(--secondary-dark), var(--secondary), var(--primary), var(--accent));
-}
+}*/
 
   .pricing-hero {
     
     padding: 100px 0 60px;
     text-align: center;
+    background: linear-gradient(var(--dark),var(--secondary-dark));
   }
 
   .pricing-hero__content {
@@ -115,7 +152,13 @@ body {
 
   .pricing-section {
     padding: 60px 0;
-    margin-bottom: 3rem;
+    background: linear-gradient(var(--secondary-dark), var(--secondary), var(--primary));
+    
+  }
+
+    .channels-section {
+    padding: 60px 0;
+    background: linear-gradient(var(--primary), var(--secondary-dark));
     
   }
 
@@ -154,7 +197,7 @@ body {
     color: white;
 }
 
-
+/*
 .discount-btn {
   display: inline-block;
     padding: 0.75rem 2rem;
@@ -164,22 +207,20 @@ body {
   border-radius: 2rem;
   text-decoration: none;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-}
+} */
 
 .button--white-bg {
     margin-top: 1.5rem;
     transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-
-
 }
 
+  .button--white-bg:hover {
+    background: var(--premium);
+    box-shadow: 0 4px 24px rgba(108,71,255,0.18);
+    transform: translateY(-4px) scale(1.03);
+  }
 
-.discount-btn:hover {
-  background: var(--premium);
-  color: #fff;
-  box-shadow: 0 4px 24px rgba(108,71,255,0.18);
-  transform: translateY(-4px) scale(1.03);
-}
+
 
 @media (max-width: 600px) {
   .pricing-discounts {
@@ -221,4 +262,38 @@ body {
       font-size: 1rem;
     }
   }
-</style>
+
+.faq-section {
+  background: linear-gradient(var(--secondary-dark), var(--dark));
+  padding: 3rem 0;
+}
+.faq-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.faq-list {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+.faq-item {
+  margin-bottom: 2rem;
+  background: rgba(255,255,255,0.08);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.faq-question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+.faq-answer {
+  font-size: 1.05rem;
+  color: #fff;
+}
