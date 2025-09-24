@@ -1,7 +1,24 @@
 ---
-import Wrapper from '../layouts/Layout.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, DISCORD_STORE_URL } from '../consts';
+
+import Footer from '../components/Footer.astro';
+
+
 ---
-<Wrapper title="Advanced polls">
-  <h2>All about polls</h2>
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Advanced Discord Polls with Subo the Survey Bot" description="Discord has its own native poll feature, but Subo has more advanced features. Find out more." />
+	</head>
+	<body>
+		<Header />
+  <main>
+  <h2>All about Subo polls in Discord</h2>
   <p>Here is some stuff about polls.</p>
-</Wrapper>
+ </main>
+		<Footer />
+	</body>
+</html>
