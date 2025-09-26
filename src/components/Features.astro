@@ -4,22 +4,25 @@ const features = [
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-more-icon lucide-message-square-more"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M12 11h.01"/><path d="M16 11h.01"/><path d="M8 11h.01"/></svg>',
     title: 'ASK QUESTIONS',
     content: [
-      '<strong>Advanced polls</strong>: Ask 1 question publicly. Make your polls unique and fun with multiple ways to answer and share results!',
-      '<strong>Survey convos</strong>: Ask all the questions you want, open or closed. Your members answer in a private chat with Subo.'
+      'Subo helps you ask questions that people want to answer:', 
+      'Ask all the questions you want, open or closed, in <strong>survey convos</strong>. Your members answer in a private chat with Subo, inside your Discord server or on the web.',
+      '<strong>Advanced polls</strong>: Ask 1 question publicly. Make your polls unique and fun with multiple ways to answer and share results!'
     ]
   },
     {
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy-icon lucide-trophy"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/><path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/></svg>',
-    title: 'REWARD PARTICIPATION',
+    title: "SOCIAL REWARDS",
     content: [
+      "The best rewards don't have to be monetary:", 
       'Give <strong>Role rewards</strong> for answering a survey or a poll',
       '<strong>XP system</strong>: members earn points as they answer questions, level up to unlock roles.',
-      '<strong>Leaderboard</strong> featuring active participants'
+      '<strong>Leaderboard</strong> featuring active participants',
+      'Easily <strong>share findings</strong> and answers from other participants'  
     ]
   },
   {
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-no-axes-combined-icon lucide-chart-no-axes-combined"><path d="M12 16v5"/><path d="M16 14v7"/><path d="M20 10v11"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18v3"/><path d="M8 14v7"/></svg>',
-    title: 'ANALYZE & SHARE',
+    title: 'ANALYZE, SHARE & REPEAT',
     content: [
       'View aggregated results and individual responses, privately or privately. Share/repost them in the server.',
       'Let Subo summarize open answers with AI',
@@ -32,8 +35,10 @@ const features = [
 <section class="features">
   <div class="container">
     <div class="features__header">
-      <h2 class="features__title heading text-white">YOU LEARN MORE WHEN RESPONDENTS ENJOY ANSWERING.</h2>
-      <p class="subtitle">Subo helps you craft questions worth answering and analyze real insigths from engaged participants.</p>
+      <h2 class="features__title heading text-white">YOU <span class="accent">LEARN MORE</span> WHEN PEOPLE ENJOY THE CONVERSATION.</h2>
+      <p class="subtitle">No more boring forms and bad surveys that no one wants to answer. </p>
+      <p> Subo asks questions in conversations that your community wants to join.</p>
+  
     </div>
     
     <div class="features__grid">
@@ -57,10 +62,14 @@ const features = [
 </section>
 
 <style>
+
+  .accent {
+    color: var(--accent);
+}
+
   .features {
     padding: 50px 0;
-    background: linear-gradient(var(--secondary),var(--secondary-dark));
-
+    background: linear-gradient(var(--secondary-dark), var(--primary-dark));
   }
 
   .features__header {
@@ -91,10 +100,16 @@ const features = [
   }
 
   .feature {
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--grey-light);
     padding: 2rem;
     border-radius: 12px;
     backdrop-filter: blur(10px);
+  }
+
+  .feature:hover { 
+      box-shadow: 0 6px 16px var(--accent);
+      background: var(--light);
+      opacity: 1;
   }
 
   .feature__header {

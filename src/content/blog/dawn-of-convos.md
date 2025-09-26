@@ -8,27 +8,27 @@ tags: ["survey", "convo", "roadmap"]
 draft: false
 ---
 
-# The Dawn of Convos  
+# The Dawn of Convos 
 
-Every era has its dominant framework. Once it takes hold, it becomes invisible—so natural that we can hardly imagine another way of doing things. For decades, the survey has been that framework for listening at scale.  
+Every era has its dominant framework. Once it takes hold, it becomes so natural that we can hardly imagine another way of doing things. For decades, forms has been how data has been collected. And surveys have been using forms to listen at scale.
 
-But every framework eventually reaches its breaking point. And surveys have reached theirs.  
+But every framework eventually reaches its breaking point. And forms and surveys have reached theirs.  
 
 ---
 
-## The Problem with Surveys  
+## The Problem with Forms and Surveys  
 
-Surveys were once revolutionary. They allowed organizations to ask structured questions and hear from people far beyond their immediate reach. For businesses, governments, and researchers, they became the backbone of insight. Entire industries were built on them.  
+Forms and Surveys have allowed organizations to ask structured questions and collect structured answers from people far beyond their immediate reach. For businesses, governments, and researchers, they became the backbone of insight. Entire industries were built on them.  
 
-Yet today, the word *survey* is almost synonymous with frustration:  
+Yet today, the words *form* and *survey* are almost synonymous with frustration:  
 
 - long, boring, irrelevant  
 - filled with technical glitches and outdated UIs  
-- punishing participants with endless screening questions  
-- terminating respondents minutes in without reward  
+- punishing participants with endless questions  
+- terminating respondents minutes in without reward because they don't "qualify"  
 - treating people less like humans and more like data points  
 
-The result? Declining engagement. Poorer data quality. A crisis of trust. We’ve built a multi-billion-dollar industry on top of a tool that fewer and fewer people actually want to use.  
+The result? Declining engagement. Poor data quality. A crisis of trust. We’ve built a multi-billion-dollar industry on top of a tool that fewer and fewer people actually want to use.  
 
 ---
 
@@ -36,7 +36,9 @@ The result? Declining engagement. Poorer data quality. A crisis of trust. We’v
 
 Yes, surveys have *“evolved”*: from paper to phone, to web, to mobile. Each new medium promised a fresh start. But the core experience never really changed. The rigidity, the impersonality, the disrespect for respondents’ time—all of it carried forward.  
 
-Now AI, and especially large language models (LLMs), offers more than just another medium. It offers a chance to **reinvent the very idea of what it means to listen at scale**.  
+Now AI, and especially large language models (LLMs), offers a chance to **reinvent the very idea of what it means to listen at scale**.
+
+Because when you really want to understand someone, you don't send them a survey. You engage in a conversation.
 
 To keep calling this a “survey” would be like calling the automobile a *“faster horse.”*  
 

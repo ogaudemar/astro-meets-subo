@@ -1,15 +1,15 @@
 ---
 const allUseCases = [
   { icon: "💡", text: "Get feedback on a new idea or product" },
-  { icon: "🔬", text: "Understand who your community members are" },
-  { icon: "🔬", text: "Understand what gets your community fired up!" },
-  { icon: "🧑‍💻", text: "Track member activities or satisfaction at regular intervals" },
-  { icon: "🧑‍💻", text: "Onboard new members with interactive checklists" },
-  { icon: "🧑‍💻", text: "Interview members who apply for a staff role" },
-  { icon: "🧑‍💻", text: "Collect RSVPs, attendee info and questions before events" },
+  { icon: "🧑‍🤝‍🧑", text: "Understand who your community members are" },
+  { icon: "🔥", text: "Understand what gets your community fired up!" },
+  { icon: "📈", text: "Track member activities or satisfaction at regular intervals" },
+  { icon: "📝", text: "Onboard new members with interactive checklists" },
+  { icon: "🎤", text: "Interview members who apply for a staff role" },
+  { icon: "🎟️", text: "Collect RSVPs, attendee info and questions before events" },
   { icon: "📊", text: "Engagement polls just for fun" },
-  { icon: "🎉", text: "Have members predict future games and events" },
-  { icon: "🛠️", text: "Get feedback on a past community event" },
+  { icon: "🔮", text: "Have members predict future games and events" },
+  { icon: "🗣️", text: "Get feedback on a past community event" },
 ];
 
 // Shuffle and select 4 random use cases
@@ -30,7 +30,7 @@ const useCases = getRandomUseCases(allUseCases, 4);
       <div class="container text-center">
         <img src="/images/subo-neon2-100.png" alt="Subo the Survey Bot" height="100" class="intro__icon" id="avatar"/>
         <h2 class="title text-white"><strong>HOW WILL YOU LISTEN TODAY?</strong></h2>
-        <p class="subtitle text-white">Every community is different. Subo adapts to your needs.</p><p> Here are a few examples of how communities like yours have used Subo to spark conversations and uncover insights.</p>
+        <p class="subtitle text-white">Every community is different. Subo adapts to your needs.</p><p> Here are a few examples of how communities like yours have used Subo.</p>
         <div class="usecases__content">
           <div class="usecases-grid">
             {useCases.map(usecase => (
@@ -45,7 +45,7 @@ const useCases = getRandomUseCases(allUseCases, 4);
 <style>
 
 .usecases {
-  background: linear-gradient(var(--secondary-dark), var(--primary), var(--secondary));
+  background: linear-gradient(var(--primary-dark),var(--dark));
   padding: 1rem;
 }
 

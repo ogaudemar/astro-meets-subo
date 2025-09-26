@@ -1,5 +1,5 @@
-    <!-- Testimonials placeholder for now -->
-    <section class="testimonials">
+<!-- Testimonials placeholder for now -->
+    <section class="testimonial-comp">
       <div class="container text-center">
         <h2 class="testimonials__title heading text-white text-center">
           TRUSTED BY 15,000+ COMMUNITIES!
@@ -8,6 +8,16 @@
           ❤️ by mods, community managers, creators, entrepreneurs, product, UX and insights teams.
         </p>
         <!-- Note: Testimonial carousel will be implemented later as requested -->
+        <div class="testimonial-slider">
+          <div class="slider-bg">
+            <div class="slider-track" id="testimonial-track"></div>
+          </div>
+          <div class="slider-controls">
+            <button class="slider-arrow left" aria-label="Previous" id="testimonial-prev">&#8592;</button>
+            <div class="slider-indicators" id="testimonial-indicators"></div>
+            <button class="slider-arrow right" aria-label="Next" id="testimonial-next">&#8594;</button>
+          </div>
+        </div>
          <div class="cta__buttons">
                  <a href="/invite" class="button button--accent-bg hero__cta-link" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5em;">
           <span style="display: flex; align-items: center;">
@@ -23,16 +33,14 @@
 
     <style>
 
-    .testimonials {
-      
-      background: linear-gradient(var(--secondary-dark), var(--secondary-dark));
+    
+    .testimonial-comp { 
+      background: linear-gradient(var(--dark), var(--secondary-dark));
       padding: 1rem;
     }
 
     .testimonials__title {
-      padding: 1rem 0;
-      
-      
+      padding: 1rem 0;    
     }
 
     .cta__buttons {
@@ -40,6 +48,237 @@
       align-items: end;
     }
 
+    .testimonial-slider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem 0 3rem 0;
+      position: relative;
+      gap: 0.5rem;
+    }
+    .slider-bg {      
+      
+      padding: 2.5rem 0.5rem 2rem 0.5rem;
+      width: 100%;
+     
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .slider-track {
+
+      width: 100%;
+      margin: 0 10px;
+      padding: 1.5rem 1.1rem 1.1rem 1.1rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      width: 100%;
+      max-width: 1020px;
+      min-height: 260px;
+      overflow: hidden;
+      position: relative;
+      gap: 0.5rem;
+    }
+    .slider-arrow {
+      background: none;
+      border: none;
+      color: var(--light);
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      transition: color 0.2s;
+      z-index: 2;
+      outline: none;
+    }
+    .slider-arrow:focus {
+      color: var(--primary);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+    .slider-arrow:hover {
+      color: var(--primary);
+    }
+    .slider-indicators {
+      display: flex;
+      gap: 0.7em;
+      justify-content: center;
+      align-items: center;
+    }
+    .slider-indicators .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #eee;
+      transition: background 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .slider-indicators .dot.active {
+      background: var(--primary);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    
+
+   @media (max-width: 900px) {
+      .slider-bg {
+        padding: 1.2rem 0.2rem 1.2rem 0.2rem;
+      }
+      .slider-track {
+        max-width: 700px;
+      }
+      
+    }
+    @media (max-width: 600px) {
+      .slider-bg {
+        padding: 0.5rem 0.1rem 0.5rem 0.1rem;
+      }
+      .slider-track {
+        max-width: 340px;
+        gap: 0.2rem;
+      }
+      
+    }
 
 
     </style>
+
+</script>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  // Testimonial data
+  const testimonials = [
+{
+    text: `I love Subo! Best survey bot ever! So easy and simple to use! Any issues are dealt with swiftly by an awesome customer support person!`,
+    author: 'obimage',
+    role: '',
+    social: ''
+  },
+  {
+    text: `Simple and so great to use`,
+    author: 'Judge Jaxon',
+    role: '',
+    social: ''
+  },
+  {
+    text: `Thank you for having the best poll bot out there, seriously. I have tried a lot of them. This is by far the best.`,
+    author: 'YeahImShady',
+    role: 'Late to Work Sports',
+    social: ''
+  },
+  {
+    text: `This app is perfect. And the support they provide is also top notch. Highly recommended if you're doing any type of poll, survey, or voting`,
+    author: '.dutty',
+    role: '',
+    social: ''
+  },
+  {
+    text: `This is the best polling solution on Discord currently. The setup is intuitive and not once caused me any issues. Having managed a server of over a thousand participants and needing something specific for anonymous voting with anonymous results, this was the perfect bot where no other poll solution bots did the job. It can listen to Integrations roles (something larger bots such as carl & MEE6 cannot do), you can set specific role restrictions, and even multiple choice surveys. Alongside that, its support team is top notch and attentive to its userbase's questions and concerns.`,
+    author: 'DJTiki 🌴',
+    role: '',
+    social: ''
+  },
+    {
+      text: `I asked Subo to “help me understand LinkedIn users” — just to see how far it would get with a single prompt. The result? Shockingly good!`,
+      author: 'Reid Hoffman',
+      role: 'CO-FOUNDER, LINKEDIN',
+      social: '<img src="/images/subo-neon2-100.png" alt="LinkedIn" style="height:24px;vertical-align:middle;">'
+    },
+    {
+      text: `Ok, I'm addicted to Subo<br>For my entire research career, I've always had to hire researchers to do even the most basic analysis for me. Having an absolute blast having an AI researcher at my disposal.`,
+      author: 'Andrew Wilkinson',
+      role: 'CO-FOUNDER, TINY',
+      social: '<img src="/images/subo-premium-100.png" alt="X" style="height:24px;vertical-align:middle;">'
+    },
+    {
+      text: `Our collaboration with Subo has empowered teams across enterprises to understand our users without traditional barriers.`,
+      author: 'Deb Cupp',
+      role: 'PRESIDENT, MICROSOFT AMERICAS',
+      social: ''
+    },
+      {
+    text: `Used this bot with over 400 users to make a trivia month every day of last month and worked out great! I was making surveys with pictures, that had multiple options and then feeding the excel file I got from the bot at the end of the day to compile together a months worth of excel files, then made a leaderboard from that information!`,
+    author: 'Bezarius',
+    role: '',
+    social: ''
+  }
+  ];
+  const track = document.getElementById('testimonial-track');
+  const prevBtn = document.getElementById('testimonial-prev');
+  const nextBtn = document.getElementById('testimonial-next');
+  const indicators = document.getElementById('testimonial-indicators');
+  let centerIdx = 0;
+
+  function getVisibleCount() {
+    if (window.innerWidth < 600) return 1;
+    if (window.innerWidth < 900) return 2;
+    return 3;
+  }
+
+  function getVisibleIndices(center, total, count) {
+    // Returns array of indices for visible cards, looping
+    const indices = [];
+    for (let i = -Math.floor((count-1)/2); i <= Math.floor(count/2); i++) {
+      indices.push((center + i + total) % total);
+    }
+    return indices;
+  }
+
+  function renderCards() {
+    track.innerHTML = '';
+    const visibleCards = getVisibleCount();
+    const indices = getVisibleIndices(centerIdx, testimonials.length, visibleCards);
+    indices.forEach((idx, i) => {
+      const t = testimonials[idx];
+      let cardClass = 'testimonial-card';
+      if (visibleCards === 1) cardClass += ' center';
+      else if (i === Math.floor(indices.length/2)) cardClass += ' center';
+      else cardClass += ' side';
+      const card = document.createElement('div');
+      card.className = cardClass;
+      card.innerHTML = `
+        <p>${t.text}</p>
+        <div class="testimonial-meta">
+          <span class="testimonial-author">${t.author}</span>
+          <span class="testimonial-community">${t.role}</span>
+          ${t.social ? `<span class="testimonial-social">${t.social}</span>` : ''}
+        </div>
+      `;
+      track.appendChild(card);
+    });
+  }
+
+  function renderIndicators() {
+    indicators.innerHTML = '';
+    testimonials.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = 'dot' + (i === centerIdx ? ' active' : '');
+      dot.addEventListener('click', () => {
+        centerIdx = i;
+        updateSlider();
+      });
+      indicators.appendChild(dot);
+    });
+  }
+
+  function updateSlider() {
+    renderCards();
+    renderIndicators();
+  }
+
+  prevBtn.addEventListener('click', () => {
+    centerIdx = (centerIdx - 1 + testimonials.length) % testimonials.length;
+    updateSlider();
+  });
+  nextBtn.addEventListener('click', () => {
+    centerIdx = (centerIdx + 1) % testimonials.length;
+    updateSlider();
+  });
+
+  window.addEventListener('resize', updateSlider);
+
+  updateSlider();
+});
+</script>
+</script>
