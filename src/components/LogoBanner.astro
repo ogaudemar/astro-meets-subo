@@ -1,0 +1,136 @@
+---
+/**
+ * LogoBanner.astro
+ * Rotating logo banner for hero sections.
+ *
+ * @prop {number} [speed=40] - Scroll speed in pixels/sec (default: medium)
+ * @example
+ * <LogoBanner speed={60} />
+ */
+import type { Props } from './LogoBanner.types';
+import { useEffect } from 'react';
+
+const { speed = 40 } = Astro.props as Props;
+
+const logoFiles = import.meta.glob('../assets/logos/*.{png,jpg,jpeg,svg,webp}', { eager: true, query: '?url', import: 'default' });
+
+const logos = Object.entries(logoFiles).map(([filePath, url]) => {
+  const filename = filePath.split('/').pop() ?? '';
+  const alt = filename.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ');
+  return {
+    src: url,
+    alt,
+    filename,
+  };
+});
+
+// Animation speed in pixels per second
+const animationSpeed = 40;
+---
+
+<div class="logo-banner">
+  {logos.length === 0 ? (
+    <div class="logo-banner__fallback">No logos found.</div>
+  ) : (
+    <div class="logo-banner__track" id="logoTrack">
+      {[...logos, ...logos].map((logo, i) => (
+        <img
+          src={logo.src}
+          alt={logo.alt}
+          class="logo-banner__logo"
+          loading="lazy"
+          draggable="false"
+          aria-label={logo.alt}
+          key={logo.filename + '-' + i}
+        />
+      ))}
+    </div>
+  )}
+</div>
+
+<style>
+.logo-banner {
+  --banner-bg: var(--secondary-dark);
+  --logo-gap: 2.5rem;
+  --logo-opacity: 0.85;
+  --logo-transition: 0.4s cubic-bezier(.77,0,.18,1);
+  --banner-height: 56px;
+  width: 100%;
+  min-height: var(--banner-height);
+  background: var(--banner-bg);
+  padding: 2.5rem 0;
+  margin: 0 auto 2rem auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+
+.logo-banner::before,
+.logo-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logo-banner::before {
+  left: 0;
+  background: linear-gradient(to right, var(--banner-bg) 0%, var(--banner-bg) 50%, transparent 100%);
+}
+
+.logo-banner::after {
+  right: 0;
+  background: linear-gradient(to left, var(--banner-bg) 0%, var(--banner-bg) 50%, transparent 100%);
+}
+
+.logo-banner__track {
+  display: flex;
+  align-items: center;
+  gap: var(--logo-gap);
+  height: var(--banner-height);
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-logos 40s linear infinite;
+}
+
+@keyframes scroll-logos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.logo-banner__logo {
+  height: var(--banner-height);
+  max-width: 120px;
+  object-fit: contain;
+  opacity: var(--logo-opacity);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+  transition: opacity var(--logo-transition), transform var(--logo-transition);
+  margin: 0;
+  padding: 0 0.2rem;
+  background: transparent;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+.logo-banner__logo:hover {
+  opacity: 1;
+  transform: scale(1.08);
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.12));
+}
+
+.logo-banner__fallback {
+  width: 100%;
+  text-align: center;
+  color: #888;
+  font-size: 1.1rem;
+  padding: 2rem 0;
+}
+</style>
+
+

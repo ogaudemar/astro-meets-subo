@@ -1,6 +1,6 @@
 ---
 const allUseCases = [
-  { icon: "💡", text: "Get feedback on a new idea or product" },
+  { icon: "💡", text: "Get feedback on a new idea, product or pricing" },
   { icon: "🧑‍🤝‍🧑", text: "Understand who your community members are" },
   { icon: "🔥", text: "Understand what gets your community fired up!" },
   { icon: "📈", text: "Track member activities or satisfaction at regular intervals" },
@@ -10,6 +10,13 @@ const allUseCases = [
   { icon: "📊", text: "Engagement polls just for fun" },
   { icon: "🔮", text: "Have members predict future games and events" },
   { icon: "🗣️", text: "Get feedback on a past community event" },
+  { icon: "🌟", text: "Collect reviews or testimonials" },
+  { icon: "💖", text: "Community culture or pulse checks" },
+  { icon: "🏆", text: "Community votes to select a project or a leader" },
+  { icon: "💡", text: "Collect suggestions or feature requests" },
+  { icon: "🧠", text: "Quizzes and knowledge checks" }
+    
+
 ];
 
 // Shuffle and select 4 random use cases
@@ -30,7 +37,7 @@ const useCases = getRandomUseCases(allUseCases, 4);
       <div class="container text-center">
         <img src="/images/subo-neon2-100.png" alt="Subo the Survey Bot" height="100" class="intro__icon" id="avatar"/>
         <h2 class="title text-white"><strong>HOW WILL YOU LISTEN TODAY?</strong></h2>
-        <p class="subtitle text-white">Every community is different. Subo adapts to your needs.</p><p> Here are a few examples of how communities like yours have used Subo.</p>
+        <p class="subtitle text-white">Subo polls and survey convos can be used to collect information for a variety of reasons.</p><p> A few examples of how communities use Subo:</p>
         <div class="usecases__content">
           <div class="usecases-grid">
             {useCases.map(usecase => (
@@ -54,7 +61,6 @@ const useCases = getRandomUseCases(allUseCases, 4);
   max-width: 900px;
   
 }
-
 
 
 /*.subtitle {
@@ -87,8 +93,10 @@ const useCases = getRandomUseCases(allUseCases, 4);
 
 .usecase-card:hover {
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-  background: rgba(255,255,255,0.10);
+  box-shadow: 0 6px 16px var(--accent);
+  background: rgba(255,255,255,0.2);
+
+        
 }
 
 .usecase-card span {
@@ -103,6 +111,8 @@ const useCases = getRandomUseCases(allUseCases, 4);
 .intro__icon {
   margin-bottom: 1.5rem;
 }
+
+
 
 .usecases__content {
   margin: 2rem 0;

@@ -1,0 +1,174 @@
+---
+// src/components/Slider.astro
+const { items } = Astro.props;
+---
+<section class="slider-comp">
+  <div class="slider-bg">
+    <div class="slider-track" id="slider-track"></div>
+  </div>
+  <div class="slider-controls">
+    <button class="slider-arrow left" aria-label="Previous" id="slider-prev">&#8592;</button>
+    <div class="slider-indicators" id="slider-indicators"></div>
+    <button class="slider-arrow right" aria-label="Next" id="slider-next">&#8594;</button>
+  </div>
+  <script type="application/json" id="slider-data">{JSON.stringify(items)}</script>
+</section>
+
+<style>
+.slider-comp {
+  width: 100%;
+  margin: 2rem 0;
+}
+.slider-bg {
+  padding: 2rem 0.5rem 2rem 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-track {
+  width: 100%;
+  margin: 0 10px;
+  padding: 1.5rem 1.1rem 1.1rem 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1020px;
+  min-height: 260px;
+  overflow: hidden;
+  position: relative;
+  gap: 0.5rem;
+}
+.slider-arrow {
+  background: none;
+  border: none;
+  color: var(--light);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s;
+  z-index: 2;
+  outline: none;
+}
+.slider-arrow:focus {
+  color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+.slider-arrow:hover {
+  color: var(--primary);
+}
+.slider-indicators {
+  display: flex;
+  gap: 0.7em;
+  justify-content: center;
+  align-items: center;
+}
+.slider-indicators .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #eee;
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.slider-indicators .dot.active {
+  background: var(--primary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+@media (max-width: 900px) {
+  .slider-bg {
+    padding: 1.2rem 0.2rem 1.2rem 0.2rem;
+  }
+  .slider-track {
+    max-width: 700px;
+  }
+}
+@media (max-width: 600px) {
+  .slider-bg {
+    padding: 0.5rem 0.1rem 0.5rem 0.1rem;
+  }
+  .slider-track {
+    max-width: 340px;
+    gap: 0.2rem;
+  }
+}
+</style>
+
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  const items = JSON.parse(document.getElementById('slider-data').textContent);
+  const track = document.getElementById('slider-track');
+  const prevBtn = document.getElementById('slider-prev');
+  const nextBtn = document.getElementById('slider-next');
+  const indicators = document.getElementById('slider-indicators');
+  let centerIdx = 0;
+
+  function getVisibleCount() {
+    if (window.innerWidth < 600) return 1;
+    if (window.innerWidth < 900) return 2;
+    return 3;
+  }
+
+  function getVisibleIndices(center, total, count) {
+    const indices = [];
+    for (let i = -Math.floor((count-1)/2); i <= Math.floor(count/2); i++) {
+      indices.push((center + i + total) % total);
+    }
+    return indices;
+  }
+
+  function renderCards() {
+    track.innerHTML = '';
+    const visibleCards = getVisibleCount();
+    const indices = getVisibleIndices(centerIdx, items.length, visibleCards);
+    indices.forEach((idx, i) => {
+      const item = items[idx];
+      let cardClass = 'slider-card';
+      if (visibleCards === 1) cardClass += ' center';
+      else if (i === Math.floor(indices.length/2)) cardClass += ' center';
+      else cardClass += ' side';
+      const card = document.createElement('div');
+      card.className = cardClass;
+      // Render generic card content
+      card.innerHTML = item.text ? `<p>${item.text}</p>` : '';
+      if (item.icon) card.innerHTML = `${item.icon} ` + card.innerHTML;
+      if (item.author || item.role || item.social) {
+        card.innerHTML += `<div class=\"slider-meta\">${item.author ? `<span class=\"slider-author\">${item.author}</span>` : ''}${item.role ? `<span class=\"slider-role\">${item.role}</span>` : ''}${item.social ? `<span class=\"slider-social\">${item.social}</span>` : ''}</div>`;
+      }
+      track.appendChild(card);
+    });
+  }
+
+  function renderIndicators() {
+    indicators.innerHTML = '';
+    items.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = 'dot' + (i === centerIdx ? ' active' : '');
+      dot.addEventListener('click', () => {
+        centerIdx = i;
+        updateSlider();
+      });
+      indicators.appendChild(dot);
+    });
+  }
+
+  function updateSlider() {
+    renderCards();
+    renderIndicators();
+  }
+
+  prevBtn.addEventListener('click', () => {
+    centerIdx = (centerIdx - 1 + items.length) % items.length;
+    updateSlider();
+  });
+  nextBtn.addEventListener('click', () => {
+    centerIdx = (centerIdx + 1) % items.length;
+    updateSlider();
+  });
+
+  window.addEventListener('resize', updateSlider);
+
+  updateSlider();
+});
+</script>

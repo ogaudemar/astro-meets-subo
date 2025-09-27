@@ -13,10 +13,10 @@ const posts = (await getCollection('blog')).sort(
 const PublishedPosts = posts.filter(post => !post.data.draft);
 
 const placeholders = [
-	'/images/blog/placeholders/blog-placeholder-2.jpg',
-	'/images/blog/placeholders/blog-placeholder-3.jpg',
-	'/images/blog/placeholders/blog-placeholder-4.jpg',
-	'/images/blog/placeholders/blog-placeholder-5.jpg',
+	'/src/assets/blog/placeholders/blog-placeholder-2.jpg',
+	'/src/assets/blog/placeholders/blog-placeholder-3.jpg',
+	'/src/assets/blog/placeholders/blog-placeholder-4.jpg',
+	'/src/assets/blog/placeholders/blog-placeholder-5.jpg',
 	// Add more as needed
 ];
 function getRandomPlaceholder() {
