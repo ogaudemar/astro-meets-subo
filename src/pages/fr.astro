@@ -5,6 +5,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
+
+import Demo from '../components/Demo.astro';
+import LogoBanner from '../components/LogoBanner.astro';
+
 ---
 
 
@@ -22,42 +26,41 @@ import Features from '../components/Features.astro';
         <div class="hero__content">
           <div class="hero__text">
             <h1 class="hero__title">
-              Comprends ta communauté.
+              COMPRENDS TA <span class="accent">COMMUNAUTE</span>
             </h1>
             <h2 class="hero__subtitle">
-              IL SUFFIT DE DEMANDER!
+              AVEC DES QUESTIONS AUXQUELLES ON VEUT REPONDRE!
             </h2>
             <p class="hero__description">
-              Pourquoi essayer de deviner ce que veut ta communauté ? Prends des décisions en toute confiance en les faisant participer sur ton serveur Discord.
+              Subo est le meilleur moyen de poser des questions à ta communauté de manière structurée. Sur ton serveur Discord ou sur le web.
             </p>
             <div class="hero__buttons">
-              <a href="/invite" class="button button--accent">
-                Ajouter Subo à Discord
-              </a>
-              <a href="/pricing" class="button button--white-outline">
-                Voir les prix
+              <a href="/invite" class="button button--primary-bg">
+                Ajouter Subo</a>
+            
               </a>
             </div>
           </div>
           <div class="hero__image">
-            <img 
+             <Demo />
+            <!-- <img 
               src="/images/hero-survey.png" 
               alt="Subo Survey Bot pour Discord" 
-              class="hero__screenshot"
+              class="hero__screenshot" -->
             />
           </div>
         </div>
       </div>
     </section>
 
-    <section class='"case-study'>
+<!--    <section class='"case-study'>
       <div class="container">
         💡 Besoin de commentaires sur une nouvelle idée ?<br>
               🔬 Besoin de savoir qui sont tes membres et ce qui les passionne ?<br>
               🧑‍💻 Besoin d'un formulaire de candidature pour recruter de nouveaux modérateurs ?
                     </div>
                     
-    </section>
+    </section> -->
 
     <!-- Features Section Français -->
     <section class="features">
@@ -68,7 +71,7 @@ import Features from '../components/Features.astro';
             <h3 class="feature-card__title">Sondages & enquêtes</h3>
             <ul class="feature-card__list">
               <li>Une seule question à poser? Organise un sondage de type <strong>vote rapide</strong>.</li>
-              <li>Tu veux en savoir plus? Crée un sondage de type <strong>enquête</strong> avec plusieurs questions (ouvertes ou fermées).</li>
+              <li>Tu veux en savoir plus? Crée une conversation de type <strong>enquête</strong> avec plusieurs questions (ouvertes ou fermées).</li>
             </ul>
           </div>
 
@@ -98,10 +101,15 @@ import Features from '../components/Features.astro';
     <section class="stats">
       <div class="container">
         <div class="stats__content">
-          <h2 class="stats__title">Plus de 15 000 serveurs Discord utilisent déjà Subo !</h2>
+          <h2 class="stats__title">Plus de 15 000 serveurs Discord !</h2>
           <p class="stats__subtitle">❤️ par des modérateurs, community managers, créateurs, entrepreneurs, équipes Produit, UX et insights.</p>
         </div>
       </div>
+    </section>
+
+    <!-- Banniere clients -->
+    <section class="clients">
+    <LogoBanner />
     </section>
 
     <!-- 12 Reasons Section Français -->
@@ -212,13 +220,14 @@ import Features from '../components/Features.astro';
     <section class="cta">
       <div class="container">
         <div class="cta__content">
-          <h2 class="cta__title">Prêt à comprendre ta communauté ?</h2>
+          <h2 class="cta__title">Commence gratuitement</h2>
           <p class="cta__description">
-            Rejoins plus de 13 000 serveurs Discord qui utilisent Subo pour créer des sondages et des enquêtes engageantes.
+            Pas de carte bleue, pas d'inscription. Rejoins gratuitment plus de 15 000 serveurs Discord qui utilisent Subo pour mieux comprendre leur communauté.</p> 
+            <p>Fais un upgrade quand tu as besoin des fonctionnalités supplémentaires.</p>
           </p>
           <div class="cta__buttons">
-            <a href="/invite" class="button button--accent">
-              Ajouter Subo à Discord
+            <a href="/invite" class="button button--primary-bg">
+              Ajouter Subo
             </a>
             <a href="/pricing" class="button button--white-outline">
               Voir les prix
@@ -234,6 +243,11 @@ import Features from '../components/Features.astro';
 
 <style>
   /* Reuse the same styles from the English version */
+
+  .accent {
+    color: var(--accent);
+  }
+
   .hero {
     background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
     padding: 100px 0;
@@ -256,9 +270,9 @@ import Features from '../components/Features.astro';
   }
 
   .hero__subtitle {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--accent);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--light);
     margin-bottom: 1.5rem;
   }
 
@@ -359,7 +373,7 @@ import Features from '../components/Features.astro';
 
   .stats {
     padding: 60px 0;
-    background: #111;
+    background: linear-gradient(var(--dark),var(--secondary-dark));
     text-align: center;
   }
 

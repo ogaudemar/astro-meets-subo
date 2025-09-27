@@ -4,6 +4,7 @@ description: "Learn how skip logic can make your Discord surveys more engaging a
 pubDate: "Sep 20 2024"
 tags: ["tutorial", "skip-logic", "surveys", "advanced"]
 author: "Subo Team"
+heroImage: "/src/assets/blog/skip-logic/subo-skip-logic.webp"
 draft: false
 ---
 
@@ -58,3 +59,5 @@ Subo makes setting up skip logic easy. With a few clicks, you can create dynamic
 The Skip Logic option is available for all Premium, VIP and Custom bot subscribers.
 
 👉 [Try Subo the Survey Bot now](/invite) and see how skip logic can level up your surveys!
+
+![A survey bot wonders which way to go at an intersection](../../assets/blog/skip-logic/subo-skip-logic2.webp)

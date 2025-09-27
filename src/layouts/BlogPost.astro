@@ -23,12 +23,15 @@ const { title, description, pubDate, updatedDate, heroImage, tags, author, draft
 			}
 			.hero-image {
 				width: 100%;
+				
 			}
 			.hero-image img {
 				display: block;
 				margin: 0 auto;
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
+				max-height: 400px;
+				width: auto;
 			}
 			.prose {
 				width: 800px;
@@ -38,6 +41,15 @@ const { title, description, pubDate, updatedDate, heroImage, tags, author, draft
 				color: rgb(var(--gray-dark));
 				
 			}
+
+			.prose img {
+  max-width: 100%;
+  width: 300px!important; /* or any desired value */
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+}
+
 			.title {
 				margin-bottom: 1em;
 				padding: 1em 0;
