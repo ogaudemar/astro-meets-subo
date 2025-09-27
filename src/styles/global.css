@@ -216,6 +216,13 @@ h5 {
   margin-bottom: 1.5em;
 }
 
+.prose img {
+  max-height: 400px; 
+  width: auto;
+  display: block;
+  margin: 2rem auto;
+  }
+
 
 .subtitle {
   font-size: 1.25rem;
