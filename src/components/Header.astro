@@ -3,12 +3,12 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 
 const navItems = [
-  { text: 'Features', href: '/' },
+  { text: 'Product', href: '/' },
   { text: 'Pricing', href: '/pricing' },
 ];
 
 const resources = [
-  { text: 'Tutorials', href: 'https://www.subo.ai/tutorial' },
+  { text: 'Tutorials', href: '/tutorial' },
   { text: 'Support Server', href: '/support' },
   { text: 'Billing Portal', href: '/billingportal' },
   { text: 'Blog', href: '/blog' },
@@ -332,7 +332,7 @@ const resources = [
     }
   });
   
-  // Mobile expandable menu for Features
+  // Mobile expandable menu for Product
   document.addEventListener('DOMContentLoaded', () => {
   const expandToggle = document.querySelector('.nav__expand-toggle');
   const expandableItem = document.querySelector('.nav__item--expandable');

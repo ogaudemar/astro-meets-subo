@@ -168,7 +168,7 @@
   /* Mobile responsiveness */
   @media (max-width: 768px) {
     .container {
-      padding: 0 15px;
+      padding: 0 0px;
     }
     
     .heading {
@@ -312,7 +312,7 @@ hr {
     font-size: 18px;
   }
   main {
-    padding: 1em;
+    padding: 0;
   }
 }
 
