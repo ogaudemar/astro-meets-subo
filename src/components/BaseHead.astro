@@ -11,7 +11,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title ="Get to know your community with Subo", description = "Subo is a powerful survey bot which helps you engage and understand your friends and community with polls and surveys in your Discord server", image = '/images/subo-og.png' } = Astro.props;
+const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your community", description = "Subo makes surveys fun! Subo helps you engage and understand your friends and community with polls and survey convos in your Discord server", image = '/images/subo-og.png' } = Astro.props;
 
 
 ---
@@ -22,13 +22,10 @@ const { title ="Get to know your community with Subo", description = "Subo is a 
 <link rel="icon" type="image/png" href="/favicon.png" />
 <meta name="generator" content={Astro.generator} />
 
-<!-- Font preloads (Source Do Pro for titles, Figtree for body)-->
-<!-- <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin /> -->
-<!-- <link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin /> -->
+<!-- Font preloads (IBM Plex Mono for titles, Figtree for body, Source Code Pro just in case for legacy)-->
 
-<!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-<!-- <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"> -->
+<!-- Old default font I guess: <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin /> -->
+<!-- <link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin /> -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

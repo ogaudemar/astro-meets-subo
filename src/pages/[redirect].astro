@@ -20,11 +20,11 @@ if (!redirectData) {
 <html lang="en">
 <head>
   <BaseHead title={`Redirecting to ${redirectData.description}`} />
-  <meta http-equiv="refresh" content="1;url={redirectData.url}">
+  <meta http-equiv="refresh" content={`1;url=${redirectData.url}`} />
 
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, Roboto, mono, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -60,7 +60,7 @@ if (!redirectData) {
   <div class="spinner"></div>
   <h3>Redirecting to {redirectData.description}...</h3>
   <p>You'll be redirected automatically in a moment.</p>
-  <a href="{redirectData.url}">Click here if you're not redirected automatically</a>
+  <a href={redirectData.url}>Click here if you're not redirected automatically</a>
 
   <script define:inline>
     // Track the redirect (assuming gtag is available from BaseHead)
@@ -74,7 +74,7 @@ if (!redirectData) {
     
     // Redirect after tracking
     setTimeout(() => {
-      window.location.href = '{redirectData.url}';
+      window.location.href = `${redirectData.url}`;
     }, 1000);
   </script>
 </body>
