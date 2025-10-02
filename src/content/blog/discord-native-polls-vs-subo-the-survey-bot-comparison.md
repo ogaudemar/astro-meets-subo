@@ -5,6 +5,7 @@ pubDate: "Apr 25 2024"
 tags: ["comparison", "discord", "polls", "features"]
 author: "Subo Team"
 draft: false
+heroImage: "/images/blog/native-polls/subo-vs-native-discord-polls.webp"
 ---
 
 # Discord native polls vs Subo: A Comparative Look at Polling Features
@@ -20,12 +21,16 @@ Discord native polls are designed to integrated flawlessly with Discord's sleek 
 ### Features
 
 The process of setting up a poll is intuitive, with users able to initiate a poll directly from the message bar using the `+` button.
+![create a poll from the message menu](/images/blog/native-polls/1-7exg9.png)
 
 The process of creating a poll is self-explanatory: enter a question, a few answers, optional emojis, and press 'Post'. Couldn't be any easier.
+![Enter up to 10 answer options, select single or multiple answers](/images/blog/native-polls/2-9swuh.png)
 
 Polls are open by default for 24 hours, with several options to change that duration from 1 hour to 1 week.
+![Duration options](/images/blog/native-polls/3-ng6e8.png)
 
 There is also an option to end a poll immediately at any time by hitting the `...` button over the poll's message and opening the contextual message menu.
+![End Poll at any time](/images/blog/native-polls/4-3y9sp.png)
 
 The poll opens after hitting the 'Post' button. All server members with access to the channel can participate in the poll by selecting their answer(s) then hitting the 'Vote' button.
 
@@ -34,8 +39,10 @@ The poll opens after hitting the 'Post' button. All server members with access t
 One of the key advantages of Discord's native poll feature is its ease of use. All controls are built-in, with no slash command. And obviously, no need to install a third-party bot.
 
 The other is its sleek UI with new visual elements such as animated bars, which make polls from third-party bots look less attractive in comparison.
+![Native poll real-time results](/images/blog/native-polls/5-xpzef.png)
 
 Clicking on the number of votes displays the details of who voted for what.
+![Detailed results per participant](/images/blog/native-polls/6-0iqt0.png)
 
 ### Limitations of Discord's native polls
 
@@ -46,6 +53,7 @@ While feedback from the Discord community has been generally positive, more adva
 - there is a choice to make the question single-choice or multi-choice, but no limit for the maximum number of answers
 - any user with 'send messages' permission in a channel can create polls too, which means that server owners can't control who can use the feature and limit it to mods only. Some early users reported how a server can quickly become a mess. Update: Discord listened to users and recently deployed a new permission to only allow certain roles to create polls
 - generally speaking, the feature misses most of the bells and whistles from specialized poll bots like Subo the Survey Bot that empower mods to create a poll fit for purpose. Let's look at some differences in the next paragraph.
+![4-20-24 Update: change permissions in your server settings](/images/blog/native-polls/7-wxamn.png)
 
 ## 2. Subo the Survey Bot's Capabilities
 
@@ -69,7 +77,8 @@ Subo proposes additional customization options (15 as of this writing) to person
 - Option to include an image, thumbnail, or custom color in the poll embed.
 - Vote change: option to allow participants to change their vote (case with Discord native polls) or not.
 - Role rewards and XP to thank participants for voting.
-- Option to schedule when the poll/survey starts ahead of time
+- Option to launch a poll/survey later, at a specific time
+![Anonymous poll with image and ping](/images/blog/native-polls/8-iaix0.png)
 
 ### 2.2. Full multi-question surveys/forms
 
@@ -78,6 +87,10 @@ Polls are a good way to ask a single closed, multi-choice question, but sometime
 - Subo also allows the creation of full, private surveys that can contain multiple questions, open or closed (allowing multiple answers or not)
 - Surveys can be posted inside a Discord server, and respondents complete them in private threads.
 - Survey results can be shared in the server and the data exported for further analysis.
+![Full survey invite](/images/blog/native-polls/9-3vcvo.png)
+
+## Feature comparison summary:
+<img src="/images/blog/native-polls/10-agiww.png" alt="comparison native vs subo polls" class="full-height" />
 
 ## Conclusion: Discord native polls are user-friendly but limited
 

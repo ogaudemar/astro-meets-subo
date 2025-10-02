@@ -3,7 +3,7 @@ title: "The Dawn of Convos"
 description: "Why surveys are broken, and how convos represent the future of listening."
 pubDate: "Sep 11 2025"
 author: "surveyChump"
-heroImage: "/images/yt-thumb.png"
+heroImage: "/images/yt-thumb-dk.png"
 tags: ["survey", "convo", "roadmap"] 
 draft: false
 ---

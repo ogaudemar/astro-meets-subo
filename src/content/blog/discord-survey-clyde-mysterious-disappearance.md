@@ -5,6 +5,7 @@ pubDate: "Dec 03 2023"
 tags: ["research", "clyde", "discord", "ai", "survey-results"]
 author: "Subo Team"
 draft: false
+heroImage: "/images/blog/clyde/Clyde.jpeg"
 ---
 
 # The Mysterious Disappearance of Clyde AI
@@ -35,20 +36,24 @@ To help solve the mystery, Subo ran a survey with Discord mods from the Subo Cre
 When Discord announced the experiment, they made it clear that it would be in beta for only a 'small percentage of servers". This is common practice by Discord and other tech platforms to experiment new features, but as a consequence many mods never got a chance to take part in the experiment, let alone have the bot in their main server.
 
 In contrast, 15% of the mods who completed the survey reported interacting daily with Clyde AI (ie. 30% of those who ever chatted with Clyde AI did it daily).
+![50% of Discord modes never got a chance to experience Clyde AI](/images/blog/clyde/discord-survey-subo-clyde-increased-server-activity-aouaq.png)
 
 ## Fact #2 — Discord mods mostly chatted with Clyde AI to test it and have fun
 
 As a novelty feature, it is no surprise that 59% of mods chatted with Clyde AI to experiment/test how it could be used in their server. Then 49% used Clyde for fun.
 
 Other popular uses included getting information or assistance, or helping with engagement on the server, encourage discussions and creating a welcoming atmosphere.
+![Discord mods mostly used Clyde AI for fun](/images/blog/clyde/discord-survey-subo-clyde-satisfaction-709yu.png)
 
 ## Fact #3 — Most Discord mods were satisfied with Clyde AI's answers
 
 Of the mods who ever experienced Clyde AI, 74% were satisfied or very satisfied with its answers. Only 6% were dissatisfied or very dissatisfied.
+![74% of Discord mods who experienced Clyde AI were satisfied with its responses](/images/blog/clyde/discord-survey-subo-clyde-usage-8x1hq.png)
 
 ## Fact #4 — Clyde AI helped increase server activity
 
 Of those who tried Clyde, 64% say that it helped increase activity in their server, including 27% who stated that it increased activity significantly.
+![64% of mods who experienced Clyde AI think it increased server engagement](/images/blog/clyde/discord-survey-subo-why-chat-with-clyde-idlp8.png)
 
 ## Common Feedback and Complaints
 
@@ -82,7 +87,7 @@ Responses to Discord's decision to shut down Clyde AI were varied. Overall, it s
 
 ## Conclusion
 
-The survey results highlight the limited scope of Clyde AI's experimental rollout. Those who interacted with Clyde AI found it enjoyable and a group of fans believed it contributed to server engagement and don't want it to go away. The reasons behind Discord's decision to shut down Clyde AI remain unknown, leaving room for speculation and hope for its potential return in the future.
+The survey results highlight the limited scope of Clyde AI's experimental rollout. Those who interacted with Clyde AI found it enjoyable and a group of fans believed it contributed to server engagement and don't want it to go away. The reasons behind Discord's decision to shut down Clyde AI remain unknown, leaving room for speculation and hope for its potential return in the future. Since most users seemed to like the feature, it's possible that there were other considerations, such as security or costs.
 
 About 12% of respondents used an optional final open question to express their love for Clyde and asked Discord to keep it alive: _"Please don't take him away! We love him!!!"_. A mod concluded with this: _"I hope the AI bot comes back in some form"_.
 

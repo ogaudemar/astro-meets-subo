@@ -1,13 +1,16 @@
 ---
-title: "How to Create a Discord Poll with Reactions and with a Bot like Subo"
+title: "Comparing how to Create a Discord Poll with Reactions and with a Bot like Subo"
 description: "Learn multiple ways to create polls in Discord - from simple reaction polls to advanced bot-powered surveys with Subo."
 pubDate: "May 07 2023"
 tags: ["tutorial", "discord", "polls", "how-to"]
 author: "Subo Team"
+heroImage: "/images/blog/poll-tuto/poll-tuto-hero.webp"
 draft: false
 ---
 
-# How to Create a Discord Poll with Reactions and with a Bot like Subo
+_Update: since writing this article, Discord launched " native polls". For a comnparison of native polls with Subo polls, read [this more recent article](../discord-native-polls-vs-subo-the-survey-bot-comparison)_ 
+
+# Comparison - Discord Poll with Reactions vs with a Bot like Subo
 
 Discord is a popular communication platform that allows users to chat with each other in real-time.
 
@@ -20,20 +23,25 @@ In this article, we will discuss 2 popular ways to create a poll on Discord:
 - the basic way offered by default in Discord
 - the more advanced way with a third-party bot like Subo
 
-### 1. Native Way of Creating Polls with Reactions
+### 1. Creating Polls with Reactions
 
-Discord has a native way of creating polls using reactions. The poll will be contained in a normal text message, and users will be able to vote with reactions. Here is how to create a native poll on Discord:
+Discord makes it possible to create polls using reactions. The poll will be contained in a normal text message, and users will be able to vote with reactions. Here is how to create a native poll on Discord:
 
-- Just write a normal message. Write your question, then the options (possible answers) with a corresponding emoji for each option. The emojis can represent numbers (eg. 1️⃣; 2️⃣;3️⃣), yes/no (✅;❌), thumbs up/down (👍;👎) or represent the content (e.g. :pizza:; :hotdog:;:popcorn:). If your server was boosted to level 1, you can also create and upload your own custom emojis)
+- Just write a normal message. Write your question, then the options (possible answers) with a corresponding emoji for each option. The emojis can represent numbers (eg. 1️⃣; 2️⃣;3️⃣), yes/no (✅;❌), thumbs up/down (👍;👎) or represent the content (e.g. :pizza:; :hotdog:;:popcorn:). If your server was boosted to level 1, you can also create and upload your own custom emojis
+![create a reaction poll in Discord](/images/blog/poll-tuto/poll1-xc6z7.png)
 - Add reactions (emojis) to the message. The vote will count will start at 1 (as if you voted for each option).
+![select 'add reactions' to add emojis](/images/blog/poll-tuto/poll2-8bkey.png)
+![reaction emojis can be clicked to vote](/images/blog/poll-tuto/poll3-5d9y0.png)
 - Add a ping (eg. @everyone) if you want to notify your community to start voting
+
 - Once your users have voted, you can see the aggregated counts easily. You can also see the details of who voted for what by clicking on 'View Reactions'
+![reaction poll](/images/blog/poll-tuto/poll4-7uxyl.png)
 
 ### 2. Pros and Cons of Discord Reaction Polls
 
 Because they come natively with Discord, reaction polls do not require any third-party bot. They are free to use and fully supported by Discord. They are relatively simple to create and most users understand how to vote.
 
-However, there are many limitations to native reaction polls:
+However, there are many limitations to reaction polls:
 - they do not support anonymous voting or hybrid visibility options like voters-only
 - they have no official start or end, so people can keep voting or change their vote whenever they want, even after you made a decision or the question is relevant
 - users can react to as many answers as they want. They may vote for 'yes'and 'no' at the same time, on purpose or not. If you want people to select only one (or a maximum of 3) option, that is not possible.
@@ -63,6 +71,7 @@ Another common case is for creators to grant a role for premium subscriptions fr
 7. **Visibility/ repost**: because native polls are regular messages, they tend to disappear from view in channels with a lot of activity. Subo polls can be reposted in the same channel or another channel to keep it always fresh and top of mind.
 
 8. **Vote change**: while votes can be changed in a native reaction poll, Subo also gives you the option to make a vote permanent. In that case, voters are not able to recast their vote.
+![example of a community using Subo polls with no vote change allowed](/images/blog/poll-tuto/5-o00pt.png)
 
 9. **Further analysis and combination with survey data**: as a survey platform, Subo allows you to export polls in the same data file formats as you would with a multi-question survey. This allows you to combine data collected from polls and surveys for a more holistic view of your community.
 
@@ -71,6 +80,7 @@ Another common case is for creators to grant a role for premium subscriptions fr
 To create a poll using Subo, you need to invite the bot to your Discord server. You can do this by visiting the [Subo website](/invite) and clicking on the "Invite Subo" button. After that, you need to authorize the bot to access your server and give Subo the right permissions.
 
 Once the bot is added to your server, you can create a poll by typing `/poll` followed by your question and options. Options should be separated by semi-colons `;`
+![To create Discord poll with Subo, use the /poll command](/images/blog/poll-tuto/6-oegwy.png)
 
 This will create a poll with the question "What do you use for your animation?" and three options: Unity, Unreal and Blender.
 
@@ -84,6 +94,8 @@ You can also add other options to the command to customize your poll. For exampl
 - `chart_emoji 👍`: replaces the default 🟩 emoji used to draw the chart into 👍
 - `anonymous 🥷Anonymous`: Users can only see the aggregated results, but not who voted for what
 - `anonymous 🗳️ Transparent`: in addition to the aggregated results, users can also click the 🗳️ button and see who voted what
+![Fully-loaded command for a poll](/images/blog/poll-tuto/7-ftc7l.png)
+
 
 Simply hit ENTER when you are happy with your command. Don't worry, there is another step  review and confirm everything, and you can always edit later.
 

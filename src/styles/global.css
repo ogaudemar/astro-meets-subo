@@ -222,7 +222,19 @@ h5 {
   display: block;
   margin: 2rem auto;
   }
+.prose img.full-height {
+  max-height: none; 
+  width: auto;
+  display: block;
+  margin: 2rem auto;
+  }
 
+  .prose img.full-screen {
+  max-height: 100vh; 
+  width: auto;
+  display: block;
+  margin: 2rem auto;
+  }
 
 .subtitle {
   font-size: 1.25rem;
