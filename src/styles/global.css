@@ -476,3 +476,7 @@ hr {
 .slider-card.center {
   font-size: 1.3rem;
 }
+
+.grad {
+  background-image: conic-gradient(var(--accent), var(--primary) 90deg, var(--secondary) 180deg, var(--primary) 290deg, var(--accent) 360deg);
+}

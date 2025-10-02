@@ -29,10 +29,10 @@ import LogoBanner from '../components/LogoBanner.astro';
               COMPRENDS TA <span class="accent">COMMUNAUTE</span>
             </h1>
             <h2 class="hero__subtitle">
-              AVEC DES QUESTIONS AUXQUELLES ON VEUT REPONDRE!
+              AVEC DES QUESTIONS AUXQUELLES ELLE VEUT REPONDRE!
             </h2>
             <p class="hero__description">
-              Subo est le meilleur moyen de poser des questions à ta communauté de manière structurée. Sur ton serveur Discord ou sur le web.
+              Subo est le meilleur moyen de poser des questions à ta communauté, sur ton serveur Discord ou sur le web.
             </p>
             <div class="hero__buttons">
               <a href="/invite" class="button button--primary-bg">
@@ -46,8 +46,8 @@ import LogoBanner from '../components/LogoBanner.astro';
             <!-- <img 
               src="/images/hero-survey.png" 
               alt="Subo Survey Bot pour Discord" 
-              class="hero__screenshot" -->
-            />
+              class="hero__screenshot" />-->
+            
           </div>
         </div>
       </div>
@@ -68,10 +68,10 @@ import LogoBanner from '../components/LogoBanner.astro';
         <div class="features__grid">
           <div class="feature-card">
             <div class="feature-card__icon">📢</div>
-            <h3 class="feature-card__title">Sondages & enquêtes</h3>
+            <h3 class="feature-card__title">Sondages & conversations/enquêtes</h3>
             <ul class="feature-card__list">
               <li>Une seule question à poser? Organise un sondage de type <strong>vote rapide</strong>.</li>
-              <li>Tu veux en savoir plus? Crée une conversation de type <strong>enquête</strong> avec plusieurs questions (ouvertes ou fermées).</li>
+              <li>Tu veux en savoir plus? Poste toutes tes questions (ouvertes ou fermées) avec une <strong>enquête</strong> au format <strong>conversationnel</strong> unique.</li>
             </ul>
           </div>
 
@@ -223,19 +223,21 @@ import LogoBanner from '../components/LogoBanner.astro';
           <h2 class="cta__title">Commence gratuitement</h2>
           <p class="cta__description">
             Pas de carte bleue, pas d'inscription. Rejoins gratuitment plus de 15 000 serveurs Discord qui utilisent Subo pour mieux comprendre leur communauté.</p> 
-            <p>Fais un upgrade quand tu as besoin des fonctionnalités supplémentaires.</p>
+            <p class="cta__description">Fais un upgrade quand tu veux plus de fonctionnalités.</p>
           </p>
           <div class="cta__buttons">
             <a href="/invite" class="button button--primary-bg">
               Ajouter Subo
             </a>
             <a href="/pricing" class="button button--white-outline">
-              Voir les prix
+              Abonnements
             </a>
           </div>
         </div>
       </div>
     </section>
+
+    
   </main>
   <Footer />
   </body>
@@ -249,7 +251,7 @@ import LogoBanner from '../components/LogoBanner.astro';
   }
 
   .hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+    background: linear-gradient(var(--dark), var(--primary-dark));
     padding: 100px 0;
     overflow: hidden;
   }
@@ -332,7 +334,7 @@ import LogoBanner from '../components/LogoBanner.astro';
 
   .features {
     padding: 80px 0;
-    background: #0a0a0a;
+    background: linear-gradient(var(--primary-dark), var(--dark));
   }
 
   .features__grid {
@@ -391,7 +393,7 @@ import LogoBanner from '../components/LogoBanner.astro';
 
   .reasons {
     padding: 80px 0;
-    background: #0a0a0a;
+    background: linear-gradient(var(--secondary-dark),var(--dark));
   }
 
   .section-title {
