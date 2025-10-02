@@ -59,7 +59,7 @@ const useCases = getRandomUseCases(allUseCases, 4);
 .container.text-center {
   text-align: center;
   max-width: 900px;
-  
+  padding: 0 2rem;
 }
 
 
@@ -119,6 +119,21 @@ const useCases = getRandomUseCases(allUseCases, 4);
   padding: 2rem;
 }
 
+@media (max-width: 600px) {
+  .usecases-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .container.text-center {
+    padding: 0 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .usecases {
+    padding: 0.5rem;
+  }
+}
 </style>
 
 <script>

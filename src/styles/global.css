@@ -168,7 +168,7 @@
   /* Mobile responsiveness */
   @media (max-width: 768px) {
     .container {
-      padding: 0 0px;
+      padding: 0 0.5rem;
     }
     
     .heading {
@@ -348,13 +348,12 @@ hr {
       padding: 1.5rem 1.1rem 1.1rem 1.1rem;
       color: #222;
       font-family: "IBM Plex Mono", "Source Code Pro", monospace;
-        min-width: 300px;
+      min-width: 300px;
       max-width: 400px;
       min-height: 400px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
       font-size: 0.9rem;
       position: relative;
       transition: box-shadow 0.2s, transform 0.4s cubic-bezier(.77,0,.18,1), background 0.2s;
@@ -442,11 +441,13 @@ hr {
     }
     @media (max-width: 600px) {
    
-      .testimonial-card {
-        min-width: 100px;
-        max-width: 300px;
-        font-size: 0.89rem;
-        margin: 0 2px;
+        .testimonial-card {
+        min-width: 90vw;
+        max-width: 98vw;
+        box-sizing: border-box;
+        margin: 0 auto;
+        font-size: 1rem;
+        padding: 1.2rem 0.5rem;
       }
     }
 
