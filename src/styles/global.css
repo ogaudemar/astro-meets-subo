@@ -172,7 +172,7 @@
     }
     
     .heading {
-      font-size: 1.8rem;
+      font-size: 3.5rem;
     }
   }
 
@@ -195,7 +195,7 @@ h1 {
   font-size: 3.052em;
 }
 h2 {
-  font-size: 2.441em;
+  font-size: 3.5rem;
 }
 h3 {
   font-size: 1.953em;
@@ -272,10 +272,10 @@ p {
 
 textarea {
   width: 100%;
-  font-size: 16px;
+  font-size: 1rem;
 }
 input {
-  font-size: 16px;
+  font-size: 1rem;
 }
 table {
   width: 100%;
@@ -283,7 +283,7 @@ table {
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 code {
   padding: 2px 5px;
