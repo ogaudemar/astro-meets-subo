@@ -10,6 +10,7 @@ import Testimonials from '../components/Testimonials.astro';
 import CTA from '../components/CTA.astro';
 
 import Footer from '../components/Footer.astro';
+import translations from '../content/translations/en.json';
 
 
 ---
@@ -20,14 +21,14 @@ import Footer from '../components/Footer.astro';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
+		<Header translations={translations} />
 		<main>
-    		<Hero />
-			<Features />
-			<UseCases />
-			<Testimonials />
-			<CTA />    
+    		<Hero translations={translations.hero} />
+			<Features translations={translations.features} />
+			<UseCases translations={translations} />
+			<Testimonials translations={translations.testimonials} />
+			<CTA translations={translations.cta} />    
 		</main>
-		<Footer />
+		<Footer translations={translations.footer}/>
 	</body>
 </html>

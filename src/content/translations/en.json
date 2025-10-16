@@ -1,0 +1,487 @@
+{
+  "siteTitle": "Subo",
+  "siteDescription": "Create surveys and polls for your Discord community.",
+
+  "header": {
+  "navItems": [
+    { "text": "Product", "href": "/" },
+    { "text": "Resources", "href": "/" },
+    { "text": "Pricing", "href": "/pricing" }
+  ],
+  "resources": [
+    { "text": "Tutors", "href": "/tutorial" },
+    { "text": "Support Server", "href": "/support" },
+    { "text": "Billing Portal", "href": "/billingportal" },
+    { "text": "Blog", "href": "/blog" }
+  ],
+  "cta": "Add to Discord",
+  "upgrade": "Upgrade",
+  "skipToMain": "Skip to main content"
+},
+
+"hero": {
+  "title": "GET TO KNOW YOUR",
+  "rotatingWords": [
+    "COMMUNITY", "MEMBERS", "USERS", "FANS", "PATRONS", "FRIENDS", "FOLLOWERS", "SUPPORTERS", "CUSTOMERS", "AUDIENCE", "GROUP", "GUILD", "TEAM", "CREW", "SUBSCRIBERS"
+  ],
+  "subtitle": "with questions they want to answer!",
+  "cta": "Add to Discord",
+  "ctaNote": "Start Free. Upgrades available."
+},
+
+
+    "features": {
+    "title": "YOU LEARN MORE WHEN PEOPLE ENJOY THE CONVERSATION.",
+    "subtitle": "Traditional forms and surveys are boring. No one wants to answer them. With Subo, you ask questions in polls and friendly conversations that your community wants to join.",
+    "list": [
+        {
+        "title": "ASK QUESTIONS",
+        "content": [
+            "No boring surveys with Subo!",
+            "With <strong>survey convos</strong>, members answer your questions in a private chat with Subo, inside your Discord server or on the web.",
+            "With <strong>polls</strong>, members answer your 1 public question, with multiple ways to answer and share results."
+        ]
+        },
+        {
+        "title": "ENCOURAGE PARTICIPATION",
+        "content": [
+            "Rewards that matter!",
+            "Give <strong>Role rewards</strong> for answering a survey or a poll",
+            "<strong>XP system</strong>: members earn points as they answer questions, level up to unlock roles.",
+            "Display a <strong>leaderboard</strong> with your most active participants",
+            "<strong>Share findings</strong> and answers from other participants in a click"
+        ]
+        },
+        {
+        "title": "ANALYZE & SHARE RESULTS",
+        "content": [
+            "View aggregated results and individual responses, privately or privately. Share/repost them in the server.",
+            "Let Subo summarize open answers with AI",
+            "Export the <strong>full data set</strong> for further analysis."
+        ]
+        }
+    ]
+    },
+
+
+
+  "usecasesTitle": "WHAT WILL YOU ASK TODAY?",
+  "usecasesSubtitle": "Subo helps you collect valuable information from your community... or just have fun.",
+  "usecasesInspireBtn": "🎲 Click me for inspiration!",
+  "usecasesList": [
+    "💡 Get feedback on a new idea, product or pricing",
+    "🧑‍🤝‍🧑 Understand who your community members are",
+    "🔥 Understand what gets your community fired up!",
+    "📈 Track member activities or satisfaction at regular intervals",
+    "📝 Onboard new members with interactive checklists",
+    "🎤 Interview members who apply for a staff role",
+    "🎟️ Collect RSVPs, attendee info and questions before events",
+    "📊 Engagement polls just for fun",
+    "🔮 Have members predict future games and events",
+    "🗣️ Get feedback on a past community event",
+    "🌟 Collect reviews or testimonials",
+    "💖 Community culture or pulse checks",
+    "🏆 Community votes to select a project or a leader",
+    "💡 Collect suggestions or feature requests",
+    "🧠 Quizzes and knowledge checks",
+    "⚔️ Vote on raid times, team comps, or next boss strategy",
+    "🧩 Run quick polls during tournaments or matches",
+    "🏹 Collect feedback on new game patches or balance changes",
+    "👑 Elect new moderators, captains, or guild leaders",
+    "🎮 Test early builds or prototypes with your community",
+    "🗳️ Let fans choose character names, skins, or map themes",
+    "🧱 Get insights from playtesters and beta users",
+    "💬 Ask for story or lore feedback from your most loyal fans",
+    "🪙 Gauge community sentiment on proposals or governance votes",
+    "🎨 Let holders help name new NFT collections or drops",
+    "🚀 Ask what utilities or rewards people want next",
+    "🌍 Check how members discovered your project or DAO",
+    "📚 Quick comprehension checks after lessons or workshops",
+    "🎯 Gather student feedback on teaching style or difficulty",
+    "🤝 Match learners with study groups or mentors",
+    "🧭 Poll what topics or skills members want to learn next",
+    "🏀 Vote on MVPs, best plays, or highlight moments",
+    "📅 Schedule team practices or pickup games",
+    "📣 Get fan predictions before big matches",
+    "🎧 Ask listeners which topic or guest should come next",
+    "🎬 Run polls on favorite episodes, arcs, or characters",
+    "🍿 Host watch party votes for upcoming shows or movies",
+    "🥐 Decide once and for all: is a hotdog a sandwich?",
+    "👀 Find out who actually reads the announcements",
+    "🦖 Run a poll to name the community pet dinosaur",
+    "🧙‍♂️ Sort members into Hogwarts houses (no pressure, Gryffindor)",
+    "🍕 Vote on the best pizza topping",
+    "🛸 Ask if aliens would vibe with your community",
+    "🐸 Meme bracket tournament: crown the ultimate meme lord",
+    "☕ Coffee or tea? (this one gets heated)",
+    "🌈 Ask how everyone’s *vibe level* is today (scientifically accurate)"
+  ],
+
+
+
+  "testimonialsTitle": "TRUSTED BY 15,000+ COMMUNITIES!",
+  "testimonialsSubTitle": "❤️ by mods, community managers, creators, entrepreneurs, product, UX and insights teams.",
+  "testimonialsList": [
+    {
+      "text": "I love Subo! Best survey bot ever! So easy and simple to use! Any issues are dealt with swiftly by an awesome customer support person!",
+      "author": "obimage",
+      "role": "",
+      "social": ""
+    },
+    {
+      "text": "Simple and so great to use",
+      "author": "Judge Jaxon",
+      "role": "",
+      "social": ""
+    },
+    {
+      "text": "Thank you for having the best poll bot out there, seriously. I have tried a lot of them. This is by far the best.",
+      "author": "YeahImShady",
+      "role": "Late to Work Sports",
+      "social": ""
+    },
+    {
+      "text": "This app is perfect. And the support they provide is also top notch. Highly recommended if you're doing any type of poll, survey, or voting",
+      "author": ".dutty",
+      "role": "",
+      "social": ""
+    },
+    {
+      "text": "This is the best polling solution on Discord currently. The setup is intuitive and not once caused me any issues. Having managed a server of over a thousand participants and needing something specific for anonymous voting with anonymous results, this was the perfect bot where no other poll solution bots did the job. It can listen to Integrations roles (something larger bots such as carl & MEE6 cannot do), you can set specific role restrictions, and even multiple choice surveys. Alongside that, its support team is top notch and attentive to its userbase's questions and concerns.",
+      "author": "DJTiki 🌴",
+      "role": "",
+      "social": ""
+    },
+    {
+      "text": "Your app has really ticked all the boxes for us and I've been impressed with the level of configuration options, it's the most full featured one that I've come across so, can't fault it!",
+      "author": "schmoopy101",
+      "role": "",
+      "social": "<img src=\"/images/subo-premium-100.png\" alt=\"X\" style=\"height:24px;vertical-align:middle;\">"
+    },
+    {
+      "text": "I am a server builder. i make them for friends that need them for work/ events/ community out reach to help their cause. This bot is amazingly well created! I use it a lot in servers! It is so easy to maneuver and use. It is great for people who are not used to bots/ discord. Makes it easy to learn how to use! I just recently discovered it a few weeks back, and have deleted all other survey bots and replaced it with this one haha.",
+      "author": "risingblossom92",
+      "role": "𝑰𝑫𝑺 〘 Irαm Deı Sumus 〙",
+      "social": ""
+    },
+    {
+      "text": "Used this bot with over 400 users to make a trivia month every day of last month and worked out great! I was making surveys with pictures, that had multiple options and then feeding the excel file I got from the bot at the end of the day to compile together a months worth of excel files, then made a leaderboard from that information!",
+      "author": "Bezarius",
+      "role": "Anduo Games",
+      "social": ""
+    },
+    {
+      "text": "Subo has been a joy to use since I have started my premium subscription. Recurring polls and other polls can run on a scheduled time frame that I need and the developers are actively working on the project. The developers frequently and quickly respond to tickets and helped me when there was a bug in the software due to the length of polls that I was running. Subo is a great alternative to Google Forms or Microsoft Forms for those who want their polls and surveys directly integrated as well as some ai analysis for longer surveys to identify what people want most in written responses.",
+      "author": "ryangrg422",
+      "role": "Anime Club",
+      "social": ""
+    },
+    {
+      "text": "thanks for your brilliant app! I use it every week",
+      "author": "jpob",
+      "role": "MojiWorks",
+      "social": ""
+    }
+  ],
+
+
+
+  "ctaTitle": "START ASKING FOR FREE!",
+  "ctaSubtitle": "No credit card. No setup hassle. Just jump in and play around with few limitations. Do more with paid plans when you're ready.",
+  "ctaButton": "View Pricing",
+
+
+  "successTitle": "You're almost there!",
+  "successMessage": "Your payment was processed successfully.",
+  "successDescription": "Please contact the Team by email or on our Discord server with your Discord Server ID or name and we'll upgrade your server ASAP.",
+  "successNextSteps": "What's Next?",
+  "successSteps": [
+    {
+      "title": "Add Subo to Your Server",
+      "desc": "If you haven't already, invite Subo to your Discord server and accept the suggested permissions.",
+      "button": "Add Subo to Discord"
+    },
+    {
+      "title": "Send your Server details to the Subo Team",
+      "desc": "Notify the Subo Team with your Discord Server ID or name. You can contact the Support Team by email or on our Discord server.",
+      "button": "Contact Support"
+    },
+    {
+      "title": "Join Our Support Server",
+      "desc": "While you wait, join our support community to see examples, stay updated with new features or ask questions. Check our Tutorials to get started and make the most out of Subo.",
+      "button1": "Join Support Server",
+      "button2": "View Tutorials"
+    },
+    {
+      "title": "Verify that your Subscription is Active",
+      "desc": "Once you've sent your server details, the Subo Team will upgrade your server as soon as they can and will confirm your upgrade. Be patient, as it requires some manual verification. You can verify your upgrade was activated by using the /premium command in your Discord server."
+    }
+  ],
+
+  "faqTitle": "Frequently Asked Questions",
+  "faqList": [
+    {
+      "question": "Why do I need to choose between Stripe and Discord?",
+      "answer": "We support Discord's native App Store, which is more convenient for many users, but the Discord App Store doesn't offer multiple server and annual subscriptions, so we also created a Stripe solution for that."
+    },
+    {
+      "question": "Why do I have to wait for my premium subscription to become active?",
+      "answer": "Stripe collects your email address to create an account for you, but we can't connect this email address with your Discord server. This means we need to manually verify your account before activating your premium subscription. We intend to automate this process in the future, but for now, we appreciate your patience."
+    },
+    {
+      "question": "How do I find my server ID?",
+      "answer": "You can find your server ID by right-clicking on your server name in Discord and selecting 'Copy Server ID'. If you don't see this option, you may need to enable Developer Mode in your Discord settings (which we recommend anyway)."
+    },
+    {
+      "question": "How do I change or cancel a subscription?",
+      "answer": "You can manage your subscription at any time via the Stripe Billing Portal or Discord Store, depending on how you upgraded. To access the Stripe Billing Portal, you will need to log in with the email address you used to pay for the upgrade. See links in footer."
+    },
+    {
+      "question": "What happens if I cancel my premium subscription?",
+      "answer": "Once the end of your subscription period (month, year) comes, your bot will be switched back to the free version of Subo. You will still be able to use Subo, but with the limitations of the free tier.  If you have a project live, it may stop if you reach your maximum allowance for respondents or responses. If you have too many projects on your account, you may have to delete some before you are allowed to create new ones."
+    }
+  ],
+
+    "priceTable": {
+    "tiers": [
+        {
+        "name": "FREE",
+        "description": "For smaller servers",
+        "price": "Free",
+        "image": "/images/subo-neon2-100.png"
+        },
+        {
+        "name": "PREMIUM",
+        "description": "For power users and mid-sized servers!",
+        "price": "$2.99/month<br>$29.99/year",
+        "image": "/images/subo-premium-100.png"
+        },
+        {
+        "name": "VIP",
+        "description": "For larger servers and generous supporters!",
+        "price": "$4.99/month<br>$49.99/year",
+        "image": "/images/subo-vip-100.png"
+        },
+        {
+        "name": "CUSTOM",
+        "description": "Your own bot, avatar and description with VIP features!",
+        "price": "$99.99/year",
+        "image": "/images/custom-bot.png"
+        }
+    ],
+    "tableData": [
+        [
+        "Support",
+        "✓<br>Ticket system",
+        "✓<br>Premium support",
+        "✓<br>Premium support",
+        "✓<br>Premium Support"
+        ],
+        [
+        "Respondents",
+        "250 / survey",
+        "1000 / survey",
+        "10000 / survey",
+        "10000 / survey"
+        ],
+        [
+        "Answers<br><small>Answer = Respondent x Question (e.g. 60 respondents answering 5 questions = 300 answers)</small>",
+        "1,000 / survey",
+        "5,000 / survey",
+        "50,000 / survey",
+        "50,000 / survey"
+        ],
+        [
+        "Active surveys<br><small>Total surveys & polls stored. Delete old surveys to stay in a smaller tier.</small>",
+        "10 / server",
+        "200 / server",
+        "400 / server",
+        "400 / server"
+        ],
+        [
+        "Concurrent surveys<br><small>Surveys open or scheduled at the same time</small>",
+        "5 / server",
+        "20 / server",
+        "40 / server",
+        "40 / server"
+        ],
+        [
+        "Survey questions",
+        "10 / survey",
+        "30 / survey",
+        "50 / survey",
+        "50 / survey"
+        ],
+        [
+        "Remove self-promotion",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Invitation / Thank You Customization<br><small>Customize invitations (footer, thumbnail, color), results and thank you messages</small>",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "New response Notifications<br><small>New responses posted in a private channel with optional ping</small>",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Cloning<br><small>Duplicate your polls and surveys</small>",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Delete some responses<br><small>Delete some or all responses from a survey or poll</small>",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Advanced survey builder: min/max open text length & numeric values",
+        "✗",
+        "✗",
+        "✓",
+        "✓"
+        ],
+        [
+        "Advanced survey builder: Skip Logic",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "AI credits<br><small>Credits are needed to generate survey drafts with /draft and to summarize open-ended responses</small>",
+        "10k one-off trial",
+        "✓<br>500k / mo",
+        "✓<br>1 million / mo",
+        "✓<br>1 million / mo"
+        ],
+        [
+        "Role reward",
+        "✗<br><small>1 role server-wise for ever answering any poll/survey</small>",
+        "✓<br>poll or survey-level",
+        "✓<br>poll or survey-level",
+        "✓<br>poll or survey-level"
+        ],
+        [
+        "Role rewards based on monthly XP",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "XP system<br><small>including leaderboard and up to 5 role rewards based on overall XP</small>",
+        "✓",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Custom XP name, value",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Custom bot name, avatar & bio",
+        "✗",
+        "✗",
+        "✗",
+        "✓"
+        ]
+    ],
+    "buttonRow": [
+        {
+        "text": "Free Install",
+        "class": "button button--dark-accent-border",
+        "href": "/invite"
+        },
+        [
+        {
+            "text": "Upgrade (via Discord)",
+            "class": "button button--dark-premium-border",
+            "href": "/discordstore",
+            "icon": "discord"
+        },
+        {
+            "text": "Upgrade (via Stripe)",
+            "class": "button button--dark-premium-border",
+            "href": "/subscriptions"
+        }
+        ],
+        [
+        {
+            "text": "Upgrade (via Discord)",
+            "class": "button button--dark-vip-border",
+            "href": "/discordstore",
+            "icon": "discord"
+        },
+        {
+            "text": "Upgrade (via Stripe)",
+            "class": "button button--dark-vip-border",
+            "href": "/subscriptions"
+        }
+        ],
+        {
+        "text": "Make It Your Own",
+        "class": "button button--primary-border",
+        "href": "/subscriptions"
+        }
+    ]
+    },
+    "footer": {
+  "brandDescription": "The best survey bot for Discord communities. Run polls, collect more feedback in conversations, reward participants with XP and roles.",
+  "brandStats": "Trusted by 15,000+ Discord servers",
+  "copyright": "All rights reserved.",
+  "sections": [
+    {
+      "title": "Product",
+      "links": [
+        { "text": "Custom Bot", "href": "/custom-survey-bot" },
+        { "text": "Pricing", "href": "/pricing" },
+        { "text": "Add to Discord", "href": "/invite", "external": true }
+      ]
+    },
+    {
+      "title": "Resources",
+      "links": [
+        { "text": "Support Server", "href": "/support", "external": true },
+        { "text": "Tutorials", "href": "/tutorial", "external": true },
+        { "text": "Blog", "href": "/blog" },
+        { "text": "Stripe billing portal", "href": "/billingportal", "external": true },
+        { "text": "Discord App Store", "href": "/discordstore", "external": true }
+      ]
+    },
+    {
+      "title": "Legal",
+      "links": [
+        { "text": "Terms of Service", "href": "/terms" },
+        { "text": "Privacy Policy", "href": "/privacy" }
+      ]
+    },
+    {
+      "title": "Socials",
+      "links": [
+        { "text": "X", "href": "https://x.com/subo_app", "external": true },
+        { "text": "Bluesky", "href": "https://bsky.app/profile/subo.ai", "external": true },
+        { "text": "Top.gg Reviews", "href": "https://top.gg/bot/946888973035380806", "external": true }
+      ]
+    }
+  ],
+  "socialDiscordLabel": "Join our Discord server"
+}
+}

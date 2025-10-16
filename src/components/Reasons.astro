@@ -1,0 +1,154 @@
+---
+const { translations } = Astro.props;
+---
+    
+    <!-- 12 Reasons Section Français -->
+    <section class="reasons">
+      <div class="container">
+        <h2 class="section-title">12 raisons de choisir Subo</h2>
+        <div class="reasons__grid">
+          <div class="reason-card">
+            <div class="reason-card__icon">😊</div>
+            <h3 class="reason-card__title">Facile à utiliser !</h3>
+            <p class="reason-card__description">
+              Créer/éditer un sondage ou un vote est aussi simple que discuter avec Subo. Dis à Subo ton objectif et laisse son IA générer un brouillon de sondage.
+            </p>
+          </div>
+          
+          <div class="reason-card">
+            <div class="reason-card__icon">🎮</div>
+            <h3 class="reason-card__title">Intégration avec ton serveur Discord</h3>
+            <p class="reason-card__description">
+              Pas besoin de sortir de ton beau serveur Discord pour remplir un formulaire. Pas besoin de demander leur ID Discord, on l'a déjà.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">📈</div>
+            <h3 class="reason-card__title">Résultats à partager</h3>
+            <p class="reason-card__description">
+              Consulte les résultats en privé, en temps réel. Partage-les si tu veux. Tu peux même demander à Subo de publier automatiquement les résultats finaux.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">📥</div>
+            <h3 class="reason-card__title">Exportation complète des données</h3>
+            <p class="reason-card__description">
+              Approfondis l'analyse en téléchargeant les données brutes avec toutes les réponses individuelles et les identifiants Discord.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">🪡</div>
+            <h3 class="reason-card__title">Super personnalisable</h3>
+            <p class="reason-card__description">
+              Découvre tout plein d'options de personnalisation pour rendre tes projets uniques et adaptés à leur objectif.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">🇫🇷</div>
+            <h3 class="reason-card__title">Support rapide et réactif</h3>
+            <p class="reason-card__description">
+              Notre équipe offre un support réactif en anglais et en français.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">☂️</div>
+            <h3 class="reason-card__title">Fiabilité 24/7</h3>
+            <p class="reason-card__description">
+              Hébergement Cloud sécurisé et stable 24/7. Ça marche, tout simplement.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">🔐</div>
+            <h3 class="reason-card__title">Confidentialité par conception</h3>
+            <p class="reason-card__description">
+              Les sondages sont répondus dans des fils de discussion privés. Tes membres peuvent consulter et supprimer leurs données à tout moment.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">🤓</div>
+            <h3 class="reason-card__title">Créé par des professionnels</h3>
+            <p class="reason-card__description">
+              Conçu par une équipe avec des décennies d'expérience dans la création de plateformes de sondage utilisées par des millions d'utilisateurs.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">✨</div>
+            <h3 class="reason-card__title">Une touche de magie</h3>
+            <p class="reason-card__description">
+              Donne à Subo ton objectif et laisse son IA générer un brouillon de sondage. Clique sur un bouton pour analyser des centaines de réponses !
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">👷</div>
+            <h3 class="reason-card__title">En amélioration constante !</h3>
+            <p class="reason-card__description">
+              Nouvelles fonctionnalités ajoutées régulièrement. Notre mission est de construire la meilleure plateforme d'études sur Discord.
+            </p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__icon">🎁</div>
+            <h3 class="reason-card__title">Version gratuite généreuse !</h3>
+            <p class="reason-card__description">
+              La version gratuite est suffisante pour la plupart des serveurs. Des upgrades abordables pour les utilisateurs plus avancés.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<style>
+  .reasons {
+    padding: 80px 0;
+    background: linear-gradient(var(--secondary-dark),var(--dark));
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .reasons__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .reason-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .reason-card__icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .reason-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .reason-card__description {
+    color: #ccc;
+    line-height: 1.6;
+  }
+
+</style>
