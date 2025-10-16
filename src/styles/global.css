@@ -96,6 +96,7 @@
 
   .button--accent-bg:hover {
     background: var(--dark);
+    color: white;
   }
 
   .button--primary-bg {
@@ -237,7 +238,7 @@ h5 {
   }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin: 2rem 0;
   opacity: 0.9;
 }
@@ -354,7 +355,7 @@ hr {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      font-size: 0.9rem;
+      font-size: 0.9375rem;
       position: relative;
       transition: box-shadow 0.2s, transform 0.4s cubic-bezier(.77,0,.18,1), background 0.2s;
       opacity: 0.8;
@@ -479,4 +480,31 @@ hr {
 
 .grad {
   background-image: conic-gradient(var(--accent), var(--primary) 90deg, var(--secondary) 180deg, var(--primary) 290deg, var(--accent) 360deg);
+}
+
+
+/* Use Cases component specific styles */
+.usecase-card {
+  background: rgba(255,255,255,0.8);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  padding: 1.5rem 1rem;
+  color: var(--dark);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1.2rem;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.usecase-card:hover {
+  /*transform: translateY(-4px) scale(1.03);*/
+  box-shadow: 0 6px 16px var(--accent);
+  background: rgba(255,255,255,0.2);
+  color: var(--light);
+}
+
+.usecase-card span {
+  font-size: 1.25rem;
+  line-height: 1.4;
 }

@@ -14,12 +14,38 @@ const allUseCases = [
   { icon: "💖", text: "Community culture or pulse checks" },
   { icon: "🏆", text: "Community votes to select a project or a leader" },
   { icon: "💡", text: "Collect suggestions or feature requests" },
-  { icon: "🧠", text: "Quizzes and knowledge checks" }
-    
-
+  { icon: "🧠", text: "Quizzes and knowledge checks" },
+    // 🎮 Gaming Guilds
+  { icon: "⚔️", text: "Vote on raid times, team comps, or next boss strategy" },
+  { icon: "🧩", text: "Run quick polls during tournaments or matches" },
+  { icon: "🏹", text: "Collect feedback on new game patches or balance changes" },
+  { icon: "👑", text: "Elect new moderators, captains, or guild leaders" },
+  // 🏢 Gaming Studios
+  { icon: "🎮", text: "Test early builds or prototypes with your community" },
+  { icon: "🗳️", text: "Let fans choose character names, skins, or map themes" },
+  { icon: "🧱", text: "Get insights from playtesters and beta users" },
+  { icon: "💬", text: "Ask for story or lore feedback from your most loyal fans" },
+  // 🌐 Web3
+  { icon: "🪙", text: "Gauge community sentiment on proposals or governance votes" },
+  { icon: "🎨", text: "Let holders help name new NFT collections or drops" },
+  { icon: "🚀", text: "Ask what utilities or rewards people want next" },
+  { icon: "🌍", text: "Check how members discovered your project or DAO" },
+  // 🎓 Education
+  { icon: "📚", text: "Quick comprehension checks after lessons or workshops" },
+  { icon: "🎯", text: "Gather student feedback on teaching style or difficulty" },
+  { icon: "🤝", text: "Match learners with study groups or mentors" },
+  { icon: "🧭", text: "Poll what topics or skills members want to learn next" },
+  // ⚽ Sports
+  { icon: "🏀", text: "Vote on MVPs, best plays, or highlight moments" },
+  { icon: "📅", text: "Schedule team practices or pickup games" },
+  { icon: "📣", text: "Get fan predictions before big matches" },
+  // 🎧 Podcast / Anime
+  { icon: "🎧", text: "Ask listeners which topic or guest should come next" },
+  { icon: "🎬", text: "Run polls on favorite episodes, arcs, or characters" },
+  { icon: "🍿", text: "Host watch party votes for upcoming shows or movies" }
 ];
 
-// Shuffle and select 4 random use cases
+// Shuffle and select 2 random use case
 function getRandomUseCases(arr, n) {
   return arr
     .map(value => ({ value, sort: Math.random() }))
@@ -28,30 +54,26 @@ function getRandomUseCases(arr, n) {
     .map(({ value }) => value);
 }
 
-const useCases = getRandomUseCases(allUseCases, 4);
+const useCases = getRandomUseCases(allUseCases, 2);
 
 ---
 
 <!-- Brief intro section -->
-    <section class="usecases">
-      <div class="container text-center">
-        <img src="/images/subo-neon2-100.png" alt="Subo the Survey Bot" height="100" class="intro__icon" id="avatar"/>
-        <h2 class="title text-white"><strong>WHAT WILL YOU ASK TODAY?</strong></h2>
-        <p class="subtitle text-white">Subo polls and survey convos can be used to collect information for a variety of reasons.</p>
-        <p class="subtitle text-white"> A few examples:</p>
-        <div class="usecases__content">
-          <div class="usecases-grid">
-            {useCases.map(usecase => (
-          <div class="usecase-card">{usecase.icon}<span>{usecase.text}</span></div>
-        ))}
-          </div>
-          
-        </div>
+<section class="usecases">
+  <div class="container text-center">
+    <img src="/images/subo-neon2-100.png" alt="Subo the Survey Bot" height="100" class="intro__icon" id="avatar"/>
+    <h2 class="title text-white"><strong>WHAT WILL YOU ASK TODAY?</strong></h2>
+    <p class="subtitle text-white">Subo helps you collect valuable information from your community... or just have fun.</p>
+    <div class="usecases__content">
+      <div class="usecases-grid" id="usecases-grid" style="display: none;">
+        <!-- Cards will be dynamically inserted here -->
       </div>
-    </section>
+    <button id="inspire-me" class="button button--accent-bg">🎲 Click me for inspiration!</button>
+    </div>
+  </div>
+</section>
 
 <style>
-
 .usecases {
   background: linear-gradient(var(--primary-dark),var(--dark));
   padding: 1rem;
@@ -63,61 +85,36 @@ const useCases = getRandomUseCases(allUseCases, 4);
   padding: 0 2rem;
 }
 
-
-/*.subtitle {
-  font-size: 1.2rem;
-  color: var(--dark);
-  opacity: 0.8;
-  max-width: 600px;
-  margin: 0 auto;
-}*/
-
 .usecases-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Maximum 2 cards per row */
   gap: 1.5rem;
   margin: 2rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.usecase-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-  padding: 1.5rem 1rem;
-  color: #fff;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  font-size: 1.1rem;
-  transition: transform 0.15s, box-shadow 0.15s;
+.usecases-grid.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.usecase-card:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 6px 16px var(--accent);
-  background: rgba(255,255,255,0.2);
 
-        
-}
-
-.usecase-card span {
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-.usecase-card:first-child {
-  font-size: 1.3rem;
-}
 
 .intro__icon {
   margin-bottom: 1.5rem;
 }
 
-
-
 .usecases__content {
   margin: 2rem 0;
   padding: 2rem;
+}
+
+#inspire-me {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 @media (max-width: 600px) {
@@ -138,23 +135,115 @@ const useCases = getRandomUseCases(allUseCases, 4);
 </style>
 
 <script>
+const allUseCases = [
+  // All servers/
+  { icon: "💡", text: "Get feedback on a new idea, product or pricing" },
+  { icon: "🧑‍🤝‍🧑", text: "Understand who your community members are" },
+  { icon: "🔥", text: "Understand what gets your community fired up!" },
+  { icon: "📈", text: "Track member activities or satisfaction at regular intervals" },
+  { icon: "📝", text: "Onboard new members with interactive checklists" },
+  { icon: "🎤", text: "Interview members who apply for a staff role" },
+  { icon: "🎟️", text: "Collect RSVPs, attendee info and questions before events" },
+  { icon: "📊", text: "Engagement polls just for fun" },
+  { icon: "🔮", text: "Have members predict future games and events" },
+  { icon: "🗣️", text: "Get feedback on a past community event" },
+  { icon: "🌟", text: "Collect reviews or testimonials" },
+  { icon: "💖", text: "Community culture or pulse checks" },
+  { icon: "🏆", text: "Community votes to select a project or a leader" },
+  { icon: "💡", text: "Collect suggestions or feature requests" },
+  { icon: "🧠", text: "Quizzes and knowledge checks" },
+    // 🎮 Gaming Guilds/
+  { icon: "⚔️", text: "Vote on raid times, team comps, or next boss strategy" },
+  { icon: "🧩", text: "Run quick polls during tournaments or matches" },
+  { icon: "🏹", text: "Collect feedback on new game patches or balance changes" },
+  { icon: "👑", text: "Elect new moderators, captains, or guild leaders" },
+  // 🏢 Gaming Studios
+  { icon: "🎮", text: "Test early builds or prototypes with your community" },
+  { icon: "🗳️", text: "Let fans choose character names, skins, or map themes" },
+  { icon: "🧱", text: "Get insights from playtesters and beta users" },
+  { icon: "💬", text: "Ask for story or lore feedback from your most loyal fans" },
+  // 🌐 Web3
+  { icon: "🪙", text: "Gauge community sentiment on proposals or governance votes" },
+  { icon: "🎨", text: "Let holders help name new NFT collections or drops" },
+  { icon: "🚀", text: "Ask what utilities or rewards people want next" },
+  { icon: "🌍", text: "Check how members discovered your project or DAO" },
+  // 🎓 Education
+  { icon: "📚", text: "Quick comprehension checks after lessons or workshops" },
+  { icon: "🎯", text: "Gather student feedback on teaching style or difficulty" },
+  { icon: "🤝", text: "Match learners with study groups or mentors" },
+  { icon: "🧭", text: "Poll what topics or skills members want to learn next" },
+  // ⚽ Sports
+  { icon: "🏀", text: "Vote on MVPs, best plays, or highlight moments" },
+  { icon: "📅", text: "Schedule team practices or pickup games" },
+  { icon: "📣", text: "Get fan predictions before big matches" },
+  // 🎧 Podcast / Anime
+  { icon: "🎧", text: "Ask listeners which topic or guest should come next" },
+  { icon: "🎬", text: "Run polls on favorite episodes, arcs, or characters" },
+  { icon: "🍿", text: "Host watch party votes for upcoming shows or movies" },
+  // Funny cases
+  { icon: "🥐", text: "Decide once and for all: is a hotdog a sandwich?" },
+  { icon: "👀", text: "Find out who actually reads the announcements" },
+  { icon: "🦖", text: "Run a poll to name the community pet dinosaur" },
+  { icon: "🧙‍♂️", text: "Sort members into Hogwarts houses (no pressure, Gryffindor)" },
+  { icon: "🍕", text: "Vote on the best pizza topping" },
+  { icon: "🛸", text: "Ask if aliens would vibe with your community" },
+  { icon: "🐸", text: "Meme bracket tournament: crown the ultimate meme lord" },
+  { icon: "☕", text: "Coffee or tea? (this one gets heated)" },
+  { icon: "🌈", text: "Ask how everyone’s *vibe level* is today (scientifically accurate)" }
+];
 
- 	const avatar = document.querySelector('.intro__icon');
-        
-        const originalSrc = 'images/subo-neon2-100.png';
-        const hoverSrc = 'images/subo-open.png';
-        
-        avatar.addEventListener('mouseenter', function() {
-            this.src = hoverSrc;
-        });
-        
-        avatar.addEventListener('mouseleave', function() {
-            this.src = originalSrc;
-        });
-        
-        // Handle image loading errors
-        avatar.addEventListener('error', function() {
-            console.log('Image failed to load:', this.src);
-        });
+function getRandomUseCases(arr, n) {
+  return arr
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .slice(0, n)
+    .map(({ value }) => value);
+}
 
+document.addEventListener('DOMContentLoaded', function() {
+  const avatar = document.querySelector('.intro__icon');
+  const inspireButton = document.getElementById('inspire-me');
+  const usecasesGrid = document.getElementById('usecases-grid');
+  
+  const originalSrc = '/images/subo-neon2-100.png';
+  const hoverSrc = '/images/subo-open.png';
+  
+  // Avatar hover effect
+  avatar.addEventListener('mouseenter', function() {
+    this.src = hoverSrc;
+  });
+  
+  avatar.addEventListener('mouseleave', function() {
+    this.src = originalSrc;
+  });
+  
+  avatar.addEventListener('error', function() {
+    console.log('Image failed to load:', this.src);
+  });
+
+  // Inspire button functionality
+  inspireButton.addEventListener('click', function() {
+    const randomUseCases = getRandomUseCases(allUseCases, 2);
+    
+    // Clear existing cards
+    usecasesGrid.innerHTML = '';
+    
+    // Add new random cards
+    randomUseCases.forEach(usecase => {
+      const cardElement = document.createElement('div');
+      cardElement.className = 'usecase-card';
+      cardElement.innerHTML = `${usecase.icon}<span>${usecase.text}</span>`;
+      usecasesGrid.appendChild(cardElement);
+    });
+    
+    // Show the grid with animation
+    usecasesGrid.style.display = 'grid';
+    setTimeout(() => {
+      usecasesGrid.classList.add('show');
+    }, 50);
+    
+    // Update button text
+    this.innerHTML = '🎲 Inspire me again!';
+  });
+});
 </script>
