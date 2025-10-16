@@ -20,9 +20,9 @@
   },
 
   "hero": {
-    "title": "APPRENDS À CONNAÎTRE TA",
+    "title": "APPRENDS À CONNAÎTRE",
     "rotatingWords": [
-      "COMMUNAUTÉ", "MEMBRES", "UTILISATEURS", "FANS", "PARRAINS", "AMIS", "ABONNÉS", "SOUTIENS", "CLIENTS", "AUDIENCE", "GROUPE", "GUILDE", "ÉQUIPE", "CREW", "ABONNÉS"
+      "TA COMMUNAUTÉ", "TES MEMBRES", "TES UTILISATEURS", "TES FANS", "TES PARRAINS", "TES AMIS", "TES ABONNÉS", "TES SOUTIENS", "TES CLIENTS", "TON AUDIENCE", "TON GROUPE", "TA GUILDE", "TON ÉQUIPE", "TON CREW", "TES ABONNÉS"
     ],
     "subtitle": "avec des questions auxquelles ils veulent répondre !",
     "cta": "Ajoute à Discord",
@@ -30,33 +30,33 @@
   },
 
   "features": {
-    "title": "TU APPRENDS PLUS QUAND LES GENS KIFFENT LA CONVERSATION.",
-    "subtitle": "Les formulaires et sondages classiques sont chiants. Personne n’a envie d’y répondre. Avec Subo, tu poses des questions dans des sondages et des discussions sympas où ta commu a envie de participer.",
+    "title": "ON APPREND PLUS DANS UNE VRAIE CONVERSATION.",
+    "subtitle": "Les formulaires et les questionnaires classiques, c'est rarement une partie de plaisir... Personne n’a envie d’y répondre. Avec Subo, tu poses des questions dans des sondages et des discussions sympas auxquels ta communauté a envie de participer.",
     "list": [
       {
         "title": "POSE TES QUESTIONS",
         "content": [
-          "Fini les sondages barbants avec Subo !",
-          "Avec les <strong>convos de sondage</strong>, les membres répondent à tes questions dans un chat privé avec Subo, sur ton serveur Discord ou sur le web.",
-          "Avec les <strong>sondages</strong>, les membres répondent à ta question publique, avec plein de façons de répondre et de partager les résultats."
+          "Fini les formulaires pénibles avec Subo !",
+          "Avec les <strong>convos</strong>, tes membres répondent à tes questions dans un chat privé avec Subo, sur ton serveur Discord ou sur le web.",
+          "Avec les <strong>sondages rapides</strong>, tes membres répondent à ta question publique, avec plein de façons de répondre et de partager les résultats."
         ]
       },
       {
         "title": "BOOSTE LA PARTICIPATION",
         "content": [
-          "Des récompenses qui font plaisir !",
-          "Donne des <strong>rôles en cadeau</strong> pour répondre à un sondage ou un questionnaire",
+          "Des récompenses qui comptent !",
+          "Offre des <strong>rôles</strong> comme récompense pour ceux qui répondent.",
           "<strong>Système XP</strong> : les membres gagnent des points en répondant, montent de niveau et débloquent des rôles.",
-          "Affiche un <strong>classement</strong> avec les membres les plus actifs",
-          "<strong>Partage les résultats</strong> et les réponses des autres en un clic"
+          "Affiche un classement <strong>Leaderboard</strong> avec les membres les plus actifs.",
+          "<strong>Partage les résultats</strong> et les réponses de tout le monde."
         ]
       },
       {
-        "title": "ANALYSE & PARTAGE LES RÉSULTATS",
+        "title": "ANALYSE LES RÉSULTATS, EXPORTE LES DONNÉES",
         "content": [
-          "Regarde les résultats globaux et les réponses individuelles, en privé ou en public. Partage-les sur le serveur.",
-          "Laisse Subo résumer les réponses ouvertes avec l’IA",
-          "Exporte <strong>toutes les données</strong> pour aller plus loin."
+          "Regarde les résultats agrégés et les réponses individuelles, en privé ou en public.",
+          "Utilise l’IA intégrée pour résumer les réponses ouvertes",
+          "Exporte <strong>toutes les données</strong> pour aller plus loin dans ton analyse."
         ]
       }
     ]

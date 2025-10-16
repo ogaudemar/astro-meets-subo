@@ -5,7 +5,7 @@ const { translations } = Astro.props;
     <!-- 12 Reasons Section Français -->
     <section class="reasons">
       <div class="container">
-        <h2 class="section-title">12 raisons de choisir Subo</h2>
+        <h2 class="section-title">12 RAISONS DE CHOISIR SUBO</h2>
         <div class="reasons__grid">
           <div class="reason-card">
             <div class="reason-card__icon">😊</div>
@@ -91,7 +91,7 @@ const { translations } = Astro.props;
             <div class="reason-card__icon">👷</div>
             <h3 class="reason-card__title">En amélioration constante !</h3>
             <p class="reason-card__description">
-              Nouvelles fonctionnalités ajoutées régulièrement. Notre mission est de construire la meilleure plateforme d'études sur Discord.
+              Nouvelles fonctionnalités ajoutées régulièrement. Notre mission est de construire la meilleure plateforme d'études pour les communautés.
             </p>
           </div>
 
@@ -132,6 +132,12 @@ const { translations } = Astro.props;
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+    .reason-card:hover { 
+      box-shadow: 0 6px 16px var(--accent);
+      background: var(--secondary);
+      opacity: 1;
   }
 
   .reason-card__icon {
