@@ -1,15 +1,20 @@
 ---
 const { translations } = Astro.props;
+
+const testimonialsTitle = translations.testimonialsTitle;
+const testimonialsSubTitle = translations.testimonialsSubTitle;
+const testimonialsList = translations.testimonialsList;
+console.log(testimonialsList); // Should show an array of objects
 ---
 
 <!-- Testimonials -->
     <section class="testimonial-comp">
       <div class="container text-center">
         <h2 class="testimonials__title heading text-white text-center">
-          TRUSTED BY 15,000+ COMMUNITIES!
+          {testimonialsTitle}
         </h2>
         <p class="subtitle text-white text-center">
-          ❤️ by mods, community managers, creators, entrepreneurs, product, UX and insights teams.
+          {testimonialsSubTitle}
         </p>
         <!-- Note: Testimonial carousel will be implemented later as requested -->
         <div class="testimonial-slider">
@@ -37,186 +42,126 @@ const { translations } = Astro.props;
 
 
     <style>
-
-    
-    .testimonial-comp { 
-      background: linear-gradient(var(--dark), var(--secondary-dark));
-      padding: 1rem;
-    }
-
-    .testimonials__title {
-      padding: 1rem 0;    
-    }
-
-    .cta__buttons {
-      padding: 2rem auto;
-      align-items: end;
-    }
-
-    .testimonial-slider {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 2rem 0 3rem 0;
-      position: relative;
-      gap: 0.5rem;
-    }
-    .slider-bg {      
-      
-      padding: 2.5rem 0.5rem 2rem 0.5rem;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .slider-track {
-      width: 100%;
-      margin: 0 10px;
-      padding: 1.5rem 1.1rem 1.1rem 1.1rem;
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      width: 100%;
-      max-width: 1020px;
-      min-height: 260px;
-      overflow: hidden;
-      position: relative;
-      gap: 0.5rem;
-    }
-    .slider-arrow {
-      background: none;
-      border: none;
-      color: var(--light);
-      font-size: 2rem;
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      transition: color 0.2s;
-      z-index: 2;
-      outline: none;
-    }
-    .slider-arrow:focus {
-      color: var(--primary);
-      box-shadow: 0 0 0 2px var(--primary);
-    }
-    .slider-arrow:hover {
-      color: var(--primary);
-    }
-    .slider-indicators {
-      display: flex;
-      gap: 0.7em;
-      justify-content: center;
-      align-items: center;
-    }
-    .slider-indicators .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #eee;
-      transition: background 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-    }
-    .slider-indicators .dot.active {
-      background: var(--primary);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    }
-    
-
-   @media (max-width: 900px) {
-      .slider-bg {
-        padding: 1.2rem 0.2rem 1.2rem 0.2rem;
-      }
-      .slider-track {
-        max-width: 700px;
-      }
-      
-    }
-    @media (max-width: 600px) {
-      .slider-bg {
-        padding: 0.5rem 0.1rem 0.5rem 0.1rem;
-      }
-      .slider-track {
-        max-width: 340px;
-        gap: 0.2rem;
-      }
       .testimonial-comp { 
-      padding: 1rem 0.1rem;
-      
-    }
+        background: linear-gradient(var(--dark), var(--secondary-dark));
+        padding: 1rem;
+      }
 
+      .testimonials__title {
+        padding: 1rem 0;    
+      }
 
+      .cta__buttons {
+        padding: 2rem auto;
+        align-items: end;
+      }
+
+      .testimonial-slider {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 0 3rem 0;
+        position: relative;
+        gap: 0.5rem;
+      }
+
+      .slider-bg {      
+        padding: 2.5rem 0.5rem 2rem 0.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .slider-track {
+        width: 100%;
+        margin: 0 10px;
+        padding: 1.5rem 1.1rem 1.1rem 1.1rem;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        max-width: 1020px;
+        min-height: 260px;
+        overflow: hidden;
+        position: relative;
+        gap: 0.5rem;
+      }
+
+      .slider-arrow {
+        background: none;
+        border: none;
+        color: var(--light);
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        transition: color 0.2s;
+        z-index: 2;
+        outline: none;
+      }
+
+      .slider-arrow:focus {
+        color: var(--primary);
+        box-shadow: 0 0 0 2px var(--primary);
+      }
+
+      .slider-arrow:hover {
+        color: var(--primary);
+      }
+
+      .slider-indicators {
+        display: flex;
+        gap: 0.7em;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .slider-indicators .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #eee;
+        transition: background 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      }
+
+      .slider-indicators .dot.active {
+        background: var(--primary);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      }
+
+      @media (max-width: 900px) {
+        .slider-bg {
+          padding: 1.2rem 0.2rem 1.2rem 0.2rem;
+        }
+        .slider-track {
+          max-width: 700px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .slider-bg {
+          padding: 0.5rem 0.1rem 0.5rem 0.1rem;
+        }
+        .slider-track {
+          max-width: 340px;
+          gap: 0.2rem;
+        }
+        .testimonial-comp { 
+          padding: 1rem 0.1rem;
+        }
+      }
     </style>
 
-</script>
+<script type="application/json" id="testimonials-data" set:html={JSON.stringify(testimonialsList)}></script>
 <script>
+
 window.addEventListener('DOMContentLoaded', function() {
   // Testimonial data
-  const testimonials = [
-{
-    text: `I love Subo! Best survey bot ever! So easy and simple to use! Any issues are dealt with swiftly by an awesome customer support person!`,
-    author: 'obimage',
-    role: '',
-    social: ''
-  },
-  {
-    text: `Simple and so great to use`,
-    author: 'Judge Jaxon',
-    role: '',
-    social: ''
-  },
-  {
-    text: `Thank you for having the best poll bot out there, seriously. I have tried a lot of them. This is by far the best.`,
-    author: 'YeahImShady',
-    role: 'Late to Work Sports',
-    social: ''
-  },
-  {
-    text: `This app is perfect. And the support they provide is also top notch. Highly recommended if you're doing any type of poll, survey, or voting`,
-    author: '.dutty',
-    role: '',
-    social: ''
-  },
-  {
-    text: `This is the best polling solution on Discord currently. The setup is intuitive and not once caused me any issues. Having managed a server of over a thousand participants and needing something specific for anonymous voting with anonymous results, this was the perfect bot where no other poll solution bots did the job. It can listen to Integrations roles (something larger bots such as carl & MEE6 cannot do), you can set specific role restrictions, and even multiple choice surveys. Alongside that, its support team is top notch and attentive to its userbase's questions and concerns.`,
-    author: 'DJTiki 🌴',
-    role: '',
-    social: ''
-  },
-  {
-    text: `Your app has really ticked all the boxes for us and I've been impressed with the level of configuration options, it's the most full featured one that I've come across so, can't fault it!`,
-    author: 'schmoopy101',
-    role: '',
-    social: '<img src="/images/subo-premium-100.png" alt="X" style="height:24px;vertical-align:middle;">'
-  },
-  {
-    text: `I am a server builder. i make them for friends that need them for work/ events/ community out reach to help their cause. This bot is amazingly well created! I use it a lot in servers! It is so easy to maneuver and use. It is great for people who are not used to bots/ discord. Makes it easy to learn how to use! I just recently discovered it a few weeks back, and have deleted all other survey bots and replaced it with this one haha.`,
-    author: 'risingblossom92',
-    role: '𝑰𝑫𝑺  〘 Irαm Deı Sumus 〙',
-    social: ''
-  },
-    {
-  text: `Used this bot with over 400 users to make a trivia month every day of last month and worked out great! I was making surveys with pictures, that had multiple options and then feeding the excel file I got from the bot at the end of the day to compile together a months worth of excel files, then made a leaderboard from that information!`,
-  author: 'Bezarius',
-  role: 'Anduo Games',
-  social: ''
-  },
-      {
-    text: `Subo has been a joy to use since I have started my premium subscription. Recurring polls and other polls can run on a scheduled time frame that I need and the developers are actively working on the project. The developers frequently and quickly respond to tickets and helped me when there was a bug in the software due to the length of polls that I was running. Subo is a great alternative to Google Forms or Microsoft Forms for those who want their polls and surveys directly integrated as well as some ai analysis for longer surveys to identify what people want most in written responses.`,
-    author: 'ryangrg422',
-    role: 'Anime Club',
-    social: ''
-  },
-  {
-    text: `thanks for your brilliant app! I use it every week`,
-    author: 'jpob',
-    role: 'MojiWorks',
-    social: ''
-  }
+  const testimonials = JSON.parse(document.getElementById('testimonials-data').textContent);
+ 
 
-
-  
-  ];
   const track = document.getElementById('testimonial-track');
   const prevBtn = document.getElementById('testimonial-prev');
   const nextBtn = document.getElementById('testimonial-next');
@@ -293,5 +238,4 @@ window.addEventListener('DOMContentLoaded', function() {
 
   updateSlider();
 });
-</script>
 </script>
