@@ -16,13 +16,13 @@ const { pricingPage } = translations;
 <BaseHead title={pricingPage.heroTitle} description={pricingPage.heroSubtitle} />
 </head>
 <body>
-<Header translations={translations} />
+<Header translations={translations.header} />
 
 <main>
   <section class="pricing-hero">
   <div class="container">
   <div class="pricing-hero__content">
-    <h1 class="pricing-hero__title">{pricingPage.heroTitle}</h1>
+    <h1 class="pricing-hero__title"><span class="accent">{pricingPage.heroTitleAccent}</span>{pricingPage.heroTitle}</h1>
     <p class="subtitle" set:html={pricingPage.heroSubtitle}></p>
     <p class="subtitle" set:html={pricingPage.heroDescription}></p>
     </div>
@@ -86,7 +86,7 @@ const { pricingPage } = translations;
 
   .pricing-hero {
     
-    padding: 100px 0 60px;
+    padding: 150px 0 60px;
     text-align: center;
     background: linear-gradient(var(--dark),var(--secondary-dark));
   }

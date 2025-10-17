@@ -9,7 +9,7 @@
     { "text": "Pricing", "href": "/pricing" }
   ],
   "resources": [
-    { "text": "Tutors", "href": "/tutorial" },
+    { "text": "Tutorials", "href": "/tutorial" },
     { "text": "Support Server", "href": "/support" },
     { "text": "Billing Portal", "href": "/billingportal" },
     { "text": "Blog", "href": "/blog" }
@@ -489,8 +489,8 @@
     }
 ,
 "pricingPage": {
-  "heroTitle": "LEVEL UP WITH PAID PLANS",
-  "heroTitleAccent": "LEVEL UP",
+  "heroTitleAccent": "LEVEL UP ",
+  "heroTitle": "WITH PAID PLANS",
   "heroSubtitle": "Start free. <br/> Upgrade to unlock more features and support future development.",
   "heroDescription": "Whether you're running a small group or a large, active community, Subo has the right plan for you.<br>",
   "discordOrStripeTitle": "DISCORD OR STRIPE: <span class=\"accent\">YOU DECIDE</span>",

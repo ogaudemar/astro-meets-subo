@@ -10,17 +10,17 @@
     ],
     "resources": [
       { "text": "Tutoriels", "href": "/tutorial" },
-      { "text": "Serveur d'aide", "href": "/support" },
+      { "text": "Serveur de support", "href": "/support" },
       { "text": "Portail de facturation", "href": "/billingportal" },
       { "text": "Blog", "href": "/blog" }
     ],
     "cta": "Ajoute à Discord",
-    "upgrade": "Améliore",
+    "upgrade": "Upgrade",
     "skipToMain": "Passe au contenu principal"
   },
 
    "footer": {
-    "brandDescription": "Le meilleur bot de sondage pour les commus Discord. Lance des sondages, récolte plus de retours en discussion, récompense les membres avec XP et rôles.",
+    "brandDescription": "Le meilleur bot de sondage pour les serveurs Discord. Lance des sondages conversations, récolte plus de retours en discussion, récompense les membres avec XP et rôles.",
     "brandStats": "Utilisé par plus de 15 000 serveurs Discord",
     "copyright": "Tous droits réservés.",
     "sections": [
@@ -35,7 +35,7 @@
       {
         "title": "Ressources",
         "links": [
-          { "text": "Serveur d’aide", "href": "/support", "external": true },
+          { "text": "Serveur de support", "href": "/support", "external": true },
           { "text": "Tutoriels", "href": "/tutorial", "external": true },
           { "text": "Blog", "href": "/blog" },
           { "text": "Portail Stripe", "href": "/billingportal", "external": true },
@@ -50,7 +50,7 @@
         ]
       },
       {
-        "title": "Réseaux sociaux",
+        "title": "Réseaux",
         "links": [
           { "text": "X", "href": "https://x.com/subo_app", "external": true },
           { "text": "Bluesky", "href": "https://bsky.app/profile/subo.ai", "external": true },
@@ -68,18 +68,18 @@
     ],
     "subtitle": "avec des questions auxquelles ils veulent répondre !",
     "cta": "Ajoute à Discord",
-    "ctaNote": "Commence gratuitement. Améliorations dispo."
+    "ctaNote": "Commence gratuitement. Upgrades disponibles."
   },
 
   "features": {
     "title": "ON APPREND PLUS DANS UNE VRAIE CONVERSATION.",
-    "subtitle": "Les formulaires et les questionnaires classiques, c'est rarement une partie de plaisir... Personne n’a envie d’y répondre. Avec Subo, tu poses des questions dans des sondages et des discussions sympas auxquels ta communauté a envie de participer.",
+    "subtitle": "Les formulaires et les questionnaires classiques, c'est rarement une partie de plaisir... Personne n’a envie d’y répondre. Avec Subo, tu poses des questions avec des votes rapides et des discussions qui donnent envie de participer.",
     "list": [
       {
         "title": "POSE TES QUESTIONS",
         "content": [
           "Fini les formulaires pénibles avec Subo !",
-          "Avec les <strong>convos</strong>, tes membres répondent à tes questions dans un chat privé avec Subo, sur ton serveur Discord ou sur le web.",
+          "Avec les <strong>convos</strong>, tes membres répondent à tes questions dans un chat privé avec Subo, sur ton serveur Discord ou sur le web. Comme s'ils parlaient avec un ami !",
           "Avec les <strong>sondages rapides</strong>, tes membres répondent à ta question publique, avec plein de façons de répondre et de partager les résultats."
         ]
       },
@@ -105,12 +105,12 @@
   },
 
   "usecasesTitle": "TU VAS DEMANDER QUOI AUJOURD’HUI ?",
-  "usecasesSubtitle": "Subo t’aide à récolter des infos utiles auprès de ta commu... ou juste à t’amuser.",
+  "usecasesSubtitle": "Subo t’aide à récolter des infos utiles auprès de ta communauté... ou juste à t’amuser.",
   "usecasesInspireBtn": "🎲 Clique pour t’inspirer !",
   "usecasesList": [
     "💡 Demande des avis sur une nouvelle idée, un produit ou un prix",
-    "🧑‍🤝‍🧑 Découvre qui sont les membres de ta commu",
-    "🔥 Vois ce qui motive ta commu !",
+    "🧑‍🤝‍🧑 Découvre qui sont les membres de ta communauté",
+    "🔥 Vois ce qui motive ta communauté !",
     "📈 Suis les activités ou la satisfaction des membres régulièrement",
     "📝 Accueille les nouveaux avec des checklists interactives",
     "🎤 Interviewe les membres qui veulent devenir staff",
@@ -119,7 +119,7 @@
     "🔮 Fais deviner aux membres les prochains jeux ou événements",
     "🗣️ Demande des retours sur un event passé",
     "🌟 Récupère des avis ou des témoignages",
-    "💖 Sondages sur l’ambiance ou la culture de la commu",
+    "💖 Sondages sur l’ambiance ou la culture de la communauté",
     "🏆 Votes pour choisir un projet ou un leader",
     "💡 Demande des idées ou des suggestions de fonctionnalités",
     "🧠 Quiz et tests de connaissances",
@@ -127,11 +127,11 @@
     "🧩 Sondages rapides pendant les tournois ou matchs",
     "🏹 Demande des retours sur les nouveaux patchs ou équilibrages",
     "👑 Élis les nouveaux modos, capitaines ou chefs de guilde",
-    "🎮 Teste des versions ou prototypes avec ta commu",
+    "🎮 Teste des versions ou prototypes avec ta communauté",
     "🗳️ Laisse les fans choisir les noms de persos, skins ou thèmes de map",
     "🧱 Récupère les avis des testeurs et bêta-testeurs",
     "💬 Demande des retours sur l’histoire ou le lore à tes fans les plus fidèles",
-    "🪙 Vois ce que pense la commu sur des propositions ou votes",
+    "🪙 Vois ce que pense la communauté sur des propositions ou votes",
     "🎨 Laisse les holders aider à nommer les nouvelles collections ou drops NFT",
     "🚀 Demande quelles récompenses ou utilités les gens veulent ensuite",
     "🌍 Demande comment les membres ont découvert ton projet ou DAO",
@@ -147,10 +147,10 @@
     "🍿 Vote pour les soirées visionnage de séries ou films",
     "🥐 Décide une bonne fois pour toutes : un hotdog, c’est un sandwich ?",
     "👀 Découvre qui lit vraiment les annonces",
-    "🦖 Sondage pour nommer la mascotte dinosaure de la commu",
+    "🦖 Sondage pour nommer la mascotte dinosaure de la communauté",
     "🧙‍♂️ Répartis les membres dans les maisons de Poudlard (sans pression, Gryffondor)",
     "🍕 Vote pour la meilleure garniture de pizza",
-    "🛸 Demande si les aliens aimeraient ta commu",
+    "🛸 Demande si les aliens aimeraient ta communauté",
     "🐸 Tournoi de memes : élis le roi des memes",
     "☕ Café ou thé ? (attention débat chaud)",
     "🌈 Demande à tout le monde leur *niveau de vibes* aujourd’hui (scientifiquement prouvé)"
@@ -193,7 +193,7 @@
       "text": "Ton appli coche toutes les cases pour nous et j’ai été bluffé par toutes les options de config, c’est la plus complète que j’ai vue !",
       "author": "schmoopy101",
       "role": "",
-      "social": "<img src=\"/images/subo-premium-100.png\" alt=\"X\" style=\"height:24px;vertical-align:middle;\">"
+      "social": ""
     },
     {
       "text": "Je crée des serveurs pour des potes qui en ont besoin pour le taf, des events ou des assos. Ce bot est super bien fait ! Je l’utilise tout le temps. Trop facile à prendre en main et à utiliser. Parfait pour ceux qui ne connaissent pas trop Discord ou les bots. Je l’ai découvert il y a quelques semaines et j’ai viré tous les autres bots de sondage pour garder celui-là.",
@@ -446,26 +446,26 @@
       },
       [
         {
-          "text": "Améliore (Discord)",
+          "text": "Upgrade (Discord)",
           "class": "button button--dark-premium-border",
           "href": "/discordstore",
           "icon": "discord"
         },
         {
-          "text": "Améliore (Stripe)",
+          "text": "Upgrade (Stripe)",
           "class": "button button--dark-premium-border",
           "href": "/subscriptions"
         }
       ],
       [
         {
-          "text": "Améliore (Discord)",
+          "text": "Upgrade (Discord)",
           "class": "button button--dark-vip-border",
           "href": "/discordstore",
           "icon": "discord"
         },
         {
-          "text": "Améliore (Stripe)",
+          "text": "Upgrade (Stripe)",
           "class": "button button--dark-vip-border",
           "href": "/subscriptions"
         }
@@ -480,28 +480,28 @@
 
 
 "pricingPage": {
-  "heroTitle": "Passe au niveau supérieur avec les offres payantes",
-  "heroTitleAccent": "Passe au niveau supérieur",
-  "heroSubtitle": "Commence gratuitement.<br/> Améliore pour débloquer plus de fonctionnalités et soutenir le développement.",
-  "heroDescription": "Que tu gères un petit groupe ou une grosse commu active, Subo a le plan qu’il te faut.<br>",
+  "heroTitleAccent": "PASSE AU NIVEAU SUPÉRIEUR ",
+  "heroTitle": "AVEC LES OFFRES PAYANTES",
+  "heroSubtitle": "Commence gratuitement.<br/> Upgrade pour débloquer plus de fonctionnalités et soutenir le développement.",
+  "heroDescription": "Que tu gères un petit groupe ou une grosse communauté active, Subo a le plan qu’il te faut.<br>",
   "discordOrStripeTitle": "DISCORD OU STRIPE : <span class=\"accent\">À TOI DE CHOISIR</span>",
-  "discordOrStripeSubtitle": "Deux façons d’améliorer : via Discord, ou directement sur ce site avec Stripe.",
+  "discordOrStripeSubtitle": "Deux façons d’upgrader : via Discord, ou directement sur ce site avec Stripe.",
   "discordCardTitle": "DISCORD",
   "discordCardFeatures": [
-    "Amélioration immédiate",
+    "Upgrade immédiat",
     "Abonnement mensuel uniquement",
     "Un seul serveur",
     "Gère ton abonnement directement sur Discord"
   ],
-  "discordCardButton": "Améliore avec Discord",
+  "discordCardButton": "Upgrade avec Discord",
   "stripeCardTitle": "STRIPE",
   "stripeCardFeatures": [
     "Tous les plans (y compris bot perso), mensuel ou annuel, 1 serveur ou plus",
-    "Réduc annuelle : prends Subo pour 1 an et profite de <strong>2 mois offerts</strong>",
-    "Réduc multi-serveurs : plus de serveurs, plus de réducs",
+    "Réduction annuelle : prends Subo pour 1 an et profite de <strong>2 mois offerts</strong>",
+    "Réduction multi-serveurs : plus de serveurs, plus de réducs",
     "Gère ton abonnement via le portail Stripe"
   ],
-  "stripeCardButton": "Améliore avec Stripe",
+  "stripeCardButton": "Upgrade avec Stripe",
   "faqSectionTitle": "Questions fréquentes",
   "faqs": [
     {

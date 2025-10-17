@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import translations from '../content/translations/en.json';
 ---
 
 <!DOCTYPE html>
@@ -213,7 +214,7 @@ import Footer from '../components/Footer.astro';
   </style>
 </head>
 <body>
-  <Header />
+  <Header translations={translations.header} />
   <main>
     <div class="error-content">
       <img src="/images/subo-neon2-100.png" alt="Subo" class="subo-icon" />
@@ -239,7 +240,7 @@ import Footer from '../components/Footer.astro';
       </div>
     </div>
   </main>
-  <Footer />
+  <Footer translations={translations.footer}/>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {

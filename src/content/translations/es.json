@@ -9,7 +9,7 @@
     { "text": "Precios", "href": "/pricing" }
   ],
   "resources": [
-    { "text": "Tutores", "href": "/tutorial" },
+    { "text": "Tutoriales", "href": "/tutorial" },
     { "text": "Servidor de Soporte", "href": "/support" },
     { "text": "Portal de Facturación", "href": "/billingportal" },
     { "text": "Blog", "href": "/blog" }
@@ -120,7 +120,7 @@
       "text": "¡Su app cumple con todo lo que necesitamos y me ha impresionado el nivel de opciones de configuración, es la más completa que he visto!",
       "author": "schmoopy101",
       "role": "",
-      "social": "<img src=\"/images/subo-premium-100.png\" alt=\"X\" style=\"height:24px;vertical-align:middle;\">"
+      "social": ""
     },
     {
       "text": "Soy creador de servidores. Los hago para amigos que los necesitan para trabajo, eventos, comunidad, etc. ¡Este bot está increíblemente bien hecho! Lo uso mucho en servidores. Es muy fácil de manejar y usar. Es genial para quienes no están acostumbrados a bots/Discord. Hace fácil aprender a usarlo. Lo descubrí hace unas semanas y eliminé todos los otros bots de encuestas y los reemplacé por este.",
@@ -446,8 +446,8 @@
   ]
 },
 "pricingPage": {
-  "heroTitle": "¡SUBE DE NIVEL CON PLANES DE PAGO!",
-  "heroTitleAccent": "¡SUBE DE NIVEL!",
+  "heroTitleAccent": "¡SUBE DE NIVEL ",
+  "heroTitle": "CON PLANES DE PAGO!",
   "heroSubtitle": "Empieza gratis.<br/> Mejora para desbloquear más funciones y apoyar el desarrollo.",
   "heroDescription": "Ya sea que administres un grupo pequeño o una comunidad grande y activa, Subo tiene el plan perfecto para ti.<br>",
   "discordOrStripeTitle": "DISCORD O STRIPE: <span class=\"accent\">TÚ DECIDES</span>",
