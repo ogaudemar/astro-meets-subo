@@ -230,7 +230,7 @@ h5 {
 
 .subtitle {
   font-size: 1.2rem;
-  margin: 2rem 0;
+  margin: 2rem auto;
   opacity: 0.9;
   max-width: 600px;
 }
@@ -515,7 +515,7 @@ hr {
 }
 
 .usecase-card span {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.4;
 }
 
