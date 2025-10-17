@@ -19,6 +19,48 @@
     "skipToMain": "Passe au contenu principal"
   },
 
+   "footer": {
+    "brandDescription": "Le meilleur bot de sondage pour les commus Discord. Lance des sondages, récolte plus de retours en discussion, récompense les membres avec XP et rôles.",
+    "brandStats": "Utilisé par plus de 15 000 serveurs Discord",
+    "copyright": "Tous droits réservés.",
+    "sections": [
+      {
+        "title": "Produit",
+        "links": [
+          { "text": "Bot perso", "href": "/custom-survey-bot" },
+          { "text": "Tarifs", "href": "/pricing" },
+          { "text": "Ajoute à Discord", "href": "/invite", "external": true }
+        ]
+      },
+      {
+        "title": "Ressources",
+        "links": [
+          { "text": "Serveur d’aide", "href": "/support", "external": true },
+          { "text": "Tutoriels", "href": "/tutorial", "external": true },
+          { "text": "Blog", "href": "/blog" },
+          { "text": "Portail Stripe", "href": "/billingportal", "external": true },
+          { "text": "Boutique Discord", "href": "/discordstore", "external": true }
+        ]
+      },
+      {
+        "title": "Légal",
+        "links": [
+          { "text": "Conditions d’utilisation", "href": "/terms" },
+          { "text": "Politique de confidentialité", "href": "/privacy" }
+        ]
+      },
+      {
+        "title": "Réseaux sociaux",
+        "links": [
+          { "text": "X", "href": "https://x.com/subo_app", "external": true },
+          { "text": "Bluesky", "href": "https://bsky.app/profile/subo.ai", "external": true },
+          { "text": "Avis Top.gg", "href": "https://top.gg/bot/946888973035380806", "external": true }
+        ]
+      }
+    ],
+    "socialDiscordLabel": "Rejoins notre serveur Discord"
+  },
+
   "hero": {
     "title": "APPRENDS À CONNAÎTRE",
     "rotatingWords": [
@@ -199,9 +241,9 @@
       "button": "Contacter le support"
     },
     {
-      "title": "Rejoins notre serveur d’aide",
-      "desc": "En attendant, rejoins la commu d’aide pour voir des exemples, suivre les nouveautés ou poser tes questions. Regarde les tutos pour bien démarrer et profiter à fond de Subo.",
-      "button1": "Rejoindre le serveur d’aide",
+      "title": "Rejoins notre serveur de support",
+      "desc": "En attendant, rejoins le serveur de support pour voir des exemples, suivre les nouveautés ou poser tes questions.",
+      "button1": "Rejoindre le serveur de support",
       "button2": "Voir les tutos"
     },
     {
@@ -436,45 +478,44 @@
     ]
   },
 
-  "footer": {
-    "brandDescription": "Le meilleur bot de sondage pour les commus Discord. Lance des sondages, récolte plus de retours en discussion, récompense les membres avec XP et rôles.",
-    "brandStats": "Utilisé par plus de 15 000 serveurs Discord",
-    "copyright": "Tous droits réservés.",
-    "sections": [
-      {
-        "title": "Produit",
-        "links": [
-          { "text": "Bot perso", "href": "/custom-survey-bot" },
-          { "text": "Tarifs", "href": "/pricing" },
-          { "text": "Ajoute à Discord", "href": "/invite", "external": true }
-        ]
-      },
-      {
-        "title": "Ressources",
-        "links": [
-          { "text": "Serveur d’aide", "href": "/support", "external": true },
-          { "text": "Tutoriels", "href": "/tutorial", "external": true },
-          { "text": "Blog", "href": "/blog" },
-          { "text": "Portail Stripe", "href": "/billingportal", "external": true },
-          { "text": "Boutique Discord", "href": "/discordstore", "external": true }
-        ]
-      },
-      {
-        "title": "Légal",
-        "links": [
-          { "text": "Conditions d’utilisation", "href": "/terms" },
-          { "text": "Politique de confidentialité", "href": "/privacy" }
-        ]
-      },
-      {
-        "title": "Réseaux sociaux",
-        "links": [
-          { "text": "X", "href": "https://x.com/subo_app", "external": true },
-          { "text": "Bluesky", "href": "https://bsky.app/profile/subo.ai", "external": true },
-          { "text": "Avis Top.gg", "href": "https://top.gg/bot/946888973035380806", "external": true }
-        ]
-      }
-    ],
-    "socialDiscordLabel": "Rejoins notre serveur Discord"
-  }
+
+"pricingPage": {
+  "heroTitle": "Passe au niveau supérieur avec les offres payantes",
+  "heroTitleAccent": "Passe au niveau supérieur",
+  "heroSubtitle": "Commence gratuitement.<br/> Améliore pour débloquer plus de fonctionnalités et soutenir le développement.",
+  "heroDescription": "Que tu gères un petit groupe ou une grosse commu active, Subo a le plan qu’il te faut.<br>",
+  "discordOrStripeTitle": "DISCORD OU STRIPE : <span class=\"accent\">À TOI DE CHOISIR</span>",
+  "discordOrStripeSubtitle": "Deux façons d’améliorer : via Discord, ou directement sur ce site avec Stripe.",
+  "discordCardTitle": "DISCORD",
+  "discordCardFeatures": [
+    "Amélioration immédiate",
+    "Abonnement mensuel uniquement",
+    "Un seul serveur",
+    "Gère ton abonnement directement sur Discord"
+  ],
+  "discordCardButton": "Améliore avec Discord",
+  "stripeCardTitle": "STRIPE",
+  "stripeCardFeatures": [
+    "Tous les plans (y compris bot perso), mensuel ou annuel, 1 serveur ou plus",
+    "Réduc annuelle : prends Subo pour 1 an et profite de <strong>2 mois offerts</strong>",
+    "Réduc multi-serveurs : plus de serveurs, plus de réducs",
+    "Gère ton abonnement via le portail Stripe"
+  ],
+  "stripeCardButton": "Améliore avec Stripe",
+  "faqSectionTitle": "Questions fréquentes",
+  "faqs": [
+    {
+      "question": "Pourquoi choisir entre Stripe et Discord ?",
+      "answer": "On propose la boutique Discord, c’est pratique pour beaucoup, mais elle ne gère pas les abos annuels ou multi-serveurs, donc on a aussi mis Stripe en place."
+    },
+    {
+      "question": "Que se passe-t-il si tu annules ton abonnement premium ?",
+      "answer": "À la fin de ton abonnement (mois, année), ton bot repasse en version gratuite Subo. Tu peux continuer à l’utiliser, mais avec les limites du plan gratuit. Si t’as un projet en cours, il peut s’arrêter si tu dépasses la limite de réponses. Si t’as trop de projets, faudra peut-être en supprimer avant d’en créer des nouveaux."
+    },
+    {
+      "question": "Comment changer ou annuler un abonnement ?",
+      "answer": "Tu peux gérer ton abonnement sur le portail Stripe si tu as pris Stripe. Si tu as pris Discord, va dans tes paramètres utilisateur Discord pour gérer tes abonnements."
+    }
+  ]
+}
 }

@@ -2,7 +2,7 @@
   "siteTitle": "Subo",
   "siteDescription": "Create surveys and polls for your Discord community.",
 
-  "header": {
+"header": {
   "navItems": [
     { "text": "Product", "href": "/" },
     { "text": "Resources", "href": "/" },
@@ -17,6 +17,49 @@
   "cta": "Add to Discord",
   "upgrade": "Upgrade",
   "skipToMain": "Skip to main content"
+},
+
+
+"footer": {
+  "brandDescription": "The best survey bot for Discord communities. Run polls, collect more feedback in conversations, reward participants with XP and roles.",
+  "brandStats": "Trusted by 15,000+ Discord servers",
+  "copyright": "All rights reserved.",
+  "sections": [
+    {
+      "title": "Product",
+      "links": [
+        { "text": "Custom Bot", "href": "/custom-survey-bot" },
+        { "text": "Pricing", "href": "/pricing" },
+        { "text": "Add to Discord", "href": "/invite", "external": true }
+      ]
+    },
+    {
+      "title": "Resources",
+      "links": [
+        { "text": "Support Server", "href": "/support", "external": true },
+        { "text": "Tutorials", "href": "/tutorial", "external": true },
+        { "text": "Blog", "href": "/blog" },
+        { "text": "Stripe billing portal", "href": "/billingportal", "external": true },
+        { "text": "Discord App Store", "href": "/discordstore", "external": true }
+      ]
+    },
+    {
+      "title": "Legal",
+      "links": [
+        { "text": "Terms of Service", "href": "/terms" },
+        { "text": "Privacy Policy", "href": "/privacy" }
+      ]
+    },
+    {
+      "title": "Socials",
+      "links": [
+        { "text": "X", "href": "https://x.com/subo_app", "external": true },
+        { "text": "Bluesky", "href": "https://bsky.app/profile/subo.ai", "external": true },
+        { "text": "Top.gg Reviews", "href": "https://top.gg/bot/946888973035380806", "external": true }
+      ]
+    }
+  ],
+  "socialDiscordLabel": "Join our Discord server"
 },
 
 "hero": {
@@ -442,46 +485,45 @@
         "href": "/subscriptions"
         }
     ]
-    },
-    "footer": {
-  "brandDescription": "The best survey bot for Discord communities. Run polls, collect more feedback in conversations, reward participants with XP and roles.",
-  "brandStats": "Trusted by 15,000+ Discord servers",
-  "copyright": "All rights reserved.",
-  "sections": [
-    {
-      "title": "Product",
-      "links": [
-        { "text": "Custom Bot", "href": "/custom-survey-bot" },
-        { "text": "Pricing", "href": "/pricing" },
-        { "text": "Add to Discord", "href": "/invite", "external": true }
-      ]
-    },
-    {
-      "title": "Resources",
-      "links": [
-        { "text": "Support Server", "href": "/support", "external": true },
-        { "text": "Tutorials", "href": "/tutorial", "external": true },
-        { "text": "Blog", "href": "/blog" },
-        { "text": "Stripe billing portal", "href": "/billingportal", "external": true },
-        { "text": "Discord App Store", "href": "/discordstore", "external": true }
-      ]
-    },
-    {
-      "title": "Legal",
-      "links": [
-        { "text": "Terms of Service", "href": "/terms" },
-        { "text": "Privacy Policy", "href": "/privacy" }
-      ]
-    },
-    {
-      "title": "Socials",
-      "links": [
-        { "text": "X", "href": "https://x.com/subo_app", "external": true },
-        { "text": "Bluesky", "href": "https://bsky.app/profile/subo.ai", "external": true },
-        { "text": "Top.gg Reviews", "href": "https://top.gg/bot/946888973035380806", "external": true }
-      ]
     }
+,
+"pricingPage": {
+  "heroTitle": "LEVEL UP WITH PAID PLANS",
+  "heroTitleAccent": "LEVEL UP",
+  "heroSubtitle": "Start free. <br/> Upgrade to unlock more features and support future development.",
+  "heroDescription": "Whether you're running a small group or a large, active community, Subo has the right plan for you.<br>",
+  "discordOrStripeTitle": "DISCORD OR STRIPE: <span class=\"accent\">YOU DECIDE</span>",
+  "discordOrStripeSubtitle": "Two ways to upgrade: via Discord, or directly on this website with Stripe.",
+  "discordCardTitle": "DISCORD",
+  "discordCardFeatures": [
+    "Upgrade effective immediately",
+    "Monthly subscriptions only",
+    "One server only",
+    "Upgrade, cancel or manage subscriptions via Discord"
   ],
-  "socialDiscordLabel": "Join our Discord server"
+  "discordCardButton": "Upgrade with Discord",
+  "stripeCardTitle": "STRIPE",
+  "stripeCardFeatures": [
+    "All tiers (including custom bots), monthly or yearly, 1 server or more",
+    "Yearly Discount: Get Subo for 1 year and get <strong>2 months free</strong>",
+    "Multi-Server Discount: More discounts for additional servers",
+    "Upgrade, cancel or manage subscriptions via Stripe Billing Portal"
+  ],
+  "stripeCardButton": "Upgrade with Stripe",
+  "faqSectionTitle": "Frequently Asked Questions",
+  "faqs": [
+    {
+      "question": "Why do I need to choose between Stripe and Discord?",
+      "answer": "We support Discord's native App Store, which is more convenient to many users, but Discord doesn't support multiple server and annual subscriptions, so we also created a Stripe solution for that."
+    },
+    {
+      "question": "What happens if I cancel my premium subscription?",
+      "answer": "Once the end of your subscription period (month, year) comes, your bot will be switched back to the free version of Subo. You will still be able to use Subo, but with the limitations of the free tier.  If you have a project live, it may stop if you reach your maximum allowance for respondents or responses. If you have too many projects on your account, you may have to delete some before you are allowed to create new ones."
+    },
+    {
+      "question": "How do I change or cancel a subscription?",
+      "answer": "You can manage your subscription on the Stripe Billing Portal if you upgraded with Stripe. If you upgraded with Discord, go to your user settings in Discord to manage your subscriptions."
+    }
+  ]
 }
 }

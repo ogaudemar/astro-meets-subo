@@ -1,81 +1,90 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, DISCORD_STORE_URL } from '../consts';
 
 
-import PriceTable from '../components/PriceTable.astro';
-import translations from '../content/translations/en.json';
+import PriceTable from '../../components/PriceTable.astro';
 
-import Footer from '../components/Footer.astro';
+import translations from '../../content/translations/fr.json';
+
+import Footer from '../../components/Footer.astro';
 
 const { pricingPage } = translations;
 ---
 
+<!doctype html>
+<html lang="fr">
+
 <head>
 <BaseHead title={pricingPage.heroTitle} description={pricingPage.heroSubtitle} />
 </head>
-<body>
-<Header translations={translations} />
+    <body>
+    <Header translations={translations} />
 
-<main>
-  <section class="pricing-hero">
-  <div class="container">
-  <div class="pricing-hero__content">
-    <h1 class="pricing-hero__title">{pricingPage.heroTitle}</h1>
-    <p class="subtitle" set:html={pricingPage.heroSubtitle}></p>
-    <p class="subtitle" set:html={pricingPage.heroDescription}></p>
-    </div>
-    </div>
-  </section>
-
-  <section class="pricing-section">
+    <main>
+    <section class="pricing-hero">
     <div class="container">
-      <PriceTable translations={translations} />
-    </div>
-  </section>
-
-
-  <section class="channels-section">
     <div class="pricing-hero__content">
-    <h2 class="pricing-hero__title" set:html={pricingPage.discordOrStripeTitle}></h2>
-    <p class="subtitle">{pricingPage.discordOrStripeSubtitle}</p>
-    </div>
-    <div class="upgrade-options">
-      <div class="discount-card">
-        <h3 class="discount-title">{pricingPage.discordCardTitle}</h3>
-        <ul>
-          {pricingPage.discordCardFeatures.map(feature => <li class="discount-desc">{feature}</li>)}
-        </ul>
-        <a href="/discordstore" class="button button--white-bg mono">{pricingPage.discordCardButton}</a>
-      </div>
-      <div class="discount-card">
-        <h3 class="discount-title">{pricingPage.stripeCardTitle}</h3>
-        <ul>
-          {pricingPage.stripeCardFeatures.map(feature => <li class="discount-desc" set:html={feature}></li>)}
-        </ul>
-        <a href="/subscriptions" class="button button--white-bg mono">{pricingPage.stripeCardButton}</a>
-      </div>
-    </div>
-  </section>
+        <h1 class="pricing-hero__title">{pricingPage.heroTitle}</h1>
+        <p class="subtitle" set:html={pricingPage.heroSubtitle}></p>
+        <p class="subtitle" set:html={pricingPage.heroDescription}></p>
+        </div>
+        </div>
+    </section>
 
-  
+    <section class="pricing-section">
+        <div class="container">
+        <PriceTable translations={translations} />
+        </div>
+    </section>
 
-  <section class="faq-section">
-    <div class="container">
-    <h2 class="faq-title">{pricingPage.faqSectionTitle}</h2>
-    <ul class="faq-list">
-      {pricingPage.faqs.map(faq => (
-        <li class="faq-item">
-          <h3 class="faq-question">{faq.question}</h3>
-          <p class="faq-answer">{faq.answer}</p>
-        </li>
-      ))}
-    </ul>
-  </section>
-</main>
-<Footer />
-</body>
+
+    <section class="channels-section">
+        <div class="pricing-hero__content">
+        <h2 class="pricing-hero__title" set:html={pricingPage.discordOrStripeTitle}></h2>
+        <p class="subtitle">{pricingPage.discordOrStripeSubtitle}</p>
+        </div>
+        <div class="upgrade-options">
+        <div class="discount-card">
+            <h3 class="discount-title">{pricingPage.discordCardTitle}</h3>
+            <ul>
+            {pricingPage.discordCardFeatures.map(feature => <li class="discount-desc">{feature}</li>)}
+            </ul>
+            <a href="/discordstore" class="button button--white-bg mono">{pricingPage.discordCardButton}</a>
+        </div>
+        <div class="discount-card">
+            <h3 class="discount-title">{pricingPage.stripeCardTitle}</h3>
+            <ul>
+            {pricingPage.stripeCardFeatures.map(feature => <li class="discount-desc" set:html={feature}></li>)}
+            </ul>
+            <a href="/subscriptions" class="button button--white-bg mono">{pricingPage.stripeCardButton}</a>
+        </div>
+        </div>
+    </section>
+
+    
+
+    <section class="faq-section">
+        <div class="container">
+        <h2 class="faq-title">{pricingPage.faqSectionTitle}</h2>
+        <ul class="faq-list">
+        {pricingPage.faqs.map(faq => (
+            <li class="faq-item">
+            <h3 class="faq-question">{faq.question}</h3>
+            <p class="faq-answer">{faq.answer}</p>
+            </li>
+        ))}
+        </ul>
+    </section>
+    </main>
+    <Footer />
+    </body>
+</html>
+
+
+
+
 <style>
 
 /*body {

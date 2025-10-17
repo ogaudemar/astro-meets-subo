@@ -1,214 +1,12 @@
 ---
+const { translations } = Astro.props;
 
-import { SITE_TITLE, SITE_DESCRIPTION, DISCORD_STORE_URL } from '../consts';
-
-
-// Pricing tiers data
-const tiers = [
-  {
-    name: "FREE",
-    description: "For smaller servers",
-    price: "Free",
-    image: "/images/subo-neon2-100.png",
-  },
-  {
-    name: "PREMIUM",
-    description: "For power users and mid-sized servers!",
-    price: "$2.99/month<br>$29.99/year",
-    image: "/images/subo-premium-100.png",
-  },
-  {
-    name: "VIP",
-    description: "For larger servers and generous supporters!",
-    price: "$4.99/month<br>$49.99/year",
-    image: "/images/subo-vip-100.png",
-  },
-  {
-    name: "CUSTOM",
-    description: "Your own bot, avatar and description with VIP features!",
-    price: "$99.99/year",
-    image: "/images/custom-bot.png",
-  }
-];
-
-// Table data rows
-const tableData = [
-  [
-    "Support",
-    "✓<br>Ticket system",
-    "✓<br>Premium support",
-    "✓<br>Premium support",
-    "✓<br>Premium Support",
-  ],
-  [
-    "Respondents",
-    "250 / survey",
-    "1000 / survey",
-    "10000 / survey",
-    "10000 / survey",
-  ],
-  [
-    "Answers<br><small>Answer = Respondent x Question (e.g. 60 respondents answering 5 questions = 300 answers)</small>",
-    "1,000 / survey",
-    "5,000 / survey", 
-    "50,000 / survey",
-    "50,000 / survey",
-  ],
-  [
-    "Active surveys<br><small>Total surveys & polls stored. Delete old surveys to stay in a smaller tier.</small>",
-    "10 / server",
-    "200 / server",
-    "400 / server",
-    "400 / server",
-  ],
-  [
-    "Concurrent surveys<br><small>Surveys open or scheduled at the same time</small>",
-    "5 / server",
-    "20 / server",
-    "40 / server",
-    "40 / server",
-  ],
-  [
-    "Survey questions",
-    "10 / survey",
-    "30 / survey",
-    "50 / survey",
-    "50 / survey",
-  ],
-  [
-    "Remove self-promotion",
-    "✗",
-    "✓",
-    "✓",
-    "✓",
-  ],
-  [
-    "Invitation / Thank You Customization<br><small>Customize invitations (footer, thumbnail, color), results and thank you messages</small>",
-    "✗",
-    "✓",
-    "✓",
-    "✓",
-  ],
-  [
-    "New response Notifications<br><small>New responses posted in a private channel with optional ping</small>",
-    "✗",
-    "✓",
-    "✓",
-    "✓",
-  ],
-  [
-    "Cloning<br><small>Duplicate your polls and surveys</small>",
-    "✗",
-    "✓",
-    "✓",
-    "✓",
-  ],
-  [
-    "Delete some responses<br><small>Delete some or all responses from a survey or poll</small>",
-    "✗",
-    "✓",
-    "✓",
-    "✓",
-  ],
-  [
-    "Advanced survey builder: min/max open text length & numeric values",
-    "✗",
-    "✗",
-    "✓",
-    "✓",
-  ],
-  [
-    "Advanced survey builder: Skip Logic",
-    "✗",
-    "✓",
-    "✓",
-    "✓",
-  ],
-  [
-    "AI credits<br><small>Credits are needed to generate survey drafts with /draft and to summarize open-ended responses</small>",
-    "10k one-off trial",
-    "✓<br>500k / mo",
-    "✓<br>1 million / mo",
-    "✓<br>1 million / mo",
-  ],
-  [
-    "Role reward",
-    "✗<br><small>1 role server-wise for ever answering any poll/survey</small>",
-    "✓<br>poll or survey-level",
-    "✓<br>poll or survey-level",
-    "✓<br>poll or survey-level",
-  ],
-  [
-    "Role rewards based on monthly XP",
-    "✗",
-    "✓",
-    "✓",
-    "✓",
-  ],
-  [
-    "XP system<br><small>including leaderboard and up to 5 role rewards based on overall XP</small>",
-    "✓",
-    "✓",
-    "✓",
-    "✓",
-  ],
-  [
-    "Custom XP name, value",
-    "✗",
-    "✓",
-    "✓",
-    "✓",
-  ],
-  [
-    "Custom bot name, avatar & bio",
-    "✗",
-    "✗",
-    "✗",
-    "✓",
-  ],
-];
+const priceTable = translations.priceTable;
+const tiers = priceTable.tiers;
+const tableData = priceTable.tableData;
+const buttonRow = priceTable.buttonRow;
 
 const discordSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="#5865F2" d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3.3a.08.08 0 0 0-.084.04c-.37.654-.78 1.507-1.07 2.18a18.233 18.233 0 0 0-5.462 0 12.683 12.683 0 0 0-1.088-2.18.077.077 0 0 0-.084-.04c-1.432.327-2.814.797-3.432 1.069a.073.073 0 0 0-.033.027C2.533 7.164 1.37 9.86 1.076 12.602c0 .01.002.02.007.028a19.933 19.933 0 0 0 5.993 3.03.08.08 0 0 0 .087-.027c.462-.634.874-1.304 1.226-2.01a.08.08 0 0 0-.045-.11c-.652-.247-1.274-.547-1.872-.892a.08.08 0 0 1-.008-.134c.126-.094.252-.19.372-.288a.08.08 0 0 1 .084-.01c3.927 1.793 8.18 1.793 12.062 0a.08.08 0 0 1 .085.009c.12.098.246.194.372.288a.08.08 0 0 1-.007.134 12.298 12.298 0 0 1-1.873.892.08.08 0 0 0-.044.11c.36.705.773 1.375 1.225 2.01a.08.08 0 0 0 .087.027 19.888 19.888 0 0 0 6.002-3.03.08.08 0 0 0 .007-.028c-.332-3.036-1.495-5.732-3.728-7.206a.076.076 0 0 0-.033-.027ZM8.02 13.317c-.786 0-1.432-.722-1.432-1.607 0-.885.634-1.607 1.432-1.607.805 0 1.45.73 1.432 1.607 0 .885-.634 1.607-1.432 1.607Zm7.974 0c-.786 0-1.432-.722-1.432-1.607 0-.885.634-1.607 1.432-1.607.805 0 1.45.73 1.432 1.607 0 .885-.634 1.607-1.432 1.607Z"/></svg>`;
-
-// Button row data
-const buttonRow = [
-  {
-    text: "Free Install",
-    class: "button button--dark-accent-border",
-    href: "/invite"
-  },
-  [
-    {
-      text: "Upgrade (via Discord)",
-      class: "button button--dark-premium-border",
-      href: "/discordstore",
-      icon: discordSVG
-    },
-    {
-      text: "Upgrade (via Stripe)",
-      class: "button button--dark-premium-border",
-      href: "/subscriptions"
-    }
-  ],
-  [
-    {
-      text: "Upgrade (via Discord)",
-      class: "button button--dark-vip-border",
-      href: "/discordstore",
-      icon: discordSVG
-    },
-    {
-      text: "Upgrade (via Stripe)",
-      class: "button button--dark-vip-border",
-      href: "/subscriptions"
-    }
-  ],
-  {
-    text: "Make It Your Own",
-    class: "button button--primary-border",
-    href: "/subscriptions"
-  }
-];
 ---
 
 <div class="pricing-table">
@@ -236,7 +34,6 @@ const buttonRow = [
             <td class="feature-name" set:html={row[0]}></td>
             {row.slice(1).map((cell, index) => {
               const tierClass = ["tier-free", "tier-premium", "tier-vip", "tier-custom"][index];
-              // Replace ✓ and ✗ with colored spans
               const cellHtml = cell
                 .replace(/✓/g, `<span class="icon icon-yes ${tierClass}">✓</span>`)
                 .replace(/✗/g, `<span class="icon icon-no ${tierClass}">✗</span>`);
@@ -254,7 +51,7 @@ const buttonRow = [
                 <div class="button-group">
                   {button.map(btn => (
                     <a href={btn.href} class={btn.class}>
-                      {btn.icon && <span class="discord-icon" set:html={btn.icon}></span>}
+                      {btn.icon === "discord" && <span class="discord-icon" set:html={discordSVG}></span>}
                       {btn.text}
                     </a>
                   ))}
