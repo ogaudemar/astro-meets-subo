@@ -95,7 +95,7 @@
 
 
   .button--accent-bg:hover {
-    background: var(--dark);
+    background: var(--secondary);
     color: white;
   }
 
@@ -238,7 +238,7 @@ h5 {
   }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 2rem 0;
   opacity: 0.9;
 }
@@ -310,11 +310,15 @@ hr {
 }
 @media (max-width: 720px) {
   body {
-    font-size: 18px;
+    font-size: 1rem;
   }
   main {
     padding: 0;
   }
+  .subtitle {
+  font-size: 1.1rem;
+
+}
 }
 
 .sr-only {
