@@ -8,6 +8,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage, tags, author, draft, posts } = Astro.props;
+import translations from '../content/translations/en.json';
 ---
 
 <html lang="en">
@@ -207,7 +208,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags, author, draft
 				})()}
 			</section>
 			</main>
-					<Footer />
+					<Footer translations={translations.footer}/>
 	</body>
 </html>
 

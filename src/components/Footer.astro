@@ -1,47 +1,7 @@
 ---
+const { translations } = Astro.props;
+const sections = translations.sections;
 const currentYear = new Date().getFullYear();
-
-const footerLinks = [
-  {
-    title: 'Product',
-    links: [
-      { text: 'Custom Bot', href: '/custom-survey-bot' },
-     /* { text: 'Polls', href: '/polls'},*/
-      { text: 'Pricing', href: '/pricing' },
-      { text: 'Add to Discord', href: '/invite', external: true },
-
-    ]
-  },
-  {
-    title: 'Resources',
-    links: [
-      { text: 'Support Server', href: '/support', external: true },
-      { text: 'Tutorials', href: '/tutorial', external: true },
-      { text: 'Blog', href: '/blog' },
-      { text: 'Stripe billing portal', href: '/billingportal', external: true },
-      { text: 'Discord App Store', href: '/discordstore', external: true }
-      
-    ]
-  },
-  {
-    title: 'Legal',
-    links: [
-      { text: 'Terms of Service', href: '/terms' },
-      { text: 'Privacy Policy', href: '/privacy' } /* Add cookie policy later,
-      { text: 'Cookie Policy', href: '/cookies' } */
-    ]
-  },
-  {
-    title: 'Socials',
-    links: [
-      
-      
-      { text: 'X', href: 'https://x.com/subo_app', external: true },
-      { text: 'Bluesky', href: 'https://bsky.app/profile/subo.ai', external: true },
-      { text: 'Top.gg Reviews', href: 'https://top.gg/bot/946888973035380806', external: true }
-    ]
-  }
-];
 ---
 
 <footer class="footer bg-black">
@@ -58,16 +18,15 @@ const footerLinks = [
           />
         </div>
         <p class="footer__description text-white">
-          The best survey bot for Discord communities. Run polls, collect more feedback in conversations, reward participants with XP and roles.
-        </p>
+          {translations.brandDescription}</p>
         <div class="footer__stats text-white">
-          <p>Trusted by 15,000+ Discord servers</p>
+          <p>{translations.brandStats}</p>
         </div>
       </div>
 
       <!-- Links sections -->
       <div class="footer__links">
-        {footerLinks.map(section => (
+        {sections.map(section => (
           <div class="footer__section">
             <h3 class="footer__section-title text-white">{section.title}</h3>
             <ul class="footer__section-links">
@@ -96,17 +55,6 @@ const footerLinks = [
           © {currentYear} Subo. All rights reserved.
         </p>
         <div class="footer__social">
-          <!-- <a 
-            href="https://x.com/subo_app" 
-            class="footer__social-link text-white" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            aria-label="Follow us on X"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a> -->
           <a 
             href="/support" 
             class="footer__social-link text-white" 

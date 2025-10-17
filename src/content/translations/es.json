@@ -201,5 +201,287 @@
       "question": "¿Qué pasa si cancelo mi suscripción premium?",
       "answer": "Cuando termine tu periodo de suscripción (mes, año), tu bot volverá a la versión gratuita de Subo. Podrás seguir usándolo, pero con las limitaciones del plan gratuito. Si tienes un proyecto activo, puede detenerse si alcanzas el límite de respuestas. Si tienes demasiados proyectos, puede que debas eliminar algunos antes de crear nuevos."
     }
+  ],
+"footer": {
+  "brandDescription": "El mejor bot de encuestas para comunidades de Discord. Haz sondeos, recoge más feedback en conversaciones, recompensa a los participantes con XP y roles.",
+  "brandStats": "Confiado por más de 15,000 servidores de Discord",
+  "copyright": "Todos los derechos reservados.",
+  "sections": [
+    {
+      "title": "Producto",
+      "links": [
+        { "text": "Bot Personalizado", "href": "/custom-survey-bot" },
+        { "text": "Sondeos", "href": "/polls" },
+        { "text": "Precios", "href": "/pricing" },
+        { "text": "Agregar a Discord", "href": "/invite", "external": true }
+      ]
+    },
+    {
+      "title": "Recursos",
+      "links": [
+        { "text": "Servidor de Soporte", "href": "/support", "external": true },
+        { "text": "Tutoriales", "href": "/tutorial", "external": true },
+        { "text": "Blog", "href": "/blog" },
+        { "text": "Portal de facturación Stripe", "href": "/billingportal", "external": true },
+        { "text": "Tienda de Discord", "href": "/discordstore", "external": true }
+      ]
+    },
+    {
+      "title": "Legal",
+      "links": [
+        { "text": "Términos de servicio", "href": "/terms" },
+        { "text": "Política de privacidad", "href": "/privacy" }
+      ]
+    },
+    {
+      "title": "Redes",
+      "links": [
+        { "text": "X", "href": "https://x.com/subo_app", "external": true },
+        { "text": "Bluesky", "href": "https://bsky.app/profile/subo.ai", "external": true },
+        { "text": "Top.gg Opiniones", "href": "https://top.gg/bot/946888973035380806", "external": true }
+      ]
+    }
+  ],
+  "socialDiscordLabel": "Únete a nuestro servidor de Discord"
+},
+"priceTable": {
+  "tiers": [
+    {
+      "name": "GRATIS",
+      "description": "Para servidores pequeños",
+      "price": "Gratis",
+      "image": "/images/subo-neon2-100.png"
+    },
+    {
+      "name": "PREMIUM",
+      "description": "¡Para usuarios avanzados y servidores medianos!",
+      "price": "$2.99/mes<br>$29.99/año",
+      "image": "/images/subo-premium-100.png"
+    },
+    {
+      "name": "VIP",
+      "description": "¡Para servidores grandes y patrocinadores generosos!",
+      "price": "$4.99/mes<br>$49.99/año",
+      "image": "/images/subo-vip-100.png"
+    },
+    {
+      "name": "PERSONALIZADO",
+      "description": "Tu propio bot, avatar y descripción con funciones VIP",
+      "price": "$99.99/año",
+      "image": "/images/custom-bot.png"
+    }
+  ],
+  "tableData": [
+    [
+      "Soporte",
+      "✓<br>Sistema de tickets",
+      "✓<br>Soporte premium",
+      "✓<br>Soporte premium",
+      "✓<br>Soporte premium"
+    ],
+    [
+      "Encuestados",
+      "250 / encuesta",
+      "1000 / encuesta",
+      "10000 / encuesta",
+      "10000 / encuesta"
+    ],
+    [
+      "Respuestas<br><small>Respuesta = Encuestado x Pregunta (ej: 60 encuestados respondiendo 5 preguntas = 300 respuestas)</small>",
+      "1,000 / encuesta",
+      "5,000 / encuesta",
+      "50,000 / encuesta",
+      "50,000 / encuesta"
+    ],
+    [
+      "Encuestas activas<br><small>Total de encuestas y sondeos almacenados. Elimina encuestas antiguas para mantenerte en un plan menor.</small>",
+      "10 / servidor",
+      "200 / servidor",
+      "400 / servidor",
+      "400 / servidor"
+    ],
+    [
+      "Encuestas simultáneas<br><small>Encuestas abiertas o programadas al mismo tiempo</small>",
+      "5 / servidor",
+      "20 / servidor",
+      "40 / servidor",
+      "40 / servidor"
+    ],
+    [
+      "Preguntas por encuesta",
+      "10 / encuesta",
+      "30 / encuesta",
+      "50 / encuesta",
+      "50 / encuesta"
+    ],
+    [
+      "Quitar autopromoción",
+      "✗",
+      "✓",
+      "✓",
+      "✓"
+    ],
+    [
+      "Personalización de invitación / agradecimiento<br><small>Personaliza invitaciones (pie, miniatura, color), resultados y mensajes de agradecimiento</small>",
+      "✗",
+      "✓",
+      "✓",
+      "✓"
+    ],
+    [
+      "Notificaciones de nuevas respuestas<br><small>Nuevas respuestas publicadas en un canal privado con ping opcional</small>",
+      "✗",
+      "✓",
+      "✓",
+      "✓"
+    ],
+    [
+      "Clonar<br><small>Duplica tus sondeos y encuestas</small>",
+      "✗",
+      "✓",
+      "✓",
+      "✓"
+    ],
+    [
+      "Eliminar algunas respuestas<br><small>Elimina algunas o todas las respuestas de una encuesta o sondeo</small>",
+      "✗",
+      "✓",
+      "✓",
+      "✓"
+    ],
+    [
+      "Constructor avanzado: min/máx texto abierto y valores numéricos",
+      "✗",
+      "✗",
+      "✓",
+      "✓"
+    ],
+    [
+      "Constructor avanzado: Lógica de salto",
+      "✗",
+      "✓",
+      "✓",
+      "✓"
+    ],
+    [
+      "Créditos de IA<br><small>Se necesitan créditos para generar borradores con /draft y resumir respuestas abiertas</small>",
+      "10k prueba única",
+      "✓<br>500k / mes",
+      "✓<br>1 millón / mes",
+      "✓<br>1 millón / mes"
+    ],
+    [
+      "Recompensa de rol",
+      "✗<br><small>1 rol por servidor para quien responda cualquier encuesta/sondeo</small>",
+      "✓<br>por encuesta o sondeo",
+      "✓<br>por encuesta o sondeo",
+      "✓<br>por encuesta o sondeo"
+    ],
+    [
+      "Recompensas de rol según XP mensual",
+      "✗",
+      "✓",
+      "✓",
+      "✓"
+    ],
+    [
+      "Sistema de XP<br><small>incluye ranking y hasta 5 recompensas de rol según XP total</small>",
+      "✓",
+      "✓",
+      "✓",
+      "✓"
+    ],
+    [
+      "Nombre y valor de XP personalizado",
+      "✗",
+      "✓",
+      "✓",
+      "✓"
+    ],
+    [
+      "Nombre, avatar y bio de bot personalizado",
+      "✗",
+      "✗",
+      "✗",
+      "✓"
+    ]
+  ],
+  "buttonRow": [
+    {
+      "text": "Instalar gratis",
+      "class": "button button--dark-accent-border",
+      "href": "/invite"
+    },
+    [
+      {
+        "text": "Mejorar (Discord)",
+        "class": "button button--dark-premium-border",
+        "href": "/discordstore",
+        "icon": "discord"
+      },
+      {
+        "text": "Mejorar (Stripe)",
+        "class": "button button--dark-premium-border",
+        "href": "/subscriptions"
+      }
+    ],
+    [
+      {
+        "text": "Mejorar (Discord)",
+        "class": "button button--dark-vip-border",
+        "href": "/discordstore",
+        "icon": "discord"
+      },
+      {
+        "text": "Mejorar (Stripe)",
+        "class": "button button--dark-vip-border",
+        "href": "/subscriptions"
+      }
+    ],
+    {
+      "text": "Hazlo tuyo",
+      "class": "button button--primary-border",
+      "href": "/subscriptions"
+    }
   ]
+},
+"pricingPage": {
+  "heroTitle": "¡SUBE DE NIVEL CON PLANES DE PAGO!",
+  "heroTitleAccent": "¡SUBE DE NIVEL!",
+  "heroSubtitle": "Empieza gratis.<br/> Mejora para desbloquear más funciones y apoyar el desarrollo.",
+  "heroDescription": "Ya sea que administres un grupo pequeño o una comunidad grande y activa, Subo tiene el plan perfecto para ti.<br>",
+  "discordOrStripeTitle": "DISCORD O STRIPE: <span class=\"accent\">TÚ DECIDES</span>",
+  "discordOrStripeSubtitle": "Dos formas de mejorar: vía Discord o directamente en este sitio con Stripe.",
+  "discordCardTitle": "DISCORD",
+  "discordCardFeatures": [
+    "Mejora efectiva de inmediato",
+    "Solo suscripciones mensuales",
+    "Solo un servidor",
+    "Mejora, cancela o gestiona la suscripción desde Discord"
+  ],
+  "discordCardButton": "Mejorar con Discord",
+  "stripeCardTitle": "STRIPE",
+  "stripeCardFeatures": [
+    "Todos los planes (incluyendo bots personalizados), mensual o anual, 1 servidor o más",
+    "Descuento anual: obtén Subo por 1 año y recibe <strong>2 meses gratis</strong>",
+    "Descuento multi-servidor: más descuentos por servidores adicionales",
+    "Mejora, cancela o gestiona la suscripción desde el portal de Stripe"
+  ],
+  "stripeCardButton": "Mejorar con Stripe",
+  "faqSectionTitle": "Preguntas frecuentes",
+  "faqs": [
+    {
+      "question": "¿Por qué debo elegir entre Stripe y Discord?",
+      "answer": "Soportamos la tienda de aplicaciones nativa de Discord, que es más conveniente para muchos usuarios, pero Discord no soporta suscripciones anuales ni para múltiples servidores, así que también creamos una solución con Stripe."
+    },
+    {
+      "question": "¿Qué pasa si cancelo mi suscripción premium?",
+      "answer": "Cuando termine tu periodo de suscripción (mes, año), tu bot volverá a la versión gratuita de Subo. Podrás seguir usándolo, pero con las limitaciones del plan gratuito. Si tienes un proyecto activo, puede detenerse si alcanzas el límite de respuestas. Si tienes demasiados proyectos, puede que debas eliminar algunos antes de crear nuevos."
+    },
+    {
+      "question": "¿Cómo cambio o cancelo una suscripción?",
+      "answer": "Puedes gestionar tu suscripción en el portal de Stripe si la adquiriste por Stripe. Si la adquiriste por Discord, ve a la configuración de usuario en Discord para gestionarla."
+    }
+  ]
+}
 }

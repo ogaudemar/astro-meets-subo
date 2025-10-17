@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, DISCORD_STORE_URL } from '../consts';
 
 import Footer from '../components/Footer.astro';
-
+import translations from '../content/translations/en.json';
 
 ---
 
@@ -19,6 +19,6 @@ import Footer from '../components/Footer.astro';
   <h2>All about Subo polls in Discord</h2>
   <p>Here is some stuff about polls.</p>
  </main>
-		<Footer />
+		<Footer translations={translations.footer}/>
 	</body>
 </html>
