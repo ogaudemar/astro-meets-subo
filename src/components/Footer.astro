@@ -1,7 +1,8 @@
 ---
-const { translations } = Astro.props;
+const { translations, currentLang = "en" } = Astro.props;
 const sections = translations.sections;
 const currentYear = new Date().getFullYear();
+import LanguageSwitcher from './LanguageSwitcher.astro';
 ---
 
 <footer class="footer bg-black">
@@ -54,6 +55,7 @@ const currentYear = new Date().getFullYear();
         <p class="footer__copyright text-white mono">
           © {currentYear} Subo. {translations.copyright}
         </p>
+        <LanguageSwitcher currentLang={currentLang} />
         <div class="footer__social">
           <a 
             href="/support" 
@@ -121,7 +123,7 @@ const currentYear = new Date().getFullYear();
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--accent);
-    font-family: 'Source Code Pro', monospace;
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
   }
 
   .footer__section-links {
@@ -148,6 +150,9 @@ const currentYear = new Date().getFullYear();
   .footer__bottom {
     border-top: 1px solid #333;
     padding-top: 2rem;
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+    font-size: 0.9rem;
+    color: var(--text-white);
   }
 
   .footer__bottom-content {

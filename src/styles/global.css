@@ -166,16 +166,7 @@
     background: var(--accent);
   }
 
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    .container {
-      padding: 0 0.5rem;
-    }
-    
-    .heading {
-      font-size: 3.5rem;
-    }
-  }
+
 
 
 /* End from UP 2025-09-10 also in Layout.astro
@@ -241,6 +232,7 @@ h5 {
   font-size: 1.2rem;
   margin: 2rem 0;
   opacity: 0.9;
+  max-width: 600px;
 }
 
 h1, h2, h3 {
@@ -308,6 +300,18 @@ hr {
   border: none;
   border-top: 1px solid rgb(var(--gray-light));
 }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 0.5rem;
+    }
+    
+    .heading {
+      font-size: 2.5rem;
+    }
+  }
+
 @media (max-width: 720px) {
   body {
     font-size: 1rem;
@@ -317,9 +321,32 @@ hr {
   }
   .subtitle {
   font-size: 1.1rem;
+  max-width: 90%;
+}
+  h2 {
+    font-size: 2rem;
+}
+}
 
-}
-}
+    @media (max-width: 900px) {
+
+      .testimonial-card {
+        width: 200px;
+        max-width: 500px;
+        font-size: 0.93rem;
+      }
+    }
+    @media (max-width: 600px) {
+   
+        .testimonial-card {
+        min-width: 90vw;
+        max-width: 98vw;
+        box-sizing: border-box;
+        margin: 0 auto;
+        font-size: 1rem;
+        padding: 1.2rem 0.5rem;
+      }
+    }
 
 .sr-only {
   border: 0;
@@ -435,27 +462,6 @@ hr {
       vertical-align: middle;
     }
 
-
-    @media (max-width: 900px) {
-
-      .testimonial-card {
-        width: 200px;
-        max-width: 500px;
-        font-size: 0.93rem;
-      }
-    }
-    @media (max-width: 600px) {
-   
-        .testimonial-card {
-        min-width: 90vw;
-        max-width: 98vw;
-        box-sizing: border-box;
-        margin: 0 auto;
-        font-size: 1rem;
-        padding: 1.2rem 0.5rem;
-      }
-    }
-
     
 .slider-card {
   background: rgba(255,255,255,0.05);
@@ -511,4 +517,53 @@ hr {
 .usecase-card span {
   font-size: 1.25rem;
   line-height: 1.4;
+}
+
+/* attempt at blurring rest of content */
+  .nav-blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999; /* below nav, above content */
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+
+.nav__item--dropdown.active ~ .nav-blur-overlay,
+.nav-blur-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/*Not working in LanguageSwitcher component for some reason */
+.custom-select-option {
+  padding: 0.9em 1.2em;
+  margin: 0.2em 0;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.18s, border 0.18s;
+  font-family: inherit;
+  border-left: 3px solid transparent;
+}
+
+.custom-select-option.selected {
+  background: rgba(40,40,40,0.95);
+  border-left: 3px solid var(--accent, #ffb347);
+}
+
+.custom-select-option:hover {
+  background: rgba(40,40,40,0.8);
+  color: var(--primary);
+}
+.language-switcher-label {
+  font-size: 1.1em;
+  opacity: 0.8;
+  font-family: inherit;
+  margin-right: 0.3em;
 }

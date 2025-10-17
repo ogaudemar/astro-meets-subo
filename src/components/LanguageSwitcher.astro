@@ -1,0 +1,168 @@
+---
+// filepath: c:\Users\ogaud\OneDrive - ClearSwell LLC\Documents\Subo\Code\LP\AstroConvert\astro-meets-subo\src\components\LanguageSwitcher.astro
+const { currentLang = "en", availableLangs = [
+  { code: "en", label: "English" },
+  { code: "fr", label: "Français" },
+  { code: "es", label: "Español" }
+] } = Astro.props;
+---
+
+<div class="language-switcher">
+  <span class="language-switcher-label">🌐</span>
+  <div class="custom-select" id="custom-lang-select">
+    <select id="lang-select">
+      {availableLangs.map(lang => (
+        <option value={lang.code} selected={lang.code === currentLang}>{lang.label}</option>
+      ))}
+    </select>
+    <div class="custom-select-selected"></div>
+    <div class="custom-select-options"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Setup custom select
+  const select = document.getElementById('lang-select');
+  const customSelect = document.getElementById('custom-lang-select');
+  const selectedDiv = customSelect.querySelector('.custom-select-selected');
+  const optionsDiv = customSelect.querySelector('.custom-select-options');
+  let preferredLang = localStorage.getItem('preferredLang') || select.value;
+
+  // Hide original select
+  select.style.display = 'none';
+
+  // Build custom options
+  function buildOptions() {
+    optionsDiv.innerHTML = '';
+    Array.from(select.options).forEach(option => {
+      const optDiv = document.createElement('div');
+      optDiv.className = 'custom-select-option';
+      optDiv.textContent = option.textContent;
+      optDiv.dataset.value = option.value;
+      if (option.value === preferredLang) optDiv.classList.add('selected');
+      optDiv.addEventListener('click', function(e) {
+        // Update original select
+        select.value = option.value;
+        localStorage.setItem('preferredLang', option.value);
+        updateSelected(option.value);
+        closeOptions();
+        // Redirect
+        let path = window.location.pathname;
+        let parts = path.replace(/^\/+/, '').split('/');
+        if (['en', 'fr', 'es'].includes(parts[0])) parts.shift();
+        if (option.value === 'en') {
+          window.location.pathname = '/' + parts.join('/');
+        } else {
+          window.location.pathname = '/' + option.value + (parts.length ? '/' + parts.join('/') : '');
+        }
+      });
+      optionsDiv.appendChild(optDiv);
+    });
+  }
+
+  function updateSelected(value) {
+    const selectedOption = Array.from(select.options).find(opt => opt.value === value);
+    selectedDiv.textContent = selectedOption ? selectedOption.textContent : '';
+    Array.from(optionsDiv.children).forEach(optDiv => {
+      optDiv.classList.toggle('selected', optDiv.dataset.value === value);
+    });
+  }
+
+  function closeOptions() {
+    optionsDiv.style.display = 'none';
+    customSelect.classList.remove('open');
+  }
+
+  function openOptions() {
+    optionsDiv.style.display = 'block';
+    customSelect.classList.add('open');
+  }
+
+  selectedDiv.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (optionsDiv.style.display === 'block') {
+      closeOptions();
+    } else {
+      openOptions();
+    }
+  });
+
+  document.addEventListener('click', closeOptions);
+
+  // Initial setup
+  buildOptions();
+  updateSelected(preferredLang);
+
+  // Sync custom select if select changes (e.g. by script)
+  select.addEventListener('change', function(e) {
+    updateSelected(select.value);
+  });
+})();
+</script>
+
+<style>
+.custom-select {
+  position: relative;
+  display: inline-block;
+  min-width: 120px;
+  font-family: inherit;
+}
+#lang-select {
+  display: none !important;
+}
+.custom-select-selected {
+  background: rgba(30,30,30,0.8);
+  color: #fff;
+  padding: 0.6em 1.2em;
+  border-radius: 0.8em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, border 0.2s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.custom-select-selected::after {
+  content: '';
+  display: inline-block;
+  margin-left: 0.7em;
+  width: 0.7em;
+  height: 0.7em;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(135deg);
+  transition: transform 0.2s;
+}
+.custom-select.open .custom-select-selected {
+  background: rgba(30,30,30,0.95);
+  border: 1px solid var(--accent, #ffb347);
+}
+.custom-select.open .custom-select-selected::after {
+  transform: rotate(-45deg); /* Arrow points up */
+}
+.custom-select-options {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(100% + 4px);
+  top: auto;
+  background: rgba(30,30,30,0.97);
+  border-radius: 0.8em;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  z-index: 10;
+  font-size: 1em;
+  overflow: hidden;
+  padding: 0.4em 0;
+}
+
+
+
+
+</style>

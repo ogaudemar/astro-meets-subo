@@ -3,8 +3,9 @@ const { translations } = Astro.props;
 import Demo from './Demo.astro';
 import LogoBanner from './LogoBanner.astro';
 ---
-
+ <div class="nav-blur-overlay"></div>
 <section class="hero">
+
   <div class="container hero__container">
     <Demo />
     <div class="hero__content">
@@ -166,7 +167,7 @@ typing 4s steps(22, end) forwards, blink 1s infinite;
     }
 
     .hero__title {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
  
@@ -177,7 +178,7 @@ typing 4s steps(22, end) forwards, blink 1s infinite;
 
   @media (max-width: 480px) {
     .hero__title {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
     }
   }
 </style>

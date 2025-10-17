@@ -12,6 +12,7 @@ import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 import translations from '../content/translations/en.json';
 
+const currentLang = "en";
 
 ---
 
@@ -22,6 +23,7 @@ import translations from '../content/translations/en.json';
 	</head>
 	<body>
 		<Header translations={translations.header} />
+		 
 		<main>
     		<Hero translations={translations.hero} />
 			<Features translations={translations.features} />
@@ -29,6 +31,6 @@ import translations from '../content/translations/en.json';
 			<Testimonials translations={translations} />
 			<CTA translations={translations} />    
 		</main>
-		<Footer translations={translations.footer}/>
+		<Footer translations={translations.footer} currentLang={currentLang} />
 	</body>
 </html>

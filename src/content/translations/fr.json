@@ -4,9 +4,9 @@
 
   "header": {
     "navItems": [
-      { "text": "Produit", "href": "/" },
-      { "text": "Ressources", "href": "/" },
-      { "text": "Tarifs", "href": "/pricing" }
+      { "text": "Produit", "href": "/fr/" },
+      { "text": "Ressources", "href": "/fr/" },
+      { "text": "Tarifs", "href": "/fr/pricing" }
     ],
     "resources": [
       { "text": "Tutoriels", "href": "/tutorial" },
@@ -28,7 +28,7 @@
         "title": "Produit",
         "links": [
           { "text": "Bot perso", "href": "/custom-survey-bot" },
-          { "text": "Tarifs", "href": "/pricing" },
+          { "text": "Tarifs", "href": "/fr/pricing" },
           { "text": "Ajoute à Discord", "href": "/invite", "external": true }
         ]
       },
@@ -66,7 +66,7 @@
     "rotatingWords": [
       "TA COMMUNAUTÉ", "TES MEMBRES", "TES UTILISATEURS", "TES FANS", "TES PARRAINS", "TES AMIS", "TES ABONNÉS", "TES SOUTIENS", "TES CLIENTS", "TON AUDIENCE", "TON GROUPE", "TA GUILDE", "TON ÉQUIPE", "TON CREW", "TES ABONNÉS"
     ],
-    "subtitle": "avec des questions auxquelles ils veulent répondre !",
+    "subtitle": "avec des questions auxquelles on veut répondre !",
     "cta": "Ajoute à Discord",
     "ctaNote": "Commence gratuitement. Upgrades disponibles."
   },

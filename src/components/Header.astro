@@ -12,7 +12,7 @@ const resources = translations.resources;
 <nav class="nav nav--visible" role="navigation" aria-label="Main navigation">
   <div class="nav__container">
     <div class="nav__brand">
-      <a href="/" class="nav__logo">
+      <a href={navItems[0].href} class="nav__logo">
         <img src="/images/subo-combo-cap-white.png" alt={SITE_TITLE} class="nav__logo-img" />
       </a>
     </div>
@@ -59,9 +59,7 @@ const resources = translations.resources;
   <div class="nav__mobile">
     <ul class="nav__list nav__list--mobile">
       <li class="nav__item nav__item--expandable">
-        <button class="nav__expand-toggle" aria-expanded="false" aria-controls="mobile-features-menu">
-          Resources
-          <span class="nav__caret">&#9660;</span>
+        <button class="nav__expand-toggle" aria-expanded="false" aria-controls="mobile-features-menu">{navItems[1].text}<span class="nav__caret">&#9660;</span>
         </button>
         <ul class="nav__expand-menu" id="mobile-resources-menu">
           {resources.map(resource => (
@@ -72,7 +70,7 @@ const resources = translations.resources;
         </ul>
       </li>
       <li class="nav__item">
-        <HeaderLink href={navItems[1].href}>{navItems[1].text}</HeaderLink>
+        <HeaderLink href={navItems[2].href}>{navItems[2].text}</HeaderLink>
       </li>
       <li class="nav__item">
         <div class="nav__cta nav__cta--mobile">
@@ -103,6 +101,9 @@ const resources = translations.resources;
     padding: 1rem;
 	  border-bottom: 1px solid var(--secondary-dark);
     transition: transform 0.3s ease;
+      width: 100%;
+  box-sizing: border-box;
+
   }
 
   .nav--hidden {
@@ -175,7 +176,7 @@ const resources = translations.resources;
       left: 0;
       background: rgba(0,0,0,0.98);
       border: 1px solid var(--secondary-dark);
-      border-radius: 4px;
+      border-radius: 12px;
       min-width: 180px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
       z-index: 1100;
@@ -304,6 +305,8 @@ const resources = translations.resources;
     text-decoration: none;
   }
 
+
+
   /* Mobile styles */
   @media (max-width: 768px) {
     .nav__list--desktop {
@@ -324,6 +327,23 @@ const resources = translations.resources;
 </style>
 
 <script>
+//JS to blur rest of content
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdown = document.querySelector('.nav__item--dropdown');
+  const blurOverlay = document.querySelector('.nav-blur-overlay');
+
+  function setBlur(active) {
+    if (blurOverlay) {
+      blurOverlay.classList.toggle('active', active);
+    }
+  }
+
+  dropdown?.addEventListener('mouseenter', () => setBlur(true));
+  dropdown?.addEventListener('mouseleave', () => setBlur(false));
+  dropdown?.addEventListener('focusin', () => setBlur(true));
+  dropdown?.addEventListener('focusout', () => setBlur(false));
+});
+
   // Mobile menu toggle
   const toggle = document.querySelector('.nav__toggle');
   const mobileMenu = document.querySelector('.nav__mobile');
