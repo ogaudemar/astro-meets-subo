@@ -1,27 +1,26 @@
-    <!-- CTA Section -->
-    <section class="cta bg-primary">
-      <div class="container text-center">
-        <h2 class="cta__title heading">START ASKING FOR FREE!</h2>
-        <p class="subtitle">No credit card. No setup hassle. Just jump in and play around with few limitations. Do more with paid plans when you're ready.</p>
-        
-        <div class="cta__buttons">
-          
-          <a href="/pricing" class="button button--white-outline">
-            View Pricing
-          </a>
-        </div>
-      </div>
-    </section>
+---
+const { translations } = Astro.props;
+
+const ctaTitle = translations.ctaTitle;
+const ctaSubtitle = translations.ctaSubtitle;
+const ctaButton = translations.ctaButton;
+---
+
+<section class="cta">
+  <div class="container text-center">
+    <h2 class="cta__title">{ctaTitle}</h2>
+    <p class="subtitle">{ctaSubtitle}</p>
+    <a href="/pricing" class="button button--accent-bg">{ctaButton}</a>
+  </div>
+</section>
 
 <style>
-
 .cta {
   padding: 3rem;
    background: linear-gradient(var(--secondary-dark), var(--dark));
 
 
 }
-
 
 .cta__title {
   padding: 1.5rem 0;
