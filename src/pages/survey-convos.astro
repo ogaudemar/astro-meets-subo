@@ -8,6 +8,8 @@ import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 import translations from '../content/translations/en.json';
 
+
+
 ---
 
 <!doctype html>
@@ -18,10 +20,21 @@ import translations from '../content/translations/en.json';
 	<body>
 		<Header translations={translations.header} />
 		<main>
-
-        It's not a survey, it's not a form - it's a convo!
-        <CTA />    
+		<h1>Subo turns surveys into <strong class="accent">friendly conversations</strong></h2>
+  		<h2 class="subtitle">It's not a form, it's not a survey - it's a convo!</h2>
+        <CTA translations={translations} />    
 		</main>
 		<Footer translations={translations.footer}/>
 	</body>
 </html>
+
+<style>
+main {
+	padding: 150px 0 0 0;
+	margin: 20px auto 0 auto;
+}
+h1 {
+
+	text-align: center;
+}
+</style>
