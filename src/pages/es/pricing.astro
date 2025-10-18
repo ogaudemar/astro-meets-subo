@@ -1,0 +1,272 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, DISCORD_STORE_URL } from '../consts';
+
+
+import PriceTable from '../../components/PriceTable.astro';
+
+import translations from '../../content/translations/es.json';
+
+import Footer from '../../components/Footer.astro';
+
+const { pricingPage } = translations;
+---
+
+<!doctype html>
+<html lang="es">
+
+<head>
+<BaseHead title={pricingPage.heroTitle} description={pricingPage.heroSubtitle} />
+</head>
+    <body>
+    <Header translations={translations.header} />
+
+    <main>
+    <section class="pricing-hero">
+    <div class="container">
+    <div class="pricing-hero__content">
+        <h1 class="pricing-hero__title"><span class="accent">{pricingPage.heroTitleAccent}</span>{pricingPage.heroTitle}</h1>
+        <p class="subtitle" set:html={pricingPage.heroSubtitle}></p>
+        <p class="subtitle" set:html={pricingPage.heroDescription}></p>
+        </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+        <PriceTable translations={translations} />
+        </div>
+    </section>
+
+
+    <section class="channels-section">
+        <div class="pricing-hero__content">
+        <h2 class="pricing-hero__title" set:html={pricingPage.discordOrStripeTitle}></h2>
+        <p class="subtitle">{pricingPage.discordOrStripeSubtitle}</p>
+        </div>
+        <div class="upgrade-options">
+        <div class="discount-card">
+            <h3 class="discount-title">{pricingPage.discordCardTitle}</h3>
+            <ul>
+            {pricingPage.discordCardFeatures.map(feature => <li class="discount-desc">{feature}</li>)}
+            </ul>
+            <a href="/discordstore" class="button button--white-bg mono">{pricingPage.discordCardButton}</a>
+        </div>
+        <div class="discount-card">
+            <h3 class="discount-title">{pricingPage.stripeCardTitle}</h3>
+            <ul>
+            {pricingPage.stripeCardFeatures.map(feature => <li class="discount-desc" set:html={feature}></li>)}
+            </ul>
+            <a href="/subscriptions" class="button button--white-bg mono">{pricingPage.stripeCardButton}</a>
+        </div>
+        </div>
+    </section>
+
+    
+
+    <section class="faq-section">
+        <div class="container">
+        <h2 class="faq-title">{pricingPage.faqSectionTitle}</h2>
+        <ul class="faq-list">
+        {pricingPage.faqs.map(faq => (
+            <li class="faq-item">
+            <h3 class="faq-question">{faq.question}</h3>
+            <p class="faq-answer">{faq.answer}</p>
+            </li>
+        ))}
+        </ul>
+    </section>
+    </main>
+    <Footer translations={translations.footer}/>
+    </body>
+</html>
+
+
+
+
+<style>
+
+/*body {
+    background: linear-gradient(var(--dark), var(--secondary-dark), var(--secondary), var(--primary), var(--accent));
+}*/
+
+  .pricing-hero {
+    
+    padding: 150px 0 60px;
+    text-align: center;
+    background: linear-gradient(var(--dark),var(--secondary-dark));
+  }
+
+  .pricing-hero__content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .pricing-hero__title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+.accent {
+    color: var(--accent);
+}
+
+  .pricing-hero__subtitle {
+    font-size: 1.25rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .pricing-section {
+    padding: 60px 0;
+    background: linear-gradient(var(--secondary-dark), var(--secondary), var(--primary));
+    
+  }
+
+    .channels-section {
+    padding: 60px 0;
+    background: linear-gradient(var(--primary), var(--secondary-dark));
+    
+  }
+
+  .upgrade-options {
+  display: flex;
+  gap: 5rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.discount-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  min-width: 260px;
+  max-width: 400px;
+  text-align: center;
+
+}
+
+.discount-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  color: var(--blurple-dark);
+
+}
+
+.discount-desc {
+  font-size: 1rem;
+    color: white;
+}
+
+/*
+.discount-btn {
+  display: inline-block;
+    padding: 0.75rem 2rem;
+  background: var(--accent);
+  color: #222;
+  font-weight: 700;
+  border-radius: 2rem;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+} */
+
+.button--white-bg {
+    margin-top: 1.5rem;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+  .button--white-bg:hover {
+    background: var(--premium);
+    box-shadow: 0 4px 24px rgba(108,71,255,0.18);
+    transform: translateY(-4px) scale(1.03);
+  }
+
+
+
+@media (max-width: 600px) {
+  .pricing-discounts {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .discount-card {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .pricing-hero {
+      padding: 60px 0 40px;
+    }
+
+    .pricing-hero__title {
+      font-size: 2.25rem;
+    }
+
+    .pricing-hero__subtitle {
+      font-size: 1.1rem;
+    }
+
+    .pricing-section {
+      padding: 40px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .pricing-hero__title {
+      font-size: 2rem;
+    }
+
+    .pricing-hero__subtitle {
+      font-size: 1rem;
+    }
+  }
+
+.faq-section {
+  background: linear-gradient(var(--secondary-dark), var(--dark));
+  padding: 3rem 0;
+}
+.faq-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.faq-list {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+.faq-item {
+  margin-bottom: 2rem;
+  background: rgba(255,255,255,0.08);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.faq-question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+.faq-answer {
+  font-size: 1.05rem;
+  color: #fff;
+}
+</style>

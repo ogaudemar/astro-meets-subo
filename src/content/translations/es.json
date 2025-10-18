@@ -4,9 +4,9 @@
 
     "header": {
   "navItems": [
-    { "text": "Producto", "href": "/" },
-    { "text": "Recursos", "href": "/" },
-    { "text": "Precios", "href": "/pricing" }
+    { "text": "Producto", "href": "/es/" },
+    { "text": "Recursos", "href": "/es/" },
+    { "text": "Precios", "href": "/es/pricing" }
   ],
   "resources": [
     { "text": "Tutoriales", "href": "/tutorial" },
@@ -212,7 +212,7 @@
       "links": [
         { "text": "Bot Personalizado", "href": "/custom-survey-bot" },
         { "text": "Sondeos", "href": "/polls" },
-        { "text": "Precios", "href": "/pricing" },
+        { "text": "Precios", "href": "/es/pricing" },
         { "text": "Agregar a Discord", "href": "/invite", "external": true }
       ]
     },

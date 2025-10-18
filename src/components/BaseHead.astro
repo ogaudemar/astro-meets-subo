@@ -74,14 +74,43 @@ const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your commun
 
 <script>
 (function() {
-  if (localStorage.getItem('preferredLang')) return;
-  var userLang = (navigator.language || navigator.userLanguage || 'en').slice(0,2);
-  if (!['en','fr','es'].includes(userLang)) userLang = 'en';
+  var preferredLang = localStorage.getItem('preferredLang');
   var path = window.location.pathname;
   var parts = path.replace(/^\/+/, '').split('/');
-  if (['fr','es'].includes(userLang) && !['fr','es'].includes(parts[0])) {
-    // Only redirect if not already on a language path and userLang is not English
-    window.location.pathname = '/' + userLang + path;
+
+  // Only run redirect on homepage/root
+  if (path === '/' || path === '') {
+    // If preferredLang is set and not already on the correct language path
+    if (preferredLang && ['fr','es'].includes(preferredLang)) {
+      window.location.pathname = '/' + preferredLang;
+      return;
+    }
+
+    // If no preferredLang, use browser language
+    if (!preferredLang) {
+      var userLang = (navigator.language || navigator.userLanguage || 'en').slice(0,2);
+      if (!['en','fr','es'].includes(userLang)) userLang = 'en';
+      if (['fr','es'].includes(userLang)) {
+        window.location.pathname = '/' + userLang;
+      }
+    }
+  }
+
+  if (['/', '/pricing'].includes(path)) {
+    // If preferredLang is set and not already on the correct language path
+    if (preferredLang && ['fr','es'].includes(preferredLang)) {
+      window.location.pathname = '/' + preferredLang;
+      return;
+    }
+
+    // If no preferredLang, use browser language
+    if (!preferredLang) {
+      var userLang = (navigator.language || navigator.userLanguage || 'en').slice(0,2);
+      if (!['en','fr','es'].includes(userLang)) userLang = 'en';
+      if (['fr','es'].includes(userLang)) {
+        window.location.pathname = '/' + userLang;
+      }
+    }
   }
 })();
 </script>
