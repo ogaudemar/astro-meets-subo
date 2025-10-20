@@ -13,7 +13,9 @@ const resources = translations.resources;
   <div class="nav__container">
     <div class="nav__brand">
       <a href={navItems[0].href} class="nav__logo">
-        <img src="/images/subo-combo-cap-white.png" alt={SITE_TITLE} class="nav__logo-img" />
+           
+          <img src="/images/logo/subo-full.svg" alt={SITE_TITLE} class="nav__logo-img">
+        
       </a>
     </div>
     <div class="nav__content mono">
@@ -121,14 +123,15 @@ const resources = translations.resources;
   }
 
   .nav__logo-img {
-    height: 48px;
+    height: 25px;
     width: auto;
       transition: opacity 0.2s ease;
     }
-    .nav__logo:hover .nav__logo-img {
-      opacity: 0.7;
-    }
+
+  .nav__logo:hover .nav__logo-img {
+    opacity: 0.7;
   }
+  
 
   .nav__content {
     display: flex;
@@ -321,7 +324,7 @@ const resources = translations.resources;
       display: flex;
     }
     .nav__logo-img {
-    height: 32px;
+    height: 20px;
 
   }
 </style>
