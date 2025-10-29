@@ -480,6 +480,8 @@
 
 
 "pricingPage": {
+  "pageTitle": "Offres & Tarifs | Subo",
+"pageDescription": "Passe au niveau supérieur avec les offres payantes de Subo",
   "heroTitleAccent": "PASSE AU NIVEAU SUPÉRIEUR ",
   "heroTitle": "AVEC LES OFFRES PAYANTES",
   "heroSubtitle": "Commence gratuitement.<br/> Upgrade pour débloquer plus de fonctionnalités et soutenir le développement.",

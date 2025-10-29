@@ -489,6 +489,8 @@
     }
 ,
 "pricingPage": {
+  "pageTitle": "Plans & Pricing | Subo",
+  "pageDescription": "Level up your free Subo experience with paid plans",
   "heroTitleAccent": "LEVEL UP ",
   "heroTitle": "WITH PAID PLANS",
   "heroSubtitle": "Start free. <br/> Upgrade to unlock more features and support future development.",
