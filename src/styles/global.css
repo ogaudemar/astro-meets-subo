@@ -48,9 +48,11 @@
   }
 
   .container {
+    
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 48px;
   }
 
   .container--small {
@@ -58,7 +60,7 @@
   }
 
   .container--large {
-    max-width: 1400px;
+    max-width: 1440px;
   }
 
   .text-white {
