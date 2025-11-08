@@ -76,20 +76,19 @@
 
     "features": {
     "title": "YOU LEARN MORE WHEN PEOPLE ENJOY THE CONVERSATION.",
-    "subtitle": "Traditional forms and surveys are boring. No one wants to answer them. With Subo, you ask questions in polls and friendly conversations that your community wants to join.",
+    "subtitle": "Traditional form-based surveys are boring. No one wants to answer them. With Subo, you ask questions in polls and friendly conversations that your community wants to join.",
     "list": [
         {
         "title": "ASK QUESTIONS",
         "content": [
-            "No boring surveys with Subo!",
-            "With <strong>survey convos</strong>, members answer your questions in a private chat with Subo, inside your Discord server or on the web.",
-            "With <strong>polls</strong>, members answer your 1 public question, with multiple ways to answer and share results."
+            
+            "<strong>Survey convos:</strong> members answer Subo's questions in a private chat, inside your Discord server or on the web.",
+            "<strong>Discord polls:</strong> 1 question, multiple ways to answer and share results."
         ]
         },
         {
         "title": "ENCOURAGE PARTICIPATION",
         "content": [
-            "Rewards that matter!",
             "Give <strong>Role rewards</strong> for answering a survey or a poll",
             "<strong>XP system</strong>: members earn points as they answer questions, level up to unlock roles.",
             "Display a <strong>leaderboard</strong> with your most active participants",
@@ -99,7 +98,8 @@
         {
         "title": "ANALYZE & SHARE RESULTS",
         "content": [
-            "View aggregated results and individual responses, privately or privately. Share/repost them in the server.",
+            "View aggregated results and individual responses.", 
+            "Share/repost results",
             "Let Subo summarize open answers with AI",
             "Export the <strong>full data set</strong> for further analysis."
         ]
