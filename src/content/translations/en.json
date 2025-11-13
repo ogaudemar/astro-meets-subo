@@ -66,7 +66,7 @@
 "hero": {
   "title": "GET TO KNOW YOUR",
   "rotatingWords": [
-    "COMMUNITY", "MEMBERS", "USERS", "FANS", "PATRONS", "FRIENDS", "FOLLOWERS", "SUPPORTERS", "CUSTOMERS", "AUDIENCE", "GROUP", "GUILD", "TEAM", "CREW", "SUBSCRIBERS"
+    "COMMUNITY", "MEMBERS", "PLAYERS", "FANS", "PATRONS", "GUILD", "FOLLOWERS", "SUPPORTERS", "CUSTOMERS", "USERS", "FRIENDS", "AUDIENCE", "GROUP", "TEAM", "CREW", "SUBSCRIBERS"
   ],
   "subtitle": "with questions they want to answer!",
   "cta": "Add to Discord",
