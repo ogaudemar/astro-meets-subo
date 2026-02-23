@@ -7,11 +7,12 @@ interface Props {
 	title: string;
 	description: string;
 	image?: string;
+	alternates?: Array<{lang: string; href: string}>;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your community", description = "Subo makes surveys fun! Subo helps you engage and understand your friends and community with polls and survey convos in your Discord server", image = '/images/subo-og.png' } = Astro.props;
+const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your community", description = "Subo makes surveys fun! Subo helps you engage and understand your friends and community with polls and survey convos in your Discord server", image = '/images/subo-og.png', alternates = [] } = Astro.props;
 
 
 ---
@@ -35,6 +36,11 @@ const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your commun
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+
+<!-- hreflang alternates for translated pages -->
+{alternates.map(({lang, href}) => (
+  <link rel="alternate" hreflang={lang} href={href} />
+))}
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>

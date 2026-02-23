@@ -11,7 +11,7 @@
     "resources": [
       { "text": "Tutoriels", "href": "/tutorial" },
       { "text": "Serveur de support", "href": "/support" },
-      { "text": "Portail de facturation", "href": "/billingportal" },
+      { "text": "Portail de facturation", "href": "/portal" },
       { "text": "Blog", "href": "/blog" }
     ],
     "cta": "Ajoute à Discord",
@@ -38,7 +38,7 @@
           { "text": "Serveur de support", "href": "/support", "external": true },
           { "text": "Tutoriels", "href": "/tutorial", "external": true },
           { "text": "Blog", "href": "/blog" },
-          { "text": "Portail Stripe", "href": "/billingportal", "external": true },
+          { "text": "Portail Stripe", "href": "/portal", "external": true },
           { "text": "Boutique Discord", "href": "/discordstore", "external": true }
         ]
       },

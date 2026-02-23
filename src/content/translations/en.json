@@ -11,7 +11,7 @@
   "resources": [
     { "text": "Tutorials", "href": "/tutorial" },
     { "text": "Support Server", "href": "/support" },
-    { "text": "Billing Portal", "href": "/billingportal" },
+    { "text": "Billing Portal", "href": "/portal" },
     { "text": "Blog", "href": "/blog" }
   ],
   "cta": "Add to Discord",
@@ -40,7 +40,7 @@
         { "text": "Support Server", "href": "/support", "external": true },
         { "text": "Tutorials", "href": "/tutorial", "external": true },
         { "text": "Blog", "href": "/blog" },
-        { "text": "Stripe billing portal", "href": "/billingportal", "external": true },
+        { "text": "Stripe billing portal", "href": "/portal", "external": true },
         { "text": "Discord App Store", "href": "/discordstore", "external": true }
       ]
     },

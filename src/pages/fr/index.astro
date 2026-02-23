@@ -18,7 +18,12 @@ import Footer from '../../components/Footer.astro';
 <!doctype html>
 <html lang="fr">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} alternates={[
+			{lang: 'x-default', href: 'https://subo.ai/'},
+			{lang: 'en', href: 'https://subo.ai/'},
+			{lang: 'fr', href: 'https://subo.ai/fr/'},
+			{lang: 'es', href: 'https://subo.ai/es/'},
+		]} />
 	</head>
 	<body>
 		<Header translations={translations.header} />

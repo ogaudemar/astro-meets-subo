@@ -9,11 +9,6 @@ export const trackedRedirects = {
     name: 'discord_bot_invite',
     description: 'Discord Bot Invite'
   },
-  portal: {
-    url: 'https://billing.stripe.com/p/login/7sI3el1F61iu5RS8ww',
-    name: 'stripe_portal',
-    description: 'Stripe Customer Portal'
-  },
   tutorial: {
     url: 'https://suboai.notion.site/Tutorials-831cbee01f004a81ac5fd3ae72f09bce',
     name: 'tutorials',
@@ -44,7 +39,7 @@ export const trackedRedirects = {
     name: 'discord_upgrade',
     description: 'Discord Upgrade Page'
   },
-  billingportal: {
+  portal: {
     url: 'https://billing.stripe.com/p/login/7sI3el1F61iu5RS8ww',
     name: 'stripe_billing_portal',
     description: 'Stripe Billing Portal'

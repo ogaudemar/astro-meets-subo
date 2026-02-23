@@ -17,7 +17,12 @@ const { pricingPage } = translations;
 <html lang="es">
 
 <head>
-<BaseHead title={pricingPage.pageTitle} description={pricingPage.pageDescription} />
+<BaseHead title={pricingPage.pageTitle} description={pricingPage.pageDescription} alternates={[
+  {lang: 'x-default', href: 'https://subo.ai/pricing'},
+  {lang: 'en', href: 'https://subo.ai/pricing'},
+  {lang: 'fr', href: 'https://subo.ai/fr/pricing'},
+  {lang: 'es', href: 'https://subo.ai/es/pricing'},
+]} />
 </head>
     <body>
     <Header translations={translations.header} />
