@@ -1,74 +1,18 @@
 ---
-const allUseCases = [
-  { icon: "💡", text: "Get feedback on a new idea, product or pricing" },
-  { icon: "🧑‍🤝‍🧑", text: "Understand who your community members are" },
-  { icon: "🔥", text: "Understand what gets your community fired up!" },
-  { icon: "📈", text: "Track member activities or satisfaction at regular intervals" },
-  { icon: "📝", text: "Onboard new members with interactive checklists" },
-  { icon: "🎤", text: "Interview members who apply for a staff role" },
-  { icon: "🎟️", text: "Collect RSVPs, attendee info and questions before events" },
-  { icon: "📊", text: "Engagement polls just for fun" },
-  { icon: "🔮", text: "Have members predict future games and events" },
-  { icon: "🗣️", text: "Get feedback on a past community event" },
-  { icon: "🌟", text: "Collect reviews or testimonials" },
-  { icon: "💖", text: "Community culture or pulse checks" },
-  { icon: "🏆", text: "Community votes to select a project or a leader" },
-  { icon: "💡", text: "Collect suggestions or feature requests" },
-  { icon: "🧠", text: "Quizzes and knowledge checks" },
-    // 🎮 Gaming Guilds
-  { icon: "⚔️", text: "Vote on raid times, team comps, or next boss strategy" },
-  { icon: "🧩", text: "Run quick polls during tournaments or matches" },
-  { icon: "🏹", text: "Collect feedback on new game patches or balance changes" },
-  { icon: "👑", text: "Elect new moderators, captains, or guild leaders" },
-  // 🏢 Gaming Studios
-  { icon: "🎮", text: "Test early builds or prototypes with your community" },
-  { icon: "🗳️", text: "Let fans choose character names, skins, or map themes" },
-  { icon: "🧱", text: "Get insights from playtesters and beta users" },
-  { icon: "💬", text: "Ask for story or lore feedback from your most loyal fans" },
-  // 🌐 Web3
-  { icon: "🪙", text: "Gauge community sentiment on proposals or governance votes" },
-  { icon: "🎨", text: "Let holders help name new NFT collections or drops" },
-  { icon: "🚀", text: "Ask what utilities or rewards people want next" },
-  { icon: "🌍", text: "Check how members discovered your project or DAO" },
-  // 🎓 Education
-  { icon: "📚", text: "Quick comprehension checks after lessons or workshops" },
-  { icon: "🎯", text: "Gather student feedback on teaching style or difficulty" },
-  { icon: "🤝", text: "Match learners with study groups or mentors" },
-  { icon: "🧭", text: "Poll what topics or skills members want to learn next" },
-  // ⚽ Sports
-  { icon: "🏀", text: "Vote on MVPs, best plays, or highlight moments" },
-  { icon: "📅", text: "Schedule team practices or pickup games" },
-  { icon: "📣", text: "Get fan predictions before big matches" },
-  // 🎧 Podcast / Anime
-  { icon: "🎧", text: "Ask listeners which topic or guest should come next" },
-  { icon: "🎬", text: "Run polls on favorite episodes, arcs, or characters" },
-  { icon: "🍿", text: "Host watch party votes for upcoming shows or movies" }
-];
-
-// Shuffle and select 2 random use case
-function getRandomUseCases(arr, n) {
-  return arr
-    .map(value => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .slice(0, n)
-    .map(({ value }) => value);
-}
-
-const useCases = getRandomUseCases(allUseCases, 2);
-
+const { translations } = Astro.props;
 ---
 
 <!-- Brief intro section -->
 <section class="usecases">
   <div class="container text-center">
     <img src="/images/subo-neon2-100.png" alt="Subo the Survey Bot" height="100" class="intro__icon" id="avatar"/>
-    <h2 class="title text-white"><strong>WHAT WILL YOU ASK TODAY?</strong></h2>
-    <p class="subtitle text-white">Subo helps you collect valuable information from your community... or just have fun.</p>
+    <h2 class="title text-white"><strong>{translations.usecasesTitle}</strong></h2>
+    <p class="subtitle text-white">{translations.usecasesSubtitle}</p>
     <div class="usecases__content">
       <div class="usecases-grid" id="usecases-grid" style="display: none;">
         <!-- Cards will be dynamically inserted here -->
       </div>
-    <button id="inspire-me" class="button button--accent-bg">🎲 Click me for inspiration!</button>
+    <button id="inspire-me" class="button button--accent-bg">{translations.usecasesInspireBtn}</button>
     </div>
   </div>
 </section>
@@ -135,64 +79,7 @@ const useCases = getRandomUseCases(allUseCases, 2);
 }
 </style>
 
-<script>
-const allUseCases = [
-  // All servers/
-  { icon: "💡", text: "Get feedback on a new idea, product or pricing" },
-  { icon: "🧑‍🤝‍🧑", text: "Understand who your community members are" },
-  { icon: "🔥", text: "Understand what gets your community fired up!" },
-  { icon: "📈", text: "Track member activities or satisfaction at regular intervals" },
-  { icon: "📝", text: "Onboard new members with interactive checklists" },
-  { icon: "🎤", text: "Interview members who apply for a staff role" },
-  { icon: "🎟️", text: "Collect RSVPs, attendee info and questions before events" },
-  { icon: "📊", text: "Engagement polls just for fun" },
-  { icon: "🔮", text: "Have members predict future games and events" },
-  { icon: "🗣️", text: "Get feedback on a past community event" },
-  { icon: "🌟", text: "Collect reviews or testimonials" },
-  { icon: "💖", text: "Community culture or pulse checks" },
-  { icon: "🏆", text: "Community votes to select a project or a leader" },
-  { icon: "💡", text: "Collect suggestions or feature requests" },
-  { icon: "🧠", text: "Quizzes and knowledge checks" },
-    // 🎮 Gaming Guilds/
-  { icon: "⚔️", text: "Vote on raid times, team comps, or next boss strategy" },
-  { icon: "🧩", text: "Run quick polls during tournaments or matches" },
-  { icon: "🏹", text: "Collect feedback on new game patches or balance changes" },
-  { icon: "👑", text: "Elect new moderators, captains, or guild leaders" },
-  // 🏢 Gaming Studios
-  { icon: "🎮", text: "Test early builds or prototypes with your community" },
-  { icon: "🗳️", text: "Let fans choose character names, skins, or map themes" },
-  { icon: "🧱", text: "Get insights from playtesters and beta users" },
-  { icon: "💬", text: "Ask for story or lore feedback from your most loyal fans" },
-  // 🌐 Web3
-  { icon: "🪙", text: "Gauge community sentiment on proposals or governance votes" },
-  { icon: "🎨", text: "Let holders help name new NFT collections or drops" },
-  { icon: "🚀", text: "Ask what utilities or rewards people want next" },
-  { icon: "🌍", text: "Check how members discovered your project or DAO" },
-  // 🎓 Education
-  { icon: "📚", text: "Quick comprehension checks after lessons or workshops" },
-  { icon: "🎯", text: "Gather student feedback on teaching style or difficulty" },
-  { icon: "🤝", text: "Match learners with study groups or mentors" },
-  { icon: "🧭", text: "Poll what topics or skills members want to learn next" },
-  // ⚽ Sports
-  { icon: "🏀", text: "Vote on MVPs, best plays, or highlight moments" },
-  { icon: "📅", text: "Schedule team practices or pickup games" },
-  { icon: "📣", text: "Get fan predictions before big matches" },
-  // 🎧 Podcast / Anime
-  { icon: "🎧", text: "Ask listeners which topic or guest should come next" },
-  { icon: "🎬", text: "Run polls on favorite episodes, arcs, or characters" },
-  { icon: "🍿", text: "Host watch party votes for upcoming shows or movies" },
-  // Funny cases
-  { icon: "🥐", text: "Decide once and for all: is a hotdog a sandwich?" },
-  { icon: "👀", text: "Find out who actually reads the announcements" },
-  { icon: "🦖", text: "Run a poll to name the community pet dinosaur" },
-  { icon: "🧙‍♂️", text: "Sort members into Hogwarts houses (no pressure, Gryffindor)" },
-  { icon: "🍕", text: "Vote on the best pizza topping" },
-  { icon: "🛸", text: "Ask if aliens would vibe with your community" },
-  { icon: "🐸", text: "Meme bracket tournament: crown the ultimate meme lord" },
-  { icon: "☕", text: "Coffee or tea? (this one gets heated)" },
-  { icon: "🌈", text: "Ask how everyone’s *vibe level* is today (scientifically accurate)" }
-];
-
+<script define:vars={{ allUseCases: translations.usecasesList, inspireBtn: translations.usecasesInspireBtn }}>
 function getRandomUseCases(arr, n) {
   return arr
     .map(value => ({ value, sort: Math.random() }))
@@ -233,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
     randomUseCases.forEach(usecase => {
       const cardElement = document.createElement('div');
       cardElement.className = 'usecase-card';
-      cardElement.innerHTML = `${usecase.icon}<span>${usecase.text}</span>`;
+      cardElement.innerHTML = `<span>${usecase}</span>`;
       usecasesGrid.appendChild(cardElement);
     });
     
@@ -244,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 50);
     
     // Update button text
-    this.innerHTML = '🎲 Inspire me again!';
+    this.innerHTML = inspireBtn;
   });
 });
 </script>
