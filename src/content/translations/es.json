@@ -66,21 +66,52 @@
   "usecasesSubtitle": "Recoge información valiosa de tu comunidad. Toca el botón para inspirarte:",
   "usecasesInspireBtn": "🎲 ¡Inspírame!",
   "usecasesList": [
-    "Recibe opiniones sobre una nueva idea, producto o precio",
-    "Entiende quiénes son los miembros de tu comunidad",
-    "Descubre qué motiva a tu comunidad",
-    "Haz seguimiento de actividades o satisfacción de los miembros regularmente",
-    "Da la bienvenida a nuevos miembros con listas de verificación interactivas",
-    "Entrevista a miembros que solicitan un rol de staff",
-    "Recoge confirmaciones de asistencia, información y preguntas antes de eventos",
-    "Sondeos de participación solo por diversión",
-    "Haz que los miembros predigan futuros juegos y eventos",
-    "Recibe opiniones sobre un evento pasado de la comunidad",
-    "Recoge reseñas o testimonios",
-    "Encuestas de cultura o pulso comunitario",
-    "Votaciones comunitarias para elegir un proyecto o líder",
-    "Recoge sugerencias o solicitudes de funciones",
-    "Cuestionarios y pruebas de conocimiento"
+    "💡 Recibe opiniones sobre una nueva idea, producto o precio",
+    "🧑‍🤝‍🧑 Entiende quiénes son los miembros de tu comunidad",
+    "🔥 Descubre qué motiva a tu comunidad",
+    "📈 Haz seguimiento de actividades o satisfacción de los miembros regularmente",
+    "📝 Da la bienvenida a nuevos miembros con listas de verificación interactivas",
+    "🎤 Entrevista a miembros que solicitan un rol de staff",
+    "🎟️ Recoge confirmaciones de asistencia, información y preguntas antes de eventos",
+    "📊 Sondeos de participación solo por diversión",
+    "🔮 Haz que los miembros predigan futuros juegos y eventos",
+    "🗣️ Recibe opiniones sobre un evento pasado de la comunidad",
+    "🌟 Recoge reseñas o testimonios",
+    "💖 Encuestas de cultura o pulso comunitario",
+    "🏆 Votaciones comunitarias para elegir un proyecto o líder",
+    "💡 Recoge sugerencias o solicitudes de funciones",
+    "🧠 Cuestionarios y pruebas de conocimiento",
+    "⚔️ Vota sobre horarios de raid, composición de equipos o estrategia del próximo jefe",
+    "🧩 Realiza sondeos rápidos durante torneos o partidas",
+    "🏹 Recoge opiniones sobre nuevos parches o cambios de balance del juego",
+    "👑 Elige nuevos moderadores, capitanes o líderes de gremio",
+    "🎮 Prueba versiones anticipadas o prototipos con tu comunidad",
+    "🗳️ Deja que los fans elijan nombres de personajes, skins o temas de mapa",
+    "🧱 Obtén opiniones de testers y usuarios beta",
+    "💬 Pide feedback sobre la historia o el lore a tus fans más fieles",
+    "🪙 Mide el sentimiento de la comunidad sobre propuestas o votaciones",
+    "🎨 Deja que los holders ayuden a nombrar nuevas colecciones o drops de NFT",
+    "🚀 Pregunta qué utilidades o recompensas quiere la gente a continuación",
+    "🌍 Descubre cómo los miembros encontraron tu proyecto o DAO",
+    "📚 Verificaciones rápidas de comprensión tras lecciones o talleres",
+    "🎯 Recoge feedback de los estudiantes sobre el estilo de enseñanza o la dificultad",
+    "🤝 Conecta a los aprendices con grupos de estudio o mentores",
+    "🧭 Sondea qué temas o habilidades quieren aprender los miembros",
+    "🏀 Vota por los MVP, mejores jugadas o momentos destacados",
+    "📅 Organiza prácticas de equipo o partidas informales",
+    "📣 Pide predicciones de fans antes de los grandes partidos",
+    "🎧 Pregunta a los oyentes qué tema o invitado debería venir a continuación",
+    "🎬 Realiza sondeos sobre episodios, arcos o personajes favoritos",
+    "🍿 Organiza votaciones para ver series o películas juntos",
+    "🥐 Decide de una vez por todas: ¿un hotdog es un sándwich?",
+    "👀 Descubre quién realmente lee los anuncios",
+    "🦖 Haz un sondeo para nombrar al dinosaurio mascota de la comunidad",
+    "🧙‍♂️ Clasifica a los miembros en casas de Hogwarts (sin presión, Gryffindor)",
+    "🍕 Vota por el mejor topping de pizza",
+    "🛸 Pregunta si los alienígenas encajarían en tu comunidad",
+    "🐸 Torneo de memes: corona al rey definitivo de los memes",
+    "☕ ¿Café o té? (este debate se pone intenso)",
+    "🌈 Pregunta cómo está el nivel de vibes de todos hoy"
   ],
 
   "testimonialsTitle": "¡CONFIADO POR MÁS DE 15,000 COMUNIDADES!",
@@ -210,6 +241,7 @@
     {
       "title": "Producto",
       "links": [
+        { "text": "Survey Convos", "href": "/survey-convos" },
         { "text": "Bot Personalizado", "href": "/custom-survey-bot" },
         { "text": "Sondeos", "href": "/polls" },
         { "text": "Precios", "href": "/es/pricing" },
@@ -219,6 +251,7 @@
     {
       "title": "Recursos",
       "links": [
+        { "text": "Acerca de", "href": "/about" },
         { "text": "Servidor de Soporte", "href": "/support", "external": true },
         { "text": "Tutoriales", "href": "/tutorial", "external": true },
         { "text": "Blog", "href": "/blog" },
@@ -244,6 +277,123 @@
   ],
   "socialDiscordLabel": "Únete a nuestro servidor de Discord"
 },
+"surveyConvos": {
+  "pageTitle": "Conversaciones de encuesta en Discord | Subo",
+  "pageDescription": "Subo convierte las encuestas en conversaciones amigables en Discord. Los miembros responden de uno a uno con el bot — sin formularios aburridos, mayores tasas de finalización.",
+  "heroTitle": "Encuestas que se sienten como <strong class=\"accent\">conversaciones</strong>",
+  "heroSubtitle": "No es un formulario. No es solo un sondeo. Una charla amigable donde tus miembros realmente quieren responder.",
+  "heroCta": "Agregar a Discord — Gratis",
+  "whatTitle": "¿QUÉ ES UNA SURVEY CONVO?",
+  "whatBody": [
+    "Una survey convo es una conversación privada entre un miembro de tu comunidad y Subo, el bot — directamente dentro de tu servidor de Discord o en la web.",
+    "En lugar de enviar a tus miembros a rellenar un formulario frío, Subo los invita a un chat. Las preguntas aparecen de una en una, en formato de mensajes. Se siente como hablar con alguien, no rellenar papeleo.",
+    "El resultado: <strong>tasas de finalización más altas</strong>, respuestas más ricas y miembros que realmente disfrutan la experiencia."
+  ],
+  "formsVsConvosTitle": "FORMULARIOS TRADICIONALES vs. SURVEY CONVOS",
+  "formsColumn": "Formularios tradicionales",
+  "convosColumn": "Survey Convos con Subo",
+  "formsVsConvosItems": [
+    { "forms": "Interfaz fría e impersonal", "convos": "Experiencia cálida en modo chat" },
+    { "forms": "Páginas largas que abruman", "convos": "Una pregunta a la vez" },
+    { "forms": "Los miembros abandonan la página", "convos": "Se quedan en Discord o usan el enlace web" },
+    { "forms": "Tasas de finalización bajas", "convos": "Mayor participación y finalización" }
+  ],
+  "howTitle": "CÓMO FUNCIONA",
+  "howSteps": [
+    {
+      "number": "1",
+      "title": "Creas la encuesta",
+      "desc": "Crea una encuesta con el comando /survey, o usa /draft para que la IA de Subo genere una según tus objetivos. También puedes construirla y gestionarla desde la app web de Subo."
+    },
+    {
+      "number": "2",
+      "title": "Subo invita a tus miembros",
+      "desc": "Subo publica una invitación en tu servidor de Discord. Los miembros hacen clic y responden las preguntas en privado — directamente en Discord o a través de un enlace web."
+    },
+    {
+      "number": "3",
+      "title": "Ves los resultados al instante",
+      "desc": "Ve resultados agregados, respuestas individuales y deja que la IA de Subo resuma las respuestas abiertas para siempre saber qué piensa tu comunidad."
+    }
+  ],
+  "questionTypesTitle": "5 TIPOS DE PREGUNTAS",
+  "questionTypesSubtitle": "Subo te da el formato adecuado para cada pregunta.",
+  "questionTypesList": [
+    { "emoji": "💬", "name": "Texto abierto", "desc": "Respuestas escritas en formato libre" },
+    { "emoji": "🔢", "name": "Numérico", "desc": "Números, valoraciones o rangos" },
+    { "emoji": "✅", "name": "Sí / No", "desc": "Elecciones binarias simples" },
+    { "emoji": "🔘", "name": "Opción única", "desc": "Elige una entre múltiples opciones" },
+    { "emoji": "☑️", "name": "Opción múltiple", "desc": "Selecciona todo lo que aplique" }
+  ],
+  "webTitle": "EN DISCORD Y EN LA WEB",
+  "webDesc": "Las survey convos funcionan de forma nativa dentro de Discord, pero Subo también admite una experiencia web. Los administradores eligen si la encuesta se ejecuta en Discord o en la web, y si está abierta a cualquiera o restringida a los miembros de la comunidad. En cualquier caso, gestionas las encuestas, ves los resultados y analizas los datos desde el panel de administración web de Subo.",
+  "benefitsTitle": "POR QUÉ LAS SURVEY CONVOS FUNCIONAN MEJOR",
+  "benefitsList": [
+    "💬 Formato chat que tus miembros ya conocen",
+    "📱 Funciona en móvil sin fricciones",
+    "🤫 Modo anónimo opcional para feedback honesto y sin filtros",
+    "🔀 Lógica de salto — salta preguntas irrelevantes según respuestas anteriores",
+    "⏱️ Encuestas programadas y recurrentes que se ejecutan automáticamente",
+    "🏆 Recompensas de XP y roles que impulsan la participación",
+    "🤖 Resumen de IA de respuestas abiertas que te ahorra horas"
+  ]
+},
+
+"about": {
+  "pageTitle": "Acerca de Subo | El bot de encuestas para Discord",
+  "pageDescription": "Conoce Subo, el bot de encuestas y sondeos para Discord que utilizan más de 15,000 comunidades para recopilar feedback y comprometer a sus miembros.",
+  "heroTitle": "ACERCA DE SUBO",
+  "heroSubtitle": "SU-BO. Survey Bot. Creado para comunidades que quieren respuestas reales.",
+  "storyTitle": "POR QUÉ EXISTE SUBO",
+  "storyBody": [
+    "Subo fue fundado en 2021 por un pequeño equipo de profesionales 🤓 con décadas de experiencia construyendo plataformas de encuestas usadas por millones de usuarios en todo el mundo — y por las principales marcas e investigadores globales. Vimos desde adentro cómo se construían esas herramientas: optimizadas para ciclos de venta enterprise, no para las personas que las rellenan. La experiencia era sistemáticamente mala, y queríamos hacer algo al respecto.",
+    "Así que construimos Subo. Bootstrapped, autofinanciado e independiente — completamente enfocado en hacer que el feedback se sienta como una conversación en lugar de una tarea. Discord era el lugar perfecto para empezar: una plataforma donde las comunidades ya estaban hablando, y donde las herramientas para escuchar brillaban por su ausencia.",
+    "Desde su lanzamiento, Subo ha crecido para servir a más de <strong>15,000 servidores de Discord</strong> — desde gremios de juegos hasta comunidades de creadores, DAOs, clubes deportivos, comunidades de marcas y grupos educativos. Somos un equipo pequeño, y tenemos la intención de seguir siéndolo."
+  ],
+  "statsTitle": "EN NÚMEROS",
+  "stats": [
+    { "number": "15,000+", "label": "Servidores Discord" },
+    { "number": "5", "label": "Tipos de preguntas" },
+    { "number": "3", "label": "Capas de gamificación" },
+    { "number": "1", "label": "Objetivo: la voz de tu comunidad" }
+  ],
+  "differentiatorTitle": "QUÉ HACE A SUBO DIFERENTE",
+  "differentiators": [
+    {
+      "emoji": "💬",
+      "title": "Conversacional por diseño",
+      "desc": "Las preguntas llegan como mensajes privados — de una en una, en formato chat. No una página de formulario. No una interrupción. Una conversación real."
+    },
+    {
+      "emoji": "🤖",
+      "title": "Análisis impulsado por IA",
+      "desc": "Subo usa IA para redactar preguntas de encuesta por ti y resumir respuestas abiertas. Lo que antes tomaba horas ahora toma segundos."
+    },
+    {
+      "emoji": "🏆",
+      "title": "Gamificación integrada",
+      "desc": "Los miembros ganan XP al responder, suben de nivel, desbloquean roles y compiten en clasificaciones mensuales. El engagement está integrado en la experiencia."
+    },
+    {
+      "emoji": "🌐",
+      "title": "Discord Y la web",
+      "desc": "Las encuestas funcionan dentro de Discord y en la web. Los miembros sin Discord también pueden participar. Lo gestionas todo desde el panel web de Subo."
+    },
+    {
+      "emoji": "🔐",
+      "title": "Modo anónimo",
+      "desc": "Cuando los temas sensibles requieren respuestas honestas, activa el modo anónimo. Tres opciones: anonimato total, identificado o parcial — tú eliges el nivel adecuado."
+    },
+    {
+      "emoji": "🎯",
+      "title": "Segmentación avanzada",
+      "desc": "Envía encuestas a roles, canales o individuos específicos. Usa lógica de salto para ramificar preguntas según respuestas anteriores. Hecho para la precisión."
+    }
+  ],
+  "missionTitle": "NUESTRA MISIÓN",
+  "missionBody": "Creemos que cada comunidad merece ser escuchada — y que las herramientas para escuchar deben ser tan atractivas como las comunidades mismas. Subo es nuestra respuesta a ese desafío."
+},
+
 "priceTable": {
   "tiers": [
     {

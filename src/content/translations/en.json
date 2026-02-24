@@ -28,6 +28,7 @@
     {
       "title": "Product",
       "links": [
+        { "text": "Survey Convos", "href": "/survey-convos" },
         { "text": "Custom Bot", "href": "/custom-survey-bot" },
         { "text": "Polls", "href": "/polls" },
         { "text": "Pricing", "href": "/pricing" },
@@ -37,6 +38,7 @@
     {
       "title": "Resources",
       "links": [
+        { "text": "About", "href": "/about" },
         { "text": "Support Server", "href": "/support", "external": true },
         { "text": "Tutorials", "href": "/tutorial", "external": true },
         { "text": "Blog", "href": "/blog" },
@@ -488,6 +490,123 @@
     ]
     }
 ,
+"surveyConvos": {
+  "pageTitle": "Discord Survey Conversations | Subo",
+  "pageDescription": "Subo turns surveys into friendly Discord conversations. Members answer questions one-on-one with the bot — no boring forms, higher completion rates, richer answers.",
+  "heroTitle": "Surveys that feel like <strong class=\"accent\">conversations</strong>",
+  "heroSubtitle": "Not a form. Not just a poll. A friendly one-on-one chat where your members actually want to respond.",
+  "heroCta": "Add to Discord — Free",
+  "whatTitle": "WHAT IS A SURVEY CONVO?",
+  "whatBody": [
+    "A survey convo is a private message conversation between your community member and Subo, the bot — right inside your Discord server or on the web.",
+    "Instead of sending members to a cold, generic form, Subo invites them to a chat. Questions appear one at a time, in a friendly message format. It feels like talking to someone, not filling out paperwork.",
+    "The result? <strong>Higher completion rates</strong>, richer answers, and members who actually enjoy the experience."
+  ],
+  "formsVsConvosTitle": "TRADITIONAL FORMS vs. SURVEY CONVOS",
+  "formsColumn": "Traditional Forms",
+  "convosColumn": "Survey Convos with Subo",
+  "formsVsConvosItems": [
+    { "forms": "Cold, impersonal interface", "convos": "Warm, chat-style experience" },
+    { "forms": "Long pages that feel overwhelming", "convos": "One question at a time" },
+    { "forms": "Members navigate away", "convos": "Members stay in Discord or use the web link" },
+    { "forms": "Low completion rates", "convos": "Higher engagement and completion" }
+  ],
+  "howTitle": "HOW IT WORKS",
+  "howSteps": [
+    {
+      "number": "1",
+      "title": "You build the survey",
+      "desc": "Create a survey using the /survey command, or use /draft to let Subo's AI generate one based on your objectives. You can also build and manage surveys from the Subo web app."
+    },
+    {
+      "number": "2",
+      "title": "Subo invites your members",
+      "desc": "Subo posts an invite in your Discord server. Members click the invite and answer questions privately — right inside Discord, or via a web link."
+    },
+    {
+      "number": "3",
+      "title": "You get results instantly",
+      "desc": "View aggregated results, individual responses, and let Subo's AI summarize open-ended answers so you always know what your community thinks."
+    }
+  ],
+  "questionTypesTitle": "5 QUESTION TYPES",
+  "questionTypesSubtitle": "Subo gives you the right format for every question.",
+  "questionTypesList": [
+    { "emoji": "💬", "name": "Open Text", "desc": "Free-form written answers" },
+    { "emoji": "🔢", "name": "Numeric", "desc": "Numbers, ratings, or ranges" },
+    { "emoji": "✅", "name": "Yes / No", "desc": "Simple binary choices" },
+    { "emoji": "🔘", "name": "Single Choice", "desc": "Pick one from multiple options" },
+    { "emoji": "☑️", "name": "Multiple Choice", "desc": "Select all that apply" }
+  ],
+  "webTitle": "ON DISCORD AND ON THE WEB",
+  "webDesc": "Survey convos work natively inside Discord — but Subo also supports a web-based survey experience. Admins choose whether a survey runs in Discord or on the web, and whether it's open to anyone or restricted to community members. Either way, you manage surveys, view results, and analyze data from the Subo web admin.",
+  "benefitsTitle": "WHY SURVEY CONVOS WORK BETTER",
+  "benefitsList": [
+    "💬 Chat-style format members are already familiar with",
+    "📱 Works on mobile without any friction",
+    "🤫 Optional anonymous mode for honest, unfiltered feedback",
+    "🔀 Skip logic — skip irrelevant questions based on previous answers",
+    "⏱️ Scheduled and recurring surveys run automatically",
+    "🏆 XP rewards and role incentives drive higher participation",
+    "🤖 AI summarization of open-ended responses saves you hours"
+  ]
+},
+
+"about": {
+  "pageTitle": "About Subo | The Discord Survey Bot",
+  "pageDescription": "Learn about Subo, the Discord survey and poll bot trusted by 15,000+ communities to collect feedback and engage members.",
+  "heroTitle": "ABOUT SUBO",
+  "heroSubtitle": "SU-BO. Survey Bot. Built for communities that want real answers.",
+  "storyTitle": "WHY SUBO EXISTS",
+  "storyBody": [
+    "Subo was started in 2021 by a small team of pros 🤓 with decades of experience building survey platforms used by millions of global users — and by the world's top brands and researchers. We'd seen from the inside how survey tools were built: optimized for enterprise sales cycles, not for the people actually taking them. The experience was consistently bad, and we wanted to do something about it.",
+    "So we built Subo. Bootstrapped, self-funded, and fiercely independent — entirely focused on making feedback feel like a conversation rather than a chore. Discord was the perfect place to start: a platform where communities were already talking, and where the tools for listening were badly missing.",
+    "Since launch, Subo has grown to serve over <strong>15,000 Discord servers</strong> — from gaming guilds to creator communities, DAOs, sports clubs, brand communities, and educational groups. We're a small team, and we intend to stay that way."
+  ],
+  "statsTitle": "BY THE NUMBERS",
+  "stats": [
+    { "number": "15,000+", "label": "Discord servers" },
+    { "number": "5", "label": "Question types" },
+    { "number": "3", "label": "Gamification layers" },
+    { "number": "1", "label": "Goal: your community's voice" }
+  ],
+  "differentiatorTitle": "WHAT MAKES SUBO DIFFERENT",
+  "differentiators": [
+    {
+      "emoji": "💬",
+      "title": "Conversational by design",
+      "desc": "Questions arrive as private messages — one at a time, in a chat format. Not a form page. Not an interruption. A real conversation."
+    },
+    {
+      "emoji": "🤖",
+      "title": "AI-powered analysis",
+      "desc": "Subo uses AI to draft survey questions for you and to summarize open-ended responses. What used to take hours now takes seconds."
+    },
+    {
+      "emoji": "🏆",
+      "title": "Gamification built in",
+      "desc": "Members earn XP for answering, level up, unlock roles, and compete on monthly leaderboards. Engagement is built into the core experience."
+    },
+    {
+      "emoji": "🌐",
+      "title": "Discord AND the web",
+      "desc": "Surveys work inside Discord and on the web. Members without Discord can participate too. You manage everything from the Subo web admin."
+    },
+    {
+      "emoji": "🔐",
+      "title": "Anonymous mode",
+      "desc": "When sensitive topics require honest answers, enable anonymous mode. Three options: full anonymity, identified, or partial — you choose the right level."
+    },
+    {
+      "emoji": "🎯",
+      "title": "Advanced targeting",
+      "desc": "Send surveys to specific roles, channels, or individuals. Use skip logic to branch questions based on prior answers. Built for precision."
+    }
+  ],
+  "missionTitle": "OUR MISSION",
+  "missionBody": "We believe every community deserves to be heard — and that the tools for listening should be as engaging as the communities themselves. Subo is our answer to that challenge."
+},
+
 "pricingPage": {
   "pageTitle": "Plans & Pricing | Subo",
   "pageDescription": "Level up your free Subo experience with paid plans",

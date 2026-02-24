@@ -33,6 +33,16 @@ The site supports English (default), French (`/fr`), and Spanish (`/es`). The pa
 
 Components receive translated strings as a `translations` prop (or a sub-key like `translations.header`). Components do not import translation files directly — the page does and passes it down.
 
+When a component needs translated data inside a client-side `<script>`, use Astro's `define:vars` to inject it:
+
+```astro
+<script define:vars={{ items: translations.someList, label: translations.someLabel }}>
+  // items and label are now available as plain JS variables
+</script>
+```
+
+Note: `define:vars` makes the script inline (no bundling), so keep such scripts self-contained with no `import` statements.
+
 ### Global Constants
 
 `src/consts.ts` holds site-wide values:
@@ -57,6 +67,11 @@ Components receive translated strings as a `translations` prop (or a sub-key lik
 
 - `BlogPost.astro` — wraps blog post content
 - `LegalLayout.astro` — wraps legal pages (privacy, terms, cookies)
+
+### Component Notes
+
+- `UseCases.astro` — fully wired to the `translations` prop. The `usecasesList` translation key is an array of plain strings with the emoji already embedded (e.g. `"💡 Get feedback on a new idea"`), not `{ icon, text }` objects. All three locales (en, fr, es) have all four required keys: `usecasesTitle`, `usecasesSubtitle`, `usecasesInspireBtn`, `usecasesList`.
+- `Reasons.astro` — exists but is currently unused (was replaced by `UseCases` on the FR homepage). Do not delete without checking git history for context.
 
 ### Related Repositories
 

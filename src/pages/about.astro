@@ -1,25 +1,212 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-
+import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 import translations from '../content/translations/en.json';
 
-
+const t = translations.about;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title="All about Subo and the amazing team behind it" description="Learn about Subo, the Discord survey and poll bot trusted by 15,000+ communities to collect feedback and engage members." />
+		<BaseHead title={t.pageTitle} description={t.pageDescription} />
 	</head>
 	<body>
 		<Header translations={translations.header} />
-  <main>
-  <h2>All about Subo</h2>
-  <p>Why Subo? SU-BO. SUrvey-BOt. Get it?.</p>
- </main>
-		<Footer translations={translations.footer}/>
+		<main>
+
+			<!-- Hero -->
+			<section class="about-hero">
+				<div class="container text-center">
+					<h1 class="mono">{t.heroTitle}</h1>
+					<p class="subtitle">{t.heroSubtitle}</p>
+				</div>
+			</section>
+
+			<!-- Origin Story -->
+			<section class="about-story">
+				<div class="container container--small">
+					<h2 class="mono">{t.storyTitle}</h2>
+					{t.storyBody.map((p: string) => <p set:html={p} />)}
+				</div>
+			</section>
+
+			<!-- Stats -->
+			<section class="about-stats">
+				<div class="container">
+					<h2 class="mono text-center">{t.statsTitle}</h2>
+					<div class="stats-grid">
+						{t.stats.map((stat: { number: string; label: string }) => (
+							<div class="stat-card">
+								<div class="stat__number">{stat.number}</div>
+								<div class="stat__label">{stat.label}</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- Differentiators -->
+			<section class="about-diff">
+				<div class="container">
+					<h2 class="mono text-center">{t.differentiatorTitle}</h2>
+					<div class="diff-grid">
+						{t.differentiators.map((d: { emoji: string; title: string; desc: string }) => (
+							<div class="diff-card">
+								<span class="diff__emoji">{d.emoji}</span>
+								<h3>{d.title}</h3>
+								<p>{d.desc}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- Mission -->
+			<section class="about-mission">
+				<div class="container container--small text-center">
+					<h2 class="mono">{t.missionTitle}</h2>
+					<p class="subtitle">{t.missionBody}</p>
+				</div>
+			</section>
+
+			<CTA translations={translations} />
+		</main>
+		<Footer translations={translations.footer} />
 	</body>
 </html>
+
+<style>
+/* Hero */
+.about-hero {
+	padding: 140px 0 80px;
+	background: linear-gradient(180deg, var(--dark) 0%, var(--secondary-dark) 100%);
+}
+.about-hero h1 {
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	font-weight: 800;
+	color: var(--accent);
+	margin-bottom: 1rem;
+}
+.about-hero .subtitle {
+	font-size: 1.2rem;
+	color: var(--grey-light);
+	max-width: 580px;
+	margin: 0 auto;
+}
+
+/* Story */
+.about-story {
+	padding: 4rem 0;
+	background: var(--secondary-dark);
+}
+.about-story h2 {
+	font-size: 1.5rem;
+	color: var(--accent);
+	margin-bottom: 1.5rem;
+}
+.about-story p {
+	color: var(--grey-light);
+	line-height: 1.75;
+	margin-bottom: 1rem;
+}
+.about-story p:last-child {
+	margin-bottom: 0;
+}
+
+/* Stats */
+.about-stats {
+	padding: 4rem 0;
+	background: var(--dark);
+}
+.about-stats h2 {
+	font-size: 1.5rem;
+	color: var(--accent);
+	margin-bottom: 2.5rem;
+}
+.stats-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1.5rem;
+	max-width: 900px;
+	margin: 0 auto;
+}
+.stat-card {
+	background: var(--secondary-dark);
+	border: 1px solid rgba(255,255,255,0.08);
+	border-radius: 12px;
+	padding: 2rem 1.5rem;
+	text-align: center;
+}
+.stat__number {
+	font-size: 2.5rem;
+	font-weight: 800;
+	color: var(--accent);
+	line-height: 1;
+	margin-bottom: 0.5rem;
+}
+.stat__label {
+	font-size: 0.9rem;
+	color: var(--grey-light);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* Differentiators */
+.about-diff {
+	padding: 4rem 0;
+	background: var(--secondary-dark);
+}
+.about-diff h2 {
+	font-size: 1.5rem;
+	color: var(--accent);
+	margin-bottom: 2.5rem;
+}
+.diff-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 1.5rem;
+}
+.diff-card {
+	background: var(--dark);
+	border: 1px solid rgba(255,255,255,0.08);
+	border-radius: 12px;
+	padding: 1.75rem;
+}
+.diff__emoji {
+	font-size: 2rem;
+	display: block;
+	margin-bottom: 0.75rem;
+}
+.diff-card h3 {
+	font-size: 1rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+.diff-card p {
+	color: var(--grey-light);
+	font-size: 0.95rem;
+	line-height: 1.6;
+	margin: 0;
+}
+
+/* Mission */
+.about-mission {
+	padding: 5rem 0;
+	background: linear-gradient(135deg, var(--secondary-dark), var(--dark));
+}
+.about-mission h2 {
+	font-size: 1.5rem;
+	color: var(--accent);
+	margin-bottom: 1.5rem;
+}
+.about-mission .subtitle {
+	font-size: 1.15rem;
+	color: var(--grey-light);
+	line-height: 1.75;
+	max-width: 640px;
+	margin: 0 auto;
+}
+</style>

@@ -27,6 +27,7 @@
       {
         "title": "Produit",
         "links": [
+          { "text": "Survey Convos", "href": "/survey-convos" },
           { "text": "Bot perso", "href": "/custom-survey-bot" },
           { "text": "Tarifs", "href": "/fr/pricing" },
           { "text": "Ajoute à Discord", "href": "/invite", "external": true }
@@ -35,6 +36,7 @@
       {
         "title": "Ressources",
         "links": [
+          { "text": "À propos", "href": "/about" },
           { "text": "Serveur de support", "href": "/support", "external": true },
           { "text": "Tutoriels", "href": "/tutorial", "external": true },
           { "text": "Blog", "href": "/blog" },
@@ -478,6 +480,123 @@
     ]
   },
 
+
+"surveyConvos": {
+  "pageTitle": "Conversations de sondage sur Discord | Subo",
+  "pageDescription": "Subo transforme les sondages en conversations conviviales sur Discord. Les membres répondent en tête-à-tête avec le bot — plus de formulaires ennuyeux, de meilleurs taux de complétion.",
+  "heroTitle": "Des sondages qui ressemblent à des <strong class=\"accent\">conversations</strong>",
+  "heroSubtitle": "Pas un formulaire. Pas juste un vote. Une discussion sympa où tes membres ont vraiment envie de répondre.",
+  "heroCta": "Ajoute à Discord — Gratuit",
+  "whatTitle": "C'EST QUOI UN SURVEY CONVO ?",
+  "whatBody": [
+    "Un survey convo, c'est une conversation privée entre un membre de ta communauté et Subo, le bot — directement dans ton serveur Discord ou sur le web.",
+    "Au lieu d'envoyer tes membres remplir un formulaire froid, Subo les invite à chatter. Les questions arrivent une par une, sous forme de messages. C'est comme parler à quelqu'un, pas remplir de la paperasse.",
+    "Résultat : <strong>de meilleurs taux de complétion</strong>, des réponses plus riches et des membres qui apprécient vraiment l'expérience."
+  ],
+  "formsVsConvosTitle": "FORMULAIRES CLASSIQUES vs. SURVEY CONVOS",
+  "formsColumn": "Formulaires classiques",
+  "convosColumn": "Survey Convos avec Subo",
+  "formsVsConvosItems": [
+    { "forms": "Interface froide et impersonnelle", "convos": "Expérience chaleureuse en mode chat" },
+    { "forms": "Pages longues qui découragent", "convos": "Une question à la fois" },
+    { "forms": "Les membres quittent la page", "convos": "Ils restent sur Discord ou utilisent le lien web" },
+    { "forms": "Faibles taux de complétion", "convos": "Plus d'engagement et de complétion" }
+  ],
+  "howTitle": "COMMENT ÇA MARCHE",
+  "howSteps": [
+    {
+      "number": "1",
+      "title": "Tu crées ton sondage",
+      "desc": "Crée un sondage avec la commande /survey, ou utilise /draft pour laisser l'IA de Subo en générer un selon tes objectifs. Tu peux aussi tout gérer depuis l'appli web Subo."
+    },
+    {
+      "number": "2",
+      "title": "Subo invite tes membres",
+      "desc": "Subo publie une invitation sur ton serveur Discord. Les membres cliquent et répondent aux questions en privé — directement dans Discord ou via un lien web."
+    },
+    {
+      "number": "3",
+      "title": "Tu vois les résultats en direct",
+      "desc": "Consulte les résultats agrégés, les réponses individuelles, et laisse l'IA de Subo résumer les réponses ouvertes pour toujours savoir ce que pense ta communauté."
+    }
+  ],
+  "questionTypesTitle": "5 TYPES DE QUESTIONS",
+  "questionTypesSubtitle": "Subo te donne le bon format pour chaque question.",
+  "questionTypesList": [
+    { "emoji": "💬", "name": "Texte libre", "desc": "Réponses écrites en format libre" },
+    { "emoji": "🔢", "name": "Numérique", "desc": "Chiffres, notes ou fourchettes" },
+    { "emoji": "✅", "name": "Oui / Non", "desc": "Choix binaire simple" },
+    { "emoji": "🔘", "name": "Choix unique", "desc": "Une seule réponse parmi plusieurs options" },
+    { "emoji": "☑️", "name": "Choix multiple", "desc": "Sélectionne tout ce qui s'applique" }
+  ],
+  "webTitle": "SUR DISCORD ET SUR LE WEB",
+  "webDesc": "Les survey convos fonctionnent nativement dans Discord — mais Subo propose aussi une expérience web. C'est l'admin qui choisit si le sondage tourne dans Discord ou sur le web, et s'il est ouvert à tous ou réservé aux membres de la communauté. Dans tous les cas, tu gères tes sondages, vois les résultats et analyses les données depuis l'admin web Subo.",
+  "benefitsTitle": "POURQUOI LES SURVEY CONVOS FONCTIONNENT MIEUX",
+  "benefitsList": [
+    "💬 Format chat que tes membres connaissent déjà",
+    "📱 Fonctionne sur mobile sans friction",
+    "🤫 Mode anonyme optionnel pour des retours sincères et sans filtre",
+    "🔀 Logique de saut — passe les questions non pertinentes selon les réponses précédentes",
+    "⏱️ Sondages programmés et récurrents qui tournent automatiquement",
+    "🏆 Récompenses XP et rôles pour booster la participation",
+    "🤖 Résumé IA des réponses ouvertes pour te faire gagner des heures"
+  ]
+},
+
+"about": {
+  "pageTitle": "À propos de Subo | Le bot de sondage Discord",
+  "pageDescription": "Découvre Subo, le bot de sondage Discord utilisé par plus de 15 000 communautés pour collecter des retours et engager les membres.",
+  "heroTitle": "À PROPOS DE SUBO",
+  "heroSubtitle": "SU-BO. Survey Bot. Conçu pour les communautés qui veulent de vraies réponses.",
+  "storyTitle": "POURQUOI SUBO EXISTE",
+  "storyBody": [
+    "Subo a été lancé en 2021 par une petite équipe de pros 🤓 avec des décennies d'expérience dans la conception de plateformes de sondage utilisées par des millions d'utilisateurs à travers le monde — et par les plus grandes marques et équipes de recherche. On a vu de l'intérieur comment ces outils étaient construits : optimisés pour les cycles de vente enterprise, pas pour les gens qui les remplissent. L'expérience était systématiquement mauvaise, et on voulait changer ça.",
+    "Alors on a construit Subo. Bootstrappé, autofinancé et indépendant — entièrement focalisé sur faire ressentir le feedback comme une conversation plutôt qu'une corvée. Discord était l'endroit parfait pour commencer : une plateforme où les communautés étaient déjà en train de parler, et où les outils pour écouter manquaient cruellement.",
+    "Depuis son lancement, Subo est utilisé par plus de <strong>15 000 serveurs Discord</strong> — des guildes gaming aux communautés de créateurs, DAOs, clubs sportifs, communautés de marques et groupes éducatifs. On est une petite équipe, et on a bien l'intention de le rester."
+  ],
+  "statsTitle": "EN CHIFFRES",
+  "stats": [
+    { "number": "15 000+", "label": "Serveurs Discord" },
+    { "number": "5", "label": "Types de questions" },
+    { "number": "3", "label": "Couches de gamification" },
+    { "number": "1", "label": "Objectif : la voix de ta communauté" }
+  ],
+  "differentiatorTitle": "CE QUI REND SUBO DIFFÉRENT",
+  "differentiators": [
+    {
+      "emoji": "💬",
+      "title": "Conversationnel par conception",
+      "desc": "Les questions arrivent en message privé — une par une, en format chat. Pas une page de formulaire. Pas une interruption. Une vraie conversation."
+    },
+    {
+      "emoji": "🤖",
+      "title": "Analyse propulsée par l'IA",
+      "desc": "Subo utilise l'IA pour rédiger tes questions de sondage et résumer les réponses ouvertes. Ce qui prenait des heures prend maintenant des secondes."
+    },
+    {
+      "emoji": "🏆",
+      "title": "Gamification intégrée",
+      "desc": "Les membres gagnent des XP en répondant, montent de niveau, débloquent des rôles et s'affrontent dans des classements mensuels. L'engagement est au cœur de l'expérience."
+    },
+    {
+      "emoji": "🌐",
+      "title": "Discord ET le web",
+      "desc": "Les sondages fonctionnent dans Discord et sur le web. Les membres sans Discord peuvent aussi participer. Tu gères tout depuis l'admin web Subo."
+    },
+    {
+      "emoji": "🔐",
+      "title": "Mode anonyme",
+      "desc": "Quand les sujets sensibles demandent des réponses honnêtes, active le mode anonyme. Trois options : anonymat complet, identifié ou partiel — tu choisis le bon niveau."
+    },
+    {
+      "emoji": "🎯",
+      "title": "Ciblage avancé",
+      "desc": "Envoie des sondages à des rôles, canaux ou individus spécifiques. Utilise la logique de saut pour brancher les questions selon les réponses précédentes. Fait pour la précision."
+    }
+  ],
+  "missionTitle": "NOTRE MISSION",
+  "missionBody": "On pense que chaque communauté mérite d'être entendue — et que les outils pour écouter doivent être aussi engageants que les communautés elles-mêmes. Subo est notre réponse à ce défi."
+},
 
 "pricingPage": {
   "pageTitle": "Offres & Tarifs | Subo",

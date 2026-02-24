@@ -1,40 +1,331 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-
 import CTA from '../components/CTA.astro';
-
 import Footer from '../components/Footer.astro';
 import translations from '../content/translations/en.json';
 
-
-
+const t = translations.surveyConvos;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title="Discord Survey Conversations with Subo — Beyond Forms & Polls" description="Subo turns surveys into friendly Discord conversations. Members answer questions one-on-one with the bot — no boring forms, no drop-off." />
+		<BaseHead title={t.pageTitle} description={t.pageDescription} />
 	</head>
 	<body>
 		<Header translations={translations.header} />
 		<main>
-		<h1>Subo turns surveys into <strong class="accent">friendly conversations</strong></h2>
-  		<h2 class="subtitle">It's not a form, it's not a survey - it's a convo!</h2>
-        <CTA translations={translations} />    
+
+			<!-- Hero -->
+			<section class="sc-hero">
+				<div class="container text-center">
+					<h1 set:html={t.heroTitle} />
+					<p class="subtitle">{t.heroSubtitle}</p>
+					<a href="/invite" class="button button--accent-bg">{t.heroCta}</a>
+				</div>
+			</section>
+
+			<!-- What is a Survey Convo -->
+			<section class="sc-what">
+				<div class="container container--small">
+					<h2 class="mono">{t.whatTitle}</h2>
+					{t.whatBody.map((p: string) => <p set:html={p} />)}
+				</div>
+			</section>
+
+			<!-- Forms vs Conversations -->
+			<section class="sc-compare">
+				<div class="container">
+					<h2 class="mono text-center">{t.formsVsConvosTitle}</h2>
+					<div class="compare-table-wrap">
+						<table class="compare-table">
+							<thead>
+								<tr>
+									<th>{t.formsColumn}</th>
+									<th class="accent">{t.convosColumn}</th>
+								</tr>
+							</thead>
+							<tbody>
+								{t.formsVsConvosItems.map((item: { forms: string; convos: string }) => (
+									<tr>
+										<td><span class="no">✗</span> {item.forms}</td>
+										<td><span class="yes">✓</span> {item.convos}</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<!-- How It Works -->
+			<section class="sc-how">
+				<div class="container">
+					<h2 class="mono text-center">{t.howTitle}</h2>
+					<div class="steps">
+						{t.howSteps.map((step: { number: string; title: string; desc: string }) => (
+							<div class="step">
+								<div class="step__number">{step.number}</div>
+								<h3>{step.title}</h3>
+								<p>{step.desc}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- 10 Question Types -->
+			<section class="sc-qtypes">
+				<div class="container">
+					<h2 class="mono text-center">{t.questionTypesTitle}</h2>
+					<p class="subtitle text-center">{t.questionTypesSubtitle}</p>
+					<div class="qtypes-grid">
+						{t.questionTypesList.map((qt: { emoji: string; name: string; desc: string }) => (
+							<div class="qtype-card">
+								<span class="qtype__emoji">{qt.emoji}</span>
+								<strong>{qt.name}</strong>
+								<p>{qt.desc}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- Web + Discord -->
+			<section class="sc-web">
+				<div class="container container--small text-center">
+					<h2 class="mono">{t.webTitle}</h2>
+					<p>{t.webDesc}</p>
+				</div>
+			</section>
+
+			<!-- Benefits -->
+			<section class="sc-benefits">
+				<div class="container container--small">
+					<h2 class="mono text-center">{t.benefitsTitle}</h2>
+					<ul class="benefits-list">
+						{t.benefitsList.map((b: string) => <li>{b}</li>)}
+					</ul>
+				</div>
+			</section>
+
+			<CTA translations={translations} />
 		</main>
-		<Footer translations={translations.footer}/>
+		<Footer translations={translations.footer} />
 	</body>
 </html>
 
 <style>
-main {
-	padding: 150px 0 0 0;
-	margin: 20px auto 0 auto;
+/* Hero */
+.sc-hero {
+	padding: 140px 0 80px;
+	background: linear-gradient(180deg, var(--dark) 0%, var(--secondary-dark) 100%);
 }
-h1 {
+.sc-hero h1 {
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	font-weight: 800;
+	line-height: 1.1;
+	margin-bottom: 1rem;
+}
+.sc-hero .subtitle {
+	font-size: 1.2rem;
+	color: var(--grey-light);
+	max-width: 600px;
+	margin: 0 auto 2rem;
+}
 
+/* What section */
+.sc-what {
+	padding: 4rem 0;
+	background: var(--secondary-dark);
+}
+.sc-what h2 {
+	font-size: 1.5rem;
+	color: var(--accent);
+	margin-bottom: 1.5rem;
+}
+.sc-what p {
+	margin-bottom: 1rem;
+	color: var(--grey-light);
+	line-height: 1.75;
+}
+.sc-what p:last-child {
+	margin-bottom: 0;
+}
+
+/* Compare section */
+.sc-compare {
+	padding: 4rem 0;
+	background: var(--dark);
+}
+.sc-compare h2 {
+	font-size: 1.5rem;
+	color: var(--accent);
+	margin-bottom: 2rem;
+}
+.compare-table-wrap {
+	overflow-x: auto;
+}
+.compare-table {
+	width: 100%;
+	border-collapse: collapse;
+	max-width: 700px;
+	margin: 0 auto;
+}
+.compare-table th {
+	padding: 0.75rem 1rem;
+	font-size: 0.9rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	background: var(--secondary-dark);
+	color: var(--grey-light);
+}
+.compare-table th.accent {
+	color: var(--accent);
+}
+.compare-table td {
+	padding: 0.75rem 1rem;
+	border-bottom: 1px solid rgba(255,255,255,0.07);
+	color: var(--grey-light);
+	font-size: 0.95rem;
+}
+.compare-table tr:last-child td {
+	border-bottom: none;
+}
+.yes { color: var(--accent); font-weight: 700; margin-right: 0.4rem; }
+.no  { color: var(--primary); font-weight: 700; margin-right: 0.4rem; }
+
+/* How it works */
+.sc-how {
+	padding: 4rem 0;
+	background: var(--secondary-dark);
+}
+.sc-how h2 {
+	font-size: 1.5rem;
+	color: var(--accent);
+	margin-bottom: 2.5rem;
+}
+.steps {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 2rem;
+}
+.step {
+	background: var(--dark);
+	border: 1px solid rgba(255,255,255,0.08);
+	border-radius: 12px;
+	padding: 2rem;
+}
+.step__number {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	background: var(--primary);
+	color: #fff;
+	font-weight: 800;
+	font-size: 1.1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+.step h3 {
+	font-size: 1rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+.step p {
+	color: var(--grey-light);
+	font-size: 0.95rem;
+	line-height: 1.6;
+}
+
+/* Question types */
+.sc-qtypes {
+	padding: 4rem 0;
+	background: var(--dark);
+}
+.sc-qtypes h2 {
+	font-size: 1.5rem;
+	color: var(--accent);
+	margin-bottom: 0.5rem;
+}
+.sc-qtypes .subtitle {
+	color: var(--grey-light);
+	margin-bottom: 2rem;
+}
+.qtypes-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	gap: 1rem;
+	max-width: 900px;
+	margin: 0 auto;
+}
+.qtype-card {
+	background: var(--secondary-dark);
+	border: 1px solid rgba(255,255,255,0.08);
+	border-radius: 10px;
+	padding: 1.25rem;
 	text-align: center;
+}
+.qtype__emoji {
+	font-size: 1.75rem;
+	display: block;
+	margin-bottom: 0.5rem;
+}
+.qtype-card strong {
+	display: block;
+	font-size: 0.9rem;
+	margin-bottom: 0.25rem;
+}
+.qtype-card p {
+	font-size: 0.8rem;
+	color: var(--grey-light);
+	margin: 0;
+}
+
+/* Web section */
+.sc-web {
+	padding: 4rem 0;
+	background: linear-gradient(135deg, var(--secondary-dark), var(--blurple-dark));
+}
+.sc-web h2 {
+	font-size: 1.5rem;
+	color: var(--accent);
+	margin-bottom: 1rem;
+}
+.sc-web p {
+	color: var(--grey-light);
+	line-height: 1.75;
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+/* Benefits */
+.sc-benefits {
+	padding: 4rem 0;
+	background: var(--secondary-dark);
+}
+.sc-benefits h2 {
+	font-size: 1.5rem;
+	color: var(--accent);
+	margin-bottom: 2rem;
+}
+.benefits-list {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 0.75rem;
+}
+.benefits-list li {
+	background: var(--dark);
+	border: 1px solid rgba(255,255,255,0.08);
+	border-radius: 8px;
+	padding: 0.9rem 1.25rem;
+	font-size: 0.95rem;
+	color: var(--grey-light);
 }
 </style>
