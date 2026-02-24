@@ -19,91 +19,17 @@ npm run cf-typegen # Regenerate Cloudflare Workers types (worker-configuration.d
 
 ## Architecture
 
-### i18n (Internationalization)
+- **Astro 5** static site, deployed as a **Cloudflare Workers** static site via `@astrojs/cloudflare` adapter
+- Pages in `src/pages/`, components in `src/components/`, styles in `src/styles/global.css`
+- `src/consts.ts` — site-wide constants (`SITE_TITLE`, `SITE_DESCRIPTION`, `DISCORD_STORE_URL`)
+- `src/config/redirects.js` — tracked outbound redirect pages (invite, support, portal, etc.)
 
-The site supports English (default), French (`/fr`), and Spanish (`/es`). The pattern used:
+See detailed docs:
+- **[docs/i18n.md](docs/i18n.md)** — languages (EN/FR/ES/DE), translation file structure, add-language checklist, BaseHead redirect logic pitfalls
+- **[docs/components.md](docs/components.md)** — component guide, page notes, styling, layouts, constants
+- **[docs/content.md](docs/content.md)** — blog posts (draft status), Subo product facts, content collections
 
-- Root-level pages (`src/pages/index.astro`, `src/pages/pricing.astro`, etc.) are the **English** versions.
-- Translated pages live under `src/pages/fr/` and `src/pages/es/`.
-- Translation strings are stored as JSON in `src/content/translations/en.json`, `fr.json`, `es.json`.
-- Each page imports the appropriate JSON and passes it as a `translations` prop to components.
-- Client-side language detection in `BaseHead.astro` redirects users to their preferred language on the homepage and pricing page using `localStorage` and `navigator.language`.
-
-### Translation Props Pattern
-
-Components receive translated strings as a `translations` prop (or a sub-key like `translations.header`). Components do not import translation files directly — the page does and passes it down.
-
-When a component needs translated data inside a client-side `<script>`, use Astro's `define:vars` to inject it:
-
-```astro
-<script define:vars={{ items: translations.someList, label: translations.someLabel }}>
-  // items and label are now available as plain JS variables
-</script>
-```
-
-Note: `define:vars` makes the script inline (no bundling), so keep such scripts self-contained with no `import` statements.
-
-### Global Constants
-
-`src/consts.ts` holds site-wide values:
-- `SITE_TITLE`, `SITE_DESCRIPTION`
-- `DISCORD_STORE_URL` — single source of truth for the Discord upgrade link
-
-### Tracked Redirects
-
-`src/config/redirects.js` defines outbound links (Discord, Stripe, top.gg, etc.) with analytics names. The dynamic page `src/pages/[redirect].astro` renders a redirect page for each key (e.g., `/invite`, `/support`, `/portal`). These track `gtag` events before redirecting.
-
-### Styling
-
-- `src/styles/global.css` defines CSS custom properties (design tokens): `--primary` (#e1287e pink), `--accent` (#9eff00 green), `--secondary` (#745399 purple), `--secondary-dark` (#3C2B50), etc.
-- `BaseHead.astro` imports `global.css` and is included on every page — it is the only place to add global head tags.
-- Fonts: **Figtree** (body text) and **IBM Plex Mono** (titles/mono, use class `.mono`) loaded from Google Fonts.
-
-### Content Collections
-
-`src/content.config.ts` defines a `blog` collection loading from `src/content/blog/`. Blog frontmatter schema requires: `title`, `description`, `pubDate`, `author`; optional: `updatedDate`, `heroImage`, `tags`, `draft`.
-
-### Layouts
-
-- `BlogPost.astro` — wraps blog post content
-- `LegalLayout.astro` — wraps legal pages (privacy, terms, cookies)
-
-### Component Notes
-
-- `UseCases.astro` — fully wired to the `translations` prop. The `usecasesList` translation key is an array of plain strings with the emoji already embedded (e.g. `"💡 Get feedback on a new idea"`), not `{ icon, text }` objects. All three locales (en, fr, es) have all four required keys: `usecasesTitle`, `usecasesSubtitle`, `usecasesInspireBtn`, `usecasesList`. All three locales now have the full 46-item list with emojis.
-- `Reasons.astro` — exists but is currently unused (was replaced by `UseCases` on the FR homepage). Do not delete without checking git history for context.
-
-### Page Notes
-
-- `survey-convos.astro` — full page using `translations.surveyConvos` keys. English only (no `/fr/` or `/es/` equivalents yet). Styles are self-contained in the page `<style>` block.
-- `about.astro` — full page using `translations.about` keys. English only (no `/fr/` or `/es/` equivalents yet). Styles are self-contained in the page `<style>` block.
-- Both pages follow the pattern: import JSON → extract sub-key (`const t = translations.surveyConvos`) → use `set:html` for any string containing HTML markup.
-
-### Subo Product Facts (keep accurate when writing copy)
-
-- **Question types**: Only 5 are publicly supported: Open Text, Numeric, Yes/No, Single Choice, Multiple Choice. Other types (Button List, Date, URL, Color Picker, Discord Role) are partial/not public — do not advertise them.
-- **Survey creation**: `/survey` command (manual), `/draft` command (AI generates survey from objectives), or via the Subo web admin.
-- **Survey invite flow**: Subo **posts an invite message in a Discord channel** — it does not DM members directly. Members click the invite and respond privately.
-- **Web surveys**: Admins choose whether a survey runs natively in Discord or on the web, and whether it's open to anyone or restricted to community members. Members do not choose their mode.
-- **XP system**: Available on all plans. Custom XP name/value and per-survey role rewards require Premium+. Standard leaderboard (all-time XP) on all plans; monthly leaderboard on Premium+.
-- **Skip logic**: Simple skip logic available on all plans. Advanced custom logic (write your own syntax) on VIP and Custom Bot only.
-- **Anonymity**: Three modes — Identified (default), "More Anonymous" (participation tracked, responses private), Full Anonymous (no identity link). Role rewards for completion are not compatible with Full Anonymous.
-- **Company**: Founded 2021. Small team with decades of enterprise survey platform experience. Bootstrapped, self-funded, independent.
-
-### Blog Posts
-
-Seven draft blog posts were created in `src/content/blog/` (all `draft: true` — review before publishing):
-- `subo-vs-google-forms-typeform-discord-communities.md`
-- `how-to-use-skip-logic-smarter-discord-surveys.md`
-- `gamify-discord-community-xp-survey-rewards.md`
-- `ai-powered-survey-summaries-subo.md`
-- `complete-guide-anonymous-surveys-discord.md`
-- `scheduling-recurring-surveys-community-pulse.md`
-- `5-discord-community-types-surveys-they-should-run.md`
-
-The user has directly edited some of these posts to correct product details — always read before editing.
-
-### Related Repositories
+## Related Repositories
 
 The Subo web app (bot backend + web admin) lives at:
 - `C:\Users\ogaud\OneDrive - ClearSwell LLC\Documents\Subo\Code\survey`
@@ -111,6 +37,6 @@ The Subo web app (bot backend + web admin) lives at:
 
 When reviewing or updating feature descriptions, cross-reference the actual components and copy in that repo for accuracy.
 
-### Deployment
+## Deployment
 
 Deployed as a Cloudflare Workers static site. `wrangler.json` is minimal — no secrets or env vars needed for the frontend. The `@astrojs/cloudflare` adapter with `platformProxy` enabled handles the build.
