@@ -87,7 +87,7 @@ const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your commun
   // Only run redirect on homepage/root
   if (path === '/' || path === '') {
     // If preferredLang is set and not already on the correct language path
-    if (preferredLang && ['fr','es'].includes(preferredLang)) {
+    if (preferredLang && ['fr','es','de'].includes(preferredLang)) {
       window.location.pathname = '/' + preferredLang;
       return;
     }
@@ -95,26 +95,27 @@ const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your commun
     // If no preferredLang, use browser language
     if (!preferredLang) {
       var userLang = (navigator.language || navigator.userLanguage || 'en').slice(0,2);
-      if (!['en','fr','es'].includes(userLang)) userLang = 'en';
-      if (['fr','es'].includes(userLang)) {
+      if (!['en','fr','es','de'].includes(userLang)) userLang = 'en';
+      if (['fr','es','de'].includes(userLang)) {
         window.location.pathname = '/' + userLang;
       }
     }
   }
 
   if (['/', '/pricing'].includes(path)) {
+    var suffix = path === '/pricing' ? '/pricing' : '';
     // If preferredLang is set and not already on the correct language path
-    if (preferredLang && ['fr','es'].includes(preferredLang)) {
-      window.location.pathname = '/' + preferredLang;
+    if (preferredLang && ['fr','es','de'].includes(preferredLang)) {
+      window.location.pathname = '/' + preferredLang + suffix;
       return;
     }
 
     // If no preferredLang, use browser language
     if (!preferredLang) {
       var userLang = (navigator.language || navigator.userLanguage || 'en').slice(0,2);
-      if (!['en','fr','es'].includes(userLang)) userLang = 'en';
-      if (['fr','es'].includes(userLang)) {
-        window.location.pathname = '/' + userLang;
+      if (!['en','fr','es','de'].includes(userLang)) userLang = 'en';
+      if (['fr','es','de'].includes(userLang)) {
+        window.location.pathname = '/' + userLang + suffix;
       }
     }
   }

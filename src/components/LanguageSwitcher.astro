@@ -3,7 +3,8 @@
 const { currentLang = "en", availableLangs = [
   { code: "en", label: "English" },
   { code: "fr", label: "Français" },
-  { code: "es", label: "Español" }
+  { code: "es", label: "Español" },
+  { code: "de", label: "Deutsch" }
 ] } = Astro.props;
 ---
 
@@ -50,7 +51,7 @@ const { currentLang = "en", availableLangs = [
         // Redirect
         let path = window.location.pathname;
         let parts = path.replace(/^\/+/, '').split('/');
-        if (['en', 'fr', 'es'].includes(parts[0])) parts.shift();
+        if (['en', 'fr', 'es', 'de'].includes(parts[0])) parts.shift();
         if (option.value === 'en') {
           window.location.pathname = '/' + parts.join('/');
         } else {

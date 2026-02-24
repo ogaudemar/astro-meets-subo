@@ -70,8 +70,38 @@ Note: `define:vars` makes the script inline (no bundling), so keep such scripts 
 
 ### Component Notes
 
-- `UseCases.astro` — fully wired to the `translations` prop. The `usecasesList` translation key is an array of plain strings with the emoji already embedded (e.g. `"💡 Get feedback on a new idea"`), not `{ icon, text }` objects. All three locales (en, fr, es) have all four required keys: `usecasesTitle`, `usecasesSubtitle`, `usecasesInspireBtn`, `usecasesList`.
+- `UseCases.astro` — fully wired to the `translations` prop. The `usecasesList` translation key is an array of plain strings with the emoji already embedded (e.g. `"💡 Get feedback on a new idea"`), not `{ icon, text }` objects. All three locales (en, fr, es) have all four required keys: `usecasesTitle`, `usecasesSubtitle`, `usecasesInspireBtn`, `usecasesList`. All three locales now have the full 46-item list with emojis.
 - `Reasons.astro` — exists but is currently unused (was replaced by `UseCases` on the FR homepage). Do not delete without checking git history for context.
+
+### Page Notes
+
+- `survey-convos.astro` — full page using `translations.surveyConvos` keys. English only (no `/fr/` or `/es/` equivalents yet). Styles are self-contained in the page `<style>` block.
+- `about.astro` — full page using `translations.about` keys. English only (no `/fr/` or `/es/` equivalents yet). Styles are self-contained in the page `<style>` block.
+- Both pages follow the pattern: import JSON → extract sub-key (`const t = translations.surveyConvos`) → use `set:html` for any string containing HTML markup.
+
+### Subo Product Facts (keep accurate when writing copy)
+
+- **Question types**: Only 5 are publicly supported: Open Text, Numeric, Yes/No, Single Choice, Multiple Choice. Other types (Button List, Date, URL, Color Picker, Discord Role) are partial/not public — do not advertise them.
+- **Survey creation**: `/survey` command (manual), `/draft` command (AI generates survey from objectives), or via the Subo web admin.
+- **Survey invite flow**: Subo **posts an invite message in a Discord channel** — it does not DM members directly. Members click the invite and respond privately.
+- **Web surveys**: Admins choose whether a survey runs natively in Discord or on the web, and whether it's open to anyone or restricted to community members. Members do not choose their mode.
+- **XP system**: Available on all plans. Custom XP name/value and per-survey role rewards require Premium+. Standard leaderboard (all-time XP) on all plans; monthly leaderboard on Premium+.
+- **Skip logic**: Simple skip logic available on all plans. Advanced custom logic (write your own syntax) on VIP and Custom Bot only.
+- **Anonymity**: Three modes — Identified (default), "More Anonymous" (participation tracked, responses private), Full Anonymous (no identity link). Role rewards for completion are not compatible with Full Anonymous.
+- **Company**: Founded 2021. Small team with decades of enterprise survey platform experience. Bootstrapped, self-funded, independent.
+
+### Blog Posts
+
+Seven draft blog posts were created in `src/content/blog/` (all `draft: true` — review before publishing):
+- `subo-vs-google-forms-typeform-discord-communities.md`
+- `how-to-use-skip-logic-smarter-discord-surveys.md`
+- `gamify-discord-community-xp-survey-rewards.md`
+- `ai-powered-survey-summaries-subo.md`
+- `complete-guide-anonymous-surveys-discord.md`
+- `scheduling-recurring-surveys-community-pulse.md`
+- `5-discord-community-types-surveys-they-should-run.md`
+
+The user has directly edited some of these posts to correct product details — always read before editing.
 
 ### Related Repositories
 
