@@ -1,0 +1,650 @@
+{
+  "siteTitle": "Subo",
+  "siteDescription": "Crie pesquisas e enquetes para sua comunidade no Discord.",
+
+"header": {
+  "navItems": [
+    { "text": "Produto", "href": "/" },
+    { "text": "Recursos", "href": "/" },
+    { "text": "Preços", "href": "/pricing" }
+  ],
+  "resources": [
+    { "text": "Tutoriais", "href": "/tutorial" },
+    { "text": "Servidor de Suporte", "href": "/support" },
+    { "text": "Portal de Cobrança", "href": "/portal" },
+    { "text": "Blog", "href": "/blog" }
+  ],
+  "cta": "Adicionar ao Discord",
+  "upgrade": "Upgrade",
+  "skipToMain": "Ir para o conteúdo principal"
+},
+
+
+"footer": {
+  "brandDescription": "O melhor bot de pesquisas para comunidades no Discord. Crie enquetes, colete mais feedback em conversas, recompense participantes com XP e cargos.",
+  "brandStats": "Confiado por mais de 15.000 servidores no Discord",
+  "copyright": "Todos os direitos reservados.",
+  "sections": [
+    {
+      "title": "Produto",
+      "links": [
+        { "text": "Survey Convos", "href": "/survey-convos" },
+        { "text": "Bot Personalizado", "href": "/custom-survey-bot" },
+        { "text": "Enquetes", "href": "/polls" },
+        { "text": "Preços", "href": "/pricing" },
+        { "text": "Adicionar ao Discord", "href": "/invite", "external": true }
+      ]
+    },
+    {
+      "title": "Recursos",
+      "links": [
+        { "text": "Sobre", "href": "/about" },
+        { "text": "Servidor de Suporte", "href": "/support", "external": true },
+        { "text": "Tutoriais", "href": "/tutorial", "external": true },
+        { "text": "Blog", "href": "/blog" },
+        { "text": "Portal de cobrança Stripe", "href": "/portal", "external": true },
+        { "text": "Discord App Store", "href": "/discordstore", "external": true }
+      ]
+    },
+    {
+      "title": "Jurídico",
+      "links": [
+        { "text": "Termos de Serviço", "href": "/terms" },
+        { "text": "Política de Privacidade", "href": "/privacy" }
+      ]
+    },
+    {
+      "title": "Redes Sociais",
+      "links": [
+        { "text": "X", "href": "https://x.com/subo_app", "external": true },
+        { "text": "Bluesky", "href": "https://bsky.app/profile/subo.ai", "external": true },
+        { "text": "Avaliações no Top.gg", "href": "https://top.gg/bot/946888973035380806", "external": true }
+      ]
+    }
+  ],
+  "socialDiscordLabel": "Participe do nosso servidor do Discord"
+},
+
+"hero": {
+  "title": "CONHEÇA MELHOR A SUA",
+  "rotatingWords": [
+    "COMUNIDADE", "MEMBROS", "JOGADORES", "FÃS", "PATRONOS", "GUILDA", "SEGUIDORES", "APOIADORES", "CLIENTES", "USUÁRIOS", "AMIGOS", "AUDIÊNCIA", "GRUPO", "EQUIPE", "TRIPULAÇÃO", "ASSINANTES"
+  ],
+  "subtitle": "com perguntas que eles querem responder!",
+  "cta": "Adicionar ao Discord",
+  "ctaNote": "Comece Grátis. Upgrades disponíveis."
+},
+
+
+    "features": {
+    "title": "VOCÊ APRENDE MAIS QUANDO AS PESSOAS CURTEM A CONVERSA.",
+    "subtitle": "Pesquisas tradicionais em formulários são chatas. Ninguém quer respondê-las. Com o Subo, você faz perguntas em enquetes e conversas amigáveis que sua comunidade quer participar.",
+    "list": [
+        {
+        "title": "FAÇA PERGUNTAS",
+        "content": [
+            "<strong>Survey Convos:</strong> os membros respondem às perguntas do Subo numa conversa privada, dentro do seu servidor do Discord ou pela web.",
+            "<strong>Enquetes no Discord:</strong> 1 pergunta, múltiplas formas de responder e compartilhar resultados."
+        ]
+        },
+        {
+        "title": "INCENTIVE A PARTICIPAÇÃO",
+        "content": [
+            "Dê <strong>recompensas de cargo</strong> por responder uma pesquisa ou enquete",
+            "<strong>Sistema de XP</strong>: os membros ganham pontos ao responder perguntas e sobem de nível para desbloquear cargos.",
+            "Exiba um <strong>ranking</strong> com seus participantes mais ativos",
+            "<strong>Compartilhe descobertas</strong> e respostas de outros participantes com um clique"
+        ]
+        },
+        {
+        "title": "ANALISE E COMPARTILHE RESULTADOS",
+        "content": [
+            "Veja resultados agregados e respostas individuais.",
+            "Compartilhe/reposte resultados",
+            "Deixe o Subo resumir respostas abertas com IA",
+            "Exporte o <strong>conjunto de dados completo</strong> para análise adicional."
+        ]
+        }
+    ]
+    },
+
+
+
+  "usecasesTitle": "O QUE VOCÊ VAI PERGUNTAR HOJE?",
+  "usecasesSubtitle": "O Subo ajuda você a coletar informações valiosas da sua comunidade... ou simplesmente se divertir.",
+  "usecasesInspireBtn": "🎲 Clique aqui para se inspirar!",
+  "usecasesList": [
+    "💡 Receba feedback sobre uma nova ideia, produto ou preço",
+    "🧑‍🤝‍🧑 Entenda quem são os membros da sua comunidade",
+    "🔥 Descubra o que anima a sua comunidade!",
+    "📈 Acompanhe atividades ou satisfação dos membros em intervalos regulares",
+    "📝 Integre novos membros com checklists interativos",
+    "🎤 Entreviste membros que se candidatam a cargos de staff",
+    "🎟️ Colete confirmações de presença, informações e perguntas antes de eventos",
+    "📊 Enquetes de engajamento só por diversão",
+    "🔮 Deixe os membros preverem jogos e eventos futuros",
+    "🗣️ Colete feedback sobre um evento comunitário passado",
+    "🌟 Colete avaliações ou depoimentos",
+    "💖 Checagens de cultura ou pulso da comunidade",
+    "🏆 Votações para selecionar um projeto ou líder",
+    "💡 Colete sugestões ou pedidos de funcionalidades",
+    "🧠 Quizzes e verificações de conhecimento",
+    "⚔️ Vote em horários de raid, composições de time ou próxima estratégia de boss",
+    "🧩 Faça enquetes rápidas durante torneios ou partidas",
+    "🏹 Colete feedback sobre novos patches ou mudanças de balanceamento",
+    "👑 Eleja novos moderadores, capitães ou líderes de guilda",
+    "🎮 Teste builds iniciais ou protótipos com sua comunidade",
+    "🗳️ Deixe os fãs escolherem nomes de personagens, skins ou temas de mapas",
+    "🧱 Obtenha insights de playtesters e usuários beta",
+    "💬 Peça feedback de história ou lore aos seus fãs mais fiéis",
+    "🪙 Avalie o sentimento da comunidade sobre propostas ou votações de governança",
+    "🎨 Deixe os holders ajudarem a nomear novas coleções ou drops de NFT",
+    "🚀 Pergunte que utilidades ou recompensas as pessoas querem a seguir",
+    "🌍 Verifique como os membros descobriram seu projeto ou DAO",
+    "📚 Verificações rápidas de compreensão após aulas ou workshops",
+    "🎯 Colete feedback dos alunos sobre o estilo de ensino ou dificuldade",
+    "🤝 Conecte alunos a grupos de estudo ou mentores",
+    "🧭 Enquete sobre quais tópicos ou habilidades os membros querem aprender",
+    "🏀 Vote nos MVPs, melhores jogadas ou momentos marcantes",
+    "📅 Agende treinos ou partidas improvisadas",
+    "📣 Colete previsões dos fãs antes de grandes partidas",
+    "🎧 Pergunte aos ouvintes qual tema ou convidado deve vir a seguir",
+    "🎬 Faça enquetes sobre episódios, arcos ou personagens favoritos",
+    "🍿 Organize votações para watch parties de séries ou filmes",
+    "🥐 Decida de uma vez por todas: hot dog é sanduíche?",
+    "👀 Descubra quem realmente lê os avisos",
+    "🦖 Faça uma enquete para nomear o dinossauro mascote da comunidade",
+    "🧙‍♂️ Separe os membros nas casas de Hogwarts (sem pressão, Grifinória)",
+    "🍕 Vote no melhor recheio de pizza",
+    "🛸 Pergunte se aliens curtiram a sua comunidade",
+    "🐸 Torneio de memes: coroe o senhor supremo dos memes",
+    "☕ Café ou chá? (essa esquenta o debate)",
+    "🌈 Pergunte qual é o nível de energia de todos hoje"
+  ],
+
+
+
+  "testimonialsTitle": "CONFIADO POR MAIS DE 15.000 COMUNIDADES!",
+  "testimonialsSubTitle": "❤️ por mods, community managers, criadores, empreendedores, times de produto, UX e insights.",
+  "testimonialsList": [
+    {
+      "text": "Adoro o Subo! O melhor bot de pesquisas de todos! Tão fácil e simples de usar! Qualquer problema é resolvido rapidamente por uma equipe de suporte incrível!",
+      "author": "obimage",
+      "role": "",
+      "social": ""
+    },
+    {
+      "text": "Simples e muito bom de usar",
+      "author": "Judge Jaxon",
+      "role": "",
+      "social": ""
+    },
+    {
+      "text": "Obrigado por ter o melhor bot de enquetes disponível, sério. Testei muitos. Este é disparado o melhor.",
+      "author": "YeahImShady",
+      "role": "Late to Work Sports",
+      "social": ""
+    },
+    {
+      "text": "Este app é perfeito. E o suporte que oferecem também é excelente. Altamente recomendado para qualquer tipo de enquete, pesquisa ou votação",
+      "author": ".dutty",
+      "role": "",
+      "social": ""
+    },
+    {
+      "text": "Esta é a melhor solução de enquetes no Discord atualmente. A configuração é intuitiva e nunca me causou problemas. Gerenciei um servidor com mais de mil participantes e precisava de algo específico para votações anônimas com resultados anônimos — este foi o bot perfeito, onde nenhuma outra solução de enquete deu conta do recado. Ele pode ouvir cargos de Integrações (algo que bots maiores como Carl & MEE6 não conseguem), permite restrições de cargos específicos e até pesquisas de múltipla escolha. Além disso, a equipe de suporte é excelente e atenta às dúvidas dos usuários.",
+      "author": "DJTiki 🌴",
+      "role": "",
+      "social": ""
+    },
+    {
+      "text": "Seu app realmente atendeu a todos os nossos requisitos e fiquei impressionado com o nível de opções de configuração — é o mais completo que já encontrei, sem falhas!",
+      "author": "schmoopy101",
+      "role": "",
+      "social": ""
+    },
+    {
+      "text": "Sou criador de servidores. Faço servidores para amigos que precisam deles para trabalho, eventos e engajamento comunitário. Este bot é incrivelmente bem feito! Uso muito em servidores! É muito fácil de usar. É ótimo para quem não está acostumado com bots ou Discord. Facilita o aprendizado! Descobri há algumas semanas e deletei todos os outros bots de pesquisa e os substituí por este.",
+      "author": "risingblossom92",
+      "role": "𝑰𝑫𝑺 〘 Irαm Deı Sumus 〙",
+      "social": ""
+    },
+    {
+      "text": "Usei este bot com mais de 400 usuários para um mês de trivia diário e funcionou muito bem! Eu criava pesquisas com imagens, com múltiplas opções, e depois exportava o arquivo Excel que o bot gerava ao fim do dia para compilar todos os arquivos do mês e criar um ranking a partir dessas informações!",
+      "author": "Bezarius",
+      "role": "Anduo Games",
+      "social": ""
+    },
+    {
+      "text": "O Subo tem sido um prazer de usar desde que assinei o premium. Enquetes recorrentes e outras enquetes podem ser agendadas no horário que preciso, e os desenvolvedores estão ativamente trabalhando no projeto. Eles respondem frequentemente e rapidamente aos tickets e me ajudaram quando havia um bug no software. O Subo é uma ótima alternativa ao Google Forms ou Microsoft Forms para quem quer pesquisas e enquetes integradas diretamente ao Discord, além de análise com IA para respostas abertas.",
+      "author": "ryangrg422",
+      "role": "Anime Club",
+      "social": ""
+    },
+    {
+      "text": "obrigado pelo seu app incrível! Uso toda semana",
+      "author": "jpob",
+      "role": "MojiWorks",
+      "social": ""
+    }
+  ],
+
+
+
+  "ctaTitle": "COMECE A PERGUNTAR GRATUITAMENTE!",
+  "ctaSubtitle": "Sem cartão de crédito. Sem complicação de configuração. É só entrar e explorar com poucas limitações. Faça mais com os planos pagos quando estiver pronto.",
+  "ctaButton": "Ver Preços",
+
+
+  "successTitle": "Você está quase lá!",
+  "successMessage": "Seu pagamento foi processado com sucesso.",
+  "successDescription": "Por favor, entre em contato com a equipe por e-mail ou no nosso servidor do Discord com o ID ou nome do seu servidor e faremos o upgrade o mais rápido possível.",
+  "successNextSteps": "Próximos Passos?",
+  "successSteps": [
+    {
+      "title": "Adicione o Subo ao Seu Servidor",
+      "desc": "Se ainda não fez isso, convide o Subo para o seu servidor do Discord e aceite as permissões sugeridas.",
+      "button": "Adicionar Subo ao Discord"
+    },
+    {
+      "title": "Envie os detalhes do seu servidor para a equipe do Subo",
+      "desc": "Notifique a equipe do Subo com o ID ou nome do seu servidor no Discord. Você pode entrar em contato com a equipe de suporte por e-mail ou no nosso servidor do Discord.",
+      "button": "Contatar Suporte"
+    },
+    {
+      "title": "Participe do Nosso Servidor de Suporte",
+      "desc": "Enquanto aguarda, entre em nossa comunidade de suporte para ver exemplos, ficar atualizado com novos recursos ou tirar dúvidas. Confira nossos Tutoriais para começar e aproveitar ao máximo o Subo.",
+      "button1": "Entrar no Servidor de Suporte",
+      "button2": "Ver Tutoriais"
+    },
+    {
+      "title": "Verifique se sua Assinatura Está Ativa",
+      "desc": "Depois de enviar os detalhes do servidor, a equipe do Subo fará o upgrade assim que possível e confirmará a atualização. Seja paciente, pois requer alguma verificação manual. Você pode verificar se o upgrade foi ativado usando o comando /premium no seu servidor do Discord."
+    }
+  ],
+
+  "faqTitle": "Perguntas Frequentes",
+  "faqList": [
+    {
+      "question": "Por que preciso escolher entre Stripe e Discord?",
+      "answer": "Apoiamos a App Store nativa do Discord, que é mais conveniente para muitos usuários, mas ela não oferece assinaturas para múltiplos servidores e planos anuais, então também criamos uma solução via Stripe para isso."
+    },
+    {
+      "question": "Por que preciso esperar minha assinatura premium ser ativada?",
+      "answer": "O Stripe coleta seu e-mail para criar uma conta para você, mas não conseguimos conectar esse e-mail ao seu servidor do Discord. Isso significa que precisamos verificar manualmente sua conta antes de ativar a assinatura premium. Pretendemos automatizar esse processo no futuro, mas por enquanto agradecemos sua paciência."
+    },
+    {
+      "question": "Como encontro o ID do meu servidor?",
+      "answer": "Você pode encontrar o ID do servidor clicando com o botão direito no nome do servidor no Discord e selecionando 'Copiar ID do Servidor'. Se não vir essa opção, talvez precise habilitar o Modo Desenvolvedor nas configurações do Discord (o que recomendamos de qualquer forma)."
+    },
+    {
+      "question": "Como altero ou cancelo uma assinatura?",
+      "answer": "Você pode gerenciar sua assinatura a qualquer momento pelo Portal de Cobrança do Stripe ou pela Discord Store, dependendo de como fez o upgrade. Para acessar o Portal de Cobrança do Stripe, você precisará fazer login com o e-mail usado para o pagamento. Veja os links no rodapé."
+    },
+    {
+      "question": "O que acontece se eu cancelar minha assinatura premium?",
+      "answer": "Ao final do período de assinatura (mês, ano), seu bot voltará para a versão gratuita do Subo. Você ainda poderá usar o Subo, mas com as limitações do plano gratuito. Se tiver um projeto ativo, ele pode ser interrompido se você atingir o limite máximo de respondentes ou respostas. Se tiver muitos projetos na conta, talvez precise deletar alguns antes de criar novos."
+    }
+  ],
+
+    "priceTable": {
+    "tiers": [
+        {
+        "name": "GRÁTIS",
+        "description": "Para servidores menores",
+        "price": "Grátis",
+        "image": "/images/subo-neon2-100.png"
+        },
+        {
+        "name": "PREMIUM",
+        "description": "Para usuários avançados e servidores médios!",
+        "price": "$2,99/mês<br>$29,99/ano",
+        "image": "/images/subo-premium-100.png"
+        },
+        {
+        "name": "VIP",
+        "description": "Para servidores maiores e apoiadores generosos!",
+        "price": "$4,99/mês<br>$49,99/ano",
+        "image": "/images/subo-vip-100.png"
+        },
+        {
+        "name": "PERSONALIZADO",
+        "description": "Seu próprio bot, avatar e descrição com recursos VIP!",
+        "price": "$99,99/ano",
+        "image": "/images/custom-bot.png"
+        }
+    ],
+    "tableData": [
+        [
+        "Suporte",
+        "✓<br>Sistema de tickets",
+        "✓<br>Suporte premium",
+        "✓<br>Suporte premium",
+        "✓<br>Suporte Premium"
+        ],
+        [
+        "Respondentes",
+        "250 / pesquisa",
+        "1000 / pesquisa",
+        "10000 / pesquisa",
+        "10000 / pesquisa"
+        ],
+        [
+        "Respostas<br><small>Resposta = Respondente x Pergunta (ex.: 60 respondentes respondendo 5 perguntas = 300 respostas)</small>",
+        "1.000 / pesquisa",
+        "5.000 / pesquisa",
+        "50.000 / pesquisa",
+        "50.000 / pesquisa"
+        ],
+        [
+        "Pesquisas ativas<br><small>Total de pesquisas e enquetes armazenadas. Delete pesquisas antigas para ficar em um plano menor.</small>",
+        "10 / servidor",
+        "200 / servidor",
+        "400 / servidor",
+        "400 / servidor"
+        ],
+        [
+        "Pesquisas simultâneas<br><small>Pesquisas abertas ou agendadas ao mesmo tempo</small>",
+        "5 / servidor",
+        "20 / servidor",
+        "40 / servidor",
+        "40 / servidor"
+        ],
+        [
+        "Perguntas por pesquisa",
+        "10 / pesquisa",
+        "30 / pesquisa",
+        "50 / pesquisa",
+        "50 / pesquisa"
+        ],
+        [
+        "Remover autopromoção",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Personalização de Convite / Agradecimento<br><small>Personalize convites (rodapé, miniatura, cor), resultados e mensagens de agradecimento</small>",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Notificações de novas respostas<br><small>Novas respostas publicadas em um canal privado com ping opcional</small>",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Clonagem<br><small>Duplique suas enquetes e pesquisas</small>",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Deletar algumas respostas<br><small>Delete algumas ou todas as respostas de uma pesquisa ou enquete</small>",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Construtor avançado: comprimento mínimo/máximo de texto livre e valores numéricos",
+        "✗",
+        "✗",
+        "✓",
+        "✓"
+        ],
+        [
+        "Construtor avançado: Lógica de Pulo",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Créditos de IA<br><small>Créditos necessários para gerar rascunhos de pesquisa com /draft e para resumir respostas abertas</small>",
+        "10k de teste único",
+        "✓<br>500k / mês",
+        "✓<br>1 milhão / mês",
+        "✓<br>1 milhão / mês"
+        ],
+        [
+        "Recompensa de cargo",
+        "✗<br><small>1 cargo por servidor para quem responder qualquer enquete/pesquisa</small>",
+        "✓<br>por enquete ou pesquisa",
+        "✓<br>por enquete ou pesquisa",
+        "✓<br>por enquete ou pesquisa"
+        ],
+        [
+        "Recompensas de cargo por XP mensal",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Sistema de XP<br><small>incluindo ranking e até 5 recompensas de cargo baseadas no XP total</small>",
+        "✓",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Nome e valor de XP personalizado",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Nome, avatar e bio do bot personalizados",
+        "✗",
+        "✗",
+        "✗",
+        "✓"
+        ]
+    ],
+    "buttonRow": [
+        {
+        "text": "Instalar Grátis",
+        "class": "button button--dark-accent-border",
+        "href": "/invite"
+        },
+        [
+        {
+            "text": "Upgrade (via Discord)",
+            "class": "button button--dark-premium-border",
+            "href": "/discordstore",
+            "icon": "discord"
+        },
+        {
+            "text": "Upgrade (via Stripe)",
+            "class": "button button--dark-premium-border",
+            "href": "/subscriptions"
+        }
+        ],
+        [
+        {
+            "text": "Upgrade (via Discord)",
+            "class": "button button--dark-vip-border",
+            "href": "/discordstore",
+            "icon": "discord"
+        },
+        {
+            "text": "Upgrade (via Stripe)",
+            "class": "button button--dark-vip-border",
+            "href": "/subscriptions"
+        }
+        ],
+        {
+        "text": "Personalize o Seu",
+        "class": "button button--primary-border",
+        "href": "/subscriptions"
+        }
+    ]
+    }
+,
+"surveyConvos": {
+  "pageTitle": "Conversas de Pesquisa no Discord | Subo",
+  "pageDescription": "O Subo transforma pesquisas em conversas amigáveis no Discord. Os membros respondem às perguntas individualmente com o bot — sem formulários chatos, maior taxa de conclusão e respostas mais ricas.",
+  "heroTitle": "Pesquisas que parecem <strong class=\"accent\">conversas</strong>",
+  "heroSubtitle": "Não é um formulário. Não é só uma enquete. Um bate-papo individual amigável onde seus membros realmente querem responder.",
+  "heroCta": "Adicionar ao Discord — Grátis",
+  "whatTitle": "O QUE É UMA SURVEY CONVO?",
+  "whatBody": [
+    "Uma survey convo é uma conversa por mensagem privada entre o membro da sua comunidade e o Subo, o bot — diretamente dentro do seu servidor do Discord ou pela web.",
+    "Em vez de enviar os membros para um formulário frio e genérico, o Subo os convida para um chat. As perguntas aparecem uma de cada vez, em um formato de mensagem amigável. Parece conversar com alguém, não preencher papelada.",
+    "O resultado? <strong>Maior taxa de conclusão</strong>, respostas mais ricas e membros que realmente curtam a experiência."
+  ],
+  "formsVsConvosTitle": "FORMULÁRIOS TRADICIONAIS vs. SURVEY CONVOS",
+  "formsColumn": "Formulários Tradicionais",
+  "convosColumn": "Survey Convos com Subo",
+  "formsVsConvosItems": [
+    { "forms": "Interface fria e impessoal", "convos": "Experiência quente no estilo chat" },
+    { "forms": "Páginas longas que parecem opressivas", "convos": "Uma pergunta por vez" },
+    { "forms": "Os membros saem do Discord", "convos": "Os membros ficam no Discord ou usam o link da web" },
+    { "forms": "Baixas taxas de conclusão", "convos": "Maior engajamento e conclusão" }
+  ],
+  "howTitle": "COMO FUNCIONA",
+  "howSteps": [
+    {
+      "number": "1",
+      "title": "Você cria a pesquisa",
+      "desc": "Crie uma pesquisa usando o comando /survey, ou use /draft para deixar a IA do Subo gerar uma com base nos seus objetivos. Você também pode criar e gerenciar pesquisas pelo app web do Subo."
+    },
+    {
+      "number": "2",
+      "title": "O Subo convida seus membros",
+      "desc": "O Subo publica um convite no seu servidor do Discord. Os membros clicam no convite e respondem às perguntas de forma privada — diretamente no Discord ou por um link da web."
+    },
+    {
+      "number": "3",
+      "title": "Você recebe resultados instantaneamente",
+      "desc": "Veja resultados agregados, respostas individuais e deixe a IA do Subo resumir as respostas abertas para que você sempre saiba o que sua comunidade pensa."
+    }
+  ],
+  "questionTypesTitle": "5 TIPOS DE PERGUNTAS",
+  "questionTypesSubtitle": "O Subo oferece o formato certo para cada pergunta.",
+  "questionTypesList": [
+    { "emoji": "💬", "name": "Texto Aberto", "desc": "Respostas escritas livres" },
+    { "emoji": "🔢", "name": "Numérico", "desc": "Números, classificações ou intervalos" },
+    { "emoji": "✅", "name": "Sim / Não", "desc": "Escolhas binárias simples" },
+    { "emoji": "🔘", "name": "Escolha Única", "desc": "Escolha uma entre múltiplas opções" },
+    { "emoji": "☑️", "name": "Múltipla Escolha", "desc": "Selecione todas as que se aplicam" }
+  ],
+  "webTitle": "NO DISCORD E NA WEB",
+  "webDesc": "As survey convos funcionam nativamente dentro do Discord — mas o Subo também suporta uma experiência de pesquisa pela web. Os administradores escolhem se uma pesquisa funciona no Discord ou na web, e se está aberta a qualquer pessoa ou restrita aos membros da comunidade. De qualquer forma, você gerencia pesquisas, visualiza resultados e analisa dados pelo admin web do Subo.",
+  "benefitsTitle": "POR QUE AS SURVEY CONVOS FUNCIONAM MELHOR",
+  "benefitsList": [
+    "💬 Formato de chat que os membros já conhecem",
+    "📱 Funciona no celular sem nenhum atrito",
+    "🤫 Modo anônimo opcional para feedback honesto e sem filtros",
+    "🔀 Lógica de pulo — pule perguntas irrelevantes com base em respostas anteriores",
+    "⏱️ Pesquisas agendadas e recorrentes rodam automaticamente",
+    "🏆 Recompensas de XP e incentivos de cargo impulsionam maior participação",
+    "🤖 Resumo com IA de respostas abertas economiza horas do seu tempo"
+  ]
+},
+
+"about": {
+  "pageTitle": "Sobre o Subo | O Bot de Pesquisas para Discord",
+  "pageDescription": "Saiba mais sobre o Subo, o bot de pesquisas e enquetes para Discord confiado por mais de 15.000 comunidades para coletar feedback e engajar membros.",
+  "heroTitle": "SOBRE O SUBO",
+  "heroSubtitle": "SU-BO. Survey Bot. Feito para comunidades que querem respostas reais.",
+  "storyTitle": "POR QUE O SUBO EXISTE",
+  "storyBody": [
+    "O Subo foi criado em 2021 por uma pequena equipe de profissionais 🤓 com décadas de experiência na construção de plataformas de pesquisa usadas por milhões de usuários em todo o mundo — e pelas principais marcas e pesquisadores do mundo. Vimos por dentro como as ferramentas de pesquisa eram construídas: otimizadas para ciclos de vendas corporativos, não para as pessoas que realmente as respondiam. A experiência era consistentemente ruim, e queríamos fazer algo a respeito.",
+    "Então criamos o Subo. Bootstrapped, autofinanciado e ferozmente independente — totalmente focado em fazer o feedback parecer uma conversa, não uma tarefa. O Discord foi o lugar perfeito para começar: uma plataforma onde as comunidades já estavam conversando, e onde as ferramentas de escuta eram muito escassas.",
+    "Desde o lançamento, o Subo cresceu para atender mais de <strong>15.000 servidores no Discord</strong> — de guildas de jogos a comunidades de criadores, DAOs, clubes esportivos, comunidades de marcas e grupos educacionais. Somos uma equipe pequena e pretendemos continuar assim."
+  ],
+  "statsTitle": "EM NÚMEROS",
+  "stats": [
+    { "number": "15.000+", "label": "Servidores no Discord" },
+    { "number": "5", "label": "Tipos de perguntas" },
+    { "number": "3", "label": "Camadas de gamificação" },
+    { "number": "1", "label": "Objetivo: a voz da sua comunidade" }
+  ],
+  "differentiatorTitle": "O QUE FAZ O SUBO SER DIFERENTE",
+  "differentiators": [
+    {
+      "emoji": "💬",
+      "title": "Conversacional por design",
+      "desc": "As perguntas chegam como mensagens privadas — uma de cada vez, em formato de chat. Não é uma página de formulário. Não é uma interrupção. É uma conversa de verdade."
+    },
+    {
+      "emoji": "🤖",
+      "title": "Análise com IA",
+      "desc": "O Subo usa IA para criar perguntas de pesquisa para você e para resumir respostas abertas. O que antes levava horas agora leva segundos."
+    },
+    {
+      "emoji": "🏆",
+      "title": "Gamificação integrada",
+      "desc": "Os membros ganham XP ao responder, sobem de nível, desbloqueiam cargos e competem em rankings mensais. O engajamento está no núcleo da experiência."
+    },
+    {
+      "emoji": "🌐",
+      "title": "Discord E a web",
+      "desc": "As pesquisas funcionam dentro do Discord e na web. Membros sem Discord também podem participar. Você gerencia tudo pelo admin web do Subo."
+    },
+    {
+      "emoji": "🔐",
+      "title": "Modo anônimo",
+      "desc": "Quando tópicos sensíveis exigem respostas honestas, ative o modo anônimo. Três opções: anonimato total, identificado ou parcial — você escolhe o nível certo."
+    },
+    {
+      "emoji": "🎯",
+      "title": "Segmentação avançada",
+      "desc": "Envie pesquisas para cargos, canais ou indivíduos específicos. Use lógica de pulo para ramificar perguntas com base em respostas anteriores. Feito para precisão."
+    }
+  ],
+  "missionTitle": "NOSSA MISSÃO",
+  "missionBody": "Acreditamos que toda comunidade merece ser ouvida — e que as ferramentas de escuta devem ser tão envolventes quanto as próprias comunidades. O Subo é nossa resposta a esse desafio."
+},
+
+"pricingPage": {
+  "pageTitle": "Planos e Preços | Subo",
+  "pageDescription": "Potencialize sua experiência gratuita no Subo com planos pagos",
+  "heroTitleAccent": "EVOLUA ",
+  "heroTitle": "COM PLANOS PAGOS",
+  "heroSubtitle": "Comece grátis. <br/> Faça upgrade para desbloquear mais recursos e apoiar o desenvolvimento futuro.",
+  "heroDescription": "Seja para um grupo pequeno ou uma comunidade grande e ativa, o Subo tem o plano certo para você.<br>",
+  "discordOrStripeTitle": "DISCORD OU STRIPE: <span class=\"accent\">VOCÊ DECIDE</span>",
+  "discordOrStripeSubtitle": "Duas formas de fazer upgrade: via Discord, ou diretamente neste site com Stripe.",
+  "discordCardTitle": "DISCORD",
+  "discordCardFeatures": [
+    "Upgrade ativo imediatamente",
+    "Apenas assinaturas mensais",
+    "Um servidor apenas",
+    "Faça upgrade, cancele ou gerencie assinaturas via Discord"
+  ],
+  "discordCardButton": "Upgrade com Discord",
+  "stripeCardTitle": "STRIPE",
+  "stripeCardFeatures": [
+    "Todos os planos (incluindo bots personalizados), mensais ou anuais, 1 servidor ou mais",
+    "Desconto anual: Assine o Subo por 1 ano e ganhe <strong>2 meses grátis</strong>",
+    "Desconto multi-servidor: Mais descontos para servidores adicionais",
+    "Faça upgrade, cancele ou gerencie assinaturas via Portal de Cobrança Stripe"
+  ],
+  "stripeCardButton": "Upgrade com Stripe",
+  "faqSectionTitle": "Perguntas Frequentes",
+  "faqs": [
+    {
+      "question": "Por que preciso escolher entre Stripe e Discord?",
+      "answer": "Apoiamos a App Store nativa do Discord, que é mais conveniente para muitos usuários, mas o Discord não oferece assinaturas para múltiplos servidores e planos anuais, então também criamos uma solução via Stripe para isso."
+    },
+    {
+      "question": "O que acontece se eu cancelar minha assinatura premium?",
+      "answer": "Ao final do período de assinatura (mês, ano), seu bot voltará para a versão gratuita do Subo. Você ainda poderá usar o Subo, mas com as limitações do plano gratuito. Se tiver um projeto ativo, ele pode ser interrompido se você atingir o limite máximo de respondentes ou respostas. Se tiver muitos projetos na conta, talvez precise deletar alguns antes de criar novos."
+    },
+    {
+      "question": "Como altero ou cancelo uma assinatura?",
+      "answer": "Você pode gerenciar sua assinatura pelo Portal de Cobrança do Stripe se fez o upgrade com Stripe. Se fez o upgrade com Discord, acesse as configurações do usuário no Discord para gerenciar suas assinaturas."
+    }
+  ]
+}
+}

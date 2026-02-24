@@ -1,16 +1,20 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, DISCORD_STORE_URL } from '../consts';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, DISCORD_STORE_URL } from '../../consts';
 
 
-import PriceTable from '../components/PriceTable.astro';
-import translations from '../content/translations/en.json';
+import PriceTable from '../../components/PriceTable.astro';
 
-import Footer from '../components/Footer.astro';
+import translations from '../../content/translations/pt-br.json';
+
+import Footer from '../../components/Footer.astro';
 
 const { pricingPage } = translations;
 ---
+
+<!doctype html>
+<html lang="pt-BR">
 
 <head>
 <BaseHead title={pricingPage.pageTitle} description={pricingPage.pageDescription} alternates={[
@@ -22,67 +26,70 @@ const { pricingPage } = translations;
   {lang: 'pt-BR', href: 'https://subo.ai/pt-br/pricing'},
 ]} />
 </head>
-<body>
-<Header translations={translations.header} />
+    <body>
+    <Header translations={translations.header} />
 
-<main>
-  <section class="pricing-hero">
-  <div class="container">
-  <div class="pricing-hero__content">
-    <h1 class="pricing-hero__title"><span class="accent">{pricingPage.heroTitleAccent}</span>{pricingPage.heroTitle}</h1>
-    <p class="subtitle" set:html={pricingPage.heroSubtitle}></p>
-    <p class="subtitle" set:html={pricingPage.heroDescription}></p>
-    </div>
-    </div>
-  </section>
-
-  <section class="pricing-section">
+    <main>
+    <section class="pricing-hero">
     <div class="container">
-      <PriceTable translations={translations} />
-    </div>
-  </section>
-
-
-  <section class="channels-section">
     <div class="pricing-hero__content">
-    <h2 class="pricing-hero__title" set:html={pricingPage.discordOrStripeTitle}></h2>
-    <p class="subtitle">{pricingPage.discordOrStripeSubtitle}</p>
-    </div>
-    <div class="upgrade-options">
-      <div class="discount-card">
-        <h3 class="discount-title">{pricingPage.discordCardTitle}</h3>
-        <ul>
-          {pricingPage.discordCardFeatures.map(feature => <li class="discount-desc">{feature}</li>)}
-        </ul>
-        <a href="/discordstore" class="button button--white-bg mono">{pricingPage.discordCardButton}</a>
-      </div>
-      <div class="discount-card">
-        <h3 class="discount-title">{pricingPage.stripeCardTitle}</h3>
-        <ul>
-          {pricingPage.stripeCardFeatures.map(feature => <li class="discount-desc" set:html={feature}></li>)}
-        </ul>
-        <a href="/subscriptions" class="button button--white-bg mono">{pricingPage.stripeCardButton}</a>
-      </div>
-    </div>
-  </section>
+        <h1 class="pricing-hero__title"><span class="accent">{pricingPage.heroTitleAccent}</span>{pricingPage.heroTitle}</h1>
+        <p class="subtitle" set:html={pricingPage.heroSubtitle}></p>
+        <p class="subtitle" set:html={pricingPage.heroDescription}></p>
+        </div>
+        </div>
+    </section>
 
-  
+    <section class="pricing-section">
+        <div class="container">
+        <PriceTable translations={translations} />
+        </div>
+    </section>
 
-  <section class="faq-section">
-    <div class="container">
-    <h2 class="faq-title">{pricingPage.faqSectionTitle}</h2>
-    <ul class="faq-list">
-      {pricingPage.faqs.map(faq => (
-        <li class="faq-item">
-          <h3 class="faq-question">{faq.question}</h3>
-          <p class="faq-answer">{faq.answer}</p>
-        </li>
-      ))}
-    </ul>
-  </section>
-</main>
-<Footer translations={translations.footer}/>
-</body>
+
+    <section class="channels-section">
+        <div class="pricing-hero__content">
+        <h2 class="pricing-hero__title" set:html={pricingPage.discordOrStripeTitle}></h2>
+        <p class="subtitle">{pricingPage.discordOrStripeSubtitle}</p>
+        </div>
+        <div class="upgrade-options">
+        <div class="discount-card">
+            <h3 class="discount-title">{pricingPage.discordCardTitle}</h3>
+            <ul>
+            {pricingPage.discordCardFeatures.map(feature => <li class="discount-desc">{feature}</li>)}
+            </ul>
+            <a href="/discordstore" class="button button--white-bg mono">{pricingPage.discordCardButton}</a>
+        </div>
+        <div class="discount-card">
+            <h3 class="discount-title">{pricingPage.stripeCardTitle}</h3>
+            <ul>
+            {pricingPage.stripeCardFeatures.map(feature => <li class="discount-desc" set:html={feature}></li>)}
+            </ul>
+            <a href="/subscriptions" class="button button--white-bg mono">{pricingPage.stripeCardButton}</a>
+        </div>
+        </div>
+    </section>
+
+
+
+    <section class="faq-section">
+        <div class="container">
+        <h2 class="faq-title">{pricingPage.faqSectionTitle}</h2>
+        <ul class="faq-list">
+        {pricingPage.faqs.map(faq => (
+            <li class="faq-item">
+            <h3 class="faq-question">{faq.question}</h3>
+            <p class="faq-answer">{faq.answer}</p>
+            </li>
+        ))}
+        </ul>
+    </section>
+    </main>
+    <Footer translations={translations.footer}/>
+    </body>
+</html>
+
+
 
 
 <style>
@@ -92,7 +99,7 @@ const { pricingPage } = translations;
 }*/
 
   .pricing-hero {
-    
+
     padding: 150px 0 60px;
     text-align: center;
     background: linear-gradient(var(--dark),var(--secondary-dark));
@@ -125,13 +132,13 @@ const { pricingPage } = translations;
   .pricing-section {
     padding: 60px 0;
     background: linear-gradient(var(--secondary-dark), var(--secondary), var(--primary));
-    
+
   }
 
     .channels-section {
     padding: 60px 0;
     background: linear-gradient(var(--primary), var(--secondary-dark));
-    
+
   }
 
   .upgrade-options {
@@ -140,7 +147,7 @@ const { pricingPage } = translations;
   margin-top: 2.5rem;
   justify-content: center;
   flex-wrap: wrap;
-  
+
 }
 
 .discount-card {
