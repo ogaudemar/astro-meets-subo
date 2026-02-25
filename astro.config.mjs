@@ -16,6 +16,6 @@ export default defineConfig({
   }),
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "fr", "es", "de", "pt-br"], // add more later: "it", "nl", "pl"
+    locales: ["en", "fr", "es", "de", "pt-br", "it"], // add more later: "nl", "pl"
   },
 });

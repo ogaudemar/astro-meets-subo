@@ -4,7 +4,8 @@
       "Bash(cd:*)",
       "Bash(grep:*)",
       "Bash(cd \"C:\\\\Users\\\\ogaud\\\\OneDrive - ClearSwell LLC\\\\Documents\\\\Subo\\\\Code\\\\LP\\\\AstroConvert\\\\astro-meets-subo\" && npm run build 2>&1)",
-      "Bash(cd C:\\\\Users\\\\ogaud\\\\OneDrive - ClearSwell LLC\\\\Documents\\\\Subo\\\\Code\\\\LP\\\\AstroConvert\\\\astro-meets-subo:*)"
+      "Bash(cd C:\\\\Users\\\\ogaud\\\\OneDrive - ClearSwell LLC\\\\Documents\\\\Subo\\\\Code\\\\LP\\\\AstroConvert\\\\astro-meets-subo:*)",
+      "Bash(tail:*)"
     ]
   }
 }

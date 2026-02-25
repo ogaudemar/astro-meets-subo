@@ -50,7 +50,8 @@
       "title": "Jurídico",
       "links": [
         { "text": "Termos de Serviço", "href": "/terms" },
-        { "text": "Política de Privacidade", "href": "/privacy" }
+        { "text": "Política de Privacidade", "href": "/privacy" },
+        { "text": "Política de Cookies", "href": "/cookies" }
       ]
     },
     {

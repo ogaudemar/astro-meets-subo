@@ -50,7 +50,8 @@
       "title": "Legal",
       "links": [
         { "text": "Terms of Service", "href": "/terms" },
-        { "text": "Privacy Policy", "href": "/privacy" }
+        { "text": "Privacy Policy", "href": "/privacy" },
+        { "text": "Cookie Policy", "href": "/cookies" }
       ]
     },
     {

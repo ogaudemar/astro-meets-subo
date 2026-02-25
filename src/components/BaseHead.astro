@@ -87,7 +87,7 @@ const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your commun
   // Only run redirect on homepage/root
   if (path === '/' || path === '') {
     // If preferredLang is set and not already on the correct language path
-    if (preferredLang && ['fr','es','de','pt-br'].includes(preferredLang)) {
+    if (preferredLang && ['fr','es','de','pt-br','it'].includes(preferredLang)) {
       window.location.pathname = '/' + preferredLang;
       return;
     }
@@ -95,8 +95,8 @@ const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your commun
     // If no preferredLang, use browser language
     if (!preferredLang) {
       var userLang = (navigator.language || navigator.userLanguage || 'en').slice(0,2);
-      if (!['en','fr','es','de','pt'].includes(userLang)) userLang = 'en';
-      if (['fr','es','de'].includes(userLang)) {
+      if (!['en','fr','es','de','pt','it'].includes(userLang)) userLang = 'en';
+      if (['fr','es','de','it'].includes(userLang)) {
         window.location.pathname = '/' + userLang;
       } else if (userLang === 'pt') {
         window.location.pathname = '/pt-br';
@@ -107,7 +107,7 @@ const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your commun
   if (['/', '/pricing'].includes(path)) {
     var suffix = path === '/pricing' ? '/pricing' : '';
     // If preferredLang is set and not already on the correct language path
-    if (preferredLang && ['fr','es','de','pt-br'].includes(preferredLang)) {
+    if (preferredLang && ['fr','es','de','pt-br','it'].includes(preferredLang)) {
       window.location.pathname = '/' + preferredLang + suffix;
       return;
     }
@@ -115,8 +115,8 @@ const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your commun
     // If no preferredLang, use browser language
     if (!preferredLang) {
       var userLang = (navigator.language || navigator.userLanguage || 'en').slice(0,2);
-      if (!['en','fr','es','de','pt'].includes(userLang)) userLang = 'en';
-      if (['fr','es','de'].includes(userLang)) {
+      if (!['en','fr','es','de','pt','it'].includes(userLang)) userLang = 'en';
+      if (['fr','es','de','it'].includes(userLang)) {
         window.location.pathname = '/' + userLang + suffix;
       } else if (userLang === 'pt') {
         window.location.pathname = '/pt-br' + suffix;

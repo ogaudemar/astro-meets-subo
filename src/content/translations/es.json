@@ -263,7 +263,8 @@
       "title": "Legal",
       "links": [
         { "text": "Términos de servicio", "href": "/terms" },
-        { "text": "Política de privacidad", "href": "/privacy" }
+        { "text": "Política de privacidad", "href": "/privacy" },
+        { "text": "Política de cookies", "href": "/cookies" }
       ]
     },
     {

@@ -10,13 +10,13 @@ import CTA from '../../components/CTA.astro';
 
 import UseCases from '../../components/UseCases.astro';
 
-import translations from '../../content/translations/fr.json';
+import translations from '../../content/translations/it.json';
 import Footer from '../../components/Footer.astro';
 
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang="it">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} alternates={[
 			{lang: 'x-default', href: 'https://subo.ai/'},
@@ -35,7 +35,7 @@ import Footer from '../../components/Footer.astro';
 			<Features translations={translations.features} />
 			<UseCases translations={translations} />
 			<Testimonials translations={translations} />
-			<CTA translations={translations} />    
+			<CTA translations={translations} />
 		</main>
 		<Footer translations={translations.footer}/>
 	</body>

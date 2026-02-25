@@ -48,7 +48,8 @@
         "title": "Légal",
         "links": [
           { "text": "Conditions d’utilisation", "href": "/terms" },
-          { "text": "Politique de confidentialité", "href": "/privacy" }
+          { "text": "Politique de confidentialité", "href": "/privacy" },
+          { "text": "Politique de cookies", "href": "/cookies" }
         ]
       },
       {

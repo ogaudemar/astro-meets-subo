@@ -50,7 +50,8 @@
       "title": "Rechtliches",
       "links": [
         { "text": "Nutzungsbedingungen", "href": "/terms" },
-        { "text": "Datenschutzrichtlinie", "href": "/privacy" }
+        { "text": "Datenschutzrichtlinie", "href": "/privacy" },
+        { "text": "Cookie-Richtlinie", "href": "/cookies" }
       ]
     },
     {
