@@ -1,0 +1,424 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import translations from '../content/translations/en.json';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Subo Features — Build, Collect, Analyze, Engage"
+      description="Everything Subo can do for your Discord community — conversational surveys, AI drafting, role targeting, XP rewards, and more."
+    />
+  </head>
+  <body>
+    <Header translations={translations.header} />
+    <main id="main-content">
+
+      <!-- Hero -->
+      <section class="feat-hero">
+        <div class="container text-center">
+          <h1 class="mono">EVERYTHING YOU NEED TO UNDERSTAND YOUR COMMUNITY</h1>
+          <p class="feat-hero__subtitle">Subo brings professional-grade surveying to Discord — built for how communities actually work.</p>
+          <a href="/invite" class="button button--accent-bg">Add to Discord</a>
+        </div>
+      </section>
+
+      <!-- Section nav pills -->
+      <nav class="feat-nav" aria-label="Feature sections">
+        <div class="feat-nav__inner">
+          <a href="#build" class="feat-nav__pill mono">BUILD</a>
+          <a href="#collect" class="feat-nav__pill mono">COLLECT</a>
+          <a href="#analyze" class="feat-nav__pill mono">ANALYZE</a>
+          <a href="#engage" class="feat-nav__pill mono">ENGAGE</a>
+        </div>
+      </nav>
+
+      <!-- Section 1: BUILD -->
+      <section class="feat-section feat-section--secondary" id="build">
+        <div class="container">
+          <div class="feat-section__header">
+            <span class="feat-label feat-label--accent mono">BUILD</span>
+            <h2 class="feat-section__title">Create surveys that feel like conversations</h2>
+            <p class="feat-section__sub">From a quick slash command to a fully branched questionnaire — Subo meets you where you are.</p>
+          </div>
+          <div class="feat-cards">
+            <div class="feat-card">
+              <span class="feat-card__emoji">💬</span>
+              <h3 class="feat-card__title">Conversational format</h3>
+              <p class="feat-card__desc">Questions appear one at a time, like a chat — not a form wall. Higher completion, less friction.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">🤖</span>
+              <h3 class="feat-card__title">AI-assisted drafting</h3>
+              <p class="feat-card__desc">Use <code>/draft</code> to describe your goal in plain English. Subo generates a full multi-question survey instantly.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">🖥️</span>
+              <h3 class="feat-card__title">Web admin builder</h3>
+              <p class="feat-card__desc">Design, preview, and manage surveys from the Subo web dashboard — no Discord commands needed.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">🌿</span>
+              <h3 class="feat-card__title">Skip logic &amp; branching</h3>
+              <p class="feat-card__desc">Route respondents to different questions based on earlier answers. Simple logic on all plans; advanced syntax on VIP+.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">✅</span>
+              <h3 class="feat-card__title">5 question types</h3>
+              <p class="feat-card__desc">Open Text, Numeric, Yes/No, Single Choice, Multiple Choice — covering every feedback scenario.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">😄</span>
+              <h3 class="feat-card__title">Custom Discord emojis</h3>
+              <p class="feat-card__desc">Use your server's custom emojis in questions, answer options, and responses — even when respondents take the survey on the web.</p>
+            </div>
+          </div>
+          <figure class="feat-screenshot">
+            <div class="feat-screenshot__placeholder" aria-hidden="true"></div>
+            <figcaption>The Subo web admin showing a multi-question survey being built, with skip logic configured between questions.</figcaption>
+          </figure>
+          <p class="feat-blog-link">
+            <a href="/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089">Learn how to create your first survey →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2: COLLECT -->
+      <section class="feat-section feat-section--dark" id="collect">
+        <div class="container">
+          <div class="feat-section__header">
+            <span class="feat-label feat-label--primary mono">COLLECT</span>
+            <h2 class="feat-section__title">Meet your members where they already are</h2>
+            <p class="feat-section__sub">Subo delivers surveys inside Discord — no link-out forms, no friction, no drop-off.</p>
+          </div>
+          <div class="feat-cards">
+            <div class="feat-card">
+              <span class="feat-card__emoji">📨</span>
+              <h3 class="feat-card__title">Discord-native delivery</h3>
+              <p class="feat-card__desc">Subo posts a survey invite directly in your Discord channel. Members click and respond privately — no DMs required.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">🌐</span>
+              <h3 class="feat-card__title">Discord or web</h3>
+              <p class="feat-card__desc">Admins choose: let members respond in Discord, or open a web link for non-server visitors.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">🎯</span>
+              <h3 class="feat-card__title">Role targeting</h3>
+              <p class="feat-card__desc">Invite specific member segments by Discord role. Survey your paying customers, your moderators, your lurkers — separately.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">🕵️</span>
+              <h3 class="feat-card__title">Three anonymity modes</h3>
+              <p class="feat-card__desc">Identified, More Anonymous, or Fully Anonymous — you set the level of trust per survey.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">🔒</span>
+              <h3 class="feat-card__title">Community-only or open</h3>
+              <p class="feat-card__desc">Restrict to your server members, or open the survey to anyone with the link.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">📅</span>
+              <h3 class="feat-card__title">Scheduled open/close dates</h3>
+              <p class="feat-card__desc">Set a start date and deadline for your survey — Subo opens and closes it automatically.</p>
+            </div>
+          </div>
+          <figure class="feat-screenshot feat-screenshot--wide">
+            <div class="feat-screenshot__placeholder" aria-hidden="true"></div>
+            <figcaption>A Subo survey invite appearing in a Discord channel. Members click "Take Survey" and respond privately — in Discord or on the web.</figcaption>
+          </figure>
+          <p class="feat-blog-link">
+            <a href="/blog/dawn-of-convos">Why conversations beat forms →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3: ANALYZE -->
+      <section class="feat-section feat-section--secondary" id="analyze">
+        <div class="container">
+          <div class="feat-section__header">
+            <span class="feat-label feat-label--accent mono">ANALYZE</span>
+            <h2 class="feat-section__title">Turn hundreds of responses into clear decisions</h2>
+            <p class="feat-section__sub">From live result charts to AI-synthesized summaries, your data does the heavy lifting.</p>
+          </div>
+          <div class="feat-cards">
+            <div class="feat-card">
+              <span class="feat-card__emoji">📊</span>
+              <h3 class="feat-card__title">Live results dashboard</h3>
+              <p class="feat-card__desc">See aggregated responses as they come in — charts for closed questions, response lists for open text.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">✨</span>
+              <h3 class="feat-card__title">AI-powered open text summaries</h3>
+              <p class="feat-card__desc">Subo reads every open-text response and generates a concise synthesis. Get the gist of 500 answers in seconds.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">📥</span>
+              <h3 class="feat-card__title">CSV export</h3>
+              <p class="feat-card__desc">Download all responses for deeper analysis in Excel, Google Sheets, or your own tooling.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">🔀</span>
+              <h3 class="feat-card__title">Skip logic means better data</h3>
+              <p class="feat-card__desc">Every respondent only sees relevant questions. No "N/A" noise polluting your results.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">🔗</span>
+              <h3 class="feat-card__title">Share findings</h3>
+              <p class="feat-card__desc">Post a results summary directly back into Discord to close the feedback loop with your community.</p>
+            </div>
+          </div>
+          <figure class="feat-screenshot">
+            <div class="feat-screenshot__placeholder" aria-hidden="true"></div>
+            <figcaption>The results dashboard for an open-text question, showing an AI-generated summary alongside individual responses.</figcaption>
+          </figure>
+          <p class="feat-blog-link">
+            <a href="/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo">Build smarter surveys with skip logic →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4: ENGAGE -->
+      <section class="feat-section feat-section--dark" id="engage">
+        <div class="container">
+          <div class="feat-section__header">
+            <span class="feat-label feat-label--primary mono">ENGAGE</span>
+            <h2 class="feat-section__title">Make participation worth something</h2>
+            <p class="feat-section__sub">Gamify feedback with XP, leaderboards, and role rewards — so members actually look forward to your surveys.</p>
+          </div>
+          <div class="feat-cards">
+            <div class="feat-card">
+              <span class="feat-card__emoji">⭐</span>
+              <h3 class="feat-card__title">XP rewards</h3>
+              <p class="feat-card__desc">Every completed survey earns XP points. Available on all plans — even free.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">🏆</span>
+              <h3 class="feat-card__title">Monthly leaderboard</h3>
+              <p class="feat-card__desc">Premium+ servers get an automatic monthly XP leaderboard posted in Discord. Rank your most engaged members.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">🎭</span>
+              <h3 class="feat-card__title">Role rewards</h3>
+              <p class="feat-card__desc">Automatically grant or remove Discord roles based on survey completion or XP thresholds.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">🏷️</span>
+              <h3 class="feat-card__title">Custom XP name</h3>
+              <p class="feat-card__desc">Rename XP to match your community's brand — "Stars", "Coins", "Rep" — on Premium and above.</p>
+            </div>
+            <div class="feat-card">
+              <span class="feat-card__emoji">📣</span>
+              <h3 class="feat-card__title">Discord polls</h3>
+              <p class="feat-card__desc">Run quick single-question Discord polls alongside your deeper surveys. Native Discord UI, zero setup.</p>
+            </div>
+          </div>
+          <figure class="feat-screenshot">
+            <div class="feat-screenshot__placeholder" aria-hidden="true"></div>
+            <figcaption>An XP leaderboard embed posted in Discord, showing the top 10 most engaged community members for the month.</figcaption>
+          </figure>
+          <p class="feat-blog-link">
+            <a href="/blog/discord-native-polls-vs-subo-the-survey-bot-comparison">Subo vs. native Discord polls →</a>
+          </p>
+        </div>
+      </section>
+
+      <CTA translations={translations} />
+    </main>
+    <Footer translations={translations.footer} />
+  </body>
+</html>
+
+<style>
+/* Hero */
+.feat-hero {
+  padding: 140px 0 80px;
+  background: linear-gradient(180deg, var(--dark) 0%, var(--secondary-dark) 100%);
+}
+.feat-hero h1 {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.feat-hero__subtitle {
+  font-size: 1.15rem;
+  color: var(--grey-light);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* Section nav */
+.feat-nav {
+  position: sticky;
+  top: 57px; /* nav bar height */
+  z-index: 100;
+  background: var(--secondary-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.feat-nav__inner {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.6rem 1rem;
+  flex-wrap: wrap;
+}
+.feat-nav__pill {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--grey-light);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.feat-nav__pill:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Sections */
+.feat-section {
+  padding: 4rem 0;
+}
+.feat-section--secondary {
+  background: var(--secondary-dark);
+}
+.feat-section--dark {
+  background: var(--dark);
+}
+
+.feat-section__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.feat-section__title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 800;
+  margin: 0.75rem 0 0.75rem;
+  line-height: 1.2;
+}
+.feat-section__sub {
+  color: var(--grey-light);
+  font-size: 1.05rem;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* Section label pill */
+.feat-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+}
+.feat-label--accent {
+  color: var(--accent);
+  background: rgba(var(--accent-rgb, 99, 207, 138), 0.12);
+  border: 1px solid rgba(var(--accent-rgb, 99, 207, 138), 0.25);
+}
+.feat-label--primary {
+  color: var(--primary);
+  background: rgba(88, 101, 242, 0.12);
+  border: 1px solid rgba(88, 101, 242, 0.25);
+}
+
+/* Feature cards grid */
+.feat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.feat-card {
+  background: var(--dark);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+.feat-section--dark .feat-card {
+  background: var(--secondary-dark);
+}
+.feat-card__emoji {
+  font-size: 1.75rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.feat-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+.feat-card__desc {
+  font-size: 0.9rem;
+  color: var(--grey-light);
+  line-height: 1.65;
+  margin: 0;
+}
+.feat-card__desc code {
+  font-family: monospace;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* Screenshot placeholder */
+.feat-screenshot {
+  margin: 0 0 1.5rem;
+}
+.feat-screenshot__placeholder {
+  aspect-ratio: 16 / 9;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+.feat-screenshot--wide .feat-screenshot__placeholder {
+  aspect-ratio: 21 / 9;
+}
+.feat-screenshot figcaption {
+  font-size: 0.82rem;
+  color: var(--grey-light);
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* Blog link */
+.feat-blog-link {
+  text-align: center;
+  margin: 0;
+}
+.feat-blog-link a {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.feat-blog-link a:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .feat-nav__pill {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.75rem;
+  }
+  .feat-cards {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

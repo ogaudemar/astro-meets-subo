@@ -8,6 +8,12 @@
     { "text": "Resources", "href": "/" },
     { "text": "Pricing", "href": "/pricing" }
   ],
+  "product": [
+    { "text": "Features", "href": "/features" },
+    { "text": "Survey Convos", "href": "/survey-convos" },
+    { "text": "Polls", "href": "/polls" },
+    { "text": "Custom Bot", "href": "/custom-survey-bot" }
+  ],
   "resources": [
     { "text": "Tutorials", "href": "/tutorial" },
     { "text": "Support Server", "href": "/support" },
@@ -28,6 +34,7 @@
     {
       "title": "Product",
       "links": [
+        { "text": "Features", "href": "/features" },
         { "text": "Survey Convos", "href": "/survey-convos" },
         { "text": "Custom Bot", "href": "/custom-survey-bot" },
         { "text": "Polls", "href": "/polls" },

@@ -8,6 +8,12 @@
       { "text": "Ressources", "href": "/fr/" },
       { "text": "Tarifs", "href": "/fr/pricing" }
     ],
+    "product": [
+      { "text": "Fonctionnalités", "href": "/features" },
+      { "text": "Survey Convos", "href": "/survey-convos" },
+      { "text": "Sondages", "href": "/polls" },
+      { "text": "Bot Personnalisé", "href": "/custom-survey-bot" }
+    ],
     "resources": [
       { "text": "Tutoriels", "href": "/tutorial" },
       { "text": "Serveur de support", "href": "/support" },

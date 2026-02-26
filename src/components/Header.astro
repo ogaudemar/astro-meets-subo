@@ -5,6 +5,7 @@ import { SITE_TITLE } from '../consts';
 const { translations } = Astro.props;
 const navItems = translations.navItems;
 const resources = translations.resources;
+const product = translations.product ?? [];
 
 
 ---
@@ -21,8 +22,17 @@ const resources = translations.resources;
     </div>
     <div class="nav__content mono">
       <ul class="nav__list nav__list--desktop">
-        <li class="nav__item">
-          <HeaderLink href={navItems[0].href}>{navItems[0].text}</HeaderLink>
+        <li class="nav__item nav__item--dropdown">
+          <button class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-product-menu">
+            {navItems[0].text}
+          </button>
+          <ul class="nav__dropdown-menu" id="desktop-product-menu" role="menu">
+            {product.map(item => (
+              <li class="nav__dropdown-item" role="menuitem">
+                <HeaderLink href={item.href}>{item.text}</HeaderLink>
+              </li>
+            ))}
+          </ul>
         </li>
         <li class="nav__item nav__item--dropdown">
           <button class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-resources-menu">{navItems[1].text}</button>
@@ -62,7 +72,18 @@ const resources = translations.resources;
   <div class="nav__mobile">
     <ul class="nav__list nav__list--mobile">
       <li class="nav__item nav__item--expandable">
-        <button class="nav__expand-toggle" aria-expanded="false" aria-controls="mobile-features-menu">{navItems[1].text}<span class="nav__caret">&#9660;</span>
+        <button class="nav__expand-toggle" aria-expanded="false" aria-controls="mobile-product-menu">{navItems[0].text}<span class="nav__caret">&#9660;</span>
+        </button>
+        <ul class="nav__expand-menu" id="mobile-product-menu">
+          {product.map(item => (
+            <li class="nav__dropdown-item">
+              <HeaderLink href={item.href}>{item.text}</HeaderLink>
+            </li>
+          ))}
+        </ul>
+      </li>
+      <li class="nav__item nav__item--expandable">
+        <button class="nav__expand-toggle" aria-expanded="false" aria-controls="mobile-resources-menu">{navItems[1].text}<span class="nav__caret">&#9660;</span>
         </button>
         <ul class="nav__expand-menu" id="mobile-resources-menu">
           {resources.map(resource => (
@@ -333,7 +354,7 @@ const resources = translations.resources;
 <script>
 //JS to blur rest of content
 document.addEventListener('DOMContentLoaded', () => {
-  const dropdown = document.querySelector('.nav__item--dropdown');
+  const dropdowns = document.querySelectorAll('.nav__item--dropdown');
   const blurOverlay = document.querySelector('.nav-blur-overlay');
 
   function setBlur(active) {
@@ -342,10 +363,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  dropdown?.addEventListener('mouseenter', () => setBlur(true));
-  dropdown?.addEventListener('mouseleave', () => setBlur(false));
-  dropdown?.addEventListener('focusin', () => setBlur(true));
-  dropdown?.addEventListener('focusout', () => setBlur(false));
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('mouseenter', () => setBlur(true));
+    dropdown.addEventListener('mouseleave', () => setBlur(false));
+    dropdown.addEventListener('focusin', () => setBlur(true));
+    dropdown.addEventListener('focusout', () => setBlur(false));
+  });
 });
 
   // Mobile menu toggle
@@ -365,13 +388,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-  // Mobile expandable menu for Product
+  // Mobile expandable menus (Product + Resources)
   document.addEventListener('DOMContentLoaded', () => {
-  const expandToggle = document.querySelector('.nav__expand-toggle');
-  const expandableItem = document.querySelector('.nav__item--expandable');
-  expandToggle?.addEventListener('click', () => {
-    const expanded = expandableItem.classList.toggle('expanded');
-    expandToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  const expandableItems = document.querySelectorAll('.nav__item--expandable');
+  expandableItems.forEach(expandableItem => {
+    const expandToggle = expandableItem.querySelector('.nav__expand-toggle');
+    expandToggle?.addEventListener('click', () => {
+      const expanded = expandableItem.classList.toggle('expanded');
+      expandToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    });
   });
 });
 
