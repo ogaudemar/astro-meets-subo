@@ -22,6 +22,7 @@
   ],
   "cta": "Aggiungi a Discord",
   "upgrade": "Aggiorna",
+  "login": "Accedi",
   "skipToMain": "Vai al contenuto principale"
 },
 
@@ -44,6 +45,7 @@
     {
       "title": "Risorse",
       "links": [
+        { "text": "Web App", "href": "/app", "external": true },
         { "text": "Chi siamo", "href": "/about" },
         { "text": "Server di Supporto", "href": "/support", "external": true },
         { "text": "Tutorial", "href": "/tutorial", "external": true },
@@ -85,13 +87,14 @@
 
     "features": {
     "title": "IMPARI DI PIÙ QUANDO LE PERSONE AMANO LA CONVERSAZIONE.",
-    "subtitle": "I sondaggi tradizionali basati su moduli sono noiosi. Nessuno vuole rispondervi. Con Subo, fai domande tramite votazioni e conversazioni amichevoli a cui la tua community vuole partecipare.",
+    "subtitle": "I sondaggi tradizionali basati su moduli sono noiosi. Nessuno vuole rispondervi. Con Subo, fai domande tramite votazioni e conversazioni amichevoli — disponibile su Discord e sul web.",
     "list": [
         {
         "title": "FAI DOMANDE",
         "content": [
             "<strong>Conversazioni sondaggio:</strong> i membri rispondono alle domande di Subo in una chat privata, all'interno del tuo server Discord o sul web.",
-            "<strong>Votazioni Discord:</strong> 1 domanda, più modi per rispondere e condividere i risultati."
+            "<strong>Votazioni Discord:</strong> 1 domanda, più modi per rispondere e condividere i risultati.",
+            "<strong>Discord e il web:</strong> i membri possono rispondere direttamente in Discord o tramite la web app di Subo — senza account aggiuntivo."
         ]
         },
         {

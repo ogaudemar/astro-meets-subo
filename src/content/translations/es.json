@@ -22,6 +22,7 @@
   ],
   "cta": "Agregar a Discord",
   "upgrade": "Mejorar",
+  "login": "Iniciar sesión",
   "skipToMain": "Saltar al contenido principal"
 },
 
@@ -37,14 +38,15 @@
 
   "features": {
     "title": "APRENDES MÁS CUANDO LA GENTE DISFRUTA LA CONVERSACIÓN.",
-    "subtitle": "Los formularios y encuestas tradicionales son aburridos. Nadie quiere responderlos. Con Subo, haces preguntas en sondeos y conversaciones amigables a las que tu comunidad quiere unirse.",
+    "subtitle": "Los formularios y encuestas tradicionales son aburridos. Nadie quiere responderlos. Con Subo, haces preguntas en sondeos y conversaciones amigables — disponible en Discord y en la web.",
     "list": [
       {
         "title": "HAZ PREGUNTAS",
         "content": [
           "¡No más encuestas aburridas con Subo!",
           "Con <strong>conversaciones de encuesta</strong>, los miembros responden tus preguntas en un chat privado con Subo, dentro de tu servidor de Discord o en la web.",
-          "Con <strong>sondeos</strong>, los miembros responden tu pregunta pública, con múltiples formas de responder y compartir resultados."
+          "Con <strong>sondeos</strong>, los miembros responden tu pregunta pública, con múltiples formas de responder y compartir resultados.",
+          "<strong>Discord y la web:</strong> los miembros pueden responder directamente en Discord o a través de la app web de Subo — sin cuenta adicional."
         ]
       },
       {
@@ -257,6 +259,7 @@
     {
       "title": "Recursos",
       "links": [
+        { "text": "Web App", "href": "/app", "external": true },
         { "text": "Acerca de", "href": "/about" },
         { "text": "Servidor de Soporte", "href": "/support", "external": true },
         { "text": "Tutoriales", "href": "/tutorial", "external": true },

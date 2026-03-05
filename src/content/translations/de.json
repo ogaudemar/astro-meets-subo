@@ -22,6 +22,7 @@
   ],
   "cta": "Zu Discord hinzufügen",
   "upgrade": "Upgraden",
+  "login": "Anmelden",
   "skipToMain": "Zum Hauptinhalt springen"
 },
 
@@ -44,6 +45,7 @@
     {
       "title": "Ressourcen",
       "links": [
+        { "text": "Web App", "href": "/app", "external": true },
         { "text": "Über uns", "href": "/about" },
         { "text": "Support-Server", "href": "/support", "external": true },
         { "text": "Tutorials", "href": "/tutorial", "external": true },
@@ -85,13 +87,14 @@
 
     "features": {
     "title": "DU LERNST MEHR, WENN MENSCHEN DAS GESPRÄCH GENIESSEN.",
-    "subtitle": "Klassische formularbasierte Umfragen sind langweilig. Niemand will sie ausfüllen. Mit Subo stellst du Fragen in Abstimmungen und freundlichen Gesprächen, denen deine Community gerne beitritt.",
+    "subtitle": "Klassische formularbasierte Umfragen sind langweilig. Niemand will sie ausfüllen. Mit Subo stellst du Fragen in Abstimmungen und freundlichen Gesprächen — verfügbar in Discord und im Web.",
     "list": [
         {
         "title": "FRAGEN STELLEN",
         "content": [
             "<strong>Survey Convos:</strong> Mitglieder beantworten Subos Fragen in einem privaten Chat – innerhalb deines Discord-Servers oder im Web.",
-            "<strong>Discord-Abstimmungen:</strong> 1 Frage, mehrere Antwortmöglichkeiten und Ergebnisse zum Teilen."
+            "<strong>Discord-Abstimmungen:</strong> 1 Frage, mehrere Antwortmöglichkeiten und Ergebnisse zum Teilen.",
+            "<strong>Discord und Web:</strong> Mitglieder können direkt in Discord oder über die Subo-Web-App antworten — kein zusätzliches Konto nötig."
         ]
         },
         {

@@ -48,6 +48,11 @@ export const trackedRedirects = {
     url: 'https://discord.com/discovery/applications/946888973035380806/store',
     name: 'discord_app_store',
     description: 'Discord App Store'
+  },
+  app: {
+    url: 'https://suboapp.com',
+    name: 'web_app',
+    description: 'Subo Web App'
   }
 
 };

@@ -22,6 +22,7 @@
   ],
   "cta": "Add to Discord",
   "upgrade": "Upgrade",
+  "login": "Log in",
   "skipToMain": "Skip to main content"
 },
 
@@ -45,6 +46,7 @@
     {
       "title": "Resources",
       "links": [
+        { "text": "Web App", "href": "/app", "external": true },
         { "text": "About", "href": "/about" },
         { "text": "Support Server", "href": "/support", "external": true },
         { "text": "Tutorials", "href": "/tutorial", "external": true },
@@ -86,14 +88,15 @@
 
     "features": {
     "title": "YOU LEARN MORE WHEN PEOPLE ENJOY THE CONVERSATION.",
-    "subtitle": "Traditional form-based surveys are boring. No one wants to answer them. With Subo, you ask questions in polls and friendly conversations that your community wants to join.",
+    "subtitle": "Traditional form-based surveys are boring. No one wants to answer them. With Subo, you ask questions in polls and friendly conversations — available in Discord and on the web.",
     "list": [
         {
         "title": "ASK QUESTIONS",
         "content": [
             
             "<strong>Survey convos:</strong> members answer Subo's questions in a private chat, inside your Discord server or on the web.",
-            "<strong>Discord polls:</strong> 1 question, multiple ways to answer and share results."
+            "<strong>Discord polls:</strong> 1 question, multiple ways to answer and share results.",
+            "<strong>Discord and the web:</strong> members can respond directly inside Discord or through the Subo web app — no extra account needed."
         ]
         },
         {

@@ -22,6 +22,7 @@
     ],
     "cta": "Ajoute à Discord",
     "upgrade": "Upgrade",
+    "login": "Se connecter",
     "skipToMain": "Passe au contenu principal"
   },
 
@@ -42,6 +43,7 @@
       {
         "title": "Ressources",
         "links": [
+          { "text": "Web App", "href": "/app", "external": true },
           { "text": "À propos", "href": "/about" },
           { "text": "Serveur de support", "href": "/support", "external": true },
           { "text": "Tutoriels", "href": "/tutorial", "external": true },
@@ -82,14 +84,15 @@
 
   "features": {
     "title": "ON APPREND PLUS DANS UNE VRAIE CONVERSATION.",
-    "subtitle": "Les formulaires et les questionnaires classiques, c'est rarement une partie de plaisir... Personne n’a envie d’y répondre. Avec Subo, tu poses des questions avec des votes rapides et des discussions qui donnent envie de participer.",
+    "subtitle": "Les formulaires et les questionnaires classiques, c’est rarement une partie de plaisir... Personne n’a envie d’y répondre. Avec Subo, tu poses des questions avec des votes rapides et des discussions qui donnent envie de participer — disponible sur Discord et sur le web.",
     "list": [
       {
         "title": "POSE TES QUESTIONS",
         "content": [
           "Fini les formulaires pénibles avec Subo !",
           "Avec les <strong>convos</strong>, tes membres répondent à tes questions dans un chat privé avec Subo, sur ton serveur Discord ou sur le web. Comme s'ils parlaient avec un ami !",
-          "Avec les <strong>sondages rapides</strong>, tes membres répondent à ta question publique, avec plein de façons de répondre et de partager les résultats."
+          "Avec les <strong>sondages rapides</strong>, tes membres répondent à ta question publique, avec plein de façons de répondre et de partager les résultats.",
+          "<strong>Discord et le web :</strong> les membres peuvent répondre directement dans Discord ou via l'application web Subo — sans compte supplémentaire."
         ]
       },
       {

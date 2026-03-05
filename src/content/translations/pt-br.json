@@ -22,6 +22,7 @@
   ],
   "cta": "Adicionar ao Discord",
   "upgrade": "Upgrade",
+  "login": "Entrar",
   "skipToMain": "Ir para o conteúdo principal"
 },
 
@@ -44,6 +45,7 @@
     {
       "title": "Recursos",
       "links": [
+        { "text": "Web App", "href": "/app", "external": true },
         { "text": "Sobre", "href": "/about" },
         { "text": "Servidor de Suporte", "href": "/support", "external": true },
         { "text": "Tutoriais", "href": "/tutorial", "external": true },
@@ -85,13 +87,14 @@
 
     "features": {
     "title": "VOCÊ APRENDE MAIS QUANDO AS PESSOAS CURTEM A CONVERSA.",
-    "subtitle": "Pesquisas tradicionais em formulários são chatas. Ninguém quer respondê-las. Com o Subo, você faz perguntas em enquetes e conversas amigáveis que sua comunidade quer participar.",
+    "subtitle": "Pesquisas tradicionais em formulários são chatas. Ninguém quer respondê-las. Com o Subo, você faz perguntas em enquetes e conversas amigáveis — disponível no Discord e na web.",
     "list": [
         {
         "title": "FAÇA PERGUNTAS",
         "content": [
             "<strong>Survey Convos:</strong> os membros respondem às perguntas do Subo numa conversa privada, dentro do seu servidor do Discord ou pela web.",
-            "<strong>Enquetes no Discord:</strong> 1 pergunta, múltiplas formas de responder e compartilhar resultados."
+            "<strong>Enquetes no Discord:</strong> 1 pergunta, múltiplas formas de responder e compartilhar resultados.",
+            "<strong>Discord e a web:</strong> os membros podem responder diretamente no Discord ou pelo app web do Subo — sem conta adicional."
         ]
         },
         {
