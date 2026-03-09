@@ -7,7 +7,6 @@ import LogoBanner from './LogoBanner.astro';
 <section class="hero">
 
   <div class="container hero__container">
-    <Demo />
     <div class="hero__content">
       <h1 id="main-content" class="hero__title heading heading--accent text-white">
         {translations.title}<br />
@@ -33,6 +32,7 @@ import LogoBanner from './LogoBanner.astro';
         <p class="hero__cta-note text-white">{translations.ctaNote}</p>
       </div>
     </div>
+    <Demo />
   </div>
 </section>
 <section class="Logo__banner">
@@ -86,42 +86,28 @@ import LogoBanner from './LogoBanner.astro';
     color: white;
   }
 
-/*attempt to bring back text animation */
-.text-typing {
-            margin: 0px;
-            white-space: nowrap;
-            /* Removed clip-path to prevent text clipping */
-            animation: 
-typing 4s steps(22, end) forwards, blink 1s infinite;
-        }
-
-        @keyframes typing {
-            0% {
-                width: 0%
-            }
-
-            100% {
-                width: 100%
-            }
-        }
-
-        @keyframes blink {
-
-            0%,
-            100% {
-                border-right: 2px solid transparent;
-            }
-
-            50% {
-                border-right: 2px solid #222;
-            }
-        }
-
-/*end of animation*/
-
   .hero__rotating-text {
     color: var(--accent);
     position: relative;
+  }
+
+  .text-typing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    border-right: 3px solid var(--accent);
+    /* animation set dynamically by JS per word */
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to   { width: var(--word-width); }
+  }
+
+  @keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50%      { border-color: var(--accent); }
   }
 
 
@@ -189,10 +175,22 @@ typing 4s steps(22, end) forwards, blink 1s infinite;
   if (rotatingText) {
     const words = JSON.parse(rotatingText.dataset.words || '["COMMUNITY"]');
     let currentIndex = 0;
-    
+
+    function playWord(word) {
+      const len = word.length;
+      rotatingText.textContent = word;
+      rotatingText.style.setProperty('--word-width', len + 'ch');
+      rotatingText.style.animation = 'none';
+      void rotatingText.offsetWidth; // force reflow
+      rotatingText.style.animation =
+        `typing 3s steps(${len}, end) forwards, blink 0.7s infinite`;
+    }
+
+    playWord(words[0]);
+
     setInterval(() => {
       currentIndex = (currentIndex + 1) % words.length;
-      rotatingText.textContent = words[currentIndex];
-    }, 2000);
+      playWord(words[currentIndex]);
+    }, 4500);
   }
 </script>

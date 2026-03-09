@@ -76,12 +76,12 @@ const features = translations.list;
     border-radius: 1.2rem;
     padding: 2rem 1.5rem;
     box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-    transition: transform 0.15s, box-shadow 0.15s;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
   }
 
-  .feature:hover { 
+  .feature:hover {
       box-shadow: 0 6px 16px var(--accent);
-      background: var(--secondary);
+      background: rgba(116, 83, 153, 0.4);
       opacity: 1;
   }
 
@@ -119,6 +119,13 @@ const features = translations.list;
     font-size: 1.05rem;
     margin-bottom: 0.7rem;
     line-height: 1.6;
+    padding-left: 1.2rem;
+  }
+
+  .feature li::before {
+    content: "→ ";
+    color: var(--accent);
+    margin-left: -1.2rem;
   }
 
   @media (max-width: 700px) {

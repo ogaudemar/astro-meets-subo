@@ -10,23 +10,28 @@ const ctaButton = translations.ctaButton;
   <div class="container text-center">
     <h2 class="cta__title">{ctaTitle}</h2>
     <p class="subtitle">{ctaSubtitle}</p>
-    <a href="/pricing" class="button button--accent-bg">{ctaButton}</a>
+    <div class="cta__buttons">
+      <a href="/pricing" class="button button--accent-bg">{ctaButton}</a>
+      <a href="/invite" class="button button--primary-border" target="_blank" rel="noopener noreferrer">{translations.header.cta}</a>
+    </div>
   </div>
 </section>
 
 <style>
 .cta {
   padding: 3rem;
-   background: linear-gradient(var(--secondary-dark), var(--dark));
-
-
+  background: linear-gradient(var(--secondary-dark), var(--dark));
 }
 
 .cta__title {
   padding: 1.5rem 0;
 }
 
-.cta__subtitle {
-  padding: 1rem 0;
+.cta__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
 }
 </style>

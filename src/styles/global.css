@@ -374,7 +374,7 @@ hr {
 }
 
 
-/* This should be only for the Testimonials component but doesn't work in there for some reason */
+/* === Testimonials component === (global scope required — cards are JS-generated and don't receive Astro's scoped CSS hash) */
 
 
 
@@ -412,16 +412,16 @@ hr {
       opacity: 1;
       /*transform: scale(1.04);*/
     }
-    /*.testimonial-card.center {
+    .testimonial-card.center {
       opacity: 1;
-      transform: scale(1.04);  was 1.08 
+      transform: scale(1.04);
       z-index: 2;
       box-shadow: 0 4px 24px rgba(0,0,0,0.14);
     }
     .testimonial-card.side {
       opacity: 0.85;
       z-index: 1;
-    }*/
+    }
 
 
 
@@ -541,7 +541,6 @@ hr {
 }
 
 
-.nav__item--dropdown.active ~ .nav-blur-overlay,
 .nav-blur-overlay.active {
   opacity: 1;
   pointer-events: auto;
