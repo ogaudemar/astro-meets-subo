@@ -69,6 +69,7 @@ Results used to be a snapshot. Now they're live.
 
 The Results tab shows every response visualized as it comes in — horizontal bar charts, vertical breakdowns, response counts. You can flip between chart types. You see completion rates and median completion time at the top. For open-ended text questions, you can trigger an AI summary that synthesizes what respondents actually said, so you don't have to read 200 text answers line by line.
 
+![Screenshot of results summary page in Subo Web App](/images/blog/web-app-launch/subo-web-app-results.webp)
 
 ### Individual Responses
 
@@ -78,16 +79,23 @@ You can see every individual response in a filterable, sortable table — filter
 
 From there you can take action directly: award XP to a batch of respondents, grant a role to everyone who answered a specific way, or delete responses for data management. Things that used to take five bot commands and a lot of copy-pasting now take seconds.
 
+![Screenshot of results summary page in Subo Web App](/images/blog/web-app-launch/subo-web-responses.webp)
+
 ### AI Survey Generation
 
 Starting from scratch on a survey is hard.
 
 Describe your topic — "post-event feedback for our weekly game night" or "member sentiment check on our moderation policies" — and Subo's AI generates a complete survey: questions, answer options, question types, question count. You review it, adjust anything you want in the Script Editor, and deploy. The whole thing takes two minutes.
 
+![Screenshot of results summary page in Subo Web App](/images/blog/web-app-launch/subo-web-generate.webp)
 
-### Deployment Control
+
+### Share / Invite
 
 The Invite tab gives you control over how a survey is shared, on Discord or on the web. For Discord invitations, customize the embed: channel where it's posted, required roles, color, image/thumbnail. Choose the call-to-action message. Choose whether respondents answer inside Discord or on a web interface. For web convos, pick a theme and interviewer. 
+
+![Screenshot of results summary page in Subo Web App](/images/blog/web-app-launch/subo-web-invite.webp)
+
 
 ### Revamped Web respondent experience 
 

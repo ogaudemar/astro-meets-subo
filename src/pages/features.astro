@@ -78,7 +78,7 @@ import translations from '../content/translations/en.json';
             </div>
           </div>
           <figure class="feat-screenshot">
-            <div class="feat-screenshot__placeholder" aria-hidden="true"></div>
+            <img src="/images/blog/web-app-launch/subo-web-app-launch.webp" alt="The Subo web admin showing a multi-question survey being built, with skip logic configured between questions." loading="lazy" />
             <figcaption>The Subo web admin showing a multi-question survey being built, with skip logic configured between questions.</figcaption>
           </figure>
           <p class="feat-blog-link">
@@ -128,7 +128,7 @@ import translations from '../content/translations/en.json';
             </div>
           </div>
           <figure class="feat-screenshot feat-screenshot--wide">
-            <div class="feat-screenshot__placeholder" aria-hidden="true"></div>
+            <img src="/images/blog/web-app-launch/discord-post.webp" alt="A Subo survey invite appearing in a Discord channel. Members click Take Survey and respond privately — in Discord or on the web." loading="lazy" />
             <figcaption>A Subo survey invite appearing in a Discord channel. Members click "Take Survey" and respond privately — in Discord or on the web.</figcaption>
           </figure>
           <p class="feat-blog-link">
@@ -173,7 +173,7 @@ import translations from '../content/translations/en.json';
             </div>
           </div>
           <figure class="feat-screenshot">
-            <div class="feat-screenshot__placeholder" aria-hidden="true"></div>
+            <img src="/images/blog/web-app-launch/subo-web-responses.webp" alt="The results dashboard for an open-text question, showing an AI-generated summary alongside individual responses." loading="lazy" />
             <figcaption>The results dashboard for an open-text question, showing an AI-generated summary alongside individual responses.</figcaption>
           </figure>
           <p class="feat-blog-link">
@@ -218,7 +218,7 @@ import translations from '../content/translations/en.json';
             </div>
           </div>
           <figure class="feat-screenshot">
-            <div class="feat-screenshot__placeholder" aria-hidden="true"></div>
+            <img src="/images/blog/web-app-launch/leaderboard.webp" alt="An XP leaderboard embed posted in Discord, showing the top 10 most engaged community members for the month." loading="lazy" />
             <figcaption>An XP leaderboard embed posted in Discord, showing the top 10 most engaged community members for the month.</figcaption>
           </figure>
           <p class="feat-blog-link">
@@ -387,6 +387,13 @@ import translations from '../content/translations/en.json';
 }
 .feat-screenshot--wide .feat-screenshot__placeholder {
   aspect-ratio: 21 / 9;
+}
+.feat-screenshot img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0.75rem;
 }
 .feat-screenshot figcaption {
   font-size: 0.82rem;
