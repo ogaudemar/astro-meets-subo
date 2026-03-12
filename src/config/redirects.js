@@ -50,7 +50,7 @@ export const trackedRedirects = {
     description: 'Discord App Store'
   },
   app: {
-    url: 'https://suboapp.com',
+    url: 'https://app.subo.gg',
     name: 'web_app',
     description: 'Subo Web App'
   }
