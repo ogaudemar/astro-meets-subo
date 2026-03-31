@@ -103,6 +103,32 @@ The web experience option is not totally new (respondents click a button in Disc
 
 And with the Open Web option, you can now use Subo not just for your Discord work but for your other projects, posting the invitation link across all your communication channels.
 
+Web convos do not have the same constraints as Discord native surveys (e.g. number of options, option character length, length of answers) and down the road we will be able to support more question/content types in them.
+
+They are still tightly connected with your community: XP, roles, custom emojis. With Premium, web surveys also carry the branding of your community and allow you to select the interviewer.
+
+![Screenshot of a web convo with the emoji picker showing custom emojis](/images/blog/web-app-launch/web-convos-light.webp)
+
+
+
+### Members
+
+The Members page gives you a full view of your community in one place.
+
+Every member who has interacted with Subo shows up here — with their XP balance, assigned roles, and access levels. You can adjust XP directly, grant new roles, and manage access levels without touching the bot or running a single slash command. If you've been manually tracking who has what role or how much XP each member has earned, this replaces that entirely.
+
+![Screenshot of the members page showing detsails of one member](/images/blog/web-app-launch/Members.webp)
+
+
+### Account
+
+Your data belongs to you, and the Account area makes that real for you and your members.
+
+From there, you can see all your past survey answers, sort and filter them however you need, export the full history, or delete individual responses — or everything at once. Whether you want a record of your own participation or you just want to clean the slate, it's all there and it's all yours.
+
+![Screenshot of the Accounts page showing some past answers](/images/blog/web-app-launch/Account-answers.webp)
+
+
 ---
 
 ## One Thing Hasn't Changed
