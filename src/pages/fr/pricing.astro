@@ -48,30 +48,8 @@ const { pricingPage } = translations;
     </section>
 
 
-    <section class="channels-section">
-        <div class="pricing-hero__content">
-        <h2 class="pricing-hero__title" set:html={pricingPage.discordOrStripeTitle}></h2>
-        <p class="subtitle">{pricingPage.discordOrStripeSubtitle}</p>
-        </div>
-        <div class="upgrade-options">
-        <div class="discount-card">
-            <h3 class="discount-title">{pricingPage.discordCardTitle}</h3>
-            <ul>
-            {pricingPage.discordCardFeatures.map(feature => <li class="discount-desc">{feature}</li>)}
-            </ul>
-            <a href="/discordstore" class="button button--white-bg mono">{pricingPage.discordCardButton}</a>
-        </div>
-        <div class="discount-card">
-            <h3 class="discount-title">{pricingPage.stripeCardTitle}</h3>
-            <ul>
-            {pricingPage.stripeCardFeatures.map(feature => <li class="discount-desc" set:html={feature}></li>)}
-            </ul>
-            <a href="/subscriptions" class="button button--white-bg mono">{pricingPage.stripeCardButton}</a>
-        </div>
-        </div>
-    </section>
 
-    
+
 
     <section class="faq-section">
         <div class="container">

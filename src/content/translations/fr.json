@@ -456,36 +456,20 @@
         "class": "button button--dark-accent-border",
         "href": "/invite"
       },
-      [
-        {
-          "text": "Upgrade (Discord)",
-          "class": "button button--dark-premium-border",
-          "href": "/discordstore",
-          "icon": "discord"
-        },
-        {
-          "text": "Upgrade (Stripe)",
-          "class": "button button--dark-premium-border",
-          "href": "/subscriptions"
-        }
-      ],
-      [
-        {
-          "text": "Upgrade (Discord)",
-          "class": "button button--dark-vip-border",
-          "href": "/discordstore",
-          "icon": "discord"
-        },
-        {
-          "text": "Upgrade (Stripe)",
-          "class": "button button--dark-vip-border",
-          "href": "/subscriptions"
-        }
-      ],
+      {
+        "text": "Upgrade",
+        "class": "button button--dark-premium-border",
+        "href": "https://app.subo.gg/app/settings#plan"
+      },
+      {
+        "text": "Upgrade",
+        "class": "button button--dark-vip-border",
+        "href": "https://app.subo.gg/app/settings#plan"
+      },
       {
         "text": "Personnalise-le",
         "class": "button button--primary-border",
-        "href": "/subscriptions"
+        "href": "https://app.subo.gg/app/settings#plan"
       }
     ]
   },
@@ -615,16 +599,6 @@
   "heroTitle": "AVEC LES OFFRES PAYANTES",
   "heroSubtitle": "Commence gratuitement.<br/> Upgrade pour débloquer plus de fonctionnalités et soutenir le développement.",
   "heroDescription": "Que tu gères un petit groupe ou une grosse communauté active, Subo a le plan qu’il te faut.<br>",
-  "discordOrStripeTitle": "DISCORD OU STRIPE : <span class=\"accent\">À TOI DE CHOISIR</span>",
-  "discordOrStripeSubtitle": "Deux façons d’upgrader : via Discord, ou directement sur ce site avec Stripe.",
-  "discordCardTitle": "DISCORD",
-  "discordCardFeatures": [
-    "Upgrade immédiat",
-    "Abonnement mensuel uniquement",
-    "Un seul serveur",
-    "Gère ton abonnement directement sur Discord"
-  ],
-  "discordCardButton": "Upgrade avec Discord",
   "stripeCardTitle": "STRIPE",
   "stripeCardFeatures": [
     "Tous les plans (y compris bot perso), mensuel ou annuel, 1 serveur ou plus",
@@ -636,16 +610,12 @@
   "faqSectionTitle": "Questions fréquentes",
   "faqs": [
     {
-      "question": "Pourquoi choisir entre Stripe et Discord ?",
-      "answer": "On propose la boutique Discord, c’est pratique pour beaucoup, mais elle ne gère pas les abos annuels ou multi-serveurs, donc on a aussi mis Stripe en place."
-    },
-    {
       "question": "Que se passe-t-il si tu annules ton abonnement premium ?",
       "answer": "À la fin de ton abonnement (mois, année), ton bot repasse en version gratuite Subo. Tu peux continuer à l’utiliser, mais avec les limites du plan gratuit. Si t’as un projet en cours, il peut s’arrêter si tu dépasses la limite de réponses. Si t’as trop de projets, faudra peut-être en supprimer avant d’en créer des nouveaux."
     },
     {
       "question": "Comment changer ou annuler un abonnement ?",
-      "answer": "Tu peux gérer ton abonnement sur le portail Stripe si tu as pris Stripe. Si tu as pris Discord, va dans tes paramètres utilisateur Discord pour gérer tes abonnements."
+      "answer": "Tu peux gérer ton abonnement à tout moment via le portail Stripe. Pour y accéder, connecte-toi avec l’adresse e-mail utilisée lors de l’upgrade."
     }
   ]
 }

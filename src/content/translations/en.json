@@ -467,36 +467,20 @@
         "class": "button button--dark-accent-border",
         "href": "/invite"
         },
-        [
         {
-            "text": "Upgrade (via Discord)",
-            "class": "button button--dark-premium-border",
-            "href": "/discordstore",
-            "icon": "discord"
+        "text": "Upgrade",
+        "class": "button button--dark-premium-border",
+        "href": "https://app.subo.gg/app/settings#plan"
         },
         {
-            "text": "Upgrade (via Stripe)",
-            "class": "button button--dark-premium-border",
-            "href": "/subscriptions"
-        }
-        ],
-        [
-        {
-            "text": "Upgrade (via Discord)",
-            "class": "button button--dark-vip-border",
-            "href": "/discordstore",
-            "icon": "discord"
+        "text": "Upgrade",
+        "class": "button button--dark-vip-border",
+        "href": "https://app.subo.gg/app/settings#plan"
         },
-        {
-            "text": "Upgrade (via Stripe)",
-            "class": "button button--dark-vip-border",
-            "href": "/subscriptions"
-        }
-        ],
         {
         "text": "Make It Your Own",
         "class": "button button--primary-border",
-        "href": "/subscriptions"
+        "href": "https://app.subo.gg/app/settings#plan"
         }
     ]
     }
@@ -625,16 +609,6 @@
   "heroTitle": "WITH PAID PLANS",
   "heroSubtitle": "Start free. <br/> Upgrade to unlock more features and support future development.",
   "heroDescription": "Whether you're running a small group or a large, active community, Subo has the right plan for you.<br>",
-  "discordOrStripeTitle": "DISCORD OR STRIPE: <span class=\"accent\">YOU DECIDE</span>",
-  "discordOrStripeSubtitle": "Two ways to upgrade: via Discord, or directly on this website with Stripe.",
-  "discordCardTitle": "DISCORD",
-  "discordCardFeatures": [
-    "Upgrade effective immediately",
-    "Monthly subscriptions only",
-    "One server only",
-    "Upgrade, cancel or manage subscriptions via Discord"
-  ],
-  "discordCardButton": "Upgrade with Discord",
   "stripeCardTitle": "STRIPE",
   "stripeCardFeatures": [
     "All tiers (including custom bots), monthly or yearly, 1 server or more",
@@ -646,16 +620,12 @@
   "faqSectionTitle": "Frequently Asked Questions",
   "faqs": [
     {
-      "question": "Why do I need to choose between Stripe and Discord?",
-      "answer": "We support Discord's native App Store, which is more convenient to many users, but Discord doesn't support multiple server and annual subscriptions, so we also created a Stripe solution for that."
-    },
-    {
       "question": "What happens if I cancel my premium subscription?",
       "answer": "Once the end of your subscription period (month, year) comes, your bot will be switched back to the free version of Subo. You will still be able to use Subo, but with the limitations of the free tier.  If you have a project live, it may stop if you reach your maximum allowance for respondents or responses. If you have too many projects on your account, you may have to delete some before you are allowed to create new ones."
     },
     {
       "question": "How do I change or cancel a subscription?",
-      "answer": "You can manage your subscription on the Stripe Billing Portal if you upgraded with Stripe. If you upgraded with Discord, go to your user settings in Discord to manage your subscriptions."
+      "answer": "You can manage your subscription at any time via the Stripe Billing Portal. To access it, log in with the email address you used to upgrade."
     }
   ]
 }
