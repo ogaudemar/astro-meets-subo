@@ -1,7 +1,7 @@
 ---
 title: "Subo Just Got a Web App — Here's Why It Took This Long"
 description: "We built Subo to live inside Discord. That was the whole point. Here's what we built when Discord stopped being enough."
-pubDate: "Mar 05 2026"
+pubDate: "Mar 31 2026"
 author: "Subo Team"
 heroImage: "/images/blog/web-app-launch/subo-web-app-launch.webp"
 tags: ["announcement", "web app", "product"]
