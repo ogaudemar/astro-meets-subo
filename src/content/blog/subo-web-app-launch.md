@@ -143,7 +143,7 @@ If you haven't tried Subo yet, the web app is the best place to start.
 
 ---
 
-[Get started at suboapp.com](/app)
+[Try the new Subo Web App](/app)
 
 ---
 
