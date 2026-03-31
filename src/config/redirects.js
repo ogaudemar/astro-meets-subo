@@ -35,9 +35,9 @@ export const trackedRedirects = {
     description: 'Top.gg Vote Page'
   },
   upgrade: {
-    url: 'https://discord.com/discovery/applications/946888973035380806/store',
-    name: 'discord_upgrade',
-    description: 'Discord Upgrade Page'
+    url: 'https://app.subo.gg/app/settings#plan',
+    name: 'upgrade',
+    description: 'Upgrade Plan'
   },
   portal: {
     url: 'https://billing.stripe.com/p/login/7sI3el1F61iu5RS8ww',
