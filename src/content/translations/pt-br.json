@@ -94,6 +94,7 @@
         "content": [
             "<strong>Survey Convos:</strong> os membros respondem às perguntas do Subo numa conversa privada, dentro do seu servidor do Discord ou pela web.",
             "<strong>Enquetes no Discord:</strong> 1 pergunta, múltiplas formas de responder e compartilhar resultados.",
+            "<strong>Blocos de conteúdo:</strong> adicione uma mensagem, intro, GIF ou pausa em qualquer ponto da sua pesquisa — sem necessidade de resposta. Os participantes continuam após uma pausa ou clicando em um botão.",
             "<strong>Discord e a web:</strong> os membros podem responder diretamente no Discord ou pelo app web do Subo — sem conta adicional."
         ]
         },
@@ -347,21 +348,21 @@
         "50.000 / pesquisa"
         ],
         [
-        "Pesquisas ativas<br><small>Total de pesquisas e enquetes armazenadas. Delete pesquisas antigas para ficar em um plano menor.</small>",
+        "Total de Projetos<br><small>Total de pesquisas e enquetes armazenadas. Delete projetos antigos para ficar em um plano menor.</small>",
         "10 / servidor",
         "200 / servidor",
         "400 / servidor",
         "400 / servidor"
         ],
         [
-        "Pesquisas simultâneas<br><small>Pesquisas abertas ou agendadas ao mesmo tempo</small>",
+        "Projetos Ativos<br><small>Enquetes e pesquisas abertas ou agendadas ao mesmo tempo</small>",
         "5 / servidor",
         "20 / servidor",
         "40 / servidor",
         "40 / servidor"
         ],
         [
-        "Perguntas por pesquisa",
+        "Blocos<br><small>Blocos de perguntas e de conteúdo</small>",
         "10 / pesquisa",
         "30 / pesquisa",
         "50 / pesquisa",
@@ -403,16 +404,23 @@
         "✓"
         ],
         [
-        "Construtor avançado: comprimento mínimo/máximo de texto livre e valores numéricos",
+        "Script Builder avançado: comprimento mínimo/máximo de texto livre e valores numéricos",
         "✗",
         "✗",
         "✓",
         "✓"
         ],
         [
-        "Construtor avançado: Lógica de Pulo",
+        "Script Builder avançado: Lógica de Pulo",
         "✗",
         "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Script Builder avançado: personalizar o botão 'Continuar' nos blocos de conteúdo",
+        "✗",
+        "✗",
         "✓",
         "✓"
         ],
@@ -501,6 +509,7 @@
   "formsVsConvosItems": [
     { "forms": "Interface fria e impessoal", "convos": "Experiência quente no estilo chat" },
     { "forms": "Páginas longas que parecem opressivas", "convos": "Uma pergunta por vez" },
+    { "forms": "Não há como adicionar contexto ou instruções entre perguntas", "convos": "Blocos de conteúdo adicionam intros, avisos, GIFs ou pausas em qualquer ponto do fluxo" },
     { "forms": "Os membros saem do Discord", "convos": "Os membros ficam no Discord ou usam o link da web" },
     { "forms": "Baixas taxas de conclusão", "convos": "Maior engajamento e conclusão" }
   ],
@@ -522,14 +531,15 @@
       "desc": "Veja resultados agregados, respostas individuais e deixe a IA do Subo resumir as respostas abertas para que você sempre saiba o que sua comunidade pensa."
     }
   ],
-  "questionTypesTitle": "5 TIPOS DE PERGUNTAS",
-  "questionTypesSubtitle": "O Subo oferece o formato certo para cada pergunta.",
+  "questionTypesTitle": "TIPOS DE BLOCOS",
+  "questionTypesSubtitle": "5 tipos de perguntas para todo tipo de resposta — mais blocos de conteúdo para mensagens, intros e pausas que não precisam de resposta.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Texto Aberto", "desc": "Respostas escritas livres" },
     { "emoji": "🔢", "name": "Numérico", "desc": "Números, classificações ou intervalos" },
     { "emoji": "✅", "name": "Sim / Não", "desc": "Escolhas binárias simples" },
     { "emoji": "🔘", "name": "Escolha Única", "desc": "Escolha uma entre múltiplas opções" },
-    { "emoji": "☑️", "name": "Múltipla Escolha", "desc": "Selecione todas as que se aplicam" }
+    { "emoji": "☑️", "name": "Múltipla Escolha", "desc": "Selecione todas as que se aplicam" },
+    { "emoji": "📢", "name": "Bloco de Conteúdo", "desc": "Mensagem, intro, GIF ou pausa — sem resposta necessária" }
   ],
   "webTitle": "NO DISCORD E NA WEB",
   "webDesc": "As survey convos funcionam nativamente dentro do Discord — mas o Subo também suporta uma experiência de pesquisa pela web. Os administradores escolhem se uma pesquisa funciona no Discord ou na web, e se está aberta a qualquer pessoa ou restrita aos membros da comunidade. De qualquer forma, você gerencia pesquisas, visualiza resultados e analisa dados pelo admin web do Subo.",
@@ -539,6 +549,7 @@
     "📱 Funciona no celular sem nenhum atrito",
     "🤫 Modo anônimo opcional para feedback honesto e sem filtros",
     "🔀 Lógica de pulo — pule perguntas irrelevantes com base em respostas anteriores",
+    "📢 Blocos de conteúdo — adicione uma intro, contexto importante, GIF ou uma pausa no meio da pesquisa sem fazer uma pergunta",
     "⏱️ Pesquisas agendadas e recorrentes rodam automaticamente",
     "🏆 Recompensas de XP e incentivos de cargo impulsionam maior participação",
     "🤖 Resumo com IA de respostas abertas economiza horas do seu tempo"
@@ -559,7 +570,7 @@
   "statsTitle": "EM NÚMEROS",
   "stats": [
     { "number": "15.000+", "label": "Servidores no Discord" },
-    { "number": "5", "label": "Tipos de perguntas" },
+    { "number": "6", "label": "Tipos de blocos (5 tipos de perguntas + blocos de conteúdo)" },
     { "number": "3", "label": "Camadas de gamificação" },
     { "number": "1", "label": "Objetivo: a voz da sua comunidade" }
   ],
@@ -568,7 +579,7 @@
     {
       "emoji": "💬",
       "title": "Conversacional por design",
-      "desc": "As perguntas chegam como mensagens privadas — uma de cada vez, em formato de chat. Não é uma página de formulário. Não é uma interrupção. É uma conversa de verdade."
+      "desc": "As perguntas chegam como mensagens privadas — uma de cada vez, em formato de chat. Blocos de conteúdo permitem adicionar intros, contexto ou pausas em qualquer ponto do fluxo. Não é uma página de formulário. É uma conversa de verdade."
     },
     {
       "emoji": "🤖",

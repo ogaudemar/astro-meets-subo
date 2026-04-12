@@ -35,8 +35,8 @@ const discordSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" 
             {row.slice(1).map((cell, index) => {
               const tierClass = ["tier-free", "tier-premium", "tier-vip", "tier-custom"][index];
               const cellHtml = cell
-                .replace(/✓/g, `<span class="icon icon-yes ${tierClass}">✓</span>`)
-                .replace(/✗/g, `<span class="icon icon-no ${tierClass}">✗</span>`);
+                .replace(/✓/g, `<span class="icon icon-yes">✓</span>`)
+                .replace(/✗/g, `<span class="icon icon-no">✗</span>`);
               return (
                 <td class={`feature-value ${tierClass}`} set:html={cellHtml}></td>
               );
@@ -420,15 +420,9 @@ const discordSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" 
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   }
 
-.icon-yes.tier-free { color: var(--accent); }
-.icon-yes.tier-premium { color: var(--premium); }
-.icon-yes.tier-vip { color: var(--yellow-vip); }
-.icon-yes.tier-custom { color: var(--primary); }
+:global(.icon-yes) { color: var(--accent); font-weight: 700; }
 
-.icon-no.tier-free { color: var(--accent); opacity: 0.5; }
-.icon-no.tier-premium { color: var(--premium); opacity: 0.5; }
-.icon-no.tier-vip { color: var(--yellow-vip); opacity: 0.5; }
-.icon-no.tier-custom { color: var(--primary); opacity: 0.5; }
+:global(.icon-no) { color: #666; }
 
 .button-group {
   display: flex;

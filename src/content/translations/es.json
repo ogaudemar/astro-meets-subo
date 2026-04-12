@@ -46,6 +46,7 @@
           "¡No más encuestas aburridas con Subo!",
           "Con <strong>conversaciones de encuesta</strong>, los miembros responden tus preguntas en un chat privado con Subo, dentro de tu servidor de Discord o en la web.",
           "Con <strong>sondeos</strong>, los miembros responden tu pregunta pública, con múltiples formas de responder y compartir resultados.",
+          "<strong>Bloques de contenido:</strong> añade un mensaje, intro, GIF o pausa en cualquier punto de tu encuesta — sin respuesta requerida. Los participantes continúan tras una pausa o al hacer clic en un botón.",
           "<strong>Discord y la web:</strong> los miembros pueden responder directamente en Discord o a través de la app web de Subo — sin cuenta adicional."
         ]
       },
@@ -305,6 +306,7 @@
   "formsVsConvosItems": [
     { "forms": "Interfaz fría e impersonal", "convos": "Experiencia cálida en modo chat" },
     { "forms": "Páginas largas que abruman", "convos": "Una pregunta a la vez" },
+    { "forms": "No hay forma de añadir contexto o instrucciones entre preguntas", "convos": "Los bloques de contenido añaden intros, advertencias, GIFs o pausas en cualquier punto del flujo" },
     { "forms": "Los miembros abandonan la página", "convos": "Se quedan en Discord o usan el enlace web" },
     { "forms": "Tasas de finalización bajas", "convos": "Mayor participación y finalización" }
   ],
@@ -326,14 +328,15 @@
       "desc": "Ve resultados agregados, respuestas individuales y deja que la IA de Subo resuma las respuestas abiertas para siempre saber qué piensa tu comunidad."
     }
   ],
-  "questionTypesTitle": "5 TIPOS DE PREGUNTAS",
-  "questionTypesSubtitle": "Subo te da el formato adecuado para cada pregunta.",
+  "questionTypesTitle": "TIPOS DE BLOQUES",
+  "questionTypesSubtitle": "5 tipos de preguntas para cada tipo de respuesta — más los bloques de contenido para mensajes, intros y pausas que no necesitan respuesta.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Texto abierto", "desc": "Respuestas escritas en formato libre" },
     { "emoji": "🔢", "name": "Numérico", "desc": "Números, valoraciones o rangos" },
     { "emoji": "✅", "name": "Sí / No", "desc": "Elecciones binarias simples" },
     { "emoji": "🔘", "name": "Opción única", "desc": "Elige una entre múltiples opciones" },
-    { "emoji": "☑️", "name": "Opción múltiple", "desc": "Selecciona todo lo que aplique" }
+    { "emoji": "☑️", "name": "Opción múltiple", "desc": "Selecciona todo lo que aplique" },
+    { "emoji": "📢", "name": "Bloque de contenido", "desc": "Mensaje, intro, GIF o pausa — sin respuesta necesaria" }
   ],
   "webTitle": "EN DISCORD Y EN LA WEB",
   "webDesc": "Las survey convos funcionan de forma nativa dentro de Discord, pero Subo también admite una experiencia web. Los administradores eligen si la encuesta se ejecuta en Discord o en la web, y si está abierta a cualquiera o restringida a los miembros de la comunidad. En cualquier caso, gestionas las encuestas, ves los resultados y analizas los datos desde el panel de administración web de Subo.",
@@ -343,6 +346,7 @@
     "📱 Funciona en móvil sin fricciones",
     "🤫 Modo anónimo opcional para feedback honesto y sin filtros",
     "🔀 Lógica de salto — salta preguntas irrelevantes según respuestas anteriores",
+    "📢 Bloques de contenido — añade una intro, contexto clave, un GIF o una pausa a mitad de encuesta sin hacer una pregunta",
     "⏱️ Encuestas programadas y recurrentes que se ejecutan automáticamente",
     "🏆 Recompensas de XP y roles que impulsan la participación",
     "🤖 Resumen de IA de respuestas abiertas que te ahorra horas"
@@ -363,7 +367,7 @@
   "statsTitle": "EN NÚMEROS",
   "stats": [
     { "number": "15,000+", "label": "Servidores Discord" },
-    { "number": "5", "label": "Tipos de preguntas" },
+    { "number": "6", "label": "Tipos de bloques (5 tipos de preguntas + bloques de contenido)" },
     { "number": "3", "label": "Capas de gamificación" },
     { "number": "1", "label": "Objetivo: la voz de tu comunidad" }
   ],
@@ -372,7 +376,7 @@
     {
       "emoji": "💬",
       "title": "Conversacional por diseño",
-      "desc": "Las preguntas llegan como mensajes privados — de una en una, en formato chat. No una página de formulario. No una interrupción. Una conversación real."
+      "desc": "Las preguntas llegan como mensajes privados — de una en una, en formato chat. Los bloques de contenido te permiten añadir intros, contexto o pausas en cualquier punto del flujo. No una página de formulario. Una conversación real."
     },
     {
       "emoji": "🤖",
@@ -454,21 +458,21 @@
       "50,000 / encuesta"
     ],
     [
-      "Encuestas activas<br><small>Total de encuestas y sondeos almacenados. Elimina encuestas antiguas para mantenerte en un plan menor.</small>",
+      "Proyectos totales<br><small>Total de encuestas y sondeos almacenados. Elimina proyectos antiguos para mantenerte en un plan menor.</small>",
       "10 / servidor",
       "200 / servidor",
       "400 / servidor",
       "400 / servidor"
     ],
     [
-      "Encuestas simultáneas<br><small>Encuestas abiertas o programadas al mismo tiempo</small>",
+      "Proyectos activos<br><small>Sondeos y encuestas abiertos o programados al mismo tiempo</small>",
       "5 / servidor",
       "20 / servidor",
       "40 / servidor",
       "40 / servidor"
     ],
     [
-      "Preguntas por encuesta",
+      "Bloques<br><small>Bloques de preguntas y de contenido</small>",
       "10 / encuesta",
       "30 / encuesta",
       "50 / encuesta",
@@ -510,16 +514,23 @@
       "✓"
     ],
     [
-      "Constructor avanzado: min/máx texto abierto y valores numéricos",
+      "Script Builder avanzado: min/máx texto abierto y valores numéricos",
       "✗",
       "✗",
       "✓",
       "✓"
     ],
     [
-      "Constructor avanzado: Lógica de salto",
+      "Script Builder avanzado: Lógica de salto",
       "✗",
       "✓",
+      "✓",
+      "✓"
+    ],
+    [
+      "Script Builder avanzado: personalizar el botón 'Continuar' en bloques de contenido",
+      "✗",
+      "✗",
       "✓",
       "✓"
     ],

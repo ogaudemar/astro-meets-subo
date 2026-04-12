@@ -94,6 +94,7 @@
         "content": [
             "<strong>Survey Convos:</strong> Mitglieder beantworten Subos Fragen in einem privaten Chat – innerhalb deines Discord-Servers oder im Web.",
             "<strong>Discord-Abstimmungen:</strong> 1 Frage, mehrere Antwortmöglichkeiten und Ergebnisse zum Teilen.",
+            "<strong>Inhaltsblöcke:</strong> Füge überall in deiner Umfrage eine Nachricht, Intro, GIF oder Pause ein — keine Antwort erforderlich. Teilnehmer machen nach einer Pause oder per Klick auf einen Button weiter.",
             "<strong>Discord und Web:</strong> Mitglieder können direkt in Discord oder über die Subo-Web-App antworten — kein zusätzliches Konto nötig."
         ]
         },
@@ -347,21 +348,21 @@
         "50.000 / Umfrage"
         ],
         [
-        "Aktive Umfragen<br><small>Gesamt gespeicherte Umfragen und Abstimmungen. Alte Umfragen löschen, um in einem kleineren Tarif zu bleiben.</small>",
+        "Projekte gesamt<br><small>Gesamt gespeicherte Umfragen und Abstimmungen. Alte Projekte löschen, um in einem kleineren Tarif zu bleiben.</small>",
         "10 / Server",
         "200 / Server",
         "400 / Server",
         "400 / Server"
         ],
         [
-        "Gleichzeitige Umfragen<br><small>Gleichzeitig offene oder geplante Umfragen</small>",
+        "Aktive Projekte<br><small>Gleichzeitig offene oder geplante Abstimmungen und Umfragen</small>",
         "5 / Server",
         "20 / Server",
         "40 / Server",
         "40 / Server"
         ],
         [
-        "Umfragefragen",
+        "Blöcke<br><small>Frage- und Inhaltsblöcke</small>",
         "10 / Umfrage",
         "30 / Umfrage",
         "50 / Umfrage",
@@ -403,16 +404,23 @@
         "✓"
         ],
         [
-        "Erweiterter Umfrage-Builder: min/max Länge für offene Texte und Zahlenwerte",
+        "Erweiterter Script-Builder: min/max Länge für offene Texte und Zahlenwerte",
         "✗",
         "✗",
         "✓",
         "✓"
         ],
         [
-        "Erweiterter Umfrage-Builder: Skip-Logik",
+        "Erweiterter Script-Builder: Skip-Logik",
         "✗",
         "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Erweiterter Script-Builder: 'Weiter'-Button in Inhaltsblöcken anpassen",
+        "✗",
+        "✗",
         "✓",
         "✓"
         ],
@@ -501,6 +509,7 @@
   "formsVsConvosItems": [
     { "forms": "Kaltes, unpersönliches Interface", "convos": "Warmes Chat-Erlebnis" },
     { "forms": "Lange Seiten, die überwältigend wirken", "convos": "Eine Frage auf einmal" },
+    { "forms": "Kein Kontext oder Anweisungen zwischen den Fragen möglich", "convos": "Inhaltsblöcke fügen Intros, Hinweise, GIFs oder Pausen an beliebiger Stelle ein" },
     { "forms": "Mitglieder navigieren weg", "convos": "Mitglieder bleiben in Discord oder nutzen den Weblink" },
     { "forms": "Niedrige Abschlussraten", "convos": "Höheres Engagement und höhere Abschlussraten" }
   ],
@@ -522,14 +531,15 @@
       "desc": "Aggregierte Ergebnisse und Einzelantworten einsehen, und Subos KI offene Antworten zusammenfassen lassen, damit du immer weißt, was deine Community denkt."
     }
   ],
-  "questionTypesTitle": "5 FRAGETYPEN",
-  "questionTypesSubtitle": "Subo bietet dir das richtige Format für jede Frage.",
+  "questionTypesTitle": "BLOCKTYPEN",
+  "questionTypesSubtitle": "5 Fragetypen für jede Art von Feedback — plus Inhaltsblöcke für Nachrichten, Intros und Pausen ohne Antwort.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Offener Text", "desc": "Freitextantworten" },
     { "emoji": "🔢", "name": "Numerisch", "desc": "Zahlen, Bewertungen oder Bereiche" },
     { "emoji": "✅", "name": "Ja / Nein", "desc": "Einfache binäre Entscheidungen" },
     { "emoji": "🔘", "name": "Einzelne Auswahl", "desc": "Eine Option aus mehreren wählen" },
-    { "emoji": "☑️", "name": "Mehrfachauswahl", "desc": "Alle zutreffenden Optionen auswählen" }
+    { "emoji": "☑️", "name": "Mehrfachauswahl", "desc": "Alle zutreffenden Optionen auswählen" },
+    { "emoji": "📢", "name": "Inhaltsblock", "desc": "Nachricht, Intro, GIF oder Pause — keine Antwort nötig" }
   ],
   "webTitle": "IN DISCORD UND IM WEB",
   "webDesc": "Survey Convos funktionieren nativ in Discord – aber Subo unterstützt auch eine webbasierte Umfrageerfahrung. Admins wählen, ob eine Umfrage in Discord oder im Web läuft und ob sie für jeden offen oder auf Community-Mitglieder beschränkt ist. In jedem Fall verwaltest du Umfragen, siehst Ergebnisse und analysierst Daten über die Subo-Web-Admin-Oberfläche.",
@@ -539,6 +549,7 @@
     "📱 Funktioniert auf Mobilgeräten ohne Aufwand",
     "🤫 Optionaler anonymer Modus für ehrliches, ungefiltertes Feedback",
     "🔀 Skip-Logik – irrelevante Fragen basierend auf vorherigen Antworten überspringen",
+    "📢 Inhaltsblöcke – füge Intro, wichtigen Kontext, GIF oder eine Pause mitten in der Umfrage ein, ohne eine Frage zu stellen",
     "⏱️ Geplante und wiederkehrende Umfragen laufen automatisch",
     "🏆 XP-Belohnungen und Rollen-Anreize fördern höhere Beteiligung",
     "🤖 KI-Zusammenfassung offener Antworten spart dir Stunden"
@@ -559,7 +570,7 @@
   "statsTitle": "IN ZAHLEN",
   "stats": [
     { "number": "15.000+", "label": "Discord-Server" },
-    { "number": "5", "label": "Fragetypen" },
+    { "number": "6", "label": "Blocktypen (5 Fragetypen + Inhaltsblöcke)" },
     { "number": "3", "label": "Gamification-Ebenen" },
     { "number": "1", "label": "Ziel: die Stimme deiner Community" }
   ],
@@ -568,7 +579,7 @@
     {
       "emoji": "💬",
       "title": "Konversationell von Grund auf",
-      "desc": "Fragen kommen als private Nachrichten – einzeln, im Chat-Format. Keine Formularseite. Keine Unterbrechung. Ein echtes Gespräch."
+      "desc": "Fragen kommen als private Nachrichten – einzeln, im Chat-Format. Inhaltsblöcke erlauben dir, Intros, Kontext oder Pausen an beliebiger Stelle einzufügen. Keine Formularseite. Ein echtes Gespräch."
     },
     {
       "emoji": "🤖",

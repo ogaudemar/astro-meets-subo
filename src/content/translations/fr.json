@@ -92,6 +92,7 @@
           "Fini les formulaires pénibles avec Subo !",
           "Avec les <strong>convos</strong>, tes membres répondent à tes questions dans un chat privé avec Subo, sur ton serveur Discord ou sur le web. Comme s'ils parlaient avec un ami !",
           "Avec les <strong>sondages rapides</strong>, tes membres répondent à ta question publique, avec plein de façons de répondre et de partager les résultats.",
+          "<strong>Blocs de contenu :</strong> ajoute un message, une intro, un GIF ou une pause n'importe où dans ton sondage — aucune réponse requise. Les participants continuent après une pause ou en cliquant sur un bouton.",
           "<strong>Discord et le web :</strong> les membres peuvent répondre directement dans Discord ou via l'application web Subo — sans compte supplémentaire."
         ]
       },
@@ -338,21 +339,21 @@
         "50 000 / sondage"
       ],
       [
-        "Sondages actifs<br><small>Total des sondages et votes stockés. Supprime les anciens pour rester dans une offre plus petite.</small>",
+        "Projets totaux<br><small>Total des sondages et votes stockés. Supprime les anciens projets pour rester dans une offre plus petite.</small>",
         "10 / serveur",
         "200 / serveur",
         "400 / serveur",
         "400 / serveur"
       ],
       [
-        "Sondages simultanés<br><small>Sondages ouverts ou programmés en même temps</small>",
+        "Projets actifs<br><small>Sondages et votes ouverts ou programmés en même temps</small>",
         "5 / serveur",
         "20 / serveur",
         "40 / serveur",
         "40 / serveur"
       ],
       [
-        "Questions par sondage",
+        "Blocs<br><small>Blocs de questions et de contenu</small>",
         "10 / sondage",
         "30 / sondage",
         "50 / sondage",
@@ -394,16 +395,23 @@
         "✓"
       ],
       [
-        "Créateur avancé : longueur min/max texte & valeurs numériques",
+        "Script Builder avancé : longueur min/max texte & valeurs numériques",
         "✗",
         "✗",
         "✓",
         "✓"
       ],
       [
-        "Créateur avancé : logique de saut",
+        "Script Builder avancé : logique de saut",
         "✗",
         "✓",
+        "✓",
+        "✓"
+      ],
+      [
+        "Script Builder avancé : personnaliser le bouton 'Continuer' dans les blocs de contenu",
+        "✗",
+        "✗",
         "✓",
         "✓"
       ],
@@ -493,6 +501,7 @@
   "formsVsConvosItems": [
     { "forms": "Interface froide et impersonnelle", "convos": "Expérience chaleureuse en mode chat" },
     { "forms": "Pages longues qui découragent", "convos": "Une question à la fois" },
+    { "forms": "Impossible d'ajouter du contexte ou des instructions entre les questions", "convos": "Les blocs de contenu ajoutent des intros, avertissements, GIFs ou pauses n'importe où dans le flux" },
     { "forms": "Les membres quittent la page", "convos": "Ils restent sur Discord ou utilisent le lien web" },
     { "forms": "Faibles taux de complétion", "convos": "Plus d'engagement et de complétion" }
   ],
@@ -514,14 +523,15 @@
       "desc": "Consulte les résultats agrégés, les réponses individuelles, et laisse l'IA de Subo résumer les réponses ouvertes pour toujours savoir ce que pense ta communauté."
     }
   ],
-  "questionTypesTitle": "5 TYPES DE QUESTIONS",
-  "questionTypesSubtitle": "Subo te donne le bon format pour chaque question.",
+  "questionTypesTitle": "TYPES DE BLOCS",
+  "questionTypesSubtitle": "5 types de questions pour tous les retours — plus les blocs de contenu pour les messages, intros et pauses sans réponse.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Texte libre", "desc": "Réponses écrites en format libre" },
     { "emoji": "🔢", "name": "Numérique", "desc": "Chiffres, notes ou fourchettes" },
     { "emoji": "✅", "name": "Oui / Non", "desc": "Choix binaire simple" },
     { "emoji": "🔘", "name": "Choix unique", "desc": "Une seule réponse parmi plusieurs options" },
-    { "emoji": "☑️", "name": "Choix multiple", "desc": "Sélectionne tout ce qui s'applique" }
+    { "emoji": "☑️", "name": "Choix multiple", "desc": "Sélectionne tout ce qui s'applique" },
+    { "emoji": "📢", "name": "Bloc de contenu", "desc": "Message, intro, GIF ou pause — aucune réponse requise" }
   ],
   "webTitle": "SUR DISCORD ET SUR LE WEB",
   "webDesc": "Les survey convos fonctionnent nativement dans Discord — mais Subo propose aussi une expérience web. C'est l'admin qui choisit si le sondage tourne dans Discord ou sur le web, et s'il est ouvert à tous ou réservé aux membres de la communauté. Dans tous les cas, tu gères tes sondages, vois les résultats et analyses les données depuis l'admin web Subo.",
@@ -531,6 +541,7 @@
     "📱 Fonctionne sur mobile sans friction",
     "🤫 Mode anonyme optionnel pour des retours sincères et sans filtre",
     "🔀 Logique de saut — passe les questions non pertinentes selon les réponses précédentes",
+    "📢 Blocs de contenu — ajoute une intro, du contexte clé, un GIF ou une pause en milieu de sondage sans poser de question",
     "⏱️ Sondages programmés et récurrents qui tournent automatiquement",
     "🏆 Récompenses XP et rôles pour booster la participation",
     "🤖 Résumé IA des réponses ouvertes pour te faire gagner des heures"
@@ -551,7 +562,7 @@
   "statsTitle": "EN CHIFFRES",
   "stats": [
     { "number": "15 000+", "label": "Serveurs Discord" },
-    { "number": "5", "label": "Types de questions" },
+    { "number": "6", "label": "Types de blocs (5 types de questions + blocs de contenu)" },
     { "number": "3", "label": "Couches de gamification" },
     { "number": "1", "label": "Objectif : la voix de ta communauté" }
   ],
@@ -560,7 +571,7 @@
     {
       "emoji": "💬",
       "title": "Conversationnel par conception",
-      "desc": "Les questions arrivent en message privé — une par une, en format chat. Pas une page de formulaire. Pas une interruption. Une vraie conversation."
+      "desc": "Les questions arrivent en message privé — une par une, en format chat. Les blocs de contenu permettent d'ajouter des intros, du contexte ou des pauses n'importe où dans le flux. Pas une page de formulaire. Une vraie conversation."
     },
     {
       "emoji": "🤖",
