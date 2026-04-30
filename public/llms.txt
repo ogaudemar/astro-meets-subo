@@ -1,0 +1,36 @@
+# Subo
+
+Subo is a Discord survey and poll bot trusted by 15,000+ communities. It lets community managers, developers, and AI agents create conversational surveys and polls, collect responses, and analyze results — all inside Discord or on the web.
+
+## API
+
+The Subo Public REST API (v1) gives developers and AI agents programmatic access to all survey and polling features.
+
+- [API Documentation](https://api.subo.ai/docs): Interactive Scalar UI with full endpoint reference
+- [OpenAPI Spec](https://api.subo.ai/v1/openapi.json): Raw OpenAPI 3.1.0 JSON spec — machine-readable
+- [Get an API Key](https://app.subo.gg/app/account): Generate keys in Community Settings → Developer → API Keys
+
+## Docs
+
+- [Subo Homepage](https://subo.ai/): Product overview and feature list
+- [Pricing](https://subo.ai/pricing): Plans (FREE, PREMIUM, VIP, CUSTOM) and rate limits per tier
+- [Blog](https://subo.ai/blog): News and updates
+
+## What the API Does
+
+Authentication: `X-API-Key` request header (scoped to a community). Rate limits: 60–1,000 req/min depending on tier.
+
+Key resources:
+- **Projects** — Create, manage, open, close, clone surveys and polls
+- **Script & Blocks** — Build survey scripts (single choice, multiple choice, open text, numeric, yes/no, content blocks)
+- **Responses** — Retrieve paginated respondent answers
+- **Analysis** — Aggregated stats and AI summarization of open-ended answers
+- **Communities** — Manage community settings such as accomplishments, XP and default survey settings
+- **Members** — View all community members and manage their XP, access levels and accomplishments
+- **Webhooks** — Real-time event subscriptions (project lifecycle, response submitted, analysis completed)
+- **AI Generation** — Auto-generate a full survey script from a plain-text intent description
+- **API Keys** — Create and revoke scoped keys
+
+Base URL: https://api.subo.ai
+Version: /v1/ (non-breaking changes in-place; breaking changes under /v2/)
+Idempotency: Pass `Idempotency-Key` (UUID v4) header on write operations.

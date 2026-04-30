@@ -18,7 +18,8 @@
     { "text": "Tutorials", "href": "/tutorial" },
     { "text": "Support Server", "href": "/support" },
     { "text": "Billing Portal", "href": "/portal" },
-    { "text": "Blog", "href": "/blog" }
+    { "text": "Blog", "href": "/blog" },
+    { "text": "API", "href": "https://api.subo.ai/docs", "external": true }
   ],
   "cta": "Add to Discord",
   "upgrade": "Upgrade",
@@ -52,7 +53,9 @@
         { "text": "Tutorials", "href": "/tutorial", "external": true },
         { "text": "Blog", "href": "/blog" },
         { "text": "Stripe billing portal", "href": "/portal", "external": true },
-        { "text": "Discord App Store", "href": "/discordstore", "external": true }
+        { "text": "Discord App Store", "href": "/discordstore", "external": true },
+        { "text": "API Docs", "href": "https://api.subo.ai/docs", "external": true },
+        { "text": "llms.txt", "href": "/llms.txt" }
       ]
     },
     {
@@ -639,5 +642,38 @@
       "answer": "You can manage your subscription at any time via the Stripe Billing Portal. To access it, log in with the email address you used to upgrade."
     }
   ]
+},
+
+"developerApi": {
+  "title": "BUILD AND AUTOMATE.",
+  "subtitle": "Automate surveys, pipe responses to your data stack, or let AI agents run your community research. All via a simple REST API.",
+  "features": [
+    {
+      "title": "AUTOMATE & COLLECT",
+      "content": [
+        "Programmatically create surveys and polls",
+        "Auto-generate survey scripts from a plain-text description using AI",
+        "Open, close, clone, and schedule projects via API"
+      ]
+    },
+    {
+      "title": "REWARD & ANALYZE",
+      "content": [
+        "Retrieve respondent answers in real time",
+        "Manage member XP, access levels, achievement and community settings",
+        "Get aggregated stats, distributions, and AI-generated summaries"
+      ]
+    },
+    {
+      "title": "INTEGRATE & EXTEND",
+      "content": [
+        "Subscribe to webhook events for real-time data pipelines",
+        "Pipe responses to your data stack, CRM, or analytics tools",
+        "Let AI agents run surveys and retrieve results autonomously"
+      ]
+    }
+  ],
+  "ctaDocs": "View API Docs",
+  "ctaKey": "Get API Key"
 }
 }

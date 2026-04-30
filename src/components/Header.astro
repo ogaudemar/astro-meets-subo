@@ -39,7 +39,7 @@ const product = translations.product ?? [];
           <ul class="nav__dropdown-menu" id="desktop-resources-menu" role="menu">
             {resources.map(resource => (
               <li class="nav__dropdown-item" role="menuitem">
-                <HeaderLink href={resource.href}>{resource.text}</HeaderLink>
+                <HeaderLink href={resource.href} target={resource.external ? '_blank' : undefined} rel={resource.external ? 'noopener noreferrer' : undefined}>{resource.text}</HeaderLink>
               </li>
             ))}
           </ul>
@@ -89,7 +89,7 @@ const product = translations.product ?? [];
         <ul class="nav__expand-menu" id="mobile-resources-menu">
           {resources.map(resource => (
             <li class="nav__dropdown-item">
-              <HeaderLink href={resource.href}>{resource.text}</HeaderLink>
+              <HeaderLink href={resource.href} target={resource.external ? '_blank' : undefined} rel={resource.external ? 'noopener noreferrer' : undefined}>{resource.text}</HeaderLink>
             </li>
           ))}
         </ul>
