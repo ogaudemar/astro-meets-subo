@@ -637,5 +637,37 @@
       "answer": "Puoi gestire il tuo abbonamento in qualsiasi momento tramite il Portale di Fatturazione Stripe. Accedi con l'indirizzo email utilizzato per l'upgrade."
     }
   ]
+},
+"developerApi": {
+  "title": "COSTRUISCI E AUTOMATIZZA.",
+  "subtitle": "Automatizza i sondaggi, invia le risposte al tuo stack di dati o lascia che gli agenti IA gestiscano la tua ricerca sulla community. Tutto tramite una semplice API REST.",
+  "features": [
+    {
+      "title": "AUTOMATIZZARE E RACCOGLIERE",
+      "content": [
+        "Crea sondaggi e poll in modo programmatico",
+        "Genera automaticamente script di sondaggio da una descrizione in testo semplice usando l'IA",
+        "Apri, chiudi, clona e pianifica progetti tramite API"
+      ]
+    },
+    {
+      "title": "PREMIARE E ANALIZZARE",
+      "content": [
+        "Recupera le risposte dei partecipanti in tempo reale",
+        "Gestisci XP dei membri, livelli di accesso, obiettivi e impostazioni della community",
+        "Ottieni statistiche aggregate, distribuzioni e riepiloghi generati dall'IA"
+      ]
+    },
+    {
+      "title": "INTEGRARE ED ESTENDERE",
+      "content": [
+        "Iscriviti agli eventi webhook per pipeline di dati in tempo reale",
+        "Invia le risposte al tuo stack di dati, CRM o strumenti di analisi",
+        "Lascia che gli agenti IA eseguano sondaggi e recuperino risultati in modo autonomo"
+      ]
+    }
+  ],
+  "ctaDocs": "Visualizza la documentazione API",
+  "ctaKey": "Ottieni chiave API"
 }
 }

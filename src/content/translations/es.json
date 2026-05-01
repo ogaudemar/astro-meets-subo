@@ -626,5 +626,37 @@
       "answer": "Puedes gestionar tu suscripción en cualquier momento desde el portal de Stripe. Inicia sesión con el correo electrónico que usaste al hacer el upgrade."
     }
   ]
+},
+"developerApi": {
+  "title": "CONSTRUYE Y AUTOMATIZA.",
+  "subtitle": "Automatiza encuestas, envía respuestas a tu stack de datos o deja que agentes de IA gestionen tu investigación de comunidad. Todo a través de una sencilla API REST.",
+  "features": [
+    {
+      "title": "AUTOMATIZAR Y RECOPILAR",
+      "content": [
+        "Crea encuestas y sondeos de forma programática",
+        "Genera automáticamente guiones de encuesta a partir de una descripción en texto plano usando IA",
+        "Abre, cierra, clona y programa proyectos mediante la API"
+      ]
+    },
+    {
+      "title": "RECOMPENSAR Y ANALIZAR",
+      "content": [
+        "Obtén respuestas de los participantes en tiempo real",
+        "Gestiona el XP de los miembros, niveles de acceso, logros y ajustes de la comunidad",
+        "Obtén estadísticas agregadas, distribuciones y resúmenes generados por IA"
+      ]
+    },
+    {
+      "title": "INTEGRAR Y AMPLIAR",
+      "content": [
+        "Suscríbete a eventos de webhook para pipelines de datos en tiempo real",
+        "Envía respuestas a tu stack de datos, CRM o herramientas de análisis",
+        "Deja que agentes de IA gestionen encuestas y recuperen resultados de forma autónoma"
+      ]
+    }
+  ],
+  "ctaDocs": "Ver documentación de la API",
+  "ctaKey": "Obtener clave de API"
 }
 }

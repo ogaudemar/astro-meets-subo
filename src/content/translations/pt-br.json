@@ -637,5 +637,37 @@
       "answer": "Você pode gerenciar sua assinatura a qualquer momento pelo Portal de Cobrança do Stripe. Acesse com o endereço de e-mail usado no upgrade."
     }
   ]
+},
+"developerApi": {
+  "title": "CRIE E AUTOMATIZE.",
+  "subtitle": "Automatize pesquisas, envie respostas para sua stack de dados ou deixe agentes de IA conduzir sua pesquisa de comunidade. Tudo via uma simples API REST.",
+  "features": [
+    {
+      "title": "AUTOMATIZAR E COLETAR",
+      "content": [
+        "Crie pesquisas e enquetes de forma programática",
+        "Gere automaticamente scripts de pesquisa a partir de uma descrição em texto simples usando IA",
+        "Abra, feche, clone e agende projetos via API"
+      ]
+    },
+    {
+      "title": "RECOMPENSAR E ANALISAR",
+      "content": [
+        "Recupere as respostas dos participantes em tempo real",
+        "Gerencie XP de membros, níveis de acesso, conquistas e configurações da comunidade",
+        "Obtenha estatísticas agregadas, distribuições e resumos gerados por IA"
+      ]
+    },
+    {
+      "title": "INTEGRAR E EXPANDIR",
+      "content": [
+        "Assine eventos de webhook para pipelines de dados em tempo real",
+        "Envie respostas para sua stack de dados, CRM ou ferramentas de análise",
+        "Deixe agentes de IA conduzirem pesquisas e recuperarem resultados de forma autônoma"
+      ]
+    }
+  ],
+  "ctaDocs": "Ver documentação da API",
+  "ctaKey": "Obter chave de API"
 }
 }

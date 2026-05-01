@@ -629,5 +629,37 @@
       "answer": "Tu peux gérer ton abonnement à tout moment via le portail Stripe. Pour y accéder, connecte-toi avec l’adresse e-mail utilisée lors de l’upgrade."
     }
   ]
+},
+"developerApi": {
+  "title": "CONSTRUIRE ET AUTOMATISER.",
+  "subtitle": "Automatisez vos sondages, redirigez les réponses vers votre stack de données ou laissez des agents IA mener vos recherches communautaires. Via une simple API REST.",
+  "features": [
+    {
+      "title": "AUTOMATISER ET COLLECTER",
+      "content": [
+        "Créez des sondages et des enquêtes de façon programmatique",
+        "Générez automatiquement des scripts de sondage à partir d'une description en texte grâce à l'IA",
+        "Ouvrez, fermez, clonez et planifiez des projets via l'API"
+      ]
+    },
+    {
+      "title": "RÉCOMPENSER ET ANALYSER",
+      "content": [
+        "Récupérez les réponses des participants en temps réel",
+        "Gérez l'XP des membres, les niveaux d'accès, les succès et les paramètres communautaires",
+        "Obtenez des statistiques agrégées, des distributions et des résumés générés par l'IA"
+      ]
+    },
+    {
+      "title": "INTÉGRER ET ÉTENDRE",
+      "content": [
+        "Abonnez-vous aux événements webhook pour des pipelines de données en temps réel",
+        "Dirigez les réponses vers votre stack de données, CRM ou outils d'analyse",
+        "Laissez des agents IA mener des sondages et récupérer les résultats de façon autonome"
+      ]
+    }
+  ],
+  "ctaDocs": "Voir la doc API",
+  "ctaKey": "Obtenir une clé API"
 }
 }

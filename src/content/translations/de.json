@@ -637,5 +637,37 @@
       "answer": "Du kannst dein Abonnement jederzeit über das Stripe-Abrechnungsportal verwalten. Melde dich mit der E-Mail-Adresse an, die du beim Upgrade verwendet hast."
     }
   ]
+},
+"developerApi": {
+  "title": "ENTWICKELN UND AUTOMATISIEREN.",
+  "subtitle": "Automatisiere Umfragen, leite Antworten an deinen Daten-Stack weiter oder lass KI-Agenten deine Community-Forschung durchführen. Alles über eine einfache REST-API.",
+  "features": [
+    {
+      "title": "AUTOMATISIEREN & ERFASSEN",
+      "content": [
+        "Erstelle Umfragen und Abstimmungen programmatisch",
+        "Generiere automatisch Umfrage-Skripte aus einer Klartextbeschreibung mithilfe von KI",
+        "Öffne, schließe, klone und plane Projekte über die API"
+      ]
+    },
+    {
+      "title": "BELOHNEN & ANALYSIEREN",
+      "content": [
+        "Rufe Antworten der Teilnehmer in Echtzeit ab",
+        "Verwalte Mitglieder-XP, Zugangsstufen, Erfolge und Community-Einstellungen",
+        "Erhalte aggregierte Statistiken, Verteilungen und KI-generierte Zusammenfassungen"
+      ]
+    },
+    {
+      "title": "INTEGRIEREN & ERWEITERN",
+      "content": [
+        "Abonniere Webhook-Events für Echtzeit-Datenpipelines",
+        "Leite Antworten an deinen Daten-Stack, CRM oder Analyse-Tools weiter",
+        "Lass KI-Agenten Umfragen durchführen und Ergebnisse autonom abrufen"
+      ]
+    }
+  ],
+  "ctaDocs": "API-Dokumentation anzeigen",
+  "ctaKey": "API-Schlüssel erhalten"
 }
 }
