@@ -11,7 +11,10 @@
       "Bash(do echo:*)",
       "Bash(done)",
       "Bash(do node:*)",
-      "Bash(do grep:*)"
+      "Bash(do grep:*)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
