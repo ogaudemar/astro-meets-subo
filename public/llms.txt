@@ -1,17 +1,22 @@
 # Subo
 
-Subo is a Discord survey and poll bot trusted by 15,000+ communities. It lets community managers, developers, and AI agents create conversational surveys and polls, collect responses, and analyze results — all inside Discord or on the web.
+Subo is a survey and poll app trusted by 15,000+ Discord communities. It lets community managers, developers, and AI agents create conversational surveys and polls, collect responses, and analyze results — all inside Discord or on the web.
 
-## API
+## Subo API
 
-The Subo Public REST API (v1) gives developers and AI agents programmatic access to all survey and polling features.
+The Subo Public REST API (v1) gives developers and AI agents programmatic access to create, manage, and analyze conversational surveys and polls inside Discord communities and on the web.
+
+AI agents can use this API to:
+- Automatically generate full survey scripts from natural language intents or specific scripts
+- Create, open, and manage survey projects
+- Retrieve responses and trigger AI analysis
+- React to real-time events via webhooks (project opened/closed, response submitted, analysis completed)
+
+## Docs
 
 - [API Documentation](https://api.subo.ai/docs): Interactive Scalar UI with full endpoint reference
 - [OpenAPI Spec](https://api.subo.ai/v1/openapi.json): Raw OpenAPI 3.1.0 JSON spec — machine-readable
 - [Get an API Key](https://app.subo.gg/app/account): Generate keys in Community Settings → Developer → API Keys
-
-## Docs
-
 - [Subo Homepage](https://subo.ai/): Product overview and feature list
 - [Pricing](https://subo.ai/pricing): Plans (FREE, PREMIUM, VIP, CUSTOM) and rate limits per tier
 - [Blog](https://subo.ai/blog): News and updates
@@ -19,6 +24,7 @@ The Subo Public REST API (v1) gives developers and AI agents programmatic access
 ## What the API Does
 
 Authentication: `X-API-Key` request header (scoped to a community). Rate limits: 60–1,000 req/min depending on tier.
+Idempotency: Send `Idempotency-Key: <UUIDv4>` header on all write operations
 
 Key resources:
 - **Projects** — Create, manage, open, close, clone surveys and polls
@@ -30,6 +36,47 @@ Key resources:
 - **Webhooks** — Real-time event subscriptions (project lifecycle, response submitted, analysis completed)
 - **AI Generation** — Auto-generate a full survey script from a plain-text intent description
 - **API Keys** — Create and revoke scoped keys
+
+## Most Useful Endpoints for AI Agents
+
+1. **Create Project (with AI script generation)**
+   - `POST /communities/{communityId}/projects`
+   - Use `intent` field for natural language → full script (e.g. "Measure member satisfaction after the last event")
+   - Alternative: Provide full `script.blocks` manually
+   - Returns project + generated script
+
+2. **Replace / Update Script**
+   - `PUT /projects/{projectId}/script`
+   - Replace entire script when project is inactive
+
+3. **Open Project**
+   - `POST /projects/{projectId}/open`
+   - Makes the survey live in Discord
+
+4. **List or Get Responses**
+   - `GET /projects/{projectId}/responses` (paginated)
+   - `GET /projects/{projectId}/responses/{responseId}`
+
+5. **Trigger AI Analysis**
+   - `POST /projects/{projectId}/analysis`
+   - Generates AI summaries for open-text responses (async)
+
+6. **Webhooks** (Highly recommended for agents)
+   - `POST /communities/{communityId}/webhooks`
+   - Subscribe to events: `response.submitted`, `analysis.completed`, `project.opened`, `project.closed`, etc.
+   - Includes signature verification for security
+
+## Key Features Agents Love
+- **AI Script Generation**: Turn a plain-text goal into a complete multi-block survey script in one call.
+- **Real-time Webhooks**: Get notified instantly when new responses arrive or analysis is ready.
+- **Rich Script System**: Supports single/multiple choice, open text, numeric, yes/no, conditional logic (preconditions), and content blocks.
+- **Analysis**: Built-in AI summarization of qualitative answers.
+
+## Best Practices for Agents
+- Always include `Idempotency-Key` on POST/PUT/DELETE operations.
+- Use webhooks instead of polling for new responses and analysis results.
+- Start with the `intent` field when creating projects — it’s the fastest way to generate high-quality surveys.
+- Handle `402` errors gracefully (insufficient bot credits for AI features).
 
 Base URL: https://api.subo.ai
 Version: /v1/ (non-breaking changes in-place; breaking changes under /v2/)
