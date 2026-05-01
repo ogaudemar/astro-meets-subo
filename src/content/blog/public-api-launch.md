@@ -3,7 +3,7 @@ title: "Subo Now Has a Public API"
 description: "Build bots, automate workflows, and connect Subo to the rest of your stack. The Subo API is live at api.subo.ai."
 pubDate: "May 1 2026"
 author: "Subo Team"
-heroImage: "/images/blog/public-api-launch/public-api-hero.webp"
+heroImage: "/images/blog/subo-api-launch/Subo_API_Monitoring.jpg"
 tags: ["announcement", "api", "developer", "product"]
 draft: false
 ---
