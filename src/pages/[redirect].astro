@@ -35,18 +35,11 @@ if (!redirectData) {
       color: white;
       text-align: center;
     }
-    .spinner {
-      border: 3px solid var(--accent, lightgray);
-      border-top: 3px solid white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      animation: spin 1s linear infinite;
+    .loader-gif {
+      width: 64px;
+      height: 64px;
       margin-bottom: 20px;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      image-rendering: pixelated;
     }
     a {
       color: white;
@@ -57,7 +50,7 @@ if (!redirectData) {
   </style>
 </head>
 <body>
-  <div class="spinner"></div>
+  <img class="loader-gif" src="/subo-equalizer.gif" alt="Loading..." />
   <h3>Redirecting to {redirectData.description}...</h3>
   <p>You'll be redirected automatically in a moment.</p>
   <a href={redirectData.url}>Click here if you're not redirected automatically</a>
