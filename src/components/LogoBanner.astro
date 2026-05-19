@@ -8,7 +8,6 @@
  * <LogoBanner speed={60} />
  */
 import type { Props } from './LogoBanner.types';
-import { useEffect } from 'react';
 
 const { speed = 40 } = Astro.props as Props;
 
@@ -64,7 +63,7 @@ const animationSpeed = 40;
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   /*box-shadow: 0 2px 16px -2px var(--accent);*/
 }
 
@@ -92,7 +91,6 @@ const animationSpeed = 40;
 .logo-banner__track {
   display: flex;
   align-items: center;
-  gap: var(--logo-gap);
   height: var(--banner-height);
   white-space: nowrap;
   will-change: transform;
@@ -111,7 +109,7 @@ const animationSpeed = 40;
   opacity: var(--logo-opacity);
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
   transition: opacity var(--logo-transition), transform var(--logo-transition);
-  margin: 0;
+  margin: 0 var(--logo-gap) 0 0;
   padding: 0 0.2rem;
   background: transparent;
   border-radius: 1rem;
@@ -134,7 +132,6 @@ const animationSpeed = 40;
 
 @media (max-width: 600px) {
   .logo-banner__track {
-    gap: 1rem;
     animation-duration: 60s;
   }
   .logo-banner {
@@ -144,6 +141,7 @@ const animationSpeed = 40;
   .logo-banner__logo {
     max-width: 80px;
     height: 40px;
+    margin-right: 1rem;
   }
 }
 </style>

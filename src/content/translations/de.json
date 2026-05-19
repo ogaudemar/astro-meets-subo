@@ -1,6 +1,6 @@
 {
   "siteTitle": "Subo",
-  "siteDescription": "Erstelle Umfragen und Abstimmungen für deine Discord-Community.",
+  "siteDescription": "Umfragen, die sich wie Gespräche anfühlen, nicht wie Hausaufgaben. Starte Abstimmungen, dialogbasierte Umfragen und belohne Teilnahme — in Discord und im Web.",
 
 "header": {
   "navItems": [
@@ -79,7 +79,7 @@
   "rotatingWords": [
     "COMMUNITY", "MITGLIEDER", "SPIELER", "FANS", "UNTERSTÜTZER", "GILDE", "FOLLOWER", "SUPPORTER", "KUNDEN", "NUTZER", "FREUNDE", "PUBLIKUM", "GRUPPE", "TEAM", "CREW", "ABONNENTEN"
   ],
-  "subtitle": "mit Fragen, die sie wirklich beantworten wollen!",
+  "subtitle": "mit Umfragen, die sich wie Gespräche anfühlen, nicht wie Hausaufgaben.",
   "cta": "Zu Discord hinzufügen",
   "ctaNote": "Kostenlos starten. Upgrades verfügbar."
 },
@@ -87,21 +87,20 @@
 
     "features": {
     "title": "DU LERNST MEHR, WENN MENSCHEN DAS GESPRÄCH GENIESSEN.",
-    "subtitle": "Klassische formularbasierte Umfragen sind langweilig. Niemand will sie ausfüllen. Mit Subo stellst du Fragen in Abstimmungen und freundlichen Gesprächen — verfügbar in Discord und im Web.",
+    "subtitle": "Eine Wand voller Formularfelder fühlt sich an wie Hausaufgaben, und niemand will mehr Hausaufgaben. Mit Subo stellst du Fragen in Abstimmungen und freundlichen Gesprächen — in Discord und im Web.",
     "list": [
         {
         "title": "FRAGEN STELLEN",
         "content": [
             "<strong>Survey Convos:</strong> Mitglieder beantworten Subos Fragen in einem privaten Chat – innerhalb deines Discord-Servers oder im Web.",
             "<strong>Discord-Abstimmungen:</strong> 1 Frage, mehrere Antwortmöglichkeiten und Ergebnisse zum Teilen.",
-            "<strong>Inhaltsblöcke:</strong> Füge überall in deiner Umfrage eine Nachricht, Intro, GIF oder Pause ein — keine Antwort erforderlich. Teilnehmer machen nach einer Pause oder per Klick auf einen Button weiter.",
-            "<strong>Discord und Web:</strong> Mitglieder können direkt in Discord oder über die Subo-Web-App antworten — kein zusätzliches Konto nötig."
+            "<strong>Inhalts- & Aktionsblöcke:</strong> Füge überall im Ablauf eine Nachricht, Intro, GIF oder Belohnung ein — keine Frage erforderlich."
         ]
         },
         {
         "title": "BETEILIGUNG FÖRDERN",
         "content": [
-            "Gib <strong>Rollen-Belohnungen</strong> für die Teilnahme an einer Umfrage oder Abstimmung",
+            "<strong>Bedingte Belohnungen:</strong> Vergebe Rollen, XP oder Erfolge je nach Antwort — Onboarding-Rollen, wenn jemand das Onboarding abschließt, XP für Quiz-Teilnehmer mit den richtigen Antworten, Beta-Zugang für die passenden Kandidaten.",
             "<strong>XP-System</strong>: Mitglieder verdienen Punkte beim Beantworten von Fragen, leveln auf und schalten Rollen frei.",
             "Zeige eine <strong>Bestenliste</strong> mit deinen aktivsten Teilnehmern an",
             "<strong>Ergebnisse teilen</strong> und Antworten anderer Teilnehmer mit einem Klick weitergeben"
@@ -242,7 +241,7 @@
 
 
 
-  "ctaTitle": "KOSTENLOS LOSLEGEN!",
+  "ctaTitle": "STARTE EIN GESPRÄCH MIT DEINER COMMUNITY.",
   "ctaSubtitle": "Keine Kreditkarte. Kein Einrichtungsaufwand. Einfach einsteigen und mit wenigen Einschränkungen ausprobieren. Mach mehr mit kostenpflichtigen Plänen, wenn du bereit bist.",
   "ctaButton": "Preise ansehen",
 
@@ -411,9 +410,23 @@
         "✓"
         ],
         [
-        "Erweiterter Script-Builder: Skip-Logik",
+        "Skip-Logik & bedingte Belohnungen<br><small>Fragen verzweigen und XP, Rollen oder Erfolge je nach Antwort auslösen</small>",
+        "✓",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Aktionsblock-Styling<br><small>Benutzerdefinierte Bilder und Farben für Belohnungsblöcke mitten in der Umfrage</small>",
         "✗",
         "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Erweiterter Ausdruckseditor<br><small>Komplexe bedingte Logik für Skip-Regeln und Belohnungen</small>",
+        "✗",
+        "✗",
         "✓",
         "✓"
         ],
@@ -532,27 +545,27 @@
     }
   ],
   "questionTypesTitle": "BLOCKTYPEN",
-  "questionTypesSubtitle": "5 Fragetypen für jede Art von Feedback — plus Inhaltsblöcke für Nachrichten, Intros und Pausen ohne Antwort.",
+  "questionTypesSubtitle": "4 Fragetypen für jede Art von Feedback, Inhaltsblöcke für Nachrichten und Pausen, und Aktionsblöcke, die Teilnahme belohnen.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Offener Text", "desc": "Freitextantworten" },
     { "emoji": "🔢", "name": "Numerisch", "desc": "Zahlen, Bewertungen oder Bereiche" },
-    { "emoji": "✅", "name": "Ja / Nein", "desc": "Einfache binäre Entscheidungen" },
-    { "emoji": "🔘", "name": "Einzelne Auswahl", "desc": "Eine Option aus mehreren wählen" },
+    { "emoji": "🔘", "name": "Einzelne Auswahl", "desc": "Eine Option aus mehreren wählen (Ja/Nein inklusive)" },
     { "emoji": "☑️", "name": "Mehrfachauswahl", "desc": "Alle zutreffenden Optionen auswählen" },
-    { "emoji": "📢", "name": "Inhaltsblock", "desc": "Nachricht, Intro, GIF oder Pause — keine Antwort nötig" }
+    { "emoji": "📢", "name": "Inhaltsblock", "desc": "Nachricht, Intro, GIF oder Pause — keine Antwort nötig" },
+    { "emoji": "⚡", "name": "Aktionsblock", "desc": "Belohne XP, Rollen oder Erfolge — je nach Antwort" }
   ],
   "webTitle": "IN DISCORD UND IM WEB",
   "webDesc": "Survey Convos funktionieren nativ in Discord – aber Subo unterstützt auch eine webbasierte Umfrageerfahrung. Admins wählen, ob eine Umfrage in Discord oder im Web läuft und ob sie für jeden offen oder auf Community-Mitglieder beschränkt ist. In jedem Fall verwaltest du Umfragen, siehst Ergebnisse und analysierst Daten über die Subo-Web-Admin-Oberfläche.",
   "benefitsTitle": "WARUM SURVEY CONVOS BESSER FUNKTIONIEREN",
   "benefitsList": [
-    "💬 Chat-Format, das Mitglieder bereits kennen",
+    "👋 Begrüßt Mitglieder mit Namen und belohnt sie unterwegs — nicht erst am Ziel",
     "📱 Funktioniert auf Mobilgeräten ohne Aufwand",
     "🤫 Optionaler anonymer Modus für ehrliches, ungefiltertes Feedback",
-    "🔀 Skip-Logik – irrelevante Fragen basierend auf vorherigen Antworten überspringen",
+    "🔀 Skip-Logik – irrelevante Fragen überspringen und Belohnungen je nach Antwort auslösen",
     "📢 Inhaltsblöcke – füge Intro, wichtigen Kontext, GIF oder eine Pause mitten in der Umfrage ein, ohne eine Frage zu stellen",
     "⏱️ Geplante und wiederkehrende Umfragen laufen automatisch",
-    "🏆 XP-Belohnungen und Rollen-Anreize fördern höhere Beteiligung",
-    "🤖 KI-Zusammenfassung offener Antworten spart dir Stunden"
+    "🏆 XP, Rollen und Erfolge fördern höhere Beteiligung",
+    "🤖 KI-Zusammenfassungen offener Antworten"
   ]
 },
 
@@ -570,7 +583,7 @@
   "statsTitle": "IN ZAHLEN",
   "stats": [
     { "number": "15.000+", "label": "Discord-Server" },
-    { "number": "6", "label": "Blocktypen (5 Fragetypen + Inhaltsblöcke)" },
+    { "number": "6", "label": "Blocktypen (4 Fragetypen, Inhalt, Aktion)" },
     { "number": "3", "label": "Gamification-Ebenen" },
     { "number": "1", "label": "Ziel: die Stimme deiner Community" }
   ],
@@ -589,7 +602,7 @@
     {
       "emoji": "🏆",
       "title": "Gamification eingebaut",
-      "desc": "Mitglieder verdienen XP beim Antworten, leveln auf, schalten Rollen frei und konkurrieren auf monatlichen Bestenlisten. Engagement ist in die Kernerfahrung eingebaut."
+      "desc": "Mitglieder verdienen XP, leveln auf und schalten Rollen, XP oder Erfolge je nach Antwort frei — nicht nur dafür, dass sie zu Ende kommen."
     },
     {
       "emoji": "🌐",
@@ -608,7 +621,7 @@
     }
   ],
   "missionTitle": "UNSERE MISSION",
-  "missionBody": "Wir glauben, dass jede Community das Recht hat, gehört zu werden – und dass die Tools zum Zuhören genauso engagierend sein sollten wie die Communities selbst. Subo ist unsere Antwort auf diese Herausforderung."
+  "missionBody": "Wir glauben, dass jede Community das Recht hat, gehört zu werden – und dass die Tools zum Zuhören genauso engagierend sein sollten wie die Communities selbst. Zu oft verbringt ein Admin Stunden damit, eine Umfrage zu erstellen, schickt sie ab und bekommt eine Handvoll Antworten. Nicht, weil den Mitgliedern nichts daran liegt — sondern weil sich eine Wand voller Formularfelder wie Hausaufgaben anfühlt. Subo schließt die Lücke zwischen dem, wie sich eine Umfrage schon immer angefühlt hat, und dem, wie sich ein echtes Gespräch anfühlt."
 },
 
 "pricingPage": {

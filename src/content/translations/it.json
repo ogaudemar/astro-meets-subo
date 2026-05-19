@@ -1,6 +1,6 @@
 {
   "siteTitle": "Subo",
-  "siteDescription": "Crea sondaggi e votazioni per la tua community Discord.",
+  "siteDescription": "Sondaggi che sembrano conversazioni, non compiti a casa. Lancia votazioni, sondaggi conversazionali e premia la partecipazione — su Discord e sul web.",
 
 "header": {
   "navItems": [
@@ -79,7 +79,7 @@
   "rotatingWords": [
     "COMMUNITY", "MEMBRI", "GIOCATORI", "FAN", "SOSTENITORI", "GILDA", "FOLLOWER", "SUPPORTER", "CLIENTI", "UTENTI", "AMICI", "PUBBLICO", "GRUPPO", "TEAM", "CREW", "ABBONATI"
   ],
-  "subtitle": "con domande a cui vogliono rispondere!",
+  "subtitle": "con sondaggi che sembrano conversazioni, non compiti a casa.",
   "cta": "Aggiungi a Discord",
   "ctaNote": "Inizia gratis. Piani a pagamento disponibili."
 },
@@ -87,21 +87,20 @@
 
     "features": {
     "title": "IMPARI DI PIÙ QUANDO LE PERSONE AMANO LA CONVERSAZIONE.",
-    "subtitle": "I sondaggi tradizionali basati su moduli sono noiosi. Nessuno vuole rispondervi. Con Subo, fai domande tramite votazioni e conversazioni amichevoli — disponibile su Discord e sul web.",
+    "subtitle": "Un muro di campi di modulo sembra compiti a casa, e nessuno vuole più compiti a casa. Con Subo, fai domande tramite votazioni e conversazioni amichevoli — su Discord e sul web.",
     "list": [
         {
         "title": "FAI DOMANDE",
         "content": [
             "<strong>Conversazioni sondaggio:</strong> i membri rispondono alle domande di Subo in una chat privata, all'interno del tuo server Discord o sul web.",
             "<strong>Votazioni Discord:</strong> 1 domanda, più modi per rispondere e condividere i risultati.",
-            "<strong>Blocchi di contenuto:</strong> aggiungi un messaggio, un'intro, una GIF o una pausa in qualsiasi punto del sondaggio — senza risposta richiesta. I partecipanti continuano dopo una pausa o cliccando su un pulsante.",
-            "<strong>Discord e il web:</strong> i membri possono rispondere direttamente in Discord o tramite la web app di Subo — senza account aggiuntivo."
+            "<strong>Blocchi di contenuto e di azione:</strong> aggiungi un messaggio, un'intro, una GIF o una ricompensa in qualsiasi punto del flusso — senza domanda richiesta."
         ]
         },
         {
         "title": "INCORAGGIA LA PARTECIPAZIONE",
         "content": [
-            "Assegna <strong>ricompense ruolo</strong> per aver risposto a un sondaggio o una votazione",
+            "<strong>Ricompense condizionali:</strong> assegna ruoli, XP o obiettivi in base alle risposte — un ruolo di benvenuto quando qualcuno completa l'onboarding, XP per chi azzecca le risposte del quiz, accesso beta per i candidati giusti.",
             "<strong>Sistema XP</strong>: i membri guadagnano punti rispondendo alle domande e salgono di livello per sbloccare ruoli.",
             "Mostra una <strong>classifica</strong> con i tuoi partecipanti più attivi",
             "<strong>Condividi i risultati</strong> e le risposte degli altri partecipanti con un clic"
@@ -242,7 +241,7 @@
 
 
 
-  "ctaTitle": "INIZIA A CHIEDERE GRATUITAMENTE!",
+  "ctaTitle": "INIZIA UNA CONVERSAZIONE CON LA TUA COMMUNITY.",
   "ctaSubtitle": "Nessuna carta di credito. Nessuna configurazione complicata. Inizia subito con poche limitazioni. Passa ai piani a pagamento quando sei pronto.",
   "ctaButton": "Vedi i Prezzi",
 
@@ -411,9 +410,23 @@
         "✓"
         ],
         [
-        "Script Builder avanzato: Logica di salto",
+        "Logica di salto e ricompense condizionali<br><small>Ramifica le domande e attiva XP, ruoli o obiettivi in base alle risposte</small>",
+        "✓",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Stile dei blocchi di azione<br><small>Immagini e colori personalizzati sui blocchi di ricompensa a metà sondaggio</small>",
         "✗",
         "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Editor di espressioni avanzato<br><small>Logica condizionale complessa per regole di salto e ricompense</small>",
+        "✗",
+        "✗",
         "✓",
         "✓"
         ],
@@ -532,27 +545,27 @@
     }
   ],
   "questionTypesTitle": "TIPI DI BLOCCHI",
-  "questionTypesSubtitle": "5 tipi di domande per ogni tipo di risposta — più i blocchi di contenuto per messaggi, intro e pause che non richiedono risposta.",
+  "questionTypesSubtitle": "4 tipi di domande per ogni tipo di risposta, blocchi di contenuto per messaggi e pause, e blocchi di azione che premiano la partecipazione.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Testo Aperto", "desc": "Risposte scritte libere" },
     { "emoji": "🔢", "name": "Numerico", "desc": "Numeri, valutazioni o intervalli" },
-    { "emoji": "✅", "name": "Sì / No", "desc": "Scelte binarie semplici" },
-    { "emoji": "🔘", "name": "Scelta Singola", "desc": "Scegli una tra più opzioni" },
+    { "emoji": "🔘", "name": "Scelta Singola", "desc": "Scegli una tra più opzioni (sì/no inclusi)" },
     { "emoji": "☑️", "name": "Scelta Multipla", "desc": "Seleziona tutto ciò che si applica" },
-    { "emoji": "📢", "name": "Blocco di contenuto", "desc": "Messaggio, intro, GIF o pausa — nessuna risposta necessaria" }
+    { "emoji": "📢", "name": "Blocco di contenuto", "desc": "Messaggio, intro, GIF o pausa — nessuna risposta necessaria" },
+    { "emoji": "⚡", "name": "Blocco di azione", "desc": "Premia XP, ruoli o obiettivi — in base alle risposte" }
   ],
   "webTitle": "SU DISCORD E SUL WEB",
   "webDesc": "Le conversazioni sondaggio funzionano nativamente all'interno di Discord — ma Subo supporta anche un'esperienza di sondaggio basata sul web. Gli amministratori scelgono se un sondaggio viene eseguito su Discord o sul web, e se è aperto a tutti o limitato ai membri della community. In ogni caso, gestisci i sondaggi, visualizzi i risultati e analizzi i dati dall'admin web di Subo.",
   "benefitsTitle": "PERCHÉ LE CONVERSAZIONI SONDAGGIO FUNZIONANO MEGLIO",
   "benefitsList": [
-    "💬 Formato chat familiare ai membri",
+    "👋 Saluta i membri per nome e li premia lungo il percorso — non solo al traguardo",
     "📱 Funziona perfettamente su mobile",
     "🤫 Modalità anonima opzionale per feedback onesto e senza filtri",
-    "🔀 Logica di salto — salta le domande irrilevanti in base alle risposte precedenti",
+    "🔀 Logica di salto — salta le domande irrilevanti e attiva ricompense in base alle risposte",
     "📢 Blocchi di contenuto — aggiungi un'intro, contesto chiave, una GIF o una pausa a metà sondaggio senza fare una domanda",
     "⏱️ I sondaggi pianificati e ricorrenti vengono eseguiti automaticamente",
-    "🏆 Le ricompense XP e ruolo incentivano una maggiore partecipazione",
-    "🤖 La sintesi IA delle risposte aperte ti fa risparmiare ore"
+    "🏆 XP, ruoli e obiettivi spingono una maggiore partecipazione",
+    "🤖 Sintesi IA delle risposte aperte"
   ]
 },
 
@@ -570,7 +583,7 @@
   "statsTitle": "I NUMERI",
   "stats": [
     { "number": "15.000+", "label": "Server Discord" },
-    { "number": "6", "label": "Tipi di blocchi (5 tipi di domande + blocchi di contenuto)" },
+    { "number": "6", "label": "Tipi di blocchi (4 tipi di domande, contenuto, azione)" },
     { "number": "3", "label": "Livelli di gamification" },
     { "number": "1", "label": "Obiettivo: la voce della tua community" }
   ],
@@ -589,7 +602,7 @@
     {
       "emoji": "🏆",
       "title": "Gamification integrata",
-      "desc": "I membri guadagnano XP rispondendo, salgono di livello, sbloccano ruoli e competono nelle classifiche mensili. Il coinvolgimento è integrato nell'esperienza principale."
+      "desc": "I membri guadagnano XP, salgono di livello e sbloccano ruoli, XP o obiettivi in base alle loro risposte — non solo se finiscono."
     },
     {
       "emoji": "🌐",
@@ -608,7 +621,7 @@
     }
   ],
   "missionTitle": "LA NOSTRA MISSIONE",
-  "missionBody": "Crediamo che ogni community meriti di essere ascoltata — e che gli strumenti per ascoltare debbano essere coinvolgenti quanto le community stesse. Subo è la nostra risposta a questa sfida."
+  "missionBody": "Crediamo che ogni community meriti di essere ascoltata — e che gli strumenti per ascoltare debbano essere coinvolgenti quanto le community stesse. Troppo spesso, un admin passa ore a preparare un sondaggio, lo invia e ottiene solo una manciata di risposte. Non perché ai membri non importi — perché un muro di campi di modulo sembra compiti a casa. Subo colma il divario tra ciò che un sondaggio è sempre sembrato e ciò che una vera conversazione fa sentire."
 },
 
 "pricingPage": {

@@ -1,6 +1,6 @@
 {
   "siteTitle": "Subo",
-  "siteDescription": "Crea encuestas y sondeos para tu comunidad de Discord.",
+  "siteDescription": "Encuestas que se sienten como conversaciones, no como tareas. Lanza sondeos, encuestas conversacionales y recompensa la participación — en Discord y en la web.",
 
     "header": {
   "navItems": [
@@ -31,14 +31,14 @@
     "rotatingWords": [
       "COMUNIDAD", "MIEMBROS", "USUARIOS", "FANS", "PATROCINADORES", "AMIGOS", "SEGUIDORES", "SOPORTES", "CLIENTES", "AUDIENCIA", "GRUPO", "GREMIO", "EQUIPO", "CREW", "SUSCRIPTORES"
     ],
-    "subtitle": "¡con preguntas que quieren responder!",
+    "subtitle": "con encuestas que se sienten como conversaciones, no como tareas.",
     "cta": "Agregar a Discord",
     "ctaNote": "Empieza gratis. Mejoras disponibles."
   },
 
   "features": {
     "title": "APRENDES MÁS CUANDO LA GENTE DISFRUTA LA CONVERSACIÓN.",
-    "subtitle": "Los formularios y encuestas tradicionales son aburridos. Nadie quiere responderlos. Con Subo, haces preguntas en sondeos y conversaciones amigables — disponible en Discord y en la web.",
+    "subtitle": "Un muro de campos de formulario se siente como tarea, y nadie quiere más tarea. Con Subo, haces preguntas en sondeos y conversaciones amigables — en Discord y en la web.",
     "list": [
       {
         "title": "HAZ PREGUNTAS",
@@ -46,15 +46,14 @@
           "¡No más encuestas aburridas con Subo!",
           "Con <strong>conversaciones de encuesta</strong>, los miembros responden tus preguntas en un chat privado con Subo, dentro de tu servidor de Discord o en la web.",
           "Con <strong>sondeos</strong>, los miembros responden tu pregunta pública, con múltiples formas de responder y compartir resultados.",
-          "<strong>Bloques de contenido:</strong> añade un mensaje, intro, GIF o pausa en cualquier punto de tu encuesta — sin respuesta requerida. Los participantes continúan tras una pausa o al hacer clic en un botón.",
-          "<strong>Discord y la web:</strong> los miembros pueden responder directamente en Discord o a través de la app web de Subo — sin cuenta adicional."
+          "<strong>Bloques de contenido y acción:</strong> añade un mensaje, intro, GIF o recompensa en cualquier punto del flujo — sin pregunta requerida."
         ]
       },
       {
         "title": "FOMENTA LA PARTICIPACIÓN",
         "content": [
           "¡Recompensas que importan!",
-          "Da <strong>recompensas de rol</strong> por responder una encuesta o sondeo",
+          "<strong>Recompensas condicionales:</strong> asigna roles, XP o logros según cómo respondan los miembros — un rol de bienvenida cuando alguien completa el onboarding, XP para quienes acierten en el quiz, acceso beta para los candidatos adecuados.",
           "<strong>Sistema de XP</strong>: los miembros ganan puntos al responder preguntas, suben de nivel para desbloquear roles.",
           "Muestra un <strong>ranking</strong> con tus participantes más activos",
           "<strong>Comparte hallazgos</strong> y respuestas de otros participantes con un clic"
@@ -188,7 +187,7 @@
     }
   ],
 
-  "ctaTitle": "¡EMPIEZA A PREGUNTAR GRATIS!",
+  "ctaTitle": "EMPIEZA UNA CONVERSACIÓN CON TU COMUNIDAD.",
   "ctaSubtitle": "Sin tarjeta de crédito. Sin complicaciones de configuración. Solo entra y prueba con pocas limitaciones. Haz más con planes de pago cuando estés listo.",
   "ctaButton": "Ver precios",
 
@@ -329,27 +328,27 @@
     }
   ],
   "questionTypesTitle": "TIPOS DE BLOQUES",
-  "questionTypesSubtitle": "5 tipos de preguntas para cada tipo de respuesta — más los bloques de contenido para mensajes, intros y pausas que no necesitan respuesta.",
+  "questionTypesSubtitle": "4 tipos de preguntas para cada tipo de respuesta, bloques de contenido para mensajes y pausas, y bloques de acción que recompensan la participación.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Texto abierto", "desc": "Respuestas escritas en formato libre" },
     { "emoji": "🔢", "name": "Numérico", "desc": "Números, valoraciones o rangos" },
-    { "emoji": "✅", "name": "Sí / No", "desc": "Elecciones binarias simples" },
-    { "emoji": "🔘", "name": "Opción única", "desc": "Elige una entre múltiples opciones" },
+    { "emoji": "🔘", "name": "Opción única", "desc": "Elige una entre múltiples opciones (sí/no incluido)" },
     { "emoji": "☑️", "name": "Opción múltiple", "desc": "Selecciona todo lo que aplique" },
-    { "emoji": "📢", "name": "Bloque de contenido", "desc": "Mensaje, intro, GIF o pausa — sin respuesta necesaria" }
+    { "emoji": "📢", "name": "Bloque de contenido", "desc": "Mensaje, intro, GIF o pausa — sin respuesta necesaria" },
+    { "emoji": "⚡", "name": "Bloque de acción", "desc": "Recompensa XP, roles o logros — según las respuestas" }
   ],
   "webTitle": "EN DISCORD Y EN LA WEB",
   "webDesc": "Las survey convos funcionan de forma nativa dentro de Discord, pero Subo también admite una experiencia web. Los administradores eligen si la encuesta se ejecuta en Discord o en la web, y si está abierta a cualquiera o restringida a los miembros de la comunidad. En cualquier caso, gestionas las encuestas, ves los resultados y analizas los datos desde el panel de administración web de Subo.",
   "benefitsTitle": "POR QUÉ LAS SURVEY CONVOS FUNCIONAN MEJOR",
   "benefitsList": [
-    "💬 Formato chat que tus miembros ya conocen",
+    "👋 Saluda a tus miembros por su nombre y los recompensa sobre la marcha — no solo al final",
     "📱 Funciona en móvil sin fricciones",
     "🤫 Modo anónimo opcional para feedback honesto y sin filtros",
-    "🔀 Lógica de salto — salta preguntas irrelevantes según respuestas anteriores",
+    "🔀 Lógica de salto — salta preguntas irrelevantes y activa recompensas según las respuestas",
     "📢 Bloques de contenido — añade una intro, contexto clave, un GIF o una pausa a mitad de encuesta sin hacer una pregunta",
     "⏱️ Encuestas programadas y recurrentes que se ejecutan automáticamente",
-    "🏆 Recompensas de XP y roles que impulsan la participación",
-    "🤖 Resumen de IA de respuestas abiertas que te ahorra horas"
+    "🏆 XP, roles y logros impulsan la participación",
+    "🤖 Resúmenes de IA de respuestas abiertas"
   ]
 },
 
@@ -367,7 +366,7 @@
   "statsTitle": "EN NÚMEROS",
   "stats": [
     { "number": "15,000+", "label": "Servidores Discord" },
-    { "number": "6", "label": "Tipos de bloques (5 tipos de preguntas + bloques de contenido)" },
+    { "number": "6", "label": "Tipos de bloques (4 tipos de preguntas, contenido, acción)" },
     { "number": "3", "label": "Capas de gamificación" },
     { "number": "1", "label": "Objetivo: la voz de tu comunidad" }
   ],
@@ -386,7 +385,7 @@
     {
       "emoji": "🏆",
       "title": "Gamificación integrada",
-      "desc": "Los miembros ganan XP al responder, suben de nivel, desbloquean roles y compiten en clasificaciones mensuales. El engagement está integrado en la experiencia."
+      "desc": "Los miembros ganan XP, suben de nivel y desbloquean roles, XP o logros según cómo respondan — no solo si terminan."
     },
     {
       "emoji": "🌐",
@@ -405,7 +404,7 @@
     }
   ],
   "missionTitle": "NUESTRA MISIÓN",
-  "missionBody": "Creemos que cada comunidad merece ser escuchada — y que las herramientas para escuchar deben ser tan atractivas como las comunidades mismas. Subo es nuestra respuesta a ese desafío."
+  "missionBody": "Creemos que cada comunidad merece ser escuchada — y que las herramientas para escuchar deben ser tan atractivas como las comunidades mismas. Demasiado a menudo, un admin pasa horas preparando una encuesta, la envía y recibe apenas un puñado de respuestas. No porque a los miembros no les importe — porque un muro de campos de formulario se siente como tarea. Subo cierra la brecha entre lo que una encuesta siempre ha parecido y lo que se siente una verdadera conversación."
 },
 
 "priceTable": {
@@ -521,9 +520,23 @@
       "✓"
     ],
     [
-      "Script Builder avanzado: Lógica de salto",
+      "Lógica de salto y recompensas condicionales<br><small>Ramifica preguntas y activa XP, roles o logros según las respuestas</small>",
+      "✓",
+      "✓",
+      "✓",
+      "✓"
+    ],
+    [
+      "Estilo de bloques de acción<br><small>Imágenes y colores personalizados en los bloques de recompensa a mitad de encuesta</small>",
       "✗",
       "✓",
+      "✓",
+      "✓"
+    ],
+    [
+      "Editor de expresiones avanzado<br><small>Lógica condicional compleja para reglas de salto y recompensas</small>",
+      "✗",
+      "✗",
       "✓",
       "✓"
     ],

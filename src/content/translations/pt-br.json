@@ -1,6 +1,6 @@
 {
   "siteTitle": "Subo",
-  "siteDescription": "Crie pesquisas e enquetes para sua comunidade no Discord.",
+  "siteDescription": "Pesquisas que parecem conversas, não lição de casa. Lance enquetes, pesquisas conversacionais e recompense a participação — no Discord e na web.",
 
 "header": {
   "navItems": [
@@ -79,7 +79,7 @@
   "rotatingWords": [
     "COMUNIDADE", "MEMBROS", "JOGADORES", "FÃS", "PATRONOS", "GUILDA", "SEGUIDORES", "APOIADORES", "CLIENTES", "USUÁRIOS", "AMIGOS", "AUDIÊNCIA", "GRUPO", "EQUIPE", "TRIPULAÇÃO", "ASSINANTES"
   ],
-  "subtitle": "com perguntas que eles querem responder!",
+  "subtitle": "com pesquisas que parecem conversas, não lição de casa.",
   "cta": "Adicionar ao Discord",
   "ctaNote": "Comece Grátis. Upgrades disponíveis."
 },
@@ -87,21 +87,20 @@
 
     "features": {
     "title": "VOCÊ APRENDE MAIS QUANDO AS PESSOAS CURTEM A CONVERSA.",
-    "subtitle": "Pesquisas tradicionais em formulários são chatas. Ninguém quer respondê-las. Com o Subo, você faz perguntas em enquetes e conversas amigáveis — disponível no Discord e na web.",
+    "subtitle": "Uma parede de campos de formulário parece lição de casa, e ninguém quer mais lição de casa. Com o Subo, você faz perguntas em enquetes e conversas amigáveis — no Discord e na web.",
     "list": [
         {
         "title": "FAÇA PERGUNTAS",
         "content": [
             "<strong>Survey Convos:</strong> os membros respondem às perguntas do Subo numa conversa privada, dentro do seu servidor do Discord ou pela web.",
             "<strong>Enquetes no Discord:</strong> 1 pergunta, múltiplas formas de responder e compartilhar resultados.",
-            "<strong>Blocos de conteúdo:</strong> adicione uma mensagem, intro, GIF ou pausa em qualquer ponto da sua pesquisa — sem necessidade de resposta. Os participantes continuam após uma pausa ou clicando em um botão.",
-            "<strong>Discord e a web:</strong> os membros podem responder diretamente no Discord ou pelo app web do Subo — sem conta adicional."
+            "<strong>Blocos de conteúdo e de ação:</strong> adicione uma mensagem, intro, GIF ou recompensa em qualquer ponto do fluxo — sem pergunta necessária."
         ]
         },
         {
         "title": "INCENTIVE A PARTICIPAÇÃO",
         "content": [
-            "Dê <strong>recompensas de cargo</strong> por responder uma pesquisa ou enquete",
+            "<strong>Recompensas condicionais:</strong> atribua cargos, XP ou conquistas conforme as respostas — um cargo de boas-vindas quando alguém conclui o onboarding, XP para quem acerta o quiz, acesso beta para os candidatos certos.",
             "<strong>Sistema de XP</strong>: os membros ganham pontos ao responder perguntas e sobem de nível para desbloquear cargos.",
             "Exiba um <strong>ranking</strong> com seus participantes mais ativos",
             "<strong>Compartilhe descobertas</strong> e respostas de outros participantes com um clique"
@@ -242,7 +241,7 @@
 
 
 
-  "ctaTitle": "COMECE A PERGUNTAR GRATUITAMENTE!",
+  "ctaTitle": "COMECE UMA CONVERSA COM SUA COMUNIDADE.",
   "ctaSubtitle": "Sem cartão de crédito. Sem complicação de configuração. É só entrar e explorar com poucas limitações. Faça mais com os planos pagos quando estiver pronto.",
   "ctaButton": "Ver Preços",
 
@@ -411,9 +410,23 @@
         "✓"
         ],
         [
-        "Script Builder avançado: Lógica de Pulo",
+        "Lógica de pulo e recompensas condicionais<br><small>Ramifica perguntas e ativa XP, cargos ou conquistas conforme as respostas</small>",
+        "✓",
+        "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Estilo dos blocos de ação<br><small>Imagens e cores personalizadas nos blocos de recompensa no meio da pesquisa</small>",
         "✗",
         "✓",
+        "✓",
+        "✓"
+        ],
+        [
+        "Editor de expressões avançado<br><small>Lógica condicional complexa para regras de pulo e recompensas</small>",
+        "✗",
+        "✗",
         "✓",
         "✓"
         ],
@@ -532,27 +545,27 @@
     }
   ],
   "questionTypesTitle": "TIPOS DE BLOCOS",
-  "questionTypesSubtitle": "5 tipos de perguntas para todo tipo de resposta — mais blocos de conteúdo para mensagens, intros e pausas que não precisam de resposta.",
+  "questionTypesSubtitle": "4 tipos de perguntas para todo tipo de resposta, blocos de conteúdo para mensagens e pausas, e blocos de ação que recompensam a participação.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Texto Aberto", "desc": "Respostas escritas livres" },
     { "emoji": "🔢", "name": "Numérico", "desc": "Números, classificações ou intervalos" },
-    { "emoji": "✅", "name": "Sim / Não", "desc": "Escolhas binárias simples" },
-    { "emoji": "🔘", "name": "Escolha Única", "desc": "Escolha uma entre múltiplas opções" },
+    { "emoji": "🔘", "name": "Escolha Única", "desc": "Escolha uma entre múltiplas opções (sim/não incluído)" },
     { "emoji": "☑️", "name": "Múltipla Escolha", "desc": "Selecione todas as que se aplicam" },
-    { "emoji": "📢", "name": "Bloco de Conteúdo", "desc": "Mensagem, intro, GIF ou pausa — sem resposta necessária" }
+    { "emoji": "📢", "name": "Bloco de Conteúdo", "desc": "Mensagem, intro, GIF ou pausa — sem resposta necessária" },
+    { "emoji": "⚡", "name": "Bloco de Ação", "desc": "Recompensa XP, cargos ou conquistas — conforme as respostas" }
   ],
   "webTitle": "NO DISCORD E NA WEB",
   "webDesc": "As survey convos funcionam nativamente dentro do Discord — mas o Subo também suporta uma experiência de pesquisa pela web. Os administradores escolhem se uma pesquisa funciona no Discord ou na web, e se está aberta a qualquer pessoa ou restrita aos membros da comunidade. De qualquer forma, você gerencia pesquisas, visualiza resultados e analisa dados pelo admin web do Subo.",
   "benefitsTitle": "POR QUE AS SURVEY CONVOS FUNCIONAM MELHOR",
   "benefitsList": [
-    "💬 Formato de chat que os membros já conhecem",
+    "👋 Cumprimenta os membros pelo nome e os recompensa ao longo do caminho — não só no final",
     "📱 Funciona no celular sem nenhum atrito",
     "🤫 Modo anônimo opcional para feedback honesto e sem filtros",
-    "🔀 Lógica de pulo — pule perguntas irrelevantes com base em respostas anteriores",
+    "🔀 Lógica de pulo — pule perguntas irrelevantes e ative recompensas conforme as respostas",
     "📢 Blocos de conteúdo — adicione uma intro, contexto importante, GIF ou uma pausa no meio da pesquisa sem fazer uma pergunta",
     "⏱️ Pesquisas agendadas e recorrentes rodam automaticamente",
-    "🏆 Recompensas de XP e incentivos de cargo impulsionam maior participação",
-    "🤖 Resumo com IA de respostas abertas economiza horas do seu tempo"
+    "🏆 XP, cargos e conquistas impulsionam maior participação",
+    "🤖 Resumos com IA de respostas abertas"
   ]
 },
 
@@ -570,7 +583,7 @@
   "statsTitle": "EM NÚMEROS",
   "stats": [
     { "number": "15.000+", "label": "Servidores no Discord" },
-    { "number": "6", "label": "Tipos de blocos (5 tipos de perguntas + blocos de conteúdo)" },
+    { "number": "6", "label": "Tipos de blocos (4 tipos de perguntas, conteúdo, ação)" },
     { "number": "3", "label": "Camadas de gamificação" },
     { "number": "1", "label": "Objetivo: a voz da sua comunidade" }
   ],
@@ -589,7 +602,7 @@
     {
       "emoji": "🏆",
       "title": "Gamificação integrada",
-      "desc": "Os membros ganham XP ao responder, sobem de nível, desbloqueiam cargos e competem em rankings mensais. O engajamento está no núcleo da experiência."
+      "desc": "Os membros ganham XP, sobem de nível e desbloqueiam cargos, XP ou conquistas conforme suas respostas — não apenas se concluem."
     },
     {
       "emoji": "🌐",
@@ -608,7 +621,7 @@
     }
   ],
   "missionTitle": "NOSSA MISSÃO",
-  "missionBody": "Acreditamos que toda comunidade merece ser ouvida — e que as ferramentas de escuta devem ser tão envolventes quanto as próprias comunidades. O Subo é nossa resposta a esse desafio."
+  "missionBody": "Acreditamos que toda comunidade merece ser ouvida — e que as ferramentas de escuta devem ser tão envolventes quanto as próprias comunidades. Com frequência, um admin passa horas preparando uma pesquisa, envia e recebe um punhado de respostas. Não porque os membros não se importam — mas porque uma parede de campos de formulário parece lição de casa. O Subo fecha a lacuna entre o que uma pesquisa sempre pareceu ser e o que uma conversa de verdade parece."
 },
 
 "pricingPage": {
