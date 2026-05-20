@@ -1,6 +1,6 @@
 ---
 title: "Surveys that feel like conversations — now with Action Blocks"
-description: "Trigger real community rewards mid-survey, greet members by name, and customize every intro and outro. Our biggest release yet."
+description: "Trigger real community rewards mid-survey, greet members by name, and customize every intro and outro."
 pubDate: "May 18 2026"
 author: "Subo Team"
 heroImage: "/images/blog/reward-factory/Subo_reward_factory.jpg"
