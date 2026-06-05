@@ -1,6 +1,6 @@
 ---
 title: "Subo Now Has a Public API"
-description: "Build bots, automate workflows, and connect Subo to the rest of your stack. The Subo API is live at api.subo.ai."
+description: "Build bots, automate workflows, and connect Subo to the rest of your stack. The Subo API is live at api.subo.gg."
 pubDate: "May 1 2026"
 author: "Subo Team"
 heroImage: "/images/blog/subo-api-launch/Subo_API_Monitoring.jpg"
@@ -22,7 +22,7 @@ We built the public API to unlock that focus.
 
 ## What It Is
 
-The Subo API is a REST API at `api.subo.ai`. It gives you programmatic access to everything that matters in Subo: your communities, members, project (polls and conversational surveys), scripts, responses.
+The Subo API is a REST API at `api.subo.gg`. It gives you programmatic access to everything that matters in Subo: your communities, members, project (polls and conversational surveys), scripts, responses.
 
 Forty-one endpoints. Ten resource groups. Full OpenAPI 3.1.0 documentation. Webhooks to notify you of key events.
 
@@ -82,11 +82,11 @@ The `response.submitted` event fires when a real participant completes a survey 
 
 ## Built for Agents Too
 
-We wrote `llms.txt` into the spec from the start. Point an AI agent at `api.subo.ai/llms.txt` and it gets a structured description of the entire API surface: what resources exist, what each endpoint does, what auth it expects.
+We wrote `llms.txt` into the spec from the start. Point an AI agent at `api.subo.gg/llms.txt` and it gets a structured description of the entire API surface: what resources exist, what each endpoint does, what auth it expects.
 
-The Scalar documentation at `api.subo.ai/docs` is interactive. You can send requests directly from the browser, inspect response shapes, and understand error codes without writing a line of code first.
+The Scalar documentation at `api.subo.gg/docs` is interactive. You can send requests directly from the browser, inspect response shapes, and understand error codes without writing a line of code first.
 
-The OpenAPI 3.1.0 spec is at `api.subo.ai/v1/openapi.json`. Import it into Postman, Bruno, Insomnia, or generate a typed client in whatever language you're working in.
+The OpenAPI 3.1.0 spec is at `api.subo.gg/v1/openapi.json`. Import it into Postman, Bruno, Insomnia, or generate a typed client in whatever language you're working in.
 
 ---
 
@@ -112,11 +112,11 @@ The API is available across all plan tiers, including free. API keys share your 
 
 ## What's Next
 
-If you're building something with the API and run into gaps, we want to know. The best way to reach us is the [support server](https://subo.ai/support).
+If you're building something with the API and run into gaps, we want to know. The best way to reach us is the [support server](https://subo.gg/support).
 
 ---
 
-[Explore the API docs →](https://api.subo.ai/docs)
+[Explore the API docs →](https://api.subo.gg/docs)
 
 [Get your API key →](https://app.subo.gg/app/account)
 

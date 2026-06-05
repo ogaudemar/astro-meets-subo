@@ -14,12 +14,12 @@ AI agents can use this API to:
 
 ## Docs
 
-- [API Documentation](https://api.subo.ai/docs): Interactive Scalar UI with full endpoint reference
-- [OpenAPI Spec](https://api.subo.ai/v1/openapi.json): Raw OpenAPI 3.1.0 JSON spec — machine-readable
+- [API Documentation](https://api.subo.gg/docs): Interactive Scalar UI with full endpoint reference
+- [OpenAPI Spec](https://api.subo.gg/v1/openapi.json): Raw OpenAPI 3.1.0 JSON spec — machine-readable
 - [Get an API Key](https://app.subo.gg/app/account): Generate keys in Community Settings → Developer → API Keys
-- [Subo Homepage](https://subo.ai/): Product overview and feature list
-- [Pricing](https://subo.ai/pricing): Plans (FREE, PREMIUM, VIP, CUSTOM) and rate limits per tier
-- [Blog](https://subo.ai/blog): News and updates
+- [Subo Homepage](https://subo.gg/): Product overview and feature list
+- [Pricing](https://subo.gg/pricing): Plans (FREE, PREMIUM, VIP, CUSTOM) and rate limits per tier
+- [Blog](https://subo.gg/blog): News and updates
 
 ## What the API Does
 
@@ -78,6 +78,6 @@ Key resources:
 - Start with the `intent` field when creating projects — it’s the fastest way to generate high-quality surveys.
 - Handle `402` errors gracefully (insufficient bot credits for AI features).
 
-Base URL: https://api.subo.ai
+Base URL: https://api.subo.gg
 Version: /v1/ (non-breaking changes in-place; breaking changes under /v2/)
 Idempotency: Pass `Idempotency-Key` (UUID v4) header on write operations.

@@ -57,4 +57,4 @@ The result: a survey that opens with *"Hi DemoGorgon83! 👋 I'm Subo, here to h
 
 That's the gap we're closing, one release at a time: between what a survey has always felt like and what a conversation actually feels like.
 
-If you're building community programs on Discord and want surveys your members actually finish, [join our movement! →](https://subo.ai)
+If you're building community programs on Discord and want surveys your members actually finish, [join our movement! →](https://subo.gg)

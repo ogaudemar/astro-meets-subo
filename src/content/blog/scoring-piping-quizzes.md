@@ -100,7 +100,7 @@ draft: false
   ---
   ## Available in the web app and Public API
 
-  You can turn on Scoring, set score buckets, define scores, correct answers and feedback messages, and add Calculated Field Blocks in the [web app](https://subo.ai/app). 
+  You can turn on Scoring, set score buckets, define scores, correct answers and feedback messages, and add Calculated Field Blocks in the [web app](https://subo.gg/app). 
 
   These features are also available programmatically in the Public API.
 
@@ -108,4 +108,4 @@ draft: false
 
 
   ---
-  Questions? Drop them in [our support server! →](https://subo.ai/support)
+  Questions? Drop them in [our support server! →](https://subo.gg/support)

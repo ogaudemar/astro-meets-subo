@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://subo.ai/sitemap-0.xml 
+Sitemap: https://subo.gg/sitemap-0.xml

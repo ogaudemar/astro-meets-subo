@@ -40,7 +40,7 @@ Order: Hero → Features → UseCases → Testimonials → DeveloperAPI → CTA
 | `Features.astro` | `features` | 3 feature cards |
 | `UseCases.astro` | (root-level keys) | Random use case picker |
 | `Testimonials.astro` | (root-level keys) | |
-| `DeveloperAPI.astro` | `developerApi` | Developer/API audience; links to `api.subo.ai/docs` and `app.subo.gg/app/account` |
+| `DeveloperAPI.astro` | `developerApi` | Developer/API audience; links to `api.subo.gg/docs` and `app.subo.gg/app/account` |
 | `CTA.astro` | (root-level keys) | |
 
 ## Navigation & Footer
@@ -51,8 +51,8 @@ Order: Hero → Features → UseCases → Testimonials → DeveloperAPI → CTA
 
 ## Developer & LLM Discovery
 
-- `public/llms.txt` — Static file served at `subo.ai/llms.txt`; describes the product and API for LLM/AI agent discoverability. Update when the API or major features change.
-- API docs live at `api.subo.ai/docs` (Scalar UI); OpenAPI spec at `api.subo.ai/v1/openapi.json`
+- `public/llms.txt` — Static file served at `subo.gg/llms.txt`; describes the product and API for LLM/AI agent discoverability. Update when the API or major features change.
+- API docs live at `api.subo.gg/docs` (Scalar UI); OpenAPI spec at `api.subo.gg/v1/openapi.json`
 - API key generation: `app.subo.gg/app/account`
 
 ## Related Repositories
