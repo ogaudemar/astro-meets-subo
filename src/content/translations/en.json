@@ -19,7 +19,7 @@
     { "text": "Support Server", "href": "/support" },
     { "text": "Billing Portal", "href": "/portal" },
     { "text": "Blog", "href": "/blog" },
-    { "text": "API", "href": "https://api.subo.gg/docs", "external": true }
+    { "text": "API", "href": "https://api.subo.ai/docs", "external": true }
   ],
   "cta": "Add to Discord",
   "upgrade": "Upgrade",
@@ -54,7 +54,7 @@
         { "text": "Blog", "href": "/blog" },
         { "text": "Stripe billing portal", "href": "/portal", "external": true },
         { "text": "Discord App Store", "href": "/discordstore", "external": true },
-        { "text": "API Docs", "href": "https://api.subo.gg/docs", "external": true },
+        { "text": "API Docs", "href": "https://api.subo.ai/docs", "external": true },
         { "text": "llms.txt", "href": "/llms.txt" }
       ]
     },
