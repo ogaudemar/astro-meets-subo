@@ -39,11 +39,11 @@ Polls can now *do something* when people vote:
 
 This is the other half of the release. The invitation embed, the thing that decides whether anyone answers at all, is now yours to design. So are post-voting messages.
 
-- **Server-level poll defaults** — set your polls' voice and behavior once for vote acknowldegement messages (new vote, vote changed, vote removed, etc), invitation call-to-action message, invitation footer, answer button (for surveys); every new project inherits it by default
+- **Server-level poll defaults**: set your polls' voice and behavior once for vote acknowldegement messages (new vote, vote changed, vote removed, etc), invitation call-to-action message, invitation footer, answer button (for surveys); every new project inherits it by default
 - **Custom answer buttons** per survey with your own labels and **custom emoji** *(Premium)*
 - **Thumbnails** and a **footer** you control for each invitation *(Premium)*
-- **Open and closed border colors** — set a live color for free, and *(Premium)* a second color so a closed invitation looks visibly different
-- **Info rows and an info button** : decide what info you want to show *(Premium)*, now with the option to tuck all this info into an ephemeral popup, keeping the embed clean
+- **Open and closed border colors**: set a live color for free, and *(Premium)* a second color so a closed invitation looks visibly different
+- **Info rows and an info button**: decide what info you want to show *(Premium)*, now with the option to tuck all this info into an ephemeral popup, keeping the embed clean
 
 You're not posting a standard form anymore. You're sending a personalized invitation.
 
@@ -67,4 +67,4 @@ A few touches that apply across polls and surveys alike:
 - Go to the web app's Settings page to update your defaults and messages.
 - Create a poll, mark a correct answer, give the options some points, and dress up the invitation. 
 
-Built something clever? Hit a rough edge? **Drop it in our [support server](https://subo.gg/support)).**
+Built something clever? Hit a rough edge? **Drop it in our [support server](https://subo.gg/support).**
