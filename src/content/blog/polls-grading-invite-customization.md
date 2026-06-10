@@ -20,6 +20,8 @@ Everything that made survey quizzes work now works in a poll:
 
 - **Correct answers**, marked with a ✓ in the poll once closed, in `/results`, and on the result cards.
 - **Per-option scoring**: give each option its own points and pipe the result with `[score]`.
+  ![Scoring options](/images/blog/invitation-design/scoring-options.png)
+  ![Poll with scores](/images/blog/invitation-design/poll-with-score.png)
 - **Performance-based XP**, straight from the web dashboard, edit menu or the `/poll` command. Give custom XP or XP based on the score or correct score per option. If you don't know the score yet (eg. prediction polls), reward the XP after the 
 
 A trivia night, a prediction contest... that's a poll now!
@@ -47,6 +49,8 @@ This is the other half of the release. The invitation embed, the thing that deci
 
 You're not posting a standard form anymore. You're sending a personalized invitation.
 
+![Custom poll invite](/images/blog/invitation-design/custom-poll-invite.png)
+
 ---
 
 ## And nicer to build, everywhere
@@ -59,6 +63,7 @@ A few touches that apply across polls and surveys alike:
 - **Default survey intros** toggle and welcome message, so a new project opens in your voice instead. *(The toggle is free; server-level defaut for custom intro message is Premium.)*
 - **A live preview that better matches Discord**: colors, markdown, bold, and emoji all render the way they'll actually appear. *(Free, always)*
 - **Member management**: add and remove badges and roles directly from the Members page and the Responses page. Members get a DM when you grant them a role by hand
+- **Option edits and ordering**: we made it easier to edit options or change the order in which they appear. We even added a randomization option so that options which are not pinned are displayed in a different order for each respondent
 
 ---
 
