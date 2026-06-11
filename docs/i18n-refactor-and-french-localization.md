@@ -81,12 +81,12 @@ Use-case pages follow the same shape plus `eyebrow`, `examplesLabel`, `examplesT
 
 No visible change; pure groundwork. One PR-sized chunk per page is fine.
 
-- [ ] `features.astro` → `featuresPage` key in `en.json`; rewrite template; build + visual parity
-- [ ] `polls.astro` → `pollsPage`
-- [ ] `custom-survey-bot.astro` → `customSurveyBot`
-- [ ] `use-cases/research.astro` → `useCasesResearch`
-- [ ] `use-cases/engagement.astro` → `useCasesEngagement`
-- [ ] `use-cases/get-things-done.astro` → `useCasesGetThingsDone`
+- [x] `features.astro` → `featuresPage` key in `en.json`; rewrite template; build + visual parity
+- [x] `polls.astro` → `pollsPage`
+- [x] `custom-survey-bot.astro` → `customSurveyBot`
+- [x] `use-cases/research.astro` → `useCasesResearch`
+- [x] `use-cases/engagement.astro` → `useCasesEngagement`
+- [x] `use-cases/get-things-done.astro` → `useCasesGetThingsDone`
 
 **Done when:** all six render from `en.json`, English output unchanged, build green.
 

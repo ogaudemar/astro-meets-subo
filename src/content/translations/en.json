@@ -680,6 +680,447 @@
   ]
 },
 
+"useCasesGetThingsDone": {
+  "pageTitle": "Discord Applications, Sign-ups & Requests, Without the Form | Subo",
+  "pageDescription": "Run applications, registrations, RSVPs, orders, and ticket intake inside Discord as a friendly conversation. Skip logic, role targeting, scheduling, and auto-roles on completion.",
+  "eyebrow": "GET THINGS DONE",
+  "heroTitle": "EVERYTHING YOU USED TO TRAP IN A FORM",
+  "heroSubtitle": "Applications, sign-ups, orders and requests, as a friendly conversation instead of a wall of fields.",
+  "heroCta": "Add to Discord",
+  "sections": [
+    {
+      "label": "WHY A CONVERSATION WINS",
+      "title": "More people finish what they start",
+      "sub": "A long form scares people off. Subo asks one step at a time, right where your members already are.",
+      "cards": [
+        { "emoji": "💬", "title": "One step at a time", "desc": "Questions arrive like a chat, so a 20-field application feels like a quick exchange. <a href=\"/survey-convos\">See survey convos →</a>" },
+        { "emoji": "📨", "title": "No link-out", "desc": "It runs inside Discord, or on the web when you need it. No redirect to a form nobody trusts." },
+        { "emoji": "🔀", "title": "Branch on answers", "desc": "Skip logic routes each person to the questions that actually apply to them. Shorter, smarter intake." },
+        { "emoji": "🕵️", "title": "Right level of privacy", "desc": "Keep submissions identified for follow-up, or anonymous when that fits the request." }
+      ]
+    },
+    {
+      "label": "RUN IT END TO END",
+      "title": "From submission to action",
+      "sub": "Subo does more than collect. It can route, schedule, and act on what comes in.",
+      "cards": [
+        { "emoji": "📅", "title": "Scheduled open & close", "desc": "Open registrations on a date and close them on a deadline, automatically." },
+        { "emoji": "🎯", "title": "Choose who can submit", "desc": "Restrict to specific roles, your whole server, or open it to anyone with the link." },
+        { "emoji": "🧩", "title": "Intros & confirmations", "desc": "Content blocks add a welcome, rules to acknowledge, or a confirmation message anywhere in the flow." },
+        { "emoji": "⚡", "title": "Auto-roles on completion", "desc": "Action blocks can assign a role the moment someone finishes, like an onboarding or applicant role." }
+      ],
+      "blogLink": { "text": "See everything Subo can do →", "href": "/features" }
+    }
+  ],
+  "examplesLabel": "PUT IT TO WORK",
+  "examplesTitle": "What communities run with Subo",
+  "examples": [
+    "🎤 Interview members who apply for a staff role",
+    "🎟️ Collect RSVPs, attendee info and questions",
+    "📝 Onboard new members with interactive checklists",
+    "💡 Take in suggestions and feature requests",
+    "🧾 Process orders, drops or claim requests",
+    "🎫 Run a lightweight ticket or support intake",
+    "🚀 Ask what utilities or rewards people want next",
+    "🧱 Sign up playtesters and beta users"
+  ]
+},
+
+"useCasesEngagement": {
+  "pageTitle": "Discord Engagement: Polls, Quizzes & Prediction Contests | Subo",
+  "pageDescription": "Keep your Discord community coming back with polls, auto-graded quizzes, prediction contests, XP, leaderboards, and role rewards. Participation that members look forward to.",
+  "eyebrow": "ENGAGE",
+  "heroTitle": "KEEP YOUR COMMUNITY COMING BACK",
+  "heroSubtitle": "Polls, quizzes and prediction contests that turn taking part into something members look forward to.",
+  "heroCta": "Add to Discord",
+  "sections": [
+    {
+      "label": "PLAY",
+      "title": "More than a quick vote",
+      "sub": "Native Discord polls just count votes. Subo turns a question into a game.",
+      "cards": [
+        { "emoji": "🗳️", "title": "Polls that do more", "desc": "Score answers, mark the right ones, and reward the winners automatically. <a href=\"/polls\">See Discord polls →</a>" },
+        { "emoji": "🧠", "title": "Auto-graded quizzes", "desc": "Mark correct answers and let Subo score every player instantly. Trivia nights run themselves." },
+        { "emoji": "🔮", "title": "Prediction contests", "desc": "Members predict outcomes, Subo scores them when results land. Perfect for games, matches, and events." },
+        { "emoji": "🎉", "title": "Just for fun", "desc": "Snap polls, hot takes, and meme brackets that give your community a reason to show up today." }
+      ]
+    },
+    {
+      "label": "REWARD",
+      "title": "Make participation worth something",
+      "sub": "Recognition is what brings members back. Subo hands it out automatically.",
+      "cards": [
+        { "emoji": "⭐", "title": "XP rewards", "desc": "Every completed poll or survey earns XP. Available on all plans, even free." },
+        { "emoji": "🏆", "title": "Monthly leaderboard", "desc": "An automatic monthly XP leaderboard posted in Discord, ranking your most engaged members." },
+        { "emoji": "🎭", "title": "Role rewards", "desc": "Grant or remove Discord roles based on participation, scores, or XP thresholds." },
+        { "emoji": "🏷️", "title": "Custom XP name", "desc": "Rename XP to match your brand: \"Stars\", \"Coins\", \"Rep\". Make it feel like yours." }
+      ],
+      "blogLink": { "text": "See all engagement features →", "href": "/features#engage" }
+    }
+  ],
+  "examplesLabel": "IDEAS TO STEAL",
+  "examplesTitle": "Ways communities play with Subo",
+  "examples": [
+    "🧠 Run auto-graded quizzes and knowledge checks",
+    "🔮 Run prediction contests on upcoming games",
+    "🧩 Quick polls during tournaments or matches",
+    "🐸 Meme bracket: crown the ultimate meme lord",
+    "🧙‍♂️ Sort members into Hogwarts houses",
+    "🍕 Vote on the best pizza topping",
+    "🏀 Vote on MVPs and highlight moments",
+    "🍿 Host watch-party votes for upcoming shows",
+    "🦖 Name the community pet dinosaur",
+    "🌈 Ask how everyone's vibe level is today"
+  ]
+},
+
+"useCasesResearch": {
+  "pageTitle": "Discord Community Research: Surveys That Get Honest Answers | Subo",
+  "pageDescription": "Learn who your Discord members are and what they want. Subo runs conversational surveys with anonymity modes, role targeting, live charts, and AI summaries of open-text answers.",
+  "eyebrow": "UNDERSTAND",
+  "heroTitle": "KNOW WHO YOUR COMMUNITY REALLY IS",
+  "heroSubtitle": "Learn who your members are, what they want, and how they feel, with surveys people actually finish.",
+  "heroCta": "Add to Discord",
+  "sections": [
+    {
+      "label": "HONEST ANSWERS",
+      "title": "Better questions get better data",
+      "sub": "A form wall makes people rush or bail. Subo asks like a person, so the answers are more complete and more honest.",
+      "cards": [
+        { "emoji": "💬", "title": "Conversations, not forms", "desc": "One question at a time, like a chat. Higher completion and more thoughtful answers. <a href=\"/survey-convos\">See survey convos →</a>" },
+        { "emoji": "🕵️", "title": "Three anonymity modes", "desc": "Identified, More Anonymous, or Fully Anonymous. Set the level of trust per survey and get candid feedback on sensitive topics." },
+        { "emoji": "🎯", "title": "Role targeting", "desc": "Survey the right segment, your paying members, your mods, your lurkers, separately, so you compare like with like." },
+        { "emoji": "🔀", "title": "Skip logic, cleaner data", "desc": "Everyone sees only relevant questions. No \"N/A\" noise polluting your results." }
+      ]
+    },
+    {
+      "label": "FROM ANSWERS TO INSIGHT",
+      "title": "Turn hundreds of responses into clear decisions",
+      "sub": "From live charts to AI-synthesized summaries, your data does the heavy lifting.",
+      "cards": [
+        { "emoji": "📊", "title": "Live results dashboard", "desc": "Aggregated responses as they arrive: charts for closed questions, response lists for open text." },
+        { "emoji": "✨", "title": "AI open-text summaries", "desc": "Subo reads every open answer and writes a concise synthesis. The gist of 500 responses in seconds." },
+        { "emoji": "📥", "title": "CSV export", "desc": "Take the full dataset into Excel, Google Sheets, or your own tooling for deeper analysis." },
+        { "emoji": "🔗", "title": "Share findings", "desc": "Post a results summary back into Discord to close the feedback loop with your community." }
+      ],
+      "screenshot": {
+        "src": "/images/blog/web-app-launch/subo-web-responses.webp",
+        "alt": "The Subo results dashboard for an open-text question, showing an AI-generated summary alongside individual responses.",
+        "caption": "The results dashboard for an open-text question, showing an AI-generated summary alongside individual responses."
+      },
+      "blogLink": { "text": "See all analysis features →", "href": "/features#analyze" }
+    }
+  ],
+  "examplesLabel": "WHAT WILL YOU LEARN?",
+  "examplesTitle": "Questions communities ask Subo",
+  "examples": [
+    "💡 Feedback on a new idea, product or pricing",
+    "🧑‍🤝‍🧑 Understand who your members really are",
+    "🔥 Find out what gets your community fired up",
+    "📈 Track satisfaction at regular intervals",
+    "🗣️ Get feedback on a past event",
+    "🌟 Collect reviews and testimonials",
+    "💖 Run a culture or pulse check",
+    "💡 Gather suggestions and feature requests",
+    "🌍 See how members discovered you",
+    "🎯 Learn what topics members want next"
+  ]
+},
+
+"customSurveyBot": {
+  "pageTitle": "Custom Survey Bot - Your Brand, Your Bot",
+  "pageDescription": "Everything you like about Subo, but with your own branding",
+  "hero": {
+    "title": "___, YOUR SURVEY BOT",
+    "subtitle": "Everything you like about Subo, but with your own branding",
+    "ctaPrimary": { "text": "Create Your Own Survey Bot", "href": "/pricing" },
+    "ctaSecondary": { "text": "Contact Us", "href": "/support" },
+    "image": { "src": "/images/feedback-kitty.png", "alt": "Custom Survey Bot" }
+  },
+  "comparison": {
+    "title": "THE BEST OF SUBO WITH <span class=\"accent\">YOUR OWN BRANDING</span>",
+    "subtitle": "You like Subo features, hosting and support but want your own Survey Bot, totally personalized for your server? A Custom Survey bot is perfect for you!",
+    "cards": [
+      {
+        "icon": "🛠️",
+        "title": "THE BEST OF SUBO",
+        "items": [
+          "All Subo features, hosting and support",
+          "All enhancements: when Subo gets better, so does your custom bot",
+          "Limits and AI credits at the VIP tier, the highest tier available"
+        ]
+      },
+      {
+        "icon": "🎨",
+        "title": "YOUR OWN BRANDING",
+        "items": [
+          "Your own app",
+          "Your own avatar",
+          "Your own bot name",
+          "Your own bot description"
+        ]
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "HOW IT WORKS",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Subscribe",
+        "description": "Visit our subscriptions page and choose the Yearly 'Custom Bot' option.",
+        "link": { "text": "Subscribe Now", "href": "/pricing", "external": false }
+      },
+      {
+        "number": "2",
+        "title": "Create your own app",
+        "description": "Create your own app in the Discord App portal.",
+        "link": { "text": "Create a Discord App", "href": "https://discord.com/developers/applications", "external": true }
+      },
+      {
+        "number": "3",
+        "title": "Set up your custom bot in the web app",
+        "description": "Log into the Subo Web App, go to Settings, and enter your custom app's name and token. Hit Publish, and your branded bot will be live in minutes.",
+        "link": { "text": "Go to Settings", "href": "https://app.subo.gg/app/settings", "external": true }
+      },
+      {
+        "number": "4",
+        "title": "Enjoy!",
+        "description": "Enjoy your new Custom Survey Bot. For more information, check our tutorial.",
+        "link": { "text": "Learn More", "href": "https://suboai.notion.site/Custom-Bot-make-your-own-Survey-Bot-742f26396f364c12b12b18d5fcc3ceaf", "external": true }
+      }
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      {
+        "question": "What is the difference between the normal Subo bots and the Custom Survey Bot?",
+        "answer": "The Subo bot is the default survey bot that you get when you invite Subo. It has some customization options, but it has a fixed app avatar, description, and name. The Custom Survey Bot is a way to get all the features of Subo, but with more personalization and customization options. You can choose your own app avatar, description, and name."
+      },
+      {
+        "question": "How do I create my own survey bot with Subo?",
+        "answer": "Purchase the Custom Survey Bot option from our pricing page, create your own app in the Discord Developer Portal, then enter the app name and token in the Subo Web App settings. Your custom bot will be published automatically, no need to contact the team. For more details, check our tutorials."
+      },
+      {
+        "question": "How much does the Custom Survey Bot cost?",
+        "answer": "The Custom Survey Bot costs $99.99 per year."
+      },
+      {
+        "question": "Are there monthly subscriptions available for the Custom Survey Bot?",
+        "answer": "No, because setting up a Custom Bot requires some custom set up by the development team, we only accept yearly subscriptions for the Custom Survey Bot."
+      },
+      {
+        "question": "Is a Free Trial available for the Custom Survey Bot?",
+        "answer": "No, because setting up a Custom Bot requires some custom set up work by the development team, we only accept yearly subscriptions for the Custom Survey Bot. If you want to try the bot, start with the other versions of Subo to get familiar with the experience, then upgrade to the Custom Bot when you are ready to change the branding."
+      },
+      {
+        "question": "Do I need to know how to code to create my own app?",
+        "answer": "No. The app creation on the Discord Developer portal is very simple. You will just need to fill a few fields and upload an image."
+      }
+    ]
+  },
+  "ctaSection": {
+    "title": "CREATE YOUR OWN SURVEY BOT",
+    "description": "Join the ranks of servers with their own custom-branded survey bots. Get all the power of Subo with your unique identity.",
+    "ctaPrimary": { "text": "Get Started - $99.99/year", "href": "/pricing" },
+    "ctaSecondary": { "text": "Contact Support", "href": "/support" }
+  }
+},
+
+"pollsPage": {
+  "pageTitle": "Discord Poll Bot: Quizzes, Prediction Contests & Scoring | Subo",
+  "pageDescription": "Subo turns Discord polls into auto-graded quizzes and prediction contests. Score each option, mark correct answers, reward XP and roles, and customize every invitation.",
+  "hero": {
+    "title": "Discord polls that <strong class=\"accent\">score, grade, and reward</strong>",
+    "subtitle": "Discord has native polls, but they only count votes. Subo polls run trivia nights and prediction contests, then reward your members automatically.",
+    "cta": "Add to Discord, Free"
+  },
+  "nav": [
+    { "label": "CONTROL", "anchor": "controls" },
+    { "label": "SCORE", "anchor": "quiz" },
+    { "label": "REWARD", "anchor": "reward" },
+    { "label": "CUSTOMIZE", "anchor": "customize" }
+  ],
+  "sections": [
+    {
+      "id": "controls",
+      "label": "CONTROL",
+      "title": "More than a quick vote",
+      "sub": "Native Discord polls are fine for a snap vote. Subo gives you the controls a real community decision needs.",
+      "cards": [
+        { "emoji": "🗳️", "title": "Choose who can vote", "desc": "Restrict to specific roles, your whole server, or open it to anyone with the link." },
+        { "emoji": "⏱️", "title": "Schedule open & close", "desc": "Set when a poll starts and ends, and Subo opens and closes it for you automatically." },
+        { "emoji": "👁️", "title": "Decide how results show", "desc": "Live or hidden until close, anonymous or identified: you set the level of transparency." },
+        { "emoji": "📥", "title": "Export the data", "desc": "Download every vote as CSV or Google Sheets. Because responses are tied to each member, you can connect the dots over time." }
+      ]
+    },
+    {
+      "id": "quiz",
+      "label": "SCORE",
+      "title": "Turn any poll into a quiz or contest",
+      "sub": "Give your options points, mark the right answer, and let Subo do the grading: no spreadsheet, no manual tally.",
+      "cards": [
+        { "emoji": "✅", "title": "Correct answers", "desc": "Mark the right option and Subo shows a ✓ once the poll closes: in the poll, in <code>/results</code>, and on the result cards." },
+        { "emoji": "🔢", "title": "Per-option scoring", "desc": "Give each option its own point value and pipe a voter's points into the follow-up message with <code>[score]</code>." },
+        { "emoji": "🏆", "title": "Trivia, made effortless", "desc": "Run a knowledge check or trivia night and watch the leaderboard sort itself out, automatically scored every time." },
+        { "emoji": "🔮", "title": "Prediction contests", "desc": "Let members call the outcome of the next match, a release date, or who lifts the World Cup, then award the points once the results are in." }
+      ]
+    },
+    {
+      "id": "reward",
+      "label": "REWARD",
+      "title": "Polls that actually do something",
+      "sub": "Every vote is a member choosing to take part. Recognize them for showing up, and go further by tailoring rewards to how they answered.",
+      "cards": [
+        { "emoji": "⭐", "title": "Reward everyone who votes", "desc": "Give the same XP, role, or badge to anyone who takes part. Participation is engagement, and a little recognition brings members back." },
+        { "emoji": "🎯", "title": "Or reward by performance", "desc": "Want to go further? Award dynamic XP based on the score or correct answer, straight from the dashboard, the edit menu, or the <code>/poll</code> command." },
+        { "emoji": "🎭", "title": "Roles & badges by answer", "desc": "Grant a server role or badge based on how someone voted, perfect for a welcome-channel poll that sorts new members on the spot." }
+      ]
+    },
+    {
+      "id": "customize",
+      "label": "CUSTOMIZE",
+      "title": "An invitation worth answering",
+      "sub": "The poll people see is the poll people answer. Make it unmistakably yours.",
+      "cards": [
+        { "emoji": "🖼️", "title": "Image & thumbnail", "desc": "Add a banner image and a thumbnail so the invitation looks like your community, not a generic form." },
+        { "emoji": "📢", "title": "Call to action & footer", "desc": "Write your own call-to-action message and footer text for every invitation." },
+        { "emoji": "📊", "title": "Custom chart emoji", "desc": "Choose the emoji that fills the result bars, so even the chart matches your style." },
+        { "emoji": "🎨", "title": "Embed border colors", "desc": "Set the color of the embed border, with a separate one for when the poll is open versus closed, so a finished poll looks visibly different." },
+        { "emoji": "ℹ️", "title": "Info in the embed or a popup", "desc": "Choose what details to show, and whether to keep them visible in the embed or tuck them behind an info button that opens an ephemeral popup." },
+        { "emoji": "⚙️", "title": "Set defaults once", "desc": "Define your polls' voice (call-to-action, footer, vote acknowledgements) at the server level, and every new project inherits it by default." }
+      ]
+    }
+  ],
+  "outro": {
+    "title": "🧠 Build a clearer picture over time",
+    "body": [
+      "When you want to learn more about your community, one strategy is a survey convo with several questions. Another is to run quick polls regularly.",
+      "With Subo, every response is tied to the member who gave it (unless anonymous mode is on), so you can connect the dots over time: see how opinions evolve, follow up, and understand individual preferences, not just the overall tally.",
+      "Discord's native polls can't do that."
+    ],
+    "blogLink": {
+      "text": "See everything new in polls →",
+      "href": "/blog/polls-grading-invite-customization"
+    }
+  }
+},
+
+"featuresPage": {
+  "pageTitle": "Subo Features: Build, Collect, Analyze, Engage",
+  "pageDescription": "Everything Subo can do for your Discord community: conversational surveys, AI drafting, role targeting, XP rewards, and more.",
+  "hero": {
+    "title": "EVERYTHING YOU NEED TO UNDERSTAND YOUR COMMUNITY",
+    "subtitle": "Subo brings professional-grade surveying to Discord, built for how communities actually work.",
+    "cta": "Add to Discord"
+  },
+  "nav": [
+    { "label": "BUILD", "anchor": "build" },
+    { "label": "COLLECT", "anchor": "collect" },
+    { "label": "ANALYZE", "anchor": "analyze" },
+    { "label": "ENGAGE", "anchor": "engage" }
+  ],
+  "sections": [
+    {
+      "id": "build",
+      "label": "BUILD",
+      "title": "Create surveys that feel like conversations",
+      "sub": "From a quick slash command to a fully branched questionnaire. Subo meets you where you are.",
+      "cards": [
+        { "emoji": "💬", "title": "Conversational format", "desc": "Questions appear one at a time, like a chat, not a form wall. Higher completion, less friction." },
+        { "emoji": "🤖", "title": "AI-assisted drafting", "desc": "Use <code>/draft</code> to describe your goal in plain English. Subo generates a full multi-question survey instantly." },
+        { "emoji": "🖥️", "title": "Web admin builder", "desc": "Design, preview, and manage surveys from the Subo web dashboard, no Discord commands needed." },
+        { "emoji": "🌿", "title": "Skip logic & branching", "desc": "Route respondents to different questions based on earlier answers. Simple logic on all plans; advanced syntax on VIP+." },
+        { "emoji": "✅", "title": "4 question types", "desc": "Open Text, Numeric, Single Choice (yes/no included), Multiple Choice, covering every feedback scenario." },
+        { "emoji": "📢", "title": "Content blocks", "desc": "Add a message anywhere in your survey without asking a question: a welcome intro, a GIF, a warning to acknowledge, or a mid-survey pause. Respondents continue after a timer or by clicking a button." },
+        { "emoji": "😄", "title": "Custom Discord emojis", "desc": "Use your server's custom emojis in questions, answer options, and responses, even when respondents take the survey on the web." }
+      ],
+      "screenshot": {
+        "src": "/images/blog/web-app-launch/subo-web-app-launch.webp",
+        "alt": "The Subo web admin showing a multi-question survey being built, with skip logic configured between questions.",
+        "caption": "The Subo web admin showing a multi-question survey being built, with skip logic configured between questions.",
+        "wide": false
+      },
+      "blogLink": {
+        "text": "Learn how to create your first survey →",
+        "href": "/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089"
+      }
+    },
+    {
+      "id": "collect",
+      "label": "COLLECT",
+      "title": "Meet your members where they already are",
+      "sub": "Subo delivers surveys inside Discord, no link-out forms, no friction, no drop-off.",
+      "cards": [
+        { "emoji": "📨", "title": "Discord-native delivery", "desc": "Subo posts a survey invite directly in your Discord channel. Members click and respond privately, no DMs required." },
+        { "emoji": "🌐", "title": "Discord or web", "desc": "Admins choose: let members respond in Discord, or open a web link for non-server visitors." },
+        { "emoji": "🎯", "title": "Role targeting", "desc": "Invite specific member segments by Discord role. Survey your paying customers, your moderators, your lurkers, separately." },
+        { "emoji": "🕵️", "title": "Three anonymity modes", "desc": "Identified, More Anonymous, or Fully Anonymous: you set the level of trust per survey." },
+        { "emoji": "🔒", "title": "Community-only or open", "desc": "Restrict to your server members, or open the survey to anyone with the link." },
+        { "emoji": "📅", "title": "Scheduled open/close dates", "desc": "Set a start date and deadline for your survey, and Subo opens and closes it automatically." }
+      ],
+      "screenshot": {
+        "src": "/images/blog/web-app-launch/discord-post.webp",
+        "alt": "A Subo survey invite appearing in a Discord channel. Members click Take Survey and respond privately, in Discord or on the web.",
+        "caption": "A Subo survey invite appearing in a Discord channel. Members click \"Take Survey\" and respond privately, in Discord or on the web.",
+        "wide": true
+      },
+      "blogLink": {
+        "text": "Why conversations beat forms →",
+        "href": "/blog/dawn-of-convos"
+      }
+    },
+    {
+      "id": "analyze",
+      "label": "ANALYZE",
+      "title": "Turn hundreds of responses into clear decisions",
+      "sub": "From live result charts to AI-synthesized summaries, your data does the heavy lifting.",
+      "cards": [
+        { "emoji": "📊", "title": "Live results dashboard", "desc": "See aggregated responses as they come in: charts for closed questions, response lists for open text." },
+        { "emoji": "✨", "title": "AI-powered open text summaries", "desc": "Subo reads every open-text response and generates a concise synthesis. Get the gist of 500 answers in seconds." },
+        { "emoji": "📥", "title": "CSV export", "desc": "Download all responses for deeper analysis in Excel, Google Sheets, or your own tooling." },
+        { "emoji": "🔀", "title": "Skip logic means better data", "desc": "Every respondent only sees relevant questions. No \"N/A\" noise polluting your results." },
+        { "emoji": "🔗", "title": "Share findings", "desc": "Post a results summary directly back into Discord to close the feedback loop with your community." }
+      ],
+      "screenshot": {
+        "src": "/images/blog/web-app-launch/subo-web-responses.webp",
+        "alt": "The results dashboard for an open-text question, showing an AI-generated summary alongside individual responses.",
+        "caption": "The results dashboard for an open-text question, showing an AI-generated summary alongside individual responses.",
+        "wide": false
+      },
+      "blogLink": {
+        "text": "Build smarter surveys with skip logic →",
+        "href": "/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo"
+      }
+    },
+    {
+      "id": "engage",
+      "label": "ENGAGE",
+      "title": "Make participation worth something",
+      "sub": "Reward members with XP, roles, and achievements, based on how they answer, not just whether they finish.",
+      "cards": [
+        { "emoji": "⭐", "title": "XP rewards", "desc": "Every completed survey earns XP points. Available on all plans, even free." },
+        { "emoji": "🏆", "title": "Monthly leaderboard", "desc": "Premium+ servers get an automatic monthly XP leaderboard posted in Discord. Rank your most engaged members." },
+        { "emoji": "🎭", "title": "Role rewards", "desc": "Automatically grant or remove Discord roles based on survey completion or XP thresholds." },
+        { "emoji": "⚡", "title": "Action blocks", "desc": "Drop XP, role, or achievement rewards anywhere in the flow, fire mid-survey, conditionally on answers. Onboarding roles for new joiners, XP for quiz takers who got it right, beta access for the right candidates." },
+        { "emoji": "🏷️", "title": "Custom XP name", "desc": "Rename XP to match your community's brand (\"Stars\", \"Coins\", \"Rep\") on Premium and above." },
+        { "emoji": "📣", "title": "Discord polls", "desc": "Run quick single-question Discord polls alongside your deeper surveys. Native Discord UI, zero setup." }
+      ],
+      "screenshot": {
+        "src": "/images/blog/web-app-launch/leaderboard.webp",
+        "alt": "An XP leaderboard embed posted in Discord, showing the top 10 most engaged community members for the month.",
+        "caption": "An XP leaderboard embed posted in Discord, showing the top 10 most engaged community members for the month.",
+        "wide": false
+      },
+      "blogLink": {
+        "text": "Subo vs. native Discord polls →",
+        "href": "/blog/discord-native-polls-vs-subo-the-survey-bot-comparison"
+      }
+    }
+  ]
+},
+
 "developerApi": {
   "title": "BUILD AND AUTOMATE.",
   "subtitle": "Automate surveys, pipe responses to your data stack, or let AI agents run your community research. All via a simple REST API.",

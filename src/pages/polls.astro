@@ -4,15 +4,14 @@ import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 import translations from '../content/translations/en.json';
+
+const t = translations.pollsPage;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead
-			title="Discord Poll Bot: Quizzes, Prediction Contests & Scoring | Subo"
-			description="Subo turns Discord polls into auto-graded quizzes and prediction contests. Score each option, mark correct answers, reward XP and roles, and customize every invitation."
-		/>
+		<BaseHead title={t.pageTitle} description={t.pageDescription} />
 	</head>
 	<body>
 		<Header translations={translations.header} />
@@ -21,168 +20,51 @@ import translations from '../content/translations/en.json';
 			<!-- Hero -->
 			<section class="poll-hero">
 				<div class="container text-center">
-					<h1 class="poll-hero__title">Discord polls that <strong class="accent">score, grade, and reward</strong></h1>
-					<p class="poll-hero__subtitle">Discord has native polls, but they only count votes. Subo polls run trivia nights and prediction contests, then reward your members automatically.</p>
-					<a href="/invite" class="button button--accent-bg">Add to Discord, Free</a>
+					<h1 class="poll-hero__title" set:html={t.hero.title} />
+					<p class="poll-hero__subtitle">{t.hero.subtitle}</p>
+					<a href="/invite" class="button button--accent-bg">{t.hero.cta}</a>
 				</div>
 			</section>
 
 			<!-- Section nav pills -->
 			<nav class="poll-nav" aria-label="Poll sections">
 				<div class="poll-nav__inner">
-					<a href="#controls" class="poll-nav__pill mono">CONTROL</a>
-					<a href="#quiz" class="poll-nav__pill mono">SCORE</a>
-					<a href="#reward" class="poll-nav__pill mono">REWARD</a>
-					<a href="#customize" class="poll-nav__pill mono">CUSTOMIZE</a>
+					{t.nav.map((pill) => (
+						<a href={`#${pill.anchor}`} class="poll-nav__pill mono">{pill.label}</a>
+					))}
 				</div>
 			</nav>
 
-			<!-- Section 1: CONTROL -->
-			<section class="poll-section poll-section--secondary" id="controls">
-				<div class="container">
-					<div class="poll-section__header">
-						<span class="poll-label poll-label--accent mono">CONTROL</span>
-						<h2 class="poll-section__title">More than a quick vote</h2>
-						<p class="poll-section__sub">Native Discord polls are fine for a snap vote. Subo gives you the controls a real community decision needs.</p>
-					</div>
-					<div class="poll-cards">
-						<div class="poll-card">
-							<span class="poll-card__emoji">🗳️</span>
-							<h3 class="poll-card__title">Choose who can vote</h3>
-							<p class="poll-card__desc">Restrict to specific roles, your whole server, or open it to anyone with the link.</p>
+			{t.sections.map((section, i) => (
+				<section class={`poll-section ${i % 2 === 0 ? 'poll-section--secondary' : 'poll-section--dark'}`} id={section.id}>
+					<div class="container">
+						<div class="poll-section__header">
+							<span class={`poll-label ${i % 2 === 0 ? 'poll-label--accent' : 'poll-label--primary'} mono`}>{section.label}</span>
+							<h2 class="poll-section__title">{section.title}</h2>
+							<p class="poll-section__sub">{section.sub}</p>
 						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">⏱️</span>
-							<h3 class="poll-card__title">Schedule open &amp; close</h3>
-							<p class="poll-card__desc">Set when a poll starts and ends, and Subo opens and closes it for you automatically.</p>
-						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">👁️</span>
-							<h3 class="poll-card__title">Decide how results show</h3>
-							<p class="poll-card__desc">Live or hidden until close, anonymous or identified: you set the level of transparency.</p>
-						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">📥</span>
-							<h3 class="poll-card__title">Export the data</h3>
-							<p class="poll-card__desc">Download every vote as CSV or Google Sheets. Because responses are tied to each member, you can connect the dots over time.</p>
+						<div class="poll-cards">
+							{section.cards.map((card) => (
+								<div class="poll-card">
+									<span class="poll-card__emoji">{card.emoji}</span>
+									<h3 class="poll-card__title">{card.title}</h3>
+									<p class="poll-card__desc" set:html={card.desc} />
+								</div>
+							))}
 						</div>
 					</div>
-				</div>
-			</section>
-
-			<!-- Section 2: SCORE (quizzes & predictions) -->
-			<section class="poll-section poll-section--dark" id="quiz">
-				<div class="container">
-					<div class="poll-section__header">
-						<span class="poll-label poll-label--primary mono">SCORE</span>
-						<h2 class="poll-section__title">Turn any poll into a quiz or contest</h2>
-						<p class="poll-section__sub">Give your options points, mark the right answer, and let Subo do the grading: no spreadsheet, no manual tally.</p>
-					</div>
-					<div class="poll-cards">
-						<div class="poll-card">
-							<span class="poll-card__emoji">✅</span>
-							<h3 class="poll-card__title">Correct answers</h3>
-							<p class="poll-card__desc">Mark the right option and Subo shows a ✓ once the poll closes: in the poll, in <code>/results</code>, and on the result cards.</p>
-						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">🔢</span>
-							<h3 class="poll-card__title">Per-option scoring</h3>
-							<p class="poll-card__desc">Give each option its own point value and pipe a voter's points into the follow-up message with <code>[score]</code>.</p>
-						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">🏆</span>
-							<h3 class="poll-card__title">Trivia, made effortless</h3>
-							<p class="poll-card__desc">Run a knowledge check or trivia night and watch the leaderboard sort itself out, automatically scored every time.</p>
-						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">🔮</span>
-							<h3 class="poll-card__title">Prediction contests</h3>
-							<p class="poll-card__desc">Let members call the outcome of the next match, a release date, or who lifts the World Cup, then award the points once the results are in.</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- Section 3: REWARD -->
-			<section class="poll-section poll-section--secondary" id="reward">
-				<div class="container">
-					<div class="poll-section__header">
-						<span class="poll-label poll-label--accent mono">REWARD</span>
-						<h2 class="poll-section__title">Polls that actually do something</h2>
-						<p class="poll-section__sub">Every vote is a member choosing to take part. Recognize them for showing up, and go further by tailoring rewards to how they answered.</p>
-					</div>
-					<div class="poll-cards">
-						<div class="poll-card">
-							<span class="poll-card__emoji">⭐</span>
-							<h3 class="poll-card__title">Reward everyone who votes</h3>
-							<p class="poll-card__desc">Give the same XP, role, or badge to anyone who takes part. Participation is engagement, and a little recognition brings members back.</p>
-						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">🎯</span>
-							<h3 class="poll-card__title">Or reward by performance</h3>
-							<p class="poll-card__desc">Want to go further? Award dynamic XP based on the score or correct answer, straight from the dashboard, the edit menu, or the <code>/poll</code> command.</p>
-						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">🎭</span>
-							<h3 class="poll-card__title">Roles &amp; badges by answer</h3>
-							<p class="poll-card__desc">Grant a server role or badge based on how someone voted, perfect for a welcome-channel poll that sorts new members on the spot.</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- Section 4: CUSTOMIZE -->
-			<section class="poll-section poll-section--dark" id="customize">
-				<div class="container">
-					<div class="poll-section__header">
-						<span class="poll-label poll-label--primary mono">CUSTOMIZE</span>
-						<h2 class="poll-section__title">An invitation worth answering</h2>
-						<p class="poll-section__sub">The poll people see is the poll people answer. Make it unmistakably yours.</p>
-					</div>
-					<div class="poll-cards">
-						<div class="poll-card">
-							<span class="poll-card__emoji">🖼️</span>
-							<h3 class="poll-card__title">Image &amp; thumbnail</h3>
-							<p class="poll-card__desc">Add a banner image and a thumbnail so the invitation looks like your community, not a generic form.</p>
-						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">📢</span>
-							<h3 class="poll-card__title">Call to action &amp; footer</h3>
-							<p class="poll-card__desc">Write your own call-to-action message and footer text for every invitation.</p>
-						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">📊</span>
-							<h3 class="poll-card__title">Custom chart emoji</h3>
-							<p class="poll-card__desc">Choose the emoji that fills the result bars, so even the chart matches your style.</p>
-						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">🎨</span>
-							<h3 class="poll-card__title">Embed border colors</h3>
-							<p class="poll-card__desc">Set the color of the embed border, with a separate one for when the poll is open versus closed, so a finished poll looks visibly different.</p>
-						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">ℹ️</span>
-							<h3 class="poll-card__title">Info in the embed or a popup</h3>
-							<p class="poll-card__desc">Choose what details to show, and whether to keep them visible in the embed or tuck them behind an info button that opens an ephemeral popup.</p>
-						</div>
-						<div class="poll-card">
-							<span class="poll-card__emoji">⚙️</span>
-							<h3 class="poll-card__title">Set defaults once</h3>
-							<p class="poll-card__desc">Define your polls' voice (call-to-action, footer, vote acknowledgements) at the server level, and every new project inherits it by default.</p>
-						</div>
-					</div>
-				</div>
-			</section>
+				</section>
+			))}
 
 			<!-- Picture over time -->
 			<section class="poll-section poll-section--secondary">
 				<div class="container poll-narrow">
-					<h2 class="poll-section__title text-center">🧠 Build a clearer picture over time</h2>
-					<p>When you want to learn more about your community, one strategy is a survey convo with several questions. Another is to run quick polls regularly.</p>
-					<p>With Subo, every response is tied to the member who gave it (unless anonymous mode is on), so you can connect the dots over time: see how opinions evolve, follow up, and understand individual preferences, not just the overall tally.</p>
-					<p>Discord's native polls can't do that.</p>
+					<h2 class="poll-section__title text-center">{t.outro.title}</h2>
+					{t.outro.body.map((para) => (
+						<p>{para}</p>
+					))}
 					<p class="poll-blog-link">
-						<a href="/blog/polls-grading-invite-customization">See everything new in polls →</a>
+						<a href={t.outro.blogLink.href}>{t.outro.blogLink.text}</a>
 					</p>
 				</div>
 			</section>

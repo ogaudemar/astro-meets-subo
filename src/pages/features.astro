@@ -4,15 +4,14 @@ import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 import translations from '../content/translations/en.json';
+
+const t = translations.featuresPage;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead
-      title="Subo Features: Build, Collect, Analyze, Engage"
-      description="Everything Subo can do for your Discord community: conversational surveys, AI drafting, role targeting, XP rewards, and more."
-    />
+    <BaseHead title={t.pageTitle} description={t.pageDescription} />
   </head>
   <body>
     <Header translations={translations.header} />
@@ -21,221 +20,48 @@ import translations from '../content/translations/en.json';
       <!-- Hero -->
       <section class="feat-hero">
         <div class="container text-center">
-          <h1 class="mono">EVERYTHING YOU NEED TO UNDERSTAND YOUR COMMUNITY</h1>
-          <p class="feat-hero__subtitle">Subo brings professional-grade surveying to Discord, built for how communities actually work.</p>
-          <a href="/invite" class="button button--accent-bg">Add to Discord</a>
+          <h1 class="mono">{t.hero.title}</h1>
+          <p class="feat-hero__subtitle">{t.hero.subtitle}</p>
+          <a href="/invite" class="button button--accent-bg">{t.hero.cta}</a>
         </div>
       </section>
 
       <!-- Section nav pills -->
       <nav class="feat-nav" aria-label="Feature sections">
         <div class="feat-nav__inner">
-          <a href="#build" class="feat-nav__pill mono">BUILD</a>
-          <a href="#collect" class="feat-nav__pill mono">COLLECT</a>
-          <a href="#analyze" class="feat-nav__pill mono">ANALYZE</a>
-          <a href="#engage" class="feat-nav__pill mono">ENGAGE</a>
+          {t.nav.map((pill) => (
+            <a href={`#${pill.anchor}`} class="feat-nav__pill mono">{pill.label}</a>
+          ))}
         </div>
       </nav>
 
-      <!-- Section 1: BUILD -->
-      <section class="feat-section feat-section--secondary" id="build">
-        <div class="container">
-          <div class="feat-section__header">
-            <span class="feat-label feat-label--accent mono">BUILD</span>
-            <h2 class="feat-section__title">Create surveys that feel like conversations</h2>
-            <p class="feat-section__sub">From a quick slash command to a fully branched questionnaire. Subo meets you where you are.</p>
+      {t.sections.map((section, i) => (
+        <section class={`feat-section ${i % 2 === 0 ? 'feat-section--secondary' : 'feat-section--dark'}`} id={section.id}>
+          <div class="container">
+            <div class="feat-section__header">
+              <span class={`feat-label ${i % 2 === 0 ? 'feat-label--accent' : 'feat-label--primary'} mono`}>{section.label}</span>
+              <h2 class="feat-section__title">{section.title}</h2>
+              <p class="feat-section__sub">{section.sub}</p>
+            </div>
+            <div class="feat-cards">
+              {section.cards.map((card) => (
+                <div class="feat-card">
+                  <span class="feat-card__emoji">{card.emoji}</span>
+                  <h3 class="feat-card__title">{card.title}</h3>
+                  <p class="feat-card__desc" set:html={card.desc} />
+                </div>
+              ))}
+            </div>
+            <figure class={`feat-screenshot${section.screenshot.wide ? ' feat-screenshot--wide' : ''}`}>
+              <img src={section.screenshot.src} alt={section.screenshot.alt} loading="lazy" />
+              <figcaption>{section.screenshot.caption}</figcaption>
+            </figure>
+            <p class="feat-blog-link">
+              <a href={section.blogLink.href}>{section.blogLink.text}</a>
+            </p>
           </div>
-          <div class="feat-cards">
-            <div class="feat-card">
-              <span class="feat-card__emoji">💬</span>
-              <h3 class="feat-card__title">Conversational format</h3>
-              <p class="feat-card__desc">Questions appear one at a time, like a chat, not a form wall. Higher completion, less friction.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">🤖</span>
-              <h3 class="feat-card__title">AI-assisted drafting</h3>
-              <p class="feat-card__desc">Use <code>/draft</code> to describe your goal in plain English. Subo generates a full multi-question survey instantly.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">🖥️</span>
-              <h3 class="feat-card__title">Web admin builder</h3>
-              <p class="feat-card__desc">Design, preview, and manage surveys from the Subo web dashboard, no Discord commands needed.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">🌿</span>
-              <h3 class="feat-card__title">Skip logic &amp; branching</h3>
-              <p class="feat-card__desc">Route respondents to different questions based on earlier answers. Simple logic on all plans; advanced syntax on VIP+.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">✅</span>
-              <h3 class="feat-card__title">4 question types</h3>
-              <p class="feat-card__desc">Open Text, Numeric, Single Choice (yes/no included), Multiple Choice, covering every feedback scenario.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">📢</span>
-              <h3 class="feat-card__title">Content blocks</h3>
-              <p class="feat-card__desc">Add a message anywhere in your survey without asking a question: a welcome intro, a GIF, a warning to acknowledge, or a mid-survey pause. Respondents continue after a timer or by clicking a button.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">😄</span>
-              <h3 class="feat-card__title">Custom Discord emojis</h3>
-              <p class="feat-card__desc">Use your server's custom emojis in questions, answer options, and responses, even when respondents take the survey on the web.</p>
-            </div>
-          </div>
-          <figure class="feat-screenshot">
-            <img src="/images/blog/web-app-launch/subo-web-app-launch.webp" alt="The Subo web admin showing a multi-question survey being built, with skip logic configured between questions." loading="lazy" />
-            <figcaption>The Subo web admin showing a multi-question survey being built, with skip logic configured between questions.</figcaption>
-          </figure>
-          <p class="feat-blog-link">
-            <a href="/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089">Learn how to create your first survey →</a>
-          </p>
-        </div>
-      </section>
-
-      <!-- Section 2: COLLECT -->
-      <section class="feat-section feat-section--dark" id="collect">
-        <div class="container">
-          <div class="feat-section__header">
-            <span class="feat-label feat-label--primary mono">COLLECT</span>
-            <h2 class="feat-section__title">Meet your members where they already are</h2>
-            <p class="feat-section__sub">Subo delivers surveys inside Discord, no link-out forms, no friction, no drop-off.</p>
-          </div>
-          <div class="feat-cards">
-            <div class="feat-card">
-              <span class="feat-card__emoji">📨</span>
-              <h3 class="feat-card__title">Discord-native delivery</h3>
-              <p class="feat-card__desc">Subo posts a survey invite directly in your Discord channel. Members click and respond privately, no DMs required.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">🌐</span>
-              <h3 class="feat-card__title">Discord or web</h3>
-              <p class="feat-card__desc">Admins choose: let members respond in Discord, or open a web link for non-server visitors.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">🎯</span>
-              <h3 class="feat-card__title">Role targeting</h3>
-              <p class="feat-card__desc">Invite specific member segments by Discord role. Survey your paying customers, your moderators, your lurkers, separately.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">🕵️</span>
-              <h3 class="feat-card__title">Three anonymity modes</h3>
-              <p class="feat-card__desc">Identified, More Anonymous, or Fully Anonymous: you set the level of trust per survey.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">🔒</span>
-              <h3 class="feat-card__title">Community-only or open</h3>
-              <p class="feat-card__desc">Restrict to your server members, or open the survey to anyone with the link.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">📅</span>
-              <h3 class="feat-card__title">Scheduled open/close dates</h3>
-              <p class="feat-card__desc">Set a start date and deadline for your survey, and Subo opens and closes it automatically.</p>
-            </div>
-          </div>
-          <figure class="feat-screenshot feat-screenshot--wide">
-            <img src="/images/blog/web-app-launch/discord-post.webp" alt="A Subo survey invite appearing in a Discord channel. Members click Take Survey and respond privately, in Discord or on the web." loading="lazy" />
-            <figcaption>A Subo survey invite appearing in a Discord channel. Members click "Take Survey" and respond privately, in Discord or on the web.</figcaption>
-          </figure>
-          <p class="feat-blog-link">
-            <a href="/blog/dawn-of-convos">Why conversations beat forms →</a>
-          </p>
-        </div>
-      </section>
-
-      <!-- Section 3: ANALYZE -->
-      <section class="feat-section feat-section--secondary" id="analyze">
-        <div class="container">
-          <div class="feat-section__header">
-            <span class="feat-label feat-label--accent mono">ANALYZE</span>
-            <h2 class="feat-section__title">Turn hundreds of responses into clear decisions</h2>
-            <p class="feat-section__sub">From live result charts to AI-synthesized summaries, your data does the heavy lifting.</p>
-          </div>
-          <div class="feat-cards">
-            <div class="feat-card">
-              <span class="feat-card__emoji">📊</span>
-              <h3 class="feat-card__title">Live results dashboard</h3>
-              <p class="feat-card__desc">See aggregated responses as they come in: charts for closed questions, response lists for open text.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">✨</span>
-              <h3 class="feat-card__title">AI-powered open text summaries</h3>
-              <p class="feat-card__desc">Subo reads every open-text response and generates a concise synthesis. Get the gist of 500 answers in seconds.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">📥</span>
-              <h3 class="feat-card__title">CSV export</h3>
-              <p class="feat-card__desc">Download all responses for deeper analysis in Excel, Google Sheets, or your own tooling.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">🔀</span>
-              <h3 class="feat-card__title">Skip logic means better data</h3>
-              <p class="feat-card__desc">Every respondent only sees relevant questions. No "N/A" noise polluting your results.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">🔗</span>
-              <h3 class="feat-card__title">Share findings</h3>
-              <p class="feat-card__desc">Post a results summary directly back into Discord to close the feedback loop with your community.</p>
-            </div>
-          </div>
-          <figure class="feat-screenshot">
-            <img src="/images/blog/web-app-launch/subo-web-responses.webp" alt="The results dashboard for an open-text question, showing an AI-generated summary alongside individual responses." loading="lazy" />
-            <figcaption>The results dashboard for an open-text question, showing an AI-generated summary alongside individual responses.</figcaption>
-          </figure>
-          <p class="feat-blog-link">
-            <a href="/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo">Build smarter surveys with skip logic →</a>
-          </p>
-        </div>
-      </section>
-
-      <!-- Section 4: ENGAGE -->
-      <section class="feat-section feat-section--dark" id="engage">
-        <div class="container">
-          <div class="feat-section__header">
-            <span class="feat-label feat-label--primary mono">ENGAGE</span>
-            <h2 class="feat-section__title">Make participation worth something</h2>
-            <p class="feat-section__sub">Reward members with XP, roles, and achievements, based on how they answer, not just whether they finish.</p>
-          </div>
-          <div class="feat-cards">
-            <div class="feat-card">
-              <span class="feat-card__emoji">⭐</span>
-              <h3 class="feat-card__title">XP rewards</h3>
-              <p class="feat-card__desc">Every completed survey earns XP points. Available on all plans, even free.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">🏆</span>
-              <h3 class="feat-card__title">Monthly leaderboard</h3>
-              <p class="feat-card__desc">Premium+ servers get an automatic monthly XP leaderboard posted in Discord. Rank your most engaged members.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">🎭</span>
-              <h3 class="feat-card__title">Role rewards</h3>
-              <p class="feat-card__desc">Automatically grant or remove Discord roles based on survey completion or XP thresholds.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">⚡</span>
-              <h3 class="feat-card__title">Action blocks</h3>
-              <p class="feat-card__desc">Drop XP, role, or achievement rewards anywhere in the flow, fire mid-survey, conditionally on answers. Onboarding roles for new joiners, XP for quiz takers who got it right, beta access for the right candidates.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">🏷️</span>
-              <h3 class="feat-card__title">Custom XP name</h3>
-              <p class="feat-card__desc">Rename XP to match your community's brand ("Stars", "Coins", "Rep") on Premium and above.</p>
-            </div>
-            <div class="feat-card">
-              <span class="feat-card__emoji">📣</span>
-              <h3 class="feat-card__title">Discord polls</h3>
-              <p class="feat-card__desc">Run quick single-question Discord polls alongside your deeper surveys. Native Discord UI, zero setup.</p>
-            </div>
-          </div>
-          <figure class="feat-screenshot">
-            <img src="/images/blog/web-app-launch/leaderboard.webp" alt="An XP leaderboard embed posted in Discord, showing the top 10 most engaged community members for the month." loading="lazy" />
-            <figcaption>An XP leaderboard embed posted in Discord, showing the top 10 most engaged community members for the month.</figcaption>
-          </figure>
-          <p class="feat-blog-link">
-            <a href="/blog/discord-native-polls-vs-subo-the-survey-bot-comparison">Subo vs. native Discord polls →</a>
-          </p>
-        </div>
-      </section>
+        </section>
+      ))}
 
       <CTA translations={translations} />
     </main>

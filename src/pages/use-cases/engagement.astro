@@ -5,27 +5,13 @@ import CTA from '../../components/CTA.astro';
 import Footer from '../../components/Footer.astro';
 import translations from '../../content/translations/en.json';
 
-const examples = [
-  "🧠 Run auto-graded quizzes and knowledge checks",
-  "🔮 Run prediction contests on upcoming games",
-  "🧩 Quick polls during tournaments or matches",
-  "🐸 Meme bracket: crown the ultimate meme lord",
-  "🧙‍♂️ Sort members into Hogwarts houses",
-  "🍕 Vote on the best pizza topping",
-  "🏀 Vote on MVPs and highlight moments",
-  "🍿 Host watch-party votes for upcoming shows",
-  "🦖 Name the community pet dinosaur",
-  "🌈 Ask how everyone's vibe level is today",
-];
+const t = translations.useCasesEngagement;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead
-      title="Discord Engagement: Polls, Quizzes & Prediction Contests | Subo"
-      description="Keep your Discord community coming back with polls, auto-graded quizzes, prediction contests, XP, leaderboards, and role rewards. Participation that members look forward to."
-    />
+    <BaseHead title={t.pageTitle} description={t.pageDescription} />
   </head>
   <body>
     <Header translations={translations.header} />
@@ -34,91 +20,48 @@ const examples = [
       <!-- Hero -->
       <section class="uc-hero">
         <div class="container text-center">
-          <span class="uc-eyebrow mono">ENGAGE</span>
-          <h1 class="mono">KEEP YOUR COMMUNITY COMING BACK</h1>
-          <p class="uc-hero__subtitle">Polls, quizzes and prediction contests that turn taking part into something members look forward to.</p>
-          <a href="/invite" class="button button--accent-bg">Add to Discord</a>
+          <span class="uc-eyebrow mono">{t.eyebrow}</span>
+          <h1 class="mono">{t.heroTitle}</h1>
+          <p class="uc-hero__subtitle">{t.heroSubtitle}</p>
+          <a href="/invite" class="button button--accent-bg">{t.heroCta}</a>
         </div>
       </section>
 
-      <!-- Section 1: Play -->
+      {t.sections.map((section, i) => (
+        <section class={`uc-section ${i % 2 === 0 ? 'uc-section--secondary' : 'uc-section--dark'}`}>
+          <div class="container">
+            <div class="uc-section__header">
+              <span class="uc-label mono">{section.label}</span>
+              <h2 class="uc-section__title">{section.title}</h2>
+              {section.sub && <p class="uc-section__sub">{section.sub}</p>}
+            </div>
+            <div class="uc-cards">
+              {section.cards.map((card) => (
+                <div class="uc-card">
+                  <span class="uc-card__emoji">{card.emoji}</span>
+                  <h3 class="uc-card__title">{card.title}</h3>
+                  <p class="uc-card__desc" set:html={card.desc} />
+                </div>
+              ))}
+            </div>
+            {section.blogLink && (
+              <p class="uc-blog-link">
+                <a href={section.blogLink.href}>{section.blogLink.text}</a>
+              </p>
+            )}
+          </div>
+        </section>
+      ))}
+
+      <!-- Examples -->
       <section class="uc-section uc-section--secondary">
         <div class="container">
           <div class="uc-section__header">
-            <span class="uc-label mono">PLAY</span>
-            <h2 class="uc-section__title">More than a quick vote</h2>
-            <p class="uc-section__sub">Native Discord polls just count votes. Subo turns a question into a game.</p>
-          </div>
-          <div class="uc-cards">
-            <div class="uc-card">
-              <span class="uc-card__emoji">🗳️</span>
-              <h3 class="uc-card__title">Polls that do more</h3>
-              <p class="uc-card__desc">Score answers, mark the right ones, and reward the winners automatically. <a href="/polls">See Discord polls →</a></p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🧠</span>
-              <h3 class="uc-card__title">Auto-graded quizzes</h3>
-              <p class="uc-card__desc">Mark correct answers and let Subo score every player instantly. Trivia nights run themselves.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🔮</span>
-              <h3 class="uc-card__title">Prediction contests</h3>
-              <p class="uc-card__desc">Members predict outcomes, Subo scores them when results land. Perfect for games, matches, and events.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🎉</span>
-              <h3 class="uc-card__title">Just for fun</h3>
-              <p class="uc-card__desc">Snap polls, hot takes, and meme brackets that give your community a reason to show up today.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 2: Reward -->
-      <section class="uc-section uc-section--dark">
-        <div class="container">
-          <div class="uc-section__header">
-            <span class="uc-label mono">REWARD</span>
-            <h2 class="uc-section__title">Make participation worth something</h2>
-            <p class="uc-section__sub">Recognition is what brings members back. Subo hands it out automatically.</p>
-          </div>
-          <div class="uc-cards">
-            <div class="uc-card">
-              <span class="uc-card__emoji">⭐</span>
-              <h3 class="uc-card__title">XP rewards</h3>
-              <p class="uc-card__desc">Every completed poll or survey earns XP. Available on all plans, even free.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🏆</span>
-              <h3 class="uc-card__title">Monthly leaderboard</h3>
-              <p class="uc-card__desc">An automatic monthly XP leaderboard posted in Discord, ranking your most engaged members.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🎭</span>
-              <h3 class="uc-card__title">Role rewards</h3>
-              <p class="uc-card__desc">Grant or remove Discord roles based on participation, scores, or XP thresholds.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🏷️</span>
-              <h3 class="uc-card__title">Custom XP name</h3>
-              <p class="uc-card__desc">Rename XP to match your brand: "Stars", "Coins", "Rep". Make it feel like yours.</p>
-            </div>
-          </div>
-          <p class="uc-blog-link">
-            <a href="/features#engage">See all engagement features →</a>
-          </p>
-        </div>
-      </section>
-
-      <!-- Section 3: Examples -->
-      <section class="uc-section uc-section--secondary">
-        <div class="container">
-          <div class="uc-section__header">
-            <span class="uc-label mono">IDEAS TO STEAL</span>
-            <h2 class="uc-section__title">Ways communities play with Subo</h2>
+            <span class="uc-label mono">{t.examplesLabel}</span>
+            <h2 class="uc-section__title">{t.examplesTitle}</h2>
           </div>
           <div class="uc-examples">
-            {examples.map((ex) => <span class="uc-example">{ex}</span>)}
+            {t.examples.map((ex) => <span class="uc-example">{ex}</span>)}
           </div>
         </div>
       </section>

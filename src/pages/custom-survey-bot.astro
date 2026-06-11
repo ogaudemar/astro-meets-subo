@@ -1,220 +1,133 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-
 import Footer from '../components/Footer.astro';
 import translations from '../content/translations/en.json';
 
-
+const t = translations.customSurveyBot;
 ---
 
 <!doctype html>
-<html lang="en" title="Custom Survey Bot - Your Brand, Your Bot">
+<html lang="en">
 	<head>
-		<BaseHead title="Custom Survey Bot - Your Brand, Your Bot" description="Everything you like about Subo, but with your own branding" />
+		<BaseHead title={t.pageTitle} description={t.pageDescription} />
 	</head>
 	<body>
 		<Header translations={translations.header} />
-            <main>
-    <!-- Hero Section -->
-    <section class="hero dark">
-      <div class="container ">
-        <div class="hero__content">
-          <div class="hero__text">
-            
-            <h1 class="hero__title">___, YOUR SURVEY BOT</h1>
-            <p class="subtitle text-white">Everything you like about Subo, but with your own branding</p>
-            
-            </p>
-            <div class="hero__buttons">
-              <a href="/pricing" class="button button--white-bg">
-                Create Your Own Survey Bot
-              </a>
-              <a href="/support" class="button button--white-outline">
-                Contact Us
-              </a>
-            </div>
-          </div>
-          <div class="hero__image">
-            <img 
-              src="/images/feedback-kitty.png" 
-              alt="Custom Survey Bot" 
-              class="hero__bot-image"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+		<main>
+			<!-- Hero Section -->
+			<section class="hero dark">
+				<div class="container">
+					<div class="hero__content">
+						<div class="hero__text">
+							<h1 class="hero__title">{t.hero.title}</h1>
+							<p class="subtitle text-white">{t.hero.subtitle}</p>
+							<div class="hero__buttons">
+								<a href={t.hero.ctaPrimary.href} class="button button--white-bg">
+									{t.hero.ctaPrimary.text}
+								</a>
+								<a href={t.hero.ctaSecondary.href} class="button button--white-outline">
+									{t.hero.ctaSecondary.text}
+								</a>
+							</div>
+						</div>
+						<div class="hero__image">
+							<img
+								src={t.hero.image.src}
+								alt={t.hero.image.alt}
+								class="hero__bot-image"
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
 
-    <!-- Features Comparison -->
-    <section class="comparison dark2secondarydark">
-      <div class="container">
-        <h2 class="section-title">THE BEST OF SUBO WITH <span class="accent">YOUR OWN BRANDING</span></h2>
-        <p class="section-subtitle">
-          You like Subo features, hosting and support but want your own Survey Bot, totally personalized for your server? A Custom Survey bot is perfect for you!
-        </p>
+			<!-- Features Comparison -->
+			<section class="comparison dark2secondarydark">
+				<div class="container">
+					<h2 class="section-title" set:html={t.comparison.title} />
+					<p class="section-subtitle">{t.comparison.subtitle}</p>
+					<div class="comparison__grid">
+						{t.comparison.cards.map((card) => (
+							<div class="comparison__card">
+								<div class="comparison__icon">{card.icon}</div>
+								<h3 class="comparison__title">{card.title}</h3>
+								<ul class="comparison__list">
+									{card.items.map((item) => (
+										<li>{item}</li>
+									))}
+								</ul>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
 
-        <div class="comparison__grid">
-          <div class="comparison__card">
-            <div class="comparison__icon">🛠️</div>
-            <h3 class="comparison__title">THE BEST OF SUBO</h3>
-            <ul class="comparison__list">
-              <li>All Subo features, hosting and support</li>
-              <li>All enhancements: when Subo gets better, so does your custom bot</li>
-              <li>Limits and AI credits at the VIP tier, the highest tier available</li>
-            </ul>
-          </div>
+			<!-- HOW IT WORKS -->
+			<section class="how-it-works secondarydark2primarydark">
+				<div class="container">
+					<h2 class="section-title">{t.howItWorks.title}</h2>
+					<div class="steps">
+						{t.howItWorks.steps.map((step) => (
+							<div class="step">
+								<div class="step__number">{step.number}</div>
+								<div class="step__content">
+									<h3 class="step__title">{step.title}</h3>
+									<p class="step__description">{step.description}</p>
+									<a
+										href={step.link.href}
+										class="step__link"
+										{...(step.link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+									>
+										{step.link.text}
+									</a>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
 
-          <div class="comparison__card">
-            <div class="comparison__icon">🎨</div>
-            <h3 class="comparison__title">YOUR OWN BRANDING</h3>
-            <ul class="comparison__list">
-              <li>Your own app</li>
-              <li>Your own avatar</li>
-              <li>Your own bot name</li>
-              <li>Your own bot description</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+			<!-- FAQ Section -->
+			<section class="faq primarydark2secondarydark">
+				<div class="container">
+					<h2 class="section-title">{t.faq.title}</h2>
+					<div class="faq__grid">
+						{t.faq.items.map((item) => (
+							<div class="faq__item">
+								<h3 class="faq__question">{item.question}</h3>
+								<p class="faq__answer">{item.answer}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
 
-    <!-- HOW IT WORKS -->
-    <section class="how-it-works secondarydark2primarydark">
-      <div class="container">
-        <h2 class="section-title">HOW IT WORKS</h2>
-        
-        <div class="steps">
-          <div class="step">
-            <div class="step__number">1</div>
-            <div class="step__content">
-              <h3 class="step__title">Subscribe</h3>
-              <p class="step__description">
-                Visit our subscriptions page and choose the Yearly 'Custom Bot' option.
-              </p>
-              <a href="/pricing" class="step__link">Subscribe Now</a>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step__number">2</div>
-            <div class="step__content">
-              <h3 class="step__title">Create your own app</h3>
-              <p class="step__description">
-                Create your own app in the Discord App portal.
-              </p>
-              <a href="https://discord.com/developers/applications" class="step__link" target="_blank" rel="noopener noreferrer">
-                Create a Discord App
-              </a>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step__number">3</div>
-            <div class="step__content">
-              <h3 class="step__title">Set up your custom bot in the web app</h3>
-              <p class="step__description">
-                Log into the Subo Web App, go to Settings, and enter your custom app's name and token. Hit Publish, and your branded bot will be live in minutes.
-              </p>
-              <a href="https://app.subo.gg/app/settings" class="step__link" target="_blank" rel="noopener noreferrer">Go to Settings</a>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step__number">4</div>
-            <div class="step__content">
-              <h3 class="step__title">Enjoy!</h3>
-              <p class="step__description">
-                Enjoy your new Custom Survey Bot. For more information, check our tutorial.
-              </p>
-              <a href="https://suboai.notion.site/Custom-Bot-make-your-own-Survey-Bot-742f26396f364c12b12b18d5fcc3ceaf" class="step__link" target="_blank" rel="noopener noreferrer">
-                Learn More
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq primarydark2secondarydark">
-      <div class="container">
-        <h2 class="section-title">FAQ</h2>
-        
-        <div class="faq__grid">
-          <div class="faq__item">
-            <h3 class="faq__question">What is the difference between the normal Subo bots and the Custom Survey Bot?</h3>
-            <p class="faq__answer">
-              The Subo bot is the default survey bot that you get when you invite Subo. It has some customization options, but it has a fixed app avatar, description, and name. The Custom Survey Bot is a way to get all the features of Subo, but with more personalization and customization options. You can choose your own app avatar, description, and name.
-            </p>
-          </div>
-
-          <div class="faq__item">
-            <h3 class="faq__question">How do I create my own survey bot with Subo?</h3>
-            <p class="faq__answer">
-              Purchase the Custom Survey Bot option from our pricing page, create your own app in the Discord Developer Portal, then enter the app name and token in the Subo Web App settings. Your custom bot will be published automatically, no need to contact the team. For more details, check our tutorials.
-            </p>
-          </div>
-
-          <div class="faq__item">
-            <h3 class="faq__question">How much does the Custom Survey Bot cost?</h3>
-            <p class="faq__answer">
-              The Custom Survey Bot costs $99.99 per year.
-            </p>
-          </div>
-
-          <div class="faq__item">
-            <h3 class="faq__question">Are there monthly subscriptions available for the Custom Survey Bot?</h3>
-            <p class="faq__answer">
-              No, because setting up a Custom Bot requires some custom set up by the development team, we only accept yearly subscriptions for the Custom Survey Bot.
-            </p>
-          </div>
-
-          <div class="faq__item">
-            <h3 class="faq__question">Is a Free Trial available for the Custom Survey Bot?</h3>
-            <p class="faq__answer">
-              No, because setting up a Custom Bot requires some custom set up work by the development team, we only accept yearly subscriptions for the Custom Survey Bot. If you want to try the bot, start with the other versions of Subo to get familiar with the experience, then upgrade to the Custom Bot when you are ready to change the branding.
-            </p>
-          </div>
-
-          <div class="faq__item">
-            <h3 class="faq__question">Do I need to know how to code to create my own app?</h3>
-            <p class="faq__answer">
-              No. The app creation on the Discord Developer portal is very simple. You will just need to fill a few fields and upload an image.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta secondarydark2dark">
-      <div class="container">
-        <div class="cta__content">
-          <h2 class="cta__title">CREATE YOUR OWN SURVEY BOT</h2>
-          <p class="cta__description">
-            Join the ranks of servers with their own custom-branded survey bots. Get all the power of Subo with your unique identity.
-          </p>
-          <div class="cta__buttons">
-            <a href="/pricing" class="button button--primary-bg">
-              Get Started - $99.99/year
-            </a>
-            <a href="/support" class="button button--white-outline">
-              Contact Support
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-   </main>
-		<Footer translations={translations.footer}/>
+			<!-- CTA Section -->
+			<section class="cta secondarydark2dark">
+				<div class="container">
+					<div class="cta__content">
+						<h2 class="cta__title">{t.ctaSection.title}</h2>
+						<p class="cta__description">{t.ctaSection.description}</p>
+						<div class="cta__buttons">
+							<a href={t.ctaSection.ctaPrimary.href} class="button button--primary-bg">
+								{t.ctaSection.ctaPrimary.text}
+							</a>
+							<a href={t.ctaSection.ctaSecondary.href} class="button button--white-outline">
+								{t.ctaSection.ctaSecondary.text}
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer translations={translations.footer} />
 	</body>
 </html>
 
 
 <style>
-  
+
 
 .accent {
     color: var(--accent);
@@ -238,7 +151,7 @@ import translations from '../content/translations/en.json';
     background: linear-gradient(var(--secondary-dark), var(--dark));
   }
 
-  
+
   .secondarydark2primarydark {
     background: linear-gradient(var(--secondary-dark), var(--primary-dark));
   }
@@ -261,7 +174,7 @@ import translations from '../content/translations/en.json';
 
 
 
-  
+
   .hero {
         padding: 100px 0;
     overflow: hidden;
@@ -348,7 +261,7 @@ import translations from '../content/translations/en.json';
 
   .comparison {
     padding: 80px 0;
-    
+
   }
 
   .section-title {
@@ -385,7 +298,7 @@ import translations from '../content/translations/en.json';
     text-align: center;
   }
 
-    .comparison__card:hover { 
+    .comparison__card:hover {
       box-shadow: 0 6px 16px var(--primary);
       background: var(--light);
       opacity: 1;
@@ -425,7 +338,7 @@ import translations from '../content/translations/en.json';
 
   .how-it-works {
     padding: 80px 0;
-  
+
   }
 
   .steps {
@@ -485,7 +398,7 @@ import translations from '../content/translations/en.json';
 
   .faq {
     padding: 80px 0;
-   
+
   }
 
   .faq__grid {

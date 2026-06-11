@@ -5,25 +5,13 @@ import CTA from '../../components/CTA.astro';
 import Footer from '../../components/Footer.astro';
 import translations from '../../content/translations/en.json';
 
-const examples = [
-  "🎤 Interview members who apply for a staff role",
-  "🎟️ Collect RSVPs, attendee info and questions",
-  "📝 Onboard new members with interactive checklists",
-  "💡 Take in suggestions and feature requests",
-  "🧾 Process orders, drops or claim requests",
-  "🎫 Run a lightweight ticket or support intake",
-  "🚀 Ask what utilities or rewards people want next",
-  "🧱 Sign up playtesters and beta users",
-];
+const t = translations.useCasesGetThingsDone;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead
-      title="Discord Applications, Sign-ups & Requests, Without the Form | Subo"
-      description="Run applications, registrations, RSVPs, orders, and ticket intake inside Discord as a friendly conversation. Skip logic, role targeting, scheduling, and auto-roles on completion."
-    />
+    <BaseHead title={t.pageTitle} description={t.pageDescription} />
   </head>
   <body>
     <Header translations={translations.header} />
@@ -32,91 +20,48 @@ const examples = [
       <!-- Hero -->
       <section class="uc-hero">
         <div class="container text-center">
-          <span class="uc-eyebrow mono">GET THINGS DONE</span>
-          <h1 class="mono">EVERYTHING YOU USED TO TRAP IN A FORM</h1>
-          <p class="uc-hero__subtitle">Applications, sign-ups, orders and requests, as a friendly conversation instead of a wall of fields.</p>
-          <a href="/invite" class="button button--accent-bg">Add to Discord</a>
+          <span class="uc-eyebrow mono">{t.eyebrow}</span>
+          <h1 class="mono">{t.heroTitle}</h1>
+          <p class="uc-hero__subtitle">{t.heroSubtitle}</p>
+          <a href="/invite" class="button button--accent-bg">{t.heroCta}</a>
         </div>
       </section>
 
-      <!-- Section 1: Why a conversation beats a form -->
+      {t.sections.map((section, i) => (
+        <section class={`uc-section ${i % 2 === 0 ? 'uc-section--secondary' : 'uc-section--dark'}`}>
+          <div class="container">
+            <div class="uc-section__header">
+              <span class="uc-label mono">{section.label}</span>
+              <h2 class="uc-section__title">{section.title}</h2>
+              {section.sub && <p class="uc-section__sub">{section.sub}</p>}
+            </div>
+            <div class="uc-cards">
+              {section.cards.map((card) => (
+                <div class="uc-card">
+                  <span class="uc-card__emoji">{card.emoji}</span>
+                  <h3 class="uc-card__title">{card.title}</h3>
+                  <p class="uc-card__desc" set:html={card.desc} />
+                </div>
+              ))}
+            </div>
+            {section.blogLink && (
+              <p class="uc-blog-link">
+                <a href={section.blogLink.href}>{section.blogLink.text}</a>
+              </p>
+            )}
+          </div>
+        </section>
+      ))}
+
+      <!-- Examples -->
       <section class="uc-section uc-section--secondary">
         <div class="container">
           <div class="uc-section__header">
-            <span class="uc-label mono">WHY A CONVERSATION WINS</span>
-            <h2 class="uc-section__title">More people finish what they start</h2>
-            <p class="uc-section__sub">A long form scares people off. Subo asks one step at a time, right where your members already are.</p>
-          </div>
-          <div class="uc-cards">
-            <div class="uc-card">
-              <span class="uc-card__emoji">💬</span>
-              <h3 class="uc-card__title">One step at a time</h3>
-              <p class="uc-card__desc">Questions arrive like a chat, so a 20-field application feels like a quick exchange. <a href="/survey-convos">See survey convos →</a></p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">📨</span>
-              <h3 class="uc-card__title">No link-out</h3>
-              <p class="uc-card__desc">It runs inside Discord, or on the web when you need it. No redirect to a form nobody trusts.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🔀</span>
-              <h3 class="uc-card__title">Branch on answers</h3>
-              <p class="uc-card__desc">Skip logic routes each person to the questions that actually apply to them. Shorter, smarter intake.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🕵️</span>
-              <h3 class="uc-card__title">Right level of privacy</h3>
-              <p class="uc-card__desc">Keep submissions identified for follow-up, or anonymous when that fits the request.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 2: Run it end to end -->
-      <section class="uc-section uc-section--dark">
-        <div class="container">
-          <div class="uc-section__header">
-            <span class="uc-label mono">RUN IT END TO END</span>
-            <h2 class="uc-section__title">From submission to action</h2>
-            <p class="uc-section__sub">Subo does more than collect. It can route, schedule, and act on what comes in.</p>
-          </div>
-          <div class="uc-cards">
-            <div class="uc-card">
-              <span class="uc-card__emoji">📅</span>
-              <h3 class="uc-card__title">Scheduled open &amp; close</h3>
-              <p class="uc-card__desc">Open registrations on a date and close them on a deadline, automatically.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🎯</span>
-              <h3 class="uc-card__title">Choose who can submit</h3>
-              <p class="uc-card__desc">Restrict to specific roles, your whole server, or open it to anyone with the link.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🧩</span>
-              <h3 class="uc-card__title">Intros &amp; confirmations</h3>
-              <p class="uc-card__desc">Content blocks add a welcome, rules to acknowledge, or a confirmation message anywhere in the flow.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">⚡</span>
-              <h3 class="uc-card__title">Auto-roles on completion</h3>
-              <p class="uc-card__desc">Action blocks can assign a role the moment someone finishes, like an onboarding or applicant role.</p>
-            </div>
-          </div>
-          <p class="uc-blog-link">
-            <a href="/features">See everything Subo can do →</a>
-          </p>
-        </div>
-      </section>
-
-      <!-- Section 3: Examples -->
-      <section class="uc-section uc-section--secondary">
-        <div class="container">
-          <div class="uc-section__header">
-            <span class="uc-label mono">PUT IT TO WORK</span>
-            <h2 class="uc-section__title">What communities run with Subo</h2>
+            <span class="uc-label mono">{t.examplesLabel}</span>
+            <h2 class="uc-section__title">{t.examplesTitle}</h2>
           </div>
           <div class="uc-examples">
-            {examples.map((ex) => <span class="uc-example">{ex}</span>)}
+            {t.examples.map((ex) => <span class="uc-example">{ex}</span>)}
           </div>
         </div>
       </section>

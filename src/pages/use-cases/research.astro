@@ -5,27 +5,13 @@ import CTA from '../../components/CTA.astro';
 import Footer from '../../components/Footer.astro';
 import translations from '../../content/translations/en.json';
 
-const examples = [
-  "💡 Feedback on a new idea, product or pricing",
-  "🧑‍🤝‍🧑 Understand who your members really are",
-  "🔥 Find out what gets your community fired up",
-  "📈 Track satisfaction at regular intervals",
-  "🗣️ Get feedback on a past event",
-  "🌟 Collect reviews and testimonials",
-  "💖 Run a culture or pulse check",
-  "💡 Gather suggestions and feature requests",
-  "🌍 See how members discovered you",
-  "🎯 Learn what topics members want next",
-];
+const t = translations.useCasesResearch;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead
-      title="Discord Community Research: Surveys That Get Honest Answers | Subo"
-      description="Learn who your Discord members are and what they want. Subo runs conversational surveys with anonymity modes, role targeting, live charts, and AI summaries of open-text answers."
-    />
+    <BaseHead title={t.pageTitle} description={t.pageDescription} />
   </head>
   <body>
     <Header translations={translations.header} />
@@ -34,95 +20,54 @@ const examples = [
       <!-- Hero -->
       <section class="uc-hero">
         <div class="container text-center">
-          <span class="uc-eyebrow mono">UNDERSTAND</span>
-          <h1 class="mono">KNOW WHO YOUR COMMUNITY REALLY IS</h1>
-          <p class="uc-hero__subtitle">Learn who your members are, what they want, and how they feel, with surveys people actually finish.</p>
-          <a href="/invite" class="button button--accent-bg">Add to Discord</a>
+          <span class="uc-eyebrow mono">{t.eyebrow}</span>
+          <h1 class="mono">{t.heroTitle}</h1>
+          <p class="uc-hero__subtitle">{t.heroSubtitle}</p>
+          <a href="/invite" class="button button--accent-bg">{t.heroCta}</a>
         </div>
       </section>
 
-      <!-- Section 1: Honest answers -->
+      {t.sections.map((section, i) => (
+        <section class={`uc-section ${i % 2 === 0 ? 'uc-section--secondary' : 'uc-section--dark'}`}>
+          <div class="container">
+            <div class="uc-section__header">
+              <span class="uc-label mono">{section.label}</span>
+              <h2 class="uc-section__title">{section.title}</h2>
+              {section.sub && <p class="uc-section__sub">{section.sub}</p>}
+            </div>
+            <div class="uc-cards">
+              {section.cards.map((card) => (
+                <div class="uc-card">
+                  <span class="uc-card__emoji">{card.emoji}</span>
+                  <h3 class="uc-card__title">{card.title}</h3>
+                  <p class="uc-card__desc" set:html={card.desc} />
+                </div>
+              ))}
+            </div>
+            {section.screenshot && (
+              <figure class="uc-screenshot">
+                <img src={section.screenshot.src} alt={section.screenshot.alt} loading="lazy" />
+                <figcaption>{section.screenshot.caption}</figcaption>
+              </figure>
+            )}
+            {section.blogLink && (
+              <p class="uc-blog-link">
+                <a href={section.blogLink.href}>{section.blogLink.text}</a>
+              </p>
+            )}
+          </div>
+        </section>
+      ))}
+
+      <!-- Examples -->
       <section class="uc-section uc-section--secondary">
         <div class="container">
           <div class="uc-section__header">
-            <span class="uc-label mono">HONEST ANSWERS</span>
-            <h2 class="uc-section__title">Better questions get better data</h2>
-            <p class="uc-section__sub">A form wall makes people rush or bail. Subo asks like a person, so the answers are more complete and more honest.</p>
-          </div>
-          <div class="uc-cards">
-            <div class="uc-card">
-              <span class="uc-card__emoji">💬</span>
-              <h3 class="uc-card__title">Conversations, not forms</h3>
-              <p class="uc-card__desc">One question at a time, like a chat. Higher completion and more thoughtful answers. <a href="/survey-convos">See survey convos →</a></p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🕵️</span>
-              <h3 class="uc-card__title">Three anonymity modes</h3>
-              <p class="uc-card__desc">Identified, More Anonymous, or Fully Anonymous. Set the level of trust per survey and get candid feedback on sensitive topics.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🎯</span>
-              <h3 class="uc-card__title">Role targeting</h3>
-              <p class="uc-card__desc">Survey the right segment, your paying members, your mods, your lurkers, separately, so you compare like with like.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🔀</span>
-              <h3 class="uc-card__title">Skip logic, cleaner data</h3>
-              <p class="uc-card__desc">Everyone sees only relevant questions. No "N/A" noise polluting your results.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 2: From answers to insight -->
-      <section class="uc-section uc-section--dark">
-        <div class="container">
-          <div class="uc-section__header">
-            <span class="uc-label mono">FROM ANSWERS TO INSIGHT</span>
-            <h2 class="uc-section__title">Turn hundreds of responses into clear decisions</h2>
-            <p class="uc-section__sub">From live charts to AI-synthesized summaries, your data does the heavy lifting.</p>
-          </div>
-          <div class="uc-cards">
-            <div class="uc-card">
-              <span class="uc-card__emoji">📊</span>
-              <h3 class="uc-card__title">Live results dashboard</h3>
-              <p class="uc-card__desc">Aggregated responses as they arrive: charts for closed questions, response lists for open text.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">✨</span>
-              <h3 class="uc-card__title">AI open-text summaries</h3>
-              <p class="uc-card__desc">Subo reads every open answer and writes a concise synthesis. The gist of 500 responses in seconds.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">📥</span>
-              <h3 class="uc-card__title">CSV export</h3>
-              <p class="uc-card__desc">Take the full dataset into Excel, Google Sheets, or your own tooling for deeper analysis.</p>
-            </div>
-            <div class="uc-card">
-              <span class="uc-card__emoji">🔗</span>
-              <h3 class="uc-card__title">Share findings</h3>
-              <p class="uc-card__desc">Post a results summary back into Discord to close the feedback loop with your community.</p>
-            </div>
-          </div>
-          <figure class="uc-screenshot">
-            <img src="/images/blog/web-app-launch/subo-web-responses.webp" alt="The Subo results dashboard for an open-text question, showing an AI-generated summary alongside individual responses." loading="lazy" />
-            <figcaption>The results dashboard for an open-text question, showing an AI-generated summary alongside individual responses.</figcaption>
-          </figure>
-          <p class="uc-blog-link">
-            <a href="/features#analyze">See all analysis features →</a>
-          </p>
-        </div>
-      </section>
-
-      <!-- Section 3: What you can learn -->
-      <section class="uc-section uc-section--secondary">
-        <div class="container">
-          <div class="uc-section__header">
-            <span class="uc-label mono">WHAT WILL YOU LEARN?</span>
-            <h2 class="uc-section__title">Questions communities ask Subo</h2>
+            <span class="uc-label mono">{t.examplesLabel}</span>
+            <h2 class="uc-section__title">{t.examplesTitle}</h2>
           </div>
           <div class="uc-examples">
-            {examples.map((ex) => <span class="uc-example">{ex}</span>)}
+            {t.examples.map((ex) => <span class="uc-example">{ex}</span>)}
           </div>
         </div>
       </section>
