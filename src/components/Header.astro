@@ -6,6 +6,7 @@ const { translations } = Astro.props;
 const navItems = translations.navItems;
 const resources = translations.resources;
 const product = translations.product ?? [];
+const useCases = translations.useCases ?? [];
 
 
 ---
@@ -34,6 +35,20 @@ const product = translations.product ?? [];
             ))}
           </ul>
         </li>
+        {useCases.length > 0 && (
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-usecases-menu">
+              {translations.useCasesLabel}
+            </button>
+            <ul class="nav__dropdown-menu" id="desktop-usecases-menu" role="menu">
+              {useCases.map(item => (
+                <li class="nav__dropdown-item" role="menuitem">
+                  <HeaderLink href={item.href}>{item.text}</HeaderLink>
+                </li>
+              ))}
+            </ul>
+          </li>
+        )}
         <li class="nav__item nav__item--dropdown">
           <button class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-resources-menu">{navItems[1].text}</button>
           <ul class="nav__dropdown-menu" id="desktop-resources-menu" role="menu">
@@ -83,6 +98,19 @@ const product = translations.product ?? [];
           ))}
         </ul>
       </li>
+      {useCases.length > 0 && (
+        <li class="nav__item nav__item--expandable">
+          <button class="nav__expand-toggle" aria-expanded="false" aria-controls="mobile-usecases-menu">{translations.useCasesLabel}<span class="nav__caret">&#9660;</span>
+          </button>
+          <ul class="nav__expand-menu" id="mobile-usecases-menu">
+            {useCases.map(item => (
+              <li class="nav__dropdown-item">
+                <HeaderLink href={item.href}>{item.text}</HeaderLink>
+              </li>
+            ))}
+          </ul>
+        </li>
+      )}
       <li class="nav__item nav__item--expandable">
         <button class="nav__expand-toggle" aria-expanded="false" aria-controls="mobile-resources-menu">{navItems[1].text}<span class="nav__caret">&#9660;</span>
         </button>

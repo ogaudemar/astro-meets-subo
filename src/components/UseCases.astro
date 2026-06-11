@@ -8,6 +8,16 @@ const { translations } = Astro.props;
     <img src="/images/subo-neon2-100.png" alt="Subo the Survey Bot" height="100" class="intro__icon" id="avatar"/>
     <h2 class="title text-white"><strong>{translations.usecasesTitle}</strong></h2>
     <p class="subtitle text-white">{translations.usecasesSubtitle}</p>
+    <div class="usecases-cats">
+      {(translations.usecasesCategories ?? []).map((cat) => (
+        <a class="usecase-cat" href={cat.href}>
+          <span class="usecase-cat__emoji">{cat.emoji}</span>
+          <span class="usecase-cat__title">{cat.title}</span>
+          <span class="usecase-cat__body">{cat.body}</span>
+          <span class="usecase-cat__arrow" aria-hidden="true">→</span>
+        </a>
+      ))}
+    </div>
     <div class="usecases__content">
       <div class="usecases-grid" id="usecases-grid" style="display: none;">
         <!-- Cards will be dynamically inserted here -->
@@ -48,6 +58,69 @@ const { translations } = Astro.props;
 
 .intro__icon {
   margin-bottom: 1.5rem;
+}
+
+.usecases-cats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 2.5rem 0 1rem;
+  text-align: left;
+}
+
+.usecase-cat {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+}
+
+.usecase-cat:hover {
+  transform: translateY(-3px);
+  background: rgba(116, 83, 153, 0.4);
+  box-shadow: 0 6px 16px var(--accent);
+}
+
+.usecase-cat__emoji {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.usecase-cat__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.usecase-cat__body {
+  font-size: 0.95rem;
+  color: #ddd;
+  line-height: 1.55;
+}
+
+.usecase-cat__arrow {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #888;
+  transition: color 0.15s, transform 0.15s;
+}
+
+.usecase-cat:hover .usecase-cat__arrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+@media (max-width: 700px) {
+  .usecases-cats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .usecases__content {

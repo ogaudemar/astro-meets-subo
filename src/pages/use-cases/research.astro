@@ -1,0 +1,242 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import translations from '../../content/translations/en.json';
+
+const examples = [
+  "💡 Feedback on a new idea, product or pricing",
+  "🧑‍🤝‍🧑 Understand who your members really are",
+  "🔥 Find out what gets your community fired up",
+  "📈 Track satisfaction at regular intervals",
+  "🗣️ Get feedback on a past event",
+  "🌟 Collect reviews and testimonials",
+  "💖 Run a culture or pulse check",
+  "💡 Gather suggestions and feature requests",
+  "🌍 See how members discovered you",
+  "🎯 Learn what topics members want next",
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Discord Community Research: Surveys That Get Honest Answers | Subo"
+      description="Learn who your Discord members are and what they want. Subo runs conversational surveys with anonymity modes, role targeting, live charts, and AI summaries of open-text answers."
+    />
+  </head>
+  <body>
+    <Header translations={translations.header} />
+    <main id="main-content">
+
+      <!-- Hero -->
+      <section class="uc-hero">
+        <div class="container text-center">
+          <span class="uc-eyebrow mono">UNDERSTAND</span>
+          <h1 class="mono">KNOW WHO YOUR COMMUNITY REALLY IS</h1>
+          <p class="uc-hero__subtitle">Learn who your members are, what they want, and how they feel, with surveys people actually finish.</p>
+          <a href="/invite" class="button button--accent-bg">Add to Discord</a>
+        </div>
+      </section>
+
+      <!-- Section 1: Honest answers -->
+      <section class="uc-section uc-section--secondary">
+        <div class="container">
+          <div class="uc-section__header">
+            <span class="uc-label mono">HONEST ANSWERS</span>
+            <h2 class="uc-section__title">Better questions get better data</h2>
+            <p class="uc-section__sub">A form wall makes people rush or bail. Subo asks like a person, so the answers are more complete and more honest.</p>
+          </div>
+          <div class="uc-cards">
+            <div class="uc-card">
+              <span class="uc-card__emoji">💬</span>
+              <h3 class="uc-card__title">Conversations, not forms</h3>
+              <p class="uc-card__desc">One question at a time, like a chat. Higher completion and more thoughtful answers. <a href="/survey-convos">See survey convos →</a></p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🕵️</span>
+              <h3 class="uc-card__title">Three anonymity modes</h3>
+              <p class="uc-card__desc">Identified, More Anonymous, or Fully Anonymous. Set the level of trust per survey and get candid feedback on sensitive topics.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🎯</span>
+              <h3 class="uc-card__title">Role targeting</h3>
+              <p class="uc-card__desc">Survey the right segment, your paying members, your mods, your lurkers, separately, so you compare like with like.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🔀</span>
+              <h3 class="uc-card__title">Skip logic, cleaner data</h3>
+              <p class="uc-card__desc">Everyone sees only relevant questions. No "N/A" noise polluting your results.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: From answers to insight -->
+      <section class="uc-section uc-section--dark">
+        <div class="container">
+          <div class="uc-section__header">
+            <span class="uc-label mono">FROM ANSWERS TO INSIGHT</span>
+            <h2 class="uc-section__title">Turn hundreds of responses into clear decisions</h2>
+            <p class="uc-section__sub">From live charts to AI-synthesized summaries, your data does the heavy lifting.</p>
+          </div>
+          <div class="uc-cards">
+            <div class="uc-card">
+              <span class="uc-card__emoji">📊</span>
+              <h3 class="uc-card__title">Live results dashboard</h3>
+              <p class="uc-card__desc">Aggregated responses as they arrive: charts for closed questions, response lists for open text.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">✨</span>
+              <h3 class="uc-card__title">AI open-text summaries</h3>
+              <p class="uc-card__desc">Subo reads every open answer and writes a concise synthesis. The gist of 500 responses in seconds.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">📥</span>
+              <h3 class="uc-card__title">CSV export</h3>
+              <p class="uc-card__desc">Take the full dataset into Excel, Google Sheets, or your own tooling for deeper analysis.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🔗</span>
+              <h3 class="uc-card__title">Share findings</h3>
+              <p class="uc-card__desc">Post a results summary back into Discord to close the feedback loop with your community.</p>
+            </div>
+          </div>
+          <figure class="uc-screenshot">
+            <img src="/images/blog/web-app-launch/subo-web-responses.webp" alt="The Subo results dashboard for an open-text question, showing an AI-generated summary alongside individual responses." loading="lazy" />
+            <figcaption>The results dashboard for an open-text question, showing an AI-generated summary alongside individual responses.</figcaption>
+          </figure>
+          <p class="uc-blog-link">
+            <a href="/features#analyze">See all analysis features →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3: What you can learn -->
+      <section class="uc-section uc-section--secondary">
+        <div class="container">
+          <div class="uc-section__header">
+            <span class="uc-label mono">WHAT WILL YOU LEARN?</span>
+            <h2 class="uc-section__title">Questions communities ask Subo</h2>
+          </div>
+          <div class="uc-examples">
+            {examples.map((ex) => <span class="uc-example">{ex}</span>)}
+          </div>
+        </div>
+      </section>
+
+      <CTA translations={translations} />
+    </main>
+    <Footer translations={translations.footer} />
+  </body>
+</html>
+
+<style>
+.uc-hero {
+  padding: 140px 0 80px;
+  background: linear-gradient(180deg, var(--dark) 0%, var(--secondary-dark) 100%);
+}
+.uc-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.uc-hero h1 {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.uc-hero__subtitle {
+  font-size: 1.15rem;
+  color: var(--grey-light);
+  max-width: 620px;
+  margin: 0 auto 2rem;
+}
+.uc-section { padding: 4rem 0; }
+.uc-section--secondary { background: var(--secondary-dark); }
+.uc-section--dark { background: var(--dark); }
+.uc-section__header { text-align: center; margin-bottom: 3rem; }
+.uc-section__title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 800;
+  margin: 0.75rem 0;
+  line-height: 1.2;
+}
+.uc-section__sub {
+  color: var(--grey-light);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+.uc-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb, 99, 207, 138), 0.12);
+  border: 1px solid rgba(var(--accent-rgb, 99, 207, 138), 0.25);
+}
+.uc-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.uc-card {
+  background: var(--dark);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+.uc-section--dark .uc-card { background: var(--secondary-dark); }
+.uc-card__emoji { font-size: 1.75rem; display: block; margin-bottom: 0.75rem; }
+.uc-card__title { font-size: 1rem; font-weight: 700; margin: 0 0 0.5rem; }
+.uc-card__desc { font-size: 0.9rem; color: var(--grey-light); line-height: 1.65; margin: 0; }
+.uc-card__desc a { color: var(--accent); text-decoration: none; }
+.uc-card__desc a:hover { text-decoration: underline; }
+.uc-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.uc-example {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.92rem;
+}
+.uc-screenshot { margin: 0 0 1.5rem; }
+.uc-screenshot img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0.75rem;
+}
+.uc-screenshot figcaption {
+  font-size: 0.82rem;
+  color: var(--grey-light);
+  text-align: center;
+  opacity: 0.7;
+}
+.uc-blog-link { text-align: center; margin: 0; }
+.uc-blog-link a { font-size: 0.9rem; color: var(--accent); text-decoration: none; }
+.uc-blog-link a:hover { text-decoration: underline; }
+@media (max-width: 600px) {
+  .uc-cards { grid-template-columns: 1fr; }
+}
+</style>

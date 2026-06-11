@@ -20,6 +20,12 @@
     { "text": "Abrechnungsportal", "href": "/portal" },
     { "text": "Blog", "href": "/blog" }
   ],
+  "useCasesLabel": "Anwendungsfälle",
+  "useCases": [
+    { "text": "Begeistern", "href": "/use-cases/engagement" },
+    { "text": "Verstehen", "href": "/use-cases/research" },
+    { "text": "Erledigen", "href": "/use-cases/get-things-done" }
+  ],
   "cta": "Zu Discord hinzufügen",
   "upgrade": "Upgraden",
   "login": "Anmelden",
@@ -40,6 +46,14 @@
         { "text": "Abstimmungen", "href": "/polls" },
         { "text": "Preise", "href": "/pricing" },
         { "text": "Zu Discord hinzufügen", "href": "/invite", "external": true }
+      ]
+    },
+    {
+      "title": "Anwendungsfälle",
+      "links": [
+        { "text": "Begeistern", "href": "/use-cases/engagement" },
+        { "text": "Verstehen", "href": "/use-cases/research" },
+        { "text": "Erledigen", "href": "/use-cases/get-things-done" }
       ]
     },
     {
@@ -86,34 +100,23 @@
 
 
     "features": {
-    "title": "DU LERNST MEHR, WENN MENSCHEN DAS GESPRÄCH GENIESSEN.",
-    "subtitle": "Eine Wand voller Formularfelder fühlt sich an wie Hausaufgaben, und niemand will mehr Hausaufgaben. Mit Subo stellst du Fragen in Abstimmungen und freundlichen Gesprächen — in Discord und im Web.",
+    "title": "MENSCHEN TEILEN MEHR, WENN SIE DAS GESPRÄCH GENIESSEN.",
+    "subtitle": "Eine Wand voller Formularfelder fühlt sich an wie Hausaufgaben. Subos Abstimmungen, Umfragen und Quizze sind freundliche Gespräche, an denen Menschen wirklich teilnehmen wollen.",
     "list": [
         {
-        "title": "FRAGEN STELLEN",
-        "content": [
-            "<strong>Survey Convos:</strong> Mitglieder beantworten Subos Fragen in einem privaten Chat – innerhalb deines Discord-Servers oder im Web.",
-            "<strong>Discord-Abstimmungen:</strong> 1 Frage, mehrere Antwortmöglichkeiten und Ergebnisse zum Teilen.",
-            "<strong>Inhalts- & Aktionsblöcke:</strong> Füge überall im Ablauf eine Nachricht, Intro, GIF oder Belohnung ein — keine Frage erforderlich."
-        ]
+        "title": "IM GESPRÄCH FRAGEN",
+        "body": "Subo stellt eine Frage nach der anderen, wie in einem Chat. Mitglieder öffnen sich und du erfährst Dinge, die eine Formularwand nie zutage bringt.",
+        "href": "/survey-convos"
         },
         {
-        "title": "BETEILIGUNG FÖRDERN",
-        "content": [
-            "<strong>Bedingte Belohnungen:</strong> Vergebe Rollen, XP oder Erfolge je nach Antwort — Onboarding-Rollen, wenn jemand das Onboarding abschließt, XP für Quiz-Teilnehmer mit den richtigen Antworten, Beta-Zugang für die passenden Kandidaten.",
-            "<strong>XP-System</strong>: Mitglieder verdienen Punkte beim Beantworten von Fragen, leveln auf und schalten Rollen frei.",
-            "Zeige eine <strong>Bestenliste</strong> mit deinen aktivsten Teilnehmern an",
-            "<strong>Ergebnisse teilen</strong> und Antworten anderer Teilnehmer mit einem Klick weitergeben"
-        ]
+        "title": "ABSTIMMUNGEN, DIE MEHR KÖNNEN",
+        "body": "Eine einzige Frage, die Antworten bewerten, ein Quiz benoten oder einen Tippspiel-Wettbewerb starten kann, und die Gewinner dann automatisch belohnt.",
+        "href": "/polls"
         },
         {
-        "title": "ERGEBNISSE ANALYSIEREN & TEILEN",
-        "content": [
-            "Aggregierte Ergebnisse und Einzelantworten einsehen.",
-            "Ergebnisse teilen/weiterposten",
-            "Subo offene Antworten mit KI zusammenfassen lassen",
-            "Den <strong>vollständigen Datensatz</strong> für weitere Analysen exportieren."
-        ]
+        "title": "TEILNAHME, DIE SICH LOHNT",
+        "body": "Vergib XP, Rollen und Erfolge, abgestimmt darauf, wie Mitglieder tatsächlich antworten. Anerkennung, die sie zurückbringt.",
+        "href": "/features"
         }
     ]
     },
@@ -121,7 +124,27 @@
 
 
   "usecasesTitle": "WAS WIRST DU HEUTE FRAGEN?",
-  "usecasesSubtitle": "Subo hilft dir, wertvolle Informationen von deiner Community zu sammeln … oder einfach Spaß zu haben.",
+  "usecasesSubtitle": "Communities nutzen Subo auf drei Arten. Wähle einen Weg oder würfle für Inspiration.",
+  "usecasesCategories": [
+    {
+      "emoji": "🎉",
+      "title": "Begeistern",
+      "body": "Unterhaltsame Abstimmungen, Quizze und Tippspiele, die Mitglieder immer wiederkommen lassen.",
+      "href": "/use-cases/engagement"
+    },
+    {
+      "emoji": "🔎",
+      "title": "Verstehen",
+      "body": "Erfahre, wer deine Mitglieder sind und was sie wollen, und handle danach.",
+      "href": "/use-cases/research"
+    },
+    {
+      "emoji": "✅",
+      "title": "Erledigen",
+      "body": "Bewerbungen, Anmeldungen, Bestellungen und Anfragen, als Gespräch statt als Formular.",
+      "href": "/use-cases/get-things-done"
+    }
+  ],
   "usecasesInspireBtn": "🎲 Klick mich für Inspiration!",
   "usecasesList": [
     "💡 Feedback zu einer neuen Idee, einem Produkt oder Preisen einholen",

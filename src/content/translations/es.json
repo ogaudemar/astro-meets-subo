@@ -20,6 +20,12 @@
     { "text": "Portal de Facturación", "href": "/portal" },
     { "text": "Blog", "href": "/blog" }
   ],
+  "useCasesLabel": "Casos de uso",
+  "useCases": [
+    { "text": "Entretener", "href": "/use-cases/engagement" },
+    { "text": "Entender", "href": "/use-cases/research" },
+    { "text": "Gestionar", "href": "/use-cases/get-things-done" }
+  ],
   "cta": "Agregar a Discord",
   "upgrade": "Mejorar",
   "login": "Iniciar sesión",
@@ -37,41 +43,49 @@
   },
 
   "features": {
-    "title": "APRENDES MÁS CUANDO LA GENTE DISFRUTA LA CONVERSACIÓN.",
-    "subtitle": "Un muro de campos de formulario se siente como tarea, y nadie quiere más tarea. Con Subo, haces preguntas en sondeos y conversaciones amigables — en Discord y en la web.",
+    "title": "LA GENTE COMPARTE MÁS CUANDO DISFRUTA LA CONVERSACIÓN.",
+    "subtitle": "Un muro de campos de formulario se siente como tarea. Los sondeos, encuestas y quizzes de Subo son conversaciones amigables a las que la gente realmente quiere unirse.",
     "list": [
       {
-        "title": "HAZ PREGUNTAS",
-        "content": [
-          "¡No más encuestas aburridas con Subo!",
-          "Con <strong>conversaciones de encuesta</strong>, los miembros responden tus preguntas en un chat privado con Subo, dentro de tu servidor de Discord o en la web.",
-          "Con <strong>sondeos</strong>, los miembros responden tu pregunta pública, con múltiples formas de responder y compartir resultados.",
-          "<strong>Bloques de contenido y acción:</strong> añade un mensaje, intro, GIF o recompensa en cualquier punto del flujo — sin pregunta requerida."
-        ]
+        "title": "PREGUNTA EN UNA CONVERSACIÓN",
+        "body": "Subo hace una pregunta a la vez, como en un chat. Los miembros se abren y descubres cosas que un muro de formulario nunca revela.",
+        "href": "/survey-convos"
       },
       {
-        "title": "FOMENTA LA PARTICIPACIÓN",
-        "content": [
-          "¡Recompensas que importan!",
-          "<strong>Recompensas condicionales:</strong> asigna roles, XP o logros según cómo respondan los miembros — un rol de bienvenida cuando alguien completa el onboarding, XP para quienes acierten en el quiz, acceso beta para los candidatos adecuados.",
-          "<strong>Sistema de XP</strong>: los miembros ganan puntos al responder preguntas, suben de nivel para desbloquear roles.",
-          "Muestra un <strong>ranking</strong> con tus participantes más activos",
-          "<strong>Comparte hallazgos</strong> y respuestas de otros participantes con un clic"
-        ]
+        "title": "SONDEOS QUE HACEN MÁS",
+        "body": "Una sola pregunta que puede puntuar respuestas, calificar un quiz o lanzar un concurso de predicciones, y luego recompensar a los ganadores automáticamente.",
+        "href": "/polls"
       },
       {
-        "title": "ANALIZA Y COMPARTE RESULTADOS",
-        "content": [
-          "Ve resultados agregados y respuestas individuales, en privado o público. Compártelos/republica en el servidor.",
-          "Deja que Subo resuma respuestas abiertas con IA",
-          "Exporta el <strong>conjunto completo de datos</strong> para análisis adicional."
-        ]
+        "title": "PARTICIPACIÓN QUE VALE LA PENA",
+        "body": "Reparte XP, roles y logros, ajustados a cómo responden realmente los miembros. Reconocimiento que los hace volver.",
+        "href": "/features"
       }
     ]
   },
 
   "usecasesTitle": "¿QUÉ PREGUNTARÁS HOY?",
-  "usecasesSubtitle": "Recoge información valiosa de tu comunidad. Toca el botón para inspirarte:",
+  "usecasesSubtitle": "Las comunidades usan Subo de tres maneras. Elige un camino o tira el dado para inspirarte.",
+  "usecasesCategories": [
+    {
+      "emoji": "🎉",
+      "title": "Entretener",
+      "body": "Sondeos, quizzes y concursos de predicciones divertidos que hacen que los miembros vuelvan.",
+      "href": "/use-cases/engagement"
+    },
+    {
+      "emoji": "🔎",
+      "title": "Entender",
+      "body": "Descubre quiénes son tus miembros y qué quieren, y actúa en consecuencia.",
+      "href": "/use-cases/research"
+    },
+    {
+      "emoji": "✅",
+      "title": "Gestionar",
+      "body": "Solicitudes, registros, pedidos y peticiones, como una conversación en lugar de un formulario.",
+      "href": "/use-cases/get-things-done"
+    }
+  ],
   "usecasesInspireBtn": "🎲 ¡Inspírame!",
   "usecasesList": [
     "💡 Recibe opiniones sobre una nueva idea, producto o precio",
@@ -254,6 +268,14 @@
         { "text": "Sondeos", "href": "/polls" },
         { "text": "Precios", "href": "/es/pricing" },
         { "text": "Agregar a Discord", "href": "/invite", "external": true }
+      ]
+    },
+    {
+      "title": "Casos de uso",
+      "links": [
+        { "text": "Entretener", "href": "/use-cases/engagement" },
+        { "text": "Entender", "href": "/use-cases/research" },
+        { "text": "Gestionar", "href": "/use-cases/get-things-done" }
       ]
     },
     {

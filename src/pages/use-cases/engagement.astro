@@ -1,0 +1,224 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import translations from '../../content/translations/en.json';
+
+const examples = [
+  "🧠 Run auto-graded quizzes and knowledge checks",
+  "🔮 Run prediction contests on upcoming games",
+  "🧩 Quick polls during tournaments or matches",
+  "🐸 Meme bracket: crown the ultimate meme lord",
+  "🧙‍♂️ Sort members into Hogwarts houses",
+  "🍕 Vote on the best pizza topping",
+  "🏀 Vote on MVPs and highlight moments",
+  "🍿 Host watch-party votes for upcoming shows",
+  "🦖 Name the community pet dinosaur",
+  "🌈 Ask how everyone's vibe level is today",
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Discord Engagement: Polls, Quizzes & Prediction Contests | Subo"
+      description="Keep your Discord community coming back with polls, auto-graded quizzes, prediction contests, XP, leaderboards, and role rewards. Participation that members look forward to."
+    />
+  </head>
+  <body>
+    <Header translations={translations.header} />
+    <main id="main-content">
+
+      <!-- Hero -->
+      <section class="uc-hero">
+        <div class="container text-center">
+          <span class="uc-eyebrow mono">ENGAGE</span>
+          <h1 class="mono">KEEP YOUR COMMUNITY COMING BACK</h1>
+          <p class="uc-hero__subtitle">Polls, quizzes and prediction contests that turn taking part into something members look forward to.</p>
+          <a href="/invite" class="button button--accent-bg">Add to Discord</a>
+        </div>
+      </section>
+
+      <!-- Section 1: Play -->
+      <section class="uc-section uc-section--secondary">
+        <div class="container">
+          <div class="uc-section__header">
+            <span class="uc-label mono">PLAY</span>
+            <h2 class="uc-section__title">More than a quick vote</h2>
+            <p class="uc-section__sub">Native Discord polls just count votes. Subo turns a question into a game.</p>
+          </div>
+          <div class="uc-cards">
+            <div class="uc-card">
+              <span class="uc-card__emoji">🗳️</span>
+              <h3 class="uc-card__title">Polls that do more</h3>
+              <p class="uc-card__desc">Score answers, mark the right ones, and reward the winners automatically. <a href="/polls">See Discord polls →</a></p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🧠</span>
+              <h3 class="uc-card__title">Auto-graded quizzes</h3>
+              <p class="uc-card__desc">Mark correct answers and let Subo score every player instantly. Trivia nights run themselves.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🔮</span>
+              <h3 class="uc-card__title">Prediction contests</h3>
+              <p class="uc-card__desc">Members predict outcomes, Subo scores them when results land. Perfect for games, matches, and events.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🎉</span>
+              <h3 class="uc-card__title">Just for fun</h3>
+              <p class="uc-card__desc">Snap polls, hot takes, and meme brackets that give your community a reason to show up today.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Reward -->
+      <section class="uc-section uc-section--dark">
+        <div class="container">
+          <div class="uc-section__header">
+            <span class="uc-label mono">REWARD</span>
+            <h2 class="uc-section__title">Make participation worth something</h2>
+            <p class="uc-section__sub">Recognition is what brings members back. Subo hands it out automatically.</p>
+          </div>
+          <div class="uc-cards">
+            <div class="uc-card">
+              <span class="uc-card__emoji">⭐</span>
+              <h3 class="uc-card__title">XP rewards</h3>
+              <p class="uc-card__desc">Every completed poll or survey earns XP. Available on all plans, even free.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🏆</span>
+              <h3 class="uc-card__title">Monthly leaderboard</h3>
+              <p class="uc-card__desc">An automatic monthly XP leaderboard posted in Discord, ranking your most engaged members.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🎭</span>
+              <h3 class="uc-card__title">Role rewards</h3>
+              <p class="uc-card__desc">Grant or remove Discord roles based on participation, scores, or XP thresholds.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🏷️</span>
+              <h3 class="uc-card__title">Custom XP name</h3>
+              <p class="uc-card__desc">Rename XP to match your brand: "Stars", "Coins", "Rep". Make it feel like yours.</p>
+            </div>
+          </div>
+          <p class="uc-blog-link">
+            <a href="/features#engage">See all engagement features →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3: Examples -->
+      <section class="uc-section uc-section--secondary">
+        <div class="container">
+          <div class="uc-section__header">
+            <span class="uc-label mono">IDEAS TO STEAL</span>
+            <h2 class="uc-section__title">Ways communities play with Subo</h2>
+          </div>
+          <div class="uc-examples">
+            {examples.map((ex) => <span class="uc-example">{ex}</span>)}
+          </div>
+        </div>
+      </section>
+
+      <CTA translations={translations} />
+    </main>
+    <Footer translations={translations.footer} />
+  </body>
+</html>
+
+<style>
+.uc-hero {
+  padding: 140px 0 80px;
+  background: linear-gradient(180deg, var(--dark) 0%, var(--secondary-dark) 100%);
+}
+.uc-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.uc-hero h1 {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.uc-hero__subtitle {
+  font-size: 1.15rem;
+  color: var(--grey-light);
+  max-width: 620px;
+  margin: 0 auto 2rem;
+}
+.uc-section { padding: 4rem 0; }
+.uc-section--secondary { background: var(--secondary-dark); }
+.uc-section--dark { background: var(--dark); }
+.uc-section__header { text-align: center; margin-bottom: 3rem; }
+.uc-section__title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 800;
+  margin: 0.75rem 0;
+  line-height: 1.2;
+}
+.uc-section__sub {
+  color: var(--grey-light);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+.uc-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb, 99, 207, 138), 0.12);
+  border: 1px solid rgba(var(--accent-rgb, 99, 207, 138), 0.25);
+}
+.uc-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.uc-card {
+  background: var(--dark);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+.uc-section--dark .uc-card { background: var(--secondary-dark); }
+.uc-card__emoji { font-size: 1.75rem; display: block; margin-bottom: 0.75rem; }
+.uc-card__title { font-size: 1rem; font-weight: 700; margin: 0 0 0.5rem; }
+.uc-card__desc { font-size: 0.9rem; color: var(--grey-light); line-height: 1.65; margin: 0; }
+.uc-card__desc a { color: var(--accent); text-decoration: none; }
+.uc-card__desc a:hover { text-decoration: underline; }
+.uc-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.uc-example {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.92rem;
+}
+.uc-blog-link { text-align: center; margin: 0; }
+.uc-blog-link a { font-size: 0.9rem; color: var(--accent); text-decoration: none; }
+.uc-blog-link a:hover { text-decoration: underline; }
+@media (max-width: 600px) {
+  .uc-cards { grid-template-columns: 1fr; }
+}
+</style>

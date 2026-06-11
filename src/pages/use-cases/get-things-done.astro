@@ -1,0 +1,222 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import translations from '../../content/translations/en.json';
+
+const examples = [
+  "🎤 Interview members who apply for a staff role",
+  "🎟️ Collect RSVPs, attendee info and questions",
+  "📝 Onboard new members with interactive checklists",
+  "💡 Take in suggestions and feature requests",
+  "🧾 Process orders, drops or claim requests",
+  "🎫 Run a lightweight ticket or support intake",
+  "🚀 Ask what utilities or rewards people want next",
+  "🧱 Sign up playtesters and beta users",
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Discord Applications, Sign-ups & Requests, Without the Form | Subo"
+      description="Run applications, registrations, RSVPs, orders, and ticket intake inside Discord as a friendly conversation. Skip logic, role targeting, scheduling, and auto-roles on completion."
+    />
+  </head>
+  <body>
+    <Header translations={translations.header} />
+    <main id="main-content">
+
+      <!-- Hero -->
+      <section class="uc-hero">
+        <div class="container text-center">
+          <span class="uc-eyebrow mono">GET THINGS DONE</span>
+          <h1 class="mono">EVERYTHING YOU USED TO TRAP IN A FORM</h1>
+          <p class="uc-hero__subtitle">Applications, sign-ups, orders and requests, as a friendly conversation instead of a wall of fields.</p>
+          <a href="/invite" class="button button--accent-bg">Add to Discord</a>
+        </div>
+      </section>
+
+      <!-- Section 1: Why a conversation beats a form -->
+      <section class="uc-section uc-section--secondary">
+        <div class="container">
+          <div class="uc-section__header">
+            <span class="uc-label mono">WHY A CONVERSATION WINS</span>
+            <h2 class="uc-section__title">More people finish what they start</h2>
+            <p class="uc-section__sub">A long form scares people off. Subo asks one step at a time, right where your members already are.</p>
+          </div>
+          <div class="uc-cards">
+            <div class="uc-card">
+              <span class="uc-card__emoji">💬</span>
+              <h3 class="uc-card__title">One step at a time</h3>
+              <p class="uc-card__desc">Questions arrive like a chat, so a 20-field application feels like a quick exchange. <a href="/survey-convos">See survey convos →</a></p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">📨</span>
+              <h3 class="uc-card__title">No link-out</h3>
+              <p class="uc-card__desc">It runs inside Discord, or on the web when you need it. No redirect to a form nobody trusts.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🔀</span>
+              <h3 class="uc-card__title">Branch on answers</h3>
+              <p class="uc-card__desc">Skip logic routes each person to the questions that actually apply to them. Shorter, smarter intake.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🕵️</span>
+              <h3 class="uc-card__title">Right level of privacy</h3>
+              <p class="uc-card__desc">Keep submissions identified for follow-up, or anonymous when that fits the request.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Run it end to end -->
+      <section class="uc-section uc-section--dark">
+        <div class="container">
+          <div class="uc-section__header">
+            <span class="uc-label mono">RUN IT END TO END</span>
+            <h2 class="uc-section__title">From submission to action</h2>
+            <p class="uc-section__sub">Subo does more than collect. It can route, schedule, and act on what comes in.</p>
+          </div>
+          <div class="uc-cards">
+            <div class="uc-card">
+              <span class="uc-card__emoji">📅</span>
+              <h3 class="uc-card__title">Scheduled open &amp; close</h3>
+              <p class="uc-card__desc">Open registrations on a date and close them on a deadline, automatically.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🎯</span>
+              <h3 class="uc-card__title">Choose who can submit</h3>
+              <p class="uc-card__desc">Restrict to specific roles, your whole server, or open it to anyone with the link.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">🧩</span>
+              <h3 class="uc-card__title">Intros &amp; confirmations</h3>
+              <p class="uc-card__desc">Content blocks add a welcome, rules to acknowledge, or a confirmation message anywhere in the flow.</p>
+            </div>
+            <div class="uc-card">
+              <span class="uc-card__emoji">⚡</span>
+              <h3 class="uc-card__title">Auto-roles on completion</h3>
+              <p class="uc-card__desc">Action blocks can assign a role the moment someone finishes, like an onboarding or applicant role.</p>
+            </div>
+          </div>
+          <p class="uc-blog-link">
+            <a href="/features">See everything Subo can do →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3: Examples -->
+      <section class="uc-section uc-section--secondary">
+        <div class="container">
+          <div class="uc-section__header">
+            <span class="uc-label mono">PUT IT TO WORK</span>
+            <h2 class="uc-section__title">What communities run with Subo</h2>
+          </div>
+          <div class="uc-examples">
+            {examples.map((ex) => <span class="uc-example">{ex}</span>)}
+          </div>
+        </div>
+      </section>
+
+      <CTA translations={translations} />
+    </main>
+    <Footer translations={translations.footer} />
+  </body>
+</html>
+
+<style>
+.uc-hero {
+  padding: 140px 0 80px;
+  background: linear-gradient(180deg, var(--dark) 0%, var(--secondary-dark) 100%);
+}
+.uc-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.uc-hero h1 {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.uc-hero__subtitle {
+  font-size: 1.15rem;
+  color: var(--grey-light);
+  max-width: 620px;
+  margin: 0 auto 2rem;
+}
+.uc-section { padding: 4rem 0; }
+.uc-section--secondary { background: var(--secondary-dark); }
+.uc-section--dark { background: var(--dark); }
+.uc-section__header { text-align: center; margin-bottom: 3rem; }
+.uc-section__title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 800;
+  margin: 0.75rem 0;
+  line-height: 1.2;
+}
+.uc-section__sub {
+  color: var(--grey-light);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+.uc-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb, 99, 207, 138), 0.12);
+  border: 1px solid rgba(var(--accent-rgb, 99, 207, 138), 0.25);
+}
+.uc-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.uc-card {
+  background: var(--dark);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+.uc-section--dark .uc-card { background: var(--secondary-dark); }
+.uc-card__emoji { font-size: 1.75rem; display: block; margin-bottom: 0.75rem; }
+.uc-card__title { font-size: 1rem; font-weight: 700; margin: 0 0 0.5rem; }
+.uc-card__desc { font-size: 0.9rem; color: var(--grey-light); line-height: 1.65; margin: 0; }
+.uc-card__desc a { color: var(--accent); text-decoration: none; }
+.uc-card__desc a:hover { text-decoration: underline; }
+.uc-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.uc-example {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.92rem;
+}
+.uc-blog-link { text-align: center; margin: 0; }
+.uc-blog-link a { font-size: 0.9rem; color: var(--accent); text-decoration: none; }
+.uc-blog-link a:hover { text-decoration: underline; }
+@media (max-width: 600px) {
+  .uc-cards { grid-template-columns: 1fr; }
+}
+</style>

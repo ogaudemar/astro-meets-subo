@@ -37,11 +37,21 @@ Order: Hero → Features → UseCases → Testimonials → DeveloperAPI → CTA
 | Component | Translation key | Notes |
 |-----------|----------------|-------|
 | `Hero.astro` | `hero` | Rotating word animation |
-| `Features.astro` | `features` | 3 feature cards |
-| `UseCases.astro` | (root-level keys) | Random use case picker |
+| `Features.astro` | `features` | 3 clickable belief tiles (`title`/`body`/`href`), linking to `/survey-convos`, `/polls`, `/features` |
+| `UseCases.astro` | (root-level keys) | 3 use-case category cards (`usecasesCategories`) + random "inspire me" picker (`usecasesList`) |
 | `Testimonials.astro` | (root-level keys) | |
 | `DeveloperAPI.astro` | `developerApi` | Developer/API audience; links to `api.subo.ai/docs` and `app.subo.gg/app/account` |
 | `CTA.astro` | (root-level keys) | |
+
+## Use-case landing pages (`src/pages/use-cases/`)
+
+English-only detail pages, one per homepage use-case category (linked from `UseCases.astro` cards). Copy is hardcoded in the `.astro` (same pattern as `features.astro` / `polls.astro`), not in translations.
+
+| Page | Category label | Focus |
+|------|----------------|-------|
+| `use-cases/research.astro` | Understand | The research narrative: honest answers, analytics, AI open-text summaries, segmentation |
+| `use-cases/engagement.astro` | Engage | Polls, quizzes, prediction contests, XP/leaderboard/role rewards |
+| `use-cases/get-things-done.astro` | Get things done | Applications, sign-ups, orders, requests, ticket intake (the "forms, reinvented" story) |
 
 ## Navigation & Footer
 

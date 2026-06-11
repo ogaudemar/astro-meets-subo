@@ -12,25 +12,22 @@ const features = translations.list;
     </header>
     <div class="features__grid">
       {features.map((feature, i) => (
-        <div class="feature">
+        <a class="feature" href={feature.href}>
           <span class="feature__icon">
             {i === 0 && (
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-more-icon lucide-message-square-more"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path><path d="M12 11h.01"></path><path d="M16 11h.01"></path><path d="M8 11h.01"></path></svg>
             )}
             {i === 1 && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy-icon lucide-trophy"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"></path><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"></path><path d="M18 9h1.5a1 1 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"></path><path d="M6 9H4.5a1 1 0 0 1 0-5H6"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-vote-icon lucide-vote"><path d="m9 12 2 2 4-4"></path><path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5z"></path><path d="M22 19H2"></path></svg>
             )}
             {i === 2 && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-no-axes-combined-icon lucide-chart-no-axes-combined"><path d="M12 16v5"></path><path d="M16 14v7"></path><path d="M20 10v11"></path><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"></path><path d="M4 18v3"></path><path d="M8 14v7"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy-icon lucide-trophy"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"></path><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"></path><path d="M18 9h1.5a1 1 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"></path><path d="M6 9H4.5a1 1 0 0 1 0-5H6"></path></svg>
             )}
           </span>
           <h3 class="feature__title accent">{feature.title}</h3>
-          <ul>
-            {feature.content.map(line => (
-              <li set:html={line}></li>
-            ))}
-          </ul>
-        </div>
+          <p class="feature__body" set:html={feature.body}></p>
+          <span class="feature__arrow" aria-hidden="true">→</span>
+        </a>
       ))}
     </div>
   </div>
@@ -72,17 +69,27 @@ const features = translations.list;
   }
 
   .feature {
-    background: rgba(255, 255, 255, 0.05);;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 1.2rem;
     padding: 2rem 1.5rem;
     box-shadow: 0 2px 12px rgba(0,0,0,0.10);
     transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+    color: inherit;
+    text-decoration: none;
   }
 
   .feature:hover {
       box-shadow: 0 6px 16px var(--accent);
       background: rgba(116, 83, 153, 0.4);
       opacity: 1;
+      transform: translateY(-3px);
+  }
+
+  .feature:hover .feature__arrow {
+      color: var(--accent);
+      transform: translateX(4px);
   }
 
   .feature__header {
@@ -109,23 +116,19 @@ const features = translations.list;
     margin: 1rem 0;
   }
 
-  .feature ul {
-    padding-left: 0.2rem;
-    margin: 0;
-    list-style: none;
-  }
-
-  .feature li {
+  .feature__body {
     font-size: 1.05rem;
-    margin-bottom: 0.7rem;
     line-height: 1.6;
-    padding-left: 1.2rem;
+    color: #ddd;
+    margin: 0;
   }
 
-  .feature li::before {
-    content: "→ ";
-    color: var(--accent);
-    margin-left: -1.2rem;
+  .feature__arrow {
+    display: inline-block;
+    margin-top: 1.2rem;
+    font-size: 1.3rem;
+    color: #888;
+    transition: color 0.15s, transform 0.15s;
   }
 
   @media (max-width: 700px) {

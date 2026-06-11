@@ -20,6 +20,12 @@
     { "text": "Portale di Fatturazione", "href": "/portal" },
     { "text": "Blog", "href": "/blog" }
   ],
+  "useCasesLabel": "Casi d'uso",
+  "useCases": [
+    { "text": "Coinvolgere", "href": "/use-cases/engagement" },
+    { "text": "Capire", "href": "/use-cases/research" },
+    { "text": "Gestire", "href": "/use-cases/get-things-done" }
+  ],
   "cta": "Aggiungi a Discord",
   "upgrade": "Aggiorna",
   "login": "Accedi",
@@ -40,6 +46,14 @@
         { "text": "Votazioni", "href": "/polls" },
         { "text": "Prezzi", "href": "/pricing" },
         { "text": "Aggiungi a Discord", "href": "/invite", "external": true }
+      ]
+    },
+    {
+      "title": "Casi d'uso",
+      "links": [
+        { "text": "Coinvolgere", "href": "/use-cases/engagement" },
+        { "text": "Capire", "href": "/use-cases/research" },
+        { "text": "Gestire", "href": "/use-cases/get-things-done" }
       ]
     },
     {
@@ -86,34 +100,23 @@
 
 
     "features": {
-    "title": "IMPARI DI PIÙ QUANDO LE PERSONE AMANO LA CONVERSAZIONE.",
-    "subtitle": "Un muro di campi di modulo sembra compiti a casa, e nessuno vuole più compiti a casa. Con Subo, fai domande tramite votazioni e conversazioni amichevoli — su Discord e sul web.",
+    "title": "LE PERSONE CONDIVIDONO DI PIÙ QUANDO AMANO LA CONVERSAZIONE.",
+    "subtitle": "Un muro di campi di modulo sembra compiti a casa. Le votazioni, i sondaggi e i quiz di Subo sono conversazioni amichevoli a cui le persone vogliono davvero partecipare.",
     "list": [
         {
-        "title": "FAI DOMANDE",
-        "content": [
-            "<strong>Conversazioni sondaggio:</strong> i membri rispondono alle domande di Subo in una chat privata, all'interno del tuo server Discord o sul web.",
-            "<strong>Votazioni Discord:</strong> 1 domanda, più modi per rispondere e condividere i risultati.",
-            "<strong>Blocchi di contenuto e di azione:</strong> aggiungi un messaggio, un'intro, una GIF o una ricompensa in qualsiasi punto del flusso — senza domanda richiesta."
-        ]
+        "title": "CHIEDI IN UNA CONVERSAZIONE",
+        "body": "Subo fa una domanda alla volta, come in una chat. I membri si aprono e scopri cose che un muro di modulo non rivela mai.",
+        "href": "/survey-convos"
         },
         {
-        "title": "INCORAGGIA LA PARTECIPAZIONE",
-        "content": [
-            "<strong>Ricompense condizionali:</strong> assegna ruoli, XP o obiettivi in base alle risposte — un ruolo di benvenuto quando qualcuno completa l'onboarding, XP per chi azzecca le risposte del quiz, accesso beta per i candidati giusti.",
-            "<strong>Sistema XP</strong>: i membri guadagnano punti rispondendo alle domande e salgono di livello per sbloccare ruoli.",
-            "Mostra una <strong>classifica</strong> con i tuoi partecipanti più attivi",
-            "<strong>Condividi i risultati</strong> e le risposte degli altri partecipanti con un clic"
-        ]
+        "title": "VOTAZIONI CHE FANNO DI PIÙ",
+        "body": "Una sola domanda che può valutare le risposte, assegnare un punteggio a un quiz o lanciare un concorso a pronostici, e poi premiare automaticamente i vincitori.",
+        "href": "/polls"
         },
         {
-        "title": "ANALIZZA E CONDIVIDI I RISULTATI",
-        "content": [
-            "Visualizza i risultati aggregati e le risposte individuali.",
-            "Condividi/ripubblica i risultati",
-            "Lascia che Subo riassuma le risposte aperte con l'IA",
-            "Esporta il <strong>set di dati completo</strong> per ulteriori analisi."
-        ]
+        "title": "PARTECIPAZIONE CHE RIPAGA",
+        "body": "Distribuisci XP, ruoli e obiettivi, calibrati su come i membri rispondono davvero. Un riconoscimento che li fa tornare.",
+        "href": "/features"
         }
     ]
     },
@@ -121,7 +124,27 @@
 
 
   "usecasesTitle": "COSA CHIEDERAI OGGI?",
-  "usecasesSubtitle": "Subo ti aiuta a raccogliere informazioni preziose dalla tua community... o semplicemente a divertirti.",
+  "usecasesSubtitle": "Le community usano Subo in tre modi. Scegli un percorso o lancia i dadi per ispirarti.",
+  "usecasesCategories": [
+    {
+      "emoji": "🎉",
+      "title": "Coinvolgere",
+      "body": "Votazioni, quiz e concorsi a pronostici divertenti che fanno tornare i membri.",
+      "href": "/use-cases/engagement"
+    },
+    {
+      "emoji": "🔎",
+      "title": "Capire",
+      "body": "Scopri chi sono i tuoi membri e cosa vogliono, poi agisci di conseguenza.",
+      "href": "/use-cases/research"
+    },
+    {
+      "emoji": "✅",
+      "title": "Gestire",
+      "body": "Candidature, iscrizioni, ordini e richieste, come una conversazione invece di un modulo.",
+      "href": "/use-cases/get-things-done"
+    }
+  ],
   "usecasesInspireBtn": "🎲 Cliccami per ispirazione!",
   "usecasesList": [
     "💡 Ricevi feedback su una nuova idea, prodotto o prezzo",

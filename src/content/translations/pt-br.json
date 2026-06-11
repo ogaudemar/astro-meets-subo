@@ -20,6 +20,12 @@
     { "text": "Portal de Cobrança", "href": "/portal" },
     { "text": "Blog", "href": "/blog" }
   ],
+  "useCasesLabel": "Casos de uso",
+  "useCases": [
+    { "text": "Engajar", "href": "/use-cases/engagement" },
+    { "text": "Entender", "href": "/use-cases/research" },
+    { "text": "Resolver", "href": "/use-cases/get-things-done" }
+  ],
   "cta": "Adicionar ao Discord",
   "upgrade": "Upgrade",
   "login": "Entrar",
@@ -40,6 +46,14 @@
         { "text": "Enquetes", "href": "/polls" },
         { "text": "Preços", "href": "/pricing" },
         { "text": "Adicionar ao Discord", "href": "/invite", "external": true }
+      ]
+    },
+    {
+      "title": "Casos de uso",
+      "links": [
+        { "text": "Engajar", "href": "/use-cases/engagement" },
+        { "text": "Entender", "href": "/use-cases/research" },
+        { "text": "Resolver", "href": "/use-cases/get-things-done" }
       ]
     },
     {
@@ -86,34 +100,23 @@
 
 
     "features": {
-    "title": "VOCÊ APRENDE MAIS QUANDO AS PESSOAS CURTEM A CONVERSA.",
-    "subtitle": "Uma parede de campos de formulário parece lição de casa, e ninguém quer mais lição de casa. Com o Subo, você faz perguntas em enquetes e conversas amigáveis — no Discord e na web.",
+    "title": "AS PESSOAS COMPARTILHAM MAIS QUANDO CURTEM A CONVERSA.",
+    "subtitle": "Uma parede de campos de formulário parece lição de casa. As enquetes, pesquisas e quizzes do Subo são conversas amigáveis das quais as pessoas realmente querem participar.",
     "list": [
         {
-        "title": "FAÇA PERGUNTAS",
-        "content": [
-            "<strong>Survey Convos:</strong> os membros respondem às perguntas do Subo numa conversa privada, dentro do seu servidor do Discord ou pela web.",
-            "<strong>Enquetes no Discord:</strong> 1 pergunta, múltiplas formas de responder e compartilhar resultados.",
-            "<strong>Blocos de conteúdo e de ação:</strong> adicione uma mensagem, intro, GIF ou recompensa em qualquer ponto do fluxo — sem pergunta necessária."
-        ]
+        "title": "PERGUNTE EM UMA CONVERSA",
+        "body": "O Subo faz uma pergunta de cada vez, como num bate-papo. Os membros se abrem e você descobre coisas que uma parede de formulário nunca revela.",
+        "href": "/survey-convos"
         },
         {
-        "title": "INCENTIVE A PARTICIPAÇÃO",
-        "content": [
-            "<strong>Recompensas condicionais:</strong> atribua cargos, XP ou conquistas conforme as respostas — um cargo de boas-vindas quando alguém conclui o onboarding, XP para quem acerta o quiz, acesso beta para os candidatos certos.",
-            "<strong>Sistema de XP</strong>: os membros ganham pontos ao responder perguntas e sobem de nível para desbloquear cargos.",
-            "Exiba um <strong>ranking</strong> com seus participantes mais ativos",
-            "<strong>Compartilhe descobertas</strong> e respostas de outros participantes com um clique"
-        ]
+        "title": "ENQUETES QUE FAZEM MAIS",
+        "body": "Uma única pergunta que pode pontuar respostas, corrigir um quiz ou criar um bolão de palpites, e então recompensar os vencedores automaticamente.",
+        "href": "/polls"
         },
         {
-        "title": "ANALISE E COMPARTILHE RESULTADOS",
-        "content": [
-            "Veja resultados agregados e respostas individuais.",
-            "Compartilhe/reposte resultados",
-            "Deixe o Subo resumir respostas abertas com IA",
-            "Exporte o <strong>conjunto de dados completo</strong> para análise adicional."
-        ]
+        "title": "PARTICIPAÇÃO QUE VALE A PENA",
+        "body": "Distribua XP, cargos e conquistas, ajustados ao modo como os membros realmente respondem. Reconhecimento que faz as pessoas voltarem.",
+        "href": "/features"
         }
     ]
     },
@@ -121,7 +124,27 @@
 
 
   "usecasesTitle": "O QUE VOCÊ VAI PERGUNTAR HOJE?",
-  "usecasesSubtitle": "O Subo ajuda você a coletar informações valiosas da sua comunidade... ou simplesmente se divertir.",
+  "usecasesSubtitle": "As comunidades usam o Subo de três formas. Escolha um caminho ou role os dados para se inspirar.",
+  "usecasesCategories": [
+    {
+      "emoji": "🎉",
+      "title": "Engajar",
+      "body": "Enquetes, quizzes e bolões divertidos que fazem os membros voltarem sempre.",
+      "href": "/use-cases/engagement"
+    },
+    {
+      "emoji": "🔎",
+      "title": "Entender",
+      "body": "Descubra quem são seus membros e o que eles querem, e aja com base nisso.",
+      "href": "/use-cases/research"
+    },
+    {
+      "emoji": "✅",
+      "title": "Resolver",
+      "body": "Inscrições, cadastros, pedidos e solicitações, como uma conversa em vez de um formulário.",
+      "href": "/use-cases/get-things-done"
+    }
+  ],
   "usecasesInspireBtn": "🎲 Clique aqui para se inspirar!",
   "usecasesList": [
     "💡 Receba feedback sobre uma nova ideia, produto ou preço",

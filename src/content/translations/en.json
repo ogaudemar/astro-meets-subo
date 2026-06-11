@@ -1,6 +1,6 @@
 {
   "siteTitle": "Subo",
-  "siteDescription": "Surveys that feel like conversations, not homework. Run polls, conversational surveys, and reward participation — inside Discord and on the web.",
+  "siteDescription": "Surveys that feel like conversations, not homework. Run polls, conversational surveys, and reward participation, inside Discord and on the web.",
 
 "header": {
   "navItems": [
@@ -20,6 +20,12 @@
     { "text": "Billing Portal", "href": "/portal" },
     { "text": "Blog", "href": "/blog" },
     { "text": "API", "href": "https://api.subo.ai/docs", "external": true }
+  ],
+  "useCasesLabel": "Use cases",
+  "useCases": [
+    { "text": "Engage", "href": "/use-cases/engagement" },
+    { "text": "Understand", "href": "/use-cases/research" },
+    { "text": "Get things done", "href": "/use-cases/get-things-done" }
   ],
   "cta": "Add to Discord",
   "upgrade": "Upgrade",
@@ -42,6 +48,14 @@
         { "text": "Polls", "href": "/polls" },
         { "text": "Pricing", "href": "/pricing" },
         { "text": "Add to Discord", "href": "/invite", "external": true }
+      ]
+    },
+    {
+      "title": "Use cases",
+      "links": [
+        { "text": "Engage", "href": "/use-cases/engagement" },
+        { "text": "Understand", "href": "/use-cases/research" },
+        { "text": "Get things done", "href": "/use-cases/get-things-done" }
       ]
     },
     {
@@ -90,35 +104,23 @@
 
 
     "features": {
-    "title": "YOU LEARN MORE WHEN PEOPLE ENJOY THE CONVERSATION.",
-    "subtitle": "A wall of form fields feels like homework, and nobody wants more homework. With Subo, you ask questions in polls and friendly conversations — inside Discord and on the web.",
+    "title": "PEOPLE SHARE MORE WHEN THEY ENJOY THE CONVERSATION.",
+    "subtitle": "A wall of form fields feels like homework. Subo polls, surveys and quizzes are friendly conversations which people actually want to join.",
     "list": [
         {
-        "title": "ASK QUESTIONS",
-        "content": [
-
-            "<strong>Survey convos:</strong> members answer Subo's questions in a private chat, inside your Discord server or on the web.",
-            "<strong>Discord polls:</strong> 1 question, multiple ways to answer and share results.",
-            "<strong>Content & action blocks:</strong> add a message, intro, GIF, or reward anywhere in the flow — no question required."
-        ]
+        "title": "ASK IN CONVERSATION",
+        "body": "Subo asks one question at a time, like a chat. Members open up, and you learn things a form wall never surfaces.",
+        "href": "/survey-convos"
         },
         {
-        "title": "ENCOURAGE PARTICIPATION",
-        "content": [
-            "<strong>Conditional rewards:</strong> assign roles, XP, or achievements based on how members answer — onboarding roles when someone completes onboarding, XP for quiz takers who got it right, beta access for the right candidates.",
-            "<strong>XP system</strong>: members earn points as they answer questions, level up to unlock roles.",
-            "Display a <strong>leaderboard</strong> with your most active participants",
-            "<strong>Share findings</strong> and answers from other participants in a click"
-        ]
+        "title": "POLLS THAT DO MORE",
+        "body": "A single question that can score answers, grade a quiz, or run a prediction contest, then reward the winners automatically.",
+        "href": "/polls"
         },
         {
-        "title": "ANALYZE & SHARE RESULTS",
-        "content": [
-            "View aggregated results and individual responses.", 
-            "Share/repost results",
-            "Let Subo summarize open answers with AI",
-            "Export the <strong>full data set</strong> for further analysis."
-        ]
+        "title": "PARTICIPATION THAT PAYS OFF",
+        "body": "Hand out XP, roles, and achievements, tuned to how members actually answer. Recognition that brings people back.",
+        "href": "/features"
         }
     ]
     },
@@ -126,7 +128,27 @@
 
 
   "usecasesTitle": "WHAT WILL YOU ASK TODAY?",
-  "usecasesSubtitle": "Subo helps you collect valuable information from your community... or just have fun.",
+  "usecasesSubtitle": "Communities use Subo three ways. Pick a path, or roll the dice for inspiration.",
+  "usecasesCategories": [
+    {
+      "emoji": "🎉",
+      "title": "Engage",
+      "body": "Fun polls, quizzes and prediction contests that keep members coming back.",
+      "href": "/use-cases/engagement"
+    },
+    {
+      "emoji": "🔎",
+      "title": "Understand",
+      "body": "Learn who your members are and what they want, then act on it.",
+      "href": "/use-cases/research"
+    },
+    {
+      "emoji": "✅",
+      "title": "Get things done",
+      "body": "Applications, sign-ups, orders and requests, as a conversation instead of a form.",
+      "href": "/use-cases/get-things-done"
+    }
+  ],
   "usecasesInspireBtn": "🎲 Click me for inspiration!",
   "usecasesList": [
     "💡 Get feedback on a new idea, product or pricing",
@@ -137,13 +159,13 @@
     "🎤 Interview members who apply for a staff role",
     "🎟️ Collect RSVPs, attendee info and questions before events",
     "📊 Engagement polls just for fun",
-    "🔮 Have members predict future games and events",
+    "🔮 Run prediction contests on upcoming games and events",
     "🗣️ Get feedback on a past community event",
     "🌟 Collect reviews or testimonials",
     "💖 Community culture or pulse checks",
     "🏆 Community votes to select a project or a leader",
     "💡 Collect suggestions or feature requests",
-    "🧠 Quizzes and knowledge checks",
+    "🧠 Run auto-graded quizzes and knowledge checks",
     "⚔️ Vote on raid times, team comps, or next boss strategy",
     "🧩 Run quick polls during tournaments or matches",
     "🏹 Collect feedback on new game patches or balance changes",
@@ -511,13 +533,13 @@
 ,
 "surveyConvos": {
   "pageTitle": "Discord Survey Conversations | Subo",
-  "pageDescription": "Subo turns surveys into friendly Discord conversations. Members answer questions one-on-one with the bot — no boring forms, higher completion rates, richer answers.",
+  "pageDescription": "Subo turns surveys into friendly Discord conversations. Members answer questions one-on-one with the bot, no boring forms, higher completion rates, richer answers.",
   "heroTitle": "Surveys that feel like <strong class=\"accent\">conversations</strong>",
   "heroSubtitle": "Not a form. Not just a poll. A friendly one-on-one chat where your members actually want to respond.",
-  "heroCta": "Add to Discord — Free",
+  "heroCta": "Add to Discord, Free",
   "whatTitle": "WHAT IS A SURVEY CONVO?",
   "whatBody": [
-    "A survey convo is a private message conversation between your community member and Subo, the bot — right inside your Discord server or on the web.",
+    "A survey convo is a private message conversation between your community member and Subo, the bot, right inside your Discord server or on the web.",
     "Instead of sending members to a cold, generic form, Subo invites them to a chat. Questions appear one at a time, in a friendly message format. It feels like talking to someone, not filling out paperwork.",
     "The result? <strong>Higher completion rates</strong>, richer answers, and members who actually enjoy the experience."
   ],
@@ -541,7 +563,7 @@
     {
       "number": "2",
       "title": "Subo invites your members",
-      "desc": "Subo posts an invite in your Discord server. Members click the invite and answer questions privately — right inside Discord, or via a web link."
+      "desc": "Subo posts an invite in your Discord server. Members click the invite and answer questions privately, right inside Discord, or via a web link."
     },
     {
       "number": "3",
@@ -550,24 +572,25 @@
     }
   ],
   "questionTypesTitle": "BLOCK TYPES",
-  "questionTypesSubtitle": "4 question types for every kind of answer, content blocks for messages and pauses, and action blocks that reward participation.",
+  "questionTypesSubtitle": "4 question types for every kind of answer, content blocks for messages and pauses, action blocks that reward participation, and calculated fields that turn answers into scores.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Open Text", "desc": "Free-form written answers" },
     { "emoji": "🔢", "name": "Numeric", "desc": "Numbers, ratings, or ranges" },
     { "emoji": "🔘", "name": "Single Choice", "desc": "Pick one from multiple options (yes/no included)" },
     { "emoji": "☑️", "name": "Multiple Choice", "desc": "Select all that apply" },
-    { "emoji": "📢", "name": "Content Block", "desc": "Message, intro, GIF, or pause — no answer needed" },
-    { "emoji": "⚡", "name": "Action Block", "desc": "Reward XP, roles, or achievements — conditionally on answers" }
+    { "emoji": "📢", "name": "Content Block", "desc": "Message, intro, GIF, or pause, no answer needed" },
+    { "emoji": "⚡", "name": "Action Block", "desc": "Reward XP, roles, or achievements, conditionally on answers" },
+    { "emoji": "🧮", "name": "Calculated Field", "desc": "Compute a score, segment, or value from earlier answers" }
   ],
   "webTitle": "ON DISCORD AND ON THE WEB",
-  "webDesc": "Survey convos work natively inside Discord — but Subo also supports a web-based survey experience. Admins choose whether a survey runs in Discord or on the web, and whether it's open to anyone or restricted to community members. Either way, you manage surveys, view results, and analyze data from the Subo web admin.",
+  "webDesc": "Survey convos work natively inside Discord, but Subo also supports a web-based survey experience. Admins choose whether a survey runs in Discord or on the web, and whether it's open to anyone or restricted to community members. Either way, you manage surveys, view results, and analyze data from the Subo web admin.",
   "benefitsTitle": "WHY SURVEY CONVOS WORK BETTER",
   "benefitsList": [
-    "👋 Greets members by name and rewards them as they go — not just at the finish line",
+    "👋 Greets members by name and rewards them as they go, not just at the finish line",
     "📱 Works on mobile without any friction",
     "🤫 Optional anonymous mode for honest, unfiltered feedback",
-    "🔀 Skip logic — skip irrelevant questions, and trigger rewards based on answers",
-    "📢 Content blocks — add an intro, key context, GIF, or mid-survey pause without asking a question",
+    "🔀 Skip logic: skip irrelevant questions, and trigger rewards based on answers",
+    "📢 Content blocks: add an intro, key context, GIF, or mid-survey pause without asking a question",
     "⏱️ Scheduled and recurring surveys run automatically",
     "🏆 XP, roles, and achievements drive higher participation",
     "🤖 AI summaries of open-ended responses"
@@ -581,14 +604,14 @@
   "heroSubtitle": "SU-BO. Survey Bot. Built for communities that want real answers.",
   "storyTitle": "WHY SUBO EXISTS",
   "storyBody": [
-    "Subo was started in 2021 by a small team of pros 🤓 with decades of experience building survey platforms used by millions of global users — and by the world's top brands and researchers. We'd seen from the inside how survey tools were built: optimized for enterprise sales cycles, not for the people actually taking them. The experience was consistently bad, and we wanted to do something about it.",
-    "So we built Subo. Bootstrapped, self-funded, and fiercely independent — entirely focused on making feedback feel like a conversation rather than a chore. Discord was the perfect place to start: a platform where communities were already talking, and where the tools for listening were badly missing.",
-    "Since launch, Subo has grown to serve over <strong>15,000 Discord servers</strong> — from gaming guilds to creator communities, DAOs, sports clubs, brand communities, and educational groups. We're a small team, and we intend to stay that way."
+    "Subo was started in 2021 by a small team of pros 🤓 with decades of experience building survey platforms used by millions of global users, and by the world's top brands and researchers. We'd seen from the inside how survey tools were built: optimized for enterprise sales cycles, not for the people actually taking them. The experience was consistently bad, and we wanted to do something about it.",
+    "So we built Subo. Bootstrapped, self-funded, and fiercely independent, entirely focused on making feedback feel like a conversation rather than a chore. Discord was the perfect place to start: a platform where communities were already talking, and where the tools for listening were badly missing.",
+    "Since launch, Subo has grown to serve over <strong>15,000 Discord servers</strong>, from gaming guilds to creator communities, DAOs, sports clubs, brand communities, and educational groups. We're a small team, and we intend to stay that way."
   ],
   "statsTitle": "BY THE NUMBERS",
   "stats": [
     { "number": "15,000+", "label": "Discord servers" },
-    { "number": "6", "label": "Block types (4 question types, content, action)" },
+    { "number": "7", "label": "Block types (4 question types, content, action, calculated)" },
     { "number": "3", "label": "Gamification layers" },
     { "number": "1", "label": "Goal: your community's voice" }
   ],
@@ -597,7 +620,7 @@
     {
       "emoji": "💬",
       "title": "Conversational by design",
-      "desc": "Questions arrive as private messages — one at a time, in a chat format. Content blocks let you add intros, context, or pauses anywhere in the flow. Not a form page. A real conversation."
+      "desc": "Questions arrive as private messages, one at a time, in a chat format. Content blocks let you add intros, context, or pauses anywhere in the flow. Not a form page. A real conversation."
     },
     {
       "emoji": "🤖",
@@ -607,7 +630,7 @@
     {
       "emoji": "🏆",
       "title": "Gamification built in",
-      "desc": "Members earn XP, level up, and unlock roles, XP, or achievements based on how they answer — not just whether they finish."
+      "desc": "Members earn XP, level up, and unlock roles, XP, or achievements based on how they answer, not just whether they finish."
     },
     {
       "emoji": "🌐",
@@ -617,7 +640,7 @@
     {
       "emoji": "🔐",
       "title": "Anonymous mode",
-      "desc": "When sensitive topics require honest answers, enable anonymous mode. Three options: full anonymity, identified, or partial — you choose the right level."
+      "desc": "When sensitive topics require honest answers, enable anonymous mode. Three options: full anonymity, identified, or partial. You choose the right level."
     },
     {
       "emoji": "🎯",
@@ -626,7 +649,7 @@
     }
   ],
   "missionTitle": "OUR MISSION",
-  "missionBody": "We believe every community deserves to be heard — and that the tools for listening should be as engaging as the communities themselves. Too often, an admin spends hours crafting a survey, hits send, and gets a handful of responses. Not because members don't care — because a wall of form fields feels like homework. Subo closes the gap between what a survey has always felt like and what a real conversation feels like."
+  "missionBody": "We believe every community deserves to be heard, and that the tools for listening should be as engaging as the communities themselves. Too often, an admin spends hours crafting a survey, hits send, and gets a handful of responses. Not because members don't care, but because a wall of form fields feels like homework. Subo closes the gap between what a survey has always felt like and what a real conversation feels like."
 },
 
 "pricingPage": {
