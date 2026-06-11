@@ -1,48 +1,373 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, DISCORD_STORE_URL } from '../consts';
-
+import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 import translations from '../content/translations/en.json';
-
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title="Advanced Discord Polls with Subo the Survey Bot" description="Discord has its own native poll feature, but Subo has more advanced features. Find out more." />
+		<BaseHead
+			title="Discord Poll Bot: Quizzes, Prediction Contests & Scoring | Subo"
+			description="Subo turns Discord polls into auto-graded quizzes and prediction contests. Score each option, mark correct answers, reward XP and roles, and customize every invitation."
+		/>
 	</head>
 	<body>
 		<Header translations={translations.header} />
-  <main>
+		<main id="main-content">
 
-  <h1>Advanced <strong class="accent">Discord polls</strong> with Subo</h2>
-  <h2 class="subtitle">Yes, Discord has native polls... but they’re limited.</h2>
-<p>With Subo, you get powerful controls:</p>
-<ul>
-<li>Choose who can vote</li>
-<li>Set when polls start and close</li>
-<li>Export the data</li>
-<li>Decide how results are shown</li>
-<li>And more</li>
-</ul>
-<p>Polls are perfect for group decisions, quick takes, or keeping members engaged.</p>
-<h2 class="subtitle">🧠 Build a Clearer Picture Over Time</h2>
-<p>When you want to collect more information about your community, one strategy is to create a survey convo with multiple questions. </p>
-<p>Another strategy is to run multiple quick polls (or short surveys) regularly.</p>
-<p> With Subo, all responses are tied to each member (unless anonymous mode is on), so you can connect the dots over time.</p>
-<p>See how opinions evolve. Follow up. Understand individual preferences, not just overall votes.</p>
-<p>Discord’s native polls can’t do that.</p>
+			<!-- Hero -->
+			<section class="poll-hero">
+				<div class="container text-center">
+					<h1 class="poll-hero__title">Discord polls that <strong class="accent">score, grade, and reward</strong></h1>
+					<p class="poll-hero__subtitle">Discord has native polls, but they only count votes. Subo polls run trivia nights and prediction contests, then reward your members automatically.</p>
+					<a href="/invite" class="button button--accent-bg">Add to Discord, Free</a>
+				</div>
+			</section>
 
- </main>
-		<Footer translations={translations.footer}/>
+			<!-- Section nav pills -->
+			<nav class="poll-nav" aria-label="Poll sections">
+				<div class="poll-nav__inner">
+					<a href="#controls" class="poll-nav__pill mono">CONTROL</a>
+					<a href="#quiz" class="poll-nav__pill mono">SCORE</a>
+					<a href="#reward" class="poll-nav__pill mono">REWARD</a>
+					<a href="#customize" class="poll-nav__pill mono">CUSTOMIZE</a>
+				</div>
+			</nav>
+
+			<!-- Section 1: CONTROL -->
+			<section class="poll-section poll-section--secondary" id="controls">
+				<div class="container">
+					<div class="poll-section__header">
+						<span class="poll-label poll-label--accent mono">CONTROL</span>
+						<h2 class="poll-section__title">More than a quick vote</h2>
+						<p class="poll-section__sub">Native Discord polls are fine for a snap vote. Subo gives you the controls a real community decision needs.</p>
+					</div>
+					<div class="poll-cards">
+						<div class="poll-card">
+							<span class="poll-card__emoji">🗳️</span>
+							<h3 class="poll-card__title">Choose who can vote</h3>
+							<p class="poll-card__desc">Restrict to specific roles, your whole server, or open it to anyone with the link.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">⏱️</span>
+							<h3 class="poll-card__title">Schedule open &amp; close</h3>
+							<p class="poll-card__desc">Set when a poll starts and ends, and Subo opens and closes it for you automatically.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">👁️</span>
+							<h3 class="poll-card__title">Decide how results show</h3>
+							<p class="poll-card__desc">Live or hidden until close, anonymous or identified: you set the level of transparency.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">📥</span>
+							<h3 class="poll-card__title">Export the data</h3>
+							<p class="poll-card__desc">Download every vote as CSV or Google Sheets. Because responses are tied to each member, you can connect the dots over time.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section 2: SCORE (quizzes & predictions) -->
+			<section class="poll-section poll-section--dark" id="quiz">
+				<div class="container">
+					<div class="poll-section__header">
+						<span class="poll-label poll-label--primary mono">SCORE</span>
+						<h2 class="poll-section__title">Turn any poll into a quiz or contest</h2>
+						<p class="poll-section__sub">Give your options points, mark the right answer, and let Subo do the grading: no spreadsheet, no manual tally.</p>
+					</div>
+					<div class="poll-cards">
+						<div class="poll-card">
+							<span class="poll-card__emoji">✅</span>
+							<h3 class="poll-card__title">Correct answers</h3>
+							<p class="poll-card__desc">Mark the right option and Subo shows a ✓ once the poll closes: in the poll, in <code>/results</code>, and on the result cards.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">🔢</span>
+							<h3 class="poll-card__title">Per-option scoring</h3>
+							<p class="poll-card__desc">Give each option its own point value and pipe a voter's points into the follow-up message with <code>[score]</code>.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">🏆</span>
+							<h3 class="poll-card__title">Trivia, made effortless</h3>
+							<p class="poll-card__desc">Run a knowledge check or trivia night and watch the leaderboard sort itself out, automatically scored every time.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">🔮</span>
+							<h3 class="poll-card__title">Prediction contests</h3>
+							<p class="poll-card__desc">Let members call the outcome of the next match, a release date, or who lifts the World Cup, then award the points once the results are in.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section 3: REWARD -->
+			<section class="poll-section poll-section--secondary" id="reward">
+				<div class="container">
+					<div class="poll-section__header">
+						<span class="poll-label poll-label--accent mono">REWARD</span>
+						<h2 class="poll-section__title">Polls that actually do something</h2>
+						<p class="poll-section__sub">Every vote is a member choosing to take part. Recognize them for showing up, and go further by tailoring rewards to how they answered.</p>
+					</div>
+					<div class="poll-cards">
+						<div class="poll-card">
+							<span class="poll-card__emoji">⭐</span>
+							<h3 class="poll-card__title">Reward everyone who votes</h3>
+							<p class="poll-card__desc">Give the same XP, role, or badge to anyone who takes part. Participation is engagement, and a little recognition brings members back.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">🎯</span>
+							<h3 class="poll-card__title">Or reward by performance</h3>
+							<p class="poll-card__desc">Want to go further? Award dynamic XP based on the score or correct answer, straight from the dashboard, the edit menu, or the <code>/poll</code> command.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">🎭</span>
+							<h3 class="poll-card__title">Roles &amp; badges by answer</h3>
+							<p class="poll-card__desc">Grant a server role or badge based on how someone voted, perfect for a welcome-channel poll that sorts new members on the spot.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section 4: CUSTOMIZE -->
+			<section class="poll-section poll-section--dark" id="customize">
+				<div class="container">
+					<div class="poll-section__header">
+						<span class="poll-label poll-label--primary mono">CUSTOMIZE</span>
+						<h2 class="poll-section__title">An invitation worth answering</h2>
+						<p class="poll-section__sub">The poll people see is the poll people answer. Make it unmistakably yours.</p>
+					</div>
+					<div class="poll-cards">
+						<div class="poll-card">
+							<span class="poll-card__emoji">🖼️</span>
+							<h3 class="poll-card__title">Image &amp; thumbnail</h3>
+							<p class="poll-card__desc">Add a banner image and a thumbnail so the invitation looks like your community, not a generic form.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">📢</span>
+							<h3 class="poll-card__title">Call to action &amp; footer</h3>
+							<p class="poll-card__desc">Write your own call-to-action message and footer text for every invitation.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">📊</span>
+							<h3 class="poll-card__title">Custom chart emoji</h3>
+							<p class="poll-card__desc">Choose the emoji that fills the result bars, so even the chart matches your style.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">🎨</span>
+							<h3 class="poll-card__title">Embed border colors</h3>
+							<p class="poll-card__desc">Set the color of the embed border, with a separate one for when the poll is open versus closed, so a finished poll looks visibly different.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">ℹ️</span>
+							<h3 class="poll-card__title">Info in the embed or a popup</h3>
+							<p class="poll-card__desc">Choose what details to show, and whether to keep them visible in the embed or tuck them behind an info button that opens an ephemeral popup.</p>
+						</div>
+						<div class="poll-card">
+							<span class="poll-card__emoji">⚙️</span>
+							<h3 class="poll-card__title">Set defaults once</h3>
+							<p class="poll-card__desc">Define your polls' voice (call-to-action, footer, vote acknowledgements) at the server level, and every new project inherits it by default.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Picture over time -->
+			<section class="poll-section poll-section--secondary">
+				<div class="container poll-narrow">
+					<h2 class="poll-section__title text-center">🧠 Build a clearer picture over time</h2>
+					<p>When you want to learn more about your community, one strategy is a survey convo with several questions. Another is to run quick polls regularly.</p>
+					<p>With Subo, every response is tied to the member who gave it (unless anonymous mode is on), so you can connect the dots over time: see how opinions evolve, follow up, and understand individual preferences, not just the overall tally.</p>
+					<p>Discord's native polls can't do that.</p>
+					<p class="poll-blog-link">
+						<a href="/blog/polls-grading-invite-customization">See everything new in polls →</a>
+					</p>
+				</div>
+			</section>
+
+			<CTA translations={translations} />
+		</main>
+		<Footer translations={translations.footer} />
 	</body>
 </html>
 
 <style>
-main {
-	padding: 150px 50px;
-	margin: 20px auto;
+/* Hero */
+.poll-hero {
+	padding: 140px 0 80px;
+	background: linear-gradient(180deg, var(--dark) 0%, var(--secondary-dark) 100%);
+}
+.poll-hero__title {
+	font-size: clamp(1.8rem, 4.5vw, 3rem);
+	font-weight: 800;
+	line-height: 1.1;
+	margin-bottom: 1.25rem;
+}
+.poll-hero__subtitle {
+	font-size: 1.15rem;
+	color: var(--grey-light);
+	max-width: 620px;
+	margin: 0 auto 2rem;
+	line-height: 1.6;
+}
+
+/* Section nav */
+.poll-nav {
+	position: sticky;
+	top: 57px;
+	z-index: 100;
+	background: var(--secondary-dark);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.poll-nav__inner {
+	display: flex;
+	justify-content: center;
+	gap: 0.25rem;
+	padding: 0.6rem 1rem;
+	flex-wrap: wrap;
+}
+.poll-nav__pill {
+	display: inline-block;
+	padding: 0.35rem 1rem;
+	border-radius: 999px;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	color: var(--grey-light);
+	text-decoration: none;
+	border: 1px solid transparent;
+	transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.poll-nav__pill:hover {
+	color: var(--accent);
+	border-color: var(--accent);
+	background: rgba(255, 255, 255, 0.04);
+}
+
+/* Sections */
+.poll-section {
+	padding: 4rem 0;
+}
+.poll-section--secondary {
+	background: var(--secondary-dark);
+}
+.poll-section--dark {
+	background: var(--dark);
+}
+.poll-section__header {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+.poll-section__title {
+	font-size: clamp(1.5rem, 3vw, 2.25rem);
+	font-weight: 800;
+	margin: 0.75rem 0 0.75rem;
+	line-height: 1.2;
+}
+.poll-section__sub {
+	color: var(--grey-light);
+	font-size: 1.05rem;
+	max-width: 580px;
+	margin: 0 auto;
+	line-height: 1.65;
+}
+
+/* Section label pill */
+.poll-label {
+	display: inline-block;
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	padding: 0.25rem 0.85rem;
+	border-radius: 999px;
+}
+.poll-label--accent {
+	color: var(--accent);
+	background: rgba(var(--accent-rgb, 99, 207, 138), 0.12);
+	border: 1px solid rgba(var(--accent-rgb, 99, 207, 138), 0.25);
+}
+.poll-label--primary {
+	color: var(--primary);
+	background: rgba(88, 101, 242, 0.12);
+	border: 1px solid rgba(88, 101, 242, 0.25);
+}
+
+/* Cards grid */
+.poll-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1.25rem;
+}
+.poll-card {
+	background: var(--dark);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 12px;
+	padding: 1.75rem;
+}
+.poll-section--dark .poll-card {
+	background: var(--secondary-dark);
+}
+.poll-card__emoji {
+	font-size: 1.75rem;
+	display: block;
+	margin-bottom: 0.75rem;
+}
+.poll-card__title {
+	font-size: 1rem;
+	font-weight: 700;
+	margin: 0 0 0.5rem;
+}
+.poll-card__desc {
+	font-size: 0.9rem;
+	color: var(--grey-light);
+	line-height: 1.65;
+	margin: 0;
+}
+.poll-card__desc code {
+	font-family: monospace;
+	background: rgba(255, 255, 255, 0.08);
+	padding: 0.1em 0.35em;
+	border-radius: 4px;
+	font-size: 0.85em;
+}
+
+/* Narrative block */
+.poll-narrow {
+	max-width: 680px;
+}
+.poll-narrow p {
+	color: var(--grey-light);
+	font-size: 1.05rem;
+	line-height: 1.7;
+	margin: 0 0 1rem;
+}
+.poll-blog-link {
+	text-align: center;
+	margin-top: 1.5rem !important;
+}
+.poll-blog-link a {
+	color: var(--accent);
+	text-decoration: none;
+	font-weight: 600;
+}
+.poll-blog-link a:hover {
+	text-decoration: underline;
+}
+
+.text-center {
+	text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+	.poll-nav__pill {
+		font-size: 0.7rem;
+		padding: 0.3rem 0.75rem;
+	}
+	.poll-cards {
+		grid-template-columns: 1fr;
+	}
 }
 </style>
