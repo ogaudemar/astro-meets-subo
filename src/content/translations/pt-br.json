@@ -2,6 +2,12 @@
   "siteTitle": "Subo",
   "siteDescription": "Pesquisas que parecem conversas, não lição de casa. Lance enquetes, pesquisas conversacionais e recompense a participação — no Discord e na web.",
 
+  "redirectPage": {
+    "redirecting": "Redirecionando para",
+    "auto": "Você será redirecionado automaticamente em instantes.",
+    "manual": "Clique aqui se não for redirecionado automaticamente"
+  },
+
 "header": {
   "navItems": [
     { "text": "Produto", "href": "/" },

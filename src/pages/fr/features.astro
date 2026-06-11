@@ -1,15 +1,15 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import CTA from '../components/CTA.astro';
-import Footer from '../components/Footer.astro';
-import translations from '../content/translations/en.json';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import translations from '../../content/translations/fr.json';
 
 const t = translations.featuresPage;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <BaseHead title={t.pageTitle} description={t.pageDescription} alternates={[
       {lang: 'x-default', href: 'https://subo.gg/features'},
@@ -214,19 +214,9 @@ const t = translations.featuresPage;
   font-size: 0.85em;
 }
 
-/* Screenshot placeholder */
+/* Screenshot */
 .feat-screenshot {
   margin: 0 0 1.5rem;
-}
-.feat-screenshot__placeholder {
-  aspect-ratio: 16 / 9;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px dashed rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  margin-bottom: 0.75rem;
-}
-.feat-screenshot--wide .feat-screenshot__placeholder {
-  aspect-ratio: 21 / 9;
 }
 .feat-screenshot img {
   display: block;

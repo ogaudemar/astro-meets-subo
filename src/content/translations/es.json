@@ -2,6 +2,12 @@
   "siteTitle": "Subo",
   "siteDescription": "Encuestas que se sienten como conversaciones, no como tareas. Lanza sondeos, encuestas conversacionales y recompensa la participación — en Discord y en la web.",
 
+  "redirectPage": {
+    "redirecting": "Redirigiendo a",
+    "auto": "Serás redirigido automáticamente en un momento.",
+    "manual": "Haz clic aquí si no eres redirigido automáticamente"
+  },
+
     "header": {
   "navItems": [
     { "text": "Producto", "href": "/es/" },

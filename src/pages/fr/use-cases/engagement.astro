@@ -1,20 +1,20 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import CTA from '../../components/CTA.astro';
-import Footer from '../../components/Footer.astro';
-import translations from '../../content/translations/en.json';
+import BaseHead from '../../../components/BaseHead.astro';
+import Header from '../../../components/Header.astro';
+import CTA from '../../../components/CTA.astro';
+import Footer from '../../../components/Footer.astro';
+import translations from '../../../content/translations/fr.json';
 
-const t = translations.useCasesGetThingsDone;
+const t = translations.useCasesEngagement;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <BaseHead title={t.pageTitle} description={t.pageDescription} alternates={[
-      {lang: 'x-default', href: 'https://subo.gg/use-cases/get-things-done'},
-      {lang: 'en', href: 'https://subo.gg/use-cases/get-things-done'},
-      {lang: 'fr', href: 'https://subo.gg/fr/use-cases/get-things-done'},
+      {lang: 'x-default', href: 'https://subo.gg/use-cases/engagement'},
+      {lang: 'en', href: 'https://subo.gg/use-cases/engagement'},
+      {lang: 'fr', href: 'https://subo.gg/fr/use-cases/engagement'},
     ]} />
   </head>
   <body>

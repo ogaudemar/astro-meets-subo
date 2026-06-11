@@ -2,6 +2,12 @@
   "siteTitle": "Subo",
   "siteDescription": "Surveys that feel like conversations, not homework. Run polls, conversational surveys, and reward participation, inside Discord and on the web.",
 
+  "redirectPage": {
+    "redirecting": "Redirecting to",
+    "auto": "You'll be redirected automatically in a moment.",
+    "manual": "Click here if you're not redirected automatically"
+  },
+
 "header": {
   "navItems": [
     { "text": "Product", "href": "/" },

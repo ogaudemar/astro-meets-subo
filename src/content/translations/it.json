@@ -2,6 +2,12 @@
   "siteTitle": "Subo",
   "siteDescription": "Sondaggi che sembrano conversazioni, non compiti a casa. Lancia votazioni, sondaggi conversazionali e premia la partecipazione — su Discord e sul web.",
 
+  "redirectPage": {
+    "redirecting": "Reindirizzamento a",
+    "auto": "Verrai reindirizzato automaticamente tra un momento.",
+    "manual": "Clicca qui se non vieni reindirizzato automaticamente"
+  },
+
 "header": {
   "navItems": [
     { "text": "Prodotto", "href": "/" },

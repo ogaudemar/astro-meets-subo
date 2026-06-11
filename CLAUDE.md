@@ -45,7 +45,7 @@ Order: Hero → Features → UseCases → Testimonials → DeveloperAPI → CTA
 
 ## Use-case landing pages (`src/pages/use-cases/`)
 
-English-only detail pages, one per homepage use-case category (linked from `UseCases.astro` cards). Copy is hardcoded in the `.astro` (same pattern as `features.astro` / `polls.astro`), not in translations.
+Detail pages, one per homepage use-case category (linked from `UseCases.astro` cards). Copy lives in `en.json` / `fr.json` under `useCasesResearch`, `useCasesEngagement`, `useCasesGetThingsDone`. French counterparts are at `src/pages/fr/use-cases/`.
 
 | Page | Category label | Focus |
 |------|----------------|-------|

@@ -1,20 +1,20 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import translations from '../content/translations/en.json';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import translations from '../../content/translations/fr.json';
 
 const t = translations.customSurveyBot;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<BaseHead title={t.pageTitle} description={t.pageDescription} alternates={[
-      {lang: 'x-default', href: 'https://subo.gg/custom-survey-bot'},
-      {lang: 'en', href: 'https://subo.gg/custom-survey-bot'},
-      {lang: 'fr', href: 'https://subo.gg/fr/custom-survey-bot'},
-    ]} />
+			{lang: 'x-default', href: 'https://subo.gg/custom-survey-bot'},
+			{lang: 'en', href: 'https://subo.gg/custom-survey-bot'},
+			{lang: 'fr', href: 'https://subo.gg/fr/custom-survey-bot'},
+		]} />
 	</head>
 	<body>
 		<Header translations={translations.header} />
@@ -132,16 +132,13 @@ const t = translations.customSurveyBot;
 
 <style>
 
-
 .accent {
     color: var(--accent);
 }
 
-
   .dark2secondarydark {
     background: linear-gradient(var(--dark), var(--secondary-dark));
   }
-
 
   .secondarydark {
     background: var(--secondary-dark);
@@ -155,7 +152,6 @@ const t = translations.customSurveyBot;
     background: linear-gradient(var(--secondary-dark), var(--dark));
   }
 
-
   .secondarydark2primarydark {
     background: linear-gradient(var(--secondary-dark), var(--primary-dark));
   }
@@ -164,26 +160,18 @@ const t = translations.customSurveyBot;
     background: linear-gradient(var(--primary-dark), var(--dark));
   }
 
-
   .primary2secondarydark {
     background: linear-gradient(var(--primary), var(--secondary-dark));
   }
-
-
 
   .primarydark2secondarydark {
     background: linear-gradient(var(--primary-dark), var(--secondary-dark));
   }
 
-
-
-
-
   .hero {
         padding: 100px 0;
     overflow: hidden;
   }
-
 
   .hero__content {
     display: grid;
@@ -191,8 +179,6 @@ const t = translations.customSurveyBot;
     gap: 4rem;
     align-items: center;
   }
-
-
 
   .hero__title {
     font-size: 4rem;
@@ -227,7 +213,6 @@ const t = translations.customSurveyBot;
 
   .hero__bot-image {
     width: 400px;
-    /*height: 200px;*/
     border-radius: 5%;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   }
@@ -265,7 +250,6 @@ const t = translations.customSurveyBot;
 
   .comparison {
     padding: 80px 0;
-
   }
 
   .section-title {
@@ -302,10 +286,10 @@ const t = translations.customSurveyBot;
     text-align: center;
   }
 
-    .comparison__card:hover {
-      box-shadow: 0 6px 16px var(--primary);
-      background: var(--light);
-      opacity: 1;
+  .comparison__card:hover {
+    box-shadow: 0 6px 16px var(--primary);
+    background: var(--light);
+    opacity: 1;
   }
 
   .comparison__icon {
@@ -316,13 +300,11 @@ const t = translations.customSurveyBot;
   .comparison__title {
     font-size: 1.5rem;
     font-weight: 700;
-    /*color: white;*/
     margin-bottom: 1.5rem;
   }
 
   .comparison__list {
     text-align: left;
-    /*color: #ccc;*/
     line-height: 1.8;
   }
 
@@ -342,7 +324,6 @@ const t = translations.customSurveyBot;
 
   .how-it-works {
     padding: 80px 0;
-
   }
 
   .steps {
@@ -402,7 +383,6 @@ const t = translations.customSurveyBot;
 
   .faq {
     padding: 80px 0;
-
   }
 
   .faq__grid {

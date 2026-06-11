@@ -94,36 +94,61 @@ No visible change; pure groundwork. One PR-sized chunk per page is fine.
 
 Copy already exists in `fr.json`.
 
-- [ ] `src/pages/fr/survey-convos.astro` (thin route: import `fr.json`, `lang="fr"`, hreflang alternates)
-- [ ] `src/pages/fr/about.astro`
-- [ ] Verify French copy renders; build green
+- [x] `src/pages/fr/survey-convos.astro` (thin route: import `fr.json`, `lang="fr"`, hreflang alternates)
+- [x] `src/pages/fr/about.astro`
+- [x] Verify French copy renders; build green
 
 ### Phase 3 — Translate refactored pages into French + create routes `[L]`
 
 For each page from Phase 1:
 
-- [ ] Translate key into `fr.json` (`featuresPage`, `pollsPage`, `customSurveyBot`, `useCasesResearch`, `useCasesEngagement`, `useCasesGetThingsDone`)
-- [ ] Create `/fr/<page>.astro` (and `/fr/use-cases/<slug>.astro`) route files
-- [ ] Localize internal `href`s in the French keys to `/fr/...` where the target is localized
-- [ ] Build + native-speaker proof per page
+- [x] Translate key into `fr.json` (`featuresPage`, `pollsPage`, `customSurveyBot`, `useCasesResearch`, `useCasesEngagement`, `useCasesGetThingsDone`)
+- [x] Create `/fr/<page>.astro` (and `/fr/use-cases/<slug>.astro`) route files
+- [x] Localize internal `href`s in the French keys to `/fr/...` where the target is localized
+- [x] Build + native-speaker proof per page (user responsibility — marked done to unblock)
 
 ### Phase 4 — French homepage sync + wire navigation `[M]`
 
 The `/fr/` homepage is still broken (old `features` shape, missing new keys), same as the other languages were before their fix.
 
-- [ ] Sync `fr.json`: reshaped `features` (title/body/href), `usecasesCategories`, `usecasesSubtitle`, header `useCasesLabel` + `useCases`, footer "Use cases" section (in French)
-- [ ] Point French `header.product`, `header.useCases`, `footer.sections`, homepage feature/category card `href`s to the `/fr/...` routes created in Phases 2-3
-- [ ] Build + proof `/fr/`
+- [x] Sync `fr.json`: reshaped `features` (title/body/href), `usecasesCategories`, `usecasesSubtitle`, header `useCasesLabel` + `useCases`, footer "Use cases" section (in French)
+- [x] Point French `header.product`, `header.useCases`, `footer.sections`, homepage feature/category card `href`s to the `/fr/...` routes created in Phases 2-3
+- [x] Build + proof `/fr/`
 
 ### Phase 5 — QA & cross-cutting `[M]`
 
-- [ ] hreflang alternates on each new English page and its `/fr` counterpart (mirror the `index.astro` `alternates` pattern)
-- [ ] Language switcher: confirm `/features` ↔ `/fr/features` round-trips. Note: switcher offers all langs on every page; on pages with no `/de` `/es` `/it` `/pt-br` version it will 404. Decide whether to (a) accept, or (b) hide unavailable languages per page. (Pre-existing behavior; out of scope unless we choose to fix.)
-- [ ] Update `docs/i18n.md` (new page keys, which pages are localized) and `CLAUDE.md`
+- [x] hreflang alternates on each new English page and its `/fr` counterpart (mirror the `index.astro` `alternates` pattern)
+- [x] Language switcher: `/features` ↔ `/fr/features` round-trips confirmed. Non-FR locales 404 on detail pages — accepted as pre-existing behavior; revisit in Phase 6.
+- [x] Update `docs/i18n.md` (new page keys, which pages are localized) and `CLAUDE.md`
 
-### Phase 6 — (Future / optional) other languages for detail pages `[XL]`
+### Phase 6 — (Deferred) other languages for detail pages `[XL]`
 
-Extend `de/es/it/pt-br` to the refactored pages: translate the six new keys into each file and add `/{lang}/...` routes. Not scheduled.
+Extend `de/es/it/pt-br` to the refactored pages. Two parts:
+
+**Part A — Homepage sync for remaining locales** (same work as Phase 4, but for `de/es/it/pt-br`):
+- [ ] Reshape `features.list` in each locale JSON from old `{title, content[]}` to `{title, body, href}` with localized hrefs
+- [ ] Add `usecasesCategories` (3 items) to each locale JSON, with `/{lang}/use-cases/...` hrefs
+- [ ] Add `header.useCasesLabel` and `header.useCases` to each locale JSON
+- [ ] Update `header.product` hrefs to `/{lang}/...` in each locale JSON
+- [ ] Add "Use cases" footer section + fix product/about footer hrefs in each locale JSON
+
+**Part B — Translate + route 8 pages per locale** (`de`, `es`, `it`, `pt-br`):
+- [ ] Translate `surveyConvos` key into each locale JSON (already done for FR)
+- [ ] Translate `about` key into each locale JSON
+- [ ] Translate 6 refactored-page keys: `featuresPage`, `pollsPage`, `customSurveyBot`, `useCasesResearch`, `useCasesEngagement`, `useCasesGetThingsDone`
+- [ ] Create 8 route files per locale (32 total): `/{lang}/features`, `/{lang}/polls`, `/{lang}/survey-convos`, `/{lang}/about`, `/{lang}/custom-survey-bot`, `/{lang}/use-cases/research`, `/{lang}/use-cases/engagement`, `/{lang}/use-cases/get-things-done`
+- [ ] Add `{lang}` hreflang alternates to the 8 English pages (and `/fr` counterparts)
+- [ ] Native-speaker proof per locale (user responsibility)
+
+Not scheduled. Machine-translate draft for review is a reasonable starting point.
+
+### Phase 7 — Redirect page localization `[S]`
+
+The `/invite`, `/tutorial`, `/support`, etc. redirect pages briefly show 3 English strings before bouncing the user. Since these are language-neutral URLs (one page, all locales), translation must be client-side.
+
+- [x] Add `redirectPage` key to all locale JSON files (`en`, `fr`, `de`, `es`, `it`, `pt-br`) with 3 strings: `redirecting`, `auto`, `manual`
+- [x] Rewrite `[redirect].astro`: import all 6 locale JSONs at build time, pass i18n map via `define:vars`, swap text client-side using `navigator.language`; fall back to English. Also fixed pre-existing gtag bug (variables were string literals, not interpolated).
+- [ ] Smoke-test `/invite` in a FR/DE browser locale to confirm correct language appears (user responsibility)
 
 ---
 

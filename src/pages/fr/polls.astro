@@ -1,21 +1,21 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import CTA from '../components/CTA.astro';
-import Footer from '../components/Footer.astro';
-import translations from '../content/translations/en.json';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import translations from '../../content/translations/fr.json';
 
 const t = translations.pollsPage;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<BaseHead title={t.pageTitle} description={t.pageDescription} alternates={[
-      {lang: 'x-default', href: 'https://subo.gg/polls'},
-      {lang: 'en', href: 'https://subo.gg/polls'},
-      {lang: 'fr', href: 'https://subo.gg/fr/polls'},
-    ]} />
+			{lang: 'x-default', href: 'https://subo.gg/polls'},
+			{lang: 'en', href: 'https://subo.gg/polls'},
+			{lang: 'fr', href: 'https://subo.gg/fr/polls'},
+		]} />
 	</head>
 	<body>
 		<Header translations={translations.header} />

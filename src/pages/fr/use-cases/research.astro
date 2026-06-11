@@ -1,20 +1,20 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import CTA from '../../components/CTA.astro';
-import Footer from '../../components/Footer.astro';
-import translations from '../../content/translations/en.json';
+import BaseHead from '../../../components/BaseHead.astro';
+import Header from '../../../components/Header.astro';
+import CTA from '../../../components/CTA.astro';
+import Footer from '../../../components/Footer.astro';
+import translations from '../../../content/translations/fr.json';
 
-const t = translations.useCasesGetThingsDone;
+const t = translations.useCasesResearch;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <BaseHead title={t.pageTitle} description={t.pageDescription} alternates={[
-      {lang: 'x-default', href: 'https://subo.gg/use-cases/get-things-done'},
-      {lang: 'en', href: 'https://subo.gg/use-cases/get-things-done'},
-      {lang: 'fr', href: 'https://subo.gg/fr/use-cases/get-things-done'},
+      {lang: 'x-default', href: 'https://subo.gg/use-cases/research'},
+      {lang: 'en', href: 'https://subo.gg/use-cases/research'},
+      {lang: 'fr', href: 'https://subo.gg/fr/use-cases/research'},
     ]} />
   </head>
   <body>
@@ -48,6 +48,12 @@ const t = translations.useCasesGetThingsDone;
                 </div>
               ))}
             </div>
+            {section.screenshot && (
+              <figure class="uc-screenshot">
+                <img src={section.screenshot.src} alt={section.screenshot.alt} loading="lazy" />
+                <figcaption>{section.screenshot.caption}</figcaption>
+              </figure>
+            )}
             {section.blogLink && (
               <p class="uc-blog-link">
                 <a href={section.blogLink.href}>{section.blogLink.text}</a>
@@ -161,6 +167,20 @@ const t = translations.useCasesGetThingsDone;
   border-radius: 999px;
   padding: 0.5rem 1rem;
   font-size: 0.92rem;
+}
+.uc-screenshot { margin: 0 0 1.5rem; }
+.uc-screenshot img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0.75rem;
+}
+.uc-screenshot figcaption {
+  font-size: 0.82rem;
+  color: var(--grey-light);
+  text-align: center;
+  opacity: 0.7;
 }
 .uc-blog-link { text-align: center; margin: 0; }
 .uc-blog-link a { font-size: 0.9rem; color: var(--accent); text-decoration: none; }

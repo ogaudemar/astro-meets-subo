@@ -1,21 +1,21 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import CTA from '../components/CTA.astro';
-import Footer from '../components/Footer.astro';
-import translations from '../content/translations/en.json';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import translations from '../../content/translations/fr.json';
 
 const t = translations.about;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<BaseHead title={t.pageTitle} description={t.pageDescription} alternates={[
-      {lang: 'x-default', href: 'https://subo.gg/about'},
-      {lang: 'en', href: 'https://subo.gg/about'},
-      {lang: 'fr', href: 'https://subo.gg/fr/about'},
-    ]} />
+			{lang: 'x-default', href: 'https://subo.gg/about'},
+			{lang: 'en', href: 'https://subo.gg/about'},
+			{lang: 'fr', href: 'https://subo.gg/fr/about'},
+		]} />
 	</head>
 	<body>
 		<Header translations={translations.header} />

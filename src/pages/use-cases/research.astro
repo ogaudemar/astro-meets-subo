@@ -11,7 +11,11 @@ const t = translations.useCasesResearch;
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={t.pageTitle} description={t.pageDescription} />
+    <BaseHead title={t.pageTitle} description={t.pageDescription} alternates={[
+      {lang: 'x-default', href: 'https://subo.gg/use-cases/research'},
+      {lang: 'en', href: 'https://subo.gg/use-cases/research'},
+      {lang: 'fr', href: 'https://subo.gg/fr/use-cases/research'},
+    ]} />
   </head>
   <body>
     <Header translations={translations.header} />

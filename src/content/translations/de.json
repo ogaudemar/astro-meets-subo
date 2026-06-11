@@ -2,6 +2,12 @@
   "siteTitle": "Subo",
   "siteDescription": "Umfragen, die sich wie Gespräche anfühlen, nicht wie Hausaufgaben. Starte Abstimmungen, dialogbasierte Umfragen und belohne Teilnahme — in Discord und im Web.",
 
+  "redirectPage": {
+    "redirecting": "Weiterleitung zu",
+    "auto": "Du wirst gleich automatisch weitergeleitet.",
+    "manual": "Klick hier, wenn du nicht automatisch weitergeleitet wirst"
+  },
+
 "header": {
   "navItems": [
     { "text": "Produkt", "href": "/" },

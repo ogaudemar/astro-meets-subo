@@ -1,6 +1,12 @@
 ---
 import { trackedRedirects } from '../config/redirects.js';
 import BaseHead from '../components/BaseHead.astro';
+import en from '../content/translations/en.json';
+import fr from '../content/translations/fr.json';
+import de from '../content/translations/de.json';
+import es from '../content/translations/es.json';
+import it from '../content/translations/it.json';
+import ptBr from '../content/translations/pt-br.json';
 
 export function getStaticPaths() {
   return Object.keys(trackedRedirects).map(key => ({
@@ -14,6 +20,15 @@ const redirectData = trackedRedirects[redirect];
 if (!redirectData) {
   return new Response(null, { status: 404 });
 }
+
+const i18n = {
+  en: en.redirectPage,
+  fr: fr.redirectPage,
+  de: de.redirectPage,
+  es: es.redirectPage,
+  it: it.redirectPage,
+  'pt-br': ptBr.redirectPage,
+};
 ---
 
 <!DOCTYPE html>
@@ -51,23 +66,37 @@ if (!redirectData) {
 </head>
 <body>
   <img class="loader-gif" src="/subo-equalizer.gif" alt="Loading..." />
-  <h3>Redirecting to {redirectData.description}...</h3>
-  <p>You'll be redirected automatically in a moment.</p>
-  <a href={redirectData.url}>Click here if you're not redirected automatically</a>
+  <h3 id="redir-heading">Redirecting to {redirectData.description}...</h3>
+  <p id="redir-auto">You'll be redirected automatically in a moment.</p>
+  <a id="redir-manual" href={redirectData.url}>Click here if you're not redirected automatically</a>
 
-  <script define:inline>
-    // Track the redirect (assuming gtag is available from BaseHead)
+  <script define:vars={{ i18n, description: redirectData.description, redirectUrl: redirectData.url, redirectName: redirectData.name }}>
+    // Prefer the locale the user came from (referrer URL path takes priority over browser language)
+    var refMatch = document.referrer.match(/\/(?:fr|de|es|it|pt-br)\//);
+    var lang;
+    if (refMatch) {
+      lang = refMatch[0].replace(/\//g, '');
+    } else {
+      var raw = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      lang = raw.startsWith('pt') ? 'pt-br' : raw.slice(0, 2);
+    }
+    var t = i18n[lang] || i18n['en'];
+    document.getElementById('redir-heading').textContent = t.redirecting + ' ' + description + '...';
+    document.getElementById('redir-auto').textContent = t.auto;
+    document.getElementById('redir-manual').textContent = t.manual;
+
+    // Track the redirect
     if (typeof gtag !== 'undefined') {
       gtag('event', 'redirect_click', {
-        redirect_destination: '{redirectData.name}',
-        redirect_url: '{redirectData.url}',
-        redirect_description: '{redirectData.description}'
+        redirect_destination: redirectName,
+        redirect_url: redirectUrl,
+        redirect_description: description,
       });
     }
-    
+
     // Redirect after tracking
-    setTimeout(() => {
-      window.location.href = `${redirectData.url}`;
+    setTimeout(function() {
+      window.location.href = redirectUrl;
     }, 1000);
   </script>
 </body>
