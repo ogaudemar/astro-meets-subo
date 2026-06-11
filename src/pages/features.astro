@@ -77,9 +77,13 @@ const t = translations.featuresPage;
 /* Hero */
 .feat-hero {
   padding: 140px 0 80px;
-  background: linear-gradient(180deg, var(--dark) 0%, var(--secondary-dark) 100%);
+  background:
+    radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+    var(--bg-base);
 }
 .feat-hero h1 {
+  font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+  letter-spacing: -0.02em;
   font-size: clamp(1.8rem, 4.5vw, 3rem);
   font-weight: 800;
   line-height: 1.1;
@@ -97,7 +101,8 @@ const t = translations.featuresPage;
   position: sticky;
   top: 57px; /* nav bar height */
   z-index: 100;
-  background: var(--secondary-dark);
+  background: rgba(19, 13, 28, 0.92);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .feat-nav__inner {
@@ -130,10 +135,10 @@ const t = translations.featuresPage;
   padding: 4rem 0;
 }
 .feat-section--secondary {
-  background: var(--secondary-dark);
+  background: transparent;
 }
 .feat-section--dark {
-  background: var(--dark);
+  background: transparent;
 }
 
 .feat-section__header {
@@ -169,9 +174,9 @@ const t = translations.featuresPage;
   border: 1px solid rgba(var(--accent-rgb, 99, 207, 138), 0.25);
 }
 .feat-label--primary {
-  color: var(--primary);
-  background: rgba(88, 101, 242, 0.12);
-  border: 1px solid rgba(88, 101, 242, 0.25);
+  color: var(--primary-light);
+  background: rgba(var(--primary-rgb), 0.12);
+  border: 1px solid rgba(var(--primary-rgb), 0.25);
 }
 
 /* Feature cards grid */
@@ -182,13 +187,10 @@ const t = translations.featuresPage;
   margin-bottom: 2.5rem;
 }
 .feat-card {
-  background: var(--dark);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 1.75rem;
-}
-.feat-section--dark .feat-card {
-  background: var(--secondary-dark);
 }
 .feat-card__emoji {
   font-size: 1.75rem;

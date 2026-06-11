@@ -337,30 +337,6 @@ const useCases = translations.useCases ?? [];
   left: 10px;
 }
 
-/*  .button--primary-bg {
-    background: var(--primary);
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    text-decoration: none;
-  }*/
-
-  .button--accent-bg {
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-
-
   /* Mobile styles */
   @media (max-width: 768px) {
     .nav__list--desktop {
@@ -431,9 +407,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let lastScrollY = window.scrollY;
   const nav = document.querySelector('.nav');
+  // Pages can opt out of nav auto-hide by setting <body data-nav-pinned> — used
+  // on pricing, where the sticky comparison-table header tucks under the nav and
+  // a disappearing nav would leave a gap that page content scrolls through.
+  const navPinned = document.body.hasAttribute('data-nav-pinned');
 
   window.addEventListener('scroll', () => {
-    if (!nav) return;
+    if (!nav || navPinned) return;
     if (window.scrollY > lastScrollY && window.scrollY > 50) {
       // Scrolling down
       nav.classList.remove('nav--visible');

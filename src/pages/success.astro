@@ -129,7 +129,7 @@ import translations from '../content/translations/en.json';
 <style>
 
 .faq-section {
-  background: linear-gradient(var(--secondary-dark), var(--dark));
+  background: transparent;
   padding: 3rem 0;
 }
 .faq-title {
@@ -167,7 +167,9 @@ import translations from '../content/translations/en.json';
 
 <style>
   .success-section {
-    background: linear-gradient(var(--dark), var(--secondary-dark));
+    background:
+      radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+      var(--bg-base);
     padding: 80px 0;
     min-height: 80vh;
     display: flex;
@@ -187,6 +189,8 @@ import translations from '../content/translations/en.json';
   }
 
   .success-title {
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+    letter-spacing: -0.02em;
     font-size: 3rem;
     font-weight: 700;
     color: white;

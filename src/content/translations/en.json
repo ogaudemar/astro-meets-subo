@@ -331,6 +331,23 @@
   ],
 
     "priceTable": {
+    "comparisonTitle": "Compare all features",
+    "categoryTitles": {
+        "limits": "Plan limits",
+        "builder": "Survey builder",
+        "responses": "Responses & AI",
+        "branding": "Branding & customization",
+        "engagement": "Engagement & rewards",
+        "support": "Support"
+    },
+    "includesLabel": "Includes:",
+    "inheritsLabel": "Everything in {tier}, plus:",
+    "cardFeatures": [
+        ["250 respondents / project", "Surveys, polls & quizzes", "XP system & skip logic"],
+        ["1,000 respondents / project", "More customization", "New-response notifications", "AI credits for drafts & summaries"],
+        ["10,000 respondents / project", "Advanced script building & logic", "Higher AI credit allowance"],
+        ["Your own bot name, avatar & bio"]
+    ],
     "tiers": [
         {
         "name": "FREE",
@@ -367,20 +384,20 @@
         ],
         [
         "Respondents",
-        "250 / survey",
-        "1000 / survey",
-        "10000 / survey",
-        "10000 / survey"
+        "250 / project",
+        "1000 / project",
+        "10000 / project",
+        "10000 / project"
         ],
         [
         "Answers<br><small>Answer = Respondent x Question (e.g. 60 respondents answering 5 questions = 300 answers)</small>",
-        "1,000 / survey",
-        "5,000 / survey",
-        "50,000 / survey",
-        "50,000 / survey"
+        "1,000 / project",
+        "5,000 / project",
+        "50,000 / project",
+        "50,000 / project"
         ],
         [
-        "Total Projects<br><small>Total surveys & polls stored. Delete old projects to stay in a smaller tier.</small>",
+        "Total Projects<br><small>Total projects stored. Delete old projects to stay in a smaller tier.</small>",
         "10 / server",
         "200 / server",
         "400 / server",
@@ -395,10 +412,10 @@
         ],
         [
         "Blocks<br><small>Question and content blocks</small>",
-        "10 / survey",
-        "30 / survey",
-        "50 / survey",
-        "50 / survey"
+        "10 / project",
+        "30 / project",
+        "50 / project",
+        "50 / project"
         ],
         [
         "Remove self-promotion",
@@ -429,7 +446,7 @@
         "✓"
         ],
         [
-        "Delete some responses<br><small>Delete some or all responses from a survey or poll</small>",
+        "Delete some responses<br><small>Delete some or all responses from a project</small>",
         "✗",
         "✓",
         "✓",
@@ -479,10 +496,10 @@
         ],
         [
         "Role reward",
-        "✗<br><small>1 role server-wise for ever answering any poll/survey</small>",
-        "✓<br>poll or survey-level",
-        "✓<br>poll or survey-level",
-        "✓<br>poll or survey-level"
+        "✗<br><small>1 role server-wise for ever answering any project</small>",
+        "✓<br>project-level",
+        "✓<br>project-level",
+        "✓<br>project-level"
         ],
         [
         "Role rewards based on monthly XP",

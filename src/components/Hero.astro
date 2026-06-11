@@ -42,7 +42,9 @@ import LogoBanner from './LogoBanner.astro';
 <style>
   .hero {
 
-    background: linear-gradient(black, var(--secondary-dark));
+    background:
+      radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+      var(--bg-base);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -51,7 +53,7 @@ import LogoBanner from './LogoBanner.astro';
   }
 
   .Logo__banner {
-    background: var(--secondary-dark);
+    background: var(--bg-base);
   }
 
   .hero__container {
@@ -80,7 +82,9 @@ import LogoBanner from './LogoBanner.astro';
   }
 
   .hero__title {
-    font-size: 5rem;
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+    font-size: var(--step-hero);
+    letter-spacing: -0.02em;
     margin-bottom: 1.5rem;
     line-height: 1.1;
     color: white;
@@ -152,19 +156,8 @@ import LogoBanner from './LogoBanner.astro';
       text-align: center;
     }
 
-    .hero__title {
-      font-size: 2.5rem;
-    }
-
- 
     .hero__cta {
       align-items: center;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero__title {
-      font-size: 1.75rem;
     }
   }
 </style>

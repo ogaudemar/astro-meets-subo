@@ -40,7 +40,7 @@ const features = translations.list;
 
   .features {
     padding: 4rem 0;
-    background: linear-gradient(var(--secondary-dark), var(--primary-dark));
+    background: transparent;
   }
 
   .features__header {
@@ -50,8 +50,8 @@ const features = translations.list;
   }
 
   .features__title {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;  
+    font-size: var(--step-h2);
+    margin-bottom: 1rem;
   }
 
   .features__subtitle {
@@ -134,9 +134,6 @@ const features = translations.list;
   @media (max-width: 700px) {
     .features {
       padding: 2rem 0;
-    }
-    .features__title {
-      font-size: 1.4rem;
     }
     .features__subtitle {
       font-size: 1rem;

@@ -11,7 +11,10 @@
     --primary: #e1287e;
     --primary-light: #f34f85;
     --primary-dark: #71143F;
+    --primary-rgb: 225, 40, 126;
     --accent: #9eff00;
+    --accent-rgb: 158, 255, 0;
+    --accent-hover: #8ae600;
     --secondary: #745399;
     --secondary-dark: #3C2B50;
     --dark: #000000;
@@ -28,6 +31,17 @@
     --blurple: #5865F2;
     --navy: #081693;
     --blurple-dark: #19175c;
+
+    /* === Background system: one flat dark base + sparing accent glows === */
+    --bg-base: #130d1c;          /* near-black desaturated purple, whole-page base */
+    --bg-glow-purple: rgba(116, 83, 153, 0.30);
+    --bg-glow-pink: rgba(225, 40, 126, 0.22);
+
+    /* === Fluid type scale (clamp = no hard mobile jumps) === */
+    --step-hero: clamp(2.5rem, 6vw, 4rem);     /* hero headline */
+    --step-h2: clamp(1.85rem, 4vw, 2.75rem);   /* section titles */
+    --step-h3: clamp(1.25rem, 2vw, 1.5rem);
+    --step-subtitle: clamp(1.05rem, 1.4vw, 1.25rem);
   }
 
   * {
@@ -44,7 +58,7 @@
   body {
     line-height: 1.6;
     color: var(--text-white);
-    background: var(--secondary-dark);
+    background: var(--bg-base);
   }
 
   .container {
@@ -102,8 +116,10 @@
 
 
   .button--accent-bg:hover {
-    background: var(--secondary);
-    color: white;
+    background: var(--accent);
+    color: black;
+    box-shadow: 0 4px 18px rgba(158, 255, 0, 0.35);
+    transform: translateY(-1px);
   }
 
   .button--primary-bg {
@@ -187,17 +203,16 @@ h4,
 h5,
 h6 {
   margin: 0 0 0.5rem 0;
-  color: rgb(var(--black));
   line-height: 1.2;
 }
 h1 {
-  font-size: 3.052em;
+  font-size: var(--step-hero);
 }
 h2 {
-  font-size: 3.5rem;
+  font-size: var(--step-h2);
 }
 h3 {
-  font-size: 1.953em;
+  font-size: var(--step-h3);
 }
 h4 {
   font-size: 1.563em;
@@ -236,17 +251,15 @@ h5 {
   }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: var(--step-subtitle);
   margin: 2rem auto;
   opacity: 0.9;
   max-width: 600px;
 }
 
-h1, h2, h3 {
-    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
-}
-
-h4, h5, h6 {
+/* Section & body headings use the sans (Figtree). The homepage hero opts back
+   into IBM Plex Mono for its signature "typed" look (see Hero.astro). */
+h1, h2, h3, h4, h5, h6 {
   font-family: "Figtree", sans-serif;
 }
 
@@ -286,11 +299,13 @@ img {
   border-radius: 0.5rem;
 }
 code {
+  font-family: "IBM Plex Mono", "Source Code Pro", monospace;
   padding: 2px 5px;
-  background-color: rgb(var(--gray-light));
+  background-color: rgba(255, 255, 255, 0.08);
   border-radius: 2px;
 }
 pre {
+  font-family: "IBM Plex Mono", "Source Code Pro", monospace;
   padding: 1.5em;
   border-radius: 8px;
 }
@@ -305,17 +320,13 @@ blockquote {
 }
 hr {
   border: none;
-  border-top: 1px solid rgb(var(--gray-light));
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
   /* Mobile responsiveness */
   @media (max-width: 768px) {
     .container {
-      padding: 0 0.5rem;
-    }
-    
-    .heading {
-      font-size: 2.5rem;
+      padding: 0 1.25rem;
     }
   }
 
@@ -327,11 +338,7 @@ hr {
     padding: 0;
   }
   .subtitle {
-  font-size: 1.1rem;
   max-width: 90%;
-}
-  h2 {
-    font-size: 2rem;
 }
 }
 
@@ -381,12 +388,14 @@ hr {
 
 
     .testimonial-card {
-      background: var(--grey-light);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      backdrop-filter: blur(8px);
       padding: 1.5rem 1.1rem 1.1rem 1.1rem;
-      color: #222;
-      font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+      color: var(--light);
+      font-family: "Figtree", sans-serif;
       min-width: 300px;
       max-width: 400px;
       min-height: 400px;
@@ -447,7 +456,7 @@ hr {
     .testimonial-meta {
       margin-top: 1.5rem;
       font-size: 0.95rem;
-      color: #444;
+      color: var(--grey-light);
       display: flex;
       align-items: center;
       gap: 0.7em;
@@ -456,13 +465,13 @@ hr {
     .testimonial-author {
       font-family: "IBM Plex Mono", "Source Code Pro", monospace;
       font-weight: 600;
-      color: #222;
+      color: var(--text-white);
     }
     .testimonial-community {
-      font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+      font-family: "Figtree", sans-serif;
       font-size: 0.92em;
-      color: var(--primary);
-      font-weight: 400;
+      color: var(--primary-light);
+      font-weight: 500;
     }
     .testimonial-social img {
       margin-left: 0.5em;

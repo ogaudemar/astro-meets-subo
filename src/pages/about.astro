@@ -86,9 +86,13 @@ const t = translations.about;
 /* Hero */
 .about-hero {
 	padding: 140px 0 80px;
-	background: linear-gradient(180deg, var(--dark) 0%, var(--secondary-dark) 100%);
+	background:
+		radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+		var(--bg-base);
 }
 .about-hero h1 {
+	font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+	letter-spacing: -0.02em;
 	font-size: clamp(2rem, 5vw, 3.5rem);
 	font-weight: 800;
 	color: var(--accent);
@@ -104,7 +108,7 @@ const t = translations.about;
 /* Story */
 .about-story {
 	padding: 4rem 0;
-	background: var(--secondary-dark);
+	background: transparent;
 }
 .about-story h2 {
 	font-size: 1.5rem;
@@ -123,7 +127,7 @@ const t = translations.about;
 /* Stats */
 .about-stats {
 	padding: 4rem 0;
-	background: var(--dark);
+	background: transparent;
 }
 .about-stats h2 {
 	font-size: 1.5rem;
@@ -138,7 +142,7 @@ const t = translations.about;
 	margin: 0 auto;
 }
 .stat-card {
-	background: var(--secondary-dark);
+	background: rgba(255, 255, 255, 0.05);
 	border: 1px solid rgba(255,255,255,0.08);
 	border-radius: 12px;
 	padding: 2rem 1.5rem;
@@ -161,7 +165,7 @@ const t = translations.about;
 /* Differentiators */
 .about-diff {
 	padding: 4rem 0;
-	background: var(--secondary-dark);
+	background: transparent;
 }
 .about-diff h2 {
 	font-size: 1.5rem;
@@ -174,7 +178,7 @@ const t = translations.about;
 	gap: 1.5rem;
 }
 .diff-card {
-	background: var(--dark);
+	background: rgba(255, 255, 255, 0.05);
 	border: 1px solid rgba(255,255,255,0.08);
 	border-radius: 12px;
 	padding: 1.75rem;
@@ -199,7 +203,9 @@ const t = translations.about;
 /* Mission */
 .about-mission {
 	padding: 5rem 0;
-	background: linear-gradient(135deg, var(--secondary-dark), var(--dark));
+	background:
+		radial-gradient(75% 120% at 50% 100%, var(--bg-glow-pink), transparent 70%),
+		var(--bg-base);
 }
 .about-mission h2 {
 	font-size: 1.5rem;

@@ -138,41 +138,17 @@ const t = translations.customSurveyBot;
 }
 
 
-  .dark2secondarydark {
-    background: linear-gradient(var(--dark), var(--secondary-dark));
-  }
-
-
-  .secondarydark {
-    background: var(--secondary-dark);
-  }
-
-  .secondarydark2secondary {
-    background: linear-gradient(var(--secondary-dark), var(--secondary));
-  }
-
-  .secondarydark2dark {
-    background: linear-gradient(var(--secondary-dark), var(--dark));
-  }
-
-
-  .secondarydark2primarydark {
-    background: linear-gradient(var(--secondary-dark), var(--primary-dark));
-  }
-
-.primarydark2dark {
-    background: linear-gradient(var(--primary-dark), var(--dark));
-  }
-
-
-  .primary2secondarydark {
-    background: linear-gradient(var(--primary), var(--secondary-dark));
-  }
-
-
-
+  /* Legacy section-gradient utilities, flattened to the single page base.
+     The hero and CTA opt back into accent glows below. */
+  .dark2secondarydark,
+  .secondarydark,
+  .secondarydark2secondary,
+  .secondarydark2dark,
+  .secondarydark2primarydark,
+  .primarydark2dark,
+  .primary2secondarydark,
   .primarydark2secondarydark {
-    background: linear-gradient(var(--primary-dark), var(--secondary-dark));
+    background: transparent;
   }
 
 
@@ -182,6 +158,9 @@ const t = translations.customSurveyBot;
   .hero {
         padding: 100px 0;
     overflow: hidden;
+    background:
+      radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+      var(--bg-base);
   }
 
 
@@ -195,6 +174,8 @@ const t = translations.customSurveyBot;
 
 
   .hero__title {
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+    letter-spacing: -0.02em;
     font-size: 4rem;
     font-weight: 700;
     color: white;
@@ -294,8 +275,8 @@ const t = translations.customSurveyBot;
   }
 
   .comparison__card {
-    background: var(--grey-light);
-    color: black;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-white);
     padding: 3rem;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -304,7 +285,7 @@ const t = translations.customSurveyBot;
 
     .comparison__card:hover {
       box-shadow: 0 6px 16px var(--primary);
-      background: var(--light);
+      background: rgba(255, 255, 255, 0.1);
       opacity: 1;
   }
 
@@ -433,6 +414,9 @@ const t = translations.customSurveyBot;
   .cta {
     padding: 80px 0;
     text-align: center;
+    background:
+      radial-gradient(75% 120% at 50% 100%, var(--bg-glow-pink), transparent 70%),
+      var(--bg-base);
   }
 
   .cta__content {

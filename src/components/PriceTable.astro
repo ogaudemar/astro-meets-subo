@@ -6,227 +6,418 @@ const tiers = priceTable.tiers;
 const tableData = priceTable.tableData;
 const buttonRow = priceTable.buttonRow;
 
+// Optional, translated copy. Falls back gracefully so not-yet-translated
+// languages still render a clean (un-headed) table.
+const comparisonTitle = priceTable.comparisonTitle ?? "";
+const categoryTitles = priceTable.categoryTitles ?? {};
+// Per-tier key-feature highlights for the plan cards. `inheritsLabel` carries a
+// {tier} placeholder for the "Everything in <prev>, plus:" framing.
+const includesLabel = priceTable.includesLabel ?? "";
+const inheritsLabel = priceTable.inheritsLabel ?? "";
+const cardFeatures = priceTable.cardFeatures ?? [];
+
+const tierClasses = ["tier-free", "tier-premium", "tier-vip", "tier-custom"];
+
+// Row groupings are language-independent (every locale shares the same 22-row
+// order), so the indices live here in the component. Only the titles are
+// translated, via priceTable.categoryTitles keyed by `key`.
+const categoryGroups = [
+  { key: "limits", rows: [1, 2, 3, 4, 5] },
+  { key: "builder", rows: [9, 12, 13, 14, 11, 15] },
+  { key: "responses", rows: [8, 10, 16] },
+  { key: "branding", rows: [6, 7, 21] },
+  { key: "engagement", rows: [19, 20, 17, 18] },
+  { key: "support", rows: [0] },
+];
+
+const withIcons = (cell) =>
+  cell
+    .replace(/✓/g, `<span class="icon icon-yes">✓</span>`)
+    .replace(/✗/g, `<span class="icon icon-no">✗</span>`);
+
+const priceParts = (p) => p.split(/<br\s*\/?>/i);
+
 const discordSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="#5865F2" d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3.3a.08.08 0 0 0-.084.04c-.37.654-.78 1.507-1.07 2.18a18.233 18.233 0 0 0-5.462 0 12.683 12.683 0 0 0-1.088-2.18.077.077 0 0 0-.084-.04c-1.432.327-2.814.797-3.432 1.069a.073.073 0 0 0-.033.027C2.533 7.164 1.37 9.86 1.076 12.602c0 .01.002.02.007.028a19.933 19.933 0 0 0 5.993 3.03.08.08 0 0 0 .087-.027c.462-.634.874-1.304 1.226-2.01a.08.08 0 0 0-.045-.11c-.652-.247-1.274-.547-1.872-.892a.08.08 0 0 1-.008-.134c.126-.094.252-.19.372-.288a.08.08 0 0 1 .084-.01c3.927 1.793 8.18 1.793 12.062 0a.08.08 0 0 1 .085.009c.12.098.246.194.372.288a.08.08 0 0 1-.007.134 12.298 12.298 0 0 1-1.873.892.08.08 0 0 0-.044.11c.36.705.773 1.375 1.225 2.01a.08.08 0 0 0 .087.027 19.888 19.888 0 0 0 6.002-3.03.08.08 0 0 0 .007-.028c-.332-3.036-1.495-5.732-3.728-7.206a.076.076 0 0 0-.033-.027ZM8.02 13.317c-.786 0-1.432-.722-1.432-1.607 0-.885.634-1.607 1.432-1.607.805 0 1.45.73 1.432 1.607 0 .885-.634 1.607-1.432 1.607Zm7.974 0c-.786 0-1.432-.722-1.432-1.607 0-.885.634-1.607 1.432-1.607.805 0 1.45.73 1.432 1.607 0 .885-.634 1.607-1.432 1.607Z"/></svg>`;
 ---
 
-<div class="pricing-table">
-  <!-- Desktop table view -->
-  <div class="table-desktop">
-    <table class="comparison-table">
-      <thead>
-        <tr>
-          <th class="feature-column">PLAN COMPARISON</th>
-          {tiers.map(tier => (
-            <th class="tier-column">
-              <div class="tier-header">
-                <img src={tier.image} alt={tier.name} class="tier-image" />
-                <h3 class="tier-name">{tier.name}</h3>
-                <p class="tier-description">{tier.description}</p>
-                <div class="tier-price" set:html={tier.price}></div>
-              </div>
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {tableData.map(row => (
-          <tr>
-            <td class="feature-name" set:html={row[0]}></td>
-            {row.slice(1).map((cell, index) => {
-              const tierClass = ["tier-free", "tier-premium", "tier-vip", "tier-custom"][index];
-              const cellHtml = cell
-                .replace(/✓/g, `<span class="icon icon-yes">✓</span>`)
-                .replace(/✗/g, `<span class="icon icon-no">✗</span>`);
-              return (
-                <td class={`feature-value ${tierClass}`} set:html={cellHtml}></td>
-              );
-            })}
-          </tr>
-        ))}
-        <tr class="button-row">
-          <td></td>
-          {buttonRow.map((button, idx) => (
-            <td>
-              {Array.isArray(button) ? (
-                <div class="button-group">
-                  {button.map(btn => (
-                    <a href={btn.href} class={btn.class}>
-                      {btn.icon === "discord" && <span class="discord-icon" set:html={discordSVG}></span>}
-                      {btn.text}
-                    </a>
-                  ))}
-                </div>
-              ) : (
-                <a href={button.href} class={button.class}>{button.text}</a>
-              )}
-            </td>
-          ))}
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<!-- ===== Plan cards ===== -->
+<div class="plan-cards">
+  {tiers.map((tier, i) => {
+    const button = buttonRow[i];
+    const pp = priceParts(tier.price);
+    const feats = cardFeatures[i] ?? [];
+    const introLabel = i === 0 ? includesLabel : inheritsLabel.replace("{tier}", tiers[i - 1]?.name ?? "");
+    return (
+      <div class={`plan-card ${tierClasses[i]}`}>
+        <div class="plan-card__head">
+          <img src={tier.image} alt={tier.name} class="plan-card__img" />
+          <h3 class={`plan-card__name ${tierClasses[i]}`}>{tier.name}</h3>
+        </div>
+        <p class="plan-card__desc">{tier.description}</p>
+        <div class="plan-card__price">
+          <span class="price-main">{pp[0]}</span>
+          {pp[1] && <span class="price-sub">{pp[1]}</span>}
+        </div>
+        {Array.isArray(button) ? (
+          <div class="button-group">
+            {button.map((btn) => (
+              <a href={btn.href} class={btn.class}>
+                {btn.icon === "discord" && <span class="discord-icon" set:html={discordSVG}></span>}
+                {btn.text}
+              </a>
+            ))}
+          </div>
+        ) : (
+          <a href={button.href} class={button.class}>{button.text}</a>
+        )}
+        {feats.length > 0 && (
+          <div class="plan-card__feats">
+            {introLabel && <p class="plan-card__feats-label">{introLabel}</p>}
+            <ul>
+              {feats.map((f) => (
+                <li>
+                  <span class="feat-check" aria-hidden="true">✓</span>
+                  <span set:html={f}></span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    );
+  })}
+</div>
 
-  <!-- Mobile card view -->
-  <div class="table-mobile">
-    {tiers.map((tier, tierIndex) => (
-      <div class="pricing-card">
+<!-- ===== Feature comparison (desktop) ===== -->
+<section class="comparison">
+  {comparisonTitle && <h2 class="comparison__title">{comparisonTitle}</h2>}
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th class="feature-column"></th>
+        {tiers.map((tier, i) => {
+          const pp = priceParts(tier.price);
+          return (
+            <th class={`tier-column ${tierClasses[i]}`}>
+              <span class={`th-name ${tierClasses[i]}`}>{tier.name}</span>
+              <span class="th-price">{pp[0]}</span>
+            </th>
+          );
+        })}
+      </tr>
+    </thead>
+    <tbody>
+      {categoryGroups.map((cat) => (
+        <Fragment>
+          {categoryTitles[cat.key] && (
+            <tr class="category-row">
+              <td colspan={tiers.length + 1}>{categoryTitles[cat.key]}</td>
+            </tr>
+          )}
+          {cat.rows.map((r) => (
+            <tr class="feature-row">
+              <td class="feature-name" set:html={tableData[r][0]}></td>
+              {tiers.map((_, ti) => (
+                <td class={`feature-value ${tierClasses[ti]}`} set:html={withIcons(tableData[r][ti + 1])}></td>
+              ))}
+            </tr>
+          ))}
+        </Fragment>
+      ))}
+    </tbody>
+  </table>
+</section>
+
+<!-- ===== Feature comparison (mobile) ===== -->
+<div class="table-mobile">
+  {tiers.map((tier, ti) => {
+    const button = buttonRow[ti];
+    const pp = priceParts(tier.price);
+    return (
+      <div class={`pricing-card ${tierClasses[ti]}`}>
         <div class="card-header">
           <img src={tier.image} alt={tier.name} class="tier-image" />
-          <h3 class="tier-name">{tier.name}</h3>
+          <h3 class={`tier-name ${tierClasses[ti]}`}>{tier.name}</h3>
           <p class="tier-description">{tier.description}</p>
-          <div class="tier-price" set:html={tier.price}></div>
-            {Array.isArray(buttonRow[tierIndex])
-            ? (
-              <div class="button-group">
-                {buttonRow[tierIndex].map(btn => (
-                  <a href={btn.href} class={btn.class}>
-                    {btn.icon === "discord" && <span class="discord-icon" set:html={discordSVG}></span>}
-                    {btn.text}
-                  </a>
-                ))}
-              </div>
-            )
-          : (
-              <a href={buttonRow[tierIndex].href} class={buttonRow[tierIndex].class}>
-                {buttonRow[tierIndex].text}
-              </a>
-            )
-        }
+          <div class="plan-card__price">
+            <span class="price-main">{pp[0]}</span>
+            {pp[1] && <span class="price-sub">{pp[1]}</span>}
+          </div>
+          {Array.isArray(button) ? (
+            <div class="button-group">
+              {button.map((btn) => (
+                <a href={btn.href} class={btn.class}>
+                  {btn.icon === "discord" && <span class="discord-icon" set:html={discordSVG}></span>}
+                  {btn.text}
+                </a>
+              ))}
+            </div>
+          ) : (
+            <a href={button.href} class={button.class}>{button.text}</a>
+          )}
         </div>
         <div class="card-features">
-          {tableData.map(row => (
-            <div class="feature-row">
-              <div class="feature-name" set:html={row[0]}></div>
-              <div class="feature-value" set:html={row[tierIndex + 1]}></div>
-            </div>
+          {categoryGroups.map((cat) => (
+            <Fragment>
+              {categoryTitles[cat.key] && <div class="m-category">{categoryTitles[cat.key]}</div>}
+              {cat.rows.map((r) => (
+                <div class="feature-row">
+                  <div class="feature-name" set:html={tableData[r][0]}></div>
+                  <div class="feature-value" set:html={withIcons(tableData[r][ti + 1])}></div>
+                </div>
+              ))}
+            </Fragment>
           ))}
         </div>
       </div>
-    ))}
-  </div>
+    );
+  })}
 </div>
 
 <style>
-  .pricing-table {
-    width: 100%;
-    margin: 0 auto;
-    overflow-x: auto;
+  /* ===== Plan cards ===== */
+  .plan-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 0 auto 4rem;
   }
 
-  /* Desktop table styles */
-  .table-desktop {
-    display: block;
+  .plan-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 3px solid var(--grey-light);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+  }
+  .plan-card.tier-free { border-top-color: var(--accent); }
+  .plan-card.tier-premium { border-top-color: var(--premium); }
+  .plan-card.tier-vip { border-top-color: var(--yellow-vip); }
+  .plan-card.tier-custom { border-top-color: var(--primary); }
+
+  .plan-card__head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+  .plan-card__img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+  .plan-card__name {
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+  .plan-card__name.tier-free { color: var(--accent); }
+  .plan-card__name.tier-premium { color: var(--premium); }
+  .plan-card__name.tier-vip { color: var(--yellow-vip); }
+  .plan-card__name.tier-custom { color: var(--primary); }
+
+  .plan-card__desc {
+    font-size: 0.9rem;
+    color: var(--grey-light);
+    line-height: 1.5;
+    margin: 0 0 1.25rem;
+    min-height: 4em; /* keep prices aligned across cards */
+  }
+
+  .plan-card__price {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 2.7rem; /* reserve room for the yearly sub-line so CTAs align */
+    margin-bottom: 1.5rem;
+  }
+  .price-main {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .price-sub {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--grey-light);
+    margin-top: 0.25rem;
+  }
+
+  .plan-card .button,
+  .plan-card .button-group {
+    width: 100%;
+  }
+  .plan-card .button {
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .plan-card__feats {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .plan-card__feats-label {
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--grey-light);
+    margin: 0 0 0.9rem;
+  }
+  .plan-card__feats ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .plan-card__feats li {
+    display: flex;
+    gap: 0.55rem;
+    align-items: flex-start;
+    font-size: 0.88rem;
+    color: #e8e8ea;
+    line-height: 1.4;
+  }
+  .feat-check {
+    color: var(--accent);
+    font-weight: 700;
+    flex: 0 0 auto;
+  }
+
+  /* ===== Comparison table (desktop) ===== */
+  .comparison {
+    margin-top: 1rem;
+  }
+  .comparison__title {
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+    letter-spacing: -0.01em;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
   .comparison-table {
     width: 100%;
-    border-collapse: collapse;
-    background:rgba(0, 0, 0, 0.3);;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    /* fixed layout makes the % column widths authoritative so header and body
+       columns align and the feature column actually gets its 40% */
+    table-layout: fixed;
+    /* separate (not collapse) is required for position:sticky on <th> to work
+       reliably in Chromium */
+    border-collapse: separate;
+    border-spacing: 0;
   }
 
-  .comparison-table th {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 2rem 1.5rem;
-    vertical-align: top;
-    border-bottom: 1px solid #333;
-  }
-
-  .feature-column {
-    width: 25%;
-    text-align: left;
-    font-weight: 600;
-    color: white;
-    font-size: 1.1rem;
-  }
-
-  .tier-column {
-    width: 18.75%;
+  .comparison-table thead th {
+    position: sticky;
+    top: 84px; /* nav is ~87px tall (CTA buttons); tuck just under it so the
+                  header has no peek-gap above and tier names clear the nav */
+    z-index: 5;
+    background: #191120;
+    padding: 1rem 0.85rem 0.9rem;
     text-align: center;
-    border-left: 1px solid #333;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .comparison-table thead th.feature-column {
+    text-align: left;
   }
 
-  .tier-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
+  .feature-column { width: 40%; }
+  .tier-column { width: 15%; }
 
-  .tier-image {
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-  }
-
-  .tier-name {
-    font-size: 1.2rem;
+  .th-name {
+    display: block;
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
     font-weight: 700;
-    color: var(--accent);
-    margin: 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+  }
+  .th-name.tier-free { color: var(--accent); }
+  .th-name.tier-premium { color: var(--premium); }
+  .th-name.tier-vip { color: var(--yellow-vip); }
+  .th-name.tier-custom { color: var(--primary); }
+
+  .th-price {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--grey-light);
+    margin-top: 0.35rem;
+    line-height: 1.3;
+  }
+  .th-price-sub {
+    display: block;
+    opacity: 0.75;
   }
 
-.tier-name.tier-free { color: var(--accent); }
-.tier-name.tier-premium { color: var(--premium); }
-.tier-name.tier-vip { color: var(--yellow-vip); }
-.tier-name.tier-custom { color: var(--primary); }
-
-  .tier-description {
-    font-size: 1rem;
-    color: #ccc;
-    margin: 0;
-    line-height: 1.4;
+  .category-row td {
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--grey-light);
+    padding: 2rem 0.85rem 0.6rem;
   }
 
-  .tier-price {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: white;
-    margin-top: 0.5rem;
-  }
-
-  .comparison-table td {
-    padding: 1.5rem;
-    border-bottom: 1px solid #333;
+  .feature-row td {
+    padding: 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     vertical-align: middle;
+  }
+  .feature-row:hover td {
+    background: rgba(255, 255, 255, 0.03);
   }
 
   .feature-name {
-    font-weight: 500;
-    color: white;
     text-align: left;
-    line-height: 1.5;
+    font-weight: 500;
+    color: #fff;
+    font-size: 0.95rem;
+    line-height: 1.45;
   }
-
   .feature-name small {
     display: block;
-    color: #888;
-    font-size: 0.85rem;
-    margin-top: 0.25rem;
-    font-weight: normal;
+    color: var(--grey-light);
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 0.2rem;
+    line-height: 1.4;
   }
 
   .feature-value {
     text-align: center;
-    border-left: 1px solid #333;
-    color: white;
-    font-weight: 300;
+    font-weight: 400;
+    color: #dcdce0;
+    font-size: 0.92rem;
   }
-
   .feature-value small {
-    color: #888;
-    font-size: 0.85rem;
     display: block;
-    margin-top: 0.25rem;
+    color: var(--grey-light);
+    font-size: 0.78rem;
+    margin-top: 0.15rem;
   }
 
-  .button-row td {
-    padding: 2rem 1.5rem;
-    background:rgba(0, 0, 0, 0.5);
+  :global(.icon-yes) {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  :global(.icon-no) {
+    color: #555;
   }
 
+  /* ===== Buttons (shared) ===== */
   .button {
     display: inline-block;
     padding: 12px 24px;
@@ -234,208 +425,155 @@ const discordSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" 
     border-radius: 8px;
     font-weight: 600;
     text-align: center;
-    transition: all 0.3s ease;
-    min-width: 140px;
+    transition: all 0.2s ease;
   }
-
-
   .button--dark-accent-border {
     background: transparent;
     color: white;
     border: 1px solid var(--accent);
   }
-
   .button--dark-accent-border:hover {
     background: var(--accent);
     color: black;
   }
-  
-
   .button--dark-premium-border {
     background: transparent;
     color: white;
     border: 1px solid var(--premium);
   }
-
   .button--dark-premium-border:hover {
     background: var(--premium);
     color: black;
   }
-
-    .button--dark-vip-border {
+  .button--dark-vip-border {
     background: transparent;
     color: white;
     border: 1px solid var(--yellow-vip, #ffff00);
   }
-
   .button--dark-vip-border:hover {
     color: black;
-    background: var(--yellow-vip, #ffff00); 
-    
+    background: var(--yellow-vip, #ffff00);
   }
-  
 
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+  .discord-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5em;
+    height: 1.2em;
+    width: 1.2em;
+  }
 
-
-  /* Mobile card styles */
+  /* ===== Comparison cards (mobile) ===== */
   .table-mobile {
     display: none;
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-
   .pricing-card {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 0 5px;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 3px solid var(--grey-light);
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
+  .pricing-card.tier-free { border-top-color: var(--accent); }
+  .pricing-card.tier-premium { border-top-color: var(--premium); }
+  .pricing-card.tier-vip { border-top-color: var(--yellow-vip); }
+  .pricing-card.tier-custom { border-top-color: var(--primary); }
 
   .card-header {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 2rem;
+    padding: 1.75rem 1.5rem;
     text-align: center;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
-
   .card-header .tier-image {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 8px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.85rem;
   }
-
   .card-header .tier-name {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--accent);
-    margin: 0 0 0.5rem 0;
-  }
-
-  .card-header .tier-description {
-    color: #ccc;
-    margin: 0 0 1rem 0;
-    line-height: 1.4;
-  }
-
-  .card-header .tier-price {
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
     font-size: 1.1rem;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 0 0 0.5rem;
+  }
+  .card-header .tier-name.tier-free { color: var(--accent); }
+  .card-header .tier-name.tier-premium { color: var(--premium); }
+  .card-header .tier-name.tier-vip { color: var(--yellow-vip); }
+  .card-header .tier-name.tier-custom { color: var(--primary); }
+  .card-header .tier-description {
+    color: var(--grey-light);
+    font-size: 0.9rem;
+    margin: 0 0 1rem;
+    line-height: 1.45;
+  }
+  .card-header .plan-card__price {
+    align-items: center;
+    margin-bottom: 1.25rem;
   }
 
   .card-features {
-    padding: 0 2rem;
+    padding: 0 1.5rem 1.5rem;
   }
-
-  .feature-row {
+  .m-category {
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--grey-light);
+    padding: 1.5rem 0 0.6rem;
+  }
+  .table-mobile .feature-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 1rem 0;
-    border-bottom: 1px solid #333;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   }
-
-  .feature-row:last-child {
+  .table-mobile .feature-row:last-child {
     border-bottom: none;
   }
-
-  .feature-row .feature-name {
+  .table-mobile .feature-name {
     flex: 1;
     text-align: left;
-    padding-right: 1rem;
+    font-weight: 500;
+    color: #fff;
+    font-size: 0.9rem;
   }
-
-  .feature-row .feature-value {
+  .table-mobile .feature-value {
     flex: 0 0 auto;
     text-align: right;
-    border: none;
-    min-width: 100px;
+    color: #dcdce0;
+    font-weight: 400;
+    font-size: 0.9rem;
   }
 
-  /* Responsive breakpoints */
-  @media (max-width: 1200px) {
-    .comparison-table {
-      font-size: 0.9rem;
-    }
-    
-    .tier-column {
-      width: 16%;
-    }
-    
-    .feature-column {
-      width: 32%;
-    }
-  }
-
+  /* ===== Responsive switch ===== */
   @media (max-width: 968px) {
-    .table-desktop {
+    .comparison {
       display: none;
     }
-
     .table-mobile {
       display: grid;
     }
-  }
-
-  @media (max-width: 480px) {
-    .pricing-card {
-      margin: 0 -1rem;
-    }
-
-    .card-header {
-      padding: 1.5rem;
-    }
-
-    .card-features {
-      padding: 1rem;
-    }
-
-    .feature-row {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-
-    .feature-row .feature-value {
-      text-align: left;
-      min-width: auto;
+    .plan-cards {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  /* Visual enhancements */
-
-  .comparison-table tbody tr:hover {
-    background: rgba(0, 0, 0, 0.2);
+  @media (max-width: 560px) {
+    .plan-cards {
+      grid-template-columns: 1fr;
+    }
   }
-
-  .pricing-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .pricing-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-  }
-
-:global(.icon-yes) { color: var(--accent); font-weight: 700; }
-
-:global(.icon-no) { color: #666; }
-
-.button-group {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-}
-
-.discord-icon {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.5em;
-  height: 1.2em;
-  width: 1.2em;
-}
 </style>
