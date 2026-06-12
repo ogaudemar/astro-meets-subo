@@ -124,9 +124,13 @@ const t = translations.surveyConvos;
 /* Hero */
 .sc-hero {
 	padding: 140px 0 80px;
-	background: linear-gradient(180deg, var(--dark) 0%, var(--secondary-dark) 100%);
+	background:
+		radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+		var(--bg-base);
 }
 .sc-hero h1 {
+	font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+	letter-spacing: -0.02em;
 	font-size: clamp(2rem, 5vw, 3.5rem);
 	font-weight: 800;
 	line-height: 1.1;
@@ -142,7 +146,7 @@ const t = translations.surveyConvos;
 /* What section */
 .sc-what {
 	padding: 4rem 0;
-	background: var(--secondary-dark);
+	background: transparent;
 }
 .sc-what h2 {
 	font-size: 1.5rem;
@@ -161,7 +165,7 @@ const t = translations.surveyConvos;
 /* Compare section */
 .sc-compare {
 	padding: 4rem 0;
-	background: var(--dark);
+	background: transparent;
 }
 .sc-compare h2 {
 	font-size: 1.5rem;
@@ -183,7 +187,7 @@ const t = translations.surveyConvos;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
-	background: var(--secondary-dark);
+	background: rgba(255, 255, 255, 0.05);
 	color: var(--grey-light);
 }
 .compare-table th.accent {
@@ -204,7 +208,7 @@ const t = translations.surveyConvos;
 /* How it works */
 .sc-how {
 	padding: 4rem 0;
-	background: var(--secondary-dark);
+	background: transparent;
 }
 .sc-how h2 {
 	font-size: 1.5rem;
@@ -217,7 +221,7 @@ const t = translations.surveyConvos;
 	gap: 2rem;
 }
 .step {
-	background: var(--dark);
+	background: rgba(255, 255, 255, 0.05);
 	border: 1px solid rgba(255,255,255,0.08);
 	border-radius: 12px;
 	padding: 2rem;
@@ -249,7 +253,7 @@ const t = translations.surveyConvos;
 /* Question types */
 .sc-qtypes {
 	padding: 4rem 0;
-	background: var(--dark);
+	background: transparent;
 }
 .sc-qtypes h2 {
 	font-size: 1.5rem;
@@ -268,7 +272,7 @@ const t = translations.surveyConvos;
 	margin: 0 auto;
 }
 .qtype-card {
-	background: var(--secondary-dark);
+	background: rgba(255, 255, 255, 0.05);
 	border: 1px solid rgba(255,255,255,0.08);
 	border-radius: 10px;
 	padding: 1.25rem;
@@ -293,7 +297,9 @@ const t = translations.surveyConvos;
 /* Web section */
 .sc-web {
 	padding: 4rem 0;
-	background: linear-gradient(135deg, var(--secondary-dark), var(--blurple-dark));
+	background:
+		radial-gradient(80% 120% at 50% 50%, var(--bg-glow-purple), transparent 70%),
+		var(--bg-base);
 }
 .sc-web h2 {
 	font-size: 1.5rem;
@@ -310,7 +316,7 @@ const t = translations.surveyConvos;
 /* Benefits */
 .sc-benefits {
 	padding: 4rem 0;
-	background: var(--secondary-dark);
+	background: transparent;
 }
 .sc-benefits h2 {
 	font-size: 1.5rem;
@@ -325,7 +331,7 @@ const t = translations.surveyConvos;
 	gap: 0.75rem;
 }
 .benefits-list li {
-	background: var(--dark);
+	background: rgba(255, 255, 255, 0.05);
 	border: 1px solid rgba(255,255,255,0.08);
 	border-radius: 8px;
 	padding: 0.9rem 1.25rem;

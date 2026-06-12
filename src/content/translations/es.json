@@ -436,6 +436,23 @@
 },
 
 "priceTable": {
+  "comparisonTitle": "Comparar todas las funciones",
+  "categoryTitles": {
+    "limits": "Límites del plan",
+    "builder": "Constructor de encuesta",
+    "responses": "Respuestas & IA",
+    "branding": "Marca & personalización",
+    "engagement": "Participación & recompensas",
+    "support": "Soporte"
+  },
+  "includesLabel": "Incluye:",
+  "inheritsLabel": "Todo en {tier}, más:",
+  "cardFeatures": [
+    ["250 encuestados / proyecto", "Encuestas, sondeos & cuestionarios", "Sistema XP & lógica de salto"],
+    ["1.000 encuestados / proyecto", "Más personalización", "Notificaciones de nuevas respuestas", "Créditos IA para borradores & resúmenes"],
+    ["10.000 encuestados / proyecto", "Creación de scripts avanzados & lógica", "Mayor asignación de créditos IA"],
+    ["Tu propio nombre, avatar & bio de bot"]
+  ],
   "tiers": [
     {
       "name": "GRATIS",
@@ -472,17 +489,17 @@
     ],
     [
       "Encuestados",
-      "250 / encuesta",
-      "1000 / encuesta",
-      "10000 / encuesta",
-      "10000 / encuesta"
+      "250 / proyecto",
+      "1000 / proyecto",
+      "10000 / proyecto",
+      "10000 / proyecto"
     ],
     [
       "Respuestas<br><small>Respuesta = Encuestado x Pregunta (ej: 60 encuestados respondiendo 5 preguntas = 300 respuestas)</small>",
-      "1,000 / encuesta",
-      "5,000 / encuesta",
-      "50,000 / encuesta",
-      "50,000 / encuesta"
+      "1,000 / proyecto",
+      "5,000 / proyecto",
+      "50,000 / proyecto",
+      "50,000 / proyecto"
     ],
     [
       "Proyectos totales<br><small>Total de encuestas y sondeos almacenados. Elimina proyectos antiguos para mantenerte en un plan menor.</small>",
@@ -500,10 +517,10 @@
     ],
     [
       "Bloques<br><small>Bloques de preguntas y de contenido</small>",
-      "10 / encuesta",
-      "30 / encuesta",
-      "50 / encuesta",
-      "50 / encuesta"
+      "10 / proyecto",
+      "30 / proyecto",
+      "50 / proyecto",
+      "50 / proyecto"
     ],
     [
       "Quitar autopromoción",
@@ -584,10 +601,10 @@
     ],
     [
       "Recompensa de rol",
-      "✗<br><small>1 rol por servidor para quien responda cualquier encuesta/sondeo</small>",
-      "✓<br>por encuesta o sondeo",
-      "✓<br>por encuesta o sondeo",
-      "✓<br>por encuesta o sondeo"
+      "✗<br><small>1 rol por servidor para quien responda cualquier proyecto</small>",
+      "✓<br>por proyecto",
+      "✓<br>por proyecto",
+      "✓<br>por proyecto"
     ],
     [
       "Recompensas de rol según XP mensual",

@@ -35,8 +35,10 @@ const { pricingPage } = translations;
     <div class="container">
     <div class="pricing-hero__content">
         <h1 class="pricing-hero__title"><span class="accent">{pricingPage.heroTitleAccent}</span>{pricingPage.heroTitle}</h1>
+        {/* Subtitles hidden for an uncluttered look — let the tables speak for themselves.
         <p class="subtitle" set:html={pricingPage.heroSubtitle}></p>
         <p class="subtitle" set:html={pricingPage.heroDescription}></p>
+        */}
         </div>
         </div>
     </section>
@@ -77,10 +79,11 @@ const { pricingPage } = translations;
 }*/
 
   .pricing-hero {
-
     padding: 150px 0 60px;
     text-align: center;
-    background: linear-gradient(var(--dark),var(--secondary-dark));
+    background:
+      radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+      var(--bg-base);
   }
 
   .pricing-hero__content {
@@ -90,6 +93,8 @@ const { pricingPage } = translations;
   }
 
   .pricing-hero__title {
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+    letter-spacing: -0.02em;
     font-size: 3rem;
     font-weight: 700;
     color: white;
@@ -109,14 +114,12 @@ const { pricingPage } = translations;
 
   .pricing-section {
     padding: 60px 0;
-    background: linear-gradient(var(--secondary-dark), var(--secondary), var(--primary));
-
+    background: transparent;
   }
 
-    .channels-section {
+  .channels-section {
     padding: 60px 0;
-    background: linear-gradient(var(--primary), var(--secondary-dark));
-
+    background: transparent;
   }
 
   .upgrade-options {
@@ -145,8 +148,7 @@ const { pricingPage } = translations;
   font-weight: 700;
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
-  color: var(--blurple-dark);
-
+  color: var(--accent);
 }
 
 .discount-desc {
@@ -221,7 +223,7 @@ const { pricingPage } = translations;
   }
 
 .faq-section {
-  background: linear-gradient(var(--secondary-dark), var(--dark));
+  background: transparent;
   padding: 3rem 0;
 }
 .faq-title {

@@ -773,7 +773,7 @@
       "title": "Make participation worth something",
       "sub": "Recognition is what brings members back. Subo hands it out automatically.",
       "cards": [
-        { "emoji": "⭐", "title": "XP rewards", "desc": "Every completed poll or survey earns XP. Available on all plans, even free." },
+        { "emoji": "⭐", "title": "XP rewards", "desc": "Every completed project earns XP. Available on all plans, even free." },
         { "emoji": "🏆", "title": "Monthly leaderboard", "desc": "An automatic monthly XP leaderboard posted in Discord, ranking your most engaged members." },
         { "emoji": "🎭", "title": "Role rewards", "desc": "Grant or remove Discord roles based on participation, scores, or XP thresholds." },
         { "emoji": "🏷️", "title": "Custom XP name", "desc": "Rename XP to match your brand: \"Stars\", \"Coins\", \"Rep\". Make it feel like yours." }
@@ -1123,7 +1123,7 @@
       "title": "Make participation worth something",
       "sub": "Reward members with XP, roles, and achievements, based on how they answer, not just whether they finish.",
       "cards": [
-        { "emoji": "⭐", "title": "XP rewards", "desc": "Every completed survey earns XP points. Available on all plans, even free." },
+        { "emoji": "⭐", "title": "XP rewards", "desc": "Every completed project earns XP points. Available on all plans, even free." },
         { "emoji": "🏆", "title": "Monthly leaderboard", "desc": "Premium+ servers get an automatic monthly XP leaderboard posted in Discord. Rank your most engaged members." },
         { "emoji": "🎭", "title": "Role rewards", "desc": "Automatically grant or remove Discord roles based on survey completion or XP thresholds." },
         { "emoji": "⚡", "title": "Action blocks", "desc": "Drop XP, role, or achievement rewards anywhere in the flow, fire mid-survey, conditionally on answers. Onboarding roles for new joiners, XP for quiz takers who got it right, beta access for the right candidates." },

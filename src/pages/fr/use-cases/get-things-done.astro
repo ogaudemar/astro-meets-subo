@@ -79,7 +79,9 @@ const t = translations.useCasesGetThingsDone;
 <style>
 .uc-hero {
   padding: 140px 0 80px;
-  background: linear-gradient(180deg, var(--dark) 0%, var(--secondary-dark) 100%);
+  background:
+    radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+    var(--bg-base);
 }
 .uc-eyebrow {
   display: inline-block;
@@ -90,6 +92,8 @@ const t = translations.useCasesGetThingsDone;
   margin-bottom: 0.75rem;
 }
 .uc-hero h1 {
+  font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+  letter-spacing: -0.02em;
   font-size: clamp(1.8rem, 4.5vw, 3rem);
   font-weight: 800;
   line-height: 1.1;
@@ -102,8 +106,8 @@ const t = translations.useCasesGetThingsDone;
   margin: 0 auto 2rem;
 }
 .uc-section { padding: 4rem 0; }
-.uc-section--secondary { background: var(--secondary-dark); }
-.uc-section--dark { background: var(--dark); }
+.uc-section--secondary { background: transparent; }
+.uc-section--dark { background: transparent; }
 .uc-section__header { text-align: center; margin-bottom: 3rem; }
 .uc-section__title {
   font-size: clamp(1.5rem, 3vw, 2.25rem);
@@ -136,12 +140,11 @@ const t = translations.useCasesGetThingsDone;
   margin-bottom: 2.5rem;
 }
 .uc-card {
-  background: var(--dark);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 1.75rem;
 }
-.uc-section--dark .uc-card { background: var(--secondary-dark); }
 .uc-card__emoji { font-size: 1.75rem; display: block; margin-bottom: 0.75rem; }
 .uc-card__title { font-size: 1rem; font-weight: 700; margin: 0 0 0.5rem; }
 .uc-card__desc { font-size: 0.9rem; color: var(--grey-light); line-height: 1.65; margin: 0; }

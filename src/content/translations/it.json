@@ -327,6 +327,23 @@
   ],
 
     "priceTable": {
+    "comparisonTitle": "Confronta tutte le funzionalità",
+    "categoryTitles": {
+        "limits": "Limiti del piano",
+        "builder": "Generatore di sondaggi",
+        "responses": "Risposte & IA",
+        "branding": "Branding & personalizzazione",
+        "engagement": "Coinvolgimento & premi",
+        "support": "Supporto"
+    },
+    "includesLabel": "Include:",
+    "inheritsLabel": "Tutto in {tier}, più:",
+    "cardFeatures": [
+        ["250 rispondenti / progetto", "Sondaggi, votazioni & quiz", "Sistema XP & logica di salto"],
+        ["1.000 rispondenti / progetto", "Maggiore personalizzazione", "Notifiche nuove risposte", "Crediti IA per bozze & riepiloghi"],
+        ["10.000 rispondenti / progetto", "Creazione di script avanzati & logica", "Crediti IA più elevati"],
+        ["Il tuo nome bot, avatar & bio"]
+    ],
     "tiers": [
         {
         "name": "GRATIS",
@@ -363,17 +380,17 @@
         ],
         [
         "Rispondenti",
-        "250 / sondaggio",
-        "1000 / sondaggio",
-        "10000 / sondaggio",
-        "10000 / sondaggio"
+        "250 / progetto",
+        "1000 / progetto",
+        "10000 / progetto",
+        "10000 / progetto"
         ],
         [
         "Risposte<br><small>Risposta = Rispondente x Domanda (es. 60 rispondenti che rispondono a 5 domande = 300 risposte)</small>",
-        "1.000 / sondaggio",
-        "5.000 / sondaggio",
-        "50.000 / sondaggio",
-        "50.000 / sondaggio"
+        "1.000 / progetto",
+        "5.000 / progetto",
+        "50.000 / progetto",
+        "50.000 / progetto"
         ],
         [
         "Progetti totali<br><small>Totale sondaggi e votazioni archiviati. Elimina i vecchi progetti per rimanere in un livello inferiore.</small>",
@@ -391,10 +408,10 @@
         ],
         [
         "Blocchi<br><small>Blocchi domanda e di contenuto</small>",
-        "10 / sondaggio",
-        "30 / sondaggio",
-        "50 / sondaggio",
-        "50 / sondaggio"
+        "10 / progetto",
+        "30 / progetto",
+        "50 / progetto",
+        "50 / progetto"
         ],
         [
         "Rimuovi auto-promozione",
@@ -475,10 +492,10 @@
         ],
         [
         "Ricompensa ruolo",
-        "✗<br><small>1 ruolo per server per aver risposto a qualsiasi sondaggio/votazione</small>",
-        "✓<br>a livello di sondaggio o votazione",
-        "✓<br>a livello di sondaggio o votazione",
-        "✓<br>a livello di sondaggio o votazione"
+        "✗<br><small>1 ruolo per server per aver risposto a qualsiasi progetto</small>",
+        "✓<br>a livello di progetto",
+        "✓<br>a livello di progetto",
+        "✓<br>a livello di progetto"
         ],
         [
         "Ricompense ruolo basate su XP mensili",

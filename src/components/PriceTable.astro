@@ -320,8 +320,7 @@ const discordSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" 
 
   .comparison-table thead th {
     position: sticky;
-    top: 84px; /* nav is ~87px tall (CTA buttons); tuck just under it so the
-                  header has no peek-gap above and tier names clear the nav */
+    top: var(--nav-height, 84px);
     z-index: 5;
     background: #191120;
     padding: 1rem 0.85rem 0.9rem;

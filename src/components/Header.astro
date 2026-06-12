@@ -412,6 +412,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // a disappearing nav would leave a gap that page content scrolls through.
   const navPinned = document.body.hasAttribute('data-nav-pinned');
 
+  function syncNavHeight() {
+    if (nav) document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+  }
+  syncNavHeight();
+  window.addEventListener('resize', syncNavHeight);
+
   window.addEventListener('scroll', () => {
     if (!nav || navPinned) return;
     if (window.scrollY > lastScrollY && window.scrollY > 50) {

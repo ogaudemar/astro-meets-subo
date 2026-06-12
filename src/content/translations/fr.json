@@ -319,6 +319,23 @@
   ],
 
   "priceTable": {
+    "comparisonTitle": "Comparer toutes les fonctionnalités",
+    "categoryTitles": {
+      "limits": "Limites du plan",
+      "builder": "Créateur de sondage",
+      "responses": "Réponses & IA",
+      "branding": "Identité & personnalisation",
+      "engagement": "Engagement & récompenses",
+      "support": "Support"
+    },
+    "includesLabel": "Inclus :",
+    "inheritsLabel": "Tout dans {tier}, plus :",
+    "cardFeatures": [
+      ["250 répondants / projet", "Sondages, votes & quiz", "Système XP & logique de saut"],
+      ["1 000 répondants / projet", "Plus de personnalisation", "Notifications de nouvelles réponses", "Crédits IA pour brouillons & résumés"],
+      ["10 000 répondants / projet", "Création de scripts avancés & logique", "Allocation de crédits IA plus élevée"],
+      ["Ton propre nom, avatar & bio de bot"]
+    ],
     "tiers": [
       {
         "name": "GRATUIT",
@@ -355,17 +372,17 @@
       ],
       [
         "Répondants",
-        "250 / sondage",
-        "1000 / sondage",
-        "10000 / sondage",
-        "10000 / sondage"
+        "250 / projet",
+        "1000 / projet",
+        "10000 / projet",
+        "10000 / projet"
       ],
       [
         "Réponses<br><small>Réponse = Répondant x Question (ex : 60 répondants à 5 questions = 300 réponses)</small>",
-        "1 000 / sondage",
-        "5 000 / sondage",
-        "50 000 / sondage",
-        "50 000 / sondage"
+        "1 000 / projet",
+        "5 000 / projet",
+        "50 000 / projet",
+        "50 000 / projet"
       ],
       [
         "Projets totaux<br><small>Total des sondages et votes stockés. Supprime les anciens projets pour rester dans une offre plus petite.</small>",
@@ -383,10 +400,10 @@
       ],
       [
         "Blocs<br><small>Blocs de questions et de contenu</small>",
-        "10 / sondage",
-        "30 / sondage",
-        "50 / sondage",
-        "50 / sondage"
+        "10 / projet",
+        "30 / projet",
+        "50 / projet",
+        "50 / projet"
       ],
       [
         "Suppression de l’auto-promo",
@@ -467,10 +484,10 @@
       ],
       [
         "Récompense de rôle",
-        "✗<br><small>1 rôle pour tout répondant à un sondage/vote</small>",
-        "✓<br>par sondage ou vote",
-        "✓<br>par sondage ou vote",
-        "✓<br>par sondage ou vote"
+        "✗<br><small>1 rôle pour tout répondant à n'importe quel projet</small>",
+        "✓<br>par projet",
+        "✓<br>par projet",
+        "✓<br>par projet"
       ],
       [
         "Récompenses de rôle selon XP mensuel",
@@ -776,7 +793,7 @@
       "title": "Rends la participation utile",
       "sub": "La reconnaissance, c'est ce qui fait revenir les membres. Subo la distribue automatiquement.",
       "cards": [
-        { "emoji": "⭐", "title": "Récompenses XP", "desc": "Chaque sondage ou survey complété rapporte de l'XP. Disponible sur tous les plans, même gratuit." },
+        { "emoji": "⭐", "title": "Récompenses XP", "desc": "Chaque projet complété rapporte de l'XP. Disponible sur tous les plans, même gratuit." },
         { "emoji": "🏆", "title": "Classement mensuel", "desc": "Un classement XP mensuel automatique posté sur Discord, classant tes membres les plus actifs." },
         { "emoji": "🎭", "title": "Récompenses de rôles", "desc": "Attribue ou retire des rôles Discord selon la participation, les scores ou les seuils d'XP." },
         { "emoji": "🏷️", "title": "Nom XP personnalisé", "desc": "Renomme l'XP pour correspondre à ta marque : \"Étoiles\", \"Pièces\", \"Rep\". Fais-le tien." }
@@ -1126,7 +1143,7 @@
       "title": "Rends la participation utile",
       "sub": "Récompense les membres avec de l'XP, des rôles et des succès selon leurs réponses, pas seulement selon s'ils finissent.",
       "cards": [
-        { "emoji": "⭐", "title": "Récompenses XP", "desc": "Chaque sondage complété rapporte des points XP. Disponible sur tous les plans, même gratuit." },
+        { "emoji": "⭐", "title": "Récompenses XP", "desc": "Chaque projet complété rapporte des points XP. Disponible sur tous les plans, même gratuit." },
         { "emoji": "🏆", "title": "Classement mensuel", "desc": "Les serveurs Premium+ reçoivent un classement XP mensuel automatique posté sur Discord. Classe tes membres les plus actifs." },
         { "emoji": "🎭", "title": "Récompenses de rôles", "desc": "Attribue ou retire automatiquement des rôles Discord selon la complétion de sondage ou les seuils d'XP." },
         { "emoji": "⚡", "title": "Blocs d'action", "desc": "Dépose des récompenses XP, de rôle ou de succès n'importe où dans le flux, déclenchées en cours de sondage, conditionnellement selon les réponses. Rôles d'onboarding pour les nouveaux, XP pour les bons répondants au quiz, accès bêta pour les bons candidats." },

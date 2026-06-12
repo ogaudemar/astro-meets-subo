@@ -327,6 +327,23 @@
   ],
 
     "priceTable": {
+    "comparisonTitle": "Alle Funktionen vergleichen",
+    "categoryTitles": {
+        "limits": "Plangrenzen",
+        "builder": "Umfrage-Builder",
+        "responses": "Antworten & KI",
+        "branding": "Branding & Anpassung",
+        "engagement": "Engagement & Belohnungen",
+        "support": "Support"
+    },
+    "includesLabel": "Enthält:",
+    "inheritsLabel": "Alles in {tier}, plus:",
+    "cardFeatures": [
+        ["250 Befragte / Projekt", "Umfragen, Abstimmungen & Quiz", "XP-System & Sprunglogik"],
+        ["1.000 Befragte / Projekt", "Mehr Anpassungsoptionen", "Benachrichtigungen bei neuen Antworten", "KI-Credits für Entwürfe & Zusammenfassungen"],
+        ["10.000 Befragte / Projekt", "Erweiterte Skript-Erstellung & Logik", "Höheres KI-Credit-Kontingent"],
+        ["Eigener Bot-Name, Avatar & Beschreibung"]
+    ],
     "tiers": [
         {
         "name": "FREE",
@@ -363,17 +380,17 @@
         ],
         [
         "Befragte",
-        "250 / Umfrage",
-        "1000 / Umfrage",
-        "10000 / Umfrage",
-        "10000 / Umfrage"
+        "250 / Projekt",
+        "1000 / Projekt",
+        "10000 / Projekt",
+        "10000 / Projekt"
         ],
         [
         "Antworten<br><small>Antwort = Befragter x Frage (z.B. 60 Befragte beantworten 5 Fragen = 300 Antworten)</small>",
-        "1.000 / Umfrage",
-        "5.000 / Umfrage",
-        "50.000 / Umfrage",
-        "50.000 / Umfrage"
+        "1.000 / Projekt",
+        "5.000 / Projekt",
+        "50.000 / Projekt",
+        "50.000 / Projekt"
         ],
         [
         "Projekte gesamt<br><small>Gesamt gespeicherte Umfragen und Abstimmungen. Alte Projekte löschen, um in einem kleineren Tarif zu bleiben.</small>",
@@ -391,10 +408,10 @@
         ],
         [
         "Blöcke<br><small>Frage- und Inhaltsblöcke</small>",
-        "10 / Umfrage",
-        "30 / Umfrage",
-        "50 / Umfrage",
-        "50 / Umfrage"
+        "10 / Projekt",
+        "30 / Projekt",
+        "50 / Projekt",
+        "50 / Projekt"
         ],
         [
         "Eigenwerbung entfernen",
@@ -475,10 +492,10 @@
         ],
         [
         "Rollen-Belohnung",
-        "✗<br><small>1 Rolle serverweit für das Beantworten einer Abstimmung/Umfrage</small>",
-        "✓<br>pro Abstimmung oder Umfrage",
-        "✓<br>pro Abstimmung oder Umfrage",
-        "✓<br>pro Abstimmung oder Umfrage"
+        "✗<br><small>1 Rolle serverweit für das Beantworten eines beliebigen Projekts</small>",
+        "✓<br>pro Projekt",
+        "✓<br>pro Projekt",
+        "✓<br>pro Projekt"
         ],
         [
         "Rollen-Belohnungen basierend auf monatlichen XP",

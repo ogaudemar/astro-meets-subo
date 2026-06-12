@@ -327,6 +327,23 @@
   ],
 
     "priceTable": {
+    "comparisonTitle": "Comparar todos os recursos",
+    "categoryTitles": {
+        "limits": "Limites do plano",
+        "builder": "Criador de pesquisa",
+        "responses": "Respostas & IA",
+        "branding": "Marca & personalização",
+        "engagement": "Engajamento & recompensas",
+        "support": "Suporte"
+    },
+    "includesLabel": "Inclui:",
+    "inheritsLabel": "Tudo no {tier}, mais:",
+    "cardFeatures": [
+        ["250 respondentes / projeto", "Pesquisas, enquetes & questionários", "Sistema XP & lógica de pulo"],
+        ["1.000 respondentes / projeto", "Mais personalização", "Notificações de novas respostas", "Créditos de IA para rascunhos & resumos"],
+        ["10.000 respondentes / projeto", "Criação avançada de scripts & lógica", "Cota maior de créditos de IA"],
+        ["Seu próprio nome de bot, avatar & bio"]
+    ],
     "tiers": [
         {
         "name": "GRÁTIS",
@@ -363,17 +380,17 @@
         ],
         [
         "Respondentes",
-        "250 / pesquisa",
-        "1000 / pesquisa",
-        "10000 / pesquisa",
-        "10000 / pesquisa"
+        "250 / projeto",
+        "1000 / projeto",
+        "10000 / projeto",
+        "10000 / projeto"
         ],
         [
         "Respostas<br><small>Resposta = Respondente x Pergunta (ex.: 60 respondentes respondendo 5 perguntas = 300 respostas)</small>",
-        "1.000 / pesquisa",
-        "5.000 / pesquisa",
-        "50.000 / pesquisa",
-        "50.000 / pesquisa"
+        "1.000 / projeto",
+        "5.000 / projeto",
+        "50.000 / projeto",
+        "50.000 / projeto"
         ],
         [
         "Total de Projetos<br><small>Total de pesquisas e enquetes armazenadas. Delete projetos antigos para ficar em um plano menor.</small>",
@@ -391,10 +408,10 @@
         ],
         [
         "Blocos<br><small>Blocos de perguntas e de conteúdo</small>",
-        "10 / pesquisa",
-        "30 / pesquisa",
-        "50 / pesquisa",
-        "50 / pesquisa"
+        "10 / projeto",
+        "30 / projeto",
+        "50 / projeto",
+        "50 / projeto"
         ],
         [
         "Remover autopromoção",
@@ -475,10 +492,10 @@
         ],
         [
         "Recompensa de cargo",
-        "✗<br><small>1 cargo por servidor para quem responder qualquer enquete/pesquisa</small>",
-        "✓<br>por enquete ou pesquisa",
-        "✓<br>por enquete ou pesquisa",
-        "✓<br>por enquete ou pesquisa"
+        "✗<br><small>1 cargo por servidor para quem responder qualquer projeto</small>",
+        "✓<br>por projeto",
+        "✓<br>por projeto",
+        "✓<br>por projeto"
         ],
         [
         "Recompensas de cargo por XP mensal",
