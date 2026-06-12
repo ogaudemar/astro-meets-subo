@@ -693,7 +693,7 @@
     },
     {
       "question": "Wie ändere oder kündige ich ein Abonnement?",
-      "answer": "Du kannst dein Abonnement jederzeit über das Stripe-Abrechnungsportal verwalten. Melde dich mit der E-Mail-Adresse an, die du beim Upgrade verwendet hast."
+      "answer": "Du kannst dein Abonnement jederzeit in den Servereinstellungen der Subo-Web-App verwalten. Falls du dich über Discord abonniert hast, kannst du alle deine Discord-Abonnements in Discord verwalten (Nutzereinstellungen > Abonnements)."
     }
   ]
 },

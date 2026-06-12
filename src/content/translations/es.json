@@ -681,7 +681,7 @@
     },
     {
       "question": "¿Cómo cambio o cancelo una suscripción?",
-      "answer": "Puedes gestionar tu suscripción en cualquier momento desde el portal de Stripe. Inicia sesión con el correo electrónico que usaste al hacer el upgrade."
+      "answer": "Puedes gestionar tu suscripción en cualquier momento desde los ajustes de servidor en la app web de Subo. Si te suscribiste a través de Discord, puedes gestionar tus suscripciones de Discord en Discord (Ajustes de usuario > Suscripciones)."
     }
   ]
 },

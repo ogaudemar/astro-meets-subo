@@ -693,7 +693,7 @@
     },
     {
       "question": "Come modifico o cancello un abbonamento?",
-      "answer": "Puoi gestire il tuo abbonamento in qualsiasi momento tramite il Portale di Fatturazione Stripe. Accedi con l'indirizzo email utilizzato per l'upgrade."
+      "answer": "Puoi gestire il tuo abbonamento in qualsiasi momento nelle impostazioni server dell'app web di Subo. Se ti sei iscritto tramite Discord, puoi gestire tutti gli abbonamenti Discord direttamente in Discord (Impostazioni utente > Abbonamenti)."
     }
   ]
 },

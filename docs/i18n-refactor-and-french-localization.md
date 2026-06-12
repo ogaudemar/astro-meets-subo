@@ -148,7 +148,7 @@ The `/invite`, `/tutorial`, `/support`, etc. redirect pages briefly show 3 Engli
 
 - [x] Add `redirectPage` key to all locale JSON files (`en`, `fr`, `de`, `es`, `it`, `pt-br`) with 3 strings: `redirecting`, `auto`, `manual`
 - [x] Rewrite `[redirect].astro`: import all 6 locale JSONs at build time, pass i18n map via `define:vars`, swap text client-side using `navigator.language`; fall back to English. Also fixed pre-existing gtag bug (variables were string literals, not interpolated).
-- [ ] Smoke-test `/invite` in a FR/DE browser locale to confirm correct language appears (user responsibility)
+- [x] Smoke-test `/invite` in a FR/DE browser locale to confirm correct language appears (user responsibility)
 
 ---
 

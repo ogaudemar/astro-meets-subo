@@ -16,7 +16,7 @@
     ],
     "product": [
       { "text": "Fonctionnalités", "href": "/fr/features" },
-      { "text": "Survey Convos", "href": "/fr/survey-convos" },
+      { "text": "Enquêtes conversationnelles", "href": "/fr/survey-convos" },
       { "text": "Sondages", "href": "/fr/polls" },
       { "text": "Bot Personnalisé", "href": "/fr/custom-survey-bot" }
     ],
@@ -47,7 +47,7 @@
         "title": "Produit",
         "links": [
           { "text": "Fonctionnalités", "href": "/fr/features" },
-          { "text": "Survey Convos", "href": "/fr/survey-convos" },
+          { "text": "Enquêtes conversationnelles", "href": "/fr/survey-convos" },
           { "text": "Sondages", "href": "/fr/polls" },
           { "text": "Bot perso", "href": "/fr/custom-survey-bot" },
           { "text": "Tarifs", "href": "/fr/pricing" },
@@ -106,7 +106,7 @@
 
   "features": {
     "title": "ON PARTAGE PLUS QUAND ON APPRÉCIE LA CONVERSATION.",
-    "subtitle": "Un mur de champs, ça ressemble à des devoirs. Les sondages, surveys et quiz Subo sont des conversations sympas auxquelles les gens ont vraiment envie de participer.",
+    "subtitle": "Un mur de champs, ça ressemble à des devoirs. Les sondages, enquêtes et quiz Subo sont des conversations conviviales auxquelles on a envie de participer.",
     "list": [
       {
         "title": "POSE TES QUESTIONS",
@@ -546,18 +546,18 @@
 "surveyConvos": {
   "pageTitle": "Conversations de sondage sur Discord | Subo",
   "pageDescription": "Subo transforme les sondages en conversations conviviales sur Discord. Les membres répondent en tête-à-tête avec le bot. Fini les formulaires ennuyeux, de meilleurs taux de complétion.",
-  "heroTitle": "Des sondages qui ressemblent à des <strong class=\"accent\">conversations</strong>",
-  "heroSubtitle": "Pas un formulaire. Pas juste un vote. Une discussion sympa où tes membres ont vraiment envie de répondre.",
+  "heroTitle": "Des enquêtes qui ressemblent à des <strong class=\"accent\">conversations</strong>",
+  "heroSubtitle": "Pas un formulaire. Pas juste un vote. Une discussion conviviale où tes membres ont vraiment envie de répondre.",
   "heroCta": "Ajoute à Discord, gratuit",
-  "whatTitle": "C'EST QUOI UN SURVEY CONVO ?",
+  "whatTitle": "C'EST QUOI UNE ENQUÊTE CONVERSATIONNELLE ?",
   "whatBody": [
-    "Un survey convo, c'est une conversation privée entre un membre de ta communauté et Subo, le bot, directement dans ton serveur Discord ou sur le web.",
+    "Une enquête conversationnelle, c'est une conversation privée entre un membre de ta communauté et Subo, le bot, directement dans ton serveur Discord ou sur le web.",
     "Au lieu d'envoyer tes membres remplir un formulaire froid, Subo les invite à chatter. Les questions arrivent une par une, sous forme de messages. C'est comme parler à quelqu'un, pas remplir de la paperasse.",
     "Résultat : <strong>de meilleurs taux de complétion</strong>, des réponses plus riches et des membres qui apprécient vraiment l'expérience."
   ],
-  "formsVsConvosTitle": "FORMULAIRES CLASSIQUES vs. SURVEY CONVOS",
+  "formsVsConvosTitle": "FORMULAIRES CLASSIQUES vs. ENQUÊTES CONVERSATIONNELLES",
   "formsColumn": "Formulaires classiques",
-  "convosColumn": "Survey Convos avec Subo",
+  "convosColumn": "Enquêtes conversationnelles avec Subo",
   "formsVsConvosItems": [
     { "forms": "Interface froide et impersonnelle", "convos": "Expérience chaleureuse en mode chat" },
     { "forms": "Pages longues qui découragent", "convos": "Une question à la fois" },
@@ -569,7 +569,7 @@
   "howSteps": [
     {
       "number": "1",
-      "title": "Tu crées ton sondage",
+      "title": "Tu crées ton enquête",
       "desc": "Crée un sondage avec la commande /survey, ou utilise /draft pour laisser l'IA de Subo en générer un selon tes objectifs. Tu peux aussi tout gérer depuis l'appli web Subo."
     },
     {
@@ -584,18 +584,19 @@
     }
   ],
   "questionTypesTitle": "TYPES DE BLOCS",
-  "questionTypesSubtitle": "4 types de questions pour tous les retours, des blocs de contenu pour les messages et pauses, et des blocs d'action qui récompensent la participation.",
+  "questionTypesSubtitle": "4 types de questions pour tous les retours, des blocs de contenu pour les messages et pauses, des blocs d'action qui récompensent la participation, et des champs calculés qui transforment les réponses en scores.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Texte libre", "desc": "Réponses écrites en format libre" },
     { "emoji": "🔢", "name": "Numérique", "desc": "Chiffres, notes ou fourchettes" },
     { "emoji": "🔘", "name": "Choix unique", "desc": "Une seule réponse parmi plusieurs options (oui/non inclus)" },
     { "emoji": "☑️", "name": "Choix multiple", "desc": "Sélectionne tout ce qui s'applique" },
     { "emoji": "📢", "name": "Bloc de contenu", "desc": "Message, intro, GIF ou pause (aucune réponse requise)" },
-    { "emoji": "⚡", "name": "Bloc d'action", "desc": "Récompense XP, rôles ou succès selon les réponses" }
+    { "emoji": "⚡", "name": "Bloc d'action", "desc": "Récompense XP, rôles ou succès selon les réponses" },
+    { "emoji": "🧮", "name": "Champ calculé", "desc": "Calcule un score, un segment ou une valeur à partir des réponses précédentes" }
   ],
   "webTitle": "SUR DISCORD ET SUR LE WEB",
-  "webDesc": "Les survey convos fonctionnent nativement dans Discord, mais Subo propose aussi une expérience web. C'est l'admin qui choisit si le sondage tourne dans Discord ou sur le web, et s'il est ouvert à tous ou réservé aux membres de la communauté. Dans tous les cas, tu gères tes sondages, vois les résultats et analyses les données depuis l'admin web Subo.",
-  "benefitsTitle": "POURQUOI LES SURVEY CONVOS FONCTIONNENT MIEUX",
+  "webDesc": "Les enquêtes conversationnelles fonctionnent nativement dans Discord, mais Subo propose aussi une expérience web. C'est l'admin qui choisit si le sondage tourne dans Discord ou sur le web, et s'il est ouvert à tous ou réservé aux membres de la communauté. Dans tous les cas, tu gères tes sondages, vois les résultats et analyses les données depuis l'admin web Subo.",
+  "benefitsTitle": "POURQUOI LES ENQUÊTES CONVERSATIONNELLES FONCTIONNENT MIEUX",
   "benefitsList": [
     "👋 Salue tes membres par leur nom et les récompense au fur et à mesure, pas seulement à la fin",
     "📱 Fonctionne sur mobile sans friction",
@@ -686,7 +687,7 @@
     },
     {
       "question": "Comment changer ou annuler un abonnement ?",
-      "answer": "Tu peux gérer ton abonnement à tout moment via le portail Stripe. Pour y accéder, connecte-toi avec l’adresse e-mail utilisée lors de l’upgrade."
+      "answer": "Tu peux gérer ton abonnement à tout moment dans les paramètres serveur de l’app web Subo. Si tu t’es abonné via Discord, tu peux gérer tous tes abonnements Discord dans Discord (Paramètres utilisateur > Abonnements)."
     }
   ]
 },
@@ -736,8 +737,8 @@
       "title": "Plus de gens finissent ce qu'ils commencent",
       "sub": "Un long formulaire fait fuir. Subo pose une question à la fois, là où tes membres sont déjà.",
       "cards": [
-        { "emoji": "💬", "title": "Une étape à la fois", "desc": "Les questions arrivent comme dans un chat, donc une candidature de 20 champs ressemble à un échange rapide. <a href=\"/fr/survey-convos\">Voir les survey convos →</a>" },
-        { "emoji": "📨", "title": "Pas de redirection", "desc": "Ça tourne dans Discord, ou sur le web quand tu en as besoin. Pas de redirect vers un formulaire que personne ne fait confiance." },
+        { "emoji": "💬", "title": "Une étape à la fois", "desc": "Les questions arrivent comme dans un chat, donc une candidature de 20 champs ressemble à un échange rapide. <a href=\"/fr/survey-convos\">Voir les enquêtes conversationnelles →</a>" },
+        { "emoji": "📨", "title": "Pas de redirection", "desc": "Ça tourne dans Discord, ou sur le web quand tu en as besoin. Pas de redirect vers un formulaire auquel personne ne fait confiance." },
         { "emoji": "🔀", "title": "Branche selon les réponses", "desc": "La logique de saut dirige chaque personne vers les questions qui s'appliquent vraiment à elle. Une prise en charge plus courte et plus intelligente." },
         { "emoji": "🕵️", "title": "Bon niveau de confidentialité", "desc": "Garde les soumissions identifiées pour le suivi, ou anonymes quand ça convient à la demande." }
       ]
@@ -830,7 +831,7 @@
       "title": "De meilleures questions donnent de meilleures données",
       "sub": "Un mur de formulaires pousse les gens à se précipiter ou à abandonner. Subo pose ses questions comme une personne, donc les réponses sont plus complètes et plus honnêtes.",
       "cards": [
-        { "emoji": "💬", "title": "Conversations, pas formulaires", "desc": "Une question à la fois, comme un chat. Meilleur taux de complétion et réponses plus réfléchies. <a href=\"/fr/survey-convos\">Voir les survey convos →</a>" },
+        { "emoji": "💬", "title": "Conversations, pas formulaires", "desc": "Une question à la fois, comme un chat. Meilleur taux de complétion et réponses plus réfléchies. <a href=\"/fr/survey-convos\">Voir les enquêtes conversationnelles →</a>" },
         { "emoji": "🕵️", "title": "Trois modes d'anonymat", "desc": "Identifié, plus anonyme, ou totalement anonyme. Fixe le niveau de confiance par sondage et obtiens des retours francs sur les sujets sensibles." },
         { "emoji": "🎯", "title": "Ciblage par rôle", "desc": "Sonde le bon segment, tes membres payants, tes modérateurs, tes membres discrets, séparément, pour comparer ce qui est comparable." },
         { "emoji": "🔀", "title": "Logique de saut, données propres", "desc": "Chacun ne voit que les questions pertinentes. Pas de bruit \"N/A\" qui pollue tes résultats." }
@@ -1039,7 +1040,7 @@
   "outro": {
     "title": "🧠 Construis une image plus claire au fil du temps",
     "body": [
-      "Pour mieux connaître ta communauté, une stratégie consiste à lancer un survey convo avec plusieurs questions. Une autre, à faire des sondages rapides régulièrement.",
+      "Pour mieux connaître ta communauté, une stratégie consiste à lancer une enquête conversationnelle avec plusieurs questions. Une autre, à faire des sondages rapides régulièrement.",
       "Avec Subo, chaque réponse est liée au membre qui l'a donnée (sauf si le mode anonyme est activé), donc tu peux faire le lien au fil du temps : voir comment les opinions évoluent, faire un suivi et comprendre les préférences individuelles, pas seulement le décompte global.",
       "Les sondages natifs de Discord ne peuvent pas faire ça."
     ],

@@ -698,7 +698,7 @@
     },
     {
       "question": "How do I change or cancel a subscription?",
-      "answer": "You can manage your subscription at any time via the Stripe Billing Portal. To access it, log in with the email address you used to upgrade."
+      "answer": "You can manage your subscription at any time in the Subo web app's server settings. If you subscribed through Discord, you can manage all your Discord subscriptions in Discord (User settings > Subscriptions)."
     }
   ]
 },

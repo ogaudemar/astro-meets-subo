@@ -693,7 +693,7 @@
     },
     {
       "question": "Como altero ou cancelo uma assinatura?",
-      "answer": "Você pode gerenciar sua assinatura a qualquer momento pelo Portal de Cobrança do Stripe. Acesse com o endereço de e-mail usado no upgrade."
+      "answer": "Você pode gerenciar sua assinatura a qualquer momento nas configurações de servidor do app web do Subo. Se assinou pelo Discord, pode gerenciar todas as suas assinaturas do Discord no próprio Discord (Configurações do usuário > Assinaturas)."
     }
   ]
 },
