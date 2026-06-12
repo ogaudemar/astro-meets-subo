@@ -346,19 +346,19 @@
       {
         "name": "PREMIUM",
         "description": "Pour les utilisateurs avancés et serveurs moyens !",
-        "price": "2,99 €/mois<br>29,99 €/an",
+        "price": "$2.99/mois<br>$29.99/an",
         "image": "/images/subo-premium-100.png"
       },
       {
         "name": "VIP",
         "description": "Pour les gros serveurs et les soutiens généreux !",
-        "price": "4,99 €/mois<br>49,99 €/an",
+        "price": "$4.99/mois<br>$49.99/an",
         "image": "/images/subo-vip-100.png"
       },
       {
         "name": "PERSO",
         "description": "Ton propre bot, avatar et description avec les options VIP !",
-        "price": "99,99 €/an",
+        "price": "$99.99/an",
         "image": "/images/custom-bot.png"
       }
     ],
