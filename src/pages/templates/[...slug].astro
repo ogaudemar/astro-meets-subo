@@ -1,0 +1,30 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import TemplatePage from '../../layouts/TemplatePage.astro';
+
+export async function getStaticPaths() {
+  const templates = (await getCollection('templates')).filter((t) => !t.data.draft);
+  return templates.map((entry) => {
+    // Related = its hub's siblings + hubs it links to, minus itself (capped at 3).
+    const related = templates
+      .filter((t) =>
+        t.data.slug !== entry.data.slug &&
+        (entry.data.relatedSlugs.includes(t.data.slug) || t.data.dimension === entry.data.dimension),
+      )
+      .slice(0, 3);
+    return {
+      params: { slug: entry.data.slug },
+      props: { entry, related },
+    };
+  });
+}
+
+type Props = { entry: CollectionEntry<'templates'>; related: CollectionEntry<'templates'>[] };
+
+const { entry, related } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<TemplatePage {...entry.data} relatedEntries={related}>
+  <Content />
+</TemplatePage>

@@ -18,6 +18,7 @@
     { "text": "Features", "href": "/features" },
     { "text": "Survey Convos", "href": "/survey-convos" },
     { "text": "Polls", "href": "/polls" },
+    { "text": "Templates", "href": "/templates" },
     { "text": "Custom Bot", "href": "/custom-survey-bot" }
   ],
   "resources": [
@@ -52,6 +53,7 @@
         { "text": "Survey Convos", "href": "/survey-convos" },
         { "text": "Custom Bot", "href": "/custom-survey-bot" },
         { "text": "Polls", "href": "/polls" },
+        { "text": "Templates", "href": "/templates" },
         { "text": "Pricing", "href": "/pricing" },
         { "text": "Add to Discord", "href": "/invite", "external": true }
       ]

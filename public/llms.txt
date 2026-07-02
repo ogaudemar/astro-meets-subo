@@ -21,6 +21,17 @@ AI agents can use this API to:
 - [Pricing](https://subo.gg/pricing): Plans (FREE, PREMIUM, VIP, CUSTOM) and rate limits per tier
 - [Blog](https://subo.gg/blog): News and updates
 
+## Templates
+
+Subo ships ready-made, cloneable survey, poll, and quiz templates. Each has a public landing page and can be cloned into a community from the web app, or built programmatically via the API.
+
+- [Template gallery](https://subo.gg/templates): Browse all templates by goal (Engage, Understand, Get things done).
+- [Template catalog (JSON)](https://subo.gg/templates.json): Machine-readable list of every template with slugs, showcased features, and clone links. This is the canonical, always-current list.
+
+Example templates:
+- [Event Prediction Contest](https://subo.gg/templates/event-prediction-contest): Turn any match, tournament, or awards night into a prediction game with scoring, grading, and score-based XP rewards.
+- [Lore Trivia Quiz](https://subo.gg/templates/lore-trivia-quiz): Quiz a community on any body of knowledge with automatic grading, per-answer feedback, and an achievement for everyone who passes.
+
 ## What the API Does
 
 Authentication: `X-API-Key` request header (scoped to a community). Rate limits: 60–1,000 req/min depending on tier.

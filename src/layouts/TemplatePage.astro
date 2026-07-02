@@ -1,0 +1,404 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import translations from '../content/translations/en.json';
+
+type Props = CollectionEntry<'templates'>['data'] & { relatedEntries?: CollectionEntry<'templates'>[] };
+
+const {
+  title, description, slug, kind, dimension, audiences, features,
+  eyebrow, heroTitle, heroSubtitle, ctaLabel, workedExample,
+  featureCallouts, steps, faq, recipeUrl, ogImage, relatedEntries = [],
+} = Astro.props;
+
+const DIMENSION_LABELS: Record<string, string> = {
+  'engage': 'Engage',
+  'understand': 'Understand',
+  'get-things-done': 'Get things done',
+};
+
+// Conversion paths (plan §13.3b): web-app gallery deep-link (primary) +
+// developer/API path (secondary). The ?template=<slug> param is wired in the
+// gallery separately (§13.6 step 4); the URL is forward-compatible until then.
+const appCloneUrl = `https://app.subo.gg/app/templates?template=${slug}`;
+const apiDocsUrl = 'https://api.subo.ai/docs';
+
+// Structured data (§13.5) — SoftwareApplication (what the template runs on),
+// BreadcrumbList (Home > Templates > this), and FAQPage (from the FAQ block).
+const canonical = `https://subo.gg/templates/${slug}`;
+const stripTags = (s: string) => s.replace(/<[^>]+>/g, '');
+const jsonLd: Array<Record<string, any>> = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Subo',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Discord, Web',
+    url: 'https://subo.gg',
+    description: 'Conversational surveys, polls and quizzes for Discord communities and the web.',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://subo.gg/' },
+      { '@type': 'ListItem', position: 2, name: 'Templates', item: 'https://subo.gg/templates' },
+      { '@type': 'ListItem', position: 3, name: title, item: canonical },
+    ],
+  },
+  ...(faq.length > 0
+    ? [{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: stripTags(f.a) },
+        })),
+      }]
+    : []),
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} image={ogImage} jsonLd={jsonLd} />
+  </head>
+  <body>
+    <Header translations={translations.header} />
+    <main id="main-content">
+
+      <!-- Hero -->
+      <section class="tpl-hero">
+        <div class="container text-center">
+          <span class="tpl-eyebrow mono">{eyebrow ?? `${DIMENSION_LABELS[dimension]} · Template`}</span>
+          <h1 class="mono">{heroTitle}</h1>
+          <p class="tpl-hero__subtitle">{heroSubtitle}</p>
+          <div class="tpl-cta">
+            <a href={appCloneUrl} class="button button--accent-bg">{ctaLabel}</a>
+            <a href={apiDocsUrl} class="button button--primary-border" target="_blank" rel="noopener noreferrer">Build it with the API</a>
+          </div>
+          {(audiences.length > 0 || features.length > 0) && (
+            <div class="tpl-tags">
+              <span class="tpl-tag tpl-tag--dim">{DIMENSION_LABELS[dimension]}</span>
+              {audiences.map((a) => <span class="tpl-tag">{a}</span>)}
+              {features.map((f) => <span class="tpl-tag tpl-tag--feature">{f}</span>)}
+            </div>
+          )}
+        </div>
+      </section>
+
+      <!-- What it showcases -->
+      {featureCallouts.length > 0 && (
+        <section class="tpl-section">
+          <div class="container">
+            <div class="tpl-section__header">
+              <span class="tpl-label mono">What it showcases</span>
+              <h2 class="tpl-section__title">Features most survey bots don't have</h2>
+            </div>
+            <div class="tpl-cards">
+              {featureCallouts.map((card) => (
+                <div class="tpl-card">
+                  {card.emoji && <span class="tpl-card__emoji">{card.emoji}</span>}
+                  <h3 class="tpl-card__title">{card.title}</h3>
+                  <p class="tpl-card__desc" set:html={card.desc} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <!-- Worked example note: a real example, editable for your own community -->
+      {workedExample && (
+        <section class="tpl-section tpl-section--example">
+          <div class="container">
+            <p class="tpl-example">
+              <span class="tpl-example__label mono">Worked example</span>
+              This template comes with a <strong>{workedExample}</strong> example so you can see
+              exactly how it plays. Edit the questions and content to make it your own.
+            </p>
+          </div>
+        </section>
+      )}
+
+      <!-- Prose body (the "how it works" narrative) -->
+      <section class="tpl-section">
+        <div class="container">
+          <article class="tpl-prose">
+            <slot />
+          </article>
+        </div>
+      </section>
+
+      <!-- Steps -->
+      {steps.length > 0 && (
+        <section class="tpl-section tpl-section--steps">
+          <div class="container">
+            <div class="tpl-section__header">
+              <span class="tpl-label mono">How to run it</span>
+              <h2 class="tpl-section__title">Live in a few minutes</h2>
+            </div>
+            <ol class="tpl-steps">
+              {steps.map((step, i) => (
+                <li class="tpl-step">
+                  <span class="tpl-step__num mono">{i + 1}</span>
+                  <div>
+                    <h3 class="tpl-step__title">{step.title}</h3>
+                    <p class="tpl-step__desc" set:html={step.desc} />
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
+
+      <!-- FAQ -->
+      {faq.length > 0 && (
+        <section class="tpl-section">
+          <div class="container container--small">
+            <div class="tpl-section__header">
+              <span class="tpl-label mono">FAQ</span>
+              <h2 class="tpl-section__title">Common questions</h2>
+            </div>
+            <div class="tpl-faq">
+              {faq.map((item) => (
+                <details class="tpl-faq__item">
+                  <summary class="tpl-faq__q">{item.q}</summary>
+                  <p class="tpl-faq__a" set:html={item.a} />
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <!-- Related templates -->
+      {relatedEntries.length > 0 && (
+        <section class="tpl-section tpl-section--steps">
+          <div class="container">
+            <div class="tpl-section__header">
+              <span class="tpl-label mono">More templates</span>
+              <h2 class="tpl-section__title">Keep exploring</h2>
+            </div>
+            <div class="tpl-cards">
+              {relatedEntries.map((entry) => (
+                <a class="tpl-card tpl-card--link" href={`/templates/${entry.data.slug}`}>
+                  <h3 class="tpl-card__title">{entry.data.heroTitle}</h3>
+                  <p class="tpl-card__desc">{entry.data.description}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <!-- Final CTA -->
+      <section class="tpl-final">
+        <div class="container text-center">
+          <h2 class="tpl-final__title">{ctaLabel}</h2>
+          <p class="tpl-final__sub">Clone it into your community, swap in your content, and share it. No building from scratch.</p>
+          <div class="tpl-cta">
+            <a href={appCloneUrl} class="button button--accent-bg">{ctaLabel}</a>
+            {recipeUrl && (
+              <a href={recipeUrl} class="button button--primary-border" target="_blank" rel="noopener noreferrer">Read the walkthrough</a>
+            )}
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <Footer translations={translations.footer} />
+  </body>
+</html>
+
+<style>
+.tpl-hero {
+  padding: 140px 0 70px;
+  background:
+    radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+    var(--bg-base);
+}
+.tpl-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.tpl-hero h1 {
+  font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.tpl-hero__subtitle {
+  font-size: 1.15rem;
+  color: var(--grey-light);
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+.tpl-cta {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tpl-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.tpl-tag {
+  font-size: 0.78rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--grey-light);
+}
+.tpl-tag--dim {
+  color: var(--accent);
+  border-color: rgba(var(--accent-rgb), 0.3);
+  background: rgba(var(--accent-rgb), 0.1);
+}
+.tpl-tag--feature {
+  color: var(--primary-light);
+  border-color: rgba(var(--primary-rgb), 0.3);
+  background: rgba(var(--primary-rgb), 0.1);
+}
+.tpl-section { padding: 3.5rem 0; }
+.tpl-section--example { padding: 1.5rem 0; }
+.tpl-section--steps { background: rgba(255, 255, 255, 0.02); }
+.tpl-section__header { text-align: center; margin-bottom: 2.75rem; }
+.tpl-section__title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 800;
+  margin: 0.75rem 0;
+  line-height: 1.2;
+}
+.tpl-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.12);
+  border: 1px solid rgba(var(--accent-rgb), 0.25);
+}
+.tpl-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+.tpl-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+.tpl-card--link { text-decoration: none; color: inherit; transition: border-color 0.2s ease; display: block; }
+.tpl-card--link:hover { border-color: rgba(var(--accent-rgb), 0.4); }
+.tpl-card__emoji { font-size: 1.75rem; display: block; margin-bottom: 0.75rem; }
+.tpl-card__title { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.5rem; }
+.tpl-card__desc { font-size: 0.9rem; color: var(--grey-light); line-height: 1.65; margin: 0; }
+.tpl-card__desc a { color: var(--accent); text-decoration: none; }
+.tpl-example {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--grey-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  background: rgba(var(--accent-rgb), 0.06);
+  border: 1px solid rgba(var(--accent-rgb), 0.18);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+}
+.tpl-example strong { color: var(--text-white); }
+.tpl-example__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.tpl-prose {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--grey-light);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+.tpl-prose :global(h2) { color: var(--text-white); font-size: 1.5rem; margin: 2rem 0 0.75rem; }
+.tpl-prose :global(h3) { color: var(--text-white); font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
+.tpl-prose :global(strong) { color: var(--text-white); }
+.tpl-prose :global(a) { color: var(--accent); }
+.tpl-prose :global(ul), .tpl-prose :global(ol) { padding-left: 1.25rem; }
+.tpl-prose :global(li) { margin-bottom: 0.4rem; }
+.tpl-steps {
+  max-width: 760px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.tpl-step {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+.tpl-step__num {
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  font-weight: 700;
+  color: var(--dark);
+  background: var(--accent);
+}
+.tpl-step__title { font-size: 1.05rem; font-weight: 700; margin: 0.15rem 0 0.35rem; }
+.tpl-step__desc { font-size: 0.92rem; color: var(--grey-light); line-height: 1.65; margin: 0; }
+.tpl-faq { display: flex; flex-direction: column; gap: 0.75rem; }
+.tpl-faq__item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+.tpl-faq__q { font-weight: 700; cursor: pointer; font-size: 0.98rem; }
+.tpl-faq__a { color: var(--grey-light); line-height: 1.65; margin: 0.75rem 0 0; font-size: 0.92rem; }
+.tpl-final {
+  padding: 4rem 0 5rem;
+  background:
+    radial-gradient(60% 60% at 50% 100%, var(--bg-glow-purple), transparent 70%),
+    var(--bg-base);
+}
+.tpl-final__title { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 800; margin-bottom: 0.75rem; }
+.tpl-final__sub { color: var(--grey-light); max-width: 520px; margin: 0 auto 2rem; line-height: 1.6; }
+@media (max-width: 600px) {
+  .tpl-cards { grid-template-columns: 1fr; }
+}
+</style>

@@ -1,0 +1,171 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTA from '../../components/CTA.astro';
+import translations from '../../content/translations/en.json';
+import { getCollection } from 'astro:content';
+
+const templates = (await getCollection('templates'))
+  .filter((t) => !t.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const DIMENSIONS = [
+  { key: 'engage', label: 'Engage', blurb: 'Polls, quizzes, prediction games and contests that bring your community back.' },
+  { key: 'understand', label: 'Understand', blurb: 'Feedback, research and NPS surveys that surface honest answers.' },
+  { key: 'get-things-done', label: 'Get things done', blurb: 'Applications, sign-ups, RSVPs and intake forms, reinvented.' },
+];
+
+const pageTitle = 'Discord Survey & Poll Templates';
+const pageDescription = 'Ready-made, cloneable Subo templates: prediction contests, trivia quizzes, feedback surveys, sign-up forms and more. Clone one into your community and make it your own.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: pageTitle,
+    description: pageDescription,
+    url: 'https://subo.gg/templates',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: templates.map((t, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: t.data.heroTitle,
+      url: `https://subo.gg/templates/${t.data.slug}`,
+    })),
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={pageTitle} description={pageDescription} jsonLd={jsonLd} />
+  </head>
+  <body>
+    <Header translations={translations.header} />
+    <main id="main-content">
+
+      <section class="tg-hero">
+        <div class="container text-center">
+          <span class="tg-eyebrow mono">Templates</span>
+          <h1 class="mono">Start from a proven template</h1>
+          <p class="tg-hero__subtitle">
+            Cloneable surveys and polls that already use the good stuff: scoring, grading,
+            roles, XP rewards and skip logic. Clone one, swap in your content, and share it.
+          </p>
+        </div>
+      </section>
+
+      {DIMENSIONS.map((dim) => {
+        const items = templates.filter((t) => t.data.dimension === dim.key);
+        if (items.length === 0) return null;
+        return (
+          <section class="tg-section">
+            <div class="container">
+              <div class="tg-section__header">
+                <span class="tg-label mono">{dim.label}</span>
+                <p class="tg-section__blurb">{dim.blurb}</p>
+              </div>
+              <div class="tg-grid">
+                {items.map((t) => (
+                  <a class="tg-card" href={`/templates/${t.data.slug}`}>
+                    <h2 class="tg-card__title">{t.data.heroTitle}</h2>
+                    <p class="tg-card__desc">{t.data.description}</p>
+                    <div class="tg-card__tags">
+                      {t.data.features.slice(0, 3).map((f) => (
+                        <span class="tg-card__tag">{f}</span>
+                      ))}
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })}
+
+      <CTA translations={translations} />
+    </main>
+    <Footer translations={translations.footer} />
+  </body>
+</html>
+
+<style>
+.tg-hero {
+  padding: 140px 0 60px;
+  background:
+    radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+    var(--bg-base);
+}
+.tg-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.tg-hero h1 {
+  font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.tg-hero__subtitle {
+  font-size: 1.15rem;
+  color: var(--grey-light);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.tg-section { padding: 3rem 0; }
+.tg-section__header { margin-bottom: 1.75rem; }
+.tg-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.12);
+  border: 1px solid rgba(var(--accent-rgb), 0.25);
+}
+.tg-section__blurb { color: var(--grey-light); margin: 0.75rem 0 0; max-width: 620px; line-height: 1.6; }
+.tg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.tg-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.tg-card:hover { border-color: rgba(var(--accent-rgb), 0.4); transform: translateY(-2px); }
+.tg-card__title { font-size: 1.15rem; font-weight: 700; margin: 0 0 0.5rem; }
+.tg-card__desc { font-size: 0.92rem; color: var(--grey-light); line-height: 1.6; margin: 0 0 1rem; }
+.tg-card__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tg-card__tag {
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  color: var(--primary-light);
+  border: 1px solid rgba(var(--primary-rgb), 0.3);
+  background: rgba(var(--primary-rgb), 0.1);
+}
+@media (max-width: 600px) {
+  .tg-grid { grid-template-columns: 1fr; }
+}
+</style>
