@@ -2,6 +2,7 @@
 title: "Discord Prediction Contest Template | Predict, Score & Reward"
 description: "Turn any match, tournament or awards night into a Discord prediction game. Members lock in picks, you reveal the winners, and XP rewards the boldest correct calls."
 slug: "event-prediction-contest"
+templateId: 102100
 kind: "hub"
 dimension: "engage"
 audiences: ["Gamers", "Communities"]

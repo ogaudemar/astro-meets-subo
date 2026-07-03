@@ -2,6 +2,7 @@
 title: "Discord Lore Trivia Quiz Template | Grade, Teach & Reward"
 description: "Quiz your community on your game's lore or anything else. Instant right/wrong feedback after every answer, and an achievement for everyone who passes."
 slug: "lore-trivia-quiz"
+templateId: 102109
 kind: "hub"
 dimension: "engage"
 audiences: ["Gamers", "Communities"]
