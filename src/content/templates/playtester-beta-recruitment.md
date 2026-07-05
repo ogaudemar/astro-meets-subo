@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "get-things-done"
 audiences: ["Gamers", "Businesses"]
 features: ["Action block", "Give-achievement on qualify", "Skip logic", "Answer piping"]
-eyebrow: "Get things done · Recruitment"
+eyebrow: "Organize · Recruitment"
 heroTitle: "Recruit beta testers who'll actually show up"
 heroSubtitle: "Applicants answer a few quick questions, and Subo tells them right away if they're in. It filters hardest on who can commit each week, then grants a 'Beta Tester' achievement to everyone who qualifies, automatically."
 ctaLabel: "Use this template"

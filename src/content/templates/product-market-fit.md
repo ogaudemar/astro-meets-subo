@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "understand"
 audiences: ["Businesses", "Product teams"]
 features: ["Skip logic", "Branching follow-ups", "Answer piping"]
-eyebrow: "Understand · Product-market fit"
+eyebrow: "Discover · Product-market fit"
 heroTitle: "Measure product-market fit the Sean Ellis way"
 heroSubtitle: "Ask the one question that predicts fit — how would you feel if you could no longer use us? — then branch on the answer, so the people who'd miss you and the people who wouldn't each get a follow-up that's actually worth reading."
 ctaLabel: "Use this template"

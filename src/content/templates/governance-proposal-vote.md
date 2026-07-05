@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "get-things-done"
 audiences: ["Communities"]
 features: ["Anonymous voting", "Skip logic", "Tell-us-why follow-up", "Answer piping"]
-eyebrow: "Get things done · Governance"
+eyebrow: "Organize · Governance"
 heroTitle: "A community vote people can answer honestly"
 heroSubtitle: "Anonymous ballots so members vote their conscience, then a why-question for every side. You leave with a decision you can defend, not just a number."
 ctaLabel: "Use this template"

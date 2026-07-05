@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "understand"
 audiences: ["Businesses", "Product teams", "Communities"]
 features: ["Skip logic", "Branching follow-ups", "Answer piping"]
-eyebrow: "Understand · Retention"
+eyebrow: "Discover · Retention"
 heroTitle: "The exit interview, done right"
 heroSubtitle: "When someone cancels, the answers are never more honest. Ask the main reason, branch to a pricing or win-back follow-up, and spare the people who've simply moved on."
 ctaLabel: "Use this template"

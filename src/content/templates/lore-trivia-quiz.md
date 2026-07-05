@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "engage"
 audiences: ["Gamers", "Communities"]
 features: ["Grading", "Per-answer feedback", "Give-achievement on pass", "Skip logic"]
-eyebrow: "Engage · Trivia quiz"
+eyebrow: "Connect · Trivia quiz"
 heroTitle: "A trivia quiz that grades, teaches and rewards"
 heroSubtitle: "Quiz your community on your game's lore, your product's docs, or any body of knowledge. Subo tells members right or wrong on the spot after every question, then rewards everyone who passes with an achievement."
 ctaLabel: "Use this template"

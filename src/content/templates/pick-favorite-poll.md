@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "engage"
 audiences: ["Gamers", "Communities"]
 features: ["One-question poll", "Live results", "Per-option emoji", "Change your vote"]
-eyebrow: "Engage · Quick poll"
+eyebrow: "Connect · Quick poll"
 heroTitle: "Pick your favorite, in one tap"
 heroSubtitle: "One question, a short list, a live tally. A fast engagement hit that also tells you what your community actually likes."
 ctaLabel: "Use this template"

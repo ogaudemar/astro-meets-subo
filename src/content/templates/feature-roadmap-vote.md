@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "understand"
 audiences: ["Gamers", "Businesses"]
 features: ["Skip logic", "Tell-us-why follow-up", "Answer piping", "Single-choice vote"]
-eyebrow: "Understand · Roadmap vote"
+eyebrow: "Discover · Roadmap vote"
 heroTitle: "A roadmap vote that asks why, not just what"
 heroSubtitle: "Members pick what to build next, then Subo asks why, and the follow-up adapts to their vote. You learn the reasoning that actually drives a roadmap, not just a tally."
 ctaLabel: "Use this template"

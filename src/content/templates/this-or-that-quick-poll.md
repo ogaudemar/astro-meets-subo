@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "engage"
 audiences: ["Communities"]
 features: ["One-question poll", "Live results", "Change your vote", "Per-option emoji"]
-eyebrow: "Engage · Quick poll"
+eyebrow: "Connect · Quick poll"
 heroTitle: "The one-tap debate poll, done right"
 heroSubtitle: "Two options, a live tally, and the freedom to change your mind. A real poll that looks designed instead of a plain Discord reaction."
 ctaLabel: "Use this template"

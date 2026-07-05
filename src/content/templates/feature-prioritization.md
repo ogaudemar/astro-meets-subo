@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "get-things-done"
 audiences: ["Businesses", "Product teams", "Communities"]
 features: ["Scoring", "Score piping", "Forced-choice vote"]
-eyebrow: "Get things done · Roadmap"
+eyebrow: "Organize · Roadmap"
 heroTitle: "Let demand rank your roadmap"
 heroSubtitle: "More good ideas than you can build? Members rate each candidate feature, cast one forced 'ship this first' vote, and tell you what's missing — so you sequence the roadmap on evidence, not the loudest voice."
 ctaLabel: "Use this template"

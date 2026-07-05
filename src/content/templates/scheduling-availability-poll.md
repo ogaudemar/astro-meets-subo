@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "get-things-done"
 audiences: ["Communities", "Gamers"]
 features: ["Multi-select", "Availability grid", "Timezones", "Per-option emoji"]
-eyebrow: "Get things done · Scheduling"
+eyebrow: "Organize · Scheduling"
 heroTitle: "Find a time the whole community can make"
 heroSubtitle: "Members tick every day and slot that works, across two axes, and you get an availability heatmap instead of an endless does-8pm-work thread."
 ctaLabel: "Use this template"

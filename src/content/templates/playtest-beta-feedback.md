@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "understand"
 audiences: ["Gamers", "Businesses"]
 features: ["Rating scales", "Satisfaction score", "Open-ended follow-ups", "One-tap emoji answers"]
-eyebrow: "Understand · Feedback survey"
+eyebrow: "Discover · Feedback survey"
 heroTitle: "A playtest survey that scores itself"
 heroSubtitle: "Four one-tap rating scales tell you how much players enjoyed the build. Two open questions tell you why. Subo turns the ratings into a single satisfaction score, so you can compare this playtest to the last one at a glance."
 ctaLabel: "Use this template"

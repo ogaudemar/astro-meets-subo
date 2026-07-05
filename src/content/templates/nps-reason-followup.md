@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "understand"
 audiences: ["Businesses", "Product teams", "Communities"]
 features: ["Skip logic", "Chained calculated fields", "Testimonial capture"]
-eyebrow: "Understand · Satisfaction"
+eyebrow: "Discover · Satisfaction"
 heroTitle: "An NPS survey that asks why"
 heroSubtitle: "A lone 0-10 score tells you that something's wrong, never what. This template branches on the score, so detractors, passives, and promoters each answer the follow-up that actually matters — in under a minute."
 ctaLabel: "Use this template"

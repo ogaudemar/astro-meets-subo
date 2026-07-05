@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "engage"
 audiences: ["Gamers", "Communities"]
 features: ["Scoring & odds", "Grading", "Score-based XP", "Answer piping", "Scheduled close"]
-eyebrow: "Engage · Prediction game"
+eyebrow: "Connect · Prediction game"
 heroTitle: "Turn any event into a prediction contest"
 heroSubtitle: "Members lock in their picks before the match, tournament, or awards night. You reveal the results afterward, and XP rewards the boldest correct calls, so calling the upset is worth more than picking the favorite."
 ctaLabel: "Use this template"

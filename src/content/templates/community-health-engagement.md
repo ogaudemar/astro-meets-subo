@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "understand"
 audiences: ["Communities"]
 features: ["Scoring", "Health score", "Multi-select", "Open feedback"]
-eyebrow: "Understand · Community health"
+eyebrow: "Discover · Community health"
 heroTitle: "Measure how your community actually feels"
 heroSubtitle: "Two quick ratings become a belonging and value health score you can trend over time, plus what members want more of and the one thing they would change."
 ctaLabel: "Use this template"

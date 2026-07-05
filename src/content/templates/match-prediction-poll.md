@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "engage"
 audiences: ["Gamers", "Communities"]
 features: ["One-question poll", "Scoring", "Bolder picks score more", "Hidden results"]
-eyebrow: "Engage · Prediction poll"
+eyebrow: "Connect · Prediction poll"
 heroTitle: "Predict the match, where bold calls score more"
 heroSubtitle: "A one-question prediction poll with scoring built in: the underdog is worth more than the favorite, so a brave correct call earns the biggest reward."
 ctaLabel: "Use this template"

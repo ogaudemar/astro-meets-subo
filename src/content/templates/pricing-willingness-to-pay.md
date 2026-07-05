@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "understand"
 audiences: ["Businesses", "Product teams", "Creators"]
 features: ["Calculated field", "Numeric capture", "Answer piping"]
-eyebrow: "Understand · Pricing"
+eyebrow: "Discover · Pricing"
 heroTitle: "Price it on data, not a guess"
 heroSubtitle: "The Van Westendorp method brackets your price from four angles instead of asking the loaded 'what would you pay?'. Subo even calculates each respondent's personal sweet spot live and shows it back to them."
 ctaLabel: "Use this template"

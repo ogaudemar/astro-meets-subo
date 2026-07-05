@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "get-things-done"
 audiences: ["Businesses", "Communities", "Product teams"]
 features: ["Grading", "Give-achievement reward", "Instant feedback"]
-eyebrow: "Get things done · Certification"
+eyebrow: "Organize · Certification"
 heroTitle: "A quiz that certifies as it teaches"
 heroSubtitle: "Members answer a short graded quiz with instant feedback, so a wrong answer still teaches. Pass, and Subo automatically grants a Certified badge — no mod verifying anyone by hand."
 ctaLabel: "Use this template"

@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "engage"
 audiences: ["Communities", "Gamers"]
 features: ["Tell-us-why follow-up", "Answer piping", "Tier list", "Per-option emoji"]
-eyebrow: "Engage · Debate poll"
+eyebrow: "Connect · Debate poll"
 heroTitle: "The debate poll that starts a conversation"
 heroSubtitle: "A two-option showdown, then defend your pick in one line, plus a tier-list round. It is the fun poll your server actually argues in, not the one they scroll past."
 ctaLabel: "Use this template"

@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "understand"
 audiences: ["Gamers", "Communities"]
 features: ["Skip logic", "Member segmentation", "Answer piping", "Multi-select interests"]
-eyebrow: "Understand · Onboarding survey"
+eyebrow: "Discover · Onboarding survey"
 heroTitle: "An onboarding survey that adapts to who's joining"
 heroSubtitle: "New members and long-time regulars answer different questions, so the welcome feels like a conversation that's listening. You learn who just joined, and everyone lands in the right place."
 ctaLabel: "Use this template"

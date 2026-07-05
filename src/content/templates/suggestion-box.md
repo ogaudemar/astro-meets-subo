@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "understand"
 audiences: ["Communities"]
 features: ["Category routing", "Skip logic", "Answer piping", "Unlimited responses"]
-eyebrow: "Understand · Suggestion box"
+eyebrow: "Discover · Suggestion box"
 heroTitle: "A suggestion box that sorts itself"
 heroSubtitle: "Members pick what their idea is about, then answer a follow-up matched to that category. You get sorted, triage-ready ideas instead of a noisy channel."
 ctaLabel: "Use this template"

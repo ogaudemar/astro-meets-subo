@@ -13,10 +13,12 @@ const {
   featureCallouts, steps, faq, recipeUrl, ogImage, relatedEntries = [],
 } = Astro.props;
 
+// Display labels for the internal dimension keys. Rebranded 2026-07-04:
+// Connect / Discover / Organize (keys unchanged).
 const DIMENSION_LABELS: Record<string, string> = {
-  'engage': 'Engage',
-  'understand': 'Understand',
-  'get-things-done': 'Get things done',
+  'engage': 'Connect',
+  'understand': 'Discover',
+  'get-things-done': 'Organize',
 };
 
 // Conversion paths (plan §13.3b): web-app gallery deep-link (primary) +

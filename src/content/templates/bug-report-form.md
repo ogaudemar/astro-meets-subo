@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "get-things-done"
 audiences: ["Gamers", "Businesses"]
 features: ["Calculated field", "Auto-priority scoring", "Skip logic", "Answer piping"]
-eyebrow: "Get things done · Bug intake"
+eyebrow: "Organize · Bug intake"
 heroTitle: "A bug form that triages itself"
 heroSubtitle: "Reporters answer a few structured questions. Subo weighs severity against frequency, computes a triage priority on the spot, and shows it back to them, so the important bugs surface the moment they land."
 ctaLabel: "Use this template"

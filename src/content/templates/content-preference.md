@@ -7,7 +7,7 @@ kind: "hub"
 dimension: "engage"
 audiences: ["Communities", "Creators"]
 features: ["Answer piping", "Multi-select", "Per-option emoji", "Open feedback"]
-eyebrow: "Engage · Content planning"
+eyebrow: "Connect · Content planning"
 heroTitle: "Make the content your community actually wants"
 heroSubtitle: "Ask what to make more of, echo their top pick to dig into why, learn which formats they consume, and collect one concrete idea. A 60-second poll that becomes a content plan."
 ctaLabel: "Use this template"
