@@ -68,9 +68,9 @@ Detail pages, one per homepage use-case category (linked from `UseCases.astro` c
 ## Related Repositories
 
 The Subo web app (bot backend + web admin) lives at:
-- `C:\Users\ogaud\OneDrive - ClearSwell LLC\Documents\Subo\Code\survey`
-- Web admin (React): `C:\Users\ogaud\OneDrive - ClearSwell LLC\Documents\Subo\Code\survey\web2\react`
-- Public API: `C:\Users\ogaud\OneDrive - ClearSwell LLC\Documents\Subo\Code\survey\web2\public_api\`
+- `C:\Users\ogaud\OneDrive - ClearSwell LLC\Documents\Subo\Code\subo`
+- Web admin (React): `C:\Users\ogaud\OneDrive - ClearSwell LLC\Documents\Subo\Code\subo\web2\react`
+- Public API: `C:\Users\ogaud\OneDrive - ClearSwell LLC\Documents\Subo\Code\subo\web2\public_api\`
 
 When reviewing or updating feature descriptions, cross-reference the actual components and copy in that repo for accuracy.
 
