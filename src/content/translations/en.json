@@ -678,8 +678,8 @@
 },
 
 "pricingPage": {
-  "pageTitle": "Plans & Pricing | Subo",
-  "pageDescription": "Level up your free Subo experience with paid plans",
+  "pageTitle": "Pricing & Plans for Discord Surveys & Polls | Subo",
+  "pageDescription": "Compare Subo's free and paid plans for Discord surveys, polls, and quizzes — unlock more responses, AI summaries, XP rewards, and advanced analytics as your community grows.",
   "heroTitleAccent": "LEVEL UP ",
   "heroTitle": "WITH PAID PLANS",
   "heroSubtitle": "Start free. <br/> Upgrade to unlock more features and support future development.",
@@ -858,8 +858,8 @@
 },
 
 "customSurveyBot": {
-  "pageTitle": "Custom Survey Bot - Your Brand, Your Bot",
-  "pageDescription": "Everything you like about Subo, but with your own branding",
+  "pageTitle": "Custom Discord Survey Bot — Your Brand, Your Bot | Subo",
+  "pageDescription": "Get everything you love about Subo with your own branding — a fully white-labeled Discord survey bot with your name, avatar, and colors for your community or clients.",
   "hero": {
     "title": "___, YOUR SURVEY BOT",
     "subtitle": "Everything you like about Subo, but with your own branding",
