@@ -15,6 +15,29 @@ import translations from '../content/translations/en.json';
 
 const currentLang = "en";
 
+// Homepage product entity (§SEO/GEO). SoftwareApplication ties the site's
+// primary money page to a structured product record answer engines can cite.
+// aggregateRating is sourced from Top.gg — keep it in sync with the real
+// rating/count there (never fabricate); update when the Top.gg numbers change.
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareApplication',
+	name: 'Subo',
+	applicationCategory: 'BusinessApplication',
+	operatingSystem: 'Discord, Web',
+	url: 'https://subo.gg/',
+	description: SITE_DESCRIPTION,
+	publisher: { '@id': 'https://subo.gg/#organization' },
+	offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+	aggregateRating: {
+		'@type': 'AggregateRating',
+		ratingValue: '4.78',
+		ratingCount: '27',
+		bestRating: '5',
+		worstRating: '1',
+	},
+};
+
 ---
 
 <!doctype html>
@@ -28,7 +51,7 @@ const currentLang = "en";
 			{lang: 'de', href: 'https://subo.gg/de/'},
 			{lang: 'pt-BR', href: 'https://subo.gg/pt-br/'},
 			{lang: 'it', href: 'https://subo.gg/it/'},
-		]} />
+		]} jsonLd={jsonLd} />
 	</head>
 	<body>
 		<Header translations={translations.header} />

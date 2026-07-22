@@ -10,6 +10,22 @@ import translations from '../content/translations/en.json';
 import Footer from '../components/Footer.astro';
 
 const { pricingPage } = translations;
+
+// FAQPage schema (AEO) — marks up the on-page pricing FAQ so it's eligible for
+// rich results and citation by answer engines. Built from the same source data
+// the page renders, so markup and visible content never drift.
+const stripTags = (s) => s.replace(/<[^>]+>/g, '');
+const faqJsonLd = pricingPage.faqs?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: pricingPage.faqs.map((f) => ({
+        '@type': 'Question',
+        name: stripTags(f.question),
+        acceptedAnswer: { '@type': 'Answer', text: stripTags(f.answer) },
+      })),
+    }
+  : undefined;
 ---
 
 <head>
@@ -21,7 +37,7 @@ const { pricingPage } = translations;
   {lang: 'de', href: 'https://subo.gg/de/pricing'},
   {lang: 'pt-BR', href: 'https://subo.gg/pt-br/pricing'},
   {lang: 'it', href: 'https://subo.gg/it/pricing'},
-]} />
+]} jsonLd={faqJsonLd} />
 </head>
 <body data-nav-pinned>
 <Header translations={translations.header} />

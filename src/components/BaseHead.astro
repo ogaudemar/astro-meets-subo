@@ -17,6 +17,32 @@ const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your commun
 
 const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
+// Sitewide entity schema — emitted on every page so search engines and answer
+// engines (GEO/AEO) can resolve "Subo" as a single organization/product entity.
+// Update sameAs when new official profiles are added.
+const siteJsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://subo.gg/#organization',
+    name: 'Subo',
+    url: 'https://subo.gg/',
+    logo: 'https://subo.gg/images/logo/subo-full.png',
+    description: 'Subo is a survey and poll app for Discord communities and the web, trusted by 15,000+ communities.',
+    sameAs: [
+      'https://x.com/subo_app',
+      'https://top.gg/bot/946888973035380806',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': 'https://subo.gg/#website',
+    name: 'Subo',
+    url: 'https://subo.gg/',
+    publisher: { '@id': 'https://subo.gg/#organization' },
+  },
+];
 
 ---
 
@@ -46,6 +72,9 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ))}
 
 <!-- Structured data (JSON-LD) for SEO / answer-engine (GEO) discovery -->
+{siteJsonLd.map((block) => (
+  <script type="application/ld+json" set:html={JSON.stringify(block)} />
+))}
 {jsonLdBlocks.map((block) => (
   <script type="application/ld+json" set:html={JSON.stringify(block)} />
 ))}

@@ -5,6 +5,20 @@ import Footer from '../components/Footer.astro';
 import translations from '../content/translations/en.json';
 
 const t = translations.customSurveyBot;
+
+// FAQPage schema (AEO) — built from the same t.faq.items the page renders.
+const stripTags = (s) => s.replace(/<[^>]+>/g, '');
+const faqJsonLd = t.faq?.items?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: t.faq.items.map((f) => ({
+        '@type': 'Question',
+        name: stripTags(f.question),
+        acceptedAnswer: { '@type': 'Answer', text: stripTags(f.answer) },
+      })),
+    }
+  : undefined;
 ---
 
 <!doctype html>
@@ -14,7 +28,7 @@ const t = translations.customSurveyBot;
       {lang: 'x-default', href: 'https://subo.gg/custom-survey-bot'},
       {lang: 'en', href: 'https://subo.gg/custom-survey-bot'},
       {lang: 'fr', href: 'https://subo.gg/fr/custom-survey-bot'},
-    ]} />
+    ]} jsonLd={faqJsonLd} />
 	</head>
 	<body>
 		<Header translations={translations.header} />
