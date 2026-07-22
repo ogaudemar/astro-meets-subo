@@ -2,7 +2,7 @@
 title: "Welcome to Subo's New Website"
 description: "Learn about our new website built with Astro and how we're making it easier to create engaging Discord surveys."
 pubDate: "Sep 10 2025"
-heroImage: "/images/hero-survey.png"
+heroImage: "/images/hero-survey.webp"
 tags: ["announcement", "website", "astro"]
 author: "Subo Team"
 draft: false

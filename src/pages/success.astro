@@ -125,6 +125,22 @@ import translations from '../content/translations/en.json';
     </section>
     </main>
 		<Footer translations={translations.footer}/>
+
+		<!-- Purchase conversion signal (GTM funnel). This is Stripe's checkout
+		     return URL, so a pageview here = a completed payment. In GTM, make a
+		     Custom Event trigger on `purchase_success` and mark it a conversion.
+		     If Stripe's success_url includes ?session_id=..., it's forwarded for
+		     dedup; order value isn't available client-side here. -->
+		<script is:inline>
+			(function () {
+				var params = new URLSearchParams(window.location.search);
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push({
+					event: 'purchase_success',
+					transaction_id: params.get('session_id') || undefined,
+				});
+			})();
+		</script>
 	</body>
 <style>
 

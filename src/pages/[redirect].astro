@@ -85,14 +85,17 @@ const i18n = {
     document.getElementById('redir-auto').textContent = t.auto;
     document.getElementById('redir-manual').textContent = t.manual;
 
-    // Track the redirect
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'redirect_click', {
-        redirect_destination: redirectName,
-        redirect_url: redirectUrl,
-        redirect_description: description,
-      });
-    }
+    // Track the redirect via the GTM dataLayer. (The site loads GTM, not
+    // gtag.js, so the old `gtag(...)` call never fired — GTM defines
+    // `dataLayer`, not a global `gtag`.) GA4 sends via sendBeacon, which
+    // survives the navigation below.
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'redirect_click',
+      redirect_destination: redirectName,
+      redirect_url: redirectUrl,
+      redirect_description: description,
+    });
 
     // Redirect after tracking
     setTimeout(function() {
