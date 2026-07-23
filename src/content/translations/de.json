@@ -101,7 +101,28 @@
   ],
   "subtitle": "mit Umfragen, die sich wie Gespräche anfühlen, nicht wie Hausaufgaben.",
   "cta": "Zu Discord hinzufügen",
-  "ctaNote": "Kostenlos starten. Upgrades verfügbar."
+  "ctaNote": "Kostenlos starten. Upgrades verfügbar.",
+  "demo": {
+    "channel": "feedback-community",
+    "botName": "Subo",
+    "botTag": "✓APP",
+    "memberName": "Average Joe",
+    "memberInitials": "AJ",
+    "times": ["21:41", "21:41", "21:41", "21:42", "21:42", "21:43", "21:43"],
+    "q1": "Wie war die Game Night gestern Abend? 🎮",
+    "chipFire": "🔥 Fand ich top",
+    "chipGood": "👍 Gut",
+    "chipMeh": "😐 Naja",
+    "a1": "🔥 Fand ich top",
+    "q2": "Stark! 🙌 Was hat dir am besten gefallen?",
+    "a2": "das neue Team-Format ehrlich gesagt",
+    "q3": "Notiert 📝 Letzte Frage: Was sollen wir nächstes Mal machen?",
+    "a3": "mehr davon + Snacks 😅",
+    "rewardTitle": "Du bist eine Legende 🙌",
+    "xpPill": "+30 XP",
+    "roleUnlock": "Du hast gerade die Rolle {role} freigeschaltet",
+    "roleName": "Elite"
+  }
 },
 
 

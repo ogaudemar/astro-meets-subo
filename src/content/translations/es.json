@@ -45,7 +45,28 @@
     ],
     "subtitle": "con encuestas que se sienten como conversaciones, no como tareas.",
     "cta": "Agregar a Discord",
-    "ctaNote": "Empieza gratis. Mejoras disponibles."
+    "ctaNote": "Empieza gratis. Mejoras disponibles.",
+    "demo": {
+      "channel": "feedback-comunidad",
+      "botName": "Subo",
+      "botTag": "✓APP",
+      "memberName": "Average Joe",
+      "memberInitials": "AJ",
+      "times": ["21:41", "21:41", "21:41", "21:42", "21:42", "21:43", "21:43"],
+      "q1": "¿Qué tal la game night de anoche? 🎮",
+      "chipFire": "🔥 Me encantó",
+      "chipGood": "👍 Bien",
+      "chipMeh": "😐 Meh",
+      "a1": "🔥 Me encantó",
+      "q2": "¡Genial! 🙌 ¿Qué fue lo que más te gustó?",
+      "a2": "el nuevo formato por equipos la verdad",
+      "q3": "Anotado 📝 Última: ¿qué organizamos la próxima vez?",
+      "a3": "más de esto + snacks 😅",
+      "rewardTitle": "Eres una leyenda 🙌",
+      "xpPill": "+30 XP",
+      "roleUnlock": "Acabas de desbloquear el rol {role}",
+      "roleName": "Elite"
+    }
   },
 
   "features": {

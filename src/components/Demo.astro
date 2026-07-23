@@ -2,23 +2,48 @@
 // Animated hero "conversation" demo — a self-playing loop of a Subo survey
 // unfolding as a real Discord chat. Replaces the old YouTube walkthrough.
 //
+// Copy is translation-driven like every other component. The `en` defaults
+// below keep the demo fully rendered even for a language that hasn't localised
+// it yet; the passed `translations` object (hero.demo) overrides per key.
+//
 // Progressive enhancement: the full conversation is rendered statically below.
 // With no JS (or prefers-reduced-motion) the reader sees the complete thread.
 // The client script hides it, then reveals it beat-by-beat on an ~16s loop.
 //
-// Layout follows the standard Discord pattern: avatar + coloured username +
-// timestamp, everything left-aligned, "BOT" tag on Subo, consecutive messages
-// from the same author grouped (avatar/name omitted). Reward beats render as
-// Discord-style bot embeds (coloured left border).
-//
-// Member avatar is a placeholder (soft accent circle, "AJ" for Average Joe) —
-// swap `.ddemo__joe` for a real <img> when one is provided.
+// Member avatar is a placeholder (soft accent circle, initials) — swap the
+// `.ddemo__joe` spans for a real <img> when one is provided.
+
+const en = {
+  channel: 'community-feedback',
+  botName: 'Subo',
+  botTag: '✓APP',
+  memberName: 'Average Joe',
+  memberInitials: 'AJ',
+  times: ['9:41 PM', '9:41 PM', '9:41 PM', '9:42 PM', '9:42 PM', '9:43 PM', '9:43 PM'],
+  q1: 'How was game night last night? 🎮',
+  chipFire: '🔥 Loved it',
+  chipGood: '👍 Good',
+  chipMeh: '😐 Meh',
+  a1: '🔥 Loved it',
+  q2: "Love that! 🙌 What made it click for you?",
+  a2: 'the new teams format tbh',
+  q3: 'Noted 📝 Last one: what should we run next time?',
+  a3: 'more of this + snacks 😅',
+  rewardTitle: "You're a legend 🙌",
+  xpPill: '+30 XP',
+  roleUnlock: 'You just unlocked the {role} role',
+  roleName: 'Elite',
+};
+
+const { translations } = Astro.props;
+const t = { ...en, ...(translations || {}) };
+const [roleBefore, roleAfter = ''] = (t.roleUnlock || '').split('{role}');
 ---
 
 <section class="ddemo" id="subo-demo" aria-label="Example Subo survey conversation in Discord">
   <div class="ddemo__header">
     <span class="ddemo__hash">#</span>
-    <span class="ddemo__channel">community-feedback</span>
+    <span class="ddemo__channel">{t.channel}</span>
   </div>
 
   <div class="ddemo__thread">
@@ -27,28 +52,28 @@
       <img class="dmsg__avatar" src="/images/subo-logo-32.png" alt="" width="40" height="40" loading="eager" decoding="async" />
       <div class="dmsg__body">
         <div class="dmsg__head">
-          <span class="dmsg__name dmsg__name--subo">Subo</span>
-          <span class="dmsg__badge">✓APP</span>
-          <span class="dmsg__time">9:41 PM</span>
+          <span class="dmsg__name dmsg__name--subo">{t.botName}</span>
+          <span class="dmsg__badge">{t.botTag}</span>
+          <span class="dmsg__time">{t.times[0]}</span>
         </div>
-        <div class="dmsg__text">How was game night last night? 🎮</div>
+        <div class="dmsg__text">{t.q1}</div>
         <div class="dchips" id="d-chips">
-          <button type="button" class="dchip dchip--fire" data-fire tabindex="-1">🔥 Loved it</button>
-          <button type="button" class="dchip" tabindex="-1">👍 Good</button>
-          <button type="button" class="dchip" tabindex="-1">😐 Meh</button>
+          <button type="button" class="dchip dchip--fire" data-fire tabindex="-1">{t.chipFire}</button>
+          <button type="button" class="dchip" tabindex="-1">{t.chipGood}</button>
+          <button type="button" class="dchip" tabindex="-1">{t.chipMeh}</button>
         </div>
       </div>
     </div>
 
     <!-- 2 · AJ taps -->
     <div class="dmsg" data-author="joe">
-      <span class="dmsg__avatar ddemo__joe" aria-hidden="true">AJ</span>
+      <span class="dmsg__avatar ddemo__joe" aria-hidden="true">{t.memberInitials}</span>
       <div class="dmsg__body">
         <div class="dmsg__head">
-          <span class="dmsg__name dmsg__name--joe">Average Joe</span>
-          <span class="dmsg__time">9:41 PM</span>
+          <span class="dmsg__name dmsg__name--joe">{t.memberName}</span>
+          <span class="dmsg__time">{t.times[1]}</span>
         </div>
-        <div class="dmsg__text">🔥 Loved it</div>
+        <div class="dmsg__text">{t.a1}</div>
       </div>
     </div>
 
@@ -57,23 +82,23 @@
       <img class="dmsg__avatar" src="/images/subo-logo-32.png" alt="" width="40" height="40" loading="eager" decoding="async" />
       <div class="dmsg__body">
         <div class="dmsg__head">
-          <span class="dmsg__name dmsg__name--subo">Subo</span>
-          <span class="dmsg__badge">✓APP</span>
-          <span class="dmsg__time">9:41 PM</span>
+          <span class="dmsg__name dmsg__name--subo">{t.botName}</span>
+          <span class="dmsg__badge">{t.botTag}</span>
+          <span class="dmsg__time">{t.times[2]}</span>
         </div>
-        <div class="dmsg__text">Love that! 🙌 What made it click for you?</div>
+        <div class="dmsg__text">{t.q2}</div>
       </div>
     </div>
 
     <!-- 4 · AJ open text -->
     <div class="dmsg" data-author="joe">
-      <span class="dmsg__avatar ddemo__joe" aria-hidden="true">AJ</span>
+      <span class="dmsg__avatar ddemo__joe" aria-hidden="true">{t.memberInitials}</span>
       <div class="dmsg__body">
         <div class="dmsg__head">
-          <span class="dmsg__name dmsg__name--joe">Average Joe</span>
-          <span class="dmsg__time">9:42 PM</span>
+          <span class="dmsg__name dmsg__name--joe">{t.memberName}</span>
+          <span class="dmsg__time">{t.times[3]}</span>
         </div>
-        <div class="dmsg__text">the new teams format tbh</div>
+        <div class="dmsg__text">{t.a2}</div>
       </div>
     </div>
 
@@ -82,23 +107,23 @@
       <img class="dmsg__avatar" src="/images/subo-logo-32.png" alt="" width="40" height="40" loading="eager" decoding="async" />
       <div class="dmsg__body">
         <div class="dmsg__head">
-          <span class="dmsg__name dmsg__name--subo">Subo</span>
-          <span class="dmsg__badge">✓APP</span>
-          <span class="dmsg__time">9:42 PM</span>
+          <span class="dmsg__name dmsg__name--subo">{t.botName}</span>
+          <span class="dmsg__badge">{t.botTag}</span>
+          <span class="dmsg__time">{t.times[4]}</span>
         </div>
-        <div class="dmsg__text">Noted 📝 Last one: what should we run next time?</div>
+        <div class="dmsg__text">{t.q3}</div>
       </div>
     </div>
 
     <!-- 6 · AJ open text -->
     <div class="dmsg" data-author="joe">
-      <span class="dmsg__avatar ddemo__joe" aria-hidden="true">AJ</span>
+      <span class="dmsg__avatar ddemo__joe" aria-hidden="true">{t.memberInitials}</span>
       <div class="dmsg__body">
         <div class="dmsg__head">
-          <span class="dmsg__name dmsg__name--joe">Average Joe</span>
-          <span class="dmsg__time">9:43 PM</span>
+          <span class="dmsg__name dmsg__name--joe">{t.memberName}</span>
+          <span class="dmsg__time">{t.times[5]}</span>
         </div>
-        <div class="dmsg__text">more of this + snacks 😅</div>
+        <div class="dmsg__text">{t.a3}</div>
       </div>
     </div>
 
@@ -107,13 +132,13 @@
       <img class="dmsg__avatar" src="/images/subo-logo-32.png" alt="" width="40" height="40" loading="eager" decoding="async" />
       <div class="dmsg__body">
         <div class="dmsg__head">
-          <span class="dmsg__name dmsg__name--subo">Subo</span>
-          <span class="dmsg__badge">✓APP</span>
-          <span class="dmsg__time">9:43 PM</span>
+          <span class="dmsg__name dmsg__name--subo">{t.botName}</span>
+          <span class="dmsg__badge">{t.botTag}</span>
+          <span class="dmsg__time">{t.times[6]}</span>
         </div>
         <div class="dembed dembed--xp">
-          <span class="dembed__title">You're a legend 🙌</span>
-          <span class="dxp-pill">+30 XP</span>
+          <span class="dembed__title">{t.rewardTitle}</span>
+          <span class="dxp-pill">{t.xpPill}</span>
         </div>
       </div>
     </div>
@@ -124,7 +149,7 @@
       <div class="dmsg__body">
         <div class="dembed dembed--role">
           <span class="dembed__icon">🎉</span>
-          <span>You just unlocked the <span class="drole-badge">Elite</span> role</span>
+          <span>{roleBefore}<span class="drole-badge">{t.roleName}</span>{roleAfter}</span>
         </div>
       </div>
     </div>
@@ -132,7 +157,7 @@
     <!-- typing indicator (animation only; reused) -->
     <div class="dtyping" id="d-typing" data-author="subo" aria-hidden="true">
       <img class="dmsg__avatar dtyping__subo" src="/images/subo-logo-32.png" alt="" width="40" height="40" />
-      <span class="dmsg__avatar ddemo__joe dtyping__joe">AJ</span>
+      <span class="dmsg__avatar ddemo__joe dtyping__joe">{t.memberInitials}</span>
       <span class="dtyping__dots"><i></i><i></i><i></i></span>
     </div>
   </div>

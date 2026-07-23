@@ -107,7 +107,28 @@
   ],
   "subtitle": "with surveys that feel like conversations, not homework.",
   "cta": "Add to Discord",
-  "ctaNote": "Start free. Upgrades available."
+  "ctaNote": "Start free. Upgrades available.",
+  "demo": {
+    "channel": "community-feedback",
+    "botName": "Subo",
+    "botTag": "✓APP",
+    "memberName": "Average Joe",
+    "memberInitials": "AJ",
+    "times": ["9:41 PM", "9:41 PM", "9:41 PM", "9:42 PM", "9:42 PM", "9:43 PM", "9:43 PM"],
+    "q1": "How was game night last night? 🎮",
+    "chipFire": "🔥 Loved it",
+    "chipGood": "👍 Good",
+    "chipMeh": "😐 Meh",
+    "a1": "🔥 Loved it",
+    "q2": "Love that! 🙌 What made it click for you?",
+    "a2": "the new teams format tbh",
+    "q3": "Noted 📝 Last one: what should we run next time?",
+    "a3": "more of this + snacks 😅",
+    "rewardTitle": "You're a legend 🙌",
+    "xpPill": "+30 XP",
+    "roleUnlock": "You just unlocked the {role} role",
+    "roleName": "Elite"
+  }
 },
 
 

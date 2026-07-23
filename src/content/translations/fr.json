@@ -101,7 +101,28 @@
     ],
     "subtitle": "avec des sondages qui ressemblent à des conversations, pas à des devoirs.",
     "cta": "Ajoute à Discord",
-    "ctaNote": "Commence gratuitement. Upgrades disponibles."
+    "ctaNote": "Commence gratuitement. Upgrades disponibles.",
+    "demo": {
+      "channel": "feedback-communauté",
+      "botName": "Subo",
+      "botTag": "✓APP",
+      "memberName": "Average Joe",
+      "memberInitials": "AJ",
+      "times": ["21:41", "21:41", "21:41", "21:42", "21:42", "21:43", "21:43"],
+      "q1": "C'était comment la game night hier soir ? 🎮",
+      "chipFire": "🔥 J'ai adoré",
+      "chipGood": "👍 Bien",
+      "chipMeh": "😐 Bof",
+      "a1": "🔥 J'ai adoré",
+      "q2": "Trop bien ! 🙌 Qu'est-ce qui t'a plu ?",
+      "a2": "le nouveau format en équipes franchement",
+      "q3": "Noté 📝 Dernière question : on organise quoi la prochaine fois ?",
+      "a3": "pareil + des snacks 😅",
+      "rewardTitle": "Tu es une légende 🙌",
+      "xpPill": "+30 XP",
+      "roleUnlock": "Tu viens de débloquer le rôle {role}",
+      "roleName": "Elite"
+    }
   },
 
   "features": {

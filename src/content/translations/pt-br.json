@@ -101,7 +101,28 @@
   ],
   "subtitle": "com pesquisas que parecem conversas, não lição de casa.",
   "cta": "Adicionar ao Discord",
-  "ctaNote": "Comece Grátis. Upgrades disponíveis."
+  "ctaNote": "Comece Grátis. Upgrades disponíveis.",
+  "demo": {
+    "channel": "feedback-comunidade",
+    "botName": "Subo",
+    "botTag": "✓APP",
+    "memberName": "Average Joe",
+    "memberInitials": "AJ",
+    "times": ["21:41", "21:41", "21:41", "21:42", "21:42", "21:43", "21:43"],
+    "q1": "Como foi a game night de ontem? 🎮",
+    "chipFire": "🔥 Amei",
+    "chipGood": "👍 Boa",
+    "chipMeh": "😐 Meh",
+    "a1": "🔥 Amei",
+    "q2": "Boa! 🙌 O que você mais curtiu?",
+    "a2": "o novo formato em times, sério",
+    "q3": "Anotado 📝 Última: o que a gente organiza na próxima?",
+    "a3": "mais disso + snacks 😅",
+    "rewardTitle": "Você é uma lenda 🙌",
+    "xpPill": "+30 XP",
+    "roleUnlock": "Você acabou de desbloquear o cargo {role}",
+    "roleName": "Elite"
+  }
 },
 
 
