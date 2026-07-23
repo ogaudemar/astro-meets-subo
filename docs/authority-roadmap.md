@@ -14,6 +14,22 @@ the SearchAtlas model (~$3.5k/yr platform + per-link/per-PR fees). Ordered
   ecosystem showcases keep paying; syndicated PR links decay.
 - **GEO/AEO = be the citable source.** Structured, specific, well-marked-up
   content is what LLMs quote. We already have `llms.txt` + schema; feed it content.
+- **Discord-hero + platform spokes.** Discord is our entity/SEO equity — keep it
+  the flagship. Add per-platform landing pages + content as *spokes* as each
+  platform ships. Broaden reach without diluting what already ranks.
+- **Ship-gated promotion.** Only actively market a platform once it's genuinely
+  usable for that audience (esp. non-Discord admin onboarding). Until then: prep,
+  don't promote. Don't market what a user can't yet do.
+
+## Current product state (as of 2026-07)
+
+Live today: **Discord** (core) + **web survey links for respondents** (any
+audience can answer without a Discord account). Admin/creator onboarding is still
+**Discord-auth only**. The **Beyond-Discord-Platform-Expansion** project (web +
+Google auth, then YouTube/Twitch/Steam, then Patreon/Roblox/Reddit) is in
+development in the app — its marketing lives in **P6**, gated on each platform
+shipping. Priority new segments: **streamers (Twitch/YouTube), game communities
+(Steam/Roblox), creators (Patreon/YouTube)**.
 
 ## Foundation — DONE ✅
 
@@ -93,6 +109,9 @@ you *qualify for* because Subo actually uses these tools. Free.
 - [ ] Relevant **Discord communities** (bot/community-management servers)
 - [ ] Announce major features on own blog first (newsroom effect), then syndicate socially
 
+> Platform-specific communities (r/Twitch, r/gamedev, creator spaces, etc.) are
+> covered in **P6** — they turn on as each platform ships.
+
 **Success metric:** referral spikes + a few natural backlinks per launch.
 
 ---
@@ -107,6 +126,45 @@ you *qualify for* because Subo actually uses these tools. Free.
       any organic press has something to cite.
 
 **Success metric:** 1–2 relevant editorial placements/quarter, zero spend.
+
+---
+
+## P6 — Beyond-Discord expansion  (phased with product, ship-gated)
+
+Positioning: **Discord-hero + platform spokes**. Keep subo.gg's Discord entity;
+add per-platform spokes as each ships. **Prep now, promote on launch** — never
+market a platform a user can't yet onboard to.
+
+### Prep now (free, no overpromising)
+- [ ] **Keyword/audience research per priority segment** — the queries they
+      actually search: streamers ("Twitch chat poll", "poll my stream"), game
+      communities ("Steam playtest feedback survey", "Roblox community poll"),
+      creators ("survey my YouTube members", "Patreon member feedback survey")
+- [ ] **Build the target list** of per-platform directories + communities (below)
+- [ ] **Draft spoke-page + content skeletons** so launch day is fast
+- [ ] **Ship a content piece for the angle that's already true today:** a
+      Discord-using creator can already survey a Twitch/YouTube/Steam audience via
+      **web survey links** (respondents need no Discord). Honest, live, and it
+      seeds the cross-platform narrative before integrations land.
+
+### Per-platform spoke playbook (run as each platform goes live)
+In priority-segment order — streamers → game communities → creators:
+- [ ] **Spoke landing page** (e.g. `/twitch-poll`, `/youtube-survey`,
+      `/steam-community-survey`, `/patreon-member-survey`) — platform-intent
+      title + FAQ schema, interlinked to the Discord core (spoke → hub)
+- [ ] **Platform-intent content**: "how to poll your Twitch chat", "survey your
+      YouTube community", "run a Steam playtest survey", "Patreon member feedback"
+- [ ] **Directories beyond bot lists**: creator-tool / no-code / SaaS directories,
+      alternativeto.com, Product Hunt topics, relevant tool roundups
+- [ ] **Communities (value-first)**:
+      - Streamers → r/Twitch, r/NewTubers, r/letsplay, streamer Discords
+      - Game communities → r/gamedev, r/roblox / r/robloxgamedev, r/Steam, playtest groups
+      - Creators → r/patreon, r/youtubers, creator-economy newsletters/Discords
+- [ ] **Ecosystem/partner showcases** Subo qualifies for once integrated with the platform
+
+### Success metric
+Per platform: a ranking spoke page + first referral traffic from that platform's
+communities within a quarter of its launch.
 
 ---
 
@@ -130,3 +188,4 @@ to justify — especially since the highest-ROI channels for a Discord bot
 - [ ] Compress/replace remaining heavy images (audit `public/images`)
 - [ ] Clean up legacy dead pages (`success.astro`, `subscriptions.astro`, `StripeSub.astro`)
 - [ ] Revisit paid tactics **only** once P0 shows a visit→paid rate that makes the math work
+- [ ] As platforms ship (P6), evolve homepage/hero messaging from "Discord survey bot" toward "community & creator surveys/polls" **without** dropping the Discord keyword equity — test incrementally, watch rankings
