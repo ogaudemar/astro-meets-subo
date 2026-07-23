@@ -98,6 +98,38 @@ const siteJsonLd = [
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+<!-- PostHog — funnel/product analytics, SAME project as the web app
+     (app.subo.gg) so sessions stitch across the subdomain automatically via
+     the root-domain cookie. Autocaptures pageviews + clicks sitewide; we add
+     one explicit `checkout_intent` event on the hand-off to the web app.
+     The phc_ key is a public client ingest key (already exposed in the app's
+     browser bundle) — safe to ship; move to PUBLIC_POSTHOG_KEY if preferred. -->
+<script>
+  import posthog from 'posthog-js';
+
+  posthog.init('phc_uZSkrKD3dLKBtFhsVcyKkGaejsse3GYwgvvDq6FCAtBE', {
+    api_host: 'https://us.i.posthog.com',
+    ui_host: 'https://us.posthog.com',
+    cross_subdomain_cookie: true,   // stitch subo.gg <-> app.subo.gg
+    persistence: 'localStorage+cookie',
+    capture_pageview: true,
+    capture_pageleave: true,
+  });
+
+  // Bottom-of-funnel signal: the click that hands a visitor to the web app to
+  // upgrade/checkout (pricing CTAs -> app.subo.gg/app/settings#plan, etc.).
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement | null;
+    const link = target?.closest?.('a[href*="app.subo.gg"]') as HTMLAnchorElement | null;
+    if (!link) return;
+    posthog.capture('checkout_intent', {
+      href: link.getAttribute('href'),
+      link_text: link.textContent?.trim().slice(0, 60),
+      page: window.location.pathname,
+    });
+  });
+</script>
+
 <!-- Google Tag Manager -->
 <script define:inline>
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

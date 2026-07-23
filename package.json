@@ -21,6 +21,7 @@
     "@astrojs/sitemap": "^3.7.0",
     "astro": "^5.17.3",
     "lite-youtube-embed": "^0.3.3",
+    "posthog-js": "^1.407.0",
     "typescript": "5.8.3"
   },
   "devDependencies": {
