@@ -31,6 +31,17 @@ development in the app — its marketing lives in **P6**, gated on each platform
 shipping. Priority new segments: **streamers (Twitch/YouTube), game communities
 (Steam/Roblox), creators (Patreon/YouTube)**.
 
+### Recently shipped (2026-07)
+
+- **Homepage hero demo** — replaced the old YouTube walkthrough with a
+  self-playing, looping **Discord-conversation demo** (survey-as-chat: friendly
+  ask → reaction tap → follow-ups → XP + role reward). Fully **localized in all 6
+  languages** (EN/FR/ES/DE/IT/PT-BR), with a per-locale member persona. A
+  stronger, on-brand conversion asset than the video — and the **best thing to
+  screen-capture for directory listings (P1: top.gg video/screenshots) and
+  launches (P4: Product Hunt)**. Also a small GEO/international win (native-language
+  on-page content per hreflang locale). Worth watching its effect on visit→paid (P0).
+
 ## Foundation — DONE ✅
 
 - [x] `llms.txt` (product + API, machine-readable)
