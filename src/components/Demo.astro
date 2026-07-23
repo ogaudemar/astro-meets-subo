@@ -1,97 +1,505 @@
 ---
-import "lite-youtube-embed/src/lite-yt-embed.css";
+// Animated hero "conversation" demo — a self-playing loop of a Subo survey
+// unfolding as a real Discord chat. Replaces the old YouTube walkthrough.
+//
+// Progressive enhancement: the full conversation is rendered statically below.
+// With no JS (or prefers-reduced-motion) the reader sees the complete thread.
+// The client script hides it, then reveals it beat-by-beat on an ~16s loop.
+//
+// Layout follows the standard Discord pattern: avatar + coloured username +
+// timestamp, everything left-aligned, "BOT" tag on Subo, consecutive messages
+// from the same author grouped (avatar/name omitted). Reward beats render as
+// Discord-style bot embeds (coloured left border).
+//
+// Member avatar is a placeholder (soft accent circle, "AJ" for Average Joe) —
+// swap `.ddemo__joe` for a real <img> when one is provided.
 ---
 
-<html>
-    
-    
-  <div class="yt-video">
-    
-    
-    <lite-youtube 
-        videoid="r-uCheEuInI" 
-        id="youtube-demo"
-        params="rel=0"
-        backgroundimage="/images/yt-thumb-dk.png"
-        playlabel="Play video">
-    </lite-youtube>
+<section class="ddemo" id="subo-demo" aria-label="Example Subo survey conversation in Discord">
+  <div class="ddemo__header">
+    <span class="ddemo__hash">#</span>
+    <span class="ddemo__channel">community-feedback</span>
+  </div>
 
-   
+  <div class="ddemo__thread">
+    <!-- 1 · Subo asks -->
+    <div class="dmsg" data-author="subo">
+      <img class="dmsg__avatar" src="/images/subo-logo-32.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+      <div class="dmsg__body">
+        <div class="dmsg__head">
+          <span class="dmsg__name dmsg__name--subo">Subo</span>
+          <span class="dmsg__badge">✓APP</span>
+          <span class="dmsg__time">9:41 PM</span>
+        </div>
+        <div class="dmsg__text">How was game night last night? 🎮</div>
+        <div class="dchips" id="d-chips">
+          <button type="button" class="dchip dchip--fire" data-fire tabindex="-1">🔥 Loved it</button>
+          <button type="button" class="dchip" tabindex="-1">👍 Good</button>
+          <button type="button" class="dchip" tabindex="-1">😐 Meh</button>
+        </div>
+      </div>
     </div>
- 
-<!-- <div class="chat-container">
-    <div class="message bot">How did you like the event?</div>
- <div class="message user">Love it! 🔥</div>
-    <div class="message bot">Awesome - I'm glad you liked it?</div>
-   <div class="message bot">What changes should we make for the event to be even better next time?</div>
-    <div class="input-area">I think it would be great next time to start a little earlier</div> 
-    </div> --> 
- 
-</html>
 
-<script>
-  import 'lite-youtube-embed';
-</script>
+    <!-- 2 · AJ taps -->
+    <div class="dmsg" data-author="joe">
+      <span class="dmsg__avatar ddemo__joe" aria-hidden="true">AJ</span>
+      <div class="dmsg__body">
+        <div class="dmsg__head">
+          <span class="dmsg__name dmsg__name--joe">Average Joe</span>
+          <span class="dmsg__time">9:41 PM</span>
+        </div>
+        <div class="dmsg__text">🔥 Loved it</div>
+      </div>
+    </div>
+
+    <!-- 3 · Subo follows up -->
+    <div class="dmsg" data-author="subo">
+      <img class="dmsg__avatar" src="/images/subo-logo-32.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+      <div class="dmsg__body">
+        <div class="dmsg__head">
+          <span class="dmsg__name dmsg__name--subo">Subo</span>
+          <span class="dmsg__badge">✓APP</span>
+          <span class="dmsg__time">9:41 PM</span>
+        </div>
+        <div class="dmsg__text">Love that! 🙌 What made it click for you?</div>
+      </div>
+    </div>
+
+    <!-- 4 · AJ open text -->
+    <div class="dmsg" data-author="joe">
+      <span class="dmsg__avatar ddemo__joe" aria-hidden="true">AJ</span>
+      <div class="dmsg__body">
+        <div class="dmsg__head">
+          <span class="dmsg__name dmsg__name--joe">Average Joe</span>
+          <span class="dmsg__time">9:42 PM</span>
+        </div>
+        <div class="dmsg__text">the new teams format tbh</div>
+      </div>
+    </div>
+
+    <!-- 5 · Subo last question -->
+    <div class="dmsg" data-author="subo">
+      <img class="dmsg__avatar" src="/images/subo-logo-32.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+      <div class="dmsg__body">
+        <div class="dmsg__head">
+          <span class="dmsg__name dmsg__name--subo">Subo</span>
+          <span class="dmsg__badge">✓APP</span>
+          <span class="dmsg__time">9:42 PM</span>
+        </div>
+        <div class="dmsg__text">Noted 📝 Last one: what should we run next time?</div>
+      </div>
+    </div>
+
+    <!-- 6 · AJ open text -->
+    <div class="dmsg" data-author="joe">
+      <span class="dmsg__avatar ddemo__joe" aria-hidden="true">AJ</span>
+      <div class="dmsg__body">
+        <div class="dmsg__head">
+          <span class="dmsg__name dmsg__name--joe">Average Joe</span>
+          <span class="dmsg__time">9:43 PM</span>
+        </div>
+        <div class="dmsg__text">more of this + snacks 😅</div>
+      </div>
+    </div>
+
+    <!-- 7 · Reward: XP (bot embed) -->
+    <div class="dmsg" data-author="subo">
+      <img class="dmsg__avatar" src="/images/subo-logo-32.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+      <div class="dmsg__body">
+        <div class="dmsg__head">
+          <span class="dmsg__name dmsg__name--subo">Subo</span>
+          <span class="dmsg__badge">✓APP</span>
+          <span class="dmsg__time">9:43 PM</span>
+        </div>
+        <div class="dembed dembed--xp">
+          <span class="dembed__title">You're a legend 🙌</span>
+          <span class="dxp-pill">+30 XP</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 · Reward: role (grouped under 7) -->
+    <div class="dmsg dmsg--grouped" data-author="subo">
+      <span class="dmsg__avatar" aria-hidden="true"></span>
+      <div class="dmsg__body">
+        <div class="dembed dembed--role">
+          <span class="dembed__icon">🎉</span>
+          <span>You just unlocked the <span class="drole-badge">Elite</span> role</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- typing indicator (animation only; reused) -->
+    <div class="dtyping" id="d-typing" data-author="subo" aria-hidden="true">
+      <img class="dmsg__avatar dtyping__subo" src="/images/subo-logo-32.png" alt="" width="40" height="40" />
+      <span class="dmsg__avatar ddemo__joe dtyping__joe">AJ</span>
+      <span class="dtyping__dots"><i></i><i></i><i></i></span>
+    </div>
+  </div>
+
+  <!-- fake pointer used to "tap" the reaction chip (animation only) -->
+  <span class="dcursor" id="d-cursor" aria-hidden="true">
+    <svg viewBox="0 0 16 16" width="20" height="20"><path d="M1 1l4.5 12 2.2-4.8L13 5.9 1 1z" fill="#fff" stroke="#130d1c" stroke-width="1.2" stroke-linejoin="round"/></svg>
+  </span>
+</section>
 
 <style>
-
-.yt-video {
-    height: auto;
+  .ddemo {
+    position: relative;
     width: 100%;
-    margin: 12px 6px;
-    padding: 12px 6px;
-}
-
-#youtube-demo {
-
-    border-radius: 1rem;
-    margin:auto;
-
-}
-
-.chat-container {
-    margin: 100px 5px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-}
-
-
-.message {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 10px;
-    border-radius: 10px;
-    margin: 10px 0 20px;
-    
-
-}
-
-.bot {
+    max-width: 460px;
+    margin: 12px auto 6px;
+    background: #191223;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(var(--primary-rgb), 0.05);
+    overflow: hidden;
     text-align: left;
-    background: var(--primary-dark);
+  }
+
+  /* --- channel header --- */
+  .ddemo__header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 11px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 0.9rem;
+  }
+  .ddemo__hash { color: rgba(255, 255, 255, 0.4); font-weight: 700; }
+  .ddemo__channel { color: rgba(255, 255, 255, 0.85); font-weight: 600; }
+
+  /* --- thread: fixed height, bottom-anchored, top fade --- */
+  .ddemo__thread {
+    position: relative;
+    height: clamp(360px, 52vh, 432px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2px;
+    padding: 16px 14px 14px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 52px);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 52px);
+    transition: opacity 0.45s ease;
+  }
+  .ddemo__thread.is-resetting { opacity: 0; }
+
+  /* --- message row --- */
+  .dmsg {
+    display: flex;
+    gap: 12px;
+    padding: 5px 4px;
+    align-items: flex-start;
+  }
+  .dmsg--grouped { padding-top: 1px; }
+
+  .dmsg__avatar {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #241a30;
+  }
+  /* member placeholder avatar — swap for a real <img> later */
+  .ddemo__joe {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    max-width: 75%;
-    align-items: start;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #143d00;
+    background: radial-gradient(circle at 35% 30%, rgba(var(--accent-rgb), 0.95), rgba(var(--accent-rgb), 0.55));
+    letter-spacing: 0.02em;
+  }
 
-}
+  .dmsg__body { min-width: 0; }
+  .dmsg__head {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 2px;
+    line-height: 1;
+  }
+  .dmsg__name { font-size: 0.95rem; font-weight: 600; }
+  .dmsg__name--subo { color: #fff; }
+  .dmsg__name--joe { color: #c9a6ff; }
+  .dmsg__badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #5865F2;
+    padding: 2px 5px;
+    border-radius: 4px;
+    transform: translateY(-1px);
+  }
+  .dmsg__time { font-size: 0.7rem; color: rgba(255, 255, 255, 0.35); }
+  .dmsg__text {
+    font-size: 0.98rem;
+    line-height: 1.42;
+    color: rgba(255, 255, 255, 0.92);
+    word-wrap: break-word;
+  }
 
-.user {
-    text-align: right;
-    background: var(--black);
-    align-items: end;
-    max-width: 75%;
+  /* --- reaction chips (Discord message components) --- */
+  .dchips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 9px; }
+  .dchip {
+    font: inherit;
+    font-size: 0.86rem;
+    color: rgba(255, 255, 255, 0.9);
+    background: #2b2136;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
+    padding: 7px 12px;
+    cursor: default;
+    transition: transform 0.12s ease, background 0.18s ease, border-color 0.18s ease;
+  }
+  .dchip--fire.is-active {
+    background: rgba(var(--primary-rgb), 0.22);
+    border-color: var(--primary);
+    transform: scale(0.94);
+  }
 
+  /* --- bot embeds (reward beats) --- */
+  .dembed {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.92);
+  }
+  .dembed--role { border-left-color: var(--primary); }
+  .dembed__title { font-weight: 600; }
+  .dembed__icon { font-size: 1.1rem; }
+  .dxp-pill {
+    margin-left: auto;
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: #143d00;
+    background: var(--accent);
+    padding: 4px 10px;
+    border-radius: 999px;
+    box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.5);
+    white-space: nowrap;
+  }
+  .drole-badge {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--primary-light);
+    background: rgba(var(--primary-rgb), 0.18);
+    padding: 1px 8px;
+    border-radius: 6px;
+  }
 
-}
+  /* --- typing indicator --- */
+  .dtyping { display: none; gap: 12px; padding: 5px 4px; align-items: center; }
+  .dtyping[data-author="subo"] .dtyping__joe { display: none; }
+  .dtyping[data-author="joe"] .dtyping__subo { display: none; }
+  .dtyping__dots {
+    display: inline-flex;
+    gap: 4px;
+    padding: 11px 14px;
+    background: #241a30;
+    border-radius: 12px;
+  }
+  .dtyping__dots i {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    animation: dtype 1.2s infinite ease-in-out both;
+  }
+  .dtyping__dots i:nth-child(2) { animation-delay: 0.18s; }
+  .dtyping__dots i:nth-child(3) { animation-delay: 0.36s; }
+  @keyframes dtype {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-4px); opacity: 1; }
+  }
 
-.input-area {
-    padding: 10px 0 5px 5px;
-    border-radius: 10px;
-    border: 1px solid white;
-    align-items: end;
-    max-width: 75%;
-}
+  /* --- fake pointer --- */
+  .dcursor {
+    display: none;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 5;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+    transition: transform 0.66s cubic-bezier(0.5, 0.05, 0.2, 1);
+  }
+  .dcursor.is-press { transform: scale(0.82) !important; transition: transform 0.12s ease; }
 
+  /* ======================================================================
+     Animation mode — applied by JS only (progressive enhancement).
+     Without .ddemo--anim the full thread is shown statically.
+     ====================================================================== */
+  .ddemo--anim .dmsg { display: none; }
+  .ddemo--anim .dmsg.is-in {
+    display: flex;
+    animation: dmsgIn 0.34s ease both;
+  }
+  @keyframes dmsgIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .ddemo--anim .dchips { max-height: 0; opacity: 0; overflow: hidden; margin-top: 0; transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease; }
+  .ddemo--anim .dchips.is-in { max-height: 60px; opacity: 1; margin-top: 9px; }
+
+  .ddemo--anim .dtyping.is-in { display: flex; animation: dmsgIn 0.28s ease both; }
+  .ddemo--anim .dcursor.is-in { display: block; }
+
+  /* reward flourishes fire when their message reveals */
+  .ddemo--anim .dmsg.is-in .dxp-pill { animation: dpop 0.5s 0.12s ease both; }
+  .ddemo--anim .dmsg.is-in .dembed--role { animation: dglow 0.7s 0.05s ease both; }
+  @keyframes dpop {
+    0% { transform: scale(0.4); opacity: 0; }
+    70% { transform: scale(1.12); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  @keyframes dglow {
+    from { box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.5); }
+    50% { box-shadow: 0 0 20px 2px rgba(var(--primary-rgb), 0.45); }
+    to { box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0); }
+  }
+
+  @media (max-width: 768px) {
+    .ddemo { max-width: 420px; }
+    .dmsg__text, .dembed { font-size: 0.92rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dtyping__dots i { animation: none; }
+    .ddemo__thread { transition: none; }
+  }
 </style>
+
+<script>
+  const panel = document.getElementById('subo-demo');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (panel && !reduce) {
+    const thread = panel.querySelector('.ddemo__thread') as HTMLElement;
+    const msgs = Array.from(thread.querySelectorAll('.dmsg')) as HTMLElement[];
+    const chips = document.getElementById('d-chips') as HTMLElement;
+    const fireChip = chips.querySelector('[data-fire]') as HTMLElement;
+    const cursor = document.getElementById('d-cursor') as HTMLElement;
+    const typing = document.getElementById('d-typing') as HTMLElement;
+
+    const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
+    const reveal = (el: HTMLElement) => el.classList.add('is-in');
+
+    function showTyping(author: string) {
+      typing.dataset.author = author;
+      thread.appendChild(typing); // move to end so it sits below the last message
+      typing.classList.add('is-in');
+    }
+    const hideTyping = () => typing.classList.remove('is-in');
+    async function typeFor(author: string, ms: number) {
+      showTyping(author);
+      await wait(ms);
+      hideTyping();
+    }
+
+    function tapFireChip() {
+      return new Promise<void>((resolve) => {
+        const pr = panel!.getBoundingClientRect();
+        const cr = fireChip.getBoundingClientRect();
+        const x = cr.left - pr.left + cr.width * 0.5;
+        const y = cr.top - pr.top + cr.height * 0.55;
+        // start lower-right, off toward the CTA area
+        cursor.style.transform = `translate(${pr.width * 0.62}px, ${pr.height * 0.92}px)`;
+        cursor.classList.add('is-in');
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => {
+            cursor.style.transform = `translate(${x}px, ${y}px)`;
+          })
+        );
+        window.setTimeout(() => {
+          fireChip.classList.add('is-active');
+          cursor.classList.add('is-press');
+          window.setTimeout(resolve, 260);
+        }, 700);
+      });
+    }
+
+    function resetCycle() {
+      msgs.forEach((m) => m.classList.remove('is-in'));
+      hideTyping();
+      chips.classList.remove('is-in');
+      fireChip.classList.remove('is-active');
+      cursor.classList.remove('is-in', 'is-press');
+    }
+
+    async function cycle() {
+      resetCycle();
+      await wait(450);
+
+      // 1 · Subo asks + chips
+      await typeFor('subo', 900);
+      reveal(msgs[0]);
+      chips.classList.add('is-in');
+      await wait(1150);
+
+      // 2 · tap 🔥 Loved it
+      await tapFireChip();
+      cursor.classList.remove('is-in');
+      chips.classList.remove('is-in');
+      await wait(180);
+
+      // 3 · AJ posts the tap
+      reveal(msgs[1]);
+      await wait(880);
+
+      // 4 · Subo follow-up
+      await typeFor('subo', 900);
+      reveal(msgs[2]);
+      await wait(980);
+
+      // 5 · AJ open text
+      await typeFor('joe', 950);
+      reveal(msgs[3]);
+      await wait(940);
+
+      // 6 · Subo last question
+      await typeFor('subo', 900);
+      reveal(msgs[4]);
+      await wait(980);
+
+      // 7 · AJ open text
+      await typeFor('joe', 950);
+      reveal(msgs[5]);
+      await wait(940);
+
+      // 8 · reward: +30 XP
+      await typeFor('subo', 850);
+      reveal(msgs[6]);
+      await wait(1100);
+
+      // 9 · reward: role (grouped) — hold a beat longer so the full thread reads
+      reveal(msgs[7]);
+      await wait(2900);
+
+      // loop
+      thread.classList.add('is-resetting');
+      await wait(480);
+      thread.classList.remove('is-resetting');
+    }
+
+    async function loop() {
+      panel.classList.add('ddemo--anim');
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+        await cycle();
+      }
+    }
+    loop();
+  }
+</script>
