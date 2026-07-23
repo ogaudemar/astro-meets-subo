@@ -29,6 +29,7 @@ See detailed docs:
 - **[docs/i18n.md](docs/i18n.md)** — languages (EN/FR/ES/DE), translation file structure, add-language checklist, BaseHead redirect logic pitfalls
 - **[docs/components.md](docs/components.md)** — component guide, page notes, styling, layouts, constants
 - **[docs/content.md](docs/content.md)** — blog posts (draft status), Subo product facts, content collections
+- **[docs/analytics.md](docs/analytics.md)** — conversion funnel (PostHog system-of-record + GA4/GTM baseline), events, cross-subdomain stitching with app.subo.gg, structured-data maintenance
 
 ## Homepage Sections (index.astro)
 
