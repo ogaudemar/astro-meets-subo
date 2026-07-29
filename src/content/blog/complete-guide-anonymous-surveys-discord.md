@@ -1,10 +1,11 @@
 ---
 title: "The Complete Guide to Anonymous Surveys in Discord"
-description: "Anonymous surveys unlock honest feedback. Here's everything you need to know about Subo's three anonymity modes, when to use each, and how to build trust with your community."
+description: "Anonymous surveys get you honest feedback. Here's how Subo's three privacy modes (Transparent, Semi-Private, Anonymous) work, when to use each, and how to build trust with your community."
 pubDate: "Feb 14 2026"
+updatedDate: "Jul 28 2026"
 author: "Subo Team"
-tags: ["anonymous surveys", "discord", "community management", "feedback"]
-draft: true
+tags: ["anonymous surveys", "discord", "community management", "feedback", "privacy"]
+draft: false
 ---
 
 # The Complete Guide to Anonymous Surveys in Discord
@@ -15,11 +16,11 @@ This is especially true in Discord communities where members know each other, wh
 
 Anonymous surveys change this dynamic entirely. When members trust that their responses can't be attributed to them, they tell the truth.
 
-Subo offers three distinct anonymity modes, each designed for different trust levels and use cases. Here's a complete guide to using them effectively.
+Subo gives you three distinct privacy modes, each designed for a different level of trust and openness. Here's a complete guide to using them effectively.
 
 ## Why Anonymity Matters in Discord
 
-Before diving into the mechanics, it's worth understanding *why* anonymity is particularly important in Discord specifically:
+Anonymity matters more in Discord than on a generic web form, for a few specific reasons:
 
 **Small, tight-knit communities have accountability pressure.** In a server of 50 people, everyone knows everyone. Saying "the admin events have been underwhelming lately" in a survey that a mod can link back to you has real social consequences.
 
@@ -27,111 +28,137 @@ Before diving into the mechanics, it's worth understanding *why* anonymity is pa
 
 **Identity is tied to roles.** In Discord, your username and avatar are everywhere. It's harder to "disappear" into an anonymous response the way you might on an external form.
 
-**High-stakes decisions deserve honest input.** When you're making decisions about community direction, events, leadership, or paid tiers, you need real feedback — not polite non-answers.
+**High-stakes decisions deserve honest input.** When you're making decisions about community direction, events, leadership, or paid tiers, you need real feedback, not polite non-answers.
 
-## Subo's Three Anonymity Modes
+## Subo's Three Privacy Modes
 
-### Mode 1: Identified (Default)
+Every poll and survey runs in one of three privacy modes. The difference between them is simple: **who can see an individual member's answers.**
 
-In this mode, responses are linked to the Discord user who submitted them. You can see exactly who said what.
+### Transparent
 
-**When to use it:**
-- General engagement surveys where there's no sensitive content
-- Onboarding surveys that need follow-up contact
-- Feedback where you want to recognize contributors ("Thanks for the feedback, @username!")
-- Research where knowing who said something helps you take action
-
-**What respondents see:** No explicit anonymity guarantee. They know their identity is visible to admins.
-
-### Mode 2: "More Anonymous" (Partial Anonymity)
-
-In this mode, individual responses are hidden from admins — you can't see who said what — but some metadata may still be associated with responses (depending on your configuration). The respondent sees a notice that their individual responses won't be shown to admins, but the survey system still knows who participated.
+Any member can see who voted or answered what. On a poll, people click the 🙋 icon on the invitation to see each person's choice. The Full Report and response notifications include each participant's Discord name and identifier.
 
 **When to use it:**
-- Sensitive feedback where you want to protect individual respondents but still need participation tracking
-- Situations where you want to offer anonymity as a trust signal without full anonymization
-- Cases where you need to confirm survey completion without reading individual responses (e.g., for role rewards)
+- Accountable votes, where the community should see how each person voted (governance, scheduling, team decisions).
+- Open discussions where seeing each other's choices helps the group reach consensus.
 
-**What respondents see:** A clear notice that their individual responses are private, though their participation may be tracked.
+**What respondents see:** the invitation states the poll or survey is transparent, so everyone knows their choice is visible.
 
-### Mode 3: Full Anonymous
+### Semi-Private
 
-In this mode, responses are completely severed from identity. You receive the data, but there is no way — technically — to determine who submitted any individual response.
+Only the survey creator or admin can see individual answers. Publicly, just the aggregated totals are shared. The Full Report and response notifications still include each participant's Discord name and identifier, but other members cannot see who said what.
 
 **When to use it:**
-- Sensitive community topics (leadership feedback, interpersonal issues, rule changes)
-- Mental health or wellbeing pulse checks
-- Feedback on server policies or moderation decisions
-- Any situation where you genuinely want the most honest possible responses
+- Most general feedback and research, where you may need to follow up or act on specific responses but members don't need to see each other's answers.
+- Situations where you want a layer of privacy from the wider community without full anonymization.
 
-**What respondents see:** A clear, prominent statement that their responses are fully anonymous and cannot be traced.
+**What respondents see:** the invitation states that only the creator can see individual answers.
 
-**Important note on role rewards:** In full anonymous mode, automatic role rewards for completion cannot be assigned (since the system doesn't know who to credit). If you need both full anonymity and role rewards, consider using partial mode or awarding rewards manually.
+### Anonymous (default)
+
+No one can see individual answers, not even you, the creator. Only aggregated totals are ever available. The Full Report and response notifications **do not** include any Discord name or identifier. This is the **default mode** for a new server; you can change the default in `/settings`.
+
+**When to use it:**
+- Sensitive community topics (leadership feedback, interpersonal issues, rule changes).
+- Mental health or wellbeing pulse checks.
+- Feedback on server policies or moderation decisions.
+- Any situation where you genuinely want the most honest possible responses.
+
+**What respondents see:** a clear statement on the invitation that responses are fully anonymous and cannot be traced.
+
+**Two important notes on Anonymous mode:**
+
+1. **It's permanent once it starts.** Once an anonymous poll or survey receives its first response, you cannot switch it to another mode. This protects the people who already answered under the promise of anonymity. Set it before you launch.
+2. **Rewards work, but they show who participated.** Role and XP rewards are still available on an anonymous survey; Subo authenticates each respondent, it just never ties their identity to their answers. The trade-off: a completion reward is visible, so you can tell who took part and who didn't, even if you can't see what anyone said. In a big server that doesn't matter. But if anonymity is critical and only a handful of people will respond, skip the reward, or the list of members who earned it effectively becomes the list of who answered.
+
+> **The mode is always visible to respondents.** Subo prints the active privacy mode right in the invitation embed for every poll and survey. The goal is transparency: members always know whether their answer can be tied to their identity. It's still good practice to restate it in your own announcement, especially for sensitive questions.
+
+## How to set the privacy mode
+
+You choose the mode per project, or set a server-wide default:
+
+- **On a poll:** add the `privacy` option to the `/poll` command and pick Transparent, Semi-Private, or Anonymous. (See the [poll how-to](../how-to-create-a-discord-poll-with-or-without-a-bot).)
+- **On a survey:** build your questionnaire with `/survey` or `/draft`, hit `Continue` to enter Edit Mode, then press `Edit Privacy Mode` and choose. (See the [survey how-to](../how-to-create-a-survey-with-subo-the-survey-bot-877951089).)
+- **Server default:** set the default for every new project with `/settings`. A fresh install defaults to Anonymous.
+
+You can change the mode as many times as you like before the project starts. The one exception is the permanence rule above: an Anonymous project locks after its first response.
+
+## What each mode means for your results
+
+Privacy mode never changes your **aggregated results.** When you pull results with `/results`, you always get totals only, with no individual identifiers, in every mode.
+
+The difference shows up in the **Full Report** (the exported dataset with a per-response "Responses" tab) and in **response notifications** (the live per-response alerts you can receive):
+
+- **Transparent and Semi-Private:** the Responses tab and notifications include each participant's Discord name and identifier.
+- **Anonymous:** neither includes any Discord name or identifier. You get the answers, never the author.
 
 ## When to Choose Each Mode
 
 Use this simple decision framework:
 
 **Is the topic sensitive or could feedback be socially risky for respondents?**
-- Yes → Use Full Anonymous or More Anonymous
-- No → Identified is fine
+- Yes: use Anonymous, or Semi-Private at a minimum.
+- No: Semi-Private or Transparent is fine.
 
-**Do you need to follow up with specific respondents?**
-- Yes → Use Identified
-- No → Any mode works
+**Do you need to follow up with specific respondents, or act on individual answers?**
+- Yes: use Semi-Private (you can see individual answers) or Transparent.
+- No: any mode works.
 
-**Are you offering XP or role rewards for completion?**
-- Yes, and full anonymity is important → Use More Anonymous (participation tracking without response tracking)
-- Rewards aren't critical → Full Anonymous is available
+**Should the whole community see how each person answered?**
+- Yes: use Transparent.
+- No: use Semi-Private or Anonymous.
 
-**Is trust low (e.g., community has had past drama, mod conflicts, or members who've been unfairly treated)?**
-- Yes → Full Anonymous, and communicate this prominently when you launch the survey
+**Are you offering a role or XP reward for completion?**
+- Rewards work in every mode, Anonymous included. Just remember that on an anonymous survey the reward reveals who participated (never what they said), so skip it when anonymity is critical and you only expect a few respondents.
+
+**Is trust low (past drama, mod conflicts, or members who've been treated unfairly)?**
+- Yes: use Anonymous, and communicate it prominently when you launch.
 
 ## Building Trust Around Anonymity
 
 The mechanics of anonymity only work if your members *believe* the survey is actually anonymous. Here's how to establish that trust:
 
-**Be explicit in your announcement.** When you share the survey, state clearly: "This survey is fully anonymous. I genuinely cannot see who submitted what. Say what you actually think." Don't just rely on the system's anonymity notice.
+**Be explicit in your announcement.** When you share the survey, state clearly: "This survey is fully anonymous. I genuinely cannot see who submitted what. Say what you actually think." Subo already labels the mode on the invitation, but your own words reinforce it.
 
-**Don't try to identify respondents indirectly.** If you run a full anonymous survey and then post: "Interesting that someone from the EU mentioned X" — you've just poisoned your own anonymity guarantee. Members will notice, and they'll self-censor on the next survey.
+**Don't try to identify respondents indirectly.** If you run an anonymous survey and then post "Interesting that someone from the EU mentioned X," you've just poisoned your own anonymity guarantee. Members will notice, and they'll self-censor on the next survey.
 
-**Follow up on anonymous feedback genuinely.** If anonymous feedback reveals a problem, address it — without speculating about who raised it. The follow-through is what builds long-term trust in the survey system.
+**Follow up on anonymous feedback genuinely.** If anonymous feedback reveals a problem, address it, without speculating about who raised it. The follow-through is what builds long-term trust in the survey system.
 
-**Use anonymity consistently.** If you only pull out the anonymous survey mode when you expect bad news, members will notice the pattern. Run anonymous surveys as a regular practice, not just when you're bracing for criticism.
+**Use anonymity consistently.** If you only pull out the anonymous mode when you expect bad news, members will notice the pattern. Run anonymous surveys as a regular practice, not just when you're bracing for criticism.
 
-**Acknowledge that anonymity has limits.** If you're in a very small server (10–20 members), full anonymity still can't prevent someone from inferring authorship from writing style or context. Be honest about this with your community, and don't over-promise on topics where truly anonymous feedback would require extraordinary effort.
+**Acknowledge that anonymity has limits.** In a very small server (10 to 20 members), full anonymity still can't stop someone from inferring authorship from writing style or context. Be honest about this with your community, and don't over-promise on topics where truly anonymous feedback would require extraordinary effort.
 
 ## Real-World Anonymous Survey Examples
 
 ### Moderator Performance Review
 
-"How would you rate the moderation team's recent handling of [specific situation]?" — Full anonymous. Members who felt they were treated unfairly can say so without fear of retaliation.
+"How would you rate the moderation team's recent handling of [specific situation]?" Use Anonymous. Members who felt they were treated unfairly can say so without fear of retaliation.
 
 ### Community Direction Survey
 
-"Should we expand into [new topic area] or stay focused on [current topic]?" — Partial or full anonymous. This prevents the most vocal members from dominating the results.
+"Should we expand into [new topic area] or stay focused on [current topic]?" Use Semi-Private or Anonymous. This prevents the most vocal members from dominating the results.
 
 ### Leadership Satisfaction Check
 
-"How satisfied are you with the direction the server is taking?" with follow-up open-ended: "What would you change?" — Full anonymous. This is where you'll learn things you won't hear otherwise.
+"How satisfied are you with the direction the server is taking?" with an open-ended follow-up, "What would you change?" Use Anonymous. This is where you'll learn things you won't hear otherwise.
 
 ### Mental Health or Wellbeing Pulse
 
-"How's everyone doing this month? (1-5 scale + optional comments)" — Full anonymous. Members struggling won't disclose this if they think it's logged to their account.
+"How's everyone doing this month? (1-5 scale plus optional comments)" Use Anonymous. Members who are struggling won't disclose it if they think it's logged to their account.
 
 ### Pricing / Monetization Feedback
 
-"Would you pay for a premium tier? What would it need to include?" — Partial or full anonymous. Financial opinions are personal; people give more honest answers when they're not on the record.
+"Would you pay for a premium tier? What would it need to include?" Use Semi-Private or Anonymous. Financial opinions are personal; people give more honest answers when they're not on the record.
 
 ## Anonymous Surveys and Data Integrity
 
-One common concern with anonymous surveys is gaming — what if someone submits multiple responses? Subo handles this by default: even in anonymous mode, it prevents duplicate responses from the same user (based on Discord account). The *identity* of the respondent is not stored in the results, but the system still prevents duplicates at submission time.
+One common concern with anonymous surveys is gaming: what if someone submits multiple responses? Subo handles this by default. Even in Anonymous mode, it prevents duplicate responses from the same user (based on the Discord account). The *identity* of the respondent is never displayed in the results, but the system still blocks duplicates at submission time.
 
 This means you get the benefits of anonymity (honest responses, no social pressure) without the risk of a single person flooding your survey with repeated answers.
 
 ## Getting Started
 
-Anonymous mode is available on all Subo plans. Simply toggle it when creating or configuring a survey. The default is Identified — you have to actively enable anonymity.
+Every privacy mode is available on all Subo plans. A new server defaults to Anonymous, so set the mode you want when you create a poll or survey, or change your server default in `/settings`.
 
 **[Add Subo to your Discord server →](/invite)**
 

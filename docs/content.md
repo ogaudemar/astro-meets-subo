@@ -49,7 +49,22 @@ Available on all plans. Custom XP name/value and per-survey role rewards require
 Simple skip logic available on all plans. Advanced custom logic (write your own syntax) on VIP and Custom Bot only.
 
 ### Anonymity
-Three modes — Identified (default), "More Anonymous" (participation tracked, responses private), Full Anonymous (no identity link). Role rewards for completion are not compatible with Full Anonymous.
+Three modes, defined by who can see an individual's answers:
+- **Transparent** — every member can see any other member's individual answers.
+- **Semi-Private** — the Creator/Admin can see individual answers, but other members cannot.
+- **Anonymous** — no one (not even the Creator/Admin) can see who wrote which answer.
+
+**Default:** Anonymous on a new server (changeable in `/settings`). Set per-project via the `/poll` `privacy` option or, for surveys, `Edit Privacy Mode` in Edit Mode.
+**Irreversible:** once an Anonymous project receives its first response, it can't be switched to another mode (protects already-collected anonymous answers).
+**Results impact:** privacy mode never changes aggregated results (`/results` is always identifier-free); it only affects the Full Report's Responses tab + response notifications (which carry Discord name/ID except in Anonymous).
+**Rewards + Anonymous:** role/XP rewards *do* work with Anonymous (respondents are authenticated; their identity just isn't tied to answers). But a completion reward reveals who *participated* (not what they said), so with few respondents it can undermine anonymity. Advise skipping rewards when anonymity is critical and the respondent pool is small.
+
+### Terminology / translations source of truth
+When unsure of the exact user-facing term for an app/bot feature, check the
+**`user_messages` table in the Subo repo** — it holds all bot + web-app strings in
+every supported language. The bot and web app support **more languages than this
+marketing site**: site = EN/FR/ES/DE/IT/PT-BR (6); bot/web app also add **Dutch,
+Polish, Russian, Turkish** (10 total).
 
 ### Company
 Founded 2021. Small team with decades of enterprise survey platform experience. Bootstrapped, self-funded, independent.

@@ -1,113 +1,125 @@
 ---
-title: "Comparing how to Create a Discord Poll with Reactions and with a Bot like Subo"
-description: "Learn multiple ways to create polls in Discord - from simple reaction polls to advanced bot-powered surveys with Subo."
+title: "How to Create a Discord Poll (Native or with a Bot like Subo)"
+description: "How to create a poll in Discord: the quick native way, and the more powerful way with a survey bot like Subo (anonymous voting, roles, scoring, scheduling, API)."
 pubDate: "May 07 2023"
+updatedDate: "Jul 24 2026"
 tags: ["tutorial", "discord", "polls", "how-to"]
 author: "Subo Team"
 heroImage: "/images/blog/poll-tuto/poll-tuto-hero.webp"
 draft: false
 ---
 
-_Update: since writing this article, Discord launched " native polls". For a comnparison of native polls with Subo polls, read [this more recent article](../discord-native-polls-vs-subo-the-survey-bot-comparison)_ 
+Polls are one of the fastest ways to get feedback from your community and make decisions everyone feels part of. This guide covers the two ways to run a poll in Discord:
 
-# Comparison - Discord Poll with Reactions vs with a Bot like Subo
+- **Discord's built-in poll**: free, instant, good enough for a quick vote.
+- **A survey bot like [Subo](/invite)**: when you need more flexibility or more features (e.g. images, more than 10 options, anonymous voting, required roles, rewards, scoring for a quiz or prediction, scheduling, or results you can export...)
 
-Discord is a popular communication platform that allows users to chat with each other in real-time.
+> **Quick or elaborate?** For a simple one-off vote, the `/poll` slash command below takes seconds, right inside Discord. For anything more involved (multi-question surveys, quizzes with scoring, skip logic, conditional rewards, or reusable templates), the [Subo web app](https://app.subo.gg) is the recommended way to build. Start simple in Discord, then move to the web app when your projects get bigger.
 
-Discord has come a long way since its inception as a niche messaging app for gamers. Today, it is a powerhouse for creators and entrepreneurs to engage with their audience. Discord has become a popular platform for businesses to communicate with their customers and employees. It provides a way for businesses like OpenAI to create communities around their products and services and get feedback from their customers. Discord has also become a popular platform for content creators like Mr Beast to engage with their audience, build communities around their content, interact with their fans and even monetize. **Discord has evolved into a versatile platform that can be used by anyone who wants to connect with others and build communities**. It is widely used by gamers, creators, clubs, businesses, and web3 communities to stay connected and share information.
+Just weighing Subo against Discord's native polls? We compare them head-to-head in [Discord native polls vs Subo](../discord-native-polls-vs-subo-the-survey-bot-comparison). This article is the how-to.
 
-Discord is mostly defined by real-time, mostly unstructured chat, but **one of its most popular features is the ability to create and share polls**. Polls are a great way to get instant feedback from your community or team members and make agile decisions based on their input.
+## Option 1: Discord's native poll
 
-In this article, we will discuss 2 popular ways to create a poll on Discord:
+Discord now has polls built in, no bot required:
 
-- the basic way offered by default in Discord
-- the more advanced way with a third-party bot like Subo
+1. In the message box of any channel, open the **+** menu (or the poll icon) and choose **Create Poll**.
+2. Type your **question**.
+3. Add your **answers** (up to 10), each with an optional emoji.
+4. Pick a **duration** (1 hour up to 1 week) and, if you want people to pick more than one option, toggle **Allow multiple answers**.
+5. Send it. Members vote by clicking an answer, and the tally updates live.
 
-### 1. Creating Polls with Reactions
+Native polls are convenient for a quick, casual vote. Their limits: results are always public, anyone in the channel can vote, there's no anonymity or role-restriction, there is no reward (XP, role, etc) for those who participate and you can't export or combine the data. When those matter, use a bot.
 
-Discord makes it possible to create polls using reactions. The poll will be contained in a normal text message, and users will be able to vote with reactions. Here is how to create a native poll on Discord:
+## Option 2: Polls with Subo
 
-- Just write a normal message. Write your question, then the options (possible answers) with a corresponding emoji for each option. The emojis can represent numbers (eg. 1️⃣; 2️⃣;3️⃣), yes/no (✅;❌), thumbs up/down (👍;👎) or represent the content (e.g. :pizza:; :hotdog:;:popcorn:). If your server was boosted to level 1, you can also create and upload your own custom emojis
-![create a reaction poll in Discord](/images/blog/poll-tuto/poll1-xc6z7.png)
-- Add reactions (emojis) to the message. The vote will count will start at 1 (as if you voted for each option).
-![select 'add reactions' to add emojis](/images/blog/poll-tuto/poll2-8bkey.png)
-![reaction emojis can be clicked to vote](/images/blog/poll-tuto/poll3-5d9y0.png)
-- Add a ping (eg. @everyone) if you want to notify your community to start voting
+[Subo the Survey Bot](/invite) turns a poll into something you can actually run a community on: anonymous or transparent, role-gated, rewarded, scored, scheduled, and exportable alongside your survey data.
 
-- Once your users have voted, you can see the aggregated counts easily. You can also see the details of who voted for what by clicking on 'View Reactions'
-![reaction poll](/images/blog/poll-tuto/poll4-7uxyl.png)
+### Three ways to start a Subo poll
 
-### 2. Pros and Cons of Discord Reaction Polls
+Once [Subo is on your server](/invite), you can create a poll three ways:
 
-Because they come natively with Discord, reaction polls do not require any third-party bot. They are free to use and fully supported by Discord. They are relatively simple to create and most users understand how to vote.
+- **`/poll`**: build one directly in Discord (the walkthrough below).
+- **`/template`**: start from a ready-made poll template and tweak it. Templates work right in the Discord bot, and are even easier to adapt in the [web app](https://app.subo.gg).
+- **`/draft`**: let Subo's AI write it for you. For a poll, just ask it to generate a one-question, closed-question survey, and Subo drafts the question and options ready to edit.
 
-However, there are many limitations to reaction polls:
-- they do not support anonymous voting or hybrid visibility options like voters-only
-- they have no official start or end, so people can keep voting or change their vote whenever they want, even after you made a decision or the question is relevant
-- users can react to as many answers as they want. They may vote for 'yes'and 'no' at the same time, on purpose or not. If you want people to select only one (or a maximum of 3) option, that is not possible.
-- in fact, users can add other their own emoji reactions so the poll can quickly become very messy
-- native polls are public, for everyone to see and vote on, regardless of their roles
+### The `/poll` walkthrough
 
-### 3. Benefits of Using a Survey Bot like Subo for Creating Polls
+Type `/poll` in the channel where you want it posted (you can move it later).
 
-Using a Survey Bot like Subo provides several benefits over native Discord polls.
+1. Enter your **question**.
+2. Enter your **answer options**, separated by semicolons `;`, for example `Unity;Unreal;Blender`. You can add emojis: `🤝Unity;👽Unreal;🥤Blender`. Up to 24 options.
+3. Hit **Enter**, review the summary, and press **Start Now** to publish (or Edit to make changes).
 
-1. Subo supports different levels of **anonymous voting**. This means that users can vote without revealing their identity to other voters. This is useful when you want to get honest feedback from your community or team members.
+![To create a Discord poll with Subo, use the /poll command](/images/blog/poll-tuto/6-oegwy.png)
 
-2. It is also possible with Subo polls to **hide the results** in cases where you don't want voters to be influenced by other people's earlier votes. Results can be revealed to voters only after they vote ('voters-only' polls), or even hidden until the end of the poll ('hidden'polls).
+That's the whole flow for a basic poll. But this is where Subo pulls ahead of a native poll: the `/poll` command exposes **23 options**, so you can shape almost everything before you post. You don't need them for a quick vote, but they're there when you want them.
 
-2. **Scheduling and time limits**: Subo allows you to draft your poll ahead of time and schedule it to open exactly when you want to. Likewise, a time limit can be set and communicated to voters so that they know how much time they have left.
-
-3. Subo supports both **single and multiple selections** (it also supports open text and numeric answers in survey mode). That way, you can make sure that people vote for only one option (eg. yes/no questions). There are also cases where you want to make sure people only select a specific number of options (eg. 'top 3 books to read next month').
-
-4. **Control who can vote with Roles**: there are times were you only want users of your community with specific responsibilities or privileges to vote.
-
-Another common case is for creators to grant a role for premium subscriptions from services like [Patreon](https://www.patreon.com/home) or [Discord's own server subscriptions](https://discord.com/blog/server-and-creator-subscriptions).  Another common use case is in the world of web3 (eg. Discord communities for NFT projects, DAOs): in order to vote for some decisions, users must have a Discord role, which can sometimes be token-gated (i.e. verified by a third-party app like [Collab.Land](https://www.collab.land/)).
-
-5. **Incentive votes with Roles**, giveaways and more: to make sure as many people as possible participate in a poll, a Survey Bot like Subo make it possible to reward participation with a role. The role itself can be used to unlock access to exclusive content, channels, or to a giveaway.
-
-6. **Repeated polls made easy with Cloning**; Subo makes it possible to duplicate (or clone) a poll in a click. If you want to repeat the same poll are regular intervals (e.g. ask daily 'what game are we playing today?), you don't have to retype the whole thing again.
-
-7. **Visibility/ repost**: because native polls are regular messages, they tend to disappear from view in channels with a lot of activity. Subo polls can be reposted in the same channel or another channel to keep it always fresh and top of mind.
-
-8. **Vote change**: while votes can be changed in a native reaction poll, Subo also gives you the option to make a vote permanent. In that case, voters are not able to recast their vote.
-![example of a community using Subo polls with no vote change allowed](/images/blog/poll-tuto/5-o00pt.png)
-
-9. **Further analysis and combination with survey data**: as a survey platform, Subo allows you to export polls in the same data file formats as you would with a multi-question survey. This allows you to combine data collected from polls and surveys for a more holistic view of your community.
-
-### How to Create a Poll Using Subo
-
-To create a poll using Subo, you need to invite the bot to your Discord server. You can do this by visiting the [Subo website](/invite) and clicking on the "Invite Subo" button. After that, you need to authorize the bot to access your server and give Subo the right permissions.
-
-Once the bot is added to your server, you can create a poll by typing `/poll` followed by your question and options. Options should be separated by semi-colons `;`
-![To create Discord poll with Subo, use the /poll command](/images/blog/poll-tuto/6-oegwy.png)
-
-This will create a poll with the question "What do you use for your animation?" and three options: Unity, Unreal and Blender.
-
-You can also add other options to the command to customize your poll. For example:
-
-- `Max_select 1` limits the number of options selected to 1
-- `start 2h30m` schedules the poll to start in 2.5 hours
-- `end 1w` sets the time limit for the poll to be open for one week
-- `vote_change No` prevents users from changing their vote
-- `show_results Voters-only` : vote results are not shown in the poll embed, but voters can reveal the results after voting. `show_results Hidden` : votes are not shown to anyone. Only the creator can see results and share them
-- `chart_emoji 👍`: replaces the default 🟩 emoji used to draw the chart into 👍
-- `anonymous 🥷Anonymous`: Users can only see the aggregated results, but not who voted for what
-- `anonymous 🗳️ Transparent`: in addition to the aggregated results, users can also click the 🗳️ button and see who voted what
 ![Fully-loaded command for a poll](/images/blog/poll-tuto/7-ftc7l.png)
 
+#### All 23 `/poll` options, grouped by what they do
 
-Simply hit ENTER when you are happy with your command. Don't worry, there is another step  review and confirm everything, and you can always edit later.
+**Timing and lifecycle**
 
-Subo will display a summary of the poll you are about to publish. Review all the details. Hit `Start Now` to publish your poll immediately. (if you have scheduled your poll to open in the future, you are already good to go and can dismiss the message). If you want to make changes or personalize further, click the `EDIT` button. It will give you additional options:
+- **`start`**: schedule when the poll opens (e.g. `2h30m` to start in 2½ hours).
+- **`time_limit`**: how long the poll stays open (e.g. `1d12h`).
 
-- `Poll name`: give your project a unique a memorable name.
-- `Required role`: restrict the poll to only users with certain roles in your Discord server
-- `Post Channel`: pick another channel to post or repost your poll.
-- `Results Sharing`: Results can be automatically shared in a channel of your choice after the poll closes.
-- `Clone Poll`: Duplicate your poll for repeated use
-- `Role Reward`: Reward your poll participants with a (new) role
+**How people vote**
 
-### Conclusion
+- **`max_select`**: cap how many options a voter can pick (`1` makes it single-choice or yes/no). If you don't use the option participants are allowed unlimited answers
+- **`vote_change`**: let voters change their vote, or lock their first vote as final.
+- **`voting_button`**: the voting style: full answer inside a button, emoji-only inside a button, or a select menu (recommended for more than 6 answers).
+- **`required_role`**: only members with a given role can vote.
 
-Polls are a great way to get feedback from your community on Discord. While Discord has a native way of creating polls using reactions, it has many limitations. Subo is a third-party poll bot which you can invite to your Discord server. It provides advanced features for creating polls on Discord such as anonymous voting, maximum answer selections, hidden or semi-hidden results, required roles, advanced scheduling, time limits and much more. Subo is a survey bot, so if needed you can also ask multiple questions in a survey, or combine the data from multiple polls and surveys to get a more detailed and holistic view of your community.
+**Results and privacy**
+
+- **`realtime_results`**: **Public** (everyone sees the tally), **Voters-only** (results appear after you vote), or **Hidden** (only you see them until the end).
+- **`final_reveal`**: publicly reveal a hidden or voters-only poll's results when it closes.
+- **`privacy`**: **Transparent** (any member can see who voted for what), **Semi-Private** (only you, the creator/admin, can), or **Anonymous** (no vote is linked to anyone, not even for you).
+
+
+**Quiz and scoring** (turn a poll into a graded quiz)
+
+- **`scoring`**: switch scoring on.
+- **`correct`**: mark the correct answer(s), shown with a ✓ once the poll closes.
+- **`scores`**: give each option its own points, and pipe the total with `[score]`.
+
+**Rewards**
+
+- **`role_reward`** *(Premium)*: grant a role to participants to all completers (you can grant it conditionally based on how they answered.
+- **`xp`**: award XP, either a flat amount or based on the score / correct answers.
+
+**Appearance and branding**
+
+- **`chart_emoji`**: pick the emoji used to draw the result chart.
+- **`image`**: add an image to the poll.
+- **`thumbnail`** *(Premium)*: add a thumbnail (small image) to the invitation embed.
+- **`color_open`** / **`color_closed`**: set the invitation's border color while open, and *(Premium)* a different color once it closes so a finished poll looks visibly different.
+- **`call_to_action`**: the invitation message shown above the poll (ping a role, set the scene, motivate people to vote).
+- **`info_display`**: decide whether to show poll details inside the invitation embed or tucked into an ephemeral to keep the embed clean. To choose which info rows to show/hide inside the poll details, use the web app
+
+**Organization**
+
+- **`name`**: give the poll a memorable name so it's easy to find later.
+- **`channel`**: pick the channel or thread to post in.
+
+After you hit Enter, Subo shows a summary before anything goes live. Click **Edit** to fine-tune further: set multiple required roles, auto-post results to a channel when the poll closes, tweak the invitation, or [clone the poll](../clone-surveys-across-servers) for repeated use.
+
+![Example of a community using Subo polls with no vote change allowed](/images/blog/poll-tuto/5-o00pt.png)
+
+### When to move to the web app
+
+The `/poll` command is fast, but for bigger or recurring work the **[Subo web app](https://app.subo.gg)** is the recommended way to build. It's a visual editor for polls, surveys, and quizzes with full management, analytics, and team access.
+
+- **Start from a [template](/templates)**: this-or-that polls, feature-prioritization votes, prediction contests, governance proposals and more, ready to run in a click. See the [template library](../subo-template-library-launch).
+- **Design a full quiz** with [native scoring](../scoring-piping-quizzes): correct answers, per-option points, and a leaderboard.
+- **Dress up the invitation** with a [custom design](../polls-grading-invite-customization) worth clicking.
+
+### Automate polls with the API
+
+Subo also has a [public API](../public-api-launch), so you can create and post polls programmatically. Hand it to your favorite AI agent or LLM and let it run: for example, have it post a fresh poll to your server automatically every morning. See the [API launch post](../public-api-launch) for what's possible.
+
+## Which should you use?
+
+For a throwaway vote, Discord's native poll is fine. The moment you care about honest answers, who can vote, rewarding participation, scoring a quiz, automating, or keeping the data, reach for Subo. For the full breakdown, read [Discord native polls vs Subo](../discord-native-polls-vs-subo-the-survey-bot-comparison), and see [pricing](/pricing) for what's free vs Premium.
+
+Ready to go? [Invite Subo to your server](/invite) and run your first `/poll`.
