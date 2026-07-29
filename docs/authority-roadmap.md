@@ -130,7 +130,7 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE (next session) — P2 content refresh in progress
+> ### ▶ RESUME HERE (next session) — how-tos + 2 guides SHIPPED; comparison pages next
 >
 > **Done (2026-07):**
 > - **Poll & survey how-tos refreshed** (`how-to-create-a-discord-poll-with-or-without-a-bot.md`,
@@ -155,6 +155,13 @@ groundwork converts into citations and organic traffic. One page per intent.
 > - **Rewards DO work in Anonymous mode** (respondents are authenticated). The
 >   nuance now documented: a completion reward reveals who *participated* (not what
 >   they said), so it can undercut anonymity with a small respondent pool.
+>
+> **Notion synced (2026-07-28):** the Notion **Privacy modes** tutorial carried the
+> same stale default (Semi-Private) in two spots — fixed to **Anonymous** via Notion
+> MCP (mode bullet moved to the Anonymous section + the "server defaults" step).
+>
+> **Shipped to `main`:** all of the above committed + pushed (commit `b327028`,
+> 2026-07-28) after a clean `npm run build`. Marketing workflow = push to main.
 >
 > **Still open (non-blocking):**
 > 1. ~~Exact AI-credit allowances per plan~~ — **RESOLVED.** The exact per-plan
@@ -249,9 +256,9 @@ everything else in the workspace is **private team docs and stays in Notion**.
         transparency, and **removed unverified AI-credit numbers** — the pricing
         page keeps credits qualitative; verify exact allowances before re-adding).
         `/draft` is covered inside that post + both how-tos (no standalone page
-        yet). All three edited posts are `draft:true` **except** the two how-tos;
-        the two guides are **ready for review + publish**. All blog edits follow
-        the new `blog-writing` skill (no em dashes).
+        yet). **UPDATE (2026-07-28): both guides are now `draft:false` and live** —
+        see the RESUME HERE block for the publish + product-fact corrections. All
+        blog edits follow the `blog-writing` skill (no em dashes + anti-AI-tell rules).
       - **CORRECTION (2026-07):** the poll + survey how-tos **already exist
         on-domain** as blog posts — `how-to-create-a-discord-poll-with-or-without-
         a-bot.md` and `how-to-create-a-survey-with-subo-the-survey-bot-*.md` (both
