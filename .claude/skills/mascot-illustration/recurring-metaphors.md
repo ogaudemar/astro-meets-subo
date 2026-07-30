@@ -13,6 +13,7 @@ visual metaphor. Use exactly one metaphor per image.**
 | Templates / template library | Library | Curator / librarian |
 | Invitation customization | Painting workshop | Artist / craftsman |
 | Quiz / grading | Game show | Game-show MC |
+| Polls / voting | Broadcast "poll desk" | Election-night host / anchor |
 | Monitoring / live results | Control room | Operator |
 
 When a **new** feature needs an image, first ask: *what everyday place or role
@@ -48,6 +49,14 @@ automated, things moving along on their own.
 
 ### Game-show stage (quiz)
 Neon-lit set, big glowing scoreboard, podiums with buzzers. Triumphant, playful.
+
+### Broadcast "poll desk" (polls / voting)
+See [examples/poll-desk.md](examples/poll-desk.md). Warm TV studio, election-night
+energy. Subo hosts at a desk; **one big live-results board with a single poll and
+horizontal option bars** (echoes Subo's bar-chart head). A blob votes on a floating
+Discord poll embed. Distinct from the game-show stage (no podiums/buzzers/quiz
+scores) and from the sci-fi control room (warm, not neon monitoring). Winner bar in
+teal/cyan. Keep the poll about the *method* of voting, not named competitors.
 
 ### Painting workshop (invitation customization)
 Paint palette, brush, paint swatches / color chips. A Discord embed card floating
