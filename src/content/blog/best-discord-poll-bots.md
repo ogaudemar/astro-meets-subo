@@ -35,7 +35,7 @@ For a snap decision ("what time works for the raid?") it's the right tool. The l
 - No participation rewards, no results export
 - By default any member with permission to send messages can create a poll (Discord later added a role permission to restrict this, so it's manageable now)
 
-**Best for:** fast, casual, low-stakes votes where you don't care who sees the results.
+**Best for:** fast, casual, low-stakes votes where you don't care who sees the results. For a closer look at where the built-in feature runs out, see [Discord native polls vs Subo](/blog/discord-native-polls-vs-subo-the-survey-bot-comparison).
 
 ## Simple Poll
 

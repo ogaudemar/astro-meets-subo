@@ -120,6 +120,6 @@ Subo also has a [public API](../public-api-launch), so you can create and post p
 
 ## Which should you use?
 
-For a throwaway vote, Discord's native poll is fine. The moment you care about honest answers, who can vote, rewarding participation, scoring a quiz, automating, or keeping the data, reach for Subo. For the full breakdown, read [Discord native polls vs Subo](../discord-native-polls-vs-subo-the-survey-bot-comparison), and see [pricing](/pricing) for what's free vs Premium.
+For a throwaway vote, Discord's native poll is fine. The moment you care about honest answers, who can vote, rewarding participation, scoring a quiz, automating, or keeping the data, reach for Subo. For the full breakdown, read [Discord native polls vs Subo](../discord-native-polls-vs-subo-the-survey-bot-comparison). Weighing other bots too? See the [best Discord poll bots comparison](../best-discord-poll-bots), and [pricing](/pricing) for what's free vs Premium.
 
 Ready to go? [Invite Subo to your server](/invite) and run your first `/poll`.
