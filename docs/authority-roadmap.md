@@ -223,7 +223,7 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE (next session) — how-tos + 2 guides SHIPPED; comparison pages next
+> ### ▶ RESUME HERE (next session) — poll cluster SHIPPED (built + interlinked + hero); strengthen /polls next
 >
 > **Done (2026-07):**
 > - **Poll & survey how-tos refreshed** (`how-to-create-a-discord-poll-with-or-without-a-bot.md`,
@@ -264,16 +264,27 @@ groundwork converts into citations and organic traffic. One page per intent.
 >    table to duplicate/maintain in the post.
 > 2. **Standalone `/draft` page?** Currently only covered inside other posts.
 >
-> **Poll cluster progress (2026-07-30):** ✅ **"Best Discord poll bots"** page shipped
-> (commit `91bae44`). ✅ **`discord-native-polls-vs-subo` comparison refreshed** to 2026
-> (house style + current facts + crawlable markdown table). ✅ **Poll cluster
-> interlinked** (best-poll-bots was orphaned): comparison ↔ best-poll-bots ↔ how-to ↔
-> /polls ↔ anonymous-surveys. See the two `[x]` bullets below for detail.
+> **Poll cluster progress — COMPLETE + LIVE on `main` (2026-07-30 → 07-31):**
+> - ✅ **"Best Discord poll bots"** page shipped (commit `91bae44`).
+> - ✅ **`discord-native-polls-vs-subo` comparison refreshed** to 2026 (house style +
+>   current facts + crawlable markdown table + the power-user reuse/management angle +
+>   broadened survey/forms/quizzes framing). Pushed in commit `d28af16`.
+> - ✅ **Poll cluster interlinked** (best-poll-bots was orphaned): comparison ↔
+>   best-poll-bots ↔ how-to ↔ /polls ↔ anonymous-surveys.
+> - ✅ **New on-brand hero for the comparison** — the "poll toolkit" mascot
+>   illustration ("GO PRO" neon; poll = one tool among lock/form/trophy vs a plain
+>   NATIVE POLL card). Metaphor added to the `mascot-illustration` skill canon. Pushed
+>   in commit `2fb8a8f` (2026-07-31); old `subo-vs-native-discord-polls.webp` removed.
+> - See the two `[x]` bullets below for detail.
 >
 > **Next work items (roughly in order):**
-> - **Strengthen `/polls`** (still open from the poll-cluster work): tune the page's
->   title/H2s/copy toward the `discord poll bot` money cluster (it's already a top-5
->   organic page). Page-level SEO, not a new post.
+> - **Strengthen `/polls`** ⭐ **START HERE** (last open piece of the poll cluster): tune
+>   the page's `pageTitle`/`pageDescription`/H1/H2s/copy toward the `discord poll bot`
+>   money cluster (~2,700 imp/6mo; it's already a top-5 organic page). Current SEO title
+>   leads with "Discord Poll Bot: Quizzes, Prediction Contests & Scoring" — keep the
+>   feature angle but make sure the core `discord poll bot` / `best poll bot` intent is
+>   covered. Page-level SEO, **not** a new post. Data-driven from `pollsPage` in
+>   `en.json`; the outro already links to the comparison + polls-grading posts.
 > - Then the **"[competitor] alternative"** pages (Simple Poll / MEE6 / EasyPoll
 >   alternative-intent; native-polls now covered by the refreshed comparison).
 > - **New angles added 2026-07-29 (see P2 bullets + subsections):**
@@ -306,7 +317,10 @@ groundwork converts into citations and organic traffic. One page per intent.
       table with a crawlable markdown table** (GEO win). Bumped `pubDate`/`updatedDate`.
       **Poll cluster now interlinked** (was orphaned): comparison ↔ best-poll-bots ↔
       how-to ↔ /polls ↔ anonymous-surveys guide. `/polls` outro got a 2nd blog link
-      (added optional `blogLink2` to the data model).
+      (added optional `blogLink2` to the data model). **New "poll toolkit" hero**
+      (`subo-poll-toolkit.webp`, "GO PRO" neon) replaced the old vs-image; toolkit
+      metaphor added to the `mascot-illustration` skill canon. Live on `main` (commits
+      `d28af16` + `2fb8a8f`).
 - [ ] "**[Competitor] alternative**" pages (e.g. Simple Poll, native Discord polls, MEE6 polls).
       *(native-Discord-polls now covered by the refreshed comparison above; remaining:
       Simple Poll / MEE6 / EasyPoll alternative-intent pages.)*
