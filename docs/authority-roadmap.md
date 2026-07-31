@@ -223,7 +223,7 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE (next session) — poll cluster SHIPPED (built + interlinked + hero); strengthen /polls next
+> ### ▶ RESUME HERE (next session) — poll cluster + /polls SEO DONE; next = "[competitor] alternative" pages
 >
 > **Done (2026-07):**
 > - **Poll & survey how-tos refreshed** (`how-to-create-a-discord-poll-with-or-without-a-bot.md`,
@@ -278,14 +278,16 @@ groundwork converts into citations and organic traffic. One page per intent.
 > - See the two `[x]` bullets below for detail.
 >
 > **Next work items (roughly in order):**
-> - **Strengthen `/polls`** ⭐ **START HERE** (last open piece of the poll cluster): tune
->   the page's `pageTitle`/`pageDescription`/H1/H2s/copy toward the `discord poll bot`
->   money cluster (~2,700 imp/6mo; it's already a top-5 organic page). Current SEO title
->   leads with "Discord Poll Bot: Quizzes, Prediction Contests & Scoring" — keep the
->   feature angle but make sure the core `discord poll bot` / `best poll bot` intent is
->   covered. Page-level SEO, **not** a new post. Data-driven from `pollsPage` in
->   `en.json`; the outro already links to the comparison + polls-grading posts.
-> - Then the **"[competitor] alternative"** pages (Simple Poll / MEE6 / EasyPoll
+> - ✅ **Strengthen `/polls`** — **DONE (2026-07-31).** Page-level SEO tune toward the
+>   `discord poll bot` money cluster (~2,700 imp/6mo, already a top-5 organic page).
+>   The money term "poll bot" was only in the `pageTitle`; wove it into the
+>   `pageDescription` ("Subo is a Discord poll bot that…"), the **H1** ("The Discord
+>   poll bot that scores, grades, and rewards"), and the hero subtitle — kept the four
+>   feature-framed H2s untouched (no keyword stuffing). Added a **3rd outro interlink**
+>   (`blogLink3` → `best-discord-poll-bots`) to catch the "best poll bot" intent and
+>   finish the cluster. All in `pollsPage` (`en.json`) + conditional render in
+>   `polls.astro`. Clean `npm run build`.
+> - **START HERE →** the **"[competitor] alternative"** pages (Simple Poll / MEE6 / EasyPoll
 >   alternative-intent; native-polls now covered by the refreshed comparison).
 > - **New angles added 2026-07-29 (see P2 bullets + subsections):**
 >   - **"Discord survey/form without 'bot'"** cluster — untapped intent + the Discord
@@ -306,8 +308,8 @@ groundwork converts into citations and organic traffic. One page per intent.
       EasyPoll, Subo) targeting the ~2,700 imp/6mo poll-bot cluster. Frames EasyPoll +
       Subo as the two real contenders; keeps Subo's edge to the honest set (conditional
       rewards/action blocks, scoring, full surveys) + a longevity note. Interlinked into
-      the poll cluster (2026-07-30). Still open: strengthen `/polls` copy/H2s for the same
-      cluster (page-level SEO, not a new post).
+      the poll cluster (2026-07-30). `/polls` page-level SEO for the same cluster **DONE
+      (2026-07-31)** — see the RESUME HERE block.
 - [x] "**Discord native polls vs Subo**" comparison — **REFRESHED (2026-07-30).** The
       Apr-2024 post (a top-5 organic page, ~135 sessions/6mo) rewritten to 2026: house
       style (killed em dashes + boast/robust/elevate + flowery both-sides conclusion),

@@ -981,10 +981,10 @@
 
 "pollsPage": {
   "pageTitle": "Discord Poll Bot: Quizzes, Prediction Contests & Scoring | Subo",
-  "pageDescription": "Subo turns Discord polls into auto-graded quizzes and prediction contests. Score each option, mark correct answers, reward XP and roles, and customize every invitation.",
+  "pageDescription": "Subo is a Discord poll bot that turns polls into auto-graded quizzes and prediction contests. Score each option, mark correct answers, reward XP and roles, and customize every invitation.",
   "hero": {
-    "title": "Discord polls that <strong class=\"accent\">score, grade, and reward</strong>",
-    "subtitle": "Discord has native polls, but they only count votes. Subo polls run trivia nights and prediction contests, then reward your members automatically.",
+    "title": "The Discord poll bot that <strong class=\"accent\">scores, grades, and rewards</strong>",
+    "subtitle": "Discord has native polls, but they only count votes. Subo is the poll bot that runs trivia nights and prediction contests, then rewards your members automatically.",
     "cta": "Add to Discord, Free"
   },
   "nav": [
@@ -1058,6 +1058,10 @@
     "blogLink2": {
       "text": "Compare Subo with Discord native polls →",
       "href": "/blog/discord-native-polls-vs-subo-the-survey-bot-comparison"
+    },
+    "blogLink3": {
+      "text": "See how Subo stacks up against the best Discord poll bots →",
+      "href": "/blog/best-discord-poll-bots"
     }
   }
 },
