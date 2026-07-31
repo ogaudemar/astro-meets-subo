@@ -14,6 +14,7 @@ visual metaphor. Use exactly one metaphor per image.**
 | Invitation customization | Painting workshop | Artist / craftsman |
 | Quiz / grading | Game show | Game-show MC |
 | Polls / voting | Broadcast "poll desk" | Election-night host / anchor |
+| Poll vs full product (comparison) | Toolkit / kit-of-tools | Workshop host |
 | Monitoring / live results | Control room | Operator |
 
 When a **new** feature needs an image, first ask: *what everyday place or role
@@ -57,6 +58,13 @@ horizontal option bars** (echoes Subo's bar-chart head). A blob votes on a float
 Discord poll embed. Distinct from the game-show stage (no podiums/buzzers/quiz
 scores) and from the sci-fi control room (warm, not neon monitoring). Winner bar in
 teal/cyan. Keep the poll about the *method* of voting, not named competitors.
+
+### Toolkit (poll vs full product comparison)
+See [examples/comparison-toolkit.md](examples/comparison-toolkit.md). Warm workshop.
+Subo opens a glowing kit where the poll is **one tool among a few** (poll bar-chart,
+padlock, form card, trophy); a plain native poll sits basic beside it. Icons not text.
+Distinct from the poll desk (no studio/results board): a workbench about how much more
+than a vote you get.
 
 ### Painting workshop (invitation customization)
 Paint palette, brush, paint swatches / color chips. A Discord embed card floating

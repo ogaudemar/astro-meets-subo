@@ -6,7 +6,7 @@ updatedDate: "Jul 30 2026"
 tags: ["comparison", "discord", "polls", "features"]
 author: "Subo Team"
 draft: false
-heroImage: "/images/blog/native-polls/subo-vs-native-discord-polls.webp"
+heroImage: "/images/blog/native-polls/subo-poll-toolkit.webp"
 ---
 
 # Discord native polls vs Subo: what the built-in feature can't do
