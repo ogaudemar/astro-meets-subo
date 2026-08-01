@@ -75,6 +75,22 @@ domain, and this **gates all content ROI for ~2–3 months**:
       Migrate to **api.subo.gg** with its own 301 map + update `llms.txt`, `CLAUDE.md`,
       `DeveloperAPI.astro`, and any references. Low traffic = low urgency, but it's the
       last piece of "one entity = subo.gg." Feeds the **API/agent GEO** subsection in P2.
+- [x] **App user-facing messages scrubbed subo.ai → subo.gg (2026-08-01).** The bot's
+      in-Discord/DM messages were still emitting old-domain links. Runtime precedence is
+      **DB row wins, code default is fallback** (`getMessageByEnum`: `user_messages` row
+      OR `defaultMessages.py` value). Status:
+      - ✅ **`user_messages` DB table — updated + LIVE (user, 2026-08-01).** The last
+        stale `subo.ai` was `WebApp_Button_link` (`subo.ai/app` → `subo.gg/app`, all
+        locales — the "🖥️ Web App" end-of-survey button); plus the tutorial links
+        repointed to the new hub (`subo.gg/tutorial` → `/tutorials` in
+        `HelpMessage_content`, `Welcome_dm_text`, `Edit_survey_edit_question_logic_prompt`).
+      - [~] **Code fallback `surveyLib/model/defaultMessages.py` — EDITED, not yet
+        deployed.** 17 refs swept subo.ai → subo.gg (incl. a `subo.ai.gg/support` typo +
+        tutorial links → `/tutorials`). App repo = edit-only here; user ships it with
+        other app work. **Low priority — the live DB overrides it**, so users already see
+        subo.gg. Dormant only as the fallback for any locale missing a DB row.
+      This closes the **app half** of "one entity = subo.gg" (site nav/redirects,
+      directories, and the ~40 Notion Tutorials pages were already scrubbed).
 - **Don't misread content ROI before ~2026-Q4** — an early "our new content isn't
   ranking" is migration lag, not the content. The subo.ai 6-month history (below) is
   the map of what will recover.
