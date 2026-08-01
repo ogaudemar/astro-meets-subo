@@ -295,8 +295,16 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   Subo-as-investigative-journalist + a live `heroHeadline` text overlay; documented in the
 >   `mascot-illustration` + `blog-writing` skills). Next alt page = reuse the base image + one
 >   `heroHeadline` line.
-> - **START HERE →** decide the next content bet: more alternative pages (e.g. Straw Poll), the
->   **"Discord survey/form without 'bot'"** cluster (P2), or the on-domain **tutorials hub**.
+> **Tutorials hub — SHIPPED (2026-07-31):** built the on-domain `subo.gg/tutorials`
+> hub (`src/pages/tutorials/index.astro`) + repointed the `tutorial` redirect off
+> Notion → the hub + updated nav (header/footer). Bucketed: Bucket-A how-tos
+> on-domain, Bucket-B command/ops docs still out to Notion. See the "hub plan"
+> `[x]` bullets below. **Still open on the hub (non-blocking):** add `FAQPage`
+> schema; localize selectively per P0 traffic; publish the 8 Web App Notion drafts
+> and swap those Bucket-B links on-domain as they land; the optional `/docs` endgame.
+>
+> - **START HERE →** decide the next content bet: more alternative pages (e.g. Straw Poll)
+>   or the **"Discord survey/form without 'bot'"** cluster (P2). (Tutorials hub now done.)
 > - **New angles added 2026-07-29 (see P2 bullets + subsections):**
 >   - **"Discord survey/form without 'bot'"** cluster — untapped intent + the Discord
 >     "app" rebrand vocabulary.
@@ -306,8 +314,8 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   - **Best-bots roundup inclusion** (P5) — pitch Subo into third-party "best Discord
 >     bots" listicles; editorial backlinks without writing the page.
 > - **Skip Logic** search-intent page (Bucket A, deferred as "later").
-> - **Build the on-domain `subo.gg/tutorials` hub + repoint the Notion `tutorial`
->   redirect** (see "the hub plan" below) — the next structural piece.
+> - ✅ **Build the on-domain `subo.gg/tutorials` hub + repoint the `tutorial`
+>   redirect** — **DONE (2026-07-31).** See the "hub plan" `[x]` bullets below.
 > - Decide on a **`FAQPage` schema** mechanism for blog posts (layout injects
 >   `BlogPosting` only today).
 
@@ -500,17 +508,28 @@ everything else in the workspace is **private team docs and stays in Notion**.
 We don't migrate all ~40 pages — we migrate the ~7 that earn authority and give
 the rest an on-domain home to *point* to. Structure:
 
-- [ ] **Build an on-domain `subo.gg/tutorials` hub** (Astro index page) and
-      **repoint the `tutorial` redirect** (`redirects.js`) at it — stop 302-ing to
-      Notion. The hub is the highest-value real estate: it captures the branded
-      *"Subo tutorials"* query, distributes internal link equity, and is a funnel
-      node (PostHog + interlink to templates/pricing) that Notion can't be.
-- [ ] **Route links by bucket:** search-intent how-tos → on-domain pages;
-      operational docs → out to Notion (`target="_blank"`) for now. As each doc
-      migrates, swap its link Notion → on-domain — no re-architecture needed.
-- [ ] **Lead with the Web App** guide (the recommended path today); keep the
-      Discord-command tutorials as a clearly-labeled secondary section (they still
-      work). Mirrors the current Notion index's own ordering.
+- [x] **Build an on-domain `subo.gg/tutorials` hub — DONE (2026-07-31).**
+      `src/pages/tutorials/index.astro` (modeled on `templates/index.astro`:
+      Header/Footer/CTA, hero, curated card sections, `CollectionPage` + `ItemList`
+      JSON-LD). **`tutorial` redirect repointed** off Notion → `subo.gg/tutorials`
+      in `redirects.js`, so legacy/external `/tutorial` links now land on the hub
+      (still tracked via the redirect interstitial). Nav updated: header Resources
+      dropdown + footer "Tutorials" now point at `/tutorials` directly (footer
+      `external` flag dropped) in `en.json`. Other-language nav still uses `/tutorial`
+      → redirects to the hub (fine; hub not localized yet). Clean `npm run build`.
+      The hub is deliberately **curated, not auto-generated** from the blog
+      collection — only the Bucket-A how-tos are featured.
+- [x] **Route links by bucket — DONE.** Search-intent how-tos → on-domain blog
+      posts (Start here: survey + poll; Guides: anonymous, AI summaries, skip logic;
+      Compare & choose: native-polls comparison + best-poll-bots). Operational docs →
+      out to Notion (`target="_blank"`): "All commands" → Notion Tutorials index,
+      plus Permissions + XP via their tracked redirects. As each Bucket-B doc
+      migrates on-domain, swap its link Notion → on-domain, no re-architecture.
+- [x] **Lead with the Web App — DONE.** The "Start here" section opens by pointing
+      at the web app (`/app`) as the easiest path, then the two core how-tos (which
+      cover both the web-app builder and the Discord `/survey` `/poll` commands).
+      NB: standalone on-domain Web App how-tos don't exist yet (the 8 Notion drafts
+      are still unpublished), so the hub links to the app itself, not a guide.
 - [ ] Endgame (optional, "if ever"): once enough operational docs have moved, the
       Notion-linked remainder becomes a lightweight on-site `/docs` section and the
       hub links entirely on-domain.

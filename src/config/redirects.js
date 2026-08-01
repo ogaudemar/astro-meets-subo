@@ -10,9 +10,9 @@ export const trackedRedirects = {
     description: 'Discord Bot Invite'
   },
   tutorial: {
-    url: 'https://suboai.notion.site/Tutorials-831cbee01f004a81ac5fd3ae72f09bce',
+    url: 'https://subo.gg/tutorials',
     name: 'tutorials',
-    description: 'Notion Tutorials'
+    description: 'Tutorials'
   },
   permissions: {
     url: 'https://suboai.notion.site/Permissions-for-SurveyBot-2a976a73aa5a4f2c851f177213656724',

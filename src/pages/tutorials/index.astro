@@ -1,0 +1,283 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTA from '../../components/CTA.astro';
+import translations from '../../content/translations/en.json';
+
+// The Subo tutorials hub. Curated on purpose (not auto-generated from the blog
+// collection): only the search-intent how-tos that earn authority live on-domain;
+// operational/command docs still route out to Notion for now. See
+// docs/authority-roadmap.md ("the hub plan") for the bucketing rationale.
+
+// Bucket A — search-intent how-tos that live on-domain as blog posts.
+// Start here: the two core how-tos + the recommended web-app path.
+const startHere = [
+  {
+    title: 'Create a survey',
+    desc: 'Build a multi-question survey in Discord with /survey, or visually in the web app. The recommended starting point.',
+    href: '/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/',
+  },
+  {
+    title: 'Create a poll',
+    desc: 'The quick native way and the more powerful way with a bot: anonymous voting, roles, scoring and scheduling.',
+    href: '/blog/how-to-create-a-discord-poll-with-or-without-a-bot/',
+  },
+];
+
+// Deeper how-tos (still Bucket A, on-domain).
+const guides = [
+  {
+    title: 'Run anonymous surveys',
+    desc: "Subo's three privacy modes (Transparent, Semi-Private, Anonymous), when to use each, and how to earn honest answers.",
+    href: '/blog/complete-guide-anonymous-surveys-discord/',
+  },
+  {
+    title: 'Summarize responses with AI',
+    desc: "Turn open-ended answers into clear insights with Subo's Text Analysis, straight inside your reports.",
+    href: '/blog/ai-powered-survey-summaries-subo/',
+  },
+  {
+    title: 'Use skip logic',
+    desc: 'Show or hide questions based on previous answers to build surveys that feel personal and reduce friction.',
+    href: '/blog/how-to-use-skip-logic-smarter-discord-surveys/',
+  },
+];
+
+// Comparison / choosing guides (on-domain). Interlinks the poll cluster into the hub.
+const compare = [
+  {
+    title: 'Native polls vs Subo',
+    desc: "Where Discord's built-in poll is enough, and where a poll bot still does more.",
+    href: '/blog/discord-native-polls-vs-subo-the-survey-bot-comparison/',
+  },
+  {
+    title: 'Best Discord poll bots',
+    desc: 'An honest comparison of native polls, Simple Poll, MEE6, EasyPoll and Subo, with a pick for each kind of server.',
+    href: '/blog/best-discord-poll-bots/',
+  },
+];
+
+// Bucket B — operational / command reference. Stays on Notion for now.
+const NOTION_TUTORIALS = 'https://suboai.notion.site/Tutorials-831cbee01f004a81ac5fd3ae72f09bce';
+const reference = [
+  {
+    title: 'All commands',
+    desc: 'The full slash-command reference: /edit, /results, /home, /repost, /settings, /premium and more.',
+    href: NOTION_TUTORIALS,
+  },
+  {
+    title: 'Permissions',
+    desc: "Which permissions Subo needs and how to fix it when a command doesn't work.",
+    href: '/permissions',
+  },
+  {
+    title: 'XP and roles',
+    desc: 'How the XP system rewards participation and hands out roles to your members.',
+    href: '/xp',
+  },
+];
+
+const pageTitle = 'Subo Tutorials';
+const pageDescription =
+  'Learn Subo, the Discord survey and poll bot: create surveys and polls, run anonymous feedback, summarize responses with AI, use skip logic, and more. Start in the web app or with slash commands.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: pageTitle,
+    description: pageDescription,
+    url: 'https://subo.gg/tutorials',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: [...startHere, ...guides, ...compare].map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.title,
+      url: `https://subo.gg${item.href}`,
+    })),
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={pageTitle} description={pageDescription} jsonLd={jsonLd} />
+  </head>
+  <body>
+    <Header translations={translations.header} />
+    <main id="main-content">
+
+      <section class="th-hero">
+        <div class="container text-center">
+          <span class="th-eyebrow mono">Tutorials</span>
+          <h1 class="mono">Learn Subo in a few minutes</h1>
+          <p class="th-hero__subtitle">
+            Everything you need to build surveys, polls and quizzes in your Discord
+            community. Start in the web app or with a slash command, then dig into the
+            guide you need.
+          </p>
+        </div>
+      </section>
+
+      <section class="th-section">
+        <div class="container">
+          <div class="th-section__header">
+            <span class="th-label mono">Start here</span>
+            <p class="th-section__blurb">
+              New to Subo? The <a href="/app" class="th-inline-link">web app</a> is the
+              easiest way to build visually. Prefer to stay in Discord? These two how-tos
+              cover both paths.
+            </p>
+          </div>
+          <div class="th-grid">
+            {startHere.map((item) => (
+              <a class="th-card" href={item.href}>
+                <h2 class="th-card__title">{item.title}</h2>
+                <p class="th-card__desc">{item.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="th-section">
+        <div class="container">
+          <div class="th-section__header">
+            <span class="th-label mono">Guides</span>
+            <p class="th-section__blurb">Go deeper on the features that make Subo more than a poll.</p>
+          </div>
+          <div class="th-grid">
+            {guides.map((item) => (
+              <a class="th-card" href={item.href}>
+                <h2 class="th-card__title">{item.title}</h2>
+                <p class="th-card__desc">{item.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="th-section">
+        <div class="container">
+          <div class="th-section__header">
+            <span class="th-label mono">Compare &amp; choose</span>
+            <p class="th-section__blurb">Weighing the options? See how Subo stacks up.</p>
+          </div>
+          <div class="th-grid">
+            {compare.map((item) => (
+              <a class="th-card" href={item.href}>
+                <h2 class="th-card__title">{item.title}</h2>
+                <p class="th-card__desc">{item.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="th-section">
+        <div class="container">
+          <div class="th-section__header">
+            <span class="th-label mono">Reference</span>
+            <p class="th-section__blurb">
+              Command reference and advanced docs. These still live on our Notion
+              workspace for now.
+            </p>
+          </div>
+          <div class="th-grid">
+            {reference.map((item) => {
+              const external = item.href.startsWith('http');
+              return (
+                <a
+                  class="th-card th-card--ref"
+                  href={item.href}
+                  target={external ? '_blank' : undefined}
+                  rel={external ? 'noopener noreferrer' : undefined}
+                >
+                  <h2 class="th-card__title">{item.title}</h2>
+                  <p class="th-card__desc">{item.desc}</p>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <CTA translations={translations} />
+    </main>
+    <Footer translations={translations.footer} />
+  </body>
+</html>
+
+<style>
+.th-hero {
+  padding: 140px 0 60px;
+  background:
+    radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+    var(--bg-base);
+}
+.th-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.th-hero h1 {
+  font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.th-hero__subtitle {
+  font-size: 1.15rem;
+  color: var(--grey-light);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.th-section { padding: 2.5rem 0; }
+.th-section__header { margin-bottom: 1.75rem; }
+.th-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.12);
+  border: 1px solid rgba(var(--accent-rgb), 0.25);
+}
+.th-section__blurb { color: var(--grey-light); margin: 0.75rem 0 0; max-width: 620px; line-height: 1.6; }
+.th-inline-link { color: var(--primary-light); text-decoration: underline; }
+.th-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.th-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.th-card:hover { border-color: rgba(var(--accent-rgb), 0.4); transform: translateY(-2px); }
+.th-card__title { font-size: 1.15rem; font-weight: 700; margin: 0 0 0.5rem; }
+.th-card__desc { font-size: 0.92rem; color: var(--grey-light); line-height: 1.6; margin: 0; }
+.th-card--ref { background: rgba(255, 255, 255, 0.03); }
+@media (max-width: 600px) {
+  .th-grid { grid-template-columns: 1fr; }
+}
+</style>
