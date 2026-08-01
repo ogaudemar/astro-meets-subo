@@ -223,7 +223,7 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE (next session) — poll cluster + /polls SEO DONE; next = "[competitor] alternative" pages
+> ### ▶ RESUME HERE (next session) — EasyPoll + Simple Poll "alternative" pages SHIPPED; next = decide the follow-on content bet
 >
 > **Done (2026-07):**
 > - **Poll & survey how-tos refreshed** (`how-to-create-a-discord-poll-with-or-without-a-bot.md`,
@@ -287,8 +287,16 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   (`blogLink3` → `best-discord-poll-bots`) to catch the "best poll bot" intent and
 >   finish the cluster. All in `pollsPage` (`en.json`) + conditional render in
 >   `polls.astro`. Clean `npm run build`.
-> - **START HERE →** the **"[competitor] alternative"** pages (Simple Poll / MEE6 / EasyPoll
->   alternative-intent; native-polls now covered by the refreshed comparison).
+> - ✅ **"[competitor] alternative" pages — EasyPoll + Simple Poll SHIPPED (2026-07-31, on `main`).**
+>   Honest alternative-intent pages, interlinked into the poll cluster with reciprocal links from
+>   best-poll-bots. **MEE6 deliberately skipped:** "MEE6 alternative" intent wants a full
+>   moderation/leveling replacement, which Subo is not, so we'd rank without converting. Both use
+>   the new **alternative-series hero template** (one shared `alt-hero-base.webp` of
+>   Subo-as-investigative-journalist + a live `heroHeadline` text overlay; documented in the
+>   `mascot-illustration` + `blog-writing` skills). Next alt page = reuse the base image + one
+>   `heroHeadline` line.
+> - **START HERE →** decide the next content bet: more alternative pages (e.g. Straw Poll), the
+>   **"Discord survey/form without 'bot'"** cluster (P2), or the on-domain **tutorials hub**.
 > - **New angles added 2026-07-29 (see P2 bullets + subsections):**
 >   - **"Discord survey/form without 'bot'"** cluster — untapped intent + the Discord
 >     "app" rebrand vocabulary.
@@ -323,9 +331,16 @@ groundwork converts into citations and organic traffic. One page per intent.
       (`subo-poll-toolkit.webp`, "GO PRO" neon) replaced the old vs-image; toolkit
       metaphor added to the `mascot-illustration` skill canon. Live on `main` (commits
       `d28af16` + `2fb8a8f`).
-- [ ] "**[Competitor] alternative**" pages (e.g. Simple Poll, native Discord polls, MEE6 polls).
-      *(native-Discord-polls now covered by the refreshed comparison above; remaining:
-      Simple Poll / MEE6 / EasyPoll alternative-intent pages.)*
+- [x] "**[Competitor] alternative**" pages — **EasyPoll + Simple Poll SHIPPED (2026-07-31).**
+      Honest alternative-intent pages (`easypoll-alternative.md`, `simple-poll-alternative.md`),
+      interlinked into the poll cluster with reciprocal links from best-poll-bots. Introduced the
+      reusable **alternative-series hero template**: one shared base illustration
+      (`alt-hero-base.webp`, Subo as investigative journalist, reserved dark left third) + a live
+      `heroHeadline` text overlay via a new optional blog frontmatter field + `BlogPost.astro`
+      overlay. Documented in the `mascot-illustration` (alt-series mode) + `blog-writing` (alt-series
+      post conventions) skills. **MEE6 skipped on purpose** (its "alternative" intent wants a full
+      mod/leveling bot, a mismatch for Subo). native-Discord-polls stays covered by the refreshed
+      comparison.
 - [ ] "**How to create a Discord poll / survey**" (with and without a bot) — capture how-to intent (some of this exists; expand + interlink)
 - [ ] "**Anonymous surveys in Discord**" (exists — keep fresh, add FAQ schema).
       Target the informational cluster that already ranks well: `are discord polls
