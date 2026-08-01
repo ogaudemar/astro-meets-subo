@@ -27,7 +27,7 @@
       { "text": "Avancer", "href": "/fr/use-cases/get-things-done" }
     ],
     "resources": [
-      { "text": "Tutoriels", "href": "/tutorial" },
+      { "text": "Tutoriels", "href": "/tutorials" },
       { "text": "Serveur de support", "href": "/support" },
       { "text": "Portail de facturation", "href": "/portal" },
       { "text": "Blog", "href": "/blog" }
@@ -68,7 +68,7 @@
           { "text": "Web App", "href": "/app", "external": true },
           { "text": "À propos", "href": "/fr/about" },
           { "text": "Serveur de support", "href": "/support", "external": true },
-          { "text": "Tutoriels", "href": "/tutorial", "external": true },
+          { "text": "Tutoriels", "href": "/tutorials" },
           { "text": "Blog", "href": "/blog" },
           { "text": "Portail Stripe", "href": "/portal", "external": true },
           { "text": "Boutique Discord", "href": "/discordstore", "external": true }

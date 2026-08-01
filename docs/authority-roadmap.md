@@ -392,7 +392,8 @@ agent path deliberately.
 
 ### Bring the public Tutorials on-domain (off Notion)
 
-Today `subo.gg/tutorial` 302-redirects to `suboai.notion.site`. That builds
+Until 2026-07-31, `subo.gg/tutorial` 302-redirected straight to `suboai.notion.site`
+(now it redirects to the on-domain `/tutorials` hub — see below). That was building
 **Notion's** authority (not ours) on exactly the high-intent how-to content that
 should compound on subo.gg, and Notion is a weak SEO/GEO surface: heavy
 client-side render, no control over meta/canonical/schema, **no hreflang** (so no

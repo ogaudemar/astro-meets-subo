@@ -21,7 +21,7 @@
     { "text": "Eigener Bot", "href": "/custom-survey-bot" }
   ],
   "resources": [
-    { "text": "Tutorials", "href": "/tutorial" },
+    { "text": "Tutorials", "href": "/tutorials" },
     { "text": "Support-Server", "href": "/support" },
     { "text": "Abrechnungsportal", "href": "/portal" },
     { "text": "Blog", "href": "/blog" }
@@ -68,7 +68,7 @@
         { "text": "Web App", "href": "/app", "external": true },
         { "text": "Über uns", "href": "/about" },
         { "text": "Support-Server", "href": "/support", "external": true },
-        { "text": "Tutorials", "href": "/tutorial", "external": true },
+        { "text": "Tutorials", "href": "/tutorials" },
         { "text": "Blog", "href": "/blog" },
         { "text": "Stripe-Abrechnungsportal", "href": "/portal", "external": true },
         { "text": "Discord App Store", "href": "/discordstore", "external": true }

@@ -21,7 +21,7 @@
     { "text": "Bot Personalizado", "href": "/custom-survey-bot" }
   ],
   "resources": [
-    { "text": "Tutoriais", "href": "/tutorial" },
+    { "text": "Tutoriais", "href": "/tutorials" },
     { "text": "Servidor de Suporte", "href": "/support" },
     { "text": "Portal de Cobrança", "href": "/portal" },
     { "text": "Blog", "href": "/blog" }
@@ -68,7 +68,7 @@
         { "text": "Web App", "href": "/app", "external": true },
         { "text": "Sobre", "href": "/about" },
         { "text": "Servidor de Suporte", "href": "/support", "external": true },
-        { "text": "Tutoriais", "href": "/tutorial", "external": true },
+        { "text": "Tutoriais", "href": "/tutorials" },
         { "text": "Blog", "href": "/blog" },
         { "text": "Portal de cobrança Stripe", "href": "/portal", "external": true },
         { "text": "Discord App Store", "href": "/discordstore", "external": true }
