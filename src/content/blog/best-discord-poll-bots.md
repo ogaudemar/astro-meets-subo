@@ -45,7 +45,7 @@ There's no anonymity (reactions are public by nature), no cap on how many option
 
 Being blunt: Discord's native polls now do everything Simple Poll does and more, inside the client, for free. If you're choosing today, there's no scenario where Simple Poll beats native polls. It's on this list because it's still widely installed, not because it's still the right call.
 
-**Best for:** honestly, nothing new in 2026. Existing users are better off switching to native polls.
+**Best for:** honestly, nothing new in 2026. Existing users are better off switching to native polls. If you're specifically weighing what to move to, see the [Simple Poll alternative](/blog/simple-poll-alternative) guide.
 
 ## MEE6
 
@@ -63,7 +63,7 @@ That leaves the two bots genuinely worth comparing on features. Both are activel
 
 EasyPoll is the most-installed dedicated poll bot on Discord, and its head start shows: it's polished, free, and does polling well. Up to 25 options per poll, genuinely anonymous voting (no one sees who chose what, results reveal at the end), timers up to 30 days, voting restricted to specific roles, live edits without deleting the poll, and it runs in 13 languages.
 
-It also has a web dashboard (with poll duplication and basic response analysis, though no charts) and a public API, so it reaches beyond in-chat use. If your need is "polls, done well, for free," EasyPoll delivers and has for years. Its scope is deliberately narrow, though: it's a poll bot. No multi-question surveys, no quiz scoring, and no rewards tied to your server. When you want the poll to *do* something after the vote, that's where it stops.
+It also has a web dashboard (with poll duplication and basic response analysis, though no charts) and a public API, so it reaches beyond in-chat use. If your need is "polls, done well, for free," EasyPoll delivers and has for years. Its scope is deliberately narrow, though: it's a poll bot. No multi-question surveys, no quiz scoring, and no rewards tied to your server. When you want the poll to *do* something after the vote, that's where it stops. We go deeper on that trade-off in the [EasyPoll alternative](/blog/easypoll-alternative) guide.
 
 ### Subo
 

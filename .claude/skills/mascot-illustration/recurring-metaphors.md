@@ -15,6 +15,7 @@ visual metaphor. Use exactly one metaphor per image.**
 | Quiz / grading | Game show | Game-show MC |
 | Polls / voting | Broadcast "poll desk" | Election-night host / anchor |
 | Poll vs full product (comparison) | Toolkit / kit-of-tools | Workshop host |
+| "[Competitor] alternative" post (series) | Investigative newsroom / findings board | Investigative journalist (reserved-text base template) |
 | Monitoring / live results | Control room | Operator |
 
 When a **new** feature needs an image, first ask: *what everyday place or role
@@ -65,6 +66,15 @@ Subo opens a glowing kit where the poll is **one tool among a few** (poll bar-ch
 padlock, form card, trophy); a plain native poll sits basic beside it. Icons not text.
 Distinct from the poll desk (no studio/results board): a workbench about how much more
 than a vote you get.
+
+### Investigative newsroom (alternative-series comparison posts)
+Warm but focused research desk / small newsroom. One tidy "findings board" of feature
+ICONS (padlock, clock, trophy, bar-chart, form card, quiz cap), warm desk-lamp pool,
+magnifying glass + notepad. Subo as **investigative journalist** (serious, neutral
+mouth), a blob taking in the honest verdict. **Left third kept dark/empty** for the
+live `heroHeadline` overlay. No named competitor; icons not words; not a red-string
+conspiracy wall. This is a reusable base template, not a bespoke render (see
+[SKILL.md](SKILL.md) → Alternative-series heroes).
 
 ### Painting workshop (invitation customization)
 Paint palette, brush, paint swatches / color chips. A Discord embed card floating

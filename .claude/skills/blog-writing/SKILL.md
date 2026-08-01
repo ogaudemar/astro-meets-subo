@@ -69,6 +69,44 @@ The through-line: write like a person who knows the product talking to a custome
 not like copy optimized to sound impressive. Specific and plain beats polished and
 generic.
 
+## Post types with their own template
+
+Most posts are standard. A few follow a shared template with extra conventions on
+top of the house rules above.
+
+### "[Competitor] alternative" posts (the alternative-series template)
+
+Posts answering *"[competitor] alternative"* intent (e.g. `easypoll-alternative.md`,
+`simple-poll-alternative.md`, slug `/blog/<competitor>-alternative`). They share one
+hero and one set of conventions so the next one is turnkey.
+
+**Frontmatter (do NOT make a bespoke hero):**
+```yaml
+heroImage: "/images/blog/alternative-series/alt-hero-base.webp"   # shared base, reused by every alt post
+heroHeadline: "EasyPoll alternative"                              # rendered as LIVE TEXT over the hero's dark left third
+```
+`heroHeadline` is a real field on the blog collection; `BlogPost.astro` overlays it
+on the reserved left zone of the shared illustration. The competitor name lives in
+that text (and in the prose), never in the artwork. The base image itself is briefed
+via the `mascot-illustration` skill's alternative-series mode. Marginal cost of a new
+alt post = reuse the base image + write one `heroHeadline` line.
+
+**Tone and content conventions:**
+- **Be genuinely fair to the competitor first**, then give a clear recommendation.
+  Credibility comes from the honest "here's what it does well / when to stay" part.
+  No fake both-sides, but no sneering either.
+- **Name the competitor in text only.** Never reproduce their logo/branding/UI.
+- **Verify competitor facts.** Web search is fine, but discount AI-content-farm
+  roundups, prefer first-party sources and the user's already-vetted pages (e.g.
+  `best-discord-poll-bots.md`), and surface conflicting/questionable data rather than
+  asserting it. Watch for same-name-different-bot collisions.
+- **Interlink into the relevant cluster** (for poll competitors: the best-poll-bots
+  roundup, the native-polls comparison, the poll how-to, `/polls`, the anonymous-
+  surveys guide) and add a reciprocal link back from at least one cluster page so the
+  new post isn't orphaned.
+
+All the house rules above (no em dashes, anti-AI-tells) still apply.
+
 <!--
 Add future rules below as they come up (voice/tone, heading style, interlinking,
 CTA conventions, etc.).

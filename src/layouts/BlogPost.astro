@@ -7,7 +7,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, tags, author, draft, posts } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroHeadline, tags, author, draft, posts } = Astro.props;
 import translations from '../content/translations/en.json';
 
 // BlogPosting schema (SEO/GEO) — one block covers every post rendered through
@@ -51,8 +51,33 @@ const jsonLd = {
 				box-shadow: var(--box-shadow);
 				max-height: 400px;
 				width: auto;
+					max-width: 100%;
 			}
-			.prose {
+			.hero-image { text-align: center; }
+				.hero-frame {
+					position: relative;
+					display: inline-block;
+					max-width: 100%;
+				}
+				/* Live headline over the reserved dark-left third of the
+				   /alternative-series hero. left/max-width are % of the shrink-wrapped
+				   frame (= the image box), so the text stays locked to the image's left
+				   zone rather than drifting with the viewport. */
+				.hero-headline {
+					position: absolute;
+					left: 6%;
+					top: 50%;
+					transform: translateY(-50%);
+					max-width: 30%;
+					margin: 0;
+					text-align: left;
+					font-weight: 800;
+					line-height: 1.05;
+					color: #fff;
+					font-size: clamp(1.05rem, 4.2vw, 2.4rem);
+					text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
+				}
+				.prose {
 				width: 800px;
 				max-width: calc(100% - 2em);
 				margin: auto;
@@ -172,7 +197,12 @@ const jsonLd = {
 		<main>
 			<article>
 				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+					{heroImage && (
+						<div class="hero-frame">
+							<img width={1020} height={510} src={heroImage} alt="" />
+							{heroHeadline && <span class="hero-headline">{heroHeadline}</span>}
+						</div>
+					)}
 				</div>
 				<div class="prose">
 					<div class="title">

@@ -54,6 +54,37 @@ excitement, a learning moment.
 - **Keep it uncluttered:** one clear focal action, 2 to 3 readable background
   elements, generous breathing room.
 
+## Alternative-series heroes (a template mode, not a bespoke illustration)
+
+**When to use:** hero images for *"[competitor] alternative"* blog posts
+(`/blog/<competitor>-alternative`, e.g. EasyPoll, Simple Poll). These do **not** get
+a bespoke per-article render. There is one **reusable base image**, produced once, and
+the article's headline is overlaid on it as live text:
+`public/images/blog/alternative-series/alt-hero-base.webp`. Reuse it; only re-brief if
+the shared look itself needs to change.
+
+**How it differs from the standard illustration:**
+
+- **Persona exception.** Subo is an **investigative journalist / researcher of truth**,
+  not the cheerful host: serious and thoughtful, with the canon-allowed **neutral
+  straight-line mouth** (not the grin). He is still *active* (investigating, weighing
+  the evidence) and still hands the honest finding to the blob, so the "Subo enables,
+  the blob discovers" principle holds. This is the **one sanctioned exception** to the
+  cheerful-host default.
+- **Reserved text zone.** The **left third is deliberately kept as calm, dark,
+  low-detail negative space.** The post's `heroHeadline` (e.g. "EasyPoll alternative")
+  is rendered there as **live HTML text** by `BlogPost.astro`, never baked into the art.
+  Keep that zone empty of detail so overlaid light text stays legible.
+- **Never depict the competitor.** No competitor logo, mascot, or UI, ever. At most a
+  single generic, unbranded "basic" object to imply "more than the basic version." The
+  feature board uses **icons, not words** (language-neutral, and it doesn't fight the
+  text overlay or future localization).
+
+**When NOT to use:** every standard feature, announcement, or use-case illustration.
+Those keep the cheerful-host canon and a single bespoke metaphor (see
+[recurring-metaphors.md](recurring-metaphors.md)). The prose-side conventions for these
+posts live in the `blog-writing` skill's alternative-series template.
+
 ## Review checklist (run before shipping)
 
 **Character**
