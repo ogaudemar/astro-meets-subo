@@ -336,12 +336,23 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   searcher. Opinionated "convos beat forms" stance kept; the FORMS-vs-CONVOS table now
 >   doubles as form-intent content. All in `surveyConvos` (`en.json`). Clean build. FR
 >   counterpart deferred to a localization pass (`sondage discord` is a real FR market).
-> - [ ] **Forms/"no-bot" blog post — NEXT.** Problem-framed ("run a poll/survey/form/quiz
->   in Discord" without thinking "bot"), opinionated that a conversation beats a form,
->   interlinked to `/survey-convos` + `/use-cases/get-things-done` + `/templates` (browse).
+> - [x] **Forms/"no-bot" blog post — SHIPPED (2026-08-01, commit `320d25f`).**
+>   `how-to-make-a-discord-form.md` (`/blog/how-to-make-a-discord-form`): problem-framed
+>   ("run a form or survey in Discord" without thinking "bot"), **poll dropped on purpose**
+>   (poll cluster already owns it; this page owns longer-form data collection). Opinionated
+>   that a **structured conversation** beats a form (the qualifier: not a free-form human
+>   chat, a fixed script at scale; "guided conversation" reserved for the GenAI adaptive-
+>   interviewing era). Discord-qualified, honest Discord-OR-web mode framing (exclusive,
+>   clone-to-switch). Interlinked to `/survey-convos` (+ reciprocal link back) +
+>   `/use-cases/get-things-done` + `/templates` + anonymous-surveys guide. New
+>   "conversation-vs-form" mascot hero (metaphor added to skill canon).
 >   **Application/contact-form template links DEFERRED** (no such templates exist + P7
 >   freeze) — logged in the master roadmap Stage 3, just after the scale-family/rating
 >   bullet, to build + interlink once the new block types ship.
+> - [ ] **Next form/no-bot moves (optional, when idle):** FR counterpart of the
+>   `/survey-convos` retune (`sondage discord` is a real market); weave "app"/"form"
+>   vocabulary into other existing pages' titles/H2s; a dedicated `/draft` (AI generator)
+>   page still doesn't exist. Or move to a different P2 cluster.
 > - **New angles added 2026-07-29 (see P2 bullets + subsections):**
 >   - **"Discord survey/form without 'bot'"** cluster — untapped intent + the Discord
 >     "app" rebrand vocabulary.
