@@ -239,7 +239,22 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE (next session) — EasyPoll + Simple Poll "alternative" pages SHIPPED; next = decide the follow-on content bet
+> ### ▶ RESUME HERE (next session) — no-"bot"/form cluster FIRST WAVE SHIPPED (survey-convos retune + how-to-make-a-discord-form, 2026-08-01); next = pick the follow-on lever
+>
+> **▶ NEXT (pick one, not yet decided):**
+> - **(a) Finish the form/no-"bot" cluster's cheap follow-ons** — FR counterpart of the
+>   `/survey-convos` retune (`sondage discord` market), work "app"/"form" vocabulary into
+>   more existing pages' titles/H2s, and the still-missing standalone `/draft` (AI
+>   generator) page.
+> - **(b) A non-migration-gated backlink lever (P5)** — pitch Subo into third-party "best
+>   Discord bots / survey bots" roundups. Editorial links + referral traffic without
+>   waiting on the migration.
+> - **(c) API/agent GEO + `api.subo.ai → api.subo.gg` consolidation** — entity-consistency
+>   loose end that also feeds the API/agent GEO subsection.
+>
+> **Note:** content ROI stays **migration-gated to ~Q4** (branded recovered, non-branded
+> still lagging), so a backlink/entity lever (b or c) may beat more content right now. See
+> the migration block up top.
 >
 > **Done (2026-07):**
 > - **Poll & survey how-tos refreshed** (`how-to-create-a-discord-poll-with-or-without-a-bot.md`,
@@ -401,7 +416,12 @@ groundwork converts into citations and organic traffic. One page per intent.
 - [ ] "**Anonymous surveys in Discord**" (exists — keep fresh, add FAQ schema).
       Target the informational cluster that already ranks well: `are discord polls
       anonymous` (355 imp @ 5.2), `discord anonymous poll` (307 @ 6.9) + variants.
-- [ ] "**Discord survey / form — without the word 'bot'**" ⭐ **untapped intent, and
+- [~] "**Discord survey / form — without the word 'bot'**" ⭐ **FIRST WAVE SHIPPED
+      (2026-08-01, commit `320d25f`; see RESUME block):** action (a) done via the
+      `how-to-make-a-discord-form` blog post; action (b) partially done via the
+      `/survey-convos` retune. **Remaining:** more "app"/"form" vocabulary across *other*
+      existing pages' titles/H2s, FR `/survey-convos`, standalone `/draft` page.
+      Original rationale (keep for context): **untapped intent, and
       absent from our keyword history precisely because we've only ever framed as a
       'bot'** (see the circularity principle). Many admins who want to collect data from
       their community don't think "bot" — they search *discord form*, *discord survey
