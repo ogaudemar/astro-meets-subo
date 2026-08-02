@@ -15,6 +15,7 @@ visual metaphor. Use exactly one metaphor per image.**
 | Quiz / grading | Game show | Game-show MC |
 | Polls / voting | Broadcast "poll desk" | Election-night host / anchor |
 | Poll vs full product (comparison) | Toolkit / kit-of-tools | Workshop host |
+| Form vs structured conversation (data-collection intake) | Single warm chat bubble handed over; cold multi-field form set aside | Friendly concierge / host |
 | "[Competitor] alternative" post (series) | Investigative newsroom / findings board | Investigative journalist (reserved-text base template) |
 | Monitoring / live results | Control room | Operator |
 
@@ -75,6 +76,16 @@ mouth), a blob taking in the honest verdict. **Left third kept dark/empty** for 
 live `heroHeadline` overlay. No named competitor; icons not words; not a red-string
 conspiracy wall. This is a reusable base template, not a bespoke render (see
 [SKILL.md](SKILL.md) → Alternative-series heroes).
+
+### Conversation-vs-form intake (data-collection / "Discord form" posts)
+Warm, cozy welcome nook (soft rounded surfaces, gentle pink/cyan accents, not a neon
+control room). Subo as a friendly concierge hands the blob **one glowing Discord message
+bubble holding a single question** (short line + a couple of answer buttons); a tall,
+cold, gray **multi-field paper form** is the "old way, kicked aside" gag, set aside and
+pointedly ignored. Optionally 2 to 3 more chat bubbles queued softly behind the first
+(implies one-question-at-a-time), blurred. The joke: a form became a friendly chat. Keep
+it about the *method* (conversation over form), no named competitor, minimal baked text
+(replace the bubble's question in Photopea).
 
 ### Painting workshop (invitation customization)
 Paint palette, brush, paint swatches / color chips. A Discord embed card floating

@@ -578,16 +578,17 @@
     }
 ,
 "surveyConvos": {
-  "pageTitle": "Discord Survey Conversations | Subo",
-  "pageDescription": "Subo turns surveys into friendly Discord conversations. Members answer questions one-on-one with the bot, no boring forms, higher completion rates, richer answers.",
-  "heroTitle": "Surveys that feel like <strong class=\"accent\">conversations</strong>",
+  "pageTitle": "Discord Survey & Form App, Reinvented as a Conversation | Subo",
+  "pageDescription": "Subo is the Discord survey and form app that replaces cold forms with a friendly conversation. A better way to run questionnaires, applications, and feedback forms in your server or on the web, with higher completion and richer answers than a Google Form.",
+  "heroTitle": "The Discord form that feels like a <strong class=\"accent\">conversation</strong>",
   "heroSubtitle": "Not a form. Not just a poll. A friendly one-on-one chat where your members actually want to respond.",
   "heroCta": "Add to Discord, Free",
   "whatTitle": "WHAT IS A SURVEY CONVO?",
   "whatBody": [
-    "A survey convo is a private message conversation between your community member and Subo, the bot, right inside your Discord server or on the web.",
+    "A survey convo is a private message conversation between your community member and Subo, the bot, right inside your Discord server or on the web. If you've been looking for a Discord form, a questionnaire, or a Google Forms alternative for your server, this is it, minus the cold form.",
     "Instead of sending members to a cold, generic form, Subo invites them to a chat. Questions appear one at a time, in a friendly message format. It feels like talking to someone, not filling out paperwork.",
-    "The result? <strong>Higher completion rates</strong>, richer answers, and members who actually enjoy the experience."
+    "The result? <strong>Higher completion rates</strong>, richer answers, and members who actually enjoy the experience.",
+    "New to collecting data in your server? Read the practical walkthrough: <a href=\"/blog/how-to-make-a-discord-form\">how to run a form or survey in Discord</a>."
   ],
   "formsVsConvosTitle": "TRADITIONAL FORMS vs. SURVEY CONVOS",
   "formsColumn": "Traditional Forms",

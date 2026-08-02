@@ -319,8 +319,29 @@ groundwork converts into citations and organic traffic. One page per intent.
 > schema; localize selectively per P0 traffic; publish the 8 Web App Notion drafts
 > and swap those Bucket-B links on-domain as they land; the optional `/docs` endgame.
 >
-> - **START HERE →** decide the next content bet: more alternative pages (e.g. Straw Poll)
->   or the **"Discord survey/form without 'bot'"** cluster (P2). (Tutorials hub now done.)
+> **Next content bet DECIDED (2026-08-01): the "Discord survey/form without 'bot'" cluster**
+> (over more alternative pages) — it's the one bet that executes the anti-circularity
+> principle (seeds intent our bot-framed history is blind to), sits in our Discord moat vs
+> Google Forms, and reuses the existing `/survey-convos` "convos beat forms" positioning.
+> **Strategy locked:** Discord-*qualified* form intent now (`discord form`, `google forms
+> for discord`, `discord survey app`, `typeform alternative for discord`); build the asset
+> web-*extensible* but do NOT promote generic non-Discord form intent yet (ship-gated —
+> non-Discord admin onboarding isn't live; that's a P6 seed).
+> - [x] **`/survey-convos` retune — DONE (2026-08-01).** Closed the form-intent
+>   eligibility gap on an asset that was positioned *against* forms but never *said*
+>   "form": new `pageTitle` ("Discord Survey & Form App, Reinvented as a Conversation"),
+>   `pageDescription` (form/questionnaire/applications/Google Forms alt/web), **H1 →
+>   "The Discord form that feels like a conversation"** (owns + reframes `discord form`),
+>   +1 `whatBody` sentence catching the form/questionnaire/Google-Forms-for-Discord
+>   searcher. Opinionated "convos beat forms" stance kept; the FORMS-vs-CONVOS table now
+>   doubles as form-intent content. All in `surveyConvos` (`en.json`). Clean build. FR
+>   counterpart deferred to a localization pass (`sondage discord` is a real FR market).
+> - [ ] **Forms/"no-bot" blog post — NEXT.** Problem-framed ("run a poll/survey/form/quiz
+>   in Discord" without thinking "bot"), opinionated that a conversation beats a form,
+>   interlinked to `/survey-convos` + `/use-cases/get-things-done` + `/templates` (browse).
+>   **Application/contact-form template links DEFERRED** (no such templates exist + P7
+>   freeze) — logged in the master roadmap Stage 3, just after the scale-family/rating
+>   bullet, to build + interlink once the new block types ship.
 > - **New angles added 2026-07-29 (see P2 bullets + subsections):**
 >   - **"Discord survey/form without 'bot'"** cluster — untapped intent + the Discord
 >     "app" rebrand vocabulary.
