@@ -239,22 +239,29 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE (next session) — no-"bot"/form cluster FIRST WAVE SHIPPED (survey-convos retune + how-to-make-a-discord-form, 2026-08-01); next = pick the follow-on lever
+> ### ▶ RESUME HERE (next session) — P5 roundup outreach CHOSEN + kit built (2026-08-03); next = send the pitches
 >
-> **▶ NEXT (pick one, not yet decided):**
-> - **(a) Finish the form/no-"bot" cluster's cheap follow-ons** — FR counterpart of the
->   `/survey-convos` retune (`sondage discord` market), work "app"/"form" vocabulary into
->   more existing pages' titles/H2s, and the still-missing standalone `/draft` (AI
->   generator) page.
-> - **(b) A non-migration-gated backlink lever (P5)** — pitch Subo into third-party "best
->   Discord bots / survey bots" roundups. Editorial links + referral traffic without
->   waiting on the migration.
+> **▶ IN PROGRESS: (b) P5 roundup outreach.** Chose the non-migration-gated backlink lever
+> over more (gated) content. Built **[roundup-outreach-kit.md](roundup-outreach-kit.md)**:
+> tiered target list (research pass 2026-08-03), reusable pitch templates (A/B/C), and a
+> ready-to-paste Subo entry in roundup voice. **Key finding: Subo is ALREADY listed in
+> CommunityOne** (the roadmap's named example outlet, updated 2026-07-09) — but mislabeled
+> "Fun bots," so the warmest lead is an *upgrade* (template C), not a cold pitch. P5 validated.
+>
+> **▶ NEXT (user action — sending is yours):** work the kit's Tier 1 first (CommunityOne
+> reclassify → Stickers.gg / Space-node / BotGhost cold pitches), then Tier 2 (Beebom,
+> Rumie). Log outcomes in the kit's Status columns; add each live placement's
+> `$referring_domain` to the P0 funnel breakdown to see which roundups convert.
+>
+> **Deferred (still open when you want in-repo work):**
+> - **(a) Form/no-"bot" follow-ons** — FR `/survey-convos` retune, more "app"/"form"
+>   vocabulary in existing titles/H2s, standalone `/draft` page. Migration-gated to ~Q4.
 > - **(c) API/agent GEO + `api.subo.ai → api.subo.gg` consolidation** — entity-consistency
->   loose end that also feeds the API/agent GEO subsection.
+>   loose end; I can do the crawlable API-recipes page + `llms.txt` examples in-repo, infra
+>   (DNS/301) is yours.
 >
 > **Note:** content ROI stays **migration-gated to ~Q4** (branded recovered, non-branded
-> still lagging), so a backlink/entity lever (b or c) may beat more content right now. See
-> the migration block up top.
+> still lagging) — which is exactly why (b) went first. See the migration block up top.
 >
 > **Done (2026-07):**
 > - **Poll & survey how-tos refreshed** (`how-to-create-a-discord-poll-with-or-without-a-bot.md`,
@@ -639,16 +646,25 @@ you *qualify for* because Subo actually uses these tools. Free.
 
 ## P5 — Editorial guest posts & digital PR-lite  (free, replaces paid PR)
 
-- [ ] **Get Subo into third-party "best Discord bots" / "must-have bots" roundups.**
-      Subo is a **4-year-old, established niche utility** — it belongs in listicles like
-      [communityone.io's best-Discord-bots roundups](https://blog.communityone.io/best-discord-moderation-bots-2025/)
-      (and "best Discord poll/survey bots", "must-have bots for your server", category
-      roundups). These already rank for the high-intent discovery queries our own
+- [~] **Get Subo into third-party "best Discord bots" / "must-have bots" roundups —
+      IN PROGRESS (kit built 2026-08-03).** Subo is a **4-year-old, established niche
+      utility** — it belongs in listicles like communityone.io's best-Discord-bots
+      roundups (and "best Discord poll/survey bots", "must-have bots for your server",
+      category roundups). These already rank for the high-intent discovery queries our own
       comparison page targets, so inclusion = an **editorial backlink + referral traffic
-      without writing the page ourselves.** Outreach: find the ranking roundups, pitch
-      the author a tight, accurate Subo entry (reuse the directory-listing-kit copy for
-      consistency). Distinct from the P2 "Best Discord poll bots" page — that's *our*
-      asset; this is getting into *theirs*.
+      without writing the page ourselves** — and it's **not migration-gated**. Distinct
+      from the P2 "Best Discord poll bots" page — that's *our* asset; this is getting into
+      *theirs*.
+      - **[roundup-outreach-kit.md](roundup-outreach-kit.md)** built: tiered target list
+        (research 2026-08-03), pitch templates A/B/C, ready-to-paste Subo entry.
+      - **Subo is ALREADY in CommunityOne** (added 2026-07-09) — but under "Fun bots" with
+        a thin blurb. Warm lead = reclassify to polls/surveys/engagement + get into their
+        leveling/AI sub-roundups (template C). P5 is validated by this alone.
+      - **Sending is the user's step.** Tier 1 first (CommunityOne → Stickers.gg →
+        Space-node → BotGhost), then Tier 2 (Beebom, Rumie). Track in the kit; feed live
+        placements' `$referring_domain` into the P0 funnel breakdown.
+      - **Skipping** competitor vendor blogs (EasyPoll/PeakBot/PollBotPlus/Formeer/Votex)
+        and AI content farms (Skywork, npprteam) — no value / won't feature a rival.
 - [ ] Direct outreach to **Discord/community-management blogs** — offer a genuinely
       useful guest post (dofollow, in-content). Skip the exchange markup.
 - [ ] **HARO / Connectively** (and similar journalist-request services) — answer
