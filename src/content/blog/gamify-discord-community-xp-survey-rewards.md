@@ -12,7 +12,7 @@ draft: false
 
 Getting members to answer polls and surveys is one of the perennial challenges of community management. You can ask nicely, remind them twice, and still end up with a 5% response rate from a server full of engaged, active members.
 
-The problem isn't apathy. It's incentive. Members will happily spend hours on your server chatting and gaming — but clicking a survey link feels like work. The solution isn't just to make surveys shorter (though that helps). It's to make participation itself rewarding.
+The problem isn't apathy. It's incentive. Members will happily spend hours on your server chatting and gaming, but clicking a survey link feels like work. Shorter surveys help. The real fix is to make participation itself rewarding.
 
 That's what Subo's gamification system does.
 
@@ -24,11 +24,11 @@ Subo has three distinct mechanisms for rewarding members who participate in surv
 
 Every time a member completes a survey or poll, they earn XP (experience points). You can:
 
-- **Customize the XP name** — call it "Coins", "Stars", "Gold", "Reputation", or whatever fits your community's theme
-- **Set custom XP values** per survey — weight important surveys more heavily
-- **Track cumulative XP** over time — members build up their score with every participation
+- **Customize the XP name**: call it "Coins", "Stars", "Gold", "Reputation", or whatever fits your community's theme
+- **Set custom XP values** per survey, weighting important surveys more heavily
+- **Track cumulative XP** over time, so members build up their score with every participation
 
-XP is always visible, which creates a visible, running score that motivates continued participation.
+XP stays visible, a running score that motivates continued participation.
 
 ### 2. Role Rewards Based on Overall XP
 
@@ -45,7 +45,7 @@ These thresholds and role names are entirely up to you. The system handles the r
 This mechanic is particularly powerful because:
 - Roles are visible in the member list and in chat
 - Higher roles can unlock channels, perks, and other server privileges
-- The progression feels meaningful — members aren't just completing a survey, they're leveling up
+- The progression feels meaningful: each completed survey moves members toward the next role
 
 ### 3. Leaderboards
 
@@ -54,10 +54,10 @@ Leaderboards add a competitive layer: they aknowledge your active members, "sham
 Standard Leaderboards show total XP since "Forever". Monthly XP leaderboards reset every month. 
 
 - Members can see who's at the top of the participation rankings
-- Monthly resets mean newcomers can compete — it's not dominated forever by early adopters
+- Monthly resets mean newcomers can compete, instead of the board being dominated forever by early adopters
 - You can offer special role rewards (e.g., "Top Contributor of the Month") for monthly leaderboard leaders
 
-The leaderboard is shareable with the rest of the community — members can use the /leaderboard command to see their rank, or you can post it in a channel to celebrate your most active community members.
+The leaderboard is shareable with the rest of the community: members can use the /leaderboard command to see their rank, or you can post it in a channel to celebrate your most active community members.
 
 Standard Leaderboards are available on all plans, Monthly Leaderboards are for Premium and above plans.
 
@@ -66,9 +66,9 @@ Standard Leaderboards are available on all plans, Monthly Leaderboards are for P
 Beyond the XP system, Subo lets you attach a specific role reward to any individual survey or poll. Complete this particular survey → get this particular role.
 
 This is useful for:
-- **Event-based rewards** — "Complete the event feedback survey to get the Event Participant role"
-- **Milestone surveys** — "Finish the onboarding survey to unlock the Verified Member role"
-- **Exclusive access** — "Complete the beta tester survey to get the Beta Tester role and access to our #beta channel"
+- **Event-based rewards**: "Complete the event feedback survey to get the Event Participant role"
+- **Milestone surveys**: "Finish the onboarding survey to unlock the Verified Member role"
+- **Exclusive access**: "Complete the beta tester survey to get the Beta Tester role and access to our #beta channel"
 
 ## Setting Up XP in Your Server
 
@@ -76,10 +76,14 @@ Here's how to get the XP system running:
 
 ### Basic Setup
 
+The web app is the place to do this. It puts every XP control on one screen, under **Settings > Engagement**.
+
 1. Invite Subo to your server if you haven't already
-2. Use `/xp_settings` on Discord or go to Settings in the web app to enable the XP system
+2. Open the web app, go to **Settings > Engagement**, and turn on the XP system
 3. Set your XP name (Premium and above)
-4. Configure role milestones (achievements) 
+4. In the **Achievements** section of that same tab, configure your role milestones and their thresholds
+
+If you'd rather stay in Discord, the `/xp_settings` command covers the core toggles, but the Engagement tab is where you get the full picture.
 
 ### Customizing XP Values
 
@@ -89,10 +93,15 @@ Premium plans can set different XP values per polls and per survey question. Bon
 
 ### Running Monthly Competitions
 
-1. Enable the monthly leaderboard in your Subo configuration
-2. Announce it in your server at the start of each month: "XP resets on the 1st — compete for the Top Contributor role!"
-3. Post the leaderboard mid-month to remind members where they stand
-4. Award the winner role at the end of the month, then reset for the next cycle
+The monthly leaderboard runs automatically whenever the leaderboard is on. There's no separate switch to flip: Monthly XP counts each member's points for the current month and resets on the 1st on its own.
+
+The part most people miss is that you don't have to hand out the monthly prize yourself. In **Settings > Engagement**, open the **Achievements** section, create a new achievement of type **Monthly XP**, set the amount of Monthly XP required, and attach a role reward. Subo grants that role automatically to everyone who crosses the threshold that month, and rotates it out when the month resets. "Top Contributor of the Month" becomes a rule you set once, not a chore you repeat.
+
+To run the competition around it:
+
+1. Announce it at the start of the month: "XP resets on the 1st, compete for the Top Contributor role!"
+2. Post the leaderboard mid-month with `/leaderboard` so members can see where they stand
+3. Let the Monthly XP achievement grant and rotate the winner role for you
 
 ## Real-World Gamification Examples
 
@@ -110,17 +119,21 @@ Result: Poll engagement increased significantly, and the leaderboard became a co
 
 ### Educational Server: Study Group Tracking
 
-A tutoring community uses comprehension check surveys after every learning session. Each completed check earns "Study Points." Milestone roles mark progress: "Beginner," "Intermediate," "Advanced," "Scholar." The monthly leaderboard shows the most diligent students.
+A tutoring community runs a graded quiz after every learning session. Rather than a flat reward for finishing, XP is tied to correct answers: get the question right, earn the points, so a student's "Study Points" reflect what they actually learned. As those points build up, milestone roles mark progress: "Beginner," "Intermediate," "Advanced," "Scholar."
 
-Result: Members actively reminded each other to complete comprehension checks to stay competitive.
+For a monthly push, they added a **Monthly XP** achievement in **Settings > Engagement** with a set threshold, and attached a "Star Student of the Month" role. Anyone who earns enough quiz points that month gets the role automatically, and it rotates on its own when the month resets. The monthly leaderboard shows the most diligent students alongside it.
+
+Result: Members actively reminded each other to do the quizzes to stay competitive.
 
 ## Why Gamification Works
 
-Gamification isn't about manipulation — it's about making the value exchange explicit. And value doesn't need to be monetary. Participation has always been valuable for the community manager (they get data), but it used to be invisible for the member. Gamification makes the value visible:
+Gamification isn't about manipulation. It's about making the value exchange explicit. And value doesn't need to be monetary. Participation has always been valuable for the community manager (they get data), but it used to be invisible for the member. Gamification makes the value visible:
 
 - **Points** = visible proof of contribution
 - **Roles** = status and access that reflect investment
 - **Leaderboards** = recognition and friendly competition
+
+And with [XP History](/blog/xp-history), that proof is auditable: every member can see how and why each point moved, on the web and in Discord, so the rewards you hand out are ones they trust.
 
 When members can see their ranking and know that consistent participation leads to tangible status in the community, participation becomes part of community identity rather than an interruption.
 

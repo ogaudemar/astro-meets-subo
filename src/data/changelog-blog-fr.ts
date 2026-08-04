@@ -56,4 +56,9 @@ export const blogFr: Record<string, BlogFrRow> = {
 		summary:
 			"Pas besoin d'être chercheur pro pour créer une super enquête. Clone un sondage, une enquête ou un quiz éprouvé en un clic et fais-le tien. Une bibliothèque grandissante de templates gratuits pour les communautés Discord.",
 	},
+	"xp-history": {
+		title: "Historique XP : chaque point, avec sa raison",
+		summary:
+			"Tes membres voient enfin comment et pourquoi leurs XP ont changé : un historique complet et vérifiable, sur le web et dans Discord. Disponible sur tous les plans, même le gratuit.",
+	},
 };

@@ -18,6 +18,7 @@ visual metaphor. Use exactly one metaphor per image.**
 | Form vs structured conversation (data-collection intake) | Single warm chat bubble handed over; cold multi-field form set aside | Friendly concierge / host |
 | "[Competitor] alternative" post (series) | Investigative newsroom / findings board | Investigative journalist (reserved-text base template) |
 | Monitoring / live results | Control room | Operator |
+| XP history / auditable point record | Bank passbook & statement (warm teller's counter) | Friendly bank teller / records clerk |
 
 When a **new** feature needs an image, first ask: *what everyday place or role
 makes this feature obvious in one glance?* Add the new pairing to this table so
@@ -84,9 +85,23 @@ bubble holding a single question** (short line + a couple of answer buttons); a 
 cold, gray **multi-field paper form** is the "old way, kicked aside" gag, set aside and
 pointedly ignored. Optionally 2 to 3 more chat bubbles queued softly behind the first
 (implies one-question-at-a-time), blurred. The joke: a form became a friendly chat. Keep
-it about the *method* (conversation over form), no named competitor, minimal baked text
-(replace the bubble's question in Photopea).
+it about the *method* (conversation over form), no named competitor. Keep baked text
+minimal and story-serving (e.g. the bubble's question); specify it in the brief, since
+the model renders it reliably now.
 
 ### Painting workshop (invitation customization)
 Paint palette, brush, paint swatches / color chips. A Discord embed card floating
 beside Subo, one edge being painted.
+
+### Bank statement (XP history / auditable point record)
+Warm, cozy teller's counter (soft rounded wood-and-metal, amber + pink accent
+light, magical glow), **never a cold corporate bank**. Subo as a cheerful teller
+hands the blob a long glowing passbook/receipt that scrolls down: each line is one
+XP change with a short reason and an amount, green "+" gains and a red "−" loss,
+ending in a "Starting balance" row, with a bold glowing running total below. The
+blob has the "so that's where my points went" moment. **Amber/gold is the XP
+category hue.** The statement is the focal prop, so its text is baked into the
+brief (real-feel reasons, ideally summing to the footer total as an easter egg);
+keep to ~5 to 7 short rows so it stays legible, not noisy. Distinct from the
+control room (warm, not neon monitoring) and the factory (a record handed over,
+not rewards being manufactured).

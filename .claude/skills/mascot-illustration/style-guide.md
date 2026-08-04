@@ -54,9 +54,13 @@ Rounded, glowing, large, readable. Not floating randomly unless intentional.
 Large, simple wording (CONNECT, DISCOVER, ORGANIZE). Distinct hues. Only a few
 cards each.
 
-### Signs
-Large, neon, simple wording. Avoid paragraphs. Expect to replace generated text
-in Photopea (the model hallucinates copy).
+### Signs & baked-in text
+Large, simple wording. Avoid paragraphs. The generation model now renders
+specified text reliably, so **write intentional, story-serving copy directly
+into the brief** (sign wording, a statement's line items, a poll question) rather
+than planning to add it later. Only include text that serves the story; keep it
+sparse so the image stays uncluttered. Photopea is for size and export, not text
+fixes.
 
 ## Format
 - **2:1 fixed ratio** by default.

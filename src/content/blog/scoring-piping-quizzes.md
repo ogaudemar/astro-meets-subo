@@ -104,6 +104,8 @@ draft: false
 
   These features are also available programmatically in the Public API.
 
+  Once you're rewarding members based on their scores, [XP History](/blog/xp-history) lets each of them see exactly how and why every point was awarded, on the web and in Discord.
+
   The Discord bot gives you limited functionality such as toggling scoring on/off and setting correct answers, but scoring and multi-bucket definition is not supported inside Discord. Use the web app or the API for maximum flexibility.
 
 

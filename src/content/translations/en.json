@@ -813,7 +813,8 @@
         { "emoji": "⭐", "title": "XP rewards", "desc": "Every completed project earns XP. Available on all plans, even free." },
         { "emoji": "🏆", "title": "Monthly leaderboard", "desc": "An automatic monthly XP leaderboard posted in Discord, ranking your most engaged members." },
         { "emoji": "🎭", "title": "Role rewards", "desc": "Grant or remove Discord roles based on participation, scores, or XP thresholds." },
-        { "emoji": "🏷️", "title": "Custom XP name", "desc": "Rename XP to match your brand: \"Stars\", \"Coins\", \"Rep\". Make it feel like yours." }
+        { "emoji": "🏷️", "title": "Custom XP name", "desc": "Rename XP to match your brand: \"Stars\", \"Coins\", \"Rep\". Make it feel like yours." },
+        { "emoji": "📜", "title": "XP History", "desc": "Members see how and why every point changed, on the web and in Discord. Trust the rewards you hand out. <a href=\"/blog/xp-history\">See XP History →</a>" }
       ],
       "blogLink": { "text": "See all engagement features →", "href": "/features#engage" }
     }
@@ -1171,7 +1172,7 @@
       "title": "Make participation worth something",
       "sub": "Reward members with XP, roles, and achievements, based on how they answer, not just whether they finish.",
       "cards": [
-        { "emoji": "⭐", "title": "XP rewards", "desc": "Every completed project earns XP points. Available on all plans, even free." },
+        { "emoji": "⭐", "title": "XP rewards", "desc": "Every completed project earns XP points. Available on all plans, even free. Members see how and why every point changed with <a href=\"/blog/xp-history\">XP History</a>." },
         { "emoji": "🏆", "title": "Monthly leaderboard", "desc": "Premium+ servers get an automatic monthly XP leaderboard posted in Discord. Rank your most engaged members." },
         { "emoji": "🎭", "title": "Role rewards", "desc": "Automatically grant or remove Discord roles based on survey completion or XP thresholds." },
         { "emoji": "⚡", "title": "Action blocks", "desc": "Drop XP, role, or achievement rewards anywhere in the flow, fire mid-survey, conditionally on answers. Onboarding roles for new joiners, XP for quiz takers who got it right, beta access for the right candidates." },

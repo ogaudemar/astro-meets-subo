@@ -62,7 +62,7 @@ A few touches that apply across polls and surveys alike:
 - **Inline `[` variable picker** in every script-editor field: type a bracket to display the variables that be dynamically piped into your poll/project.
 - **Default survey intros** toggle and welcome message, so a new project opens in your voice instead. *(The toggle is free; server-level defaut for custom intro message is Premium.)*
 - **A live preview that better matches Discord**: colors, markdown, bold, and emoji all render the way they'll actually appear. *(Free, always)*
-- **Member management**: add and remove badges and roles directly from the Members page and the Responses page. Members get a DM when you grant them a role by hand
+- **Member management**: add and remove badges and roles directly from the Members page and the Responses page. Members get a DM when you grant them a role by hand. And with [XP History](/blog/xp-history), both you and the member can see every point change, including manual adjustments, on the web and in Discord
 - **Option edits and ordering**: we made it easier to edit options or change the order in which they appear. We even added a randomization option so that options which are not pinned are displayed in a different order for each respondent
 
 ---

@@ -36,8 +36,8 @@ STYLE
 
 NEGATIVE
   No photorealism, painterly, anime, or flat illustration.
-  No invented text or names. No malformed hands/eyes. No missing mouth.
-  No merged limbs. No clutter.
+  No text beyond what the brief specifies (no invented names or extra copy).
+  No malformed hands/eyes. No missing mouth. No merged limbs. No clutter.
 ```
 
 ## Reminders while filling it in
@@ -45,6 +45,9 @@ NEGATIVE
   not know Subo's canon, so restate the key traits (bar-chart head, square-in-
   square left eye, checkbox right eye, lime body, pink outline) in the prompt.
 - **One metaphor only.**
+- **Bake in intentional text.** The model renders specified copy reliably now, so
+  write any story-serving text (sign wording, statement line items, a poll
+  question) into the relevant field. Keep it sparse; text is a prop, not decoration.
 - Image size and format may be edited in Photopea afterward
-  ([photopea-workflow.md](photopea-workflow.md)).
+  ([photopea-workflow.md](photopea-workflow.md)); Photopea is for crop/export, not text.
 - Run the review checklist in [SKILL.md](SKILL.md) before shipping.
