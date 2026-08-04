@@ -70,6 +70,7 @@
           { "text": "Serveur de support", "href": "/support", "external": true },
           { "text": "Tutoriels", "href": "/tutorials" },
           { "text": "Blog", "href": "/blog" },
+          { "text": "Changelog", "href": "/fr/changelog" },
           { "text": "Portail Stripe", "href": "/portal", "external": true },
           { "text": "Boutique Discord", "href": "/discordstore", "external": true }
         ]
@@ -92,6 +93,16 @@
       }
     ],
     "socialDiscordLabel": "Rejoins notre serveur Discord"
+  },
+
+  "changelog": {
+    "pageTitle": "Changelog | Les nouveautés de Subo",
+    "pageDescription": "Toutes les nouveautés de Subo, de la plus récente à la plus ancienne : nouvelles fonctionnalités, améliorations et lancements du bot de sondage pour Discord.",
+    "heroTitle": "CHANGELOG",
+    "heroSubtitle": "Tout ce qu'on a livré, du plus récent au plus ancien.",
+    "readMore": "Lire l'annonce",
+    "legacyNote": "Annoncé sur le serveur de support",
+    "empty": "Aucune version publiée pour le moment. Reviens bientôt."
   },
 
   "hero": {

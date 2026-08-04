@@ -1,0 +1,217 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
+import translations from '../../content/translations/fr.json';
+import { legacyReleases } from '../../data/legacy-releases';
+import { blogFr } from '../../data/changelog-blog-fr';
+
+const t = translations.changelog;
+
+type Entry = { date: Date; title: string; summary: string; href: string | null };
+
+// Website-era releases: derived from the blog collection. The posts stay
+// English and the row links to the English post, but the title + summary shown
+// here are translated via blogFr (keyed by slug), falling back to the post's
+// English copy if a translation is missing.
+const derived: Entry[] = (await getCollection('blog'))
+	.filter((post) => !post.data.draft && (post.data.tags ?? []).includes('announcement'))
+	.map((post) => {
+		const fr = blogFr[post.id];
+		return {
+			date: post.data.pubDate,
+			title: fr?.title ?? post.data.title,
+			summary: fr?.summary ?? post.data.description,
+			href: `/blog/${post.id}/`,
+		};
+	});
+
+// Pre-website history: the frozen archive, in French. Rows link to /support
+// for provenance, not to posts.
+const legacy: Entry[] = legacyReleases.map((r) => ({
+	date: new Date(r.date),
+	title: r.titleFr,
+	summary: r.summaryFr,
+	href: null,
+}));
+
+// One timeline, newest first.
+const entries: Entry[] = [...derived, ...legacy].sort(
+	(a, b) => b.date.valueOf() - a.date.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead title={t.pageTitle} description={t.pageDescription} alternates={[
+			{lang: 'x-default', href: 'https://subo.gg/changelog'},
+			{lang: 'en', href: 'https://subo.gg/changelog'},
+			{lang: 'fr', href: 'https://subo.gg/fr/changelog'},
+		]} />
+	</head>
+	<body>
+		<Header translations={translations.header} />
+		<main>
+
+			<!-- Hero -->
+			<section class="changelog-hero">
+				<div class="container text-center">
+					<h1 class="mono">{t.heroTitle}</h1>
+					<p class="subtitle">{t.heroSubtitle}</p>
+				</div>
+			</section>
+
+			<!-- Timeline -->
+			<section class="changelog-list">
+				<div class="container container--small">
+					{entries.length === 0 ? (
+						<p class="changelog-empty">{t.empty}</p>
+					) : (
+						<ol class="timeline">
+							{entries.map((entry) => (
+								<li class="entry">
+									<div class="entry__date">
+										<FormattedDate date={entry.date} locale="fr-FR" />
+									</div>
+									<div class="entry__body">
+										<h2>{entry.href ? <a href={entry.href}>{entry.title}</a> : entry.title}</h2>
+										<p>{entry.summary}</p>
+										{entry.href ? (
+											<a class="entry__link" href={entry.href}>{t.readMore} →</a>
+										) : (
+											<a class="entry__note" href="/support">{t.legacyNote}</a>
+										)}
+									</div>
+								</li>
+							))}
+						</ol>
+					)}
+				</div>
+			</section>
+
+			<CTA translations={translations} />
+		</main>
+		<Footer translations={translations.footer} currentLang="fr" />
+	</body>
+</html>
+
+<style>
+/* Hero */
+.changelog-hero {
+	padding: 140px 0 60px;
+	background:
+		radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+		var(--bg-base);
+}
+.changelog-hero h1 {
+	font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+	letter-spacing: -0.02em;
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	font-weight: 800;
+	color: var(--accent);
+	margin-bottom: 1rem;
+}
+.changelog-hero .subtitle {
+	font-size: 1.2rem;
+	color: var(--grey-light);
+	max-width: 580px;
+	margin: 0 auto;
+}
+
+/* Timeline */
+.changelog-list {
+	padding: 3rem 0 5rem;
+}
+.timeline {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+.entry {
+	position: relative;
+	display: grid;
+	grid-template-columns: 130px 1fr;
+	gap: 1.5rem;
+	padding: 0 0 2.5rem 2rem;
+}
+.entry::before {
+	content: "";
+	position: absolute;
+	left: -7px;
+	top: 6px;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: var(--accent);
+}
+.entry:last-child {
+	padding-bottom: 0;
+}
+.entry__date time {
+	color: var(--grey-light);
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	white-space: nowrap;
+}
+.entry__body h2 {
+	font-size: 1.25rem;
+	font-weight: 700;
+	margin: 0 0 0.5rem;
+	line-height: 1.3;
+}
+.entry__body h2 a {
+	color: var(--white, #fff);
+	text-decoration: none;
+}
+.entry__body h2 a:hover {
+	color: var(--accent);
+}
+.entry__body p {
+	color: var(--grey-light);
+	line-height: 1.65;
+	margin: 0 0 0.75rem;
+}
+.entry__link {
+	color: var(--accent);
+	font-size: 0.95rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+.entry__link:hover {
+	text-decoration: underline;
+}
+.entry__note {
+	display: inline-block;
+	color: var(--grey-light);
+	opacity: 0.7;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	text-decoration: none;
+}
+.entry__note::before {
+	content: "◆ ";
+	opacity: 0.6;
+}
+.entry__note:hover {
+	opacity: 1;
+	color: var(--accent);
+}
+.changelog-empty {
+	color: var(--grey-light);
+	text-align: center;
+}
+
+@media (max-width: 640px) {
+	.entry {
+		grid-template-columns: 1fr;
+		gap: 0.4rem;
+	}
+}
+</style>

@@ -74,6 +74,7 @@
         { "text": "Support Server", "href": "/support", "external": true },
         { "text": "Tutorials", "href": "/tutorials" },
         { "text": "Blog", "href": "/blog" },
+        { "text": "Changelog", "href": "/changelog" },
         { "text": "Stripe billing portal", "href": "/portal", "external": true },
         { "text": "Discord App Store", "href": "/discordstore", "external": true },
         { "text": "API Docs", "href": "https://api.subo.ai/docs", "external": true },
@@ -697,6 +698,16 @@
   ],
   "missionTitle": "OUR MISSION",
   "missionBody": "We believe every community deserves to be heard, and that the tools for listening should be as engaging as the communities themselves. Too often, an admin spends hours crafting a survey, hits send, and gets a handful of responses. Not because members don't care, but because a wall of form fields feels like homework. Subo closes the gap between what a survey has always felt like and what a real conversation feels like."
+},
+
+"changelog": {
+  "pageTitle": "Changelog | What's New in Subo",
+  "pageDescription": "Every Subo release, newest first. New features, improvements, and product launches for the Discord survey and poll bot.",
+  "heroTitle": "CHANGELOG",
+  "heroSubtitle": "Everything we've shipped, newest first.",
+  "readMore": "Read the announcement",
+  "legacyNote": "Announced in the Support server",
+  "empty": "No releases published yet. Check back soon."
 },
 
 "pricingPage": {
