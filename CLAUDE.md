@@ -75,6 +75,8 @@ The Subo web app (bot backend + web admin) lives at:
 
 When reviewing or updating feature descriptions, cross-reference the actual components and copy in that repo for accuracy.
 
+**Feature announcements start from a release brief**, not from reading the app code: the Subo repo writes a self-contained `YYYY-MM-DD-<slug>.md` to `...\Code\subo\docs\releases\` when a feature ships. Work from that brief for blog posts, changelog entries, and site copy updates.
+
 ## Deployment
 
 Deployed as a Cloudflare Workers static site. `wrangler.json` is minimal — no secrets or env vars needed for the frontend. The `@astrojs/cloudflare` adapter with `platformProxy` enabled handles the build.
