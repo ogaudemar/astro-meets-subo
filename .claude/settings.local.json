@@ -1,5 +1,8 @@
 {
   "permissions": {
+    "additionalDirectories": [
+      "C:\\Users\\ogaud\\OneDrive - ClearSwell LLC\\Documents\\Subo\\Code\\subo"
+    ],
     "allow": [
       "Bash(cd:*)",
       "Bash(grep:*)",
@@ -15,7 +18,46 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
-      "Bash(Copy-Item *)"
+      "Bash(Copy-Item *)",
+      "Bash(git commit -m)",
+      "Bash(npm run *)",
+      "Bash(curl -s https://subo.gg/robots.txt)",
+      "Bash(git checkout *)",
+      "Bash(git rm *)",
+      "Bash(git merge *)",
+      "Read(//c/Users/ogaud/OneDrive - ClearSwell LLC/Documents/Subo/Code/subo/**)",
+      "Read(//c/Users/ogaud/OneDrive - ClearSwell LLC/Documents/Subo/Code/subo/web2/react/**)",
+      "Bash(npm install *)",
+      "Bash(timeout 180 npx tsc --noEmit)",
+      "mcp__claude_ai_Notion__notion-fetch",
+      "WebFetch(domain:docs.discordbotlist.com)",
+      "WebFetch(domain:github.com)",
+      "mcp__claude_ai_Notion__notion-update-page",
+      "mcp__claude_ai_Notion__notion-search",
+      "Read(//c/Users/ogaud/.claude/plans/**)",
+      "Read(//c/Users/ogaud/.claude/plans\" 2>/dev/**)",
+      "Bash(curl -sI -m 15 https://subo.ai/)",
+      "Bash(curl -sI -m 15 https://subo.ai/blog/how-to-create-a-discord-poll-with-or-without-a-bot/)",
+      "Bash(curl -sI -m 15 https://www.subo.ai/)",
+      "Bash(curl -sI -m 15 https://subo.gg/blog/how-to-create-a-discord-poll-with-or-without-a-bot/)",
+      "Bash(curl -sIL -m 20 https://subo.ai/blog/how-to-create-a-discord-poll-with-or-without-a-bot/)",
+      "WebSearch",
+      "Bash(git commit -m '@ *)",
+      "Bash(git commit *)",
+      "PowerShell(npm run *)",
+      "PowerShell($html = Get-Content \"dist/blog/easypoll-alternative/index.html\" -Raw; $i = $html.IndexOf\\('hero-frame'\\); $html.Substring\\($i-15, 320\\))",
+      "PowerShell($p = \\(Get-NetTCPConnection -LocalPort 4322 -State Listen -ErrorAction SilentlyContinue\\).OwningProcess; if \\($p\\) { Stop-Process -Id $p -Force; \"stopped dev server \\(pid $p\\)\" } else { \"no listener on 4322\" })",
+      "PowerShell(git *)",
+      "Read(//c/Users/ogaud/OneDrive - ClearSwell LLC/Documents/Subo/Subo shared/Messages Translations/new-path/**)",
+      "Bash(python -)",
+      "Bash(python -m py_compile surveyLib/model/defaultMessages.py)",
+      "WebFetch(domain:beebom.com)",
+      "WebFetch(domain:blog.communityone.io)",
+      "WebFetch(domain:rally.casa)",
+      "WebFetch(domain:learn.rumie.org)",
+      "WebFetch(domain:botghost.com)",
+      "WebFetch(domain:space-node.net)",
+      "WebFetch(domain:stickers.gg)"
     ]
   }
 }
