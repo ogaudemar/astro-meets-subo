@@ -829,7 +829,8 @@
         { "emoji": "⭐", "title": "Récompenses XP", "desc": "Chaque projet complété rapporte de l'XP. Disponible sur tous les plans, même gratuit." },
         { "emoji": "🏆", "title": "Classement mensuel", "desc": "Un classement XP mensuel automatique posté sur Discord, classant tes membres les plus actifs." },
         { "emoji": "🎭", "title": "Récompenses de rôles", "desc": "Attribue ou retire des rôles Discord selon la participation, les scores ou les seuils d'XP." },
-        { "emoji": "🏷️", "title": "Nom XP personnalisé", "desc": "Renomme l'XP pour correspondre à ta marque : \"Étoiles\", \"Pièces\", \"Rep\". Fais-le tien." }
+        { "emoji": "🏷️", "title": "Nom XP personnalisé", "desc": "Renomme l'XP pour correspondre à ta marque : \"Étoiles\", \"Pièces\", \"Rep\". Fais-le tien." },
+        { "emoji": "📜", "title": "Historique XP", "desc": "Tes membres voient comment et pourquoi chaque point a changé, sur le web et dans Discord. De quoi faire confiance aux récompenses que tu distribues. <a href=\"/blog/xp-history\">Voir l'Historique XP →</a>" }
       ],
       "blogLink": { "text": "Voir toutes les fonctionnalités d'engagement →", "href": "/fr/features#engage" }
     }
@@ -1176,7 +1177,7 @@
       "title": "Rends la participation utile",
       "sub": "Récompense les membres avec de l'XP, des rôles et des succès selon leurs réponses, pas seulement selon s'ils finissent.",
       "cards": [
-        { "emoji": "⭐", "title": "Récompenses XP", "desc": "Chaque projet complété rapporte des points XP. Disponible sur tous les plans, même gratuit." },
+        { "emoji": "⭐", "title": "Récompenses XP", "desc": "Chaque projet complété rapporte des points XP. Disponible sur tous les plans, même gratuit. Tes membres voient comment et pourquoi chaque point a changé avec l'<a href=\"/blog/xp-history\">Historique XP</a>." },
         { "emoji": "🏆", "title": "Classement mensuel", "desc": "Les serveurs Premium+ reçoivent un classement XP mensuel automatique posté sur Discord. Classe tes membres les plus actifs." },
         { "emoji": "🎭", "title": "Récompenses de rôles", "desc": "Attribue ou retire automatiquement des rôles Discord selon la complétion de sondage ou les seuils d'XP." },
         { "emoji": "⚡", "title": "Blocs d'action", "desc": "Dépose des récompenses XP, de rôle ou de succès n'importe où dans le flux, déclenchées en cours de sondage, conditionnellement selon les réponses. Rôles d'onboarding pour les nouveaux, XP pour les bons répondants au quiz, accès bêta pour les bons candidats." },
