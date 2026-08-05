@@ -1,4 +1,28 @@
+# Subo crawl policy.
+#
+# Stance: be citable, don't be training data. The roadmap's GEO/AEO pillar
+# (docs/authority-roadmap.md) depends on answer engines being able to fetch and
+# quote this site — llms.txt and /api exist for exactly that audience — so the
+# search and retrieval crawlers are welcome. Model training is not granted.
+#
+# ⚠️ This file is only the whole story when Cloudflare's **managed robots.txt**
+# is OFF. That feature prepends its own block ahead of this content, and that
+# block includes `Disallow: /` for ClaudeBot, GPTBot, CCBot, Google-Extended and
+# others — silently overriding the intent below. Named-agent groups take
+# precedence over `User-agent: *`, and duplicate groups for the same agent
+# resolve inconsistently across crawlers, so do NOT rely on the rules here to
+# out-argue the managed block. Turn it off in
+# Cloudflare → Security → Bots → AI Scrapers and Crawlers.
+# Verify with: curl -s https://subo.gg/robots.txt
+#
+# Content-Signal meanings:
+#   search   — build a search index, return links and short excerpts
+#   ai-input — feed content to a model at answer time (RAG, grounding, citation)
+#   ai-train — train or fine-tune models
+#   use      — how deeply AI systems may consume the content
+
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no, use=reference
 Allow: /
 
 Sitemap: https://subo.gg/sitemap-index.xml

@@ -95,6 +95,44 @@ domain, and this **gates all content ROI for ~2–3 months**:
   ranking" is migration lag, not the content. The subo.ai 6-month history (below) is
   the map of what will recover.
 
+### ⚠️ robots.txt was blocking the AI crawlers — GEO/AEO gate (found 2026-08-04)
+
+Found while auditing the API subdomain. **Cloudflare's managed robots.txt** prepends a
+block ahead of `public/robots.txt` on the live site, and it contains `Disallow: /` for
+**ClaudeBot, GPTBot, CCBot, Google-Extended**, plus Bytespider, Applebot-Extended,
+meta-externalagent and Amazonbot. Our repo file (`Allow: /` + sitemap) survives but is
+appended *after*, and a crawler matching its own named group ignores the `*` group — so
+the blocks were live and binding.
+
+This directly contradicts the **"GEO/AEO = be the citable source"** guiding principle.
+We shipped `llms.txt` — a file whose only audience is AI agents — and then `/api` for the
+same audience, on a domain telling several of those agents not to crawl.
+
+**Scope, stated precisely (don't over-read this):**
+- **Google Search is unaffected.** `search=yes`, Googlebot not blocked. Rankings, the
+  migration recovery and everything in P2's Search Console story are untouched.
+- **Google-Extended blocked** → excluded from Gemini grounding / AI Overviews use.
+- **ClaudeBot blocked** → Anthropic can't fetch the site.
+- **CCBot blocked** → out of Common Crawl, an input to many models and tools.
+- **GPTBot blocked** → OpenAI *training* only. ChatGPT live browsing uses `OAI-SearchBot`
+  and `ChatGPT-User`, which are **not** in the block list, so that path may still reach us.
+
+**Decision (user, 2026-08-04): unblock the citation crawlers, keep `ai-train=no`.** The
+coherent stance is *cite me, don't train on me* — robots.txt `Disallow` is the blunt
+instrument, `Content-Signal` is the granular one.
+
+- [x] **`public/robots.txt` rewritten to state the policy explicitly** —
+      `Content-Signal: search=yes, ai-input=yes, ai-train=no, use=reference`, with a
+      header comment explaining the Cloudflare interaction so this isn't rediscovered.
+      `ai-input=yes` is the one that matters for GEO: it's the RAG/grounding/citation signal.
+- [ ] **⚠️ USER ACTION, and the repo change does nothing without it:** turn off the managed
+      block in **Cloudflare → Security → Bots → AI Scrapers and Crawlers**. Do not rely on
+      our file out-arguing it — duplicate groups for one agent resolve inconsistently
+      across crawlers. Verify with `curl -s https://subo.gg/robots.txt` and confirm the
+      `# BEGIN Cloudflare Managed content` section is gone.
+- [ ] After unblocking, this is the moment to re-read P2's success metric ("LLM citations
+      when asking 'best Discord survey bot'") — it was never testable while the block was on.
+
 ### Keyword intel from the 6-month Search Console history (2026-07-29)
 
 Pulled subo.ai (history) + subo.gg (post-switch) Queries/Pages + GA4 organic landing
@@ -519,13 +557,39 @@ agent path deliberately.
       standing **Subo MCP server** (agent-orchestration track). When it ships, list it
       in the emerging **MCP registries/directories** and give it a spoke landing page —
       P1's "bot directories" logic, applied to the agent ecosystem.
-- [ ] **Migrate API docs onto subo.gg** — see the subdomain-consolidation action in the
-      migration block; entity consistency + authority both argue for it. **Less urgent
-      since 2026-08-04:** `subo.gg/api` now carries the on-domain authority and is what
-      `llms.txt`, the homepage and the footer point at first. What's left is the Scalar
-      host itself (DNS + 301 map, user-side infra), after which swap the four
-      `api.subo.ai` references in `src/pages/api.astro` (`API_BASE`, `KEY_URL` is already
-      subo.gg, `REFERENCE_URL`, `OPENAPI_URL`) plus `llms.txt` and the footer link.
+- [~] **Migrate API docs onto subo.gg — RESOLVED as "don't, not this way" (2026-08-04).**
+      Analysed on the user's question of whether `subo.gg/api` makes the domain move moot.
+      **It largely does, and the move was framed wrong.**
+      - **This is an API *host* migration, not a docs migration.** `api.subo.ai` serves
+        `/docs` *and* `/v1/*`, the live endpoint integrators have hardcoded. 301-ing
+        authenticated API traffic is genuinely risky: many HTTP clients don't replay
+        request bodies across a redirect and several drop custom headers like `X-API-Key`
+        on a cross-host hop. Real breakage for paying integrators.
+      - **SEO gain is ~zero.** The Scalar UI is a JS shell (a `data-url` attribute + a CDN
+        script). It can't rank or be cited on *any* domain, so moving it between domains
+        changes nothing about indexability.
+      - **Recommended instead:** leave `api.subo.ai/v1` serving indefinitely as a
+        compatibility surface; if the new domain is wanted, add **`api.subo.gg` as an
+        alias, never a replacement** (both live, document subo.gg for new integrations, no
+        redirect); and **move the docs without moving the host** — `/openapi.json` already
+        sends `Access-Control-Allow-Origin: *`, so a Scalar page hosted on subo.gg pointing
+        at the existing spec URL works today and puts 100% of docs on-domain.
+      - Priority: below the robots.txt fix and below P5 outreach.
+- [ ] **Loose ends found on `api.subo.ai` while analysing the above (2026-08-04):**
+      - **A second, divergent `llms.txt`.** `api.subo.ai/llms.txt` is live (served from
+        `_LLMS_TXT` in `web2/public_api/docs.py`) with different content and base URLs from
+        `subo.gg/llms.txt`. Two `llms.txt` for one entity is the same split-brain the
+        entity-consistency work exists to kill. Consolidate: make the API one minimal and
+        point at `subo.gg/llms.txt`.
+      - **`/v1/recipes` advertises 10 recipes whose URLs all 404 in production.** The index
+        returns 200 listing `/v1/recipes/<slug>`; fetching one returns 404. The handler
+        resolves to the repo-root `docs/recipes/` directory, which likely isn't in the
+        deploy. Agents following the index hit a wall. **App-repo bug, not a site issue.**
+      - **There's a 10-file recipe corpus in the app repo** (`docs/recipes/`: welcome quiz,
+        volunteer/moderator funnel, playtester selection, prediction poll, study quiz…).
+        These are survey-*design* recipes, so they don't overlap `/api`'s API-mechanics
+        recipes. **Strong raw material for on-domain content** — closer to the `/templates`
+        and use-case clusters than to the API page.
 
 ### Bring the public Tutorials on-domain (off Notion)
 
