@@ -117,21 +117,44 @@ same audience, on a domain telling several of those agents not to crawl.
 - **GPTBot blocked** → OpenAI *training* only. ChatGPT live browsing uses `OAI-SearchBot`
   and `ChatGPT-User`, which are **not** in the block list, so that path may still reach us.
 
-**Decision (user, 2026-08-04): unblock the citation crawlers, keep `ai-train=no`.** The
-coherent stance is *cite me, don't train on me* — robots.txt `Disallow` is the blunt
-instrument, `Content-Signal` is the granular one.
+**Root cause (user checked the dashboard, 2026-08-04):** *not* the WAF. **"Configure AI
+bot policies" was already set to Allow** — nothing was being blocked at the firewall. The
+`Disallow:` lines came from the separate **"Manage your robots.txt"** card, set to
+*"Instruct AI bots to not scrape content."* Worth internalising: robots.txt is **advisory**,
+so it only stops **well-behaved** crawlers — Googlebot, ClaudeBot, GPTBot, CCBot. The net
+effect was letting the badly-behaved bots through the firewall while politely turning away
+the ones we want.
 
-- [x] **`public/robots.txt` rewritten to state the policy explicitly** —
-      `Content-Signal: search=yes, ai-input=yes, ai-train=no, use=reference`, with a
-      header comment explaining the Cloudflare interaction so this isn't rediscovered.
-      `ai-input=yes` is the one that matters for GEO: it's the RAG/grounding/citation signal.
-- [ ] **⚠️ USER ACTION, and the repo change does nothing without it:** turn off the managed
-      block in **Cloudflare → Security → Bots → AI Scrapers and Crawlers**. Do not rely on
-      our file out-arguing it — duplicate groups for one agent resolve inconsistently
-      across crawlers. Verify with `curl -s https://subo.gg/robots.txt` and confirm the
-      `# BEGIN Cloudflare Managed content` section is gone.
+**Decision (user, 2026-08-04): fully open. All crawlers welcome, AI included, training
+included.** This is a marketing site; being read, indexed, cited and trained on is the
+point. The only concern is abuse/DDoS, which belongs at the network layer, not in
+robots.txt.
+
+- [x] **`public/robots.txt` rewritten to state the open policy** —
+      `Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full`, with a header
+      comment explaining the Cloudflare interaction so this isn't rediscovered. (An earlier
+      2026-08-04 commit had `ai-train=no` from a wrong inference about intent; corrected.)
+- [ ] **⚠️ USER ACTION, and the repo change does nothing without it — Cloudflare dashboard,
+      per zone (`subo.gg` *and* `subo.ai`):**
+      | Card | Set to | Why |
+      |---|---|---|
+      | Manage your robots.txt | **Disable robots.txt configuration** | Repo file becomes authoritative. Preferred over "Content Signals Policy", which still prepends a framework asserting `ai-train=no` — now a contradiction. |
+      | Configure AI bot policies | Allow (already correct) | WAF-level; was never the problem. |
+      | Mixed-purpose crawlers (Sept 15 change) | **Continue to be allowed** | These index *and* train in one fetch. Blocking them costs search visibility to buy a training restriction we don't want. |
+      | Bot Fight Mode | **Off** | Challenges non-browser traffic. On `subo.ai` that breaks `api.subo.ai` for curl/SDK/server-to-server integrators. |
+      | AI Labyrinth | **Off** | Feeds AI-generated filler to crawlers. Directly poisons the accurate-citation goal. |
+      Verify: `curl -s https://subo.gg/robots.txt` shows no `Cloudflare Managed` section
+      and no `Disallow` lines.
+- [ ] **DDoS, done properly:** Cloudflare's L3/L4 protection is always-on and unaffected by
+      every toggle above. The application-layer lever is **Rate Limiting Rules**, not bot
+      heuristics. The public API already rate-limits per key in code (60/300/600/1000 rpm by
+      tier — `check:api` verifies those numbers); a Cloudflare rate-limit rule in front of
+      `api.subo.ai` is reasonable defense in depth. Bot Fight Mode is the wrong tool.
 - [ ] After unblocking, this is the moment to re-read P2's success metric ("LLM citations
       when asking 'best Discord survey bot'") — it was never testable while the block was on.
+      **Expect lag:** those crawlers were turned away, so there is nothing cached to draw
+      on; recrawl and reappearance in AI answers runs weeks-to-months, similar to the domain
+      migration curve.
 
 ### Keyword intel from the 6-month Search Console history (2026-07-29)
 

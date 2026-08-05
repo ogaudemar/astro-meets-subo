@@ -1,28 +1,36 @@
-# Subo crawl policy.
+# Subo crawl policy: open to everyone.
 #
-# Stance: be citable, don't be training data. The roadmap's GEO/AEO pillar
-# (docs/authority-roadmap.md) depends on answer engines being able to fetch and
-# quote this site — llms.txt and /api exist for exactly that audience — so the
-# search and retrieval crawlers are welcome. Model training is not granted.
+# Intent (user, 2026-08-04): all crawlers welcome, AI included. This is a
+# marketing site — being read, indexed, cited and trained on is the point, not a
+# cost. The GEO/AEO pillar in docs/authority-roadmap.md depends on it, and
+# llms.txt and /api are written specifically for that audience.
 #
-# ⚠️ This file is only the whole story when Cloudflare's **managed robots.txt**
-# is OFF. That feature prepends its own block ahead of this content, and that
-# block includes `Disallow: /` for ClaudeBot, GPTBot, CCBot, Google-Extended and
-# others — silently overriding the intent below. Named-agent groups take
-# precedence over `User-agent: *`, and duplicate groups for the same agent
-# resolve inconsistently across crawlers, so do NOT rely on the rules here to
-# out-argue the managed block. Turn it off in
-# Cloudflare → Security → Bots → AI Scrapers and Crawlers.
-# Verify with: curl -s https://subo.gg/robots.txt
+# Abuse is handled at the network layer (Cloudflare's always-on DDoS protection
+# plus Rate Limiting Rules), never here. robots.txt is advisory: it is obeyed
+# only by well-behaved crawlers, which are exactly the ones worth keeping. Using
+# it defensively turns away Googlebot and ClaudeBot while doing nothing about an
+# actual attacker.
+#
+# ⚠️ Cloudflare's "Manage your robots.txt" feature prepends a managed block ahead
+# of this file. Set to "Instruct AI bots to not scrape content", it emits
+# `Disallow: /` for ClaudeBot, GPTBot, CCBot and Google-Extended, silently
+# overriding everything below — that was live until 2026-08-04. Keep the feature
+# set to "Disable robots.txt configuration" so this file is authoritative.
+# Verify: curl -s https://subo.gg/robots.txt (expect no "Cloudflare Managed"
+# section, and no Disallow lines at all).
 #
 # Content-Signal meanings:
 #   search   — build a search index, return links and short excerpts
 #   ai-input — feed content to a model at answer time (RAG, grounding, citation)
 #   ai-train — train or fine-tune models
 #   use      — how deeply AI systems may consume the content
+#
+# Stated permissively on purpose. Omitting a signal would mean "neither granted
+# nor restricted"; these are explicit grants, so a crawler checking has an
+# unambiguous answer. Drop the Content-Signal line to return to neutral.
 
 User-agent: *
-Content-Signal: search=yes, ai-input=yes, ai-train=no, use=reference
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
 Sitemap: https://subo.gg/sitemap-index.xml
