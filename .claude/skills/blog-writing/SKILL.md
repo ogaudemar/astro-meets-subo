@@ -105,6 +105,19 @@ alt post = reuse the base image + write one `heroHeadline` line.
   surveys guide) and add a reciprocal link back from at least one cluster page so the
   new post isn't orphaned.
 
+**The template also covers head-to-head comparison posts**, not only literal
+"[competitor] alternative" intent (user call, 2026-08-05). A "Subo vs X" post is close
+enough to the same job that it should reuse the same hero rather than commission a
+bespoke one. First example: `subo-vs-google-forms-typeform-discord-communities.md`, with
+`heroHeadline: "vs Google Forms & Typeform"`.
+
+**Keep `heroHeadline` short.** It renders over the reserved dark left third, capped at
+`max-width: 30%` with `font-size: clamp(1.05rem, 4.2vw, 2.4rem)` (`BlogPost.astro`).
+Roughly **25 characters or fewer**, matching "EasyPoll alternative" (19) and "Simple Poll
+alternative" (23). A full sentence wraps into five cramped lines and stops reading as a
+label. Compress rather than spelling it out: "vs Google Forms & Typeform" over
+"Comparison with Google Forms and Typeform".
+
 All the house rules above (no em dashes, anti-AI-tells) still apply.
 
 <!--

@@ -16,17 +16,16 @@ HTML (links, `<code>`); it is stripped for the JSON-LD.
 
 All marked `draft: true` — do not publish without review:
 
-- `subo-vs-google-forms-typeform-discord-communities.md` — **fully rewritten 2026-08-05**
-  against current product facts (the Feb draft predated action blocks, scoring, templates,
-  the API and web mode, and had two wrong competitor claims). Needs a hero image and a
-  `draft: false` flip.
 - `how-to-use-skip-logic-smarter-discord-surveys.md`
 - `gamify-discord-community-xp-survey-rewards.md`
 - `scheduling-recurring-surveys-community-pulse.md`
 - `5-discord-community-types-surveys-they-should-run.md`
 
 **Published since this list was written** (no longer drafts): `ai-powered-survey-summaries-subo.md`
-and `complete-guide-anonymous-surveys-discord.md` (both went `draft: false` 2026-07-28).
+and `complete-guide-anonymous-surveys-discord.md` (both went `draft: false` 2026-07-28),
+and `subo-vs-google-forms-typeform-discord-communities.md` (fully rewritten against
+current product facts and published 2026-08-05; the Feb draft predated action blocks,
+scoring, templates, the API and web mode, and carried two wrong competitor claims).
 
 The user has directly edited some posts to correct product details — **always read a post before editing it**.
 

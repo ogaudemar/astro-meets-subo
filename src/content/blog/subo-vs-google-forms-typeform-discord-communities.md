@@ -3,6 +3,8 @@ title: "Subo vs Google Forms and Typeform: Which One Fits a Discord Community (2
 description: "Google Forms and Typeform are better form builders than Subo. Neither can tell you the person answering is really a member of your community. Here's the honest split between all three, and how to pick."
 pubDate: "Aug 05 2026"
 author: "Subo Team"
+heroImage: "/images/blog/alternative-series/alt-hero-base.webp"
+heroHeadline: "vs Google Forms & Typeform"
 tags: ["comparison", "discord", "surveys", "forms", "google forms", "typeform", "community management"]
 faq:
   - q: "Can you use Google Forms in Discord?"
@@ -21,7 +23,7 @@ faq:
     a: "Yes, and this is the part a form link cannot do. Authentication and identification are separate. Subo verifies that each respondent is a distinct real member, then discards the link between them and their answers. You get results you can vouch for without anyone, including you, being able to see who said what."
   - q: "Do I need a Discord server to use Subo?"
     a: "To build surveys, yes for now: creator and admin onboarding is Discord-gated. To answer one, no. A web-mode survey can be answered by anyone, with or without a Discord account."
-draft: true
+draft: false
 ---
 
 # Subo vs Google Forms and Typeform: which one fits a Discord community
