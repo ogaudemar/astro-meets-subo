@@ -6,6 +6,17 @@ updatedDate: "Jul 24 2026"
 tags: ["tutorial", "discord", "polls", "how-to"]
 author: "Subo Team"
 heroImage: "/images/blog/poll-tuto/poll-tuto-hero.webp"
+faq:
+  - q: "How do you create a poll in Discord?"
+    a: "In the message box of any channel, open the <strong>+</strong> menu or the poll icon and choose <strong>Create Poll</strong>. Type your question, add up to 10 answers, pick a duration between 1 hour and 1 week, and send. Members vote by clicking an answer and the tally updates live. No bot needed."
+  - q: "Can you create a Discord poll without a bot?"
+    a: "Yes. Discord has polls built in, and for a quick casual vote they are the right tool. The limits are that results are always public, anyone in the channel can vote, there is no anonymity or role restriction, no reward for participating, and you cannot export the data."
+  - q: "How many options can a Discord poll have?"
+    a: "Discord's native polls allow up to 10 answers, each with an optional emoji. Subo polls allow up to 24 options, and effectively no character limit per option in emoji mode."
+  - q: "How do you make an anonymous poll in Discord?"
+    a: "Native polls cannot be made anonymous. You need a bot: with Subo, add the <code>privacy</code> option to the <code>/poll</code> command and choose Anonymous, so no one can see who voted for what, including you."
+  - q: "How do you start a poll with Subo?"
+    a: "Three ways. Run <code>/poll</code> to build one in Discord, <code>/template</code> to start from a ready-made poll template, or <code>/draft</code> to have Subo's AI write it for you. You can also build and manage polls visually in the <a href=\"https://app.subo.gg\">web app</a>."
 draft: false
 ---
 

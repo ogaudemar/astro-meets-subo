@@ -5,6 +5,15 @@ pubDate: "Jul 29 2026"
 author: "Subo Team"
 heroImage: "/images/blog/best-poll-bots/Subo_poll_desk.webp"
 tags: ["comparison", "discord", "polls", "poll bot"]
+faq:
+  - q: "What is the best Discord poll bot?"
+    a: "It depends on what the poll has to do. For a quick vote, Discord's native polls are enough and need no bot at all. For a free bot that focuses on polls, EasyPoll is the established pick. For anonymous voting, scoring, XP or role rewards, and full multi-question surveys, Subo goes furthest. We build Subo, so read that section with that in mind."
+  - q: "Is there a free Discord poll bot?"
+    a: "Yes. EasyPoll is free, and Subo has a free tier that includes every privacy mode. Discord's own native polls are free and built in, which is the right answer for a lot of servers."
+  - q: "Do I still need a poll bot in 2026?"
+    a: "Not for a simple vote. Native polls have covered that since 2024 and made the old reaction-poll bots redundant. A bot earns its place when you hit the limits: no anonymity, a cap of 10 options, no rewards for voting, and no control over who can start a poll."
+  - q: "Which Discord poll bot supports anonymous voting?"
+    a: "Native polls do not support it at all, and it is the clearest gap in the built-in feature. Subo has three privacy modes and defaults new servers to Anonymous. Check the current documentation of any other bot before relying on it, since this feature moves around."
 draft: false
 ---
 

@@ -7,13 +7,14 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, heroHeadline, tags, author, draft, posts } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroHeadline, tags, author, draft, faq, posts } = Astro.props;
 import translations from '../content/translations/en.json';
 
 // BlogPosting schema (SEO/GEO) — one block covers every post rendered through
 // this layout, giving article rich-result eligibility and better LLM citation.
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const jsonLd = {
+const stripTags = (s: string) => s.replace(/<[^>]+>/g, '');
+const blogPostingJsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'BlogPosting',
 	headline: title,
@@ -27,6 +28,25 @@ const jsonLd = {
 	url: canonical,
 	...(tags?.length ? { keywords: tags.join(', ') } : {}),
 };
+
+// FAQPage, emitted only when the post carries a `faq` block in frontmatter.
+// Google deprecated HowTo and restricted FAQ rich results in 2023, so the win
+// here is GEO/AEO citability (a clean, quotable Q&A pair per question), not
+// snippets. Same construction as TemplatePage.astro and /api.
+const jsonLd = [
+	blogPostingJsonLd,
+	...(faq?.length
+		? [{
+				'@context': 'https://schema.org',
+				'@type': 'FAQPage',
+				mainEntity: faq.map((f) => ({
+					'@type': 'Question',
+					name: f.q,
+					acceptedAnswer: { '@type': 'Answer', text: stripTags(f.a) },
+				})),
+			}]
+		: []),
+];
 ---
 
 <html lang="en">
@@ -87,6 +107,22 @@ const jsonLd = {
 			}
 
 
+
+			/* Optional frontmatter-driven FAQ (see `faq` in content.config.ts).
+			   Rendered visibly because the FAQPage JSON-LD mirrors it, and
+			   markup without matching on-page content is a guidelines
+			   violation as well as a wasted GEO opportunity. */
+			.post-faq {
+				margin-top: 3rem;
+				padding-top: 2rem;
+				border-top: 1px solid rgba(255, 255, 255, 0.15);
+			}
+			.post-faq-item {
+				margin-bottom: 1.5rem;
+			}
+			.post-faq-item h3 {
+				margin-bottom: 0.4em;
+			}
 
 			.title {
 				margin-bottom: 1em;
@@ -225,6 +261,17 @@ const jsonLd = {
 						<hr />
 					</div>
 					<slot />
+					{faq && faq.length > 0 && (
+						<section class="post-faq">
+							<h2>Frequently asked questions</h2>
+							{faq.map((f) => (
+								<div class="post-faq-item">
+									<h3>{f.q}</h3>
+									<p set:html={f.a} />
+								</div>
+							))}
+						</section>
+					)}
 				</div>
 			</article>
 			<!-- Read More Section -->

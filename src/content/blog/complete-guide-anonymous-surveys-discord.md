@@ -5,6 +5,17 @@ pubDate: "Feb 14 2026"
 updatedDate: "Jul 28 2026"
 author: "Subo Team"
 tags: ["anonymous surveys", "discord", "community management", "feedback", "privacy"]
+faq:
+  - q: "Are Discord polls anonymous?"
+    a: "Discord's native polls are not anonymous. Clicking the vote count on a native poll shows exactly who voted for what, and there is no setting to turn that off. Anonymous voting needs a bot: Subo offers three privacy modes, and Anonymous means no one can see individual answers, including you."
+  - q: "Can you make a Discord poll anonymous?"
+    a: "Yes, with a bot that supports it. In Subo, add the <code>privacy</code> option to the <code>/poll</code> command and choose Anonymous, or set a server-wide default in <code>/settings</code> so every new poll and survey starts that way."
+  - q: "What is Subo's default privacy mode?"
+    a: "A new server defaults to Anonymous, so honest feedback is the starting point rather than something you have to switch on. You can change the server default in <code>/settings</code>, or pick a different mode on any individual poll or survey."
+  - q: "Can someone answer an anonymous survey twice?"
+    a: "No. Subo blocks duplicate responses from the same Discord account even in Anonymous mode. The respondent's identity is never shown in the results, but it is still used at submission time to prevent repeat entries."
+  - q: "Do XP or role rewards break anonymity?"
+    a: "Rewards work in every mode, Anonymous included, because Subo authenticates each respondent without tying their identity to their answers. The trade-off is that a completion reward is visible, so you can see who took part, never what they said. In a large server that is harmless. If anonymity is critical and only a few people will respond, skip the reward."
 draft: false
 ---
 

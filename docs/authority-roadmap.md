@@ -134,8 +134,14 @@ robots.txt.
       `Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full`, with a header
       comment explaining the Cloudflare interaction so this isn't rediscovered. (An earlier
       2026-08-04 commit had `ai-train=no` from a wrong inference about intent; corrected.)
-- [ ] **⚠️ USER ACTION, and the repo change does nothing without it — Cloudflare dashboard,
-      per zone (`subo.gg` *and* `subo.ai`):**
+- [x] **Cloudflare dashboard settings — DONE, VERIFIED LIVE (2026-08-05).**
+      `curl -s https://subo.gg/robots.txt` now returns **only** our repo file: no
+      `Cloudflare Managed` section, no `Disallow` lines anywhere, and the
+      `Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full` line intact.
+      `subo.ai/robots.txt` **301s to `subo.gg/robots.txt`**, so the second zone needs no
+      separate setting. **ClaudeBot, GPTBot, CCBot and Google-Extended are no longer being
+      turned away.** The GEO/AEO gate is open; recrawl lag now starts running.
+      Settings applied (kept here as the record of what the correct state is):
       | Card | Set to | Why |
       |---|---|---|
       | Manage your robots.txt | **Disable robots.txt configuration** | Repo file becomes authoritative. Preferred over "Content Signals Policy", which still prepends a framework asserting `ai-train=no` — now a contradiction. |
@@ -317,22 +323,48 @@ groundwork converts into citations and organic traffic. One page per intent.
 > Stickers.gg / Space-node / BotGhost), then Tier 2 (Beebom, Rumie). Log outcomes in the
 > kit; feed each live placement's `$referring_domain` into the P0 funnel breakdown.
 >
+> **✅ DONE (d) `FAQPage` schema for blog posts — SHIPPED (2026-08-05).** Frontmatter-driven
+> injector on the blog collection + visible on-page Q&A, **backfilled across eight posts
+> (35 questions)**. See the `[x]` bullet in the P2 list below for the full detail. Timed
+> deliberately: the AI crawlers were unblocked 2026-08-04, so this landed before their
+> first pass rather than after it.
+>
+> **✅ DONE (f) `llms.txt` split-brain — FIXED in the app repo (2026-08-05), awaiting the
+> user's next app deploy.** `api.subo.ai/llms.txt` is now a stub pointing at the canonical
+> `subo.gg/llms.txt`. Detail in the API loose-ends bullet.
+>
 > **▶ THREAD 2 (in-repo, pick one next session):**
 > - **(a) Form/no-"bot" follow-ons** — FR `/survey-convos` retune (`sondage discord` is a
 >   real market), more "app"/"form" vocabulary in existing titles/H2s, standalone `/draft`
 >   page. Migration-gated to ~Q4.
-> - **(d) `FAQPage` schema for blog posts** — `/api` proves the pattern; the blog layout
->   still injects `BlogPosting` only. A frontmatter-driven injector would close the same
->   `[ ]` that recurs in three sections (P2 content, tutorials hub, P7 templates).
+> - **(h) `/v1/recipes/{slug}` still 404s in production** (app repo). Re-confirmed
+>   2026-08-05: the index returns 200 and lists slugs, fetching one returns 404. Now the
+>   only remaining item pointing agents at dead URLs, since the `llms.txt` stub stopped
+>   advertising them.
+> - **(i) The API privacy-mode default** (app repo) — see the ⚠️ block above. Small fix,
+>   real user-visible consequence.
 > - **(e) Localize `/api`?** — probably not. Developer docs in EN is the norm and the
 >   samples don't translate. Noted so it isn't re-litigated.
 >
-> **⚠️ Cross-repo product question raised 2026-08-04 (app side, not site):** the API
-> defaults `privacy_mode` to **semi-private** when the field is omitted
-> (`routes/projects.py`: `AnonymousModes.Yes`), but the **app default is Anonymous**
-> (user-confirmed 2026-07-28, documented in `content.md` + the anonymous-surveys guide).
-> `/api` documents the API behavior accurately and tells callers to set it explicitly, but
-> the two surfaces disagree. Worth deciding in the app repo whether that's intended.
+> **⚠️ Cross-repo APP BUG, re-diagnosed 2026-08-05 (app side, not site). Not a docs
+> disagreement — don't "resolve" it by editing site copy.** Verified in the app repo:
+> - **The app default is unequivocally Anonymous.** `surveyLib/domain/serverLogic.py:156`
+>   provisions a new server with `defaultAnonymousMode=AnonymousModes.MoreAnonymous`, and
+>   per the enum at `surveyLib/model/constants.py:164`, `MoreAnonymous` = Anonymous
+>   (`Yes` = Semi-Private, `No` = Transparent). This confirms `content.md` and the
+>   anonymous-surveys guide. **Settled; stop re-litigating it.**
+> - **The bug is that the API ignores that setting.**
+>   `web2/public_api/routes/projects.py:505` reads
+>   `... if req.privacy_mode else AnonymousModes.Yes` — omitting `privacy_mode` hardcodes
+>   **Semi-Private**, and never consults `settings.defaultAnonymousMode`. So it overrides
+>   both the product default *and* whatever the community configured: a survey created via
+>   API is **less private than the identical survey created in the app**. Fix = read the
+>   server setting instead of hardcoding. `/api` documents current behavior accurately and
+>   tells callers to set it explicitly, so the site is safe either way.
+> - **Latent, spotted alongside:** `discordSurvey/main.py:2186` falls back to
+>   `AnonymousModes.Confidential`, which **is not a member of that enum** and would raise
+>   `AttributeError`. Only reachable when `settings.defaultAnonymousMode` is `None` (enum
+>   members are always truthy), so it is dormant, not live. Worth a look on the app side.
 >
 > **Note:** content ROI stays **migration-gated to ~Q4** (branded recovered, non-branded
 > still lagging). API/agent GEO was picked partly because **LLM citation doesn't wait on
@@ -519,7 +551,34 @@ groundwork converts into citations and organic traffic. One page per intent.
       interlinked with the existing **/use-cases/get-things-done** ("forms, reinvented")
       page; (b) work the "app"/"form" vocabulary into titles/H2s/copy on existing pages
       so we're eligible at all. Pairs with the homepage messaging-evolution backlog item.
-- [ ] Add `FAQPage` schema to each new content page (pattern in `TemplatePage.astro`)
+- [x] **`FAQPage` schema for blog posts — MECHANISM SHIPPED (2026-08-05).** Optional
+      `faq: [{q, a}]` field on the blog collection (`content.config.ts`);
+      `BlogPost.astro` now emits `[BlogPosting, FAQPage]` instead of a bare
+      `BlogPosting`, and **renders the Q&A visibly** at the end of the post. Visible
+      rendering is required, not decorative: Google's guidelines say FAQ markup must
+      match on-page content, and for GEO the visible Q&A is the thing that actually gets
+      quoted. Answers accept inline HTML for links; it is stripped for the JSON-LD.
+      Posts without the field are byte-for-byte unchanged (verified). **Backfilled on
+      eight posts, 35 questions total**, taken from the Search Console clusters above:
+      anonymous-surveys (5 Qs: *are discord polls anonymous*, *can you make discord polls
+      anonymous*, default mode, duplicate-blocking, the rewards/anonymity trade-off),
+      native-polls comparison (5: *do discord polls show who voted*, option/character
+      caps, duration, native anonymity, do-I-still-need-a-bot), best-poll-bots (4),
+      how-to-make-a-discord-form (4: *discord form*, *google forms for discord*, web
+      mode), **poll how-to (5: *how to create a poll in discord*, without-a-bot, option
+      limits, anonymous polls, the three ways to start one), survey how-to (4:
+      poll-vs-survey, Discord-vs-web-app, free tier), easypoll-alternative (4),
+      simple-poll-alternative (4)** — the last four added 2026-08-05 once the user
+      confirmed the two how-tos were finished. All eight validated by parsing the built
+      JSON-LD (question counts, exactly one visible FAQ section each, HTML correctly
+      stripped from answer text). Clean `npm run build`.
+      **Deliberately skipped: `subo-vs-google-forms-typeform-discord-communities.md` is
+      still `draft: true`**, so schema on it would render nowhere. Add a block when it
+      publishes (it also still carries em dashes to clear per the `blog-writing` skill).
+      **Same mechanism now closes the open FAQ-schema items in the tutorials-hub and P7
+      sections** for anything rendered through `BlogPost.astro`; page-level Astro routes
+      (`/tutorials`, `/templates/*`) still build their own, as `/api` and
+      `TemplatePage.astro` already do.
 - [ ] Interlink: content → templates → pricing (internal linking lifts the whole cluster)
 
 ### Make the Public API discoverable to AI agents (GEO/AEO for developers)
@@ -599,11 +658,29 @@ agent path deliberately.
         at the existing spec URL works today and puts 100% of docs on-domain.
       - Priority: below the robots.txt fix and below P5 outreach.
 - [ ] **Loose ends found on `api.subo.ai` while analysing the above (2026-08-04):**
-      - **A second, divergent `llms.txt`.** `api.subo.ai/llms.txt` is live (served from
-        `_LLMS_TXT` in `web2/public_api/docs.py`) with different content and base URLs from
-        `subo.gg/llms.txt`. Two `llms.txt` for one entity is the same split-brain the
-        entity-consistency work exists to kill. Consolidate: make the API one minimal and
-        point at `subo.gg/llms.txt`.
+      - [x] **A second, divergent `llms.txt` — FIXED IN THE APP REPO (2026-08-05), awaiting
+        deploy.** `_LLMS_TXT` in `web2/public_api/docs.py` cut from ~300 lines to a short
+        stub (461 → 190 lines in the file) that points at `https://subo.gg/llms.txt` as
+        canonical and keeps only genuinely host-local facts: the API base URL, the
+        `X-API-Key` rule, the string-IDs note, and links to `/docs`, the OpenAPI spec and
+        `subo.gg/api`. Also **repointed `openapi_spec.py`**, whose "For AI agents" line
+        sent agents to the old `api.subo.ai/llms.txt`, and recorded the decision in
+        `web2/public_api/CLAUDE.md` with a **"do not grow it back"** note so the next
+        person adds agent prose to subo-site instead. `docs.py` verified to parse.
+        **The stub deliberately does NOT advertise `/v1/recipes/{slug}`** (still 404s in
+        production, re-confirmed 2026-08-05 — see the bullet below), so it no longer
+        points agents at dead URLs. Ships on the user's next app deploy; verify after with
+        `curl -s https://api.subo.ai/llms.txt`.
+        Original diagnosis, for context:
+        `api.subo.ai/llms.txt` returns **200** with content that disagrees with
+        `subo.gg/llms.txt`, including `Base URLs → Production: https://api.subo.ai`. Two
+        `llms.txt` for one entity, disagreeing on the canonical domain, is the same
+        split-brain the entity-consistency work exists to kill — and it now matters more,
+        since the AI crawlers that were blocked until 2026-08-04 are about to read both
+        for the first time. Served from `_LLMS_TXT` in `web2/public_api/docs.py`.
+        Consolidate: cut the API one to a minimal stub pointing at `subo.gg/llms.txt`.
+        **App-repo edit (edit-only from here; ships on the user's deploy cycle), which is
+        why it does not gate site-side work.** Next in line after the FAQ injector.
       - **`/v1/recipes` advertises 10 recipes whose URLs all 404 in production.** The index
         returns 200 listing `/v1/recipes/<slug>`; fetching one returns 404. The handler
         resolves to the repo-root `docs/recipes/` directory, which likely isn't in the

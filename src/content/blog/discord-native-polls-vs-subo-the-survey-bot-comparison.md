@@ -5,6 +5,17 @@ pubDate: "Jul 30 2026"
 updatedDate: "Jul 30 2026"
 tags: ["comparison", "discord", "polls", "features"]
 author: "Subo Team"
+faq:
+  - q: "Do Discord polls show who voted?"
+    a: "Yes. On a native Discord poll, clicking the vote count reveals who chose each option. That is useful for a casual team vote and a problem for anything sensitive, and there is no way to hide it."
+  - q: "What is the maximum number of options in a Discord poll?"
+    a: "Native Discord polls cap out at 10 answer options, with a 55 character limit on each one. Subo allows up to 24 options, and effectively no character limit in emoji mode."
+  - q: "How long can a Discord poll run?"
+    a: "Native polls run for 24 hours by default and can be set from 1 hour to 1 week. Subo polls can run for any length, set in days, hours and minutes, or with no time limit at all so you close them when you want."
+  - q: "Can you make Discord's native polls anonymous?"
+    a: "No. Anonymous voting is not something Discord's built-in polls support, so every vote is attributable. If you need people to answer honestly about moderation, leadership or anything personal, you need a poll bot with real privacy modes."
+  - q: "Do I still need a poll bot now that Discord has native polls?"
+    a: "For a quick vote in a channel, no. Native polls made the old reaction-poll bots redundant. You still want a bot when the poll has to do more than count hands: anonymous voting, a cap on selections, scoring for a quiz or prediction contest, XP or role rewards, or a full multi-question survey."
 draft: false
 heroImage: "/images/blog/native-polls/subo-poll-toolkit.webp"
 ---

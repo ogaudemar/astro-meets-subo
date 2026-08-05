@@ -6,6 +6,15 @@ tags: ["comparison", "discord", "polls", "poll bot", "easypoll"]
 author: "Subo Team"
 heroImage: "/images/blog/alternative-series/alt-hero-base.webp"
 heroHeadline: "EasyPoll alternative"
+faq:
+  - q: "Is EasyPoll still a good Discord poll bot?"
+    a: "Yes. It covers the polling basics properly: up to 25 options, genuinely anonymous voting, timers, role-restricted voting, live edits, a web dashboard and a public API, in 13 languages. If you want to run a clean free poll and never think about it again, keep it."
+  - q: "What is the best EasyPoll alternative for Discord?"
+    a: "It depends on why you are leaving. If you only need polls, you probably should not switch at all. If you have outgrown polling itself and need multi-question surveys, quiz scoring, or rewards tied to participation, Subo is the alternative that covers what happens after the vote. We build Subo, so weigh that accordingly."
+  - q: "Does EasyPoll support anonymous voting?"
+    a: "Yes. EasyPoll offers genuinely anonymous polls where no one sees who chose what and only the final result is shown. Anonymity on its own is not a reason to switch away from it."
+  - q: "When should you switch from a poll bot to a survey bot?"
+    a: "When the vote is no longer the point. A poll bot ends at the tally. If you need to ask follow-up questions, score answers as a quiz, grant a role or XP based on what someone picked, or analyse open-ended responses, you have outgrown the category rather than the bot."
 draft: false
 ---
 

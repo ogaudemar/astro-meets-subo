@@ -13,6 +13,16 @@ const blog = defineCollection({
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string().optional(),
     heroHeadline: z.string().optional(), // live text overlaid on heroImage (e.g. "EasyPoll alternative")
+    // Optional FAQ block. Renders visibly at the end of the post AND emits
+    // FAQPage JSON-LD (same shape as the templates collection, so the two
+    // surfaces stay one pattern). The rendered copy is the schema's source of
+    // truth: Google requires FAQ markup to match visible page content, and for
+    // GEO the visible Q&A is what actually gets quoted. Answers may contain
+    // inline HTML (e.g. links); it is stripped for the JSON-LD.
+    faq: z.array(z.object({
+      q: z.string(),
+      a: z.string(),
+    })).optional(),
   author: z.string(), // <-- Add this line
   tags: z.array(z.string()).optional(), // <-- Add this line for tags
   draft: z.boolean().optional(), // <-- Add this line for draft status

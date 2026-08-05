@@ -6,6 +6,15 @@ tags: ["comparison", "discord", "polls", "poll bot", "simple poll"]
 author: "Subo Team"
 heroImage: "/images/blog/alternative-series/alt-hero-base.webp"
 heroHeadline: "Simple Poll alternative"
+faq:
+  - q: "What is the best Simple Poll alternative for Discord?"
+    a: "For a quick vote, Discord's own native polls replace Simple Poll entirely and need no bot. If you want control over how the vote runs, anonymity, scheduling, a cap on selections, rewards, or full surveys, use a bot like Subo. We build Subo, so read that with the appropriate scepticism."
+  - q: "Is Simple Poll still working?"
+    a: "Yes. Simple Poll is still maintained and running, with a premium tier for supporters. If it does what you need there is no urgency to leave. The reason to look elsewhere is capability, not whether it will keep working."
+  - q: "Does Simple Poll support anonymous voting?"
+    a: "No. Simple Poll is a reaction-poll bot, and reactions are public by nature, so anyone can see who voted for what. There is no anonymous option."
+  - q: "Why did reaction poll bots become less useful?"
+    a: "Discord shipped native polls in 2024, which cover the same ground without a bot: a real poll UI, a live tally, and a duration. Reaction polls were a workaround for a feature Discord did not have, and now it does."
 draft: false
 ---
 

@@ -5,6 +5,15 @@ pubDate: "Aug 1 2026"
 heroImage: "/images/blog/discord-form/subo-conversation-vs-form.webp"
 author: "Subo Team"
 tags: ["discord form", "discord survey", "forms", "community management", "data collection"]
+faq:
+  - q: "Can you make a form in Discord?"
+    a: "Yes. You add an app that collects structured answers inside the server, so members never leave Discord to fill anything in. With Subo you run <code>/survey</code> and the questions are asked one at a time in the chat, and the answers come back as structured data you can export or analyse."
+  - q: "Is there a Google Forms for Discord?"
+    a: "You can paste a Google Form link into a channel, but it sends people out of Discord to a separate page, which is where most of the drop-off happens. The closer fit is an app that asks the same questions inside the server as a structured conversation, then hands you the same exportable results."
+  - q: "Can people without a Discord account fill in the form?"
+    a: "Yes, if you build it in web mode. A survey runs either in Discord mode, where members answer inside your server, or in web mode, where it lives at a link you can open to anyone with no Discord account needed. It is one mode or the other, so clone the survey if you later want a public web version."
+  - q: "What can you use a Discord form for?"
+    a: "The common ones are moderator and staff applications, event sign-ups, bug reports, order or request intake, and feedback on a recent change. Anything where you need the same set of answers from a lot of people rather than a thread full of free-form replies."
 draft: false
 ---
 

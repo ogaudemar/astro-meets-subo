@@ -6,6 +6,15 @@ updatedDate: "Jul 24 2026"
 tags: ["tutorial", "survey", "discord", "community"] 
 author: "Subo Team"
 heroImage: "/images/blog/survey-tuto/kittens-invite.png"
+faq:
+  - q: "How do you create a survey in Discord?"
+    a: "Add Subo to your server and type <code>/survey</code>. A private thread opens where you answer Subo's questions to build yours: name the survey, write each question, and pick the question type. You can also start from a <a href=\"/templates\">template</a>, have AI draft one with <code>/draft</code>, or build it visually in the <a href=\"https://app.subo.gg\">web app</a>."
+  - q: "What is the difference between a poll and a survey in Discord?"
+    a: "A poll is a single question with a live tally in the channel. A survey is a set of questions asked in sequence, one at a time, with the answers collected per respondent so you can analyse and export them. Subo does both."
+  - q: "Should I build my survey in Discord or in the web app?"
+    a: "Use <code>/survey</code> in Discord for simple, quick surveys. Build in the web app for anything more involved: skip logic, scoring and quizzes, conversational action blocks, team management, or richer analytics. Everything in the Discord flow has a visual equivalent there."
+  - q: "Is Subo free?"
+    a: "Subo follows a freemium model: free for most users, with Premium tiers for power users. Every privacy mode, including Anonymous, is available on all plans. See <a href=\"/pricing\">pricing</a> for what each tier adds."
 draft: false
 ---
 
