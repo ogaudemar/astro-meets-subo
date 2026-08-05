@@ -14,6 +14,7 @@ AI agents can use this API to:
 
 ## Docs
 
+- [API Quickstart & Recipes](https://subo.gg/api): Static, crawlable quickstart plus end-to-end recipes (AI script generation, opening a project, pulling responses, AI analysis, webhook signature verification) with copy-paste curl. Start here.
 - [API Documentation](https://api.subo.ai/docs): Interactive Scalar UI with full endpoint reference
 - [OpenAPI Spec](https://api.subo.ai/v1/openapi.json): Raw OpenAPI 3.1.0 JSON spec — machine-readable
 - [Get an API Key](https://app.subo.gg/app/account): Generate keys in Community Settings → Developer → API Keys
@@ -50,32 +51,48 @@ Key resources:
 
 ## Most Useful Endpoints for AI Agents
 
+All paths below are relative to `https://api.subo.ai/v1`. Almost every endpoint is
+nested under a community: resolve `{communityId}` first with `GET /communities`.
+
 1. **Create Project (with AI script generation)**
    - `POST /communities/{communityId}/projects`
    - Use `intent` field for natural language → full script (e.g. "Measure member satisfaction after the last event")
-   - Alternative: Provide full `script.blocks` manually
-   - Returns project + generated script
+   - `type` is `convo` (multi-question survey) or `poll`; `max_blocks` defaults to 5, max 20
+   - Alternative: Provide full `script.blocks` manually (mutually exclusive with `intent`)
+   - Returns project + generated script; the project starts `inactive`
 
 2. **Replace / Update Script**
-   - `PUT /projects/{projectId}/script`
+   - `PUT /communities/{communityId}/projects/{projectId}/script`
    - Replace entire script when project is inactive
+   - Per-block edits: `POST|PUT|DELETE .../script/blocks[/{blockId}]`
 
 3. **Open Project**
-   - `POST /projects/{projectId}/open`
-   - Makes the survey live in Discord
+   - `POST /communities/{communityId}/projects/{projectId}/open`
+   - Makes the survey live. `delivery.audience` picks the channel:
+     `private`+`discord` (answer in Discord), `private`+`web` (members-only link),
+     `open_web`+`web` (open link, no Discord account needed)
+   - Close early with `POST .../projects/{projectId}/close`
 
 4. **List or Get Responses**
-   - `GET /projects/{projectId}/responses` (paginated)
-   - `GET /projects/{projectId}/responses/{responseId}`
+   - `GET /communities/{communityId}/projects/{projectId}/responses` (paginated; `per_page` max 100)
+   - `GET /communities/{communityId}/projects/{projectId}/responses/{responseId}`
+   - Join on `user_id` (globally unique); `platform_id` is only unique within its `provider` namespace
 
 5. **Trigger AI Analysis**
-   - `POST /projects/{projectId}/analysis`
-   - Generates AI summaries for open-text responses (async)
+   - `POST /communities/{communityId}/projects/{projectId}/analysis` (async; `{"force": true}` re-runs)
+   - `GET` the same path for summaries plus aggregated stats and distributions
 
 6. **Webhooks** (Highly recommended for agents)
-   - `POST /communities/{communityId}/webhooks`
-   - Subscribe to events: `response.submitted`, `analysis.completed`, `project.opened`, `project.closed`, etc.
-   - Includes signature verification for security
+   - `POST /communities/{communityId}/webhooks` with `{url, name, events[]}`
+   - Events: `project.created`, `project.updated`, `project.opened`, `project.closed`,
+     `project.status_changed`, `project.deleted`, `response.submitted`, `analysis.completed`
+   - `signing_secret` is returned once. Deliveries carry `X-Subo-Event`, `X-Subo-Delivery`
+     and `X-Subo-Signature: sha256=<hmac hex>` (HMAC-SHA256 over the raw body)
+   - Retries at 30s, 5m, 30m, 2h, 8h; deliveries are at-least-once, so dedupe on `X-Subo-Delivery`
+
+7. **Clone a Template**
+   - `GET /templates`, then `POST /communities/{communityId}/templates/{templateId}/clone`
+   - Deep clone (script, scoring, grading, action blocks); source-server bindings stripped
 
 ## Key Features Agents Love
 - **AI Script Generation**: Turn a plain-text goal into a complete multi-block survey script in one call.
@@ -92,3 +109,8 @@ Key resources:
 Base URL: https://api.subo.ai
 Version: /v1/ (non-breaking changes in-place; breaking changes under /v2/)
 Idempotency: Pass `Idempotency-Key` (UUID v4) header on write operations.
+Block types: `single_punch`, `multi_punch`, `open_text`, `open_numeric`, `content_block`, `action_block`, `calculated_block`.
+Privacy modes: `transparent`, `semi-private`, `anonymous` (the API applies `semi-private` when `privacy_mode` is omitted — set it explicitly when anonymity matters).
+Errors: `400 invalid_request`, `402 payment_required` (out of bot credits / tier-gated), `403 forbidden`, `404 not_found`, `429 rate_limit_exceeded` (honor `Retry-After`).
+
+Worked examples with copy-paste curl for all of the above: https://subo.gg/api

@@ -1,0 +1,79 @@
+{
+  "_comment": "Machine-checkable facts about the Subo Public API, mirrored from the app repo (web2/public_api). src/pages/api.astro renders its reference tables from this file, and scripts/check-api-drift.mjs asserts every value here still matches the Python source. Do not hand-edit a value without running `npm run check:api`.",
+  "baseUrl": "https://api.subo.ai/v1",
+  "authHeader": "X-API-Key",
+  "keyPrefix": "sbo_live_",
+  "signatureHeader": "X-Subo-Signature",
+  "signaturePrefix": "sha256=",
+
+  "blockTypes": [
+    { "type": "single_punch", "desc": "Pick one option. Also covers yes/no." },
+    { "type": "multi_punch", "desc": "Pick several options." },
+    { "type": "open_text", "desc": "Free text. The input for AI analysis." },
+    { "type": "open_numeric", "desc": "A number." },
+    { "type": "content_block", "desc": "Says something without asking anything." },
+    { "type": "action_block", "desc": "Grants XP, a role or an achievement mid-conversation." },
+    { "type": "calculated_block", "desc": "Computes a value from earlier answers." }
+  ],
+
+  "privacyModes": [
+    { "mode": "transparent", "desc": "Answers are attributed openly." },
+    { "mode": "semi-private", "desc": "Admins can see individual answers; other members cannot." },
+    { "mode": "anonymous", "desc": "Nobody, including admins, can tie an answer to a member." }
+  ],
+  "privacyDefaultOnCreate": "semi-private",
+
+  "rateLimits": [
+    { "tier": "Free", "tierKey": "Basic", "rpm": 60 },
+    { "tier": "Premium", "tierKey": "Premium", "rpm": 300 },
+    { "tier": "VIP", "tierKey": "VIP", "rpm": 600 },
+    { "tier": "Custom Bot", "tierKey": "CustomBot", "rpm": 1000 }
+  ],
+
+  "webhookEvents": [
+    "project.created",
+    "project.updated",
+    "project.opened",
+    "project.closed",
+    "project.status_changed",
+    "project.deleted",
+    "response.submitted",
+    "analysis.completed"
+  ],
+  "premiumWebhookEvents": ["response.submitted"],
+  "webhookRetriesSeconds": [30, 300, 1800, 7200, 28800],
+  "webhookTimeoutSeconds": 10,
+
+  "webhookHeaders": [
+    { "name": "X-Subo-Event", "desc": "The event type, for example response.submitted" },
+    { "name": "X-Subo-Delivery", "desc": "A unique event id, useful for deduplication" },
+    { "name": "X-Subo-Signature", "desc": "sha256=<hmac hex> over the raw body" }
+  ],
+
+  "errorCodes": [
+    { "status": 400, "code": "invalid_request", "cause": "Bad body, unknown block type, or two mutually exclusive script sources." },
+    { "status": 402, "code": "payment_required", "cause": "Out of bot credits for an AI call, or a feature above your tier." },
+    { "status": 403, "code": "forbidden", "cause": "A Creator-scoped key reaching for a project it does not own." },
+    { "status": 404, "code": "not_found", "cause": "Wrong community or project id for this key." },
+    { "status": 429, "code": "rate_limit_exceeded", "cause": "Over the tier limit. Wait Retry-After seconds." }
+  ],
+
+  "documentedPaths": [
+    "/communities",
+    "/communities/{communityId}/projects",
+    "/communities/{communityId}/projects/{projectId}",
+    "/communities/{communityId}/projects/{projectId}/open",
+    "/communities/{communityId}/projects/{projectId}/close",
+    "/communities/{communityId}/projects/{projectId}/script",
+    "/communities/{communityId}/projects/{projectId}/script/blocks",
+    "/communities/{communityId}/projects/{projectId}/script/blocks/{blockId}",
+    "/communities/{communityId}/projects/{projectId}/responses",
+    "/communities/{communityId}/projects/{projectId}/responses/{responseId}",
+    "/communities/{communityId}/projects/{projectId}/analysis",
+    "/communities/{communityId}/webhooks",
+    "/communities/{communityId}/webhooks/{webhookId}/test",
+    "/communities/{communityId}/webhooks/{webhookId}/deliveries",
+    "/templates",
+    "/communities/{communityId}/templates/{templateId}/clone"
+  ]
+}

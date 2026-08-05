@@ -1,0 +1,794 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTA from '../components/CTA.astro';
+import translations from '../content/translations/en.json';
+import apiSurface from '../data/api-surface.json';
+
+// The on-domain Subo API quickstart + recipes page.
+//
+// Why this exists (see docs/authority-roadmap.md, P2 "Make the Public API
+// discoverable to AI agents"): the full reference at api.subo.ai/docs is a
+// Scalar UI, which is JS-rendered and therefore close to invisible to crawlers
+// and LLMs. This page is the static, crawlable, quotable surface for the same
+// material: every request and response below is plain HTML an answer engine can
+// cite. It does not try to replace the reference; it covers the handful of
+// end-to-end recipes that answer "how do I actually do X with Subo".
+//
+// Deliberately English-only and not routed through the translations file: this
+// is developer documentation built around code samples, same call as the
+// /tutorials hub.
+//
+// DRIFT CONTROL: the reference tables below render from src/data/api-surface.json,
+// and `npm run check:api` asserts every value in that file still matches the
+// Python source in the app repo. Prose and curl samples cannot be verified
+// automatically, so when the API changes, re-read the recipes too.
+
+const API_BASE = apiSurface.baseUrl;
+const {
+  blockTypes,
+  privacyModes,
+  privacyDefaultOnCreate,
+  rateLimits,
+  webhookEvents,
+  webhookHeaders,
+  errorCodes,
+} = apiSurface;
+const KEY_URL = 'https://app.subo.gg/app/account';
+const REFERENCE_URL = 'https://api.subo.ai/docs';
+const OPENAPI_URL = 'https://api.subo.ai/v1/openapi.json';
+
+const pageTitle = 'Subo API Quickstart and Recipes';
+const pageDescription =
+  'Create Discord surveys and polls programmatically with the Subo REST API. Copy-paste recipes for AI-generated scripts, opening a project, pulling responses, running AI analysis and verifying webhooks.';
+
+const faqs = [
+  {
+    q: 'How do I authenticate with the Subo API?',
+    a: 'Send your key in the X-API-Key header on every request. Keys start with sbo_live_ and are created in the Subo web app under Community Account Tab, then API Keys. Each key is scoped to a single community and inherits your role, and it is shown only once.',
+  },
+  {
+    q: 'What is the Subo API base URL?',
+    a: 'https://api.subo.ai/v1. Non-breaking changes ship in place under /v1; breaking changes would ship under a new version prefix.',
+  },
+  {
+    q: 'Can an AI agent create a Discord survey with the Subo API?',
+    a: 'Yes. Pass an intent field, a plain-text description of what you want to learn, when creating a project and Subo generates the full multi-question script for you. The 201 response contains the generated blocks, so an agent can create a working survey in a single call.',
+  },
+  {
+    q: 'What are the Subo API rate limits?',
+    a: 'Limits are per API key and depend on the community tier: 60 requests per minute on Free, 300 on Premium, 600 on VIP and 1000 on Custom Bot. Every response carries X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset headers, and a 429 includes Retry-After.',
+  },
+  {
+    q: 'How do I get survey responses out of Subo?',
+    a: 'Either poll GET /communities/{communityId}/projects/{projectId}/responses, which is paginated, or subscribe a webhook to the response.submitted event and receive each submission as it happens. Webhooks are the recommended path for pipelines.',
+  },
+  {
+    q: 'How do I verify a Subo webhook signature?',
+    a: 'Compute an HMAC-SHA256 of the raw request body using the signing secret returned when you created the webhook, then compare it to the X-Subo-Signature header, which has the form sha256=<hex>. Always compare with a constant-time function and always hash the raw bytes, not a re-serialized object.',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: pageTitle,
+    description: pageDescription,
+    url: 'https://subo.gg/api',
+    inLanguage: 'en',
+    isPartOf: { '@id': 'https://subo.gg/#website' },
+    publisher: { '@id': 'https://subo.gg/#organization' },
+    about: {
+      '@type': 'SoftwareApplication',
+      name: 'Subo',
+      applicationCategory: 'BusinessApplication',
+    },
+    proficiencyLevel: 'Beginner',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+
+// On-page nav. Keep in sync with the section ids below.
+const toc = [
+  { href: '#quickstart', label: 'Quickstart' },
+  { href: '#generate', label: 'Generate a survey with AI' },
+  { href: '#script', label: 'Write the script yourself' },
+  { href: '#open', label: 'Open it to an audience' },
+  { href: '#responses', label: 'Pull the responses' },
+  { href: '#analysis', label: 'Summarize with AI' },
+  { href: '#webhooks', label: 'Webhooks' },
+  { href: '#templates', label: 'Clone a template' },
+  { href: '#reference', label: 'Reference tables' },
+  { href: '#faq', label: 'FAQ' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={pageTitle} description={pageDescription} jsonLd={jsonLd} />
+  </head>
+  <body>
+    <Header translations={translations.header} />
+    <main id="main-content">
+
+      <section class="api-hero">
+        <div class="container text-center">
+          <span class="api-eyebrow mono">REST API</span>
+          <h1 class="mono">Run Discord surveys from code</h1>
+          <p class="api-hero__subtitle">
+            The Subo API lets you create conversational surveys and polls, generate
+            their scripts with AI, open them to a Discord server or a web audience,
+            and pull the answers back out. Every recipe below is a working request
+            you can paste into a terminal.
+          </p>
+          <div class="api-hero__ctas">
+            <a class="button button--accent-bg" href={KEY_URL} target="_blank" rel="noopener noreferrer">Get an API key</a>
+            <a class="button button--primary-border" href={REFERENCE_URL} target="_blank" rel="noopener noreferrer">Full endpoint reference</a>
+          </div>
+          <p class="api-hero__meta mono">
+            Base URL <code>{API_BASE}</code> &middot; OpenAPI 3.1 spec at
+            <a href={OPENAPI_URL} target="_blank" rel="noopener noreferrer">/v1/openapi.json</a>
+          </p>
+        </div>
+      </section>
+
+      <div class="container api-body">
+        <nav class="api-toc" aria-label="On this page">
+          <span class="api-toc__label mono">On this page</span>
+          <ul>
+            {toc.map((item) => (
+              <li><a href={item.href}>{item.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+
+        <div class="api-content">
+
+          <!-- ── Quickstart ─────────────────────────────────────────────── -->
+          <section id="quickstart" class="api-section">
+            <h2 class="mono">Quickstart</h2>
+            <p>
+              Three steps: get a key, find your community id, make a call. Everything
+              after that is the same pattern.
+            </p>
+
+            <h3>1. Create an API key</h3>
+            <p>
+              Open the <a href={KEY_URL} target="_blank" rel="noopener noreferrer">Subo web app</a>,
+              go to <strong>Community Account Tab &rarr; API Keys</strong> and create a key.
+              It is scoped to that one community and inherits your role, so you can
+              optionally cap it at Creator access. The key starts with
+              <code>sbo_live_</code> and is shown once, so store it before closing the dialog.
+            </p>
+            <p>Send it on every request:</p>
+            <pre><code>X-API-Key: sbo_live_xxxxxxxxxxxxxxxxxxxxxxxx</code></pre>
+
+            <h3>2. Find your community id</h3>
+            <p>
+              Almost every endpoint is nested under a community. List the ones your key
+              can reach:
+            </p>
+            <pre><code>{`curl "${API_BASE}/communities" \\
+  -H "X-API-Key: $SUBO_API_KEY"`}</code></pre>
+            <p>
+              For a Discord community the id is the server (snowflake) id, returned as
+              a string.
+            </p>
+
+            <h3>3. Send a write request</h3>
+            <p>
+              Writes take an <code>Idempotency-Key</code> header holding a UUID v4. Retry
+              a failed request with the same key and Subo replays the original result
+              instead of creating a duplicate project.
+            </p>
+            <pre><code>{`-H "Idempotency-Key: $(uuidgen)"`}</code></pre>
+          </section>
+
+          <!-- ── AI generation ──────────────────────────────────────────── -->
+          <section id="generate" class="api-section">
+            <h2 class="mono">Recipe: generate a survey from a plain-English goal</h2>
+            <p>
+              This is the shortest path from nothing to a working survey, and the one
+              worth reaching for if you are writing an agent. Describe what you want to
+              learn in the <code>intent</code> field and Subo writes the script:
+            </p>
+            <pre><code>{`curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/projects" \\
+  -H "X-API-Key: $SUBO_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -H "Idempotency-Key: $(uuidgen)" \\
+  -d '{
+    "name": "Post-event feedback",
+    "type": "convo",
+    "intent": "Measure how members felt about the weekend tournament and collect suggestions for the next one",
+    "max_blocks": 6,
+    "privacy_mode": "anonymous"
+  }'`}</code></pre>
+            <p>
+              The <code>201</code> response includes the generated <code>script</code> with its
+              blocks plus a <code>credits_used</code> figure. A few notes that save a round trip:
+            </p>
+            <ul>
+              <li><code>type</code> is <code>convo</code> for a multi-question survey or <code>poll</code> for a single question.</li>
+              <li><code>max_blocks</code> defaults to 5 and is capped at 20.</li>
+              <li>
+                <code>intent</code>, an explicit <code>script</code> and
+                <code>source_project_id</code> are mutually exclusive. Send exactly one.
+              </li>
+              <li>
+                AI generation spends bot credits. With an empty balance the call returns
+                <code>402 payment_required</code> rather than a partial survey.
+              </li>
+              <li>
+                The script is generated in the community's configured language, not the
+                language of your intent string.
+              </li>
+            </ul>
+            <p>
+              New projects start <strong>inactive</strong>. Nobody can answer yet, which
+              gives you room to review or edit before
+              <a href="#open">opening it</a>.
+            </p>
+          </section>
+
+          <!-- ── Explicit script ────────────────────────────────────────── -->
+          <section id="script" class="api-section">
+            <h2 class="mono">Recipe: write the script yourself</h2>
+            <p>
+              When you want exact control, send the blocks instead of an intent. Same
+              endpoint, different field:
+            </p>
+            <pre><code>{`curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/projects" \\
+  -H "X-API-Key: $SUBO_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -H "Idempotency-Key: $(uuidgen)" \\
+  -d '{
+    "name": "Server health check",
+    "type": "convo",
+    "privacy_mode": "anonymous",
+    "script": {
+      "blocks": [
+        {
+          "type": "single_punch",
+          "title": "How often do you hang out here?",
+          "options": [
+            { "value": "Every day" },
+            { "value": "A few times a week" },
+            { "value": "Rarely" }
+          ]
+        },
+        {
+          "type": "open_text",
+          "title": "What would make this server better?"
+        }
+      ]
+    }
+  }'`}</code></pre>
+            <p>
+              To replace the script of an existing project, <code>PUT</code> it whole. The
+              project has to be inactive:
+            </p>
+            <pre><code>{`PUT ${API_BASE}/communities/{communityId}/projects/{projectId}/script`}</code></pre>
+            <p>
+              Individual blocks have their own endpoints for surgical edits:
+              <code>POST .../script/blocks</code> to append,
+              <code>PUT .../script/blocks/&#123;blockId&#125;</code> to change one,
+              <code>DELETE</code> to drop it.
+            </p>
+            <p>
+              Skip logic is worth calling out. You can hand-write the raw
+              <code>precondition</code> mini-language, but the API also accepts a structured
+              <code>show_when</code> / <code>hide_when</code> object and compiles it into a
+              correct precondition for you. Prefer the structured form: it removes a
+              whole class of quoting and inversion mistakes.
+            </p>
+          </section>
+
+          <!-- ── Open ───────────────────────────────────────────────────── -->
+          <section id="open" class="api-section">
+            <h2 class="mono">Recipe: open the project to an audience</h2>
+            <p>
+              Opening is what makes a project live. It is also where you choose whether
+              this runs inside Discord or as a web link.
+            </p>
+            <pre><code>{`curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/projects/$PROJECT_ID/open" \\
+  -H "X-API-Key: $SUBO_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -H "Idempotency-Key: $(uuidgen)" \\
+  -d '{
+    "delivery": {
+      "audience": {
+        "participation": "private",
+        "response_channel": "discord"
+      },
+      "invitation": {
+        "post_channel_id": "123456789012345678",
+        "message": "Two minutes of your time, and you get the role."
+      },
+      "closing": {
+        "mode": "scheduled",
+        "time": "2026-09-01T18:00:00Z"
+      }
+    }
+  }'`}</code></pre>
+            <p>The audience combination decides who can answer and where:</p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>participation</th><th>response_channel</th><th>What you get</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>private</code></td>
+                    <td><code>discord</code></td>
+                    <td>Members answer in your Discord server, as a conversation with the bot.</td>
+                  </tr>
+                  <tr>
+                    <td><code>private</code></td>
+                    <td><code>web</code></td>
+                    <td>A link, but only your verified members can complete it.</td>
+                  </tr>
+                  <tr>
+                    <td><code>open_web</code></td>
+                    <td><code>web</code></td>
+                    <td>An open link anyone can answer, no Discord account needed.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Add <code>required_role_ids</code> under <code>audience</code> to restrict a
+              Discord audience to specific roles. To close early, call
+              <code>POST .../projects/&#123;projectId&#125;/close</code>.
+            </p>
+          </section>
+
+          <!-- ── Responses ──────────────────────────────────────────────── -->
+          <section id="responses" class="api-section">
+            <h2 class="mono">Recipe: pull the responses</h2>
+            <pre><code>{`curl "${API_BASE}/communities/$COMMUNITY_ID/projects/$PROJECT_ID/responses?page=1&per_page=100" \\
+  -H "X-API-Key: $SUBO_API_KEY"`}</code></pre>
+            <p>The shape you get back:</p>
+            <pre><code>{`{
+  "data": [
+    {
+      "id": "...",
+      "project_id": "...",
+      "submitted_at": "2026-08-02T14:03:11Z",
+      "session_number": 1,
+      "user_id": "...",
+      "platform_id": "...",
+      "provider": "discord",
+      "answers": [
+        { "block_id": 1, "option_id": 2, "value": "A few times a week" },
+        { "block_id": 2, "value": "More events in EU hours." }
+      ]
+    }
+  ],
+  "pagination": { "page": 1, "per_page": 100, "total": 214, "has_more": true }
+}`}</code></pre>
+            <ul>
+              <li><code>per_page</code> defaults to 20 and maxes out at 100. Page until <code>has_more</code> is false.</li>
+              <li>
+                <code>user_id</code> is the Subo user id and the only globally unique key.
+                <code>platform_id</code> is the account id inside its platform namespace, so
+                it is only meaningful paired with <code>provider</code>. Join on
+                <code>user_id</code>.
+              </li>
+              <li>
+                One respondent can appear more than once when a project allows repeat
+                completions. <code>session_number</code> separates those runs.
+              </li>
+              <li>
+                In anonymous mode the answers still come back, but they are not
+                attributable to a member.
+              </li>
+            </ul>
+            <p>
+              Polling this endpoint on a timer works, but <a href="#webhooks">webhooks</a>
+              are the better pipeline.
+            </p>
+          </section>
+
+          <!-- ── Analysis ───────────────────────────────────────────────── -->
+          <section id="analysis" class="api-section">
+            <h2 class="mono">Recipe: summarize open-ended answers with AI</h2>
+            <p>
+              Free-text answers are the ones nobody has time to read. Trigger a
+              summarization pass over the <code>open_text</code> blocks:
+            </p>
+            <pre><code>{`curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/projects/$PROJECT_ID/analysis" \\
+  -H "X-API-Key: $SUBO_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{ "force": false }'`}</code></pre>
+            <p>
+              The job runs asynchronously, so the POST returns as soon as it is queued.
+              Read the result with a <code>GET</code> on the same path, which also returns
+              the aggregated stats and distributions for the closed questions:
+            </p>
+            <pre><code>{`curl "${API_BASE}/communities/$COMMUNITY_ID/projects/$PROJECT_ID/analysis" \\
+  -H "X-API-Key: $SUBO_API_KEY"`}</code></pre>
+            <p>
+              Set <code>force: true</code> to re-run a summary that already exists, for
+              instance after a wave of new responses. Analysis spends bot credits and
+              returns <code>402 payment_required</code> on an empty balance. Rather than
+              polling for completion, subscribe to <code>analysis.completed</code>.
+            </p>
+          </section>
+
+          <!-- ── Webhooks ───────────────────────────────────────────────── -->
+          <section id="webhooks" class="api-section">
+            <h2 class="mono">Recipe: subscribe to webhooks and verify them</h2>
+            <p>Register an endpoint and the events you care about:</p>
+            <pre><code>{`curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/webhooks" \\
+  -H "X-API-Key: $SUBO_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "name": "Responses to our warehouse",
+    "url": "https://example.com/hooks/subo",
+    "events": ["response.submitted", "analysis.completed", "project.closed"]
+  }'`}</code></pre>
+            <p>
+              The response contains <code>signing_secret</code>, shown once and never again.
+              Store it before you close the terminal. Every delivery then arrives with
+              these headers:
+            </p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Header</th><th>Value</th></tr></thead>
+                <tbody>
+                  {webhookHeaders.map((h) => (
+                    <tr><td><code>{h.name}</code></td><td>{h.desc}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p>Verifying in Node:</p>
+            <pre><code>{`import crypto from "node:crypto";
+
+// req.body must be the RAW bytes, not a parsed and re-serialized object.
+function verifySuboWebhook(rawBody, header, secret) {
+  const expected =
+    "sha256=" + crypto.createHmac("sha256", secret).update(rawBody).digest("hex");
+  const a = Buffer.from(expected);
+  const b = Buffer.from(header || "");
+  return a.length === b.length && crypto.timingSafeEqual(a, b);
+}`}</code></pre>
+            <p>Things worth knowing before you rely on this in production:</p>
+            <ul>
+              <li>
+                Hash the <strong>raw request body</strong>. Re-serializing the JSON changes
+                the bytes and every signature check will fail.
+              </li>
+              <li>
+                Compare in constant time. A plain <code>===</code> leaks timing information.
+              </li>
+              <li>
+                Subo waits 10 seconds for your endpoint, then retries after 30s, 5m, 30m,
+                2h and 8h before abandoning the delivery. Return a 2xx fast and do the
+                real work off the request path.
+              </li>
+              <li>
+                Deliveries are at-least-once. Deduplicate on <code>X-Subo-Delivery</code>.
+              </li>
+              <li>
+                <code>response.submitted</code> requires a paid tier. The project lifecycle
+                events are available to everyone.
+              </li>
+              <li>
+                <code>POST .../webhooks/&#123;webhookId&#125;/test</code> fires a test delivery, and
+                <code>GET .../webhooks/&#123;webhookId&#125;/deliveries</code> shows attempt history
+                with the status codes you returned. Use both before blaming the network.
+              </li>
+            </ul>
+            <p>Available events:</p>
+            <ul class="api-events">
+              {webhookEvents.map((e) => (
+                <li><code>{e}</code></li>
+              ))}
+            </ul>
+          </section>
+
+          <!-- ── Templates ──────────────────────────────────────────────── -->
+          <section id="templates" class="api-section">
+            <h2 class="mono">Recipe: clone a ready-made template</h2>
+            <p>
+              Subo ships curated <a href="/templates">templates</a>: quizzes, prediction
+              contests, feedback surveys. Cloning one is faster than writing a script and
+              carries over the scoring, grading and reward blocks that make it work.
+            </p>
+            <pre><code>{`# Browse the catalog
+curl "${API_BASE}/templates" -H "X-API-Key: $SUBO_API_KEY"
+
+# Clone one into your community
+curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/templates/$TEMPLATE_ID/clone" \\
+  -H "X-API-Key: $SUBO_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -H "Idempotency-Key: $(uuidgen)" \\
+  -d '{ "name": "Season 4 prediction contest" }'`}</code></pre>
+            <p>
+              The clone is a deep copy: script, scoring buckets, grading, action blocks
+              and calculated fields all come along. Anything bound to the source server,
+              such as channels, roles and schedules, is stripped so you start clean. The
+              new project arrives inactive, ready for <a href="#open">an open call</a>.
+            </p>
+            <p>
+              A machine-readable list of every public template, with slugs and clone
+              links, lives at <a href="/templates.json">/templates.json</a>.
+            </p>
+          </section>
+
+          <!-- ── Reference ──────────────────────────────────────────────── -->
+          <section id="reference" class="api-section">
+            <h2 class="mono">Reference tables</h2>
+
+            <h3>Block types</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Type</th><th>What it does</th></tr></thead>
+                <tbody>
+                  {blockTypes.map((b) => (
+                    <tr><td><code>{b.type}</code></td><td>{b.desc}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Privacy modes</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th><code>privacy_mode</code></th><th>Who can see who said what</th></tr></thead>
+                <tbody>
+                  {privacyModes.map((m) => (
+                    <tr><td><code>{m.mode}</code></td><td>{m.desc}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p class="api-note">
+              Omit <code>privacy_mode</code> on create and the API applies
+              <code>{privacyDefaultOnCreate}</code>. Set it explicitly when anonymity
+              matters rather than relying on the default.
+            </p>
+
+            <h3>Rate limits</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Tier</th><th>Requests per minute</th></tr></thead>
+                <tbody>
+                  {rateLimits.map((r) => (
+                    <tr><td>{r.tier}</td><td>{r.rpm}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Limits are counted per key in a one-minute window. Every response carries
+              <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code> and
+              <code>X-RateLimit-Reset</code>; a <code>429</code> adds <code>Retry-After</code>.
+              See <a href="/pricing">pricing</a> for what else each tier includes.
+            </p>
+
+            <h3>Errors</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Status</th><th>Code</th><th>Usual cause</th></tr></thead>
+                <tbody>
+                  {errorCodes.map((e) => (
+                    <tr><td>{e.status}</td><td><code>{e.code}</code></td><td>{e.cause}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- ── FAQ ────────────────────────────────────────────────────── -->
+          <section id="faq" class="api-section">
+            <h2 class="mono">FAQ</h2>
+            <dl class="api-faq">
+              {faqs.map((f) => (
+                <div class="api-faq__item">
+                  <dt>{f.q}</dt>
+                  <dd>{f.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+
+          <section class="api-section api-next">
+            <h2 class="mono">Where to go next</h2>
+            <ul>
+              <li><a href={REFERENCE_URL} target="_blank" rel="noopener noreferrer">Full endpoint reference</a> for every field and response shape.</li>
+              <li><a href={OPENAPI_URL} target="_blank" rel="noopener noreferrer">OpenAPI 3.1 spec</a> to generate a client or feed an agent.</li>
+              <li><a href="/llms.txt">llms.txt</a> if you are pointing an AI agent at Subo.</li>
+              <li><a href="/tutorials">Tutorials</a> for the no-code path through the same features.</li>
+              <li><a href="/support">Support server</a> when something behaves in a way this page did not predict.</li>
+            </ul>
+          </section>
+
+        </div>
+      </div>
+
+      <CTA translations={translations} />
+    </main>
+    <Footer translations={translations.footer} />
+  </body>
+</html>
+
+<style>
+.api-hero {
+  padding: 140px 0 50px;
+  background:
+    radial-gradient(70% 55% at 50% 0%, var(--bg-glow-purple), transparent 70%),
+    var(--bg-base);
+}
+.api-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.api-hero h1 {
+  font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.api-hero__subtitle {
+  font-size: 1.15rem;
+  color: var(--grey-light);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.api-hero__ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0 1.25rem;
+}
+.api-hero__meta {
+  font-size: 0.85rem;
+  color: var(--grey-light);
+}
+.api-hero__meta code {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+.api-body {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+  padding-bottom: 3rem;
+}
+.api-toc {
+  position: sticky;
+  top: 100px;
+  padding: 1.25rem 0;
+}
+.api-toc__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.api-toc ul { list-style: none; padding: 0; margin: 0; }
+.api-toc li { margin-bottom: 0.5rem; }
+.api-toc a {
+  color: var(--grey-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 0.75rem;
+  display: block;
+}
+.api-toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+
+.api-content { min-width: 0; }
+.api-section { padding: 2rem 0; scroll-margin-top: 90px; }
+.api-section + .api-section { border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.api-section h2 {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 800;
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+.api-section h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 2rem 0 0.75rem;
+}
+.api-section p { color: var(--grey-light); line-height: 1.7; margin: 0 0 1rem; }
+.api-section ul { color: var(--grey-light); line-height: 1.7; padding-left: 1.2rem; margin: 0 0 1rem; }
+.api-section li { margin-bottom: 0.5rem; }
+.api-section a { color: var(--primary-light); }
+.api-section strong { color: #fff; }
+.api-section code {
+  font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+  font-size: 0.88em;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  word-break: break-word;
+}
+.api-section pre {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  overflow-x: auto;
+  margin: 0 0 1.25rem;
+}
+.api-section pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #e6e6ee;
+  white-space: pre;
+  word-break: normal;
+}
+.api-note {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+}
+.api-events {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+}
+.api-events li { margin: 0; }
+
+.table-wrap { overflow-x: auto; margin: 0 0 1.5rem; }
+.api-section table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  color: var(--grey-light);
+}
+.api-section th,
+.api-section td {
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: top;
+}
+.api-section th { color: #fff; font-weight: 700; white-space: nowrap; }
+
+.api-faq { margin: 0; }
+.api-faq__item { padding: 1.1rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.api-faq dt { font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+.api-faq dd { margin: 0; color: var(--grey-light); line-height: 1.7; }
+
+@media (max-width: 900px) {
+  .api-body { grid-template-columns: 1fr; gap: 0; }
+  .api-toc { position: static; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+  .api-toc ul { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; }
+  .api-toc li { margin: 0; }
+  .api-hero { padding-top: 110px; }
+}
+</style>

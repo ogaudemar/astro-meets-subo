@@ -63,6 +63,9 @@ Detail pages, one per homepage use-case category (linked from `UseCases.astro` c
 ## Developer & LLM Discovery
 
 - `public/llms.txt` — Static file served at `subo.gg/llms.txt`; describes the product and API for LLM/AI agent discoverability. Update when the API or major features change.
+- `src/pages/api.astro` — `subo.gg/api`, the on-domain API quickstart + recipes page. Static and crawlable on purpose (the Scalar reference is JS-rendered and invisible to LLMs). **English-only and not routed through the translations file**, same call as the `/tutorials` hub: it's code samples, not marketing copy. Carries `TechArticle` + `FAQPage` schema.
+- `src/data/api-surface.json` — the machine-checkable facts behind that page (routes, block types, privacy modes, webhook events + headers, per-tier rate limits, error codes). `api.astro` renders its reference tables from this file; **don't hand-write those tables back into the page**, it would un-wire the guard below.
+- **Guarding against API drift:** `npm run check:api` (also part of `npm run check`) re-derives the above from the app repo's Python source and fails if our copy disagrees, naming what to add or remove. It finds the app repo via `$SUBO_APP_REPO` or `../subo`, reads it read-only, and **skips with exit 0** when it isn't checked out. It verifies names and numbers only — a field that keeps its name and changes its meaning slips through, so re-read the recipes when the API changes. The app repo's `web2/public_api/CLAUDE.md` and the `release-brief` template both point back here.
 - API docs live at `api.subo.ai/docs` (Scalar UI); OpenAPI spec at `api.subo.ai/v1/openapi.json`
 - API key generation: `app.subo.gg/app/account`
 

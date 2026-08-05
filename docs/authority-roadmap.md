@@ -239,29 +239,48 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE (next session) — P5 roundup outreach CHOSEN + kit built (2026-08-03); next = send the pitches
+> ### ▶ RESUME HERE (next session) — API/agent GEO page SHIPPED (2026-08-04); two threads open
 >
-> **▶ IN PROGRESS: (b) P5 roundup outreach.** Chose the non-migration-gated backlink lever
-> over more (gated) content. Built **[roundup-outreach-kit.md](roundup-outreach-kit.md)**:
-> tiered target list (research pass 2026-08-03), reusable pitch templates (A/B/C), and a
-> ready-to-paste Subo entry in roundup voice. **Key finding: Subo is ALREADY listed in
-> CommunityOne** (the roadmap's named example outlet, updated 2026-07-09) — but mislabeled
-> "Fun bots," so the warmest lead is an *upgrade* (template C), not a cold pitch. P5 validated.
+> **✅ DONE (c) API/agent GEO — `subo.gg/api` built and live in-repo (2026-08-04).** Static,
+> crawlable quickstart + 7 recipes + reference tables + FAQ, written against the real
+> `web2/public_api` routes. `llms.txt` repointed at it (and its **wrong endpoint paths
+> fixed** — see the P2 API subsection). Homepage `DeveloperAPI` + footer interlinked.
+> Clean `npm run build`. **First `FAQPage` schema on the site** — reuse the pattern for
+> the open schema gaps.
 >
-> **▶ NEXT (user action — sending is yours):** work the kit's Tier 1 first (CommunityOne
-> reclassify → Stickers.gg / Space-node / BotGhost cold pitches), then Tier 2 (Beebom,
-> Rumie). Log outcomes in the kit's Status columns; add each live placement's
-> `$referring_domain` to the P0 funnel breakdown to see which roundups convert.
+> **▶ THREAD 1 (user action, still open): P5 roundup outreach.** The kit
+> **[roundup-outreach-kit.md](roundup-outreach-kit.md)** is built (2026-08-03): tiered
+> targets, pitch templates A/B/C, ready-to-paste Subo entry. **Subo is ALREADY listed in
+> CommunityOne** but mislabeled "Fun bots," so the warmest lead is an *upgrade* (template C),
+> not a cold pitch. **Sending is yours.** Tier 1 first (CommunityOne reclassify →
+> Stickers.gg / Space-node / BotGhost), then Tier 2 (Beebom, Rumie). Log outcomes in the
+> kit; feed each live placement's `$referring_domain` into the P0 funnel breakdown.
 >
-> **Deferred (still open when you want in-repo work):**
-> - **(a) Form/no-"bot" follow-ons** — FR `/survey-convos` retune, more "app"/"form"
->   vocabulary in existing titles/H2s, standalone `/draft` page. Migration-gated to ~Q4.
-> - **(c) API/agent GEO + `api.subo.ai → api.subo.gg` consolidation** — entity-consistency
->   loose end; I can do the crawlable API-recipes page + `llms.txt` examples in-repo, infra
->   (DNS/301) is yours.
+> **▶ THREAD 2 (in-repo, pick one next session):**
+> - **(a) Form/no-"bot" follow-ons** — FR `/survey-convos` retune (`sondage discord` is a
+>   real market), more "app"/"form" vocabulary in existing titles/H2s, standalone `/draft`
+>   page. Migration-gated to ~Q4.
+> - **(d) `FAQPage` schema for blog posts** — `/api` proves the pattern; the blog layout
+>   still injects `BlogPosting` only. A frontmatter-driven injector would close the same
+>   `[ ]` that recurs in three sections (P2 content, tutorials hub, P7 templates).
+> - **(e) Localize `/api`?** — probably not. Developer docs in EN is the norm and the
+>   samples don't translate. Noted so it isn't re-litigated.
+>
+> **⚠️ Cross-repo product question raised 2026-08-04 (app side, not site):** the API
+> defaults `privacy_mode` to **semi-private** when the field is omitted
+> (`routes/projects.py`: `AnonymousModes.Yes`), but the **app default is Anonymous**
+> (user-confirmed 2026-07-28, documented in `content.md` + the anonymous-surveys guide).
+> `/api` documents the API behavior accurately and tells callers to set it explicitly, but
+> the two surfaces disagree. Worth deciding in the app repo whether that's intended.
 >
 > **Note:** content ROI stays **migration-gated to ~Q4** (branded recovered, non-branded
-> still lagging) — which is exactly why (b) went first. See the migration block up top.
+> still lagging). API/agent GEO was picked partly because **LLM citation doesn't wait on
+> Search Console re-association**. See the migration block up top.
+>
+> **Also shipped since the last RESUME edit (2026-08-01 → 08-03), not otherwise logged here:**
+> the **`/changelog` page** with legacy archive, EN + FR (`2672d2d`); the **XP History**
+> feature announcement + site copy (`1dfd539`) and its FR mirror (`e1a0e06`); the
+> **`feature-launch` project skill** (`973ecbd`).
 >
 > **Done (2026-07):**
 > - **Poll & survey how-tos refreshed** (`how-to-create-a-discord-poll-with-or-without-a-bot.md`,
@@ -449,21 +468,64 @@ my Discord" or to wire one up programmatically, so the **citable, agent-usable s
 matters as much as human-facing pages.** We already have `llms.txt` + the API; feed the
 agent path deliberately.
 
-- [ ] **On-domain, crawlable API recipes.** The API reference (`api.subo.ai/docs`, →
-      `api.subo.gg` once migrated) is a **Scalar UI: JS-rendered, weak for crawl/GEO**
-      (same failing as Notion). Add a **static, crawlable API quickstart + recipes page
-      on subo.gg** ("create a survey via API", "pull results via API", auth/key steps) —
-      the source an LLM can actually quote. Interlink from the homepage DeveloperAPI
-      section + `llms.txt`. (`blog/public-api-launch` exists but is an announcement, not
-      a recipe.)
-- [ ] **Point `llms.txt` explicitly at the API** — OpenAPI spec URL, key-generation
-      URL, and 2–3 canonical request examples inline, so an agent has what it needs.
+- [x] **On-domain, crawlable API recipes — SHIPPED (2026-08-04).** `src/pages/api.astro`
+      → **`subo.gg/api`**, a static quickstart + seven end-to-end recipes written against
+      the real `web2/public_api` source (not the announcement post): AI script generation
+      via `intent`, hand-written scripts + skip logic, opening to a Discord/web/open-web
+      audience, paginated responses, AI analysis, **webhook signature verification with a
+      working Node snippet**, template cloning. Plus crawlable reference tables (block
+      types, privacy modes, per-tier rate limits, error codes) and a 6-question FAQ.
+      Schema: **`TechArticle` + `FAQPage`** (first `FAQPage` on the site — the pattern the
+      open schema-gap items below can copy). EN-only and outside the translations file on
+      purpose, same call as the `/tutorials` hub (it is code samples, not marketing copy).
+      Interlinked: homepage `DeveloperAPI.astro` got an "API Quickstart" primary CTA
+      (conditional on a new `ctaGuide` key so un-translated locales keep the old two
+      buttons), footer Resources now lists **API Quickstart (on-domain)** + API Reference,
+      and the page links out to `/templates`, `/templates.json`, `/tutorials`, `/pricing`,
+      `/llms.txt`. The Scalar UI stays the exhaustive field-level reference; this is the
+      quotable surface. **Also de-risks the `api.subo.gg` move** — the canonical
+      human/agent entry point is now on subo.gg regardless of where Scalar ends up.
+- [x] **Point `llms.txt` explicitly at the API — DONE (2026-08-04).** Added the
+      `subo.gg/api` link as the *first* Docs entry and appended block types, privacy
+      modes and the error table to the footer facts.
+      **⚠️ Fixed a real bug while doing it:** the "Most Useful Endpoints for AI Agents"
+      block had **wrong paths** — script/open/responses/analysis were listed as
+      `/projects/{projectId}/…` when every one of them is nested under
+      `/communities/{communityId}/projects/{projectId}/…`. An agent following `llms.txt`
+      would have built 404-ing requests. All paths corrected against the route table,
+      plus a note to resolve `{communityId}` via `GET /communities` first, the real
+      audience combinations, the full webhook event list, signature header format, retry
+      schedule, and a template-clone entry.
+- [x] **Keep `/api` from rotting — DONE (2026-08-04).** The page mirrors a surface in
+      another repo, which is the classic setup for silent decay. Three layers, weakest
+      last:
+      1. **Automated guard.** `scripts/check-api-drift.mjs` (`npm run check:api`, wired
+         into `npm run check`) re-derives routes, block types, privacy modes, webhook
+         events/headers, tier limits, the signature scheme and the retry schedule from the
+         app repo's Python and fails if `src/data/api-surface.json` disagrees. The page's
+         reference tables now **render from that JSON**, so the checked data and the
+         published page cannot diverge. Verified by inducing six kinds of drift and
+         confirming each was caught. Skips cleanly (exit 0) when the app repo isn't
+         checked out.
+      2. **Edit-time reminder.** `subo/web2/public_api/CLAUDE.md` — a directory-level
+         CLAUDE.md loads when a session touches files there, so it fires while someone is
+         editing a route, not at session start when it would be forgotten.
+      3. **Release handoff.** The `release-brief` template gained an **API surface changes
+         to mirror on the site** section, aimed squarely at what the guard can't catch.
+      **Known limit:** the guard verifies names and numbers, never whether the prose is
+      still true. A field that keeps its name and changes its meaning gets through all
+      three layers unless a human says so — which is why layer 3 asks for it explicitly.
 - [ ] **MCP server = the agent-era "directory" play.** The app's master roadmap has a
       standing **Subo MCP server** (agent-orchestration track). When it ships, list it
       in the emerging **MCP registries/directories** and give it a spoke landing page —
       P1's "bot directories" logic, applied to the agent ecosystem.
 - [ ] **Migrate API docs onto subo.gg** — see the subdomain-consolidation action in the
-      migration block; entity consistency + authority both argue for it.
+      migration block; entity consistency + authority both argue for it. **Less urgent
+      since 2026-08-04:** `subo.gg/api` now carries the on-domain authority and is what
+      `llms.txt`, the homepage and the footer point at first. What's left is the Scalar
+      host itself (DNS + 301 map, user-side infra), after which swap the four
+      `api.subo.ai` references in `src/pages/api.astro` (`API_BASE`, `KEY_URL` is already
+      subo.gg, `REFERENCE_URL`, `OPENAPI_URL`) plus `llms.txt` and the footer link.
 
 ### Bring the public Tutorials on-domain (off Notion)
 
