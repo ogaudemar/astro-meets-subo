@@ -26,7 +26,7 @@
     { "text": "Support Server", "href": "/support" },
     { "text": "Billing Portal", "href": "/portal" },
     { "text": "Blog", "href": "/blog" },
-    { "text": "API", "href": "https://api.subo.ai/docs", "external": true }
+    { "text": "API", "href": "/api" }
   ],
   "useCasesLabel": "Use cases",
   "useCases": [
