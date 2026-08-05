@@ -1,79 +1,92 @@
 ---
-title: "Subo vs Google Forms and Typeform: Why Discord Communities Need a Different Approach"
-description: "Generic survey tools are built for businesses. Discord communities are something else entirely. Here's why community managers are switching to Subo."
-pubDate: "Feb 10 2026"
+title: "Subo vs Google Forms and Typeform: Which One Fits a Discord Community (2026)"
+description: "Google Forms and Typeform are better form builders than Subo. Subo is a better fit for a Discord community. Here's the honest split: what each does well, and how to pick based on where your audience actually is."
+pubDate: "Aug 05 2026"
 author: "Subo Team"
-tags: ["comparison", "discord", "surveys", "community management"]
+tags: ["comparison", "discord", "surveys", "forms", "google forms", "typeform", "community management"]
+faq:
+  - q: "Can you use Google Forms in Discord?"
+    a: "Yes, you can paste a Google Form link into a channel and it works. The friction is that members have to leave Discord, open a browser tab, and finish the form before anything pulls them back. That context switch is where most of the drop-off happens, not the form itself."
+  - q: "What is the best Google Forms alternative for Discord?"
+    a: "If you want the questions asked inside Discord, with role and XP rewards and results you can post back to the server, use a Discord-native tool like Subo. We build Subo, so weigh that accordingly. If you need a long form with many question types, or you are collecting from people who are not in your server, Google Forms is still the better tool."
+  - q: "Does Google Forms have skip logic?"
+    a: "Yes, and it is free. The feature is called \"Go to section based on answer\" and it routes people to different sections of the form. The limitation is that it only works with multiple choice and dropdown questions."
+  - q: "Is Typeform's conditional logic free?"
+    a: "No. Typeform lists logic as a paid feature, and its free tier is capped to a limited number of responses per month. If branching is the reason you were considering Typeform, budget for a paid plan."
+  - q: "Can Subo collect responses from people outside Discord?"
+    a: "Yes. A survey runs either in Discord mode or in web mode. In web mode it lives at a link you can open to anyone with no Discord account required, or restrict to your members. It is one mode or the other, so you clone a survey to make a web version of it."
 draft: true
 ---
 
-# Subo vs Google Forms / Typeform: Why Discord Communities Need a Different Approach
+# Subo vs Google Forms and Typeform: which one fits a Discord community
 
-You need feedback from your community. Your first instinct might be to reach for Google Forms or Typeform — they're free, familiar, and widely used. But before you paste that link in your Discord announcements channel and watch it get buried in the scroll, let's talk about why that might be the wrong tool for the job.
+Let's start with the part most comparison posts skip: as form builders, Google Forms and Typeform are better than Subo. They have more question types, more integrations, and years of polish on the form-building experience. If someone tells you otherwise, they are selling something.
 
-## The Problem with Generic Survey Tools in Discord
+The question worth asking is not which tool builds a better form. It is where your respondents are, and what you want to happen after they answer.
 
-Google Forms and Typeform were designed for businesses collecting data from website visitors or email subscribers. They assume a web-first context: you send an email, someone clicks a link, opens a new browser tab, fills out a form, and submits it.
+## What Google Forms and Typeform genuinely do well
 
-Discord is nothing like that. Your community lives in channels, voice chats, and DMs. They're engaged in conversations — not browsing a website. When you drop a Google Form link in a channel, here's what typically happens:
+Google Forms is free, and it is a real product, not a stripped-down one. You get a wide range of question types, file uploads, response validation, and answers that land straight in a Google Sheet. It also has branching, free, through the "Go to section based on answer" setting, which routes people to different sections depending on what they pick. That is more capability than most people give it credit for.
 
-- Most members scroll past it
-- The ones who notice it have to switch context entirely (Discord → browser)
-- The form feels cold and impersonal compared to how they normally interact
-- Completion rates are low 
+Typeform earns its reputation on the answering experience. One question at a time, clean design, and a completion rate that beats a wall of fields. Its conditional logic is genuinely good. Worth knowing before you plan around it: logic sits on the paid tiers, and the free tier caps how many responses you can collect per month, so a public Typeform can stop accepting answers sooner than you expect.
 
-You're not dealing with email subscribers who opted in to hear from a business. You're dealing with community members who are already in a conversation and expect real-time feedback. The tool needs to meet them there.
+Both are the right answer for plenty of jobs. A job application. A customer survey emailed to a list. Anything where the people answering are not sitting in your Discord server.
 
-And then there's the problem of compelling incentives!
-You count on your community members to do you a favor with no proper reward or aknowledgement of the time they spend giving you feedback. Or you promise a sweepstakes (which is hard to manage) or even a gift card for respondents, but now your budget explodes with the cost of incentives and you're afraid of people answering just for the reward. Subo makes participant rewards easy to manage and super relevant to the community (and nothing else), with great social value and very little to no monetary cost. You give participants XP or community roles, allowing your communitiy members to be aknowdleged and rewarded in real-time with exclusive community-based status and perks.
+## The gap is the context switch, not the form
 
+Drop a form link into a channel and you have asked a member to do six things: notice the message, care, leave Discord, open a tab, understand a page with no context, and finish. Every step sheds people. What you get back is a trickle of responses and no idea what the people who dropped off would have said.
 
-## Feature Comparison: Subo vs Google Forms vs Typeform
+That is not a knock on the form. The same form emailed to a mailing list would do fine. It is a mismatch between where the tool expects people to be and where your community actually is.
 
-| Feature | Google Forms | Typeform | Subo |
-|---------|-------------|---------|------|
-| Discord-native experience | ✗ | ✗ | ✓ |
-| Works inside Discord chat | ✗ | ✗ | ✓ |
-| Web interface too | ✓ | ✓ | ✓ |
-| Anonymous responses | Limited | Limited | ✓ (3 modes) |
-| Role-based targeting | ✗ | ✗ | ✓ |
-| XP/gamification rewards | ✗ | ✗ | ✓ |
-| Role rewards for completing | ✗ | ✗ | ✓ |
-| Skip logic / branching | ✗ | ✓ (paid) | ✓ |
-| AI response summaries | ✗ | ✗ | ✓ |
-| Scheduled/recurring surveys | ✗ | ✗ | ✓ |
-| Leaderboard for participants | ✗ | ✗ | ✓ |
-| Results shared to Discord | ✗ | ✗ | ✓ |
-| Free tier | ✓ | Limited | ✓ |
+There is a second cost that shows up later. The responses land in a spreadsheet, outside the community. Members answered, and then nothing visible happened. Do that a few times and participation drops, because the last three surveys went into a void.
 
-## Where Google Forms and Typeform Fall Short for Communities
+## What being inside Discord changes
 
-### 1. They don't speak Discord's language
+Subo asks the questions in Discord. It posts an invite in a channel, and members answer privately from there, one question at a time, in the app they already have open. No tab, no link to lose.
 
-Role restrictions, server-specific targeting, DM-based responses — none of these exist in generic survey tools. With Subo, you can send a survey specifically to members who hold the "VIP" or "Level 5" role. With Google Forms, you're either sending to everyone or no one.
+That location gives you things a web form structurally cannot do, because they depend on knowing who someone is in your server:
 
-### 2. Engagement falls off a cliff
+- **Roles and XP as the incentive.** You can award XP for completing a survey and grant a Discord role on completion, which gives you a reward that costs nothing and means something inside your community. This is where the gift-card problem goes away: you are paying in status, not money, and status is what people are in a community for. XP works on every plan; custom XP naming and per-survey role rewards are Premium features, as is the monthly leaderboard.
+- **Role-based targeting.** Ask only the members who hold a specific role. A web form is open to whoever has the link.
+- **Three privacy modes, anonymous by default.** Transparent, Semi-Private, and Anonymous, set per project. New servers default to Anonymous, so honest answers are the starting point. The <a href="/blog/complete-guide-anonymous-surveys-discord">anonymous surveys guide</a> covers when to use which.
+- **A role granted from the answer itself.** With <a href="/blog/action-blocks-release">action blocks</a>, picking an option can assign a role, which turns a survey into onboarding, opt-in routing, or an application funnel.
+- **Scoring.** Mark correct answers and the survey becomes <a href="/blog/scoring-piping-quizzes">a quiz or a prediction contest</a> with a leaderboard.
+- **Results back into the server.** Post aggregate results to a channel so members see what the community thinks. The survey becomes a community moment instead of an extraction.
 
-Typeform is excellent at keeping web visitors engaged. But Discord community members aren't web visitors — they're people who chose to be in your community. Subo's conversational format (one question at a time, in a private Discord DM) maintains the tone of the platform and typically sees far higher completion rates than external form links.
+Beyond the Discord-specific parts, the pieces you would expect are there: skip logic (simple on all plans, advanced custom logic on VIP), AI summaries of open-ended answers, a <a href="/templates">template library</a>, scheduling and recurring surveys, a web app for building and analysis, and a <a href="/api">public API</a>.
 
-### 3. You lose the community loop
+## Where Subo is genuinely weaker
 
-When someone fills out a Google Form, the data goes into a spreadsheet — and that's where it dies. With Subo, you can share results back to a channel instantly. Members see what their community thinks. This turns data collection into a community moment, not a one-way extraction.
+Subo publicly supports five question types: open text, numeric, yes/no, single choice, and multiple choice. Google Forms has more, including file upload, dates, and grids. If your form needs a file attachment or a matrix question, Subo will not do it today, and no amount of Discord integration changes that.
 
-### 4. No participation incentives
+Subo is also not the tool for collecting from strangers at scale on the open web. Web mode exists, and a web survey can be opened to anyone with no Discord account, which covers a launch announcement or a public playtest signup. But a general-purpose public form on your marketing site is what Google Forms and Typeform are for.
 
-Google Forms and Typeform have no concept of rewarding participation. Subo lets you award XP points, grant Discord roles, and run monthly leaderboards that reward your most engaged members. This is particularly powerful in gaming servers, creator communities, and anywhere engagement is a core value.
+## Comparison
 
-## When Generic Tools Still Make Sense
+| | Google Forms | Typeform | Subo |
+|---|---|---|---|
+| Cost to start | Free | Free tier, capped responses/month | Free tier |
+| Asked inside Discord | No | No | Yes |
+| Web link option | Yes | Yes | Yes (web mode) |
+| Question types | Many | Many | 5 |
+| Branching / skip logic | Yes (choice + dropdown) | Yes (paid tiers) | Yes (advanced on VIP) |
+| Anonymous responses | Yes (don't collect emails) | Yes | Yes, 3 modes, anonymous by default |
+| Target by Discord role | No | No | Yes |
+| XP or role reward for completing | No | No | Yes |
+| Grant a role from the answer | No | No | Yes (action blocks) |
+| Scoring / quizzes | Quiz mode | No | Yes |
+| AI summary of open answers | No | No | Yes |
+| Results posted back to Discord | No | No | Yes |
+| Recurring / scheduled | No | No | Yes |
 
-Google Forms and Typeform are great platforms that have been around for a long time. If you're collecting data from people outside your Discord server — website visitors, email subscribers, external customers — they're fine choices. If you need advanced branching logic and integrations to a CRM, Typeform is excellent.
+## How to choose
 
-But if your audience primarily lives in Discord, and if you want higher completion rates, community-specific features, and engagement that reinforces your server culture, Subo is built for exactly that.
+**Use Google Forms** when the form is the whole job, the audience is not Discord-specific, or you need a question type Subo does not have. It is free and it works.
 
-## The Bottom Line
+**Use Typeform** when the answering experience is the point, you want its logic, and you have budget for a paid plan. A polished public-facing form for a brand is squarely its territory.
 
-Discord communities aren't just user databases. They're living, active groups with their own culture, norms, and engagement patterns. The best tools for collecting feedback from them should understand that culture — not try to import a corporate survey experience into it.
+**Use Subo** when your respondents are already in your server and you want the answers to do something: reward participation, hand out a role, feed a leaderboard, or come back to the channel as a result everyone can see.
 
-Subo was built specifically for Discord communities. Not adapted. Built. That makes all the difference.
+Plenty of communities end up using both, and that is a reasonable outcome rather than a failure to commit. Google Forms for the public-facing thing on the website, Subo for everything asked of members inside the server.
 
-**[Add Subo to your Discord server for free →](/invite)**
+If you are about to paste a form link into your server, it is worth trying the in-Discord version first. Start on the <a href="/survey-convos">survey convos page</a>, read <a href="/blog/how-to-make-a-discord-form">how to run a form in Discord</a>, or <a href="/invite">add Subo</a> and run `/survey`.

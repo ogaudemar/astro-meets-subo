@@ -83,3 +83,5 @@ It's one mode or the other, not both at once. If you build a survey in Discord a
 ## The short version
 
 If you're about to paste a Google Form link into your server, try the structured-conversation version first. Same questions, asked in the place your community already is, with better completion and answers you can actually act on. Start on the [survey convos page](/survey-convos), or add Subo to your server and run `/survey`.
+
+Weighing it up against the tool you already use? [Subo vs Google Forms and Typeform](/blog/subo-vs-google-forms-typeform-discord-communities) is the honest split, including where the form builders are genuinely better.

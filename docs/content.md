@@ -4,19 +4,29 @@
 
 Blog posts live in `src/content/blog/`. The collection is defined in `src/content.config.ts`.
 
-**Frontmatter schema:** `title`, `description`, `pubDate`, `author` (required); `updatedDate`, `heroImage`, `tags`, `draft` (optional).
+**Frontmatter schema:** `title`, `description`, `pubDate`, `author` (required); `updatedDate`, `heroImage`, `heroHeadline`, `tags`, `draft`, `faq` (optional).
+
+`faq` is an array of `{q, a}`. When present, `BlogPost.astro` renders it as a visible
+FAQ section at the end of the post **and** emits `FAQPage` JSON-LD alongside the usual
+`BlogPosting`. The two must match: Google requires FAQ markup to reflect visible page
+content, and the visible Q&A is what LLMs actually quote. Answers may contain inline
+HTML (links, `<code>`); it is stripped for the JSON-LD.
 
 ### Draft Posts (review before publishing)
 
 All marked `draft: true` — do not publish without review:
 
-- `subo-vs-google-forms-typeform-discord-communities.md`
+- `subo-vs-google-forms-typeform-discord-communities.md` — **fully rewritten 2026-08-05**
+  against current product facts (the Feb draft predated action blocks, scoring, templates,
+  the API and web mode, and had two wrong competitor claims). Needs a hero image and a
+  `draft: false` flip.
 - `how-to-use-skip-logic-smarter-discord-surveys.md`
 - `gamify-discord-community-xp-survey-rewards.md`
-- `ai-powered-survey-summaries-subo.md`
-- `complete-guide-anonymous-surveys-discord.md`
 - `scheduling-recurring-surveys-community-pulse.md`
 - `5-discord-community-types-surveys-they-should-run.md`
+
+**Published since this list was written** (no longer drafts): `ai-powered-survey-summaries-subo.md`
+and `complete-guide-anonymous-surveys-discord.md` (both went `draft: false` 2026-07-28).
 
 The user has directly edited some posts to correct product details — **always read a post before editing it**.
 
