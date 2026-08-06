@@ -131,7 +131,7 @@ Base URL: https://api.subo.ai
 Version: /v1/ (non-breaking changes in-place; breaking changes under /v2/)
 Idempotency: Pass `Idempotency-Key` (UUID v4) header on write operations.
 Block types: `single_punch`, `multi_punch`, `open_text`, `open_numeric`, `content_block`, `action_block`, `calculated_block`.
-Privacy modes: `transparent`, `semi-private`, `anonymous` (the API applies `semi-private` when `privacy_mode` is omitted — set it explicitly when anonymity matters).
+Privacy modes: `transparent`, `semi-private`, `anonymous` (omitting `privacy_mode` inherits the community's configured default, `anonymous` for a community that never changed it — set it explicitly when anonymity matters).
 Errors: `400 invalid_request`, `402 payment_required` (out of bot credits / tier-gated), `403 forbidden`, `404 not_found`, `429 rate_limit_exceeded` (honor `Retry-After`).
 
 Worked examples with copy-paste curl for all of the above: https://subo.gg/api

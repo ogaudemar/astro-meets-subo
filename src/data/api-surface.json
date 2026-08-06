@@ -21,7 +21,7 @@
     { "mode": "semi-private", "desc": "Admins can see individual answers; other members cannot." },
     { "mode": "anonymous", "desc": "Nobody, including admins, can tie an answer to a member." }
   ],
-  "privacyDefaultOnCreate": "semi-private",
+  "privacyFallbackOnCreate": "anonymous",
 
   "rateLimits": [
     { "tier": "Free", "tierKey": "Basic", "rpm": 60 },

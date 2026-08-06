@@ -29,7 +29,7 @@ const API_BASE = apiSurface.baseUrl;
 const {
   blockTypes,
   privacyModes,
-  privacyDefaultOnCreate,
+  privacyFallbackOnCreate,
   rateLimits,
   webhookEvents,
   webhookHeaders,
@@ -556,9 +556,11 @@ curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/templates/$TEMPLATE_ID/clone
               </table>
             </div>
             <p class="api-note">
-              Omit <code>privacy_mode</code> on create and the API applies
-              <code>{privacyDefaultOnCreate}</code>. Set it explicitly when anonymity
-              matters rather than relying on the default.
+              Omit <code>privacy_mode</code> on create and the survey inherits the
+              privacy mode the community has configured as its default, the same one
+              the app applies. A community that has never changed that setting is on
+              <code>{privacyFallbackOnCreate}</code>. Set the field explicitly when
+              anonymity matters rather than relying on someone else's setting.
             </p>
 
             <h3>Rate limits</h3>

@@ -333,36 +333,48 @@ groundwork converts into citations and organic traffic. One page per intent.
 > user's next app deploy.** `api.subo.ai/llms.txt` is now a stub pointing at the canonical
 > `subo.gg/llms.txt`. Detail in the API loose-ends bullet.
 >
-> **▶ THREAD 2 (in-repo, pick one next session):**
+> **✅ DONE (g) Google Forms / Typeform comparison — PUBLISHED (2026-08-05, `ce696ca`).**
+> `subo-vs-google-forms-typeform-discord-communities.md` is `draft: false`, shipped with 6
+> FAQ questions and zero em dashes, which closes the "deliberately skipped" caveat on the
+> FAQ-schema item below. All nine FAQ-bearing posts are now live.
+>
+> **▶ THREAD 2 — IN PROGRESS: (h) bring the recipe corpus on-domain.**
+> The 404s are fixed and `llms.txt` now links all ten, but they're served from
+> `api.subo.ai`, so every bit of authority they earn accrues to the **old** domain — and
+> linking them from `llms.txt` increased that flow. ~3,500 lines of genuinely publishable
+> survey-*design* content (welcome quiz, volunteer/mod funnel, event RSVP streaks,
+> playtester selection, member segmentation, and five more) targeting intent we have
+> nothing for: `discord onboarding survey`, `discord welcome quiz`, `discord role
+> assignment quiz`. Not P7-gated (these are content, not product templates) and not
+> migration-gated (LLM citation doesn't wait on Search Console re-association).
+>
+> **Remaining in Thread 2 after (h):**
 > - **(a) Form/no-"bot" follow-ons** — FR `/survey-convos` retune (`sondage discord` is a
 >   real market), more "app"/"form" vocabulary in existing titles/H2s, standalone `/draft`
 >   page. Migration-gated to ~Q4.
-> - **(h) Bring the recipe corpus on-domain.** The 404s are fixed and `llms.txt` now links
->   all ten, but they're served from `api.subo.ai`, so the authority accrues to the old
->   domain. Publishing them (or landing pages derived from them) on subo.gg is the piece
->   that would actually feed the `/templates` + use-case clusters.
-> - **(i) The API privacy-mode default** (app repo) — see the ⚠️ block above. Small fix,
->   real user-visible consequence. **Now the last known open app-side item from this
->   session's audit.**
 > - **(e) Localize `/api`?** — probably not. Developer docs in EN is the norm and the
 >   samples don't translate. Noted so it isn't re-litigated.
 >
-> **⚠️ Cross-repo APP BUG, re-diagnosed 2026-08-05 (app side, not site). Not a docs
-> disagreement — don't "resolve" it by editing site copy.** Verified in the app repo:
-> - **The app default is unequivocally Anonymous.** `surveyLib/domain/serverLogic.py:156`
->   provisions a new server with `defaultAnonymousMode=AnonymousModes.MoreAnonymous`, and
->   per the enum at `surveyLib/model/constants.py:164`, `MoreAnonymous` = Anonymous
->   (`Yes` = Semi-Private, `No` = Transparent). This confirms `content.md` and the
->   anonymous-surveys guide. **Settled; stop re-litigating it.**
-> - **The bug is that the API ignores that setting.**
->   `web2/public_api/routes/projects.py:505` reads
->   `... if req.privacy_mode else AnonymousModes.Yes` — omitting `privacy_mode` hardcodes
->   **Semi-Private**, and never consults `settings.defaultAnonymousMode`. So it overrides
->   both the product default *and* whatever the community configured: a survey created via
->   API is **less private than the identical survey created in the app**. Fix = read the
->   server setting instead of hardcoding. `/api` documents current behavior accurately and
->   tells callers to set it explicitly, so the site is safe either way.
-> - **Latent, spotted alongside:** `discordSurvey/main.py:2186` falls back to
+> **✅ DONE (i) API privacy-mode default — FIXED APP-SIDE, site copy now matches (2026-08-05).**
+> The API no longer hardcodes Semi-Private when `privacy_mode` is omitted:
+> `web2/public_api/routes/projects.py` resolves `settings.defaultAnonymousMode` and falls
+> back to `AnonymousModes.MoreAnonymous` (= Anonymous), so an API-created survey is now as
+> private as the identical survey created in the app. It also 400s on an unrecognized
+> `privacy_mode` instead of guessing.
+> **Site side (this repo):** `privacyDefaultOnCreate: "semi-private"` in
+> `src/data/api-surface.json` renamed to `privacyFallbackOnCreate: "anonymous"`, with the
+> prose in `src/pages/api.astro` and `public/llms.txt` rewritten from "the API applies
+> semi-private" to "inherits the community's configured default, `anonymous` for a
+> community that never changed it."
+> **Guard extended, because this is exactly the drift class the guard missed.** The old
+> checker verified privacy-mode *names* but never the *default*, so the wrong value sat in
+> published copy while `check:api` reported OK — the documented "names and numbers only"
+> limit, in the wild. `scripts/check-api-drift.mjs` now parses the
+> `defaultAnonymousMode ... or AnonymousModes.X` fallback out of the route and maps it back
+> through `_PRIVACY_TO_ANON_KEY`. Both failure modes verified by inducing them: a wrong
+> documented value, and the route regressing to a hardcoded mode (which fails loudly rather
+> than silently passing).
+> - **Still open, latent (app side):** `discordSurvey/main.py:2186` falls back to
 >   `AnonymousModes.Confidential`, which **is not a member of that enum** and would raise
 >   `AttributeError`. Only reachable when `settings.defaultAnonymousMode` is `None` (enum
 >   members are always truthy), so it is dormant, not live. Worth a look on the app side.
@@ -573,9 +585,11 @@ groundwork converts into citations and organic traffic. One page per intent.
       confirmed the two how-tos were finished. All eight validated by parsing the built
       JSON-LD (question counts, exactly one visible FAQ section each, HTML correctly
       stripped from answer text). Clean `npm run build`.
-      **Deliberately skipped: `subo-vs-google-forms-typeform-discord-communities.md` is
-      still `draft: true`**, so schema on it would render nowhere. Add a block when it
-      publishes (it also still carries em dashes to clear per the `blog-writing` skill).
+      **Ninth post added on publish (2026-08-05):**
+      `subo-vs-google-forms-typeform-discord-communities.md` was skipped in the backfill
+      while it was `draft: true` (schema on an unpublished post renders nowhere); it
+      shipped in `ce696ca` with its own 6 questions and its em dashes cleared, so that
+      caveat is closed.
       **Same mechanism now closes the open FAQ-schema items in the tutorials-hub and P7
       sections** for anything rendered through `BlogPost.astro`; page-level Astro routes
       (`/tutorials`, `/templates/*`) still build their own, as `/api` and

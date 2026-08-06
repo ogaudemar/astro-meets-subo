@@ -132,6 +132,7 @@ const apiPage = readFileSync(join(SITE_ROOT, 'src', 'pages', 'api.astro'), 'utf8
 
 const scriptPy = readApp('schemas', 'script.py');
 const projectPy = readApp('schemas', 'project.py');
+const projectCreatePy = readApp('routes', 'projects.py');
 const webhooksPy = readApp('routes', 'webhooks.py');
 const authPy = readApp('auth.py');
 const dispatchPy = readFileSync(
@@ -176,6 +177,39 @@ compareSets(
   dictKeys(projectPy, '_PRIVACY_TO_ANON_KEY'),
   { file: SURFACE_FILE }
 );
+
+// 2b. The privacy mode a survey gets when `privacy_mode` is omitted on create.
+// This one is prose on the site, and it drifted silently once already: the route
+// used to hardcode a mode, ignoring the community's own setting. It now reads
+// `settings.defaultAnonymousMode` with a literal fallback, and that fallback is
+// what we document. Parse the fallback and map it back to the public name.
+{
+  const m = projectCreatePy.match(
+    /defaultAnonymousMode["']?\s*,\s*None\s*\)\s*or\s*AnonymousModes\.(\w+)/
+  );
+  if (!m) {
+    fail(
+      'Privacy default on create: could not find the `defaultAnonymousMode ... or AnonymousModes.X` ' +
+      'fallback in routes/projects.py. Either it moved, or the route went back to hardcoding a ' +
+      'privacy mode instead of reading the community setting — check which before touching the parser.'
+    );
+  } else {
+    const anonKey = m[1];
+    const body = literalBody(projectPy, '_PRIVACY_TO_ANON_KEY') ?? '';
+    const pair = [...body.matchAll(/["']([^"']+)["']\s*:\s*["'](\w+)["']/g)]
+      .find(([, , key]) => key === anonKey);
+    const publicName = pair?.[1];
+    if (!publicName) {
+      fail(`Privacy default on create: AnonymousModes.${anonKey} has no entry in _PRIVACY_TO_ANON_KEY, so it has no public name.`);
+    } else if (publicName !== surface.privacyFallbackOnCreate) {
+      fail(
+        `Privacy default on create: the API falls back to "${publicName}", we document ` +
+        `"${surface.privacyFallbackOnCreate}". Update privacyFallbackOnCreate in ${SURFACE_FILE}, ` +
+        'and re-read the prose in src/pages/api.astro and public/llms.txt — both describe this in words.'
+      );
+    }
+  }
+}
 
 // 3. Webhook events
 const appEvents = setMembers(webhooksPy, '_VALID_EVENTS');
