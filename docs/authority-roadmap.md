@@ -337,12 +337,13 @@ groundwork converts into citations and organic traffic. One page per intent.
 > - **(a) Form/no-"bot" follow-ons** — FR `/survey-convos` retune (`sondage discord` is a
 >   real market), more "app"/"form" vocabulary in existing titles/H2s, standalone `/draft`
 >   page. Migration-gated to ~Q4.
-> - **(h) `/v1/recipes/{slug}` still 404s in production** (app repo). Re-confirmed
->   2026-08-05: the index returns 200 and lists slugs, fetching one returns 404. Now the
->   only remaining item pointing agents at dead URLs, since the `llms.txt` stub stopped
->   advertising them.
+> - **(h) Bring the recipe corpus on-domain.** The 404s are fixed and `llms.txt` now links
+>   all ten, but they're served from `api.subo.ai`, so the authority accrues to the old
+>   domain. Publishing them (or landing pages derived from them) on subo.gg is the piece
+>   that would actually feed the `/templates` + use-case clusters.
 > - **(i) The API privacy-mode default** (app repo) — see the ⚠️ block above. Small fix,
->   real user-visible consequence.
+>   real user-visible consequence. **Now the last known open app-side item from this
+>   session's audit.**
 > - **(e) Localize `/api`?** — probably not. Developer docs in EN is the norm and the
 >   samples don't translate. Noted so it isn't re-litigated.
 >
@@ -681,15 +682,30 @@ agent path deliberately.
         Consolidate: cut the API one to a minimal stub pointing at `subo.gg/llms.txt`.
         **App-repo edit (edit-only from here; ships on the user's deploy cycle), which is
         why it does not gate site-side work.** Next in line after the FAQ injector.
-      - **`/v1/recipes` advertises 10 recipes whose URLs all 404 in production.** The index
-        returns 200 listing `/v1/recipes/<slug>`; fetching one returns 404. The handler
-        resolves to the repo-root `docs/recipes/` directory, which likely isn't in the
-        deploy. Agents following the index hit a wall. **App-repo bug, not a site issue.**
-      - **There's a 10-file recipe corpus in the app repo** (`docs/recipes/`: welcome quiz,
-        volunteer/moderator funnel, playtester selection, prediction poll, study quiz…).
+      - [x] **`/v1/recipes/{slug}` 404 — FIXED AND VERIFIED LIVE (2026-08-05).** The index
+        returned 200 listing slugs while every slug 404'd, so agents following it hit a
+        wall. Diagnosis held: the handler resolved to the repo-root `docs/recipes/`, which
+        the deploy didn't ship. Fixed app-side in `f169287e` (`upgrade.sh` now rsyncs the
+        directory; `_RECIPES_DIR` uses `realpath` so both sides of the containment check
+        agree; the whitelist grew from 4 to all 10 recipes).
+        **Verified on prod:** index lists 10, all 10 slugs return 200 with real
+        `text/markdown` (9–21KB each). *Note for future diagnosis:* the first index call
+        after the deploy still returned the old 4 while slugs already served 200. That was
+        a mid-rollout race, not a cache (`cf-cache-status: DYNAMIC` on both); repeated
+        calls settled at 10. Worth re-testing rather than theorising if it recurs.
+      - [x] **The 10-file recipe corpus is now linked from `llms.txt` (2026-08-05).** All
+        ten (welcome quiz, volunteer/moderator funnel, event RSVP streaks, playtester
+        selection, hogwarts sorting, member segmentation, study quiz, world capitals,
+        prediction poll, pre/post assessment) are listed with one-line mechanism summaries
+        under a new **Recipes** section, plus the index/slug endpoints and a footer line.
+        Held back until the 404s were fixed, on the principle that pointing agents at dead
+        URLs is worse than not linking them. Every URL in `llms.txt` was link-checked after
+        the edit: 24 real URLs, all resolving.
         These are survey-*design* recipes, so they don't overlap `/api`'s API-mechanics
-        recipes. **Strong raw material for on-domain content** — closer to the `/templates`
-        and use-case clusters than to the API page.
+        recipes — `llms.txt` now says so explicitly, to route agents to the right one.
+        **Still strong raw material for on-domain content**, closer to the `/templates` and
+        use-case clusters than to the API page. That remains open: linking the markdown
+        gives agents the content, but it earns authority for `api.subo.ai`, not `subo.gg`.
 
 ### Bring the public Tutorials on-domain (off Notion)
 
