@@ -94,26 +94,29 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
    - `GET /templates`, then `POST /communities/{communityId}/templates/{templateId}/clone`
    - Deep clone (script, scoring, grading, action blocks); source-server bindings stripped
 
-## Recipes (full markdown, fetchable)
+## Recipes (survey designs, on-domain)
 
 End-to-end walkthroughs of real survey designs: the script, the action blocks, the
 scoring, and the logic that ties them together. Served as plain markdown, so an agent can
 fetch one and follow it directly. These are survey-*design* recipes; for API *mechanics*
 (auth, pagination, webhook signatures) use https://subo.gg/api.
 
+Canonical home: https://subo.gg/recipes (HTML, with FAQ and template cross-links).
+The same ten are also fetchable as raw markdown from the API host, which is convenient
+for agents but NOT canonical:
 - `GET https://api.subo.ai/v1/recipes` — JSON index (slug, title, summary, url)
 - `GET https://api.subo.ai/v1/recipes/{slug}` — full markdown for one recipe
 
-- [Welcome quiz](https://api.subo.ai/v1/recipes/welcome-quiz): Onboard new members by recording region, language and notification preferences; choices fire achievements linked to Discord roles.
-- [Volunteer / moderator funnel](https://api.subo.ai/v1/recipes/volunteer-moderator-funnel): Screening funnel where one decisive question gates mutually-exclusive Mod Trial vs Waitlist role grants.
-- [Event RSVP with attendance streaks](https://api.subo.ai/v1/recipes/event-rsvp-streak): RSVP funnel using session-scoped firing plus XP-threshold achievements to produce streak rewards without per-event tagging.
-- [Playtester selection](https://api.subo.ai/v1/recipes/playtester-selection): Recruit qualified playtesters via availability gating; qualifiers get a durable Beta Tester achievement and role.
-- [Hogwarts house sorting quiz](https://api.subo.ai/v1/recipes/hogwarts-house-sorting-quiz): Personality-style sorting via argmax over hidden buckets, assigning one outcome role.
-- [Member segmentation](https://api.subo.ai/v1/recipes/member-segmentation): Segment a community into personas using the same hidden-bucket argmax pattern.
-- [Study quiz](https://api.subo.ai/v1/recipes/study-quiz): Graded quiz using correct_answer_index with when_correct / when_incorrect feedback branches.
-- [World capitals quiz](https://api.subo.ai/v1/recipes/world-capitals-quiz): Knowledge quiz with per-answer grading and scored leaderboard results.
-- [Prediction poll](https://api.subo.ai/v1/recipes/prediction-poll): Prediction contest where option weights price risk, so unlikely correct calls score higher.
-- [Pre/post assessment](https://api.subo.ai/v1/recipes/pre-post-assessment): Measure change over time with twin projects capped at one completion per user each.
+- [Welcome quiz](https://subo.gg/recipes/welcome-quiz): Onboard new members by recording region, language and notification preferences; choices fire achievements linked to Discord roles.
+- [Volunteer / moderator funnel](https://subo.gg/recipes/volunteer-moderator-funnel): Screening funnel where one decisive question gates mutually-exclusive Mod Trial vs Waitlist role grants.
+- [Event RSVP with attendance streaks](https://subo.gg/recipes/event-rsvp-streak): RSVP funnel using session-scoped firing plus XP-threshold achievements to produce streak rewards without per-event tagging.
+- [Playtester selection](https://subo.gg/recipes/playtester-selection): Recruit qualified playtesters via availability gating; qualifiers get a durable Beta Tester achievement and role.
+- [Hogwarts house sorting quiz](https://subo.gg/recipes/hogwarts-house-sorting-quiz): Personality-style sorting via argmax over hidden buckets, assigning one outcome role.
+- [Member segmentation](https://subo.gg/recipes/member-segmentation): Segment a community into personas using the same hidden-bucket argmax pattern.
+- [Study quiz](https://subo.gg/recipes/study-quiz): Graded quiz using correct_answer_index with when_correct / when_incorrect feedback branches.
+- [World capitals quiz](https://subo.gg/recipes/world-capitals-quiz): Knowledge quiz with per-answer grading and scored leaderboard results.
+- [Prediction poll](https://subo.gg/recipes/prediction-poll): Prediction contest where option weights price risk, so unlikely correct calls score higher.
+- [Pre/post assessment](https://subo.gg/recipes/pre-post-assessment): Measure change over time with twin projects capped at one completion per user each.
 
 ## Key Features Agents Love
 - **AI Script Generation**: Turn a plain-text goal into a complete multi-block survey script in one call.
@@ -135,4 +138,4 @@ Privacy modes: `transparent`, `semi-private`, `anonymous` (omitting `privacy_mod
 Errors: `400 invalid_request`, `402 payment_required` (out of bot credits / tier-gated), `403 forbidden`, `404 not_found`, `429 rate_limit_exceeded` (honor `Retry-After`).
 
 Worked examples with copy-paste curl for all of the above: https://subo.gg/api
-Survey-design recipes as fetchable markdown: https://api.subo.ai/v1/recipes
+Survey-design recipes (ten worked walkthroughs): https://subo.gg/recipes

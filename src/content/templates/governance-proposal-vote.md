@@ -43,7 +43,7 @@ faq:
     a: "They skip both why-branches. Only decisive voters are asked to explain, so abstainers are not forced to invent a reason."
   - q: "Is this only for DAOs?"
     a: "No. It fits any group that votes on shared decisions: Discord servers, guilds, clubs, and communities, as well as token-based governance."
-recipeUrl: "https://api.subo.ai/docs"
+recipeUrl: "/recipes"
 relatedSlugs: ["suggestion-box", "this-or-that-poll", "feature-roadmap-vote"]
 pubDate: 2026-07-03
 draft: false

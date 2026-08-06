@@ -84,4 +84,45 @@ const templates = defineCollection({
   }),
 });
 
-export const collections = { blog, templates };
+// Survey-design recipes. Ported on-domain from the app repo's `docs/recipes/`,
+// which were only ever served as raw markdown from api.subo.ai/v1/recipes, so
+// every bit of authority they earned accrued to the OLD registrable domain.
+// These are the *design* twin of the marketing `templates` collection: a
+// template page sells the outcome, a recipe shows how the script is actually
+// built. `templates.recipeUrl` points here (it used to point at a generic
+// api.subo.ai/docs placeholder).
+const recipes = defineCollection({
+  loader: glob({ base: "./src/content/recipes", pattern: "**/*.{md,mdx}" }),
+  schema: z.object({
+    title: z.string(),          // <title> + H1, SEO-framed (not "Recipe — X")
+    description: z.string(),    // meta description, outcome-focused
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+
+    // The recipe's own header block, rendered as a summary card.
+    audience: z.string(),
+    setupTime: z.string(),
+    bestFor: z.string(),
+
+    // Taxonomy, mirroring the templates collection so the two can cross-link
+    // and be filtered on the same axes.
+    dimension: z.enum(["engage", "understand", "get-things-done"]),
+    features: z.array(z.string()).default([]),
+
+    // Linking. `templateSlugs` are the templates whose `recipeUrl` points here.
+    relatedSlugs: z.array(z.string()).default([]),
+    templateSlugs: z.array(z.string()).default([]),
+
+    // Same FAQ contract as blog + templates: rendered visibly AND emitted as
+    // FAQPage JSON-LD, because Google requires the markup to match the page and
+    // for GEO the visible Q&A is what gets quoted.
+    faq: z.array(z.object({
+      q: z.string(),
+      a: z.string(),
+    })).default([]),
+
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { blog, templates, recipes };

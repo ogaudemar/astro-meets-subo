@@ -43,7 +43,7 @@ faq:
     a: "An optional note field catches the constraints a grid cannot: a date to avoid, a hard cutoff time, a recurring conflict."
   - q: "Does it book the event for me?"
     a: "It surfaces the best slot to you. It does not send calendar invites or hold time, so pair it with your calendar tool for the actual booking."
-recipeUrl: "https://api.subo.ai/docs"
+recipeUrl: "/recipes/event-rsvp-streak"
 relatedSlugs: ["community-health-engagement", "suggestion-box", "governance-proposal-vote"]
 pubDate: 2026-07-03
 draft: false

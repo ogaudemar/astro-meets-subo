@@ -45,7 +45,7 @@ faq:
     a: "Allow multiple attempts and members can drill until they pass. The achievement is granted once per person even across retakes."
   - q: "What do winners get?"
     a: "Passing grants an achievement, which works on any community whether it's on Discord or the web. On a Discord server you can link that achievement to a role that unlocks a channel, but the role is optional."
-recipeUrl: "https://api.subo.ai/docs"
+recipeUrl: "/recipes/hogwarts-house-sorting-quiz"
 pubDate: 2026-07-01
 draft: false
 ---

@@ -41,7 +41,7 @@ faq:
     a: "For popular events, look the outcome up on a public prediction market like Kalshi or Polymarket and use each option's payout multiplier. When no market exists, such as MVP picks, in-game events, or silly props, just reward every correct answer equally. Precision doesn't matter; it's for fun."
   - q: "Can predictions be anonymous?"
     a: "XP needs a member profile, so fully anonymous mode isn't compatible with the reward. The default semi-private mode already hides picks from other members while keeping XP working."
-recipeUrl: "https://api.subo.ai/docs"
+recipeUrl: "/recipes/prediction-poll"
 pubDate: 2026-07-01
 draft: false
 ---

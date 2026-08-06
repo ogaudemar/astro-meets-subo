@@ -208,7 +208,14 @@ const jsonLd: Array<Record<string, any>> = [
           <div class="tpl-cta">
             <a href={appCloneUrl} class="button button--accent-bg">{ctaLabel}</a>
             {recipeUrl && (
-              <a href={recipeUrl} class="button button--primary-border" target="_blank" rel="noopener noreferrer">Read the walkthrough</a>
+              /* recipeUrl now points at an on-domain /recipes page (it used to be a
+                 generic api.subo.ai/docs placeholder), so keep internal links in the
+                 same tab and only open external ones in a new one. */
+              <a
+                href={recipeUrl}
+                class="button button--primary-border"
+                {...(recipeUrl.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >Read the walkthrough</a>
             )}
           </div>
         </div>

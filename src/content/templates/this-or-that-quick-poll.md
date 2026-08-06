@@ -43,7 +43,7 @@ faq:
     a: "Yes. Change-your-vote is on, which suits a fun, low-stakes debate."
   - q: "Does it award anything?"
     a: "Participation XP is on, since a fun once-per-user poll is exactly where a small XP nudge fits without being farmable."
-recipeUrl: "https://api.subo.ai/docs"
+recipeUrl: "/recipes"
 relatedSlugs: ["this-or-that-poll", "pick-favorite-poll", "match-prediction-poll"]
 pubDate: 2026-07-03
 draft: false

@@ -1,0 +1,215 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import translations from '../../content/translations/en.json';
+
+const recipes = (await getCollection('recipes'))
+  .filter((r) => !r.data.draft)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+// Same three dimensions the templates collection uses, same display labels, so
+// a visitor moving between /templates and /recipes sees one taxonomy.
+const GROUPS: Array<{ key: string; label: string; blurb: string }> = [
+  {
+    key: 'engage',
+    label: 'Connect',
+    blurb: 'Quizzes, predictions and events that give members a reason to come back.',
+  },
+  {
+    key: 'understand',
+    label: 'Discover',
+    blurb: 'Onboarding and research surveys that turn answers into structured data about your community.',
+  },
+  {
+    key: 'get-things-done',
+    label: 'Organize',
+    blurb: 'Applications and intake funnels that route people to the right role automatically.',
+  },
+];
+
+const title = 'Survey Recipes for Discord Communities';
+const description =
+  'Ten worked walkthroughs for building surveys, quizzes, polls and application funnels in Discord: the script, the scoring, the skip logic, and the roles and XP each one hands out.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: title,
+    description,
+    url: 'https://subo.gg/recipes',
+    isPartOf: { '@id': 'https://subo.gg/#website' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: title,
+    numberOfItems: recipes.length,
+    itemListElement: recipes.map((r, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: r.data.title,
+      url: `https://subo.gg/recipes/${r.id}`,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://subo.gg/' },
+      { '@type': 'ListItem', position: 2, name: 'Recipes', item: 'https://subo.gg/recipes' },
+    ],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} jsonLd={jsonLd} />
+  </head>
+  <body>
+    <Header translations={translations.header} />
+    <main class="hub">
+      <header class="hub-head">
+        <p class="eyebrow">Recipes</p>
+        <h1>Survey recipes for Discord communities</h1>
+        <p class="lede">
+          Each recipe is a complete build: the scenario, the flow, the script payload,
+          and the scoring or skip logic that makes it work. They are written for the
+          person authoring the survey, so they say what to click and what each field
+          does, not only what the feature is called.
+        </p>
+        <p class="hub-links">
+          Want the outcome without authoring the script? Start from a
+          <a href="/templates">template</a>. Wiring this up programmatically? See the
+          <a href="/api">API quickstart</a>.
+        </p>
+      </header>
+
+      {GROUPS.map((g) => {
+        const inGroup = recipes.filter((r) => r.data.dimension === g.key);
+        return inGroup.length > 0 && (
+          <section class="group">
+            <h2>{g.label}</h2>
+            <p class="group-blurb">{g.blurb}</p>
+            <ul class="cards">
+              {inGroup.map((r) => (
+                <li>
+                  <a href={`/recipes/${r.id}`}>
+                    <strong>{r.data.title}</strong>
+                    <span class="desc">{r.data.description}</span>
+                    <span class="time">{r.data.setupTime}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      })}
+
+      <section class="hub-cta">
+        <h2>Build one</h2>
+        <p>
+          Every recipe here runs on the free tier. Author it in the
+          <a href="https://app.subo.gg/app">web app</a> or send the script to the
+          <a href="/api">public API</a>.
+        </p>
+        <p class="cta-row">
+          <a class="btn btn-primary" href="/invite">Add Subo to your server</a>
+          <a class="btn btn-ghost" href="/tutorials">Browse tutorials</a>
+        </p>
+      </section>
+    </main>
+    <Footer translations={translations.footer} />
+
+    <style>
+      .hub {
+        max-width: 68rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 4rem;
+        color: var(--light);
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.78rem;
+        color: var(--accent);
+        margin: 0 0 0.5rem;
+      }
+      .hub-head h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        line-height: 1.15;
+        margin: 0 0 1rem;
+        color: var(--text-white);
+      }
+      .lede { font-size: 1.08rem; color: var(--grey-light); max-width: 46rem; margin: 0 0 1rem; }
+      .hub-links { color: var(--grey-light); max-width: 46rem; margin: 0 0 2.5rem; font-size: 0.97rem; }
+      .hub-links a, .hub-cta a { color: var(--accent); }
+
+      .group { margin-bottom: 3rem; }
+      .group h2 {
+        font-size: 1.5rem;
+        color: var(--text-white);
+        margin: 0 0 0.35rem;
+        border-top: 1px solid rgba(226, 226, 226, 0.12);
+        padding-top: 1.75rem;
+      }
+      .group-blurb { color: var(--grey-light); margin: 0 0 1.25rem; font-size: 0.97rem; }
+
+      .cards {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: 1rem;
+      }
+      .cards a {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 1.15rem;
+        border: 1px solid rgba(226, 226, 226, 0.14);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        text-decoration: none;
+        transition: border-color 0.15s ease, background 0.15s ease;
+      }
+      .cards a:hover { border-color: var(--accent); background: rgba(255, 255, 255, 0.06); }
+      .cards strong { color: var(--text-white); margin-bottom: 0.45rem; font-size: 1.02rem; line-height: 1.35; }
+      .cards .desc { color: var(--grey-light); font-size: 0.9rem; line-height: 1.55; flex: 1; }
+      .cards .time {
+        margin-top: 0.8rem;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--accent);
+      }
+
+      .hub-cta {
+        margin-top: 1rem;
+        padding: 1.75rem;
+        border: 1px solid rgba(226, 226, 226, 0.14);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .hub-cta h2 { margin: 0 0 0.6rem; font-size: 1.35rem; color: var(--text-white); }
+      .hub-cta p { color: var(--grey-light); margin: 0 0 1rem; }
+      .cta-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 0; }
+      .btn {
+        display: inline-block;
+        padding: 0.65rem 1.2rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .btn-primary { background: var(--primary); color: var(--text-white) !important; }
+      .btn-primary:hover { background: var(--primary-light); }
+      .btn-ghost { border: 1px solid rgba(226, 226, 226, 0.3); color: var(--light) !important; }
+      .btn-ghost:hover { border-color: var(--accent); }
+    </style>
+  </body>
+</html>

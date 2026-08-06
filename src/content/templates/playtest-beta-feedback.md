@@ -43,7 +43,7 @@ faq:
     a: "Yes. It works as a product or beta CSAT survey, an event or workshop feedback form, or a post-purchase check-in. Rename the four dimensions to fit what you're measuring."
   - q: "Where does the satisfaction score come from?"
     a: "Each rating option carries a weight from one to five. Subo sums the weighted answers per response, so a comparable score falls out with no spreadsheet or manual tallying."
-recipeUrl: "https://api.subo.ai/docs"
+recipeUrl: "/recipes"
 relatedSlugs: ["feature-roadmap-vote", "player-onboarding-profiler", "playtester-beta-recruitment"]
 pubDate: 2026-07-02
 draft: false

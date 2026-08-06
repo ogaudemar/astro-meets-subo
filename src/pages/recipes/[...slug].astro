@@ -1,0 +1,36 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import RecipePage from '../../layouts/RecipePage.astro';
+
+export async function getStaticPaths() {
+  const recipes = (await getCollection('recipes')).filter((r) => !r.data.draft);
+  const templates = (await getCollection('templates')).filter((t) => !t.data.draft);
+
+  return recipes.map((recipe) => ({
+    params: { slug: recipe.id },
+    props: {
+      recipe,
+      // Resolve the cross-links here rather than in the layout, so a slug that
+      // no longer exists silently drops out instead of rendering a dead card.
+      relatedEntries: recipe.data.relatedSlugs
+        .map((s) => recipes.find((r) => r.id === s))
+        .filter((r): r is CollectionEntry<'recipes'> => Boolean(r)),
+      templateEntries: recipe.data.templateSlugs
+        .map((s) => templates.find((t) => t.data.slug === s))
+        .filter((t): t is CollectionEntry<'templates'> => Boolean(t)),
+    },
+  }));
+}
+
+const { recipe, relatedEntries, templateEntries } = Astro.props;
+const { Content } = await render(recipe);
+---
+
+<RecipePage
+  {...recipe.data}
+  slug={recipe.id}
+  relatedEntries={relatedEntries}
+  templateEntries={templateEntries}
+>
+  <Content />
+</RecipePage>

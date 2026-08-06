@@ -1,0 +1,333 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import translations from '../content/translations/en.json';
+
+type Props = CollectionEntry<'recipes'>['data'] & {
+  slug: string;
+  relatedEntries?: CollectionEntry<'recipes'>[];
+  templateEntries?: CollectionEntry<'templates'>[];
+};
+
+const {
+  title, description, pubDate, updatedDate,
+  audience, setupTime, bestFor, dimension, features, faq,
+  slug, relatedEntries = [], templateEntries = [],
+} = Astro.props;
+
+// Same labels the templates collection uses, so the two surfaces name the
+// dimensions identically (keys unchanged since the 2026-07-04 rebrand).
+const DIMENSION_LABELS: Record<string, string> = {
+  'engage': 'Connect',
+  'understand': 'Discover',
+  'get-things-done': 'Organize',
+};
+
+// TechArticle rather than HowTo: Google deprecated HowTo rich results in 2023,
+// and these recipes are a design walkthrough (concepts, script payload,
+// variations) rather than a literal numbered procedure. Same call as /api.
+const canonical = `https://subo.gg/recipes/${slug}`;
+const stripTags = (s: string) => s.replace(/<[^>]+>/g, '');
+const jsonLd: Array<Record<string, any>> = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: title,
+    description,
+    datePublished: pubDate.toISOString(),
+    ...(updatedDate ? { dateModified: updatedDate.toISOString() } : {}),
+    author: { '@type': 'Organization', name: 'Subo' },
+    publisher: { '@id': 'https://subo.gg/#organization' },
+    mainEntityOfPage: canonical,
+    url: canonical,
+    audience: { '@type': 'Audience', audienceType: audience },
+    ...(features.length ? { keywords: features.join(', ') } : {}),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://subo.gg/' },
+      { '@type': 'ListItem', position: 2, name: 'Recipes', item: 'https://subo.gg/recipes' },
+      { '@type': 'ListItem', position: 3, name: title, item: canonical },
+    ],
+  },
+  ...(faq.length > 0
+    ? [{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: stripTags(f.a) },
+        })),
+      }]
+    : []),
+];
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} jsonLd={jsonLd} />
+  </head>
+  <body>
+    <Header translations={translations.header} />
+    <main class="recipe">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">/</span>
+        <a href="/recipes">Recipes</a>
+      </nav>
+
+      <header class="recipe-head">
+        <p class="eyebrow">{DIMENSION_LABELS[dimension]} recipe</p>
+        <h1>{title}</h1>
+        <p class="lede">{description}</p>
+        <dl class="meta">
+          <div><dt>Audience</dt><dd>{audience}</dd></div>
+          <div><dt>Time to set up</dt><dd>{setupTime}</dd></div>
+          <div><dt>Best for</dt><dd>{bestFor}</dd></div>
+        </dl>
+      </header>
+
+      <article class="prose">
+        <slot />
+
+        {faq.length > 0 && (
+          <section class="recipe-faq">
+            <h2>Frequently asked questions</h2>
+            {faq.map((f) => (
+              <div class="faq-item">
+                <h3>{f.q}</h3>
+                <p set:html={f.a} />
+              </div>
+            ))}
+          </section>
+        )}
+      </article>
+
+      {templateEntries.length > 0 && (
+        <section class="related">
+          <h2>Start from a template</h2>
+          <p class="related-note">
+            Prefer not to author the script by hand? These templates set up the same
+            thing in a few clicks.
+          </p>
+          <ul class="card-list">
+            {templateEntries.map((t) => (
+              <li>
+                <a href={`/templates/${t.data.slug}`}>
+                  <strong>{t.data.title}</strong>
+                  <span>{t.data.description}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {relatedEntries.length > 0 && (
+        <section class="related">
+          <h2>Related recipes</h2>
+          <ul class="card-list">
+            {relatedEntries.map((r) => (
+              <li>
+                <a href={`/recipes/${r.id}`}>
+                  <strong>{r.data.title}</strong>
+                  <span>{r.data.description}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <section class="recipe-cta">
+        <h2>Build it</h2>
+        <p>
+          Every recipe here is a Subo script. Author it in the
+          <a href="https://app.subo.gg/app">web app</a>, or send the payload straight
+          to the <a href="/api">public API</a>. New communities start free.
+        </p>
+        <p class="cta-row">
+          <a class="btn btn-primary" href="/invite">Add Subo to your server</a>
+          <a class="btn btn-ghost" href="/templates">Browse templates</a>
+        </p>
+      </section>
+    </main>
+    <Footer translations={translations.footer} />
+
+    <style>
+      .recipe {
+        max-width: 60rem;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem 4rem;
+        color: var(--light);
+      }
+      .crumbs {
+        font-size: 0.85rem;
+        color: var(--grey-light);
+        margin-bottom: 1.5rem;
+      }
+      .crumbs a { color: var(--grey-light); text-decoration: none; }
+      .crumbs a:hover { color: var(--accent); }
+
+      .recipe-head { border-bottom: 1px solid rgba(226, 226, 226, 0.14); padding-bottom: 1.75rem; }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.78rem;
+        color: var(--accent);
+        margin: 0 0 0.5rem;
+      }
+      .recipe-head h1 {
+        font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+        line-height: 1.15;
+        margin: 0 0 0.75rem;
+        color: var(--text-white);
+      }
+      .lede { font-size: 1.1rem; color: var(--grey-light); margin: 0 0 1.5rem; }
+
+      .meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+        gap: 1rem;
+        margin: 0;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(226, 226, 226, 0.12);
+        border-radius: 10px;
+      }
+      .meta div { margin: 0; }
+      .meta dt {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: var(--grey-light);
+        margin-bottom: 0.3rem;
+      }
+      .meta dd { margin: 0; font-size: 0.94rem; color: var(--light); }
+
+      /* Body prose. Recipes carry wide artefacts (ASCII flow diagrams and JSON
+         script payloads), so every block that can overflow scrolls inside its
+         own box instead of pushing the page sideways. */
+      .prose { padding-top: 2rem; line-height: 1.7; }
+      .prose :global(h2) {
+        font-size: 1.55rem;
+        margin: 2.5rem 0 0.85rem;
+        color: var(--text-white);
+        border-top: 1px solid rgba(226, 226, 226, 0.1);
+        padding-top: 1.75rem;
+      }
+      .prose :global(h3) { font-size: 1.18rem; margin: 1.75rem 0 0.6rem; color: var(--text-white); }
+      .prose :global(h4) { font-size: 1rem; margin: 1.25rem 0 0.5rem; color: var(--light); }
+      .prose :global(p), .prose :global(li) { color: var(--light); }
+      .prose :global(a) { color: var(--accent); }
+      .prose :global(ul), .prose :global(ol) { padding-left: 1.3rem; }
+      .prose :global(li) { margin: 0.35rem 0; }
+      .prose :global(blockquote) {
+        border-left: 3px solid var(--primary);
+        margin: 1.5rem 0;
+        padding: 0.6rem 0 0.6rem 1.1rem;
+        color: var(--grey-light);
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .prose :global(blockquote p) { margin: 0.35rem 0; color: var(--grey-light); }
+      .prose :global(hr) { border: 0; border-top: 1px solid rgba(226, 226, 226, 0.12); margin: 2.25rem 0; }
+      .prose :global(pre) {
+        background: rgba(0, 0, 0, 0.55);
+        border: 1px solid rgba(226, 226, 226, 0.14);
+        border-radius: 8px;
+        padding: 1rem;
+        overflow-x: auto;
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+      .prose :global(code) {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.88em;
+      }
+      .prose :global(:not(pre) > code) {
+        background: rgba(255, 255, 255, 0.09);
+        padding: 0.12em 0.38em;
+        border-radius: 4px;
+        color: var(--accent);
+      }
+      .prose :global(table) {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.25rem 0;
+        font-size: 0.92rem;
+      }
+      .prose :global(th), .prose :global(td) {
+        border: 1px solid rgba(226, 226, 226, 0.14);
+        padding: 0.55rem 0.7rem;
+        text-align: left;
+        vertical-align: top;
+      }
+      .prose :global(th) { background: rgba(255, 255, 255, 0.05); color: var(--text-white); }
+
+      .recipe-faq { margin-top: 3rem; }
+      .recipe-faq h2 {
+        font-size: 1.55rem;
+        color: var(--text-white);
+        border-top: 1px solid rgba(226, 226, 226, 0.1);
+        padding-top: 1.75rem;
+      }
+      .faq-item { margin: 1.4rem 0; }
+      .faq-item h3 { font-size: 1.02rem; margin: 0 0 0.4rem; color: var(--text-white); }
+      .faq-item p { margin: 0; color: var(--grey-light); }
+      .faq-item :global(a) { color: var(--accent); }
+
+      .related { margin-top: 3rem; }
+      .related h2 { font-size: 1.4rem; color: var(--text-white); margin-bottom: 0.5rem; }
+      .related-note { color: var(--grey-light); margin: 0 0 1rem; font-size: 0.95rem; }
+      .card-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+        gap: 0.9rem;
+      }
+      .card-list a {
+        display: block;
+        height: 100%;
+        padding: 1rem;
+        border: 1px solid rgba(226, 226, 226, 0.14);
+        border-radius: 10px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        transition: border-color 0.15s ease, background 0.15s ease;
+      }
+      .card-list a:hover { border-color: var(--accent); background: rgba(255, 255, 255, 0.06); }
+      .card-list strong { display: block; color: var(--text-white); margin-bottom: 0.3rem; }
+      .card-list span { display: block; color: var(--grey-light); font-size: 0.88rem; line-height: 1.5; }
+
+      .recipe-cta {
+        margin-top: 3.5rem;
+        padding: 1.75rem;
+        border: 1px solid rgba(226, 226, 226, 0.14);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .recipe-cta h2 { margin: 0 0 0.6rem; font-size: 1.35rem; color: var(--text-white); }
+      .recipe-cta p { color: var(--grey-light); margin: 0 0 1rem; }
+      .recipe-cta a { color: var(--accent); }
+      .cta-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 0; }
+      .btn {
+        display: inline-block;
+        padding: 0.65rem 1.2rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .btn-primary { background: var(--primary); color: var(--text-white) !important; }
+      .btn-primary:hover { background: var(--primary-light); }
+      .btn-ghost { border: 1px solid rgba(226, 226, 226, 0.3); color: var(--light) !important; }
+      .btn-ghost:hover { border-color: var(--accent); }
+    </style>
+  </body>
+</html>

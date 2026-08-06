@@ -43,7 +43,7 @@ faq:
     a: "Yes. Run it as the step before a member gets access, ending with a rules confirmation. On Discord you can pair it with a role that unlocks the server."
   - q: "Does it work for non-gaming communities?"
     a: "Absolutely. It's a member onboarding profiler for any Discord or web community, and reframes cleanly as a new-user activation survey for a product."
-recipeUrl: "https://api.subo.ai/docs"
+recipeUrl: "/recipes/member-segmentation"
 relatedSlugs: ["feature-roadmap-vote", "playtest-beta-feedback", "lore-trivia-quiz"]
 pubDate: 2026-07-02
 draft: false
