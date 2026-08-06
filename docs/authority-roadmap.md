@@ -338,15 +338,11 @@ groundwork converts into citations and organic traffic. One page per intent.
 > FAQ questions and zero em dashes, which closes the "deliberately skipped" caveat on the
 > FAQ-schema item below. All nine FAQ-bearing posts are now live.
 >
-> **▶ THREAD 2 — IN PROGRESS: (h) bring the recipe corpus on-domain.**
-> The 404s are fixed and `llms.txt` now links all ten, but they're served from
-> `api.subo.ai`, so every bit of authority they earn accrues to the **old** domain — and
-> linking them from `llms.txt` increased that flow. ~3,500 lines of genuinely publishable
-> survey-*design* content (welcome quiz, volunteer/mod funnel, event RSVP streaks,
-> playtester selection, member segmentation, and five more) targeting intent we have
-> nothing for: `discord onboarding survey`, `discord welcome quiz`, `discord role
-> assignment quiz`. Not P7-gated (these are content, not product templates) and not
-> migration-gated (LLM citation doesn't wait on Search Console re-association).
+> **✅ DONE (h) recipe corpus brought on-domain — SHIPPED (2026-08-06, `0d361cc`).**
+> All ten now live at **`subo.gg/recipes`** as a real content collection. See the
+> dedicated `[x]` bullet below for the full detail. Headline: the authority leak to
+> `api.subo.ai` is closed, and the **templates ↔ recipes** pair the templates schema
+> always anticipated is finally wired.
 >
 > **Remaining in Thread 2 after (h):**
 > - **(a) Form/no-"bot" follow-ons** — FR `/survey-convos` retune (`sondage discord` is a
@@ -594,6 +590,43 @@ groundwork converts into citations and organic traffic. One page per intent.
       sections** for anything rendered through `BlogPost.astro`; page-level Astro routes
       (`/tutorials`, `/templates/*`) still build their own, as `/api` and
       `TemplatePage.astro` already do.
+- [x] **Survey-design recipes on-domain (`subo.gg/recipes`) — SHIPPED (2026-08-06,
+      `0d361cc`).** The ten recipes were only ever served as raw markdown from
+      `api.subo.ai/v1/recipes`, so all the authority they earned went to the **old
+      registrable domain**; linking them from `llms.txt` (`e823b32`) increased that flow
+      rather than fixing it. Now a real `recipes` content collection: a `/recipes` hub
+      grouped by the same three dimensions `/templates` uses, plus `/recipes/[slug]`
+      carrying **`TechArticle` + `BreadcrumbList` + `FAQPage`**, with **41 FAQ questions**
+      written against intent our bot-framed history is blind to (*discord welcome quiz*,
+      *moderator application form*, *discord trivia quiz with XP*, *prediction contest*).
+      Same visible-Q&A contract as blog and templates.
+      **It also wired the templates ↔ recipes pair the templates schema already
+      anticipated.** `templates.recipeUrl` (documented in `content.config.ts` as the
+      "developer walkthrough twin") pointed **all 17** template pages at a generic
+      `api.subo.ai/docs` placeholder, behind a button labelled *"Read the walkthrough"*
+      that actually landed on the Scalar reference. Eight now point at their specific
+      recipe, the rest at the hub, and on-domain ones stopped opening in a new tab.
+      `onboarding-certification` had no `recipeUrl` at all and gained one.
+      **The port was editorial, not a copy:** 144 prose em dashes cleared per the
+      `blog-writing` skill (**code fences deliberately left alone** — inside the ASCII
+      flow diagrams an em dash is one column of box art, and the JSON payloads are kept
+      verbatim against the app repo), 13 range en dashes to hyphens, sibling links
+      rewritten to `/recipes/*`, and repo-internal references dropped (Bruno collections,
+      `progress.md`, `PROJECT_PLAN.md` — all of which had no public URL). Stale **"Phase 6
+      scoring will support this"** roadmap language rewritten to present tense, since
+      scoring shipped and other recipes in the same set use it.
+      `llms.txt` now names `subo.gg/recipes` canonical and keeps the API markdown
+      endpoints as an explicitly **non-canonical** agent convenience. Nav: Recipes added to
+      the header Resources dropdown and the footer Product section.
+      **Verified:** clean build; 41 FAQ questions parsed back out of the built JSON-LD with
+      visible-count parity on all ten; **2,563 internal hrefs link-checked, zero broken and
+      zero relative leftovers** (this check is what caught eight repo-relative links the
+      port script missed); all 11 pages in the sitemap.
+      **Open follow-ups:** the app host still serves its own markdown copy at
+      `api.subo.ai/v1/recipes/{slug}`, so the two are **duplicate content across domains**
+      until the app side either 301s those to `subo.gg/recipes/*` or sends a
+      `Link: <…>; rel="canonical"` header. `llms.txt` states the canonical, which is the
+      cheap half of the fix. Not localized (EN-only, same call as `/api` and `/tutorials`).
 - [ ] Interlink: content → templates → pricing (internal linking lifts the whole cluster)
 
 ### Make the Public API discoverable to AI agents (GEO/AEO for developers)
@@ -717,9 +750,8 @@ agent path deliberately.
         the edit: 24 real URLs, all resolving.
         These are survey-*design* recipes, so they don't overlap `/api`'s API-mechanics
         recipes — `llms.txt` now says so explicitly, to route agents to the right one.
-        **Still strong raw material for on-domain content**, closer to the `/templates` and
-        use-case clusters than to the API page. That remains open: linking the markdown
-        gives agents the content, but it earns authority for `api.subo.ai`, not `subo.gg`.
+      - [x] **The corpus is now ON-DOMAIN — SHIPPED (2026-08-06, `0d361cc`).** See the
+        `/recipes` bullet immediately below; this closes the authority leak noted here.
 
 ### Bring the public Tutorials on-domain (off Notion)
 
