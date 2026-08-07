@@ -85,7 +85,7 @@ And we're not done. This is one more step in a never-ending effort to make Subo 
 
 The library shows up in all the places you already are:
 
-- **On the web:** browse the full gallery at [subo.gg/templates](/templates), then open one in the [Subo Web App](/app/templates) to preview it and clone it.
+- **On the web:** browse the full gallery at [subo.gg/templates](/templates), then open one in the [Subo Web App](https://app.subo.gg/app/templates) to preview it and clone it.
 - **In Discord:** run `/template` right in your server and deploy one without leaving chat.
 - **For developers and agents:** every template is available through the [Subo API](https://api.subo.ai/docs) too.
 
@@ -94,6 +94,8 @@ This is a starter set, not a finished one. We'll keep adding templates for the m
 Next time you see a survey and think "I wish I could make that," you can.
 
 ---
+
+Want to see how one is put together before you clone it? The [recipes](/recipes) take eight of these builds apart block by block: the scoring, the skip logic, and the roles or XP each one hands out. [Pricing](/pricing) covers what runs on the free tier.
 
 [Browse the template library](/templates)
 

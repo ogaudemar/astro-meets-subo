@@ -84,4 +84,6 @@ It's one mode or the other, not both at once. If you build a survey in Discord a
 
 If you're about to paste a Google Form link into your server, try the structured-conversation version first. Same questions, asked in the place your community already is, with better completion and answers you can actually act on. Start on the [survey convos page](/survey-convos), or add Subo to your server and run `/survey`.
 
-Weighing it up against the tool you already use? [Subo vs Google Forms and Typeform](/blog/subo-vs-google-forms-typeform-discord-communities) is the honest split, including where the form builders are genuinely better.
+For the two form-shaped jobs people ask about most, there are worked builds: a [moderator application](/recipes/volunteer-moderator-funnel) that hands out a trial or waitlist role from one gating question, and a [playtester signup](/recipes/playtester-selection) that splits applicants into a cohort and a waitlist. The [bug report](/templates/bug-report-form) and [suggestion box](/templates/suggestion-box) templates are the clone-and-go versions.
+
+Weighing it up against the tool you already use? [Subo vs Google Forms and Typeform](/blog/subo-vs-google-forms-typeform-discord-communities) is the honest split, including where the form builders are genuinely better. [Pricing](/pricing) covers what the free tier includes.

@@ -71,6 +71,8 @@ XP History is available on **all plans, including free**. If your community uses
 
 This is the natural follow-on to [dynamic XP scoring](/blog/scoring-piping-quizzes), the release that let you reward members based on how they answered, including the odds-based payouts that ran that World Cup contest. Rewards that move fast are only worth as much as members trust them, and a record they can check for themselves is how that trust gets built. If you're just starting to reward participation, our guide to [gamifying a Discord community with XP](/blog/gamify-discord-community-xp-survey-rewards) is a good place to begin.
 
+For a build where the XP ledger earns its keep, see the [attendance streak recipe](/recipes/event-rsvp-streak): members cross tier thresholds on their own across many events, so the history is the only place the story is legible.
+
 [Come see it in the Support Server →](https://subo.gg/support)
 
 ---

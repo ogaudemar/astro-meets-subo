@@ -1,5 +1,5 @@
 ---
-title: "Subo Just Got a Web App — Here's Why It Took This Long"
+title: "Subo Just Got a Web App, and Here's Why It Took This Long"
 description: "We built Subo to live inside Discord. That was the whole point. Here's what we built when Discord stopped being enough."
 pubDate: "Mar 31 2026"
 author: "Subo Team"
@@ -28,11 +28,11 @@ It was scrappy, but it worked. Community managers started running weekly polls, 
 
 But Discord wasn't designed to be a survey builder.
 
-Creating a survey with multiple questions, skip logic through slash commands and chat components worked — technically. But every survey was a small battle. You'd submit a change, check the preview bot embed, go back and edit, resubmit. Adding a new question, reordering questions, changing button labels, none of that was easy.
+Creating a survey with multiple questions, skip logic through slash commands and chat components worked, technically. But every survey was a small battle. You'd submit a change, check the preview bot embed, go back and edit, resubmit. Adding a new question, reordering questions, changing button labels, none of that was easy.
 
 The more powerful a survey was, the more painful it was to create.
 
-Reviewing results had the same ceiling. You'd run `/results` and get a Discord embed — great for a quick glance, but not something you could actually analyze. There was no way to filter by date, drill into individual responses, sort your open-text answers or see who answered what without exporting the data.
+Reviewing results had the same ceiling. You'd run `/results` and get a Discord embed. Great for a quick glance, but not something you could actually analyze. There was no way to filter by date, drill into individual responses, sort your open-text answers or see who answered what without exporting the data.
 
 And then we also had to deal with limitations of the Discord API and UI for question types, answer length, rate limits.
 
@@ -42,13 +42,13 @@ We kept shipping improvements to the bot, but we knew the real bottleneck wasn't
 
 ## Building the Next Layer
 
-We didn't want to abandon the Discord-native model. We still believe that a native chat interface is the right UX for most respondent experiences — conversational surveys meet people where they are, in the community they're already engaged with.
+We didn't want to abandon the Discord-native model. We still believe that a native chat interface is the right UX for most respondent experiences, conversational surveys meet people where they are, in the community they're already engaged with.
 
 But the *creator* experience needed a proper home.
 
 So we built one.
 
-The Subo Web App is the admin layer Subo always needed: a full dashboard for building, launching, and analyzing surveys — while keeping Discord as the delivery channel. The bot didn't go anywhere. It got a much better partner.
+The Subo Web App is the admin layer Subo always needed: a full dashboard for building, launching, and analyzing surveys, while keeping Discord as the delivery channel. The bot didn't go anywhere. It got a much better partner.
 
 ---
 
@@ -58,7 +58,7 @@ The Subo Web App is the admin layer Subo always needed: a full dashboard for bui
 
 This is the one we're most proud of.
 
-Now there's a proper visual editor — a canvas where you drag in question blocks, configure each one, and see exactly how it'll look before anyone sees it. Multiple choice, open-ended text, numeric scales — all configurable in one place.
+Now there's a proper visual editor: a canvas where you drag in question blocks, configure each one, and see exactly how it'll look before anyone sees it. Multiple choice, open-ended text, numeric scales, all configurable in one place.
 
 You can set skip logic. Add image attachments. Limit the number of selections on multi-punch questions. Everything that used to require knowing the right slash command syntax is now a click.
 
@@ -67,7 +67,7 @@ You can set skip logic. Add image attachments. Limit the number of selections on
 
 Results used to be a snapshot. Now they're live.
 
-The Results tab shows every response visualized as it comes in — horizontal bar charts, vertical breakdowns, response counts. You can flip between chart types. You see completion rates and median completion time at the top. For open-ended text questions, you can trigger an AI summary that synthesizes what respondents actually said, so you don't have to read 200 text answers line by line.
+The Results tab shows every response visualized as it comes in: horizontal bar charts, vertical breakdowns, response counts. You can flip between chart types. You see completion rates and median completion time at the top. For open-ended text questions, you can trigger an AI summary that synthesizes what respondents actually said, so you don't have to read 200 text answers line by line.
 
 ![Screenshot of results summary page in Subo Web App](/images/blog/web-app-launch/subo-web-app-results.webp)
 
@@ -75,7 +75,7 @@ The Results tab shows every response visualized as it comes in — horizontal ba
 
 The Responses tab is something that didn't exist in the bot at all.
 
-You can see every individual response in a filterable, sortable table — filter by date range, filter by specific answer values, resize columns. Click any row to open a sidebar with that respondent's Discord profile: their avatar, roles, when they joined, their XP — and timing data showing when they started, when they finished, and how long they took.
+You can see every individual response in a filterable, sortable table: filter by date range, filter by specific answer values, resize columns. Click any row to open a sidebar with that respondent's Discord profile: their avatar, roles, when they joined, their XP, and timing data showing when they started, when they finished, and how long they took.
 
 From there you can take action directly: award XP to a batch of respondents, grant a role to everyone who answered a specific way, or delete responses for data management. Things that used to take five bot commands and a lot of copy-pasting now take seconds.
 
@@ -85,7 +85,7 @@ From there you can take action directly: award XP to a batch of respondents, gra
 
 Starting from scratch on a survey is hard.
 
-Describe your topic — "post-event feedback for our weekly game night" or "member sentiment check on our moderation policies" — and Subo's AI generates a complete survey: questions, answer options, question types, question count. You review it, adjust anything you want in the Script Editor, and deploy. The whole thing takes two minutes.
+Describe your topic ("post-event feedback for our weekly game night", or "member sentiment check on our moderation policies") and Subo's AI generates a complete survey: questions, answer options, question types, question count. You review it, adjust anything you want in the Script Editor, and deploy. The whole thing takes two minutes.
 
 ![Screenshot of results summary page in Subo Web App](/images/blog/web-app-launch/subo-web-generate.webp)
 
@@ -115,7 +115,7 @@ They are still tightly connected with your community: XP, roles, custom emojis. 
 
 The Members page gives you a full view of your community in one place.
 
-Every member who has interacted with Subo shows up here — with their XP balance, assigned roles, and access levels. You can adjust XP directly, grant new roles, and manage access levels without touching the bot or running a single slash command. If you've been manually tracking who has what role or how much XP each member has earned, this replaces that entirely.
+Every member who has interacted with Subo shows up here, with their XP balance, assigned roles, and access levels. You can adjust XP directly, grant new roles, and manage access levels without touching the bot or running a single slash command. If you've been manually tracking who has what role or how much XP each member has earned, this replaces that entirely.
 
 ![Screenshot of the members page showing detsails of one member](/images/blog/web-app-launch/Members.webp)
 
@@ -124,7 +124,7 @@ Every member who has interacted with Subo shows up here — with their XP balanc
 
 Your data belongs to you, and the Account area makes that real for you and your members.
 
-From there, you can see all your past survey answers, sort and filter them however you need, export the full history, or delete individual responses — or everything at once. Whether you want a record of your own participation or you just want to clean the slate, it's all there and it's all yours.
+From there, you can see all your past survey answers, sort and filter them however you need, export the full history, or delete individual responses, or everything at once. Whether you want a record of your own participation or you just want to clean the slate, it's all there and it's all yours.
 
 ![Screenshot of the Accounts page showing some past answers](/images/blog/web-app-launch/Account-answers.webp)
 
@@ -139,7 +139,7 @@ We didn't build a standalone survey platform that happens to have a Discord inte
 
 If you've been running Subo surveys through the bot, all your existing projects, settings, and history are right there in the dashboard.
 
-If you haven't tried Subo yet, the web app is the best place to start.
+If you haven't tried Subo yet, the web app is the best place to start. You do not have to start from a blank canvas either: the [template library](/templates) has ready-made scripts you can clone and edit, the [recipes](/recipes) walk through how the more involved ones are built, and [pricing](/pricing) covers what sits on the free tier.
 
 ---
 

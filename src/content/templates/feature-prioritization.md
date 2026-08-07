@@ -43,6 +43,7 @@ faq:
     a: "Yes. The what's-missing box captures ideas outside your candidate list, so the survey doubles as a request board."
   - q: "Does it work for a community, not just a product?"
     a: "Yes. Reframe the candidates as community additions (events, channels, activities) for a 'what should we add?' board."
+recipeUrl: "/recipes#get-things-done"
 relatedSlugs: ["feature-roadmap-vote", "pricing-willingness-to-pay", "nps-reason-followup"]
 pubDate: 2026-07-03
 draft: false

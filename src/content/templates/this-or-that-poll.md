@@ -43,7 +43,7 @@ faq:
     a: "Yes. Run it weekly with last week's winner facing a new challenger and tally it into a season bracket."
   - q: "Does it work for gaming communities?"
     a: "Perfectly. Character versus character, weapon versus weapon, map versus map. Same structure, your options."
-recipeUrl: "/recipes"
+recipeUrl: "/recipes#engage"
 relatedSlugs: ["this-or-that-quick-poll", "content-preference", "governance-proposal-vote"]
 pubDate: 2026-07-03
 draft: false

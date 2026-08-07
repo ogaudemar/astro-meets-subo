@@ -66,7 +66,7 @@ Text Analysis and the `/draft` command both run on Subo's AI credits. All new ac
 
 While we're on the topic of AI, Subo's `/draft` command is the other side of the same coin. It uses the same AI credits, but instead of summarizing responses, it generates survey questions for you.
 
-Tell Subo what you're trying to find out, for example "I want to understand what keeps my members engaged and what's causing them to leave," and `/draft` generates a full set of suggested questions. You can edit, remove, or add to them, but the starting point is already built. It's especially useful when you're drawing a blank on how to structure a survey, or want to cover every angle on a topic without spending 30 minutes writing questions. See the [survey how-to](../how-to-create-a-survey-with-subo-the-survey-bot-877951089) for where `/draft` fits in the build flow.
+Tell Subo what you're trying to find out, for example "I want to understand what keeps my members engaged and what's causing them to leave," and `/draft` generates a full set of suggested questions. You can edit, remove, or add to them, but the starting point is already built. It's especially useful when you're drawing a blank on how to structure a survey, or want to cover every angle on a topic without spending 30 minutes writing questions. See the [survey how-to](/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089) for where `/draft` fits in the build flow.
 
 ## Limitations to Know About
 
@@ -83,6 +83,8 @@ AI summarization is powerful but not perfect. A few things to be aware of:
 ## Getting Started
 
 Text Analysis is available on all plans. Turn it on in `/settings`, run a survey with at least one open-text question, and your next report will include the summary. Need to regenerate after more responses arrive? Use `Refresh Text Analysis`.
+
+It earns its keep on surveys that ask a real open question. The [suggestion box](/templates/suggestion-box) and the [community health survey](/templates/community-health-engagement) are both built that way, and the [pre and post assessment recipe](/recipes/pre-post-assessment) pairs open answers with scores you can compare across two waves.
 
 **[Add Subo to your Discord server →](/invite)**
 

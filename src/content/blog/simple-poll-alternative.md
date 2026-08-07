@@ -101,4 +101,6 @@ Match it to why you're switching:
 
 **You outgrew basic voting.** Real poll controls like scheduling, selection caps, reuse, and vote-change, and then rewards, scoring, or a survey, quiz, or form when you need one. That's past every reaction-poll bot, and it's where Subo fits.
 
-**[Add Subo to your Discord server for free →](/invite)**, see everything it does on the [polls page](/polls), or learn [how to create a Discord poll](/blog/how-to-create-a-discord-poll-with-or-without-a-bot) step by step.
+To skip the setup, the [template library](/templates) has poll builds ready to clone, including a [one-tap this-or-that poll](/templates/this-or-that-quick-poll) and an [anonymous proposal vote](/templates/governance-proposal-vote).
+
+**[Add Subo to your Discord server for free →](/invite)**, see everything it does on the [polls page](/polls), learn [how to create a Discord poll](/blog/how-to-create-a-discord-poll-with-or-without-a-bot) step by step, or compare [plans](/pricing).

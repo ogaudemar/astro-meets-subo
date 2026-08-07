@@ -12,7 +12,7 @@ When it started, Subo was something you ran inside Discord. You typed a command,
 
 [Earlier this year, we launched a web app](/blog/subo-web-app-launch) to make it easier to manage projects and to bring surveys outside of Discord.
 
-Today, community managers are ready for something more. They want tools that handle the operational overhead — moving data between systems, managing survey logistics, organizing responses — so they can focus on what matters: listening to members, building real relationships, and making decisions grounded in what their people actually think.
+Today, community managers are ready for something more. They want tools that handle the operational overhead (moving data between systems, managing survey logistics, organizing responses) so they can focus on what matters: listening to members, building real relationships, and making decisions grounded in what their people actually think.
 
 The best communities are built on human connection. The API is designed to automate the minutia so community managers can focus on that work.
 
@@ -26,19 +26,19 @@ The Subo API is a REST API at `api.subo.ai`. It gives you programmatic access to
 
 Forty-one endpoints. Ten resource groups. Full OpenAPI 3.1.0 documentation. Webhooks to notify you of key events.
 
-If you've used the Subo Discord bot or the web app, the API covers the same surface area — and then some. Everything you can do through the dashboard, you can now do in code.
+If you've used the Subo Discord bot or the web app, the API covers the same surface area, and then some. Everything you can do through the dashboard, you can now do in code.
 
 ---
 
 ## Getting Your API Key
 
-Keys live in the Subo web app. Go to **[Account → Community Account → API Access](https://app.subo.gg/account)**, create a key, and it's shown once. Copy it somewhere safe — that's the only time you'll see the full value.
+Keys live in the Subo web app. Go to **[Account → Community Account → API Access](https://app.subo.gg/account)**, create a key, and it's shown once. Copy it somewhere safe, because that's the only time you'll see the full value.
 
 There are two key types:
 
 **Personal keys** act with your own permissions. Good for scripts you run yourself and dashboards you're maintaining.
 
-**Bot or agent keys** are designed for automated processes — a workflow that runs unattended, another Discord bot, an AI agent, an integration that responds to events. They carry a description field so you can document what the key is for, which matters when you're rotating credentials months later and can't remember which key was for what.
+**Bot or agent keys** are designed for automated processes: a workflow that runs unattended, another Discord bot, an AI agent, an integration that responds to events. They carry a description field so you can document what the key is for, which matters when you're rotating credentials months later and can't remember which key was for what.
 
 Both types support two access levels: **Admin** (full read/write access) and **Creator** (scoped to projects you own).
 
@@ -50,15 +50,15 @@ The key format is `sbo_live_<random>`. Pass it in the `X-API-Key` header. That's
 
 ### Manage projects from anywhere
 
-The full project lifecycle is available through the API: create, read, update, delete, open, close, clone. You can build projects from scratch programmatically — define the script block by block, clone an existing project as a starting point, or provide an objective in natural language and let the AI create the script.
+The full project lifecycle is available through the API: create, read, update, delete, open, close, clone. You can build projects from scratch programmatically: define the script block by block, clone an existing project as a starting point, or provide an objective in natural language and let the AI create the script.
 
 Projects can be open (actively collecting responses) or closed (inactive). The write endpoints on scripts are intentionally gated to inactive projects, so you can't accidentally rewrite a survey that's in the middle of fielding.
 
 ### Read and delete responses
 
-`GET /v1/projects/{id}/responses` returns paginated responses with timestamps, completion status, and per-block answers. Filter, page through, and pull the data into whatever reporting layer you're building.
+`GET /v1/communities/{communityId}/projects/{projectId}/responses` returns paginated responses with timestamps, completion status, and per-block answers. Filter, page through, and pull the data into whatever reporting layer you're building.
 
-If you need to delete responses — for data hygiene, member requests, or testing — there's an endpoint for that too.
+If you need to delete responses (for data hygiene, member requests, or testing) there's an endpoint for that too.
 
 ### Work with members
 
@@ -66,7 +66,7 @@ The members endpoints let you read member data, look up by Discord platform ID, 
 
 ### Generate surveys with AI
 
-`POST /v1/generate` takes a plain-language intent (e.g. "post-event feedback for our weekly game night") and returns a complete draft script: question blocks, answer options, question types. The draft comes back as structured data you can review and modify before creating a project. Nothing gets committed until you say so.
+`POST /v1/communities/{communityId}/projects/generate` takes a plain-language intent (e.g. "post-event feedback for our weekly game night") and returns a complete draft script: question blocks, answer options, question types. The draft comes back as structured data you can review and modify before creating a project. Nothing gets committed until you say so.
 
 ### Webhooks for real-time events
 
@@ -82,11 +82,17 @@ The `response.submitted` event fires when a real participant completes a survey 
 
 ## Built for Agents Too
 
-We wrote `llms.txt` into the spec from the start. Point an AI agent at `api.subo.ai/llms.txt` and it gets a structured description of the entire API surface: what resources exist, what each endpoint does, what auth it expects.
+We wrote `llms.txt` into the spec from the start. Point an AI agent at [`subo.gg/llms.txt`](/llms.txt) and it gets a structured description of the product and the entire API surface: what resources exist, what each endpoint does, what auth it expects.
 
 The Scalar documentation at `api.subo.ai/docs` is interactive. You can send requests directly from the browser, inspect response shapes, and understand error codes without writing a line of code first.
 
 The OpenAPI 3.1.0 spec is at `api.subo.ai/v1/openapi.json`. Import it into Postman, Bruno, Insomnia, or generate a typed client in whatever language you're working in.
+
+---
+
+## Where to Start
+
+The [API quickstart on subo.gg](/api) is the fastest way in: an authenticated first call, then end-to-end recipes for generating a script with AI, opening a survey to a Discord or web audience, paging through responses, and verifying a webhook signature. For the survey design itself rather than the wiring, the [recipes section](/recipes) covers the scoring, skip logic and reward blocks behind each build.
 
 ---
 
@@ -103,7 +109,7 @@ The API uses a sliding-window rate limiter, scoped to your key. Limits vary by t
 
 Every response includes `X-RateLimit-Limit`, `X-RateLimit-Remaining`, and `X-RateLimit-Reset` headers. If you exceed the limit, you get a `429` with a `Retry-After` header.
 
-For operations where you want guaranteed exactly-once semantics — creating a project, registering a webhook — pass an `Idempotency-Key` header. Subo deduplicates on that key for 24 hours. Safe to retry on network failures.
+For operations where you want guaranteed exactly-once semantics, such as creating a project or registering a webhook, pass an `Idempotency-Key` header. Subo deduplicates on that key for 24 hours. Safe to retry on network failures.
 
 The API is available across all plan tiers, including free. API keys share your account's credit pool and rate limits. Premium features and certain webhook events are reserved for Premium and higher plans, matching the boundaries of the Discord bot and web app.
 
@@ -116,7 +122,9 @@ If you're building something with the API and run into gaps, we want to know. Th
 
 ---
 
-[Explore the API docs →](https://api.subo.ai/docs)
+[Start with the API quickstart and recipes →](/api)
+
+[Explore the full API reference →](https://api.subo.ai/docs)
 
 [Get your API key →](https://app.subo.gg/app/account)
 

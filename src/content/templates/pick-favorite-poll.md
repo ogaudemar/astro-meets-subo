@@ -43,7 +43,7 @@ faq:
     a: "The fast 'which is best' hit that also tells you what your audience likes: favorite character, map, class, genre, or anything your community has opinions about."
   - q: "Does it award XP?"
     a: "Participation XP is on. A fun, once-per-user poll is exactly where a small XP nudge fits without being farmable."
-recipeUrl: "/recipes"
+recipeUrl: "/recipes#engage"
 relatedSlugs: ["this-or-that-quick-poll", "match-prediction-poll", "content-preference"]
 pubDate: 2026-07-03
 draft: false

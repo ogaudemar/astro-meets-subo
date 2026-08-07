@@ -43,6 +43,7 @@ faq:
     a: "Yes, for maximum candor. You'll trade away the ability to follow up with your most enthusiastic users, which is often where the best insight is."
   - q: "How often should I run it?"
     a: "Quarterly is common — as a pulse — plus after any major launch or before a fundraise, so you can trend the 'very disappointed' percentage over time."
+recipeUrl: "/recipes#understand"
 relatedSlugs: ["nps-reason-followup", "churn-cancellation", "feature-roadmap-vote"]
 pubDate: 2026-07-03
 draft: false

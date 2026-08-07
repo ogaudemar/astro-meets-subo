@@ -8,7 +8,7 @@ bestFor: "fan communities, onboarding quizzes, seasonal events"
 dimension: "engage"
 features: ["scoring", "calculated block", "skip logic", "quizzes"]
 relatedSlugs: ["member-segmentation", "world-capitals-quiz", "welcome-quiz"]
-templateSlugs: ["lore-trivia-quiz"]
+templateSlugs: []
 faq:
   - q: "How do you make a personality quiz for Discord?"
     a: "Put score weights on every answer so each option feeds one or more personality buckets, then use a calculated block to pick the highest-scoring bucket and skip logic to show the matching reveal."

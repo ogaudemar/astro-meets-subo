@@ -43,7 +43,7 @@ faq:
     a: "That's the write-in branch. Instead of a dead end, they tell you what they'd build instead, so you catch the idea that wasn't on your shortlist."
   - q: "Is this just for game studios?"
     a: "No. It's a roadmap or prioritization vote for any product team, and reframes as a 'what should we do next' vote for any Discord community."
-recipeUrl: "/recipes"
+recipeUrl: "/recipes#understand"
 relatedSlugs: ["playtest-beta-feedback", "bug-report-form", "player-onboarding-profiler"]
 pubDate: 2026-07-02
 draft: false

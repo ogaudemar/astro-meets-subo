@@ -43,7 +43,7 @@ faq:
     a: "Skip logic reads the category and shows the matching follow-up. An event idea and a feature idea each get a relevant question; other categories skip straight to the free-form idea and priority read."
   - q: "Can I make it anonymous?"
     a: "Yes. Switch to anonymous mode for sensitive feedback, which is a good fit for a 'report a problem' variant."
-recipeUrl: "/recipes"
+recipeUrl: "/recipes#understand"
 relatedSlugs: ["governance-proposal-vote", "feature-roadmap-vote", "content-preference"]
 pubDate: 2026-07-03
 draft: false

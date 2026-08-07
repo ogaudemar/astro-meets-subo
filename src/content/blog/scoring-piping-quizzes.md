@@ -1,6 +1,6 @@
 ---
 title: "Scoring, quizzes, calculations and piping are now native in Subo"
-description: "Native scoring, answer piping, instant feedback, and calculated fields—build real-time quizzes, personality surveys, and prediction contests without spreadsheets."
+description: "Native scoring, answer piping, instant feedback, and calculated fields let you build real-time quizzes, personality surveys, and prediction contests without spreadsheets."
 pubDate: "May 29 2026"
 author: "Subo Team"
 heroImage: "/images/blog/scoring-quiz/Subo_quiz_show.jpg" 
@@ -31,7 +31,7 @@ draft: false
 
   The core of this release is scoring: the ability to assign hidden point weights to answer options and accumulate them across a survey into named buckets, without the respondent ever seeing the arithmetic.
 
-  For knowledge quizzes, this could mean one bucket called "Score," 10 points on the correct option per question, zero on all others. When the survey ends, [score] is the respondent's total. No spreadsheet, no formula, no manual tallying. The score can appear in any closing message (type "[score]"), it's a column in the Responses tab, and it exports directly to CSV. The user who was copy-pasting Discord replies into a Google Sheet every trivia night doesn't have to do that anymore.
+  For knowledge quizzes, this could mean one bucket called "Score," 10 points on the correct option per question, zero on all others. When the survey ends, [score] is the respondent's total. No spreadsheet, no formula, no manual tallying. The score can appear in any closing message (type "[score]"), it's a column in the Responses tab, and it exports directly to CSV. The user who was copy-pasting Discord replies into a Google Sheet every trivia night doesn't have to do that anymore. The [graded trivia quiz recipe](/recipes/world-capitals-quiz) walks through a ten-question build end to end, and the [lore trivia template](/templates/lore-trivia-quiz) sets the same thing up in a few clicks.
 
   For personality and segmentation surveys, scoring works across multiple named buckets simultaneously. A member's answer to "what do you share after a long gaming session?" adds 3 points to the "Competitor" score bucket and 1 point to the "Social", or 3 points to "Creator" and 1 point to "Social", depending on what they chose. Six questions of that structure produce a stable, differentiated signal, and
   argmax([score_competitor],[score_creator],[score_explorer],[score_social]) returns the winning dimension as a variable (e.g. "creator") that the rest of
@@ -62,7 +62,7 @@ draft: false
 
   Two patterns cover most cases:
 
-  argmax takes a list of score variables and returns the name of the highest one. In a personality quiz, this is how the survey decides which category to sort you into. In a segmentation onboarding survey, this is how the survey knows which role to assign. The result is a string variable that skip logic can branch on. Say you create a personality quiz to sort members into one of the 4 Houses at Hogwarts: you will create 4 score buckets for each House, then in the end add a Calculated Field block with "argmax([score_gryffindor], [score_ravenclaw], [score_hufflepuff], [score_Slytherin])" returns the name of the bucket with the highest score. You can then display this value or use skip logic to display a page per House which only displays when relevant.
+  argmax takes a list of score variables and returns the name of the highest one. In a personality quiz, this is how the survey decides which category to sort you into. In a segmentation onboarding survey, this is how the survey knows which role to assign. The result is a string variable that skip logic can branch on. Say you create a personality quiz to sort members into one of the 4 Houses at Hogwarts: you will create 4 score buckets for each House, then in the end add a Calculated Field block with "argmax([score_gryffindor], [score_ravenclaw], [score_hufflepuff], [score_Slytherin])" returns the name of the bucket with the highest score. You can then display this value or use skip logic to display a page per House which only displays when relevant. That exact build, weights and all, is written up in the [Sorting Hat quiz recipe](/recipes/hogwarts-house-sorting-quiz).
 
   Arithmetic and conditionals cover everything else. [score]/[max_score]*100 is a percentage. if [correct_answers] >= 9 then mastery else if [correct_answers] >= 7 then solid else review is a named band that a closing message can echo back personalized. Calculated fields feed into skip logic with the full set of comparison operators (>, >=, <, <=, =, !=), so you can gate an action block (a bonus XP award, a special achievement) on any derived threshold.
 
@@ -78,11 +78,11 @@ draft: false
 
   Prediction surveys are where this gets most interesting. The workflow that was previously: "post a survey, wait for the event, count who was right, manually hand them XP" or even "keep a tally of all scores in a spreadsheet" is now:
 
-  1. Author a prediction survey where each option carries a score weight reflecting how bold that prediction is — the favourite is worth 10 points, the underdog 30, the long shot 60.
+  1. Author a prediction survey where each option carries a score weight reflecting how bold that prediction is: the favourite is worth 10 points, the underdog 30, the long shot 60.
   2. After the event, open the Script Editor and mark the correct answer. Scores update immediately across all responses.
   3. Open the Responses tab, click Give XP → Dynamic → Score, confirm. XP is awarded to every correct predictor in one step, in amounts proportional to how bold their call was. Members who predicted incorrectly get nothing (zero-point awards are skipped automatically).
 
-  The spreadsheet is gone. The logic (who predicted what, who was right, how much they should earn) lives inside the survey.
+  The spreadsheet is gone. The logic (who predicted what, who was right, how much they should earn) lives inside the survey. The [prediction poll recipe](/recipes/prediction-poll) has the full build, including how to pick the score weights.
 
 
   ---
@@ -91,9 +91,9 @@ draft: false
   The communities using Subo for structured research (onboarding surveys, attitude studies, knowledge assessments) now have a tool that
   produces scored, structured, exportable data without any post-processing step.
 
-  A multi-bucket onboarding survey that segments new members into behavioural types (using hidden scoring across 6 questions) gives a moderator a continuously updated record of their community's composition. Export the Responses tab and join it to engagement data: do "Explorer" retain longer? Are "Creators" underrepresented relative to their content output? Those are real research questions that a scored onboarding survey can start to answer.
+  A [multi-bucket onboarding survey](/recipes/member-segmentation) that segments new members into behavioural types (using hidden scoring across 6 questions) gives a moderator a continuously updated record of their community's composition. Export the Responses tab and join it to engagement data: do "Explorer" retain longer? Are "Creators" underrepresented relative to their content output? Those are real research questions that a scored onboarding survey can start to answer.
 
-  A pre/post assessment design — same questions, same weights, two projects, exported and joined on Discord handle — gives a clean measure
+  A [pre/post assessment design](/recipes/pre-post-assessment) (same questions, same weights, two projects, exported and joined on Discord handle) gives a clean measure
   of individual-level change across a programme. Combine it with the segmentation export and you have a third axis: did "Explorers" improve
   their knowledge score more than "Socials"? That kind of analysis was impractical when scoring happened in a spreadsheet.
 

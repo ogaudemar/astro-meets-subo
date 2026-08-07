@@ -43,6 +43,7 @@ faq:
     a: "Direct 'what would you pay?' questions get anchored, lowballed answers. Van Westendorp's four indirect framings cancel that bias and give a more honest read."
   - q: "Does it work for annual or one-time pricing?"
     a: "Yes. Reword the prompts to annual or one-time and the calculation still works — it's unit-agnostic."
+recipeUrl: "/recipes#understand"
 relatedSlugs: ["product-market-fit", "feature-prioritization", "nps-reason-followup"]
 pubDate: 2026-07-03
 draft: false

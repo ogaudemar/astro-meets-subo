@@ -210,12 +210,16 @@ const jsonLd: Array<Record<string, any>> = [
             {recipeUrl && (
               /* recipeUrl now points at an on-domain /recipes page (it used to be a
                  generic api.subo.ai/docs placeholder), so keep internal links in the
-                 same tab and only open external ones in a new one. */
+                 same tab and only open external ones in a new one.
+                 The label has to tell the truth about where the button lands: only a
+                 /recipes/<slug> URL is an actual walkthrough of THIS template. The
+                 templates with no recipe twin point at their dimension group on the
+                 hub, and promising "the walkthrough" there is a broken promise. */
               <a
                 href={recipeUrl}
                 class="button button--primary-border"
                 {...(recipeUrl.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              >Read the walkthrough</a>
+              >{/^\/recipes\/[^/]/.test(recipeUrl) ? 'Read the walkthrough' : 'Browse survey recipes'}</a>
             )}
           </div>
         </div>

@@ -43,7 +43,7 @@ faq:
     a: "No. The two open fields are optional, so the poll stays a fast tap-through for anyone who does not want to type, while capturing detail from those who do."
   - q: "Who is it for?"
     a: "Any creator, server, studio, or brand making content for an audience who would rather ask than guess."
-recipeUrl: "/recipes"
+recipeUrl: "/recipes#engage"
 relatedSlugs: ["this-or-that-poll", "community-health-engagement", "pick-favorite-poll"]
 pubDate: 2026-07-03
 draft: false

@@ -43,7 +43,7 @@ faq:
     a: "They derive a new value from earlier answers, like turning severity and frequency into a priority label. Almost nobody discovers this feature on their own, which is exactly why this template shows it off."
   - q: "Does it work for support tickets, not just game bugs?"
     a: "Yes. It's a self-triaging issue intake for any product or SaaS team. Rename the areas and severity levels and it becomes a support-ticket form."
-recipeUrl: "/recipes"
+recipeUrl: "/recipes#get-things-done"
 relatedSlugs: ["feature-roadmap-vote", "playtester-beta-recruitment", "playtest-beta-feedback"]
 pubDate: 2026-07-02
 draft: false

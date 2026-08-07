@@ -125,4 +125,6 @@ EasyPoll and Subo are close enough on core polling that feature lists only get y
 
 One last thing worth weighing is longevity. Discord's history is full of once-popular free bots that stalled or quietly shut down when the people running them moved on. A tool with a business model behind it has a reason to keep pace as Discord ships changes and new features. Subo's paid plans fund a small team that keeps it current, and they're what let a poll you run today grow into scoring, rewards, and full surveys down the line. If you want a tool that keeps up with your community rather than one you might have to replace, that is where Subo stands out.
 
-**[Add Subo to your Discord server for free →](/invite)** or see everything it does with polls on the [polls page](/polls).
+If you want to see the difference rather than read about it, the [poll templates](/templates) are one-click builds of the things a poll bot cannot do: a [prediction contest](/templates/event-prediction-contest) that pays XP by how bold the call was, an [anonymous proposal vote](/templates/governance-proposal-vote), a [this-or-that debate poll](/templates/this-or-that-poll).
+
+**[Add Subo to your Discord server for free →](/invite)**, see everything it does with polls on the [polls page](/polls), or compare [plans and pricing](/pricing).

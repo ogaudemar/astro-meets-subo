@@ -43,6 +43,7 @@ faq:
     a: "Everyone except the people who said they simply don't need it anymore — there's no point asking them what would bring them back. That's the skip logic at work."
   - q: "Does it work as a community exit survey?"
     a: "Yes. Reframe the reasons (too noisy, not relevant, found another community) and it becomes a 'why are you leaving the server?' survey."
+recipeUrl: "/recipes#understand"
 relatedSlugs: ["nps-reason-followup", "product-market-fit", "feature-roadmap-vote"]
 pubDate: 2026-07-03
 draft: false

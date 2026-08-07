@@ -43,6 +43,7 @@ faq:
     a: "Promoters get a short consent question after describing what they love, so you leave with quotable praise you're cleared to publish."
   - q: "Can I use it for CSAT or CES instead?"
     a: "Yes. Reword the number question and adjust the bands, and the same branch-and-follow-up structure works for customer satisfaction or effort scores."
+recipeUrl: "/recipes#understand"
 relatedSlugs: ["product-market-fit", "churn-cancellation", "playtest-beta-feedback"]
 pubDate: 2026-07-03
 draft: false

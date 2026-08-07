@@ -109,7 +109,12 @@ const recipes = defineCollection({
     dimension: z.enum(["engage", "understand", "get-things-done"]),
     features: z.array(z.string()).default([]),
 
-    // Linking. `templateSlugs` are the templates whose `recipeUrl` points here.
+    // Linking. `templateSlugs` are templates that set up the same thing in a few
+    // clicks, rendered as "Start from a template". The relation is many-to-many
+    // and NOT strictly the inverse of `templates.recipeUrl`: one recipe can serve
+    // several templates, while each template's button picks a single best twin.
+    // Leave it empty rather than reaching for a loose match, since the section
+    // promises the template builds the same thing.
     relatedSlugs: z.array(z.string()).default([]),
     templateSlugs: z.array(z.string()).default([]),
 

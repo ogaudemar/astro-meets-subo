@@ -153,4 +153,6 @@ There's a simpler way to draw the line, too. If you poll often, run an active co
 
 The two aren't really competitors. Native polls handle the throwaway questions, and Subo handles the ones where the result matters. Plenty of servers run both.
 
-**[Add Subo to your Discord server for free →](/invite)**, see everything it does on the [polls page](/polls), or learn [how to create a Discord poll](/blog/how-to-create-a-discord-poll-with-or-without-a-bot) step by step.
+The reuse gap is easiest to see from the other side: the [template library](/templates) is polls you clone instead of retype, and the [prediction poll recipe](/recipes/prediction-poll) shows what a poll looks like once scoring and XP are wired into it.
+
+**[Add Subo to your Discord server for free →](/invite)**, see everything it does on the [polls page](/polls), learn [how to create a Discord poll](/blog/how-to-create-a-discord-poll-with-or-without-a-bot) step by step, or compare [plans](/pricing).

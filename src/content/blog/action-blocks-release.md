@@ -1,5 +1,5 @@
 ---
-title: "Surveys that feel like conversations — now with Action Blocks"
+title: "Surveys that feel like conversations, now with Action Blocks"
 description: "Trigger real community rewards mid-survey, greet members by name, and customize every intro and outro."
 pubDate: "May 18 2026"
 author: "Subo Team"
@@ -21,7 +21,7 @@ Today's release is a big step toward that vision.
 
 ## Action Blocks
 
-Until now, rewards happened at the end of a survey — for everyone. Action Blocks change that.
+Until now, rewards happened at the end of a survey, for everyone. Action Blocks change that.
 
 Drop a `give-xp`, `give-achievement`, or `give-role` block anywhere in the script. By default, each block fires once per respondent; for retake-eligible surveys, you can set it to once per session instead.
 
@@ -31,9 +31,11 @@ Action Blocks support skip logic, so rewards only fire when members answer a spe
 
 A few examples where that becomes very handy:
 
-- Use `give-role` to assign personalized server roles the moment a new member completes your onboarding survey
-- Use `give-xp` to reward quiz respondents who get the right answers — not just respondents who finish
-- Use `give-achievement` to tag selected beta testers in a recruitment survey, with a linked Discord role attached to access the test
+- Use `give-role` to assign personalized server roles the moment a new member completes your [onboarding survey](/recipes/welcome-quiz)
+- Use `give-xp` to reward [quiz respondents who get the right answers](/recipes/world-capitals-quiz), rather than everyone who finishes
+- Use `give-achievement` to tag selected beta testers in a [recruitment survey](/recipes/playtester-selection), with a linked Discord role attached to access the test
+
+Two action blocks with opposite conditions is the whole trick behind an application funnel: one grants a trial role, the other a waitlist role, and exactly one fires per applicant. The [moderator application recipe](/recipes/volunteer-moderator-funnel) builds that out, and the [templates library](/templates) has ready-made scripts that already use these blocks.
 
 ### Block messaging that matches your tone
 
@@ -43,15 +45,15 @@ Like content blocks, Action Blocks show a message and an optional image. You con
 
 ## Intro and Outro, now fully editable
 
-A good conversation starts with a welcome and ends with a close. The Script Editor now loads default intro and outro messages from your server settings automatically — and lets you customize every message per survey. First impressions and last ones, under your control. Of course you can remove the intro if you want.
+A good conversation starts with a welcome and ends with a close. The Script Editor now loads default intro and outro messages from your server settings automatically, and lets you customize every message per survey. First impressions and last ones, under your control. Of course you can remove the intro if you want.
 
 ---
 
 ## Surveys that greet your members by name
 
-Every message in a Subo survey — intros, reward notifications, outros — can now reference the person reading it. Simple tokens like `[UserName]`, `[ServerName]`, `[CreatedBy]`, or `[InterviewerName]` resolve live when each member responds.
+Every message in a Subo survey (intros, reward notifications, outros) can now reference the person reading it. Simple tokens like `[UserName]`, `[ServerName]`, `[CreatedBy]`, or `[InterviewerName]` resolve live when each member responds.
 
-The result: a survey that opens with *"Hi DemoGorgon83! 👋 I'm Subo, here to help MindFlayer_ with these questions. Ready to start?"* — not *"Please complete this form."*
+The result: a survey that opens with *"Hi DemoGorgon83! 👋 I'm Subo, here to help MindFlayer_ with these questions. Ready to start?"*, not *"Please complete this form."*
 
 ---
 

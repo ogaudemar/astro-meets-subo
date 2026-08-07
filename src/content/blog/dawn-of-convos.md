@@ -34,7 +34,7 @@ The result? Declining engagement. Poor data quality. A crisis of trust. We’ve 
 
 ## Why Incremental Evolution Isn’t Enough  
 
-Yes, surveys have *“evolved”*: from paper to phone, to web, to mobile. Each new medium promised a fresh start. But the core experience never really changed. The rigidity, the impersonality, the disrespect for respondents’ time—all of it carried forward.  
+Yes, surveys have *“evolved”*: from paper to phone, to web, to mobile. Each new medium promised a fresh start. But the core experience never really changed. The rigidity, the impersonality, the disrespect for respondents’ time: all of it carried forward.  
 
 Now AI, and especially large language models (LLMs), offers a chance to **reinvent the very idea of what it means to listen at scale**.
 
@@ -53,20 +53,20 @@ Why *convo*?
 - Because it feels like what it is: a conversation.  
 - Because conversations are how humans naturally share, listen, and connect.  
 
-Convos aren’t just a rebrand. They are guided by principles that surveys never had—and never could.  
+Convos aren’t just a rebrand. They are guided by principles that surveys never had, and never could.  
 
 ---
 
 ## The Principles of Convos  
 
 - **Agents with voice.** Convos are hosted by agents with personality, tone, and presence.  
-- **Two-way by design.** Agents don’t just ask—they listen, respond, clarify, and even answer questions.  
+- **Two-way by design.** Agents don’t just ask. They listen, respond, clarify, and even answer questions.  
 - **Adaptive, not linear.** Scripts are guidelines, not shackles. A convo adapts based on context and energy.  
 - **Memory across time.** Convos remember what people share, creating continuity and depth.  
 - **Personalized.** A teenager and a retiree should never receive the same tone.  
 - **Respectful of time.** Convos are short by default, with the ability to pause and resume.  
 - **No terminations.** Every response matters. If someone gives their time, they deserve thanks and recognition.  
-- **Curious, observant, human.** Convos notice fatigue, sense disinterest, and know when to probe deeper—or when to gracefully wrap up.  
+- **Curious, observant, human.** Convos notice fatigue, sense disinterest, and know when to probe deeper, or when to gracefully wrap up.  
 
 This is not a patch. **This is a reset.**  
 
@@ -83,11 +83,13 @@ The survey had its time. It helped us listen at scale when no better alternative
 The future belongs to convos.  
 
 At **Subo**, we’re not simply asking questions.  
-We’re starting conversations.  
+We’re starting conversations.
+
+The convo idea is no longer only a manifesto. See [how a convo actually runs](/survey-convos) in a Discord server today, or [how to run a form or survey in Discord](/blog/how-to-make-a-discord-form) without pasting a form link into a channel.  
 
 ---
 
 ## 🚀 Join the movement  
 
 Convos are the future of surveys.  
-Let’s build a new way of listening. Join our [Discord server]("../../support") and join the conversation!  
+Let’s build a new way of listening. Join our [Discord server](/support) and join the conversation!  

@@ -91,7 +91,7 @@ const jsonLd = [
       {GROUPS.map((g) => {
         const inGroup = recipes.filter((r) => r.data.dimension === g.key);
         return inGroup.length > 0 && (
-          <section class="group">
+          <section class="group" id={g.key}>
             <h2>{g.label}</h2>
             <p class="group-blurb">{g.blurb}</p>
             <ul class="cards">

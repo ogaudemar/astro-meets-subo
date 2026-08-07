@@ -10,7 +10,7 @@ draft: false
 
 # Mastering Skip Logic: How to Make Your Discord Surveys Smarter with Subo
 
-Surveys are a powerful way to gather insights from your community in Discord, but let's be real—no one enjoys answering irrelevant questions. That's where skip logic comes in. By dynamically adjusting survey paths based on a respondent's answers, you can keep your surveys short, relevant, and engaging.
+Surveys are a powerful way to gather insights from your community in Discord, but let's be real: no one enjoys answering irrelevant questions. That's where skip logic comes in. By dynamically adjusting survey paths based on a respondent's answers, you can keep your surveys short, relevant, and engaging.
 
 Skip logic can help you gather the right insights without overwhelming your audience. Let's dive into how it works and when to use it.
 
@@ -34,7 +34,7 @@ Not all respondents are the same. Skip logic helps you tailor your questions to 
 
 No one likes answering questions that don't apply to them. Skip logic ensures respondents only see relevant questions, keeping surveys shorter and engagement higher.
 
-🔹 **Example 1**: If a player says they haven't played your latest game, there's no need to ask them detailed feedback about it—skip to questions about why they didn't try it.
+🔹 **Example 1**: If a player says they haven't played your latest game, there's no need to ask them detailed feedback about it. Skip to questions about why they didn't try it.
 
 🔹 **Example 2**: If a podcast subscriber says they don't watch your video content, you can skip questions about visual aspects and focus on what they do listen.
 
@@ -56,7 +56,9 @@ When you include an "Other" option, it's a good idea to follow up and learn more
 
 Subo makes setting up skip logic easy. With a few clicks, you can create dynamic surveys that keep your audience engaged and deliver better insights without the fluff.
 
-The Skip Logic option is available for all Premium, VIP and Custom bot subscribers.
+The Skip Logic option is available for all Premium, VIP and Custom bot subscribers. See [all plans](/pricing).
+
+Two recipes show skip logic doing real work: a [moderator application](/recipes/volunteer-moderator-funnel) where two opposite conditions decide who gets a trial role and who gets the waitlist, and a [welcome quiz](/recipes/welcome-quiz) that routes new members by region and hands out the matching roles. The [template library](/templates) ships scripts with the logic already wired.
 
 👉 [Try Subo the Survey Bot now](/invite) and see how skip logic can level up your surveys!
 

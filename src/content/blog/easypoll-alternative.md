@@ -96,4 +96,6 @@ The honest answer depends on one question: do you only need polls?
 
 There's also the case for not running two bots. If you already reach for a survey now and then, doing polls *and* surveys in one app is simpler than a poll bot plus a form tool. That consolidation is often the real reason servers move.
 
-**[Add Subo to your Discord server for free →](/invite)**, see what it does with polls on the [polls page](/polls), or read [how to create a Discord poll](/blog/how-to-create-a-discord-poll-with-or-without-a-bot) step by step.
+The quickest way to judge the difference is to clone one of the [poll and quiz templates](/templates) and run it in your own server. If you would rather see how one is put together first, the [prediction poll recipe](/recipes/prediction-poll) shows the scoring and the XP payout end to end.
+
+**[Add Subo to your Discord server for free →](/invite)**, see what it does with polls on the [polls page](/polls), read [how to create a Discord poll](/blog/how-to-create-a-discord-poll-with-or-without-a-bot) step by step, or check [plans and pricing](/pricing).
