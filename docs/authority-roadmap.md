@@ -344,12 +344,28 @@ groundwork converts into citations and organic traffic. One page per intent.
 > `api.subo.ai` is closed, and the **templates ↔ recipes** pair the templates schema
 > always anticipated is finally wired.
 >
-> **Remaining in Thread 2 after (h):**
+> **✅ DONE (j) the interlink pass — SHIPPED (2026-08-07, `6ebad15`).** Closes P2's oldest
+> unchecked bullet (content → templates → recipes → pricing) and the "Read the walkthrough"
+> buttons that landed on the recipes index. Full detail in the two `[x]` bullets below.
+> Headline: `/recipes` went from **zero inbound blog links to 16**, every published post now
+> has at least one internal link, and four broken or wrong links were fixed, including **two
+> 404-ing API paths in `public-api-launch`** (the same missing-`/communities/{communityId}`
+> bug `llms.txt` had, still live in a published post).
+>
+> **Remaining in Thread 2 after (h) and (j):**
 > - **(a) Form/no-"bot" follow-ons** — FR `/survey-convos` retune (`sondage discord` is a
 >   real market), more "app"/"form" vocabulary in existing titles/H2s, standalone `/draft`
 >   page. Migration-gated to ~Q4.
 > - **(e) Localize `/api`?** — probably not. Developer docs in EN is the norm and the
 >   samples don't translate. Noted so it isn't re-litigated.
+> - **(k) Audit the *rest* of the site's outbound prose the same way (new, from (j)).** The
+>   interlink pass only link-checked and re-read the **blog**. It found two 404-ing API paths
+>   in a published post that had been wrong since May and that `check:api` structurally cannot
+>   see, because the guard reads `api-surface.json`, never prose. The built-site link check now
+>   passes at 7,487 hrefs, so **broken URLs are covered**; what is not covered is a URL that
+>   resolves while the sentence around it is false. Worth one deliberate read of `/api`,
+>   `/recipes`, `/templates` and `llms.txt` prose against the app repo, since that is the
+>   documented limit of all three anti-drift layers.
 >
 > **✅ DONE (i) API privacy-mode default — FIXED APP-SIDE, site copy now matches (2026-08-05).**
 > The API no longer hardcodes Semi-Private when `privacy_mode` is omitted:
@@ -627,7 +643,56 @@ groundwork converts into citations and organic traffic. One page per intent.
       until the app side either 301s those to `subo.gg/recipes/*` or sends a
       `Link: <…>; rel="canonical"` header. `llms.txt` states the canonical, which is the
       cheap half of the fix. Not localized (EN-only, same call as `/api` and `/tutorials`).
-- [ ] Interlink: content → templates → pricing (internal linking lifts the whole cluster)
+- [x] **Interlink: content → templates → recipes → pricing — DONE (2026-08-07, `6ebad15`).**
+      The oldest unchecked P2 bullet. Measured before touching anything: of 23 published
+      posts, **`/templates` appeared in 6, `/pricing` in 6, and `/recipes` in zero** (the
+      ten pages shipped the day before had no inbound blog links at all). Now **18 / 13 /
+      16**, and **every published post carries at least one internal link** (five had none).
+      Links were placed where a post already described the thing in prose, not bolted on as
+      a CTA row: the scoring post already walked through the Hogwarts argmax build and a
+      pre/post design, action-blocks already listed three recipes' worth of examples, the
+      cloning post already explained the mechanism that makes a two-wave assessment
+      comparable.
+      **Four broken or wrong links found on the way, none of them cosmetic:**
+      - `public-api-launch` documented **two API paths that 404**: `GET /v1/projects/{id}/responses`
+        and `POST /v1/generate` were both missing the `/communities/{communityId}` prefix.
+        This is **exactly the bug fixed in `llms.txt` on 2026-08-04**, sitting in a
+        published post the whole time. Corrected against `api-surface.json`. Same post
+        still pointed agents at `api.subo.ai/llms.txt`; now the subo.gg canonical. *(The
+        `check:api` guard does not read blog prose, so this class stays human-caught.)*
+      - `dawn-of-convos` had `[Discord server]("../../support")`, quotes inside the href.
+      - `subo-template-library-launch` linked `/app/templates`, an on-domain 404 (the web
+        app route is `app.subo.gg/app/templates`).
+      - **18 blog-to-blog links used `../slug`**, which only resolved because blog URLs
+        carry a trailing slash. All rewritten to absolute `/blog/` paths, matching the
+        "zero relative leftovers" standard the recipes port set.
+      **House style:** 41 em dashes cleared across the 9 posts touched. Only
+      `discord-survey-clyde-mysterious-disappearance` still has 5 (a 2023 PR-style research
+      post using them as heading separators; left alone since nothing else in it changed).
+      **Verified:** `check:api` OK, clean build, `tsc` + wrangler dry-run clean, and
+      **7,487 internal hrefs link-checked with zero broken links and zero missing anchors**
+      (this is what caught the `/app/templates` 404).
+- [x] **Templates → recipes buttons were lying — FIXED (2026-08-07, same commit).** Found
+      by the user: template pages rendered a button labelled **"Read the walkthrough"** that
+      landed on the `/recipes` **index**, not a walkthrough. Nine did that and five had no
+      button at all. **None of those 14 has a genuine recipe twin** among the ten (there is
+      no bug-report, suggestion-box or this-or-that recipe), so remapping was not the fix.
+      What shipped: `TemplatePage.astro` now derives the label from the URL shape, so only a
+      real `/recipes/<slug>` says "Read the walkthrough" and everything else says **"Browse
+      survey recipes"**; the hub's three dimension sections gained `id` anchors and the 14
+      point at their own group (`/recipes#engage` etc.). **All 22 templates now route into
+      `/recipes`**, 8 to a specific walkthrough.
+      **One pairing was outright wrong:** `lore-trivia-quiz` (a graded right/wrong quiz with
+      an achievement on pass) pointed at the **Sorting Hat recipe, which explicitly has no
+      correct answers**. Repointed to `world-capitals-quiz`, whose `templateSlugs` already
+      claimed it. `hogwarts-house-sorting-quiz.templateSlugs` emptied, since no
+      personality-quiz template exists and the section promises the template "sets up the
+      same thing."
+      **Schema comment corrected too:** `recipes.templateSlugs` was documented as "the
+      templates whose `recipeUrl` points here," which the data never satisfied. The relation
+      is many-to-many and not the inverse of `templates.recipeUrl` (one recipe serves several
+      templates; each template's button picks one best twin). Now says so, with an
+      instruction to leave it empty rather than reach for a loose match.
 
 ### Make the Public API discoverable to AI agents (GEO/AEO for developers)
 
