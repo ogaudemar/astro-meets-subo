@@ -56,6 +56,11 @@ export const blogFr: Record<string, BlogFrRow> = {
 		summary:
 			"Pas besoin d'être chercheur pro pour créer une super enquête. Clone un sondage, une enquête ou un quiz éprouvé en un clic et fais-le tien. Une bibliothèque grandissante de templates gratuits pour les communautés Discord.",
 	},
+	"personalize-discord-survey-messages": {
+		title: "Trois touches qui écrivent tes messages Subo à ta place : @, [ et :",
+		summary:
+			"Les mentions de rôle fonctionnent maintenant dans tous les champs de message de Subo, des Paramètres au Script Editor, et une nouvelle barre d'insertion les réunit avec les sélecteurs de variables et d'emoji. Disponible sur tous les plans, même le gratuit.",
+	},
 	"xp-history": {
 		title: "Historique XP : chaque point, avec sa raison",
 		summary:

@@ -26,7 +26,25 @@ hyphen only for genuine ranges (e.g. `1-7 days`) and compound words.
 
 Before finishing, grep the file for `—` to confirm none remain.
 
-### 2. Don't sound like an AI wrote it
+### 2. US English spelling
+
+**Every post is US English.** *Categorize*, *personalize*, *organize*, *customize*,
+*summarize*, *behavior*, *color*, *favorite*, *analyze*, *center*, *labeled*, *program*.
+Never the British `-ise` / `-our` / `-re` forms. This is the site-wide rule, not a blog
+rule: it applies to the web app, marketing pages, recipes, templates and `llms.txt` too,
+and it is stated in full (with the exceptions) in the **`subo-glossary`** skill.
+
+The exceptions worth remembering while writing a post: **code identifiers and JSON stay
+verbatim** (a field named `favourite_game` in the app is written `favourite_game` in every
+sample), and **quoted UI strings are quoted as they appear**.
+
+Before finishing, grep the file for the usual suspects:
+
+```bash
+grep -inE '\b(categoris|personalis|organis|customis|optimis|summaris|prioritis|analyse|behaviour|colour|favourite|centre|labelled|programme|whilst|amongst)' <file>
+```
+
+### 3. Don't sound like an AI wrote it
 
 These are the tells that mark copy as machine-generated. Every one of them
 should be caught and cut before a post goes out. Read the draft back and hunt for

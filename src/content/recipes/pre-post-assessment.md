@@ -61,7 +61,7 @@ is deliberate:
   re-taking between waves.
 - Separate exports are easier to label ("pre", "post") and join correctly.
 - The respondent context in Wave 2 can differ (you can add attendance
-  questions or reference the programme in the intro) without changing
+  questions or reference the program in the intro) without changing
   the scored items.
 
 Clone Wave 1's project to create Wave 2, so all blocks, weights, and bucket
@@ -154,7 +154,7 @@ free-text "nickname" question whose answer can serve as a secondary key.
 | Display name | Variable key | Meaning |
 |---|---|---|
 | Shipping | `shipping` → `[score_shipping]` | Confidence in shipping decisions |
-| Scoping | `scoping` → `[score_scoping]` | Confidence in scoping and prioritising |
+| Scoping | `scoping` → `[score_scoping]` | Confidence in scoping and prioritizing |
 | Knowledge | `knowledge` → `[score_knowledge]` | Factual knowledge of the topic domain |
 
 ### Projects (2 total)
@@ -171,7 +171,7 @@ POST /v1/communities/{communityId}/projects
 // Wave 2 — clone Wave 1, then update name and intro block
 POST /v1/communities/{communityId}/projects/{wave1Id}/clone
 // → update name to "Bootcamp — Post-test (Wave 2)"
-// → update q1 intro text to post-programme framing
+// → update q1 intro text to post-program framing
 // → add attendance question (q13) at the end of scored items
 ```
 
@@ -286,18 +286,18 @@ wave2.score_knowledge - wave1.score_knowledge → Δ_knowledge
 ```
 
 Members present in Wave 2 but not Wave 1 are late joiners or non-completers
-on the pre-test, so analyse them separately or exclude depending on your goal.
+on the pre-test, so analyze them separately or exclude depending on your goal.
 
 ### Segment by attendance (Wave 2 q13)
 
 Group respondents by their Wave 2 attendance answer (1 session / 2-3 / all
 4). Compare mean Δ_shipping, Δ_scoping, Δ_knowledge across attendance groups.
 A dose-response pattern (higher attendance → larger positive delta) is the
-strongest available evidence that the programme caused the improvement.
+strongest available evidence that the program caused the improvement.
 
 ### Report aggregate change
 
-Average the delta columns across all matched respondents for a programme-level
+Average the delta columns across all matched respondents for a program-level
 summary: "Participants improved their shipping confidence score by +2.4 points
 on average (out of a possible 16), with the largest gains among those who
 attended 3 or more sessions."
@@ -308,8 +308,8 @@ attended 3 or more sessions."
 
 ### Three-wave design (pre / mid / post)
 
-Add a Wave 1.5 survey at the midpoint of the programme. Same structure,
-same bucket names. A mid-programme dip in confidence is common: members
+Add a Wave 1.5 survey at the midpoint of the program. Same structure,
+same bucket names. A mid-program dip in confidence is common: members
 learn how much they don't know, and the pre/mid/post trajectory tells a
 richer story than a single before/after comparison.
 
@@ -325,7 +325,7 @@ adds a third axis to the report.
 
 Drop the "pre/post" framing and run the same scored survey monthly as a
 community health pulse. Track community-level averages over time rather
-than individual deltas. Useful for ongoing programmes rather than discrete
+than individual deltas. Useful for ongoing programs rather than discrete
 cohorts.
 
 ---
@@ -336,11 +336,11 @@ cohorts.
   engaged than those who complete only one or neither. Delta scores reflect
   participants, not the full community.
 - **Test-retest effects:** some improvement in Wave 2 knowledge scores
-  comes from memory of Wave 1 questions, not the programme. Withholding
+  comes from memory of Wave 1 questions, not the program. Withholding
   Wave 1 feedback on knowledge items (as noted above) reduces but does
   not eliminate this.
 - **No causal inference:** two-wave pre/post without a control group cannot
-  prove the programme caused the improvement. Community effects, external
+  prove the program caused the improvement. Community effects, external
   events, and motivated self-selection all confound the result. A comparison
   group (members who signed up but attended zero sessions) is the minimum
   credible comparison.

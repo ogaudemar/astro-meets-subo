@@ -6,6 +6,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Marketing/landing page site for **Subo** (a Discord survey and poll bot) deployed on Cloudflare Workers. Built with Astro 5, pure `.astro` components (no React/Vue/Svelte), with MDX blog support.
 
+## House style (applies to every English string on the site)
+
+- **US English spelling.** *categorize, personalize, organize, customize, behavior, color,
+  favorite, analyze, center, labeled, program.* Never the British `-ise` / `-our` / `-re`
+  forms. Exceptions: code identifiers and JSON stay verbatim (a field named
+  `favourite_game` in the app is written that way in samples), quoted UI strings are quoted
+  as they appear, and non-English locale files are their own languages.
+- **No em dashes** in user-facing copy.
+- Full rules: the **`subo-glossary`** skill (terminology, capitalization, spelling, tone)
+  and the **`blog-writing`** skill (editorial voice, anti-AI-tell rules).
+
 ## Commands
 
 ```bash

@@ -13,14 +13,14 @@ faq:
   - q: "How do you segment members of a Discord server?"
     a: "Ask several indirect questions, put score weights on the answers, and let a calculated block pick the highest-scoring segment. Scoring across six questions gives a more stable result than asking people to self-select from a list."
   - q: "Why not just ask members which group they belong to?"
-    a: "Self-reported labels are unreliable because people answer aspirationally and read the labels as status. Scoring behaviour-shaped questions avoids that. The recipe covers when a direct question is the better choice anyway."
+    a: "Self-reported labels are unreliable because people answer aspirationally and read the labels as status. Scoring behavior-shaped questions avoids that. The recipe covers when a direct question is the better choice anyway."
   - q: "Can I export the segmentation data?"
     a: "Yes. The raw bucket scores are stored per response and exportable, so you get a structured dataset rather than only the final label."
   - q: "How many segments can I have?"
     a: "The argmax pattern supports any number of score buckets. Four is a good starting point; the recipe shows how to extend it and what breaks if segments overlap too much."
 ---Classify new members into meaningful engagement segments during onboarding
 using a hidden multi-bucket scoring survey. Each segment receives a
-personalised welcome path, the matching Discord role, and an achievement
+personalized welcome path, the matching Discord role, and an achievement
 badge, and moderators get a clean, exportable record of how their
 community is composed.
 
@@ -39,7 +39,7 @@ across four hidden dimensions (Competitor / Creator / Explorer / Social)
 and uses `argmax` to assign each member to their dominant segment. The
 result:
 
-1. **For the member:** a personalised welcome embed naming their segment,
+1. **For the member:** a personalized welcome embed naming their segment,
    the matching Discord role, and a small XP bonus.
 2. **For the server:** every member's segment recorded in the Responses tab
    with the raw bucket scores, exportable as a structured dataset at any
@@ -52,7 +52,7 @@ The segments emerge from their patterns.
 
 ## Segment definitions
 
-Define four segments with clear behavioural signatures before authoring:
+Define four segments with clear behavioral signatures before authoring:
 
 | Segment | Signal | Role | Achievement |
 |---|---|---|---|
@@ -111,7 +111,7 @@ members to appear meaningfully mixed.
                     │
                     ▼
   ┌──────────────────────────────────────────┐
-  │ q2–q7: Six behaviour questions           │
+  │ q2–q7: Six behavior questions            │
   │ (single_punch, no correct answer)        │
   │ Each option: score_values distributing   │
   │ hidden points across 4 buckets           │
@@ -131,7 +131,7 @@ members to appear meaningfully mixed.
   ║ q9–q12: Four reveal content_blocks       ║
   ║ One per segment — shows only when q8     ║
   ║ matches that segment name                ║
-  ║ (personalised welcome + role description)║
+  ║ (personalized welcome + role description)║
   ╚══════════════════════════════════════════╝
                     │
                     ▼
@@ -197,7 +197,7 @@ POST /v1/communities/{communityId}/projects
       "continue": { "after": "click", "label": "Let's go →" }
     },
 
-    // q2 — first behaviour question
+    // q2 — first behavior question
     {
       "type": "single_punch",
       "prompt": "After a long gaming session, what are you most likely to share in the server?",
@@ -367,7 +367,7 @@ segments. Segment drift is an early signal of engagement trajectory.
 - **You want self-reported segments**: if members should explicitly choose
   their identity (e.g., "I'm a developer / designer / manager"), use a
   plain `single_punch` question and `give_achievement` blocks per answer.
-  Hidden scoring is for cases where the classification is behavioural, not
+  Hidden scoring is for cases where the classification is behavioral, not
   declared.
 - **You want more than 4 segments**: `argmax` supports any number of
   buckets, but cognitive coherence of segments degrades beyond 5-6.
@@ -375,7 +375,7 @@ segments. Segment drift is an early signal of engagement trajectory.
   splits into 2 broad groups, a second survey (separate project) splits each
   group into 3 sub-segments.
 - **You need statistically validated scales**: this recipe produces
-  behavioural segment assignments, not psychometrically validated construct
+  behavioral segment assignments, not psychometrically validated construct
   scores. For validated scales (Big Five, engagement frameworks), design
   the item battery externally, then encode the validated weights into
   `score_values`. The scoring machinery handles any weight scheme you provide.

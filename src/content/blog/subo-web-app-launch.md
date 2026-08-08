@@ -62,6 +62,8 @@ Now there's a proper visual editor: a canvas where you drag in question blocks, 
 
 You can set skip logic. Add image attachments. Limit the number of selections on multi-punch questions. Everything that used to require knowing the right slash command syntax is now a click.
 
+Every text field in the editor also takes three shortcut keys: `@` for a role mention, `[` for a variable like the respondent's own name, `:` for an emoji. [Here's what each one does](/blog/personalize-discord-survey-messages).
+
 
 ### Real-Time Results
 

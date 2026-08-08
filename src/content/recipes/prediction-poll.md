@@ -40,8 +40,8 @@ match, you ask members to pick the winner. After the match, you set the
 correct answer and award XP, but not the same flat amount to everyone.
 
 Members who correctly predicted an **upset** (the underdog winning) earn
-more XP than members who picked the favourite. You encode this as a `score`
-weight on each option: favourite = 10 points, underdog = 30 points.
+more XP than members who picked the favorite. You encode this as a `score`
+weight on each option: favorite = 10 points, underdog = 30 points.
 Score-based XP means winners earn exactly what their option was worth.
 
 This is the simplest version of a prediction market inside a Discord survey.
@@ -60,7 +60,7 @@ This is the simplest version of a prediction market inside a Discord survey.
                     ▼
   ┌──────────────────────────────────────────┐
   │ q2: Who wins? (single_punch)             │
-  │  Team A (favourite) — score: 10          │
+  │  Team A (favorite) — score: 10           │
   │  Team B (underdog)  — score: 30          │
   │  Team C (longshot)  — score: 60          │
   │                                          │
@@ -131,7 +131,7 @@ profile). Anonymous predictions cannot receive XP.
 ### Scoring as odds
 
 Weight each option by its **payout multiplier**, so calling the underdog is
-worth more than calling the favourite. There are two ways to pick the numbers:
+worth more than calling the favorite. There are two ways to pick the numbers:
 
 - **Equal reward (no odds needed).** Every correct answer is worth the same XP
   (e.g. your server's standard 10 XP per poll). Best when no public market

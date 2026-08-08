@@ -20,11 +20,11 @@ draft: false
   ---
   ## Answers that carry forward
 
-  The first gap was simpler than scoring but just as frustrating: every question stood alone. A member would tell you their favourite game in question 2, and question 5 would ask something related with no memory of what they'd said. The survey felt like a form pretending to be a conversation.
+  The first gap was simpler than scoring but just as frustrating: every question stood alone. A member would tell you their favorite game in question 2, and question 5 would ask something related with no memory of what they'd said. The survey felt like a form pretending to be a conversation.
 
   **Answer piping** closes that gap. Any block in a survey can now reference an earlier answer by name. Type `[` in any text field of the Script Editor and the variable picker shows every earlier question in the script: select one, and it becomes a pill chip that resolves to the respondent's actual answer at runtime.
 
-  "You said your favourite game is [favourite_game]: who do you like to play [favourite_game] with?" That's a different conversation. The respondent feels heard because the survey remembered. Completion rates go up, answer quality goes up, and the data that comes back is richer because the questions were more specific.
+  "You said your favorite game is [favourite_game]: who do you like to play [favourite_game] with?" That's a different conversation. The respondent feels heard because the survey remembered. Completion rates go up, answer quality goes up, and the data that comes back is richer because the questions were more specific.
 
   ---
   ## Scores that run themselves
@@ -38,12 +38,12 @@ draft: false
   the survey can branch on, and that you can tag your member with, using a give-achievement block.
 
   This is how an onboarding survey segments new members into meaningful types, assigns them the matching role or badge, and routes them to a
-  personalised welcome message, all in a single conversational flow. 
+  personalized welcome message, all in a single conversational flow. 
 
   ---
   ## Feedback in the moment
 
-  Mark one option as correct on any choice question and the bot sends a personalised feedback message immediately after the respondent
+  Mark one option as correct on any choice question and the bot sends a personalized feedback message immediately after the respondent
   answers, before the next question appears. Both "when correct" and "when incorrect" messages are fully editable and support the full
   variable set (including [answer], which names what the respondent actually chose).
 
@@ -78,7 +78,7 @@ draft: false
 
   Prediction surveys are where this gets most interesting. The workflow that was previously: "post a survey, wait for the event, count who was right, manually hand them XP" or even "keep a tally of all scores in a spreadsheet" is now:
 
-  1. Author a prediction survey where each option carries a score weight reflecting how bold that prediction is: the favourite is worth 10 points, the underdog 30, the long shot 60.
+  1. Author a prediction survey where each option carries a score weight reflecting how bold that prediction is: the favorite is worth 10 points, the underdog 30, the long shot 60.
   2. After the event, open the Script Editor and mark the correct answer. Scores update immediately across all responses.
   3. Open the Responses tab, click Give XP → Dynamic → Score, confirm. XP is awarded to every correct predictor in one step, in amounts proportional to how bold their call was. Members who predicted incorrectly get nothing (zero-point awards are skipped automatically).
 
@@ -91,10 +91,10 @@ draft: false
   The communities using Subo for structured research (onboarding surveys, attitude studies, knowledge assessments) now have a tool that
   produces scored, structured, exportable data without any post-processing step.
 
-  A [multi-bucket onboarding survey](/recipes/member-segmentation) that segments new members into behavioural types (using hidden scoring across 6 questions) gives a moderator a continuously updated record of their community's composition. Export the Responses tab and join it to engagement data: do "Explorer" retain longer? Are "Creators" underrepresented relative to their content output? Those are real research questions that a scored onboarding survey can start to answer.
+  A [multi-bucket onboarding survey](/recipes/member-segmentation) that segments new members into behavioral types (using hidden scoring across 6 questions) gives a moderator a continuously updated record of their community's composition. Export the Responses tab and join it to engagement data: do "Explorer" retain longer? Are "Creators" underrepresented relative to their content output? Those are real research questions that a scored onboarding survey can start to answer.
 
   A [pre/post assessment design](/recipes/pre-post-assessment) (same questions, same weights, two projects, exported and joined on Discord handle) gives a clean measure
-  of individual-level change across a programme. Combine it with the segmentation export and you have a third axis: did "Explorers" improve
+  of individual-level change across a program. Combine it with the segmentation export and you have a third axis: did "Explorers" improve
   their knowledge score more than "Socials"? That kind of analysis was impractical when scoring happened in a spreadsheet.
 
   ---

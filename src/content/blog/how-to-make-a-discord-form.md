@@ -45,7 +45,7 @@ A few things change once the questionnaire runs as a conversation inside Discord
 
 - **Nobody leaves the server.** Members answer in a DM with the bot or in a thread, right where they already are. No new tab, no context switch.
 - **One question at a time lowers the wall.** A five-question form looks like work. Five questions asked one after another feel like a short exchange.
-- **It knows who's answering.** Because the member is authenticated through Discord, you get their identity and roles for free, without a name field to fill in or fake.
+- **It knows who's answering.** Because the member is authenticated through Discord, you get their identity and roles for free, without a name field to fill in or fake. It can also [use what it knows](/blog/personalize-discord-survey-messages): greet each person by name, mention the role they're applying for, and put your community's own emoji on the buttons.
 - **You can reward participation.** Action blocks can hand out XP, a role, or an achievement as someone answers, so finishing is worth something instead of being a favor to you.
 - **Honest answers when you need them.** For sensitive topics you can run the whole thing in anonymous mode, covered in the [guide to anonymous surveys in Discord](/blog/complete-guide-anonymous-surveys-discord).
 
