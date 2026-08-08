@@ -110,6 +110,13 @@ pre-website releases (2022-2025, announced only in the Support server). The chan
 it in alongside the derived entries, but it never grows. New launches go through the tagged
 post above, never into that file.
 
+### 6b. Offer the Discord announcement
+
+The launch is not distributed until it is posted in the Support Server. Offer to draft it
+and follow the **`discord-announcement`** skill for length, the `@Updates` ping convention
+and embed control. Don't restate those rules here, and don't paste the post's intro into
+Discord: the channel wants a pointer, not a summary.
+
 ### 7. Localization flag pass
 
 If the brief says the feature's strings were **localized in the app**, flag which site copy
