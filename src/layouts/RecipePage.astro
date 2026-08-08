@@ -162,7 +162,9 @@ const jsonLd: Array<Record<string, any>> = [
       .recipe {
         max-width: 60rem;
         margin: 0 auto;
-        padding: 1.5rem 1.25rem 4rem;
+        /* The nav is position: fixed; 140px is the site-wide clearance used by
+           /api, /templates, /tutorials and /changelog. */
+        padding: 140px 1.25rem 4rem;
         color: var(--light);
       }
       .crumbs {

@@ -128,9 +128,15 @@ const jsonLd = [
       .hub {
         max-width: 68rem;
         margin: 0 auto;
-        padding: 2rem 1.25rem 4rem;
+        /* The nav is position: fixed, so the first block needs to clear it.
+           140px is the site-wide convention (/api, /templates, /tutorials,
+           /changelog all use it). */
+        padding: 140px 1.25rem 4rem;
         color: var(--light);
       }
+      /* Same reason: the dimension anchors (/recipes#engage, linked from every
+         template page) would otherwise land their heading under the nav. */
+      .group { scroll-margin-top: 90px; }
       .eyebrow {
         text-transform: uppercase;
         letter-spacing: 0.08em;
