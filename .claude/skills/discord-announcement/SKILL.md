@@ -19,7 +19,8 @@ This skill owns length, ping convention and Discord mechanics. Terminology comes
   this kind of message.
 - **Never `@everyone` or `@here`** for a regular announcement. Reserve them for something
   genuinely everyone must act on, an outage or a breaking change, and ask the user first.
-- Put the ping on its own opening line, not buried mid-sentence.
+- **The ping goes last, as part of the sign-off block below.** Not on the opening line.
+  The message earns the notification, it does not lead with it.
 
 ## Length
 
@@ -56,20 +57,35 @@ other four.
 - Write `@Updates` and role names as plain text in the draft. The user resolves them to
   real mentions when posting.
 
+## The sign-off (fixed, use verbatim)
+
+Every announcement ends with this block. It is brand voice, not boilerplate to improvise on:
+
+```
+Questions, issues, suggestions? Share them in #✨┃feedback-suggestions  - or for support, please open a private ticket in #🎫┃support-ticket  
+
+:green_heart: :subo:
+@Updates
+```
+
+Two channels doing two jobs: public feedback in one, private support in the other. Keep the
+channel names exactly as written (the emoji and `┃` are part of them), and keep `:subo:`,
+which is the server's own emoji. Because this block already closes the message, **do not
+write your own "let us know what you think" line** above it. That was the draft's job before
+this convention was written down; now it is duplication.
+
 ## Shape
 
 ```
-@Updates
-
 ## <emoji> <Feature name>: <what it does for you, one line>
 
 <One or two sentences, or up to three bullets.>
 
 <link>
 
-<Optional: one line for a second feature, same shape.>
+<Optional: second feature, same shape.>
 
-<Closing line: where to reply, or what to try.>
+<the sign-off block, verbatim>
 ```
 
 ## Tone notes (append as they come up)
@@ -78,8 +94,8 @@ other four.
 - Plan/tier line only when it is genuinely good news ("every plan, free included") and
   only once per post, not per feature. Same hard rule as `feature-launch`: **never state
   a plan or tier without the user confirming it in-session.**
-- Close with an invitation to reply, not a marketing CTA. The server is the place people
-  already are; "add Subo to your server" is nonsense here.
+- The sign-off block already invites replies, so the body should not. Never a marketing CTA:
+  the server is where people already are, so "add Subo to your server" is nonsense here.
 
 <!--
 Add tone/voice observations below as the user reacts to drafts. This file is meant to
