@@ -110,12 +110,22 @@ pre-website releases (2022-2025, announced only in the Support server). The chan
 it in alongside the derived entries, but it never grows. New launches go through the tagged
 post above, never into that file.
 
-### 6b. Offer the Discord announcement
+### 6b. Offer the channel announcements
 
-The launch is not distributed until it is posted in the Support Server. Offer to draft it
-and follow the **`discord-announcement`** skill for length, the `@Updates` ping convention
-and embed control. Don't restate those rules here, and don't paste the post's intro into
-Discord: the channel wants a pointer, not a summary.
+The launch is not distributed until it is posted where the audience is. Offer all three,
+and don't paste the post's intro into any of them: each channel wants a pointer written for
+its own readers, not a summary.
+
+- **Discord Support Server** — follow **`discord-announcement`** (length, the `@Updates`
+  ping, the fixed sign-off block, embed control).
+- **X** — follow **`x-thread`** (the hook rule, thread shape, the 280 math, image pairing).
+- **top.gg announcements** — the bot page's own feed, read by prospective users browsing
+  the directory rather than by existing admins. Lead with capability, not with release
+  news. Pairs with the P1 listing refresh in `docs/authority-roadmap.md`.
+
+These go stale quietly, because nothing fails a build when a channel is skipped. Worth
+asking the user when each was last posted to: as of August 2026, X had missed four releases
+and top.gg three.
 
 ### 7. Localization flag pass
 

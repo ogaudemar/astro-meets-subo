@@ -91,6 +91,9 @@ this convention was written down; now it is duplication.
 ## Tone notes (append as they come up)
 
 - Talk to admins who already use Subo. No onboarding, no explaining what a survey is.
+- **Open on what the reader gets, never on our own story.** No release cadence, no
+  announcement history, no confessions about what we shipped quietly. That applies across
+  every channel; see the hook rule in `x-thread` for the long version.
 - Plan/tier line only when it is genuinely good news ("every plan, free included") and
   only once per post, not per feature. Same hard rule as `feature-launch`: **never state
   a plan or tier without the user confirming it in-session.**
