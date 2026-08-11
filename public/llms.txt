@@ -17,7 +17,7 @@ AI agents can use this API to:
 - [API Quickstart & Recipes](https://subo.gg/api): Static, crawlable quickstart plus end-to-end recipes (AI script generation, opening a project, pulling responses, AI analysis, webhook signature verification) with copy-paste curl. Start here.
 - [API Documentation](https://api.subo.ai/docs): Interactive Scalar UI with full endpoint reference
 - [OpenAPI Spec](https://api.subo.ai/v1/openapi.json): Raw OpenAPI 3.1.0 JSON spec — machine-readable
-- [Get an API Key](https://app.subo.gg/app/account): Generate keys in Community Settings → Developer → API Keys
+- [Get an API Key](https://app.subo.gg/app/account): Generate keys in the Community account tab, under API Access
 - [Subo Homepage](https://subo.gg/): Product overview and feature list
 - [Pricing](https://subo.gg/pricing): Plans (FREE, PREMIUM, VIP, CUSTOM) and rate limits per tier
 - [Blog](https://subo.gg/blog): News and updates
@@ -40,7 +40,7 @@ Idempotency: Send `Idempotency-Key: <UUIDv4>` header on all write operations
 
 Key resources:
 - **Projects** — Create, manage, open, close, clone surveys and polls
-- **Script & Blocks** — Build survey scripts (single choice, multiple choice, open text, numeric, yes/no, content blocks)
+- **Script & Blocks** — Build survey scripts (single choice, multiple choice, open text, numeric, content, action and calculated blocks)
 - **Responses** — Retrieve paginated respondent answers
 - **Analysis** — Aggregated stats and AI summarization of open-ended answers
 - **Communities** — Manage community settings such as accomplishments, XP and default survey settings
@@ -77,6 +77,11 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
    - `GET /communities/{communityId}/projects/{projectId}/responses` (paginated; `per_page` max 100)
    - `GET /communities/{communityId}/projects/{projectId}/responses/{responseId}`
    - Join on `user_id` (globally unique); `platform_id` is only unique within its `provider` namespace
+   - `privacy_mode` does not redact this endpoint. `user_id`, `platform_id` and
+     `session_number` are returned for anonymous projects too (the app's own Responses
+     tab and XLSX export mask them; the API does not), as is the `response.submitted`
+     webhook payload. Drop those fields at your ingestion boundary if the project
+     promised anonymity.
 
 5. **Trigger AI Analysis**
    - `POST /communities/{communityId}/projects/{projectId}/analysis` (async; `{"force": true}` re-runs)
@@ -121,7 +126,7 @@ for agents but NOT canonical:
 ## Key Features Agents Love
 - **AI Script Generation**: Turn a plain-text goal into a complete multi-block survey script in one call.
 - **Real-time Webhooks**: Get notified instantly when new responses arrive or analysis is ready.
-- **Rich Script System**: Supports single/multiple choice, open text, numeric, yes/no, conditional logic (preconditions), and content blocks.
+- **Rich Script System**: Supports single/multiple choice, open text, numeric, conditional logic (structured `show_when` / `hide_when`, compiled to a precondition), and content, action and calculated blocks. The block-type list at the bottom of this file is the complete set the API accepts; a Discord-only question type such as yes/no is sent as `single_punch`.
 - **Analysis**: Built-in AI summarization of qualitative answers.
 
 ## Best Practices for Agents

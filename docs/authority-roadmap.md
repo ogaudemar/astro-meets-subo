@@ -358,14 +358,10 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   page. Migration-gated to ~Q4.
 > - **(e) Localize `/api`?** — probably not. Developer docs in EN is the norm and the
 >   samples don't translate. Noted so it isn't re-litigated.
-> - **(k) Audit the *rest* of the site's outbound prose the same way (new, from (j)).** The
->   interlink pass only link-checked and re-read the **blog**. It found two 404-ing API paths
->   in a published post that had been wrong since May and that `check:api` structurally cannot
->   see, because the guard reads `api-surface.json`, never prose. The built-site link check now
->   passes at 7,487 hrefs, so **broken URLs are covered**; what is not covered is a URL that
->   resolves while the sentence around it is false. Worth one deliberate read of `/api`,
->   `/recipes`, `/templates` and `llms.txt` prose against the app repo, since that is the
->   documented limit of all three anti-drift layers.
+> - **✅ DONE (k) prose audit of `/api`, `llms.txt`, `/recipes`, `/templates` (2026-08-11).**
+>   The premise held: **four false statements, every one of them behind a URL that resolves.**
+>   Full detail in the dedicated `[x]` bullet below. Headline: the API **does not honor privacy
+>   modes on the responses endpoint**, and `/api` claimed the opposite.
 >
 > **✅ DONE (i) API privacy-mode default — FIXED APP-SIDE, site copy now matches (2026-08-05).**
 > The API no longer hardcodes Semi-Private when `privacy_mode` is omitted:
@@ -693,6 +689,63 @@ groundwork converts into citations and organic traffic. One page per intent.
       is many-to-many and not the inverse of `templates.recipeUrl` (one recipe serves several
       templates; each template's button picks one best twin). Now says so, with an
       instruction to leave it empty rather than reach for a loose match.
+- [x] **Prose audit of `/api`, `llms.txt`, `/recipes`, `/templates` — DONE (2026-08-11).**
+      Item (k), the deliberate read of the surfaces the link checker cannot judge. Read
+      against the app repo's **`master`**, not the working tree, which matters here: the app
+      was checked out on an unmerged branch (see the scale-blocks note in P7). Most of the
+      corpus held up. Verified true and left alone: `max_blocks` 5/20, `per_page` 20/100,
+      the response shape, the retry schedule (30s/5m/30m/2h/8h) and 10s timeout, the
+      `sbo_live_` prefix, idempotency semantics, the three audience combinations, the
+      template deep-clone list, `response.submitted` being paid-tier, and every block type
+      and `action_kind` in all ten recipes.
+      **Four false statements found, each behind a URL that resolves.**
+      1. **`/api` claimed privacy modes redact the responses endpoint. They do not.** The
+         bullet read "in anonymous mode the answers still come back, but they are not
+         attributable to a member." `routes/responses.py` contains **no privacy handling at
+         all**: it returns `user_id`, `platform_id` (the raw Discord snowflake) and
+         `session_number` on every project regardless of `privacy_mode`, and accepts
+         `user_id` / `platform_id` **filters**. The `response.submitted` webhook payload
+         (`surveyEvents.py`) carries the same fields, also unguarded. Anonymity in Subo is
+         enforced **at read time, per surface**: the XLSX export blanks id/name/session/nick
+         (`exportResultFileCommandHandler.py`, `web2/app.py`), `ResponsesTab.tsx` hides the
+         identity header and skips the member fetch, and Discord result summaries render
+         `anon{n}`. The public API is the one surface that never got that treatment.
+         Rewritten to say so plainly, with the same note added to `llms.txt`.
+         **This is a product decision, not just a copy fix** — the honest options are to
+         redact API-side (matching every other surface) or to keep the behavior and keep
+         documenting it. Flagged for the app repo; the site now states the truth either way.
+      2. **`llms.txt` sent developers to a settings page that does not exist.** "Generate
+         keys in Community Settings → Developer → API Keys" — wrong on both hops. The UI is
+         `pages/Account.tsx`, tab **Community account**, section **API Access**. `/api` had
+         it right, so the two on-domain surfaces disagreed and one was unusable.
+      3. **`llms.txt` advertised a `yes/no` block type the API rejects.** Listed twice as
+         part of the script system. `YesNo` is real *inside the bot* (`QuestionTypes.YesNo`,
+         the `/survey` command type the blog documents correctly), but `schemas/script.py`
+         maps it **outward** to `single_punch` and there is no `yes_no` public type: an agent
+         sending one gets `400 Unknown block type`. Same failure class as the wrong endpoint
+         paths fixed on 2026-08-04, in the same file, whose only audience is agents.
+      4. **`event-prediction-contest.md` was the last page carrying the stale privacy
+         default**, and reversed the XP fact in the same sentence: "XP needs a member
+         profile, so fully anonymous mode isn't compatible with the reward. The default
+         semi-private mode…". Both halves were corrected sitewide on 2026-07-28 (default is
+         **Anonymous**; rewards **do** work there because respondents are authenticated) —
+         every blog post says so, this one template page did not. Rewritten, including the
+         real nuance (paying out XP reveals who *scored*, which narrows the picks on a small
+         contest). The one place anonymity genuinely does disable XP is **open-web link
+         mode**, where `setupCommands.py` forces anonymous and sets `useXP = False`; that is
+         about unauthenticated respondents, not about the privacy mode.
+      **Verified:** clean `npm run build`; all four fixes confirmed in `dist/` (the template
+      answer in the built `FAQPage` JSON-LD and the visible Q&A, the `/api` bullet, the three
+      `llms.txt` lines).
+      **Noted, not changed:** `llms.txt` carries 15 em dashes in its `**Term** — definition`
+      list formatting. It is agent-facing rather than marketing copy, so whether the house
+      rule reaches it is a call worth making once rather than drifting into.
+      **Method note worth keeping:** all four errors were *plausible* sentences. Three of them
+      restated a fact that is true somewhere else in the product (yes/no is a real bot question
+      type; XP-and-anonymity really do conflict, but in open-web mode; identity really is
+      masked, but only on the surfaces that implement it) and became false when carried into a
+      context where it does not hold. That is the shape to look for, and it is why the guard
+      cannot catch it: every name and number involved is correct.
 
 ### Make the Public API discoverable to AI agents (GEO/AEO for developers)
 
@@ -1077,6 +1130,19 @@ indexable, high-intent landing pages — each template is a query-matching page
 slots into the P2 content → templates → pricing internal-link cluster.
 
 **Gated on the web app roadmap** (`~/.claude/plans/master-roadmap-2026-h2.md`):
+
+> **Status (2026-08-11): the gate is being built.** `npm run check:api` reports four
+> undocumented block types — `rating`, `opinion_scale`, `nps`, `ranking` — i.e. the
+> scale family this section waits on. **Not shipped yet:** app-repo `master` is at
+> `4bdce3d5` and the work sits on an unmerged `feat/scale-blocks` branch (`rating` has a
+> backend, Discord path, web Canvas/Convo/Results and public-API type; the other three are
+> so far only in the OpenAPI enum). Do **not** document them on the site until they merge
+> and a release brief lands.
+> **Guard limitation this exposes:** `check:api` reads the app repo's **working tree**, so
+> whatever branch is checked out there reads as drift. A red `check:api` therefore means
+> "the app repo differs", not "the site is wrong" — check `git -C ../subo branch --show-current`
+> before believing it. Worth teaching the script to compare against the app's `master` (or
+> at minimum warn when the app repo is off it).
 
 - **Hard constraint (user, 2026-07-29): no new templates until the rating-scale
   feature ships.** Rating scale is **FEAT scale-family blocks in Stage 3** of the

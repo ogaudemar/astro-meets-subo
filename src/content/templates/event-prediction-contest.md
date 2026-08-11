@@ -40,7 +40,7 @@ faq:
   - q: "Where do the odds come from?"
     a: "For popular events, look the outcome up on a public prediction market like Kalshi or Polymarket and use each option's payout multiplier. When no market exists, such as MVP picks, in-game events, or silly props, just reward every correct answer equally. Precision doesn't matter; it's for fun."
   - q: "Can predictions be anonymous?"
-    a: "XP needs a member profile, so fully anonymous mode isn't compatible with the reward. The default semi-private mode already hides picks from other members while keeping XP working."
+    a: "Yes. Respondents are still signed in, so XP and the leaderboard keep working in Anonymous mode, which is where new servers start. Semi-Private hides picks from other members while leaving you able to see who called what. The one thing to weigh: paying out XP reveals who scored, so on a small contest the payout itself narrows down the picks."
 recipeUrl: "/recipes/prediction-poll"
 pubDate: 2026-07-01
 draft: false

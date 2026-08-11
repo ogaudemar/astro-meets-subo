@@ -390,8 +390,15 @@ const toc = [
                 completions. <code>session_number</code> separates those runs.
               </li>
               <li>
-                In anonymous mode the answers still come back, but they are not
-                attributable to a member.
+                <strong>Privacy modes do not redact this endpoint.</strong> Subo's own
+                surfaces mask identity on an anonymous project: the Responses tab hides
+                it and the XLSX export blanks the id, name, nickname and session columns.
+                The API does neither. <code>user_id</code>, <code>platform_id</code> and
+                <code>session_number</code> come back on every project whatever its
+                <code>privacy_mode</code>, and the <code>response.submitted</code> webhook
+                carries the same fields. If you promised your members anonymity, drop
+                those fields at your ingestion boundary rather than assuming the API
+                already did.
               </li>
             </ul>
             <p>
