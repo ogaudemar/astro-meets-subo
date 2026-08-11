@@ -576,16 +576,17 @@
 
 
 "surveyConvos": {
-  "pageTitle": "Conversations de sondage sur Discord | Subo",
-  "pageDescription": "Subo transforme les sondages en conversations conviviales sur Discord. Les membres répondent en tête-à-tête avec le bot. Fini les formulaires ennuyeux, de meilleurs taux de complétion.",
-  "heroTitle": "Des enquêtes qui ressemblent à des <strong class=\"accent\">conversations</strong>",
+  "pageTitle": "Formulaire et sondage Discord, réinventés en conversation | Subo",
+  "pageDescription": "Subo est l'appli de sondage et de formulaire Discord qui remplace le formulaire froid par une vraie conversation. Une meilleure façon de faire passer questionnaires, candidatures et formulaires de retour dans ton serveur ou sur le web, avec plus de réponses complètes qu'un Google Forms.",
+  "heroTitle": "Le formulaire Discord qui ressemble à une <strong class=\"accent\">conversation</strong>",
   "heroSubtitle": "Pas un formulaire. Pas juste un vote. Une discussion conviviale où tes membres ont vraiment envie de répondre.",
   "heroCta": "Ajoute à Discord, gratuit",
   "whatTitle": "C'EST QUOI UNE ENQUÊTE CONVERSATIONNELLE ?",
   "whatBody": [
-    "Une enquête conversationnelle, c'est une conversation privée entre un membre de ta communauté et Subo, le bot, directement dans ton serveur Discord ou sur le web.",
+    "Une enquête conversationnelle, c'est une conversation privée entre un membre de ta communauté et Subo, le bot, directement dans ton serveur Discord ou sur le web. Si tu cherchais un formulaire Discord, un questionnaire ou une alternative à Google Forms pour ton serveur, c'est ça, sans le côté formulaire froid.",
     "Au lieu d'envoyer tes membres remplir un formulaire froid, Subo les invite à chatter. Les questions arrivent une par une, sous forme de messages. C'est comme parler à quelqu'un, pas remplir de la paperasse.",
-    "Résultat : <strong>de meilleurs taux de complétion</strong>, des réponses plus riches et des membres qui apprécient vraiment l'expérience."
+    "Résultat : <strong>de meilleurs taux de complétion</strong>, des réponses plus riches et des membres qui apprécient vraiment l'expérience.",
+    "Tu débutes avec la collecte de réponses dans ton serveur ? Le guide pratique : <a href=\"/blog/how-to-make-a-discord-form\">comment faire un formulaire ou un sondage dans Discord</a> (en anglais)."
   ],
   "formsVsConvosTitle": "FORMULAIRES CLASSIQUES vs. ENQUÊTES CONVERSATIONNELLES",
   "formsColumn": "Formulaires classiques",
@@ -1007,10 +1008,10 @@
 
 "pollsPage": {
   "pageTitle": "Bot de sondage Discord : quiz, concours de prédiction et notation | Subo",
-  "pageDescription": "Subo transforme les sondages Discord en quiz notés automatiquement et en concours de prédiction. Note chaque option, marque les bonnes réponses, récompense avec de l'XP et des rôles, et personnalise chaque invitation.",
+  "pageDescription": "Subo est le bot de sondage Discord qui transforme un sondage en quiz noté automatiquement ou en concours de prédiction. Note chaque option, marque les bonnes réponses, récompense avec de l'XP et des rôles, et personnalise chaque invitation.",
   "hero": {
-    "title": "Des sondages Discord qui <strong class=\"accent\">notent, évaluent et récompensent</strong>",
-    "subtitle": "Discord a des sondages natifs, mais ils ne font que compter les votes. Les sondages Subo animent des soirées trivia et des concours de prédiction, puis récompensent tes membres automatiquement.",
+    "title": "Le bot de sondage Discord qui <strong class=\"accent\">note, évalue et récompense</strong>",
+    "subtitle": "Discord a des sondages natifs, mais ils ne font que compter les votes. Subo est le bot de sondage qui anime tes soirées trivia et tes concours de prédiction, puis récompense tes membres automatiquement.",
     "cta": "Ajouter à Discord, gratuit"
   },
   "nav": [
@@ -1078,8 +1079,16 @@
       "Les sondages natifs de Discord ne peuvent pas faire ça."
     ],
     "blogLink": {
-      "text": "Voir tout le nouveau dans les sondages →",
+      "text": "Voir tout le nouveau dans les sondages (en anglais) →",
       "href": "/blog/polls-grading-invite-customization"
+    },
+    "blogLink2": {
+      "text": "Comparer Subo et les sondages natifs de Discord (en anglais) →",
+      "href": "/blog/discord-native-polls-vs-subo-the-survey-bot-comparison"
+    },
+    "blogLink3": {
+      "text": "Voir ce que valent les meilleurs bots de sondage Discord (en anglais) →",
+      "href": "/blog/best-discord-poll-bots"
     }
   }
 },

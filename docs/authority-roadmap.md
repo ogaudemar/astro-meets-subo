@@ -352,10 +352,15 @@ groundwork converts into citations and organic traffic. One page per intent.
 > 404-ing API paths in `public-api-launch`** (the same missing-`/communities/{communityId}`
 > bug `llms.txt` had, still live in a published post).
 >
-> **Remaining in Thread 2 after (h) and (j):**
-> - **(a) Form/no-"bot" follow-ons** — FR `/survey-convos` retune (`sondage discord` is a
->   real market), more "app"/"form" vocabulary in existing titles/H2s, standalone `/draft`
->   page. Migration-gated to ~Q4.
+> **✅ DONE (l) FR poll + form retune — SHIPPED (2026-08-11).** The two FR pages were still
+> carrying the *pre-retune* EN structure, so the 2026-07-31 `/polls` tune and the 2026-08-01
+> `/survey-convos` tune had never reached French at all. Full detail in the dedicated `[x]`
+> bullet below. Headline: `sondage discord` (756 imp @ 8.5) had exactly one FR page aimed at
+> it and that page's H1 didn't say "bot de sondage."
+>
+> **Remaining in Thread 2 after (h), (j) and (l):**
+> - **(a) Form/no-"bot" follow-ons** — more "app"/"form" vocabulary in existing titles/H2s,
+>   standalone `/draft` page. Migration-gated to ~Q4. (FR `/survey-convos` now done, see (l).)
 > - **(e) Localize `/api`?** — probably not. Developer docs in EN is the norm and the
 >   samples don't translate. Noted so it isn't re-litigated.
 > - **✅ DONE (k) prose audit of `/api`, `llms.txt`, `/recipes`, `/templates` (2026-08-11).**
@@ -689,6 +694,38 @@ groundwork converts into citations and organic traffic. One page per intent.
       is many-to-many and not the inverse of `templates.recipeUrl` (one recipe serves several
       templates; each template's button picks one best twin). Now says so, with an
       instruction to leave it empty rather than reach for a loose match.
+- [x] **FR poll + form retune (`/fr/polls`, `/fr/survey-convos`) — DONE (2026-08-11).**
+      Item (l). The keyword intel has flagged `sondage discord` (**756 imp @ pos 8.5**, a
+      top-5 non-branded term overall) as an underexploited market since 2026-07-29, and the
+      FR `/survey-convos` retune has sat on the "remaining" list since 2026-08-01. Both FR
+      pages turned out to be running the **pre-retune EN copy**: the EN `/polls` tune
+      (2026-07-31) and the EN `/survey-convos` tune (2026-08-01) were never mirrored, so
+      French had the old structure in both places.
+      **`/fr/polls`** — the money term "bot de sondage Discord" was only in the `pageTitle`.
+      Woven into the `pageDescription` ("Subo est le bot de sondage Discord qui…"), the
+      **H1** ("Le bot de sondage Discord qui note, évalue et récompense", was "Des sondages
+      Discord qui…") and the hero subtitle. The four feature-framed section headings were
+      left alone, same no-stuffing call the EN page made. The outro carried **one** blog
+      link where EN carries three; `blogLink2` (native-polls comparison) and `blogLink3`
+      (best-poll-bots) added, and `fr/polls.astro` gained the same conditional render the EN
+      page has had since 2026-07-31 (it never got the `blogLink2`/`blogLink3` blocks, so
+      adding keys alone would have rendered nothing).
+      **`/fr/survey-convos`** — closed the same form-intent eligibility gap the EN page
+      closed: `pageTitle` ("Formulaire et sondage Discord, réinventés en conversation"),
+      `pageDescription` (formulaire / questionnaire / candidatures / alternative à Google
+      Forms / web), **H1 → "Le formulaire Discord qui ressemble à une conversation"** (was
+      "Des enquêtes qui ressemblent à des conversations", which never said *formulaire*),
+      one added `whatBody` sentence catching the formulaire/questionnaire/Google-Forms
+      searcher, and the walkthrough link to `how-to-make-a-discord-form`.
+      **Honest limit, worth stating:** all four of those outbound links go to **English**
+      posts, because there is no French blog. Each is now marked "(en anglais)" rather than
+      dropping a French reader into English unannounced. **The real FR gap is still open:**
+      the blog collection has no locale field and `src/pages/blog/` has no FR route, so
+      French how-to content has nowhere to live. That is infrastructure, not copy, and it is
+      the thing standing between us and actually winning `sondage discord`. Decide it
+      separately.
+      **Verified:** clean `npm run build`; FR title/description/H1 and all three outro links
+      confirmed in `dist/fr/polls/` and `dist/fr/survey-convos/`.
 - [x] **Prose audit of `/api`, `llms.txt`, `/recipes`, `/templates` — DONE (2026-08-11).**
       Item (k), the deliberate read of the surfaces the link checker cannot judge. Read
       against the app repo's **`master`**, not the working tree, which matters here: the app
