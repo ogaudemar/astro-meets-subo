@@ -110,22 +110,36 @@ pre-website releases (2022-2025, announced only in the Support server). The chan
 it in alongside the derived entries, but it never grows. New launches go through the tagged
 post above, never into that file.
 
-### 6b. Offer the channel announcements
+### 6b. Distribute, in this order
 
-The launch is not distributed until it is posted where the audience is. Offer all three,
-and don't paste the post's intro into any of them: each channel wants a pointer written for
-its own readers, not a summary.
+**Blog post → Support Server announcement → X thread → top.gg announcement.**
 
-- **Discord Support Server** — follow **`discord-announcement`** (length, the `@Updates`
-  ping, the fixed sign-off block, embed control).
-- **X** — follow **`x-thread`** (the hook rule, thread shape, the 280 math, image pairing).
-- **top.gg announcements** — the bot page's own feed, read by prospective users browsing
-  the directory rather than by existing admins. Lead with capability, not with release
-  news. Pairs with the P1 listing refresh in `docs/authority-roadmap.md`.
+That is the canonical order for every release and it is not arbitrary. The blog post is the
+artifact all three channels link to, so it ships first. Then the audiences run warmest to
+coldest: existing admins who opted into `@Updates`, then followers who chose to hear from
+us, then strangers browsing a bot directory. Each step is also a rewrite, not a copy/paste:
+the same release gets shorter and more self-contained as the reader gets colder.
 
-These go stale quietly, because nothing fails a build when a channel is skipped. Worth
-asking the user when each was last posted to: as of August 2026, X had missed four releases
-and top.gg three.
+| # | Channel | Skill | Written for |
+|---|---------|-------|-------------|
+| 1 | Blog post (steps 3-6) | `blog-writing` | The full story, the thing everything links to |
+| 2 | Discord Support Server | `discord-announcement` | Admins already using Subo. A pointer, not a summary. `@Updates`, never `@everyone` |
+| 3 | X thread | `x-thread` | Strangers scrolling. Hook on their problem, image per post |
+| 4 | top.gg announcement | (below) | Prospective users browsing the directory. Markdown + a hero image, like a guest post |
+
+**top.gg specifics**, since it has no skill of its own yet: it is a **news feed post**, not a
+listing blurb, so it takes full Markdown and a designated hero image. Write it as a short
+guest post (~350 words), assume the reader has never heard of Subo, and lead with capability
+rather than release news. Link deliberately to `subo.gg`: a topical link from a Discord-tools
+context is the highest-value kind per P1 in `docs/authority-roadmap.md`. Pairs with the P1
+listing refresh, which is a separate manual edit.
+
+**Never skip a channel silently.** Nothing fails a build when one is missed, which is exactly
+how they rot: by August 2026 X was four releases behind and top.gg three, discovered only
+because the user happened to check. If a channel is being skipped, say so plainly in the
+final report so it is a decision rather than an oversight. When picking up a stale channel,
+ask when it was last posted to and cover the whole gap in one recap rather than announcing
+only the newest thing.
 
 ### 7. Localization flag pass
 

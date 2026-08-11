@@ -9,6 +9,10 @@ The channel is not the blog. An announcement is a **pointer**, not a summary: en
 for a member to know whether they care, and a link for the ones who do. The blog post
 already exists and does the explaining.
 
+**Second of four.** Release distribution runs blog post → **Support Server** → X thread →
+top.gg, warmest audience to coldest. See step 6b of `feature-launch`. The post must exist
+and be published before this goes out, since this message links to it.
+
 This skill owns length, ping convention and Discord mechanics. Terminology comes from
 `subo-glossary`. The no-em-dash rule, US English and the anti-AI-tell rules come from
 `blog-writing` and apply here unchanged.

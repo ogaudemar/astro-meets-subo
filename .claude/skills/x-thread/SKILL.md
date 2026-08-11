@@ -9,6 +9,9 @@ A thread is read by people who do not know us. The blog post explains, the Disco
 announcement notifies, and X has to earn a stranger's attention in one post before any of
 that matters.
 
+**Third of four.** Release distribution runs blog post → Support Server → **X thread** →
+top.gg, warmest audience to coldest. See step 6b of `feature-launch`.
+
 Terminology comes from `subo-glossary`; the no-em-dash rule, US English and the
 anti-AI-tell rules come from `blog-writing` and apply unchanged.
 
