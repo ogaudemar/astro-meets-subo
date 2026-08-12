@@ -10,33 +10,33 @@
     "navItems": [
       {
         "text": "Produkt",
-        "href": "/"
+        "href": "/de/"
       },
       {
         "text": "Ressourcen",
-        "href": "/"
+        "href": "/de/"
       },
       {
         "text": "Preise",
-        "href": "/pricing"
+        "href": "/de/pricing"
       }
     ],
     "product": [
       {
         "text": "Funktionen",
-        "href": "/features"
+        "href": "/de/features"
       },
       {
         "text": "Survey Convos",
-        "href": "/survey-convos"
+        "href": "/de/survey-convos"
       },
       {
         "text": "Umfragen",
-        "href": "/polls"
+        "href": "/de/polls"
       },
       {
         "text": "Eigener Bot",
-        "href": "/custom-survey-bot"
+        "href": "/de/custom-survey-bot"
       }
     ],
     "resources": [
@@ -61,15 +61,15 @@
     "useCases": [
       {
         "text": "Begeistern",
-        "href": "/use-cases/engagement"
+        "href": "/de/use-cases/engagement"
       },
       {
         "text": "Verstehen",
-        "href": "/use-cases/research"
+        "href": "/de/use-cases/research"
       },
       {
         "text": "Erledigen",
-        "href": "/use-cases/get-things-done"
+        "href": "/de/use-cases/get-things-done"
       }
     ],
     "cta": "Zu Discord hinzufügen",
@@ -87,19 +87,19 @@
         "links": [
           {
             "text": "Survey Convos",
-            "href": "/survey-convos"
+            "href": "/de/survey-convos"
           },
           {
             "text": "Custom Bot",
-            "href": "/custom-survey-bot"
+            "href": "/de/custom-survey-bot"
           },
           {
             "text": "Abstimmungen",
-            "href": "/polls"
+            "href": "/de/polls"
           },
           {
             "text": "Preise",
-            "href": "/pricing"
+            "href": "/de/pricing"
           },
           {
             "text": "Zu Discord hinzufügen",
@@ -113,15 +113,15 @@
         "links": [
           {
             "text": "Begeistern",
-            "href": "/use-cases/engagement"
+            "href": "/de/use-cases/engagement"
           },
           {
             "text": "Verstehen",
-            "href": "/use-cases/research"
+            "href": "/de/use-cases/research"
           },
           {
             "text": "Erledigen",
-            "href": "/use-cases/get-things-done"
+            "href": "/de/use-cases/get-things-done"
           }
         ]
       },
@@ -135,7 +135,7 @@
           },
           {
             "text": "Über uns",
-            "href": "/about"
+            "href": "/de/about"
           },
           {
             "text": "Support-Server",
@@ -262,17 +262,17 @@
       {
         "title": "IM GESPRÄCH FRAGEN",
         "body": "Subo stellt eine Frage nach der anderen, wie in einem Chat. Mitglieder öffnen sich und du erfährst Dinge, die eine Formularwand nie zutage bringt.",
-        "href": "/survey-convos"
+        "href": "/de/survey-convos"
       },
       {
         "title": "ABSTIMMUNGEN, DIE MEHR KÖNNEN",
         "body": "Eine einzige Frage, die Antworten bewerten, ein Quiz benoten oder einen Tippspiel-Wettbewerb starten kann, und die Gewinner dann automatisch belohnt.",
-        "href": "/polls"
+        "href": "/de/polls"
       },
       {
         "title": "TEILNAHME, DIE SICH LOHNT",
         "body": "Vergib XP, Rollen und Erfolge, abgestimmt darauf, wie Mitglieder tatsächlich antworten. Anerkennung, die sie zurückbringt.",
-        "href": "/features"
+        "href": "/de/features"
       }
     ]
   },
@@ -283,19 +283,19 @@
       "emoji": "🎉",
       "title": "Begeistern",
       "body": "Unterhaltsame Abstimmungen, Quizze und Tippspiele, die Mitglieder immer wiederkommen lassen.",
-      "href": "/use-cases/engagement"
+      "href": "/de/use-cases/engagement"
     },
     {
       "emoji": "🔎",
       "title": "Verstehen",
       "body": "Erfahre, wer deine Mitglieder sind und was sie wollen, und handle danach.",
-      "href": "/use-cases/research"
+      "href": "/de/use-cases/research"
     },
     {
       "emoji": "✅",
       "title": "Erledigen",
       "body": "Bewerbungen, Anmeldungen, Bestellungen und Anfragen, als Gespräch statt als Formular.",
-      "href": "/use-cases/get-things-done"
+      "href": "/de/use-cases/get-things-done"
     }
   ],
   "usecasesInspireBtn": "🎲 Klick mich für Inspiration!",

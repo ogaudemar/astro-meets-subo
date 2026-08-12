@@ -4,6 +4,11 @@ const { translations } = Astro.props;
 const ctaTitle = translations.ctaTitle;
 const ctaSubtitle = translations.ctaSubtitle;
 const ctaButton = translations.ctaButton;
+
+// Every locale has its own /pricing page, so keep the CTA in-language instead of
+// dropping visitors back onto the English one.
+const locale = Astro.url.pathname.match(/^\/(fr|de|es|it|pt-br)(?:\/|$)/)?.[1];
+const pricingHref = locale ? `/${locale}/pricing` : '/pricing';
 ---
 
 <section class="cta">
@@ -11,7 +16,7 @@ const ctaButton = translations.ctaButton;
     <h2 class="cta__title">{ctaTitle}</h2>
     <p class="subtitle">{ctaSubtitle}</p>
     <div class="cta__buttons">
-      <a href="/pricing" class="button button--accent-bg">{ctaButton}</a>
+      <a href={pricingHref} class="button button--accent-bg">{ctaButton}</a>
       <a href="/invite" class="button button--primary-border" target="_blank" rel="noopener noreferrer">{translations.header.cta}</a>
     </div>
   </div>

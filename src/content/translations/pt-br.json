@@ -12,7 +12,7 @@
   "navItems": [
     { "text": "Produto", "href": "/" },
     { "text": "Recursos", "href": "/" },
-    { "text": "Preços", "href": "/pricing" }
+    { "text": "Preços", "href": "/pt-br/pricing" }
   ],
   "product": [
     { "text": "Funcionalidades", "href": "/features" },
@@ -50,7 +50,7 @@
         { "text": "Survey Convos", "href": "/survey-convos" },
         { "text": "Bot Personalizado", "href": "/custom-survey-bot" },
         { "text": "Enquetes", "href": "/polls" },
-        { "text": "Preços", "href": "/pricing" },
+        { "text": "Preços", "href": "/pt-br/pricing" },
         { "text": "Adicionar ao Discord", "href": "/invite", "external": true }
       ]
     },
