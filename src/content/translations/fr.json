@@ -866,7 +866,7 @@
       "sub": "Un mur de formulaires pousse les gens à se précipiter ou à abandonner. Subo pose ses questions comme une personne, donc les réponses sont plus complètes et plus honnêtes.",
       "cards": [
         { "emoji": "💬", "title": "Conversations, pas formulaires", "desc": "Une question à la fois, comme un chat. Meilleur taux de complétion et réponses plus réfléchies. <a href=\"/fr/survey-convos\">Voir les enquêtes conversationnelles →</a>" },
-        { "emoji": "🕵️", "title": "Trois modes d'anonymat", "desc": "Identifié, plus anonyme, ou totalement anonyme. Fixe le niveau de confiance par sondage et obtiens des retours francs sur les sujets sensibles." },
+        { "emoji": "🕵️", "title": "Trois modes de confidentialité", "desc": "Transparent, semi-privé ou anonyme. Fixe le niveau de confiance par sondage et obtiens des retours francs sur les sujets sensibles." },
         { "emoji": "🎯", "title": "Ciblage par rôle", "desc": "Sonde le bon segment, tes membres payants, tes modérateurs, tes membres discrets, séparément, pour comparer ce qui est comparable." },
         { "emoji": "🔀", "title": "Logique de saut, données propres", "desc": "Chacun ne voit que les questions pertinentes. Pas de bruit \"N/A\" qui pollue tes résultats." }
       ]
@@ -1117,7 +1117,7 @@
         { "emoji": "💬", "title": "Format conversationnel", "desc": "Les questions apparaissent une à la fois, comme un chat, pas un mur de formulaire. Meilleur taux de complétion, moins de friction." },
         { "emoji": "🤖", "title": "Rédaction assistée par IA", "desc": "Utilise <code>/draft</code> pour décrire ton objectif en langage naturel. Subo génère instantanément un sondage complet avec plusieurs questions." },
         { "emoji": "🖥️", "title": "Interface d'administration web", "desc": "Crée, prévisualise et gère tes sondages depuis le tableau de bord web Subo, sans commandes Discord." },
-        { "emoji": "🌿", "title": "Logique de saut et branchement", "desc": "Dirige les répondants vers différentes questions selon leurs réponses précédentes. Logique simple sur tous les plans ; syntaxe avancée sur VIP+." },
+        { "emoji": "🌿", "title": "Logique de saut et branchement", "desc": "Dirige les répondants vers différentes questions selon leurs réponses précédentes, et déclenche des récompenses selon leur choix. Disponible sur tous les plans." },
         { "emoji": "✅", "title": "4 types de questions", "desc": "Texte libre, numérique, choix unique (oui/non inclus), choix multiple : tous les scénarios de feedback couverts." },
         { "emoji": "📢", "title": "Blocs de contenu", "desc": "Ajoute un message n'importe où dans ton sondage sans poser de question : une intro de bienvenue, un GIF, un avertissement à accepter ou une pause en milieu de sondage. Les répondants continuent après un minuteur ou en cliquant sur un bouton." },
         { "emoji": "😄", "title": "Emojis Discord personnalisés", "desc": "Utilise les emojis personnalisés de ton serveur dans les questions, options de réponse et réponses, même quand les répondants passent par le web." }
@@ -1142,7 +1142,7 @@
         { "emoji": "📨", "title": "Distribution native Discord", "desc": "Subo publie une invitation de sondage directement dans ton canal Discord. Les membres cliquent et répondent en privé, sans DMs obligatoires." },
         { "emoji": "🌐", "title": "Discord ou web", "desc": "Les admins choisissent : laisser les membres répondre dans Discord, ou ouvrir un lien web pour les visiteurs non membres du serveur." },
         { "emoji": "🎯", "title": "Ciblage par rôle", "desc": "Invite des segments de membres spécifiques par rôle Discord. Sonde tes clients payants, tes modérateurs, tes membres discrets, séparément." },
-        { "emoji": "🕵️", "title": "Trois modes d'anonymat", "desc": "Identifié, plus anonyme, ou totalement anonyme : tu fixes le niveau de confiance par sondage." },
+        { "emoji": "🕵️", "title": "Trois modes de confidentialité", "desc": "Transparent, semi-privé ou anonyme : tu fixes le niveau de confiance par sondage." },
         { "emoji": "🔒", "title": "Communauté uniquement ou ouvert", "desc": "Restreins aux membres de ton serveur, ou ouvre le sondage à n'importe qui avec le lien." },
         { "emoji": "📅", "title": "Dates d'ouverture et de fermeture planifiées", "desc": "Définis une date de début et une deadline pour ton sondage, et Subo l'ouvre et le ferme automatiquement." }
       ],

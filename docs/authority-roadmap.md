@@ -306,7 +306,7 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE (next session) — API/agent GEO page SHIPPED (2026-08-04); two threads open
+> ### ▶ RESUME HERE (next session) — German at 10 pages (2026-08-12); two threads open
 >
 > **✅ DONE (c) API/agent GEO — `subo.gg/api` built and live in-repo (2026-08-04).** Static,
 > crawlable quickstart + 7 recipes + reference tables + FAQ, written against the real
@@ -357,6 +357,29 @@ groundwork converts into citations and organic traffic. One page per intent.
 > `/survey-convos` tune had never reached French at all. Full detail in the dedicated `[x]`
 > bullet below. Headline: `sondage discord` (756 imp @ 8.5) had exactly one FR page aimed at
 > it and that page's H1 didn't say "bot de sondage."
+>
+> **✅ DONE (m) German to 10 pages — Tier 1 + Tier 2 SHIPPED (2026-08-12).** Six new blocks
+> in `de.json` and six new routes; German went 2 → 10 pages, one short of FR (changelog is
+> the only gap, and it needs a `legacy-releases.ts` schema change). Full detail in the
+> German-parity bullet in the language backlog. Written deliberately rather than translated
+> flat, because there is no native reviewer and the LLM pass is the only pass.
+>
+> **✅ DONE (n) two stale product facts corrected across EN/FR/DE (2026-08-12).** Found while
+> translating `featuresPage` into German, and fixed at the source before propagating:
+> - **Invented privacy-mode names.** `/features` and `/use-cases/research` called them
+>   "Identified, More Anonymous, Fully Anonymous" in both EN and FR (4 strings), and the DE
+>   `/about` page had a German equivalent. The real modes, per `src/data/api-surface.json`
+>   and the anonymous-surveys guide, are **Transparent / Semi-Private / Anonymous**. All 5
+>   strings now match. A broader grep confirmed the remaining "fully anonymous" hits are
+>   descriptive prose about the anonymous mode, not the invented triple.
+> - **Skip-logic tier claim.** `/features` said "Simple logic on all plans; advanced syntax
+>   on VIP+" (EN + FR). The pricing table marks "Skip Logic & Conditional Rewards" **✓ on
+>   all four tiers**, and no tier gate on skip logic or preconditions exists anywhere in the
+>   app repo's Python or React admin. Replaced with "Available on every plan." **Worth a
+>   user ruling:** the app repo was on the unmerged `feat/scale-blocks` branch when searched,
+>   and the pricing table *does* gate a separate "Erweiterter Ausdruckseditor / advanced
+>   expression editor" to VIP. If that editor is what "advanced syntax" meant, the original
+>   claim was clumsy rather than false and the card could name that feature explicitly.
 >
 > **Remaining in Thread 2 after (h), (j) and (l):**
 > - **(a) Form/no-"bot" follow-ons** — more "app"/"form" vocabulary in existing titles/H2s,
@@ -1337,8 +1360,9 @@ to justify — especially since the highest-ROI channels for a Discord bot
 
       **REVISED ORDER: DE (+AT) → IT → verify BR/ES before spending → NL/PL last.**
 
-- [~] **German to parity with French — TIER 1 DONE (2026-08-11), Tier 2 open.** User's call:
-      "German seems like a no-brainer." Target is FR's 11-page set.
+- [~] **German to parity with French — TIER 1 + TIER 2 DONE (2026-08-12), only the
+      changelog left.** User's call: "German seems like a no-brainer." Target was FR's
+      11-page set; German is now at 10.
       - [x] **Tier 1, the free half — SHIPPED.** `surveyConvos` and `about` were already
             fully translated in `de.json` (key-for-key parity with EN, verified) and
             rendering nowhere. Added `src/pages/de/survey-convos.astro` and
@@ -1347,17 +1371,35 @@ to justify — especially since the highest-ROI channels for a Discord bot
             pages, not just declared one-directionally from the new pages. Verified:
             clean build, `<html lang="de">`, four hreflang entries each, both in the
             sitemap. German went 2 → 4 pages with zero translation.
-      - [ ] **Tier 2 — the seven missing blocks** (`pollsPage`, `featuresPage`, the three
-            `useCases*`, `customSurveyBot`, `changelog`), ~470 lines, plus their routes.
-            Gets German to 11. Mechanical, and the EN/FR pages are already SEO-tuned so
-            the tuning travels.
-      - [ ] **Tier 2 needs a native reviewer, and this is the whole point.** The reason
-            French converts is that it reads native because the user reviews it. Shipping
-            unreviewed machine German onto the pages meant to fix German would reproduce
-            exactly the quality gap the revenue table is measuring. `de.json` came from a
-            **volunteer** — route the new blocks back through that volunteer (or another
-            native speaker) before push. Same constraint that killed JA/ZH.
-      - [ ] **DE `/survey-convos` still carries pre-retune copy.** Its title is "Discord
-            Umfrage-Gespräche", the German equivalent of the EN/FR strings *before* the
-            form-intent retune, so it never says *Formular*. Same gap FR had until
-            2026-08-11. Fold into the Tier 2 tuning pass.
+      - [x] **Tier 2 — six blocks written and rendering — SHIPPED.** `pollsPage`,
+            `featuresPage`, the three `useCases*`, and `customSurveyBot` added to
+            `de.json`, with routes `de/polls`, `de/features`, `de/custom-survey-bot`, and
+            `de/use-cases/{research,engagement,get-things-done}` cloned from the FR
+            equivalents. **hreflang reciprocal across all 24 page files** (EN/FR/DE × 8
+            pages), audited. German 4 → 10 pages, all in the sitemap.
+            - **Written, not translated flat.** German H1s and titles carry the target
+              terms: `/polls` leads on *Discord Umfrage-Bot* with *Tippspiele* for
+              prediction contests; `/survey-convos` now leads on *Discord-Formular*.
+              Vocabulary anchored to the existing `de.json` (Skip-Logik, Inhaltsblock,
+              Aktionsblock, Befragte, Erfolge, Bestenliste), informal *du* throughout.
+              Cross-links to English-only blog posts are all marked *(auf Englisch)*.
+            - **Examples flattened to plain strings** to match the FR page shape. The EN
+              use-case pages render a richer `{text, template}` object plus a starter-
+              templates section whose headings are hardcoded English; cloning that would
+              have leaked English onto German pages. Parity target was FR, so FR's shape
+              won. If the template section is ever localized, the German `examples` arrays
+              need to go back to objects.
+      - [x] **DE `/survey-convos` pre-retune copy — FIXED.** Title was "Discord
+            Umfrage-Gespräche" and never said *Formular*. Now mirrors the FR form-intent
+            retune, including the `/blog/how-to-make-a-discord-form` link.
+      - [ ] **German changelog — the last page.** Needs `src/data/legacy-releases.ts`
+            widened from its bilingual `titleFr`/`summaryFr` schema, plus a new
+            `src/data/changelog-blog-de.ts`. Takes German 10 → 11 and full FR parity.
+      - [ ] **No native review, and the user has accepted that.** Correction to the earlier
+            note here: `de.json` did **not** come from a volunteer. The volunteer reviewed
+            the German *inside the app*; the marketing site was 100% LLM, and even the app
+            translation has been Claude-produced for years. There are no volunteers now.
+            User's ruling: "I have no alternative at this point." The practical consequence
+            is that the LLM pass **is** the pass, so German copy gets written deliberately
+            rather than translated flat, and a native read remains the highest-value cheap
+            audit if one ever becomes available.

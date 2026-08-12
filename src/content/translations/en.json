@@ -852,7 +852,7 @@
       "sub": "A form wall makes people rush or bail. Subo asks like a person, so the answers are more complete and more honest.",
       "cards": [
         { "emoji": "💬", "title": "Conversations, not forms", "desc": "One question at a time, like a chat. Higher completion and more thoughtful answers. <a href=\"/survey-convos\">See survey convos →</a>" },
-        { "emoji": "🕵️", "title": "Three anonymity modes", "desc": "Identified, More Anonymous, or Fully Anonymous. Set the level of trust per survey and get candid feedback on sensitive topics." },
+        { "emoji": "🕵️", "title": "Three privacy modes", "desc": "Transparent, Semi-Private, or Anonymous. Set the level of trust per survey and get candid feedback on sensitive topics." },
         { "emoji": "🎯", "title": "Role targeting", "desc": "Survey the right segment, your paying members, your mods, your lurkers, separately, so you compare like with like." },
         { "emoji": "🔀", "title": "Skip logic, cleaner data", "desc": "Everyone sees only relevant questions. No \"N/A\" noise polluting your results." }
       ]
@@ -1106,7 +1106,7 @@
         { "emoji": "💬", "title": "Conversational format", "desc": "Questions appear one at a time, like a chat, not a form wall. Higher completion, less friction." },
         { "emoji": "🤖", "title": "AI-assisted drafting", "desc": "Use <code>/draft</code> to describe your goal in plain English. Subo generates a full multi-question survey instantly." },
         { "emoji": "🖥️", "title": "Web admin builder", "desc": "Design, preview, and manage surveys from the Subo web dashboard, no Discord commands needed." },
-        { "emoji": "🌿", "title": "Skip logic & branching", "desc": "Route respondents to different questions based on earlier answers. Simple logic on all plans; advanced syntax on VIP+." },
+        { "emoji": "🌿", "title": "Skip logic & branching", "desc": "Route respondents to different questions based on earlier answers, and trigger rewards from what they picked. Available on every plan." },
         { "emoji": "✅", "title": "4 question types", "desc": "Open Text, Numeric, Single Choice (yes/no included), Multiple Choice, covering every feedback scenario." },
         { "emoji": "📢", "title": "Content blocks", "desc": "Add a message anywhere in your survey without asking a question: a welcome intro, a GIF, a warning to acknowledge, or a mid-survey pause. Respondents continue after a timer or by clicking a button." },
         { "emoji": "😄", "title": "Custom Discord emojis", "desc": "Use your server's custom emojis in questions, answer options, and responses, even when respondents take the survey on the web." }
@@ -1131,7 +1131,7 @@
         { "emoji": "📨", "title": "Discord-native delivery", "desc": "Subo posts a survey invite directly in your Discord channel. Members click and respond privately, no DMs required." },
         { "emoji": "🌐", "title": "Discord or web", "desc": "Admins choose: let members respond in Discord, or open a web link for non-server visitors." },
         { "emoji": "🎯", "title": "Role targeting", "desc": "Invite specific member segments by Discord role. Survey your paying customers, your moderators, your lurkers, separately." },
-        { "emoji": "🕵️", "title": "Three anonymity modes", "desc": "Identified, More Anonymous, or Fully Anonymous: you set the level of trust per survey." },
+        { "emoji": "🕵️", "title": "Three privacy modes", "desc": "Transparent, Semi-Private, or Anonymous: you set the level of trust per survey." },
         { "emoji": "🔒", "title": "Community-only or open", "desc": "Restrict to your server members, or open the survey to anyone with the link." },
         { "emoji": "📅", "title": "Scheduled open/close dates", "desc": "Set a start date and deadline for your survey, and Subo opens and closes it automatically." }
       ],

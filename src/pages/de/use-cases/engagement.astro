@@ -1,27 +1,21 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import CTA from '../../components/CTA.astro';
-import Footer from '../../components/Footer.astro';
-import translations from '../../content/translations/en.json';
-import { getCollection } from 'astro:content';
+import BaseHead from '../../../components/BaseHead.astro';
+import Header from '../../../components/Header.astro';
+import CTA from '../../../components/CTA.astro';
+import Footer from '../../../components/Footer.astro';
+import translations from '../../../content/translations/de.json';
 
-const t = translations.useCasesGetThingsDone;
-
-const dimTemplates = (await getCollection('templates'))
-  .filter((tpl) => !tpl.data.draft && tpl.data.dimension === 'get-things-done')
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 6);
+const t = translations.useCasesEngagement;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <BaseHead title={t.pageTitle} description={t.pageDescription} alternates={[
-      {lang: 'x-default', href: 'https://subo.gg/use-cases/get-things-done'},
-      {lang: 'en', href: 'https://subo.gg/use-cases/get-things-done'},
-      {lang: 'fr', href: 'https://subo.gg/fr/use-cases/get-things-done'},
-      {lang: 'de', href: 'https://subo.gg/de/use-cases/get-things-done'},
+      {lang: 'x-default', href: 'https://subo.gg/use-cases/engagement'},
+      {lang: 'en', href: 'https://subo.gg/use-cases/engagement'},
+      {lang: 'fr', href: 'https://subo.gg/fr/use-cases/engagement'},
+      {lang: 'de', href: 'https://subo.gg/de/use-cases/engagement'},
     ]} />
   </head>
   <body>
@@ -64,28 +58,6 @@ const dimTemplates = (await getCollection('templates'))
         </section>
       ))}
 
-      <!-- Starter templates for this dimension -->
-      {dimTemplates.length > 0 && (
-        <section class="uc-section uc-section--dark">
-          <div class="container">
-            <div class="uc-section__header">
-              <span class="uc-label mono">TEMPLATES</span>
-              <h2 class="uc-section__title">Start from a proven template</h2>
-            </div>
-            <div class="uc-templates">
-              {dimTemplates.map((tpl) => (
-                <a class="uc-template-card" href={`/templates/${tpl.data.slug}`}>
-                  <h3 class="uc-template-card__title">{tpl.data.heroTitle}</h3>
-                  <p class="uc-template-card__desc">{tpl.data.description}</p>
-                  <span class="uc-template-card__cta">Use this template →</span>
-                </a>
-              ))}
-            </div>
-            <p class="uc-blog-link"><a href="/templates">Browse all templates →</a></p>
-          </div>
-        </section>
-      )}
-
       <!-- Examples -->
       <section class="uc-section uc-section--secondary">
         <div class="container">
@@ -94,13 +66,7 @@ const dimTemplates = (await getCollection('templates'))
             <h2 class="uc-section__title">{t.examplesTitle}</h2>
           </div>
           <div class="uc-examples">
-            {t.examples.map((ex) => {
-              const text = typeof ex === 'string' ? ex : ex.text;
-              const template = typeof ex === 'string' ? null : ex.template;
-              return template
-                ? <a class="uc-example uc-example--link" href={`/templates/${template}`}>{text}</a>
-                : <span class="uc-example">{text}</span>;
-            })}
+            {t.examples.map((ex) => <span class="uc-example">{ex}</span>)}
           </div>
         </div>
       </section>
@@ -200,33 +166,6 @@ const dimTemplates = (await getCollection('templates'))
   padding: 0.5rem 1rem;
   font-size: 0.92rem;
 }
-.uc-example--link {
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.15s, color 0.15s;
-}
-.uc-example--link:hover { border-color: var(--accent); color: var(--accent); }
-.uc-templates {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-.uc-template-card {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 1.5rem;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-.uc-template-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-.uc-template-card__title { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.5rem; }
-.uc-template-card__desc { font-size: 0.88rem; color: var(--grey-light); line-height: 1.55; margin: 0 0 1rem; flex-grow: 1; }
-.uc-template-card__cta { font-size: 0.82rem; font-weight: 700; color: var(--accent); }
 .uc-blog-link { text-align: center; margin: 0; }
 .uc-blog-link a { font-size: 0.9rem; color: var(--accent); text-decoration: none; }
 .uc-blog-link a:hover { text-decoration: underline; }

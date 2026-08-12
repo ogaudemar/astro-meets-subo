@@ -1,35 +1,21 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import translations from '../content/translations/en.json';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import translations from '../../content/translations/de.json';
 
 const t = translations.customSurveyBot;
-
-// FAQPage schema (AEO) — built from the same t.faq.items the page renders.
-const stripTags = (s) => s.replace(/<[^>]+>/g, '');
-const faqJsonLd = t.faq?.items?.length
-  ? {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: t.faq.items.map((f) => ({
-        '@type': 'Question',
-        name: stripTags(f.question),
-        acceptedAnswer: { '@type': 'Answer', text: stripTags(f.answer) },
-      })),
-    }
-  : undefined;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="de">
 	<head>
 		<BaseHead title={t.pageTitle} description={t.pageDescription} alternates={[
-      {lang: 'x-default', href: 'https://subo.gg/custom-survey-bot'},
-      {lang: 'en', href: 'https://subo.gg/custom-survey-bot'},
-      {lang: 'fr', href: 'https://subo.gg/fr/custom-survey-bot'},
-      {lang: 'de', href: 'https://subo.gg/de/custom-survey-bot'},
-    ]} jsonLd={faqJsonLd} />
+			{lang: 'x-default', href: 'https://subo.gg/custom-survey-bot'},
+			{lang: 'en', href: 'https://subo.gg/custom-survey-bot'},
+			{lang: 'fr', href: 'https://subo.gg/fr/custom-survey-bot'},
+			{lang: 'de', href: 'https://subo.gg/de/custom-survey-bot'},
+		]} />
 	</head>
 	<body>
 		<Header translations={translations.header} />
@@ -147,11 +133,9 @@ const faqJsonLd = t.faq?.items?.length
 
 <style>
 
-
 .accent {
     color: var(--accent);
 }
-
 
   /* Legacy section-gradient utilities, flattened to the single page base.
      The hero and CTA opt back into accent glows below. */
@@ -166,10 +150,6 @@ const faqJsonLd = t.faq?.items?.length
     background: transparent;
   }
 
-
-
-
-
   .hero {
         padding: 100px 0;
     overflow: hidden;
@@ -178,15 +158,12 @@ const faqJsonLd = t.faq?.items?.length
       var(--bg-base);
   }
 
-
   .hero__content {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 4rem;
     align-items: center;
   }
-
-
 
   .hero__title {
     font-family: "IBM Plex Mono", "Source Code Pro", monospace;
@@ -223,7 +200,6 @@ const faqJsonLd = t.faq?.items?.length
 
   .hero__bot-image {
     width: 400px;
-    /*height: 200px;*/
     border-radius: 5%;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   }
@@ -261,7 +237,6 @@ const faqJsonLd = t.faq?.items?.length
 
   .comparison {
     padding: 80px 0;
-
   }
 
   .section-title {
@@ -298,10 +273,10 @@ const faqJsonLd = t.faq?.items?.length
     text-align: center;
   }
 
-    .comparison__card:hover {
-      box-shadow: 0 6px 16px var(--primary);
-      background: rgba(255, 255, 255, 0.1);
-      opacity: 1;
+  .comparison__card:hover {
+    box-shadow: 0 6px 16px var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 1;
   }
 
   .comparison__icon {
@@ -312,13 +287,11 @@ const faqJsonLd = t.faq?.items?.length
   .comparison__title {
     font-size: 1.5rem;
     font-weight: 700;
-    /*color: white;*/
     margin-bottom: 1.5rem;
   }
 
   .comparison__list {
     text-align: left;
-    /*color: #ccc;*/
     line-height: 1.8;
   }
 
@@ -338,7 +311,6 @@ const faqJsonLd = t.faq?.items?.length
 
   .how-it-works {
     padding: 80px 0;
-
   }
 
   .steps {
@@ -398,7 +370,6 @@ const faqJsonLd = t.faq?.items?.length
 
   .faq {
     padding: 80px 0;
-
   }
 
   .faq__grid {
