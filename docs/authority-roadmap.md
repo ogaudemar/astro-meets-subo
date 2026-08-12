@@ -1259,6 +1259,105 @@ to justify — especially since the highest-ROI channels for a Discord bot
 
       **Data-quality note:** ignore **Singapore (328) and China (43)** in any traffic
       math — ~1s engagement and near-zero engagement rate = bot/junk, not real demand.
+      **Softened 2026-08-11:** not *uniformly* junk. Stripe shows a CN card and the user
+      confirms legitimate Chinese/Singapore customers, including AI companies (Manus,
+      CapCut). The bot traffic inflates a real but much smaller signal. Those customers
+      are a **developer/API** segment that operates in English, so they argue for the
+      `/api` + `llms.txt` track, not for a Chinese locale.
 
-      Lower priority overall; revisit when the P2 content clusters are in place. Start
-      with **Dutch, then Polish** when it does come up.
+      ### ⚠️ SUPERSEDED (2026-08-11): re-ranked against three datasets
+
+      **Everything above this line is traffic-only and mis-ranks the work.** "Start with
+      Dutch, then Polish" is wrong on all three of the datasets below. Kept for the
+      reasoning, not the conclusion.
+
+      **First, the premise was false.** The site is **not localized in 6 languages**. It is
+      EN (16 pages) + **FR (11 pages)** + **ES/DE/IT/PT-BR at two pages each** (homepage and
+      pricing). Those four are missing seven key blocks (`pollsPage`, `featuresPage`, the
+      three `useCases*`, `customSurveyBot`, `changelog`), and — the cheap part —
+      **`surveyConvos` and `about` are fully translated in all four and rendered by no
+      page at all**, because the route `.astro` file was never created. A homepage-and-price-
+      list locale cannot rank for a single commercial term.
+
+      **Dataset 1 — GA4 country, 90 days.** Brazil #4, Germany #6, France #8, Canada #9,
+      Spain #10, Japan #11, Poland #12, Korea #13, Italy #14, NL #16, Mexico #18. So Brazil
+      and Germany are *larger* than France and have a fifth of the pages, while Poland and
+      the Netherlands sit below markets whose translation is already bought and paid for.
+
+      **Dataset 2 — GA4 language, 90 days.** EN **75%**, PT 4%, ES 3%, ZH 3%, FR 2.5%,
+      DE 2%. Two things follow. Spanish edges ahead of German on preference-to-read-local
+      even though Germany outranks Spain by country (Germans browse in English more).
+      And the ceiling is real: **the entire localization axis is ~12% of traffic**, so no
+      language work is the highest-value thing available — it is the best move within a
+      structurally minor track.
+
+      **Dataset 3 — Stripe revenue by card country (the one that reordered everything).**
+      US $640.77, **FR $116.74**, AE $99.99, DE $55.88, GB $54.48, AT $39.49, CY $36.59,
+      **KR $34.93**, AU/AR/IN $29.99 each, IT $17.94, AM $8.97, CN $5.98.
+      - **Brazil and Spain are the #1 and #2 non-English traffic sources and returned
+        exactly $0.** That single fact kills the traffic-first ranking.
+      - **German-speaking (DE $55.88 + AT $39.49 = $95.37) is second only to France among
+        non-English, earned on two localized pages.** Best parity candidate in the set: it
+        is the only market already converting *without* a page set.
+      - **Korea $34.93 with no locale, no Korean product and no marketing** — double Italy,
+        which has a locale. Strengthens the JA/KO cross-repo item above; Japan is #11 by
+        country, ahead of Poland.
+      - **Read the zeros, not the ordering.** Several rows are visibly single transactions
+        ($29.99 three times, $99.99 once), so the table is ~25–40 payments and "DE beats IT"
+        is one customer wide. A zero from your two largest non-English audiences is the
+        durable signal; the rank order among the small non-zero rows is noise.
+
+      **Two caveats that cap how hard this table can be pushed:**
+      1. **Discord is ~50% of revenue with no country breakdown** (user, 2026-08-11), and
+         Portuguese/Spanish speakers are non-zero there but unquantifiable. So BR/ES are
+         **deprioritized, not written off.** Brazil's Stripe zero also has a structural
+         explanation available: Brazil runs on Pix/boleto, and international-card
+         penetration for subscriptions is genuinely weaker there.
+      2. **France's conversion is probably not caused by its page count.** The user is
+         French and reviews the French copy himself, so FR reads native while the others are
+         volunteer-translated. Supporting evidence: FR earned that $116.74 while
+         `/fr/polls` was *not* keyword-targeted at all — its H1 never said "bot de sondage"
+         until 2026-08-11. Whatever drives French conversion, it is not localized pages
+         winning French search. **So the causal case for parity work is weaker than the
+         revenue table makes it look; the case for translation *quality* is stronger.**
+
+      **Provenance, which explains the whole odd shape of the set:** the current languages
+      were chosen by **supply, not demand** — users asked for a language and volunteered to
+      translate it. Italian and Dutch exist because a volunteer appeared. That is why Italy
+      (#14) and NL (#16) got locales ahead of Brazil (#4). The parity work is therefore
+      **correcting an accident, not extending a strategy**. JA and ZH were requested and died
+      because the volunteers' English was too weak to coordinate on — a *reviewer* problem,
+      not a translation problem, and machine translation does not solve it.
+
+      **Translate ≠ optimize (the failure mode to budget for).** A volunteer translates the
+      UI faithfully and never keyword-targets it. Proven on 2026-08-11: FR `/polls` was a
+      good translation that could not compete for the term it existed to win. Every page
+      brought to parity needs **two passes** — translate, then tune against what that
+      language actually searches — or we ship locales that read well and rank nowhere.
+
+      **REVISED ORDER: DE (+AT) → IT → verify BR/ES before spending → NL/PL last.**
+
+- [~] **German to parity with French — TIER 1 DONE (2026-08-11), Tier 2 open.** User's call:
+      "German seems like a no-brainer." Target is FR's 11-page set.
+      - [x] **Tier 1, the free half — SHIPPED.** `surveyConvos` and `about` were already
+            fully translated in `de.json` (key-for-key parity with EN, verified) and
+            rendering nowhere. Added `src/pages/de/survey-convos.astro` and
+            `src/pages/de/about.astro`, cloned from the FR routes. **hreflang done
+            reciprocally** — the `de` alternate added to the EN *and* FR copies of both
+            pages, not just declared one-directionally from the new pages. Verified:
+            clean build, `<html lang="de">`, four hreflang entries each, both in the
+            sitemap. German went 2 → 4 pages with zero translation.
+      - [ ] **Tier 2 — the seven missing blocks** (`pollsPage`, `featuresPage`, the three
+            `useCases*`, `customSurveyBot`, `changelog`), ~470 lines, plus their routes.
+            Gets German to 11. Mechanical, and the EN/FR pages are already SEO-tuned so
+            the tuning travels.
+      - [ ] **Tier 2 needs a native reviewer, and this is the whole point.** The reason
+            French converts is that it reads native because the user reviews it. Shipping
+            unreviewed machine German onto the pages meant to fix German would reproduce
+            exactly the quality gap the revenue table is measuring. `de.json` came from a
+            **volunteer** — route the new blocks back through that volunteer (or another
+            native speaker) before push. Same constraint that killed JA/ZH.
+      - [ ] **DE `/survey-convos` still carries pre-retune copy.** Its title is "Discord
+            Umfrage-Gespräche", the German equivalent of the EN/FR strings *before* the
+            form-intent retune, so it never says *Formular*. Same gap FR had until
+            2026-08-11. Fold into the Tier 2 tuning pass.
