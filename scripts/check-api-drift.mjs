@@ -133,6 +133,8 @@ const apiPage = readFileSync(join(SITE_ROOT, 'src', 'pages', 'api.astro'), 'utf8
 const scriptPy = readApp('schemas', 'script.py');
 const projectPy = readApp('schemas', 'project.py');
 const projectCreatePy = readApp('routes', 'projects.py');
+const responsesPy = readApp('routes', 'responses.py');
+const responseSchemaPy = readApp('schemas', 'response.py');
 const webhooksPy = readApp('routes', 'webhooks.py');
 const authPy = readApp('auth.py');
 const dispatchPy = readFileSync(
@@ -208,6 +210,45 @@ compareSets(
         'and re-read the prose in src/pages/api.astro and public/llms.txt — both describe this in words.'
       );
     }
+  }
+}
+
+// 2c. Which response fields an anonymous project redacts, and which respondent
+// filters it refuses. Both are prose on /api and in llms.txt, and this is the
+// highest-consequence sentence on the page: it tells an integrator that Subo,
+// not their ingestion code, is what keeps a promise of anonymity. A regression
+// here is silent from the site's side — the copy keeps claiming redaction while
+// the API hands back identity — so read it out of the source every build.
+{
+  // The schema blanks each field with `None if anonymous else ...`.
+  const blanked = new Set(
+    [...responseSchemaPy.matchAll(/(\w+)\s*=\s*None if anonymous else\b/g)].map((m) => m[1])
+  );
+  if (!blanked.size) {
+    fail(
+      'Anonymous redaction: found no `<field>=None if anonymous else ...` in schemas/response.py. ' +
+      'Either the redaction was removed — in which case /api and public/llms.txt are now lying — ' +
+      'or it was rewritten in a shape this parser cannot see. Check which before touching the parser.'
+    );
+  } else {
+    compareSets('Anonymous-redacted response fields', surface.anonymousRedactedFields, blanked, {
+      file: SURFACE_FILE,
+    });
+  }
+
+  // A parenthesised tuple, so literalBody() (which hunts for `{`) does not apply.
+  const tuple = responsesPy.match(/_RESPONDENT_FILTER_ARGS\s*=\s*\(([^)]*)\)/);
+  const refused = tuple ? [...tuple[1].matchAll(/["']([^"']+)["']/g)].map((m) => m[1]) : null;
+  if (!refused || !refused.length) {
+    fail(
+      'Anonymous filter refusal: could not find `_RESPONDENT_FILTER_ARGS` in routes/responses.py. ' +
+      '/api and public/llms.txt both promise a 400 when an anonymous project is filtered by ' +
+      'respondent; without that tuple the guard cannot confirm it still happens.'
+    );
+  } else {
+    compareSets('Filters refused on anonymous projects', surface.anonymousRefusedFilters, refused, {
+      file: SURFACE_FILE,
+    });
   }
 }
 

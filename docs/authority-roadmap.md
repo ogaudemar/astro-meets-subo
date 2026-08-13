@@ -412,6 +412,40 @@ groundwork converts into citations and organic traffic. One page per intent.
 > code comments and `docs/`** to its Important Patterns — written because `docs/recipes/` was
 > later published on this site, i.e. internal prose is not safe from becoming marketing copy.
 >
+> **✅ DONE (q) API anonymous-mode redaction — site copy restored to the truth (2026-08-13).**
+> The user fixed the leak app-side, so the (k) finding — *"the API does not honor privacy modes
+> on the responses endpoint, and `/api` claimed the opposite"* — is closed from both ends. What
+> the app now does, read out of the working tree
+> (`web2/public_api/routes/responses.py`, `schemas/response.py`, `openapi_spec.py`,
+> `surveyLib/domain/surveyEvents/baseEvents.py`):
+> - On `privacy_mode: anonymous`, `user_id` / `platform_id` / `session_number` are `null` on
+>   both the REST read path and the `response.submitted` webhook. `provider` is kept on
+>   purpose (the admitting source is not treated as identifying, same rule as the XLSX exports).
+> - Respondent filters are **refused, not ignored**: `?user_id=`, `?platform_id=`,
+>   `?session_number=` return `400` on an anonymous project. Blanking the fields while still
+>   answering the filter would have been cosmetic — a caller who filters and reads back a
+>   non-empty page has learned who answered.
+> - Grouping survives: `id` still identifies one submission, and the webhook gained a
+>   **`response_id`** field precisely so a pipeline keeps a join key.
+>
+> **Site side:** the "Privacy modes do not redact this endpoint" paragraph in
+> `src/pages/api.astro` and its `llms.txt` twin rewritten to state the redaction, the 400, and
+> what survives it.
+> **Guard extended, same reasoning as (i).** This is the highest-consequence sentence on `/api`
+> — it tells an integrator that *Subo*, not their ingestion code, keeps the anonymity promise —
+> and a regression is invisible from this repo. `check:api` now reads the redacted field set out
+> of `schemas/response.py` (`<field>=None if anonymous else …`) and the refused-filter tuple out
+> of `routes/responses.py` (`_RESPONDENT_FILTER_ARGS`), against new
+> `anonymousRedactedFields` / `anonymousRefusedFilters` keys in `api-surface.json`. Verified by
+> inducing drift in both directions.
+> **⚠️ The app-side fix is UNCOMMITTED in the app repo working tree** (8 modified files, nothing
+> on `master`), so it is **not on Stage or Production**. The site copy is therefore true of the
+> code but **ahead of the deploy** until that ships — worth pairing with the scale-family
+> release rather than sitting on the site alone.
+>
+> **✅ DONE (r) footer Bluesky link repointed subo.ai → subo.gg (2026-08-13)**, all six locale
+> files. Last stray `subo.ai` in site nav.
+>
 > **✅ DONE (c) API/agent GEO — `subo.gg/api` built and live in-repo (2026-08-04).** Static,
 > crawlable quickstart + 7 recipes + reference tables + FAQ, written against the real
 > `web2/public_api` routes. `llms.txt` repointed at it (and its **wrong endpoint paths

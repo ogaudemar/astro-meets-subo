@@ -390,15 +390,26 @@ const toc = [
                 completions. <code>session_number</code> separates those runs.
               </li>
               <li>
-                <strong>Privacy modes do not redact this endpoint.</strong> Subo's own
-                surfaces mask identity on an anonymous project: the Responses tab hides
-                it and the XLSX export blanks the id, name, nickname and session columns.
-                The API does neither. <code>user_id</code>, <code>platform_id</code> and
-                <code>session_number</code> come back on every project whatever its
-                <code>privacy_mode</code>, and the <code>response.submitted</code> webhook
-                carries the same fields. If you promised your members anonymity, drop
-                those fields at your ingestion boundary rather than assuming the API
-                already did.
+                <strong>Anonymous projects come back redacted.</strong> When the project's
+                <code>privacy_mode</code> is <code>anonymous</code>, <code>user_id</code>,
+                <code>platform_id</code> and <code>session_number</code> are always
+                <code>null</code>, and the <code>response.submitted</code> webhook nulls the
+                same three. That matches what Subo's own surfaces do: the Responses tab hides
+                identity and the XLSX export blanks the id, name, nickname and session
+                columns. Filtering by respondent is <em>refused</em> rather than ignored, so
+                <code>?user_id=</code>, <code>?platform_id=</code> and
+                <code>?session_number=</code> return a <code>400</code> on an anonymous
+                project. A caller who could filter and read back a non-empty page would have
+                learned who answered.
+              </li>
+              <li>
+                Redaction does not break grouping. <code>id</code> still identifies one
+                submission and stays valid for
+                <code>GET .../responses/&#123;responseId&#125;</code>, and the webhook always
+                carries <code>response_id</code> for exactly that reason.
+                <code>provider</code> is kept on anonymous projects too: the source someone
+                came in through is not treated as identifying, the same rule the XLSX exports
+                follow.
               </li>
             </ul>
             <p>

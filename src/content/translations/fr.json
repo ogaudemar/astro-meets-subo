@@ -87,7 +87,7 @@
         "title": "Réseaux",
         "links": [
           { "text": "X", "href": "https://x.com/subo_app", "external": true },
-          { "text": "Bluesky", "href": "https://bsky.app/profile/subo.ai", "external": true },
+          { "text": "Bluesky", "href": "https://bsky.app/profile/subo.gg", "external": true },
           { "text": "Avis Top.gg", "href": "https://top.gg/bot/946888973035380806", "external": true }
         ]
       }

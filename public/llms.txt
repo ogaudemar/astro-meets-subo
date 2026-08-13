@@ -77,11 +77,13 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
    - `GET /communities/{communityId}/projects/{projectId}/responses` (paginated; `per_page` max 100)
    - `GET /communities/{communityId}/projects/{projectId}/responses/{responseId}`
    - Join on `user_id` (globally unique); `platform_id` is only unique within its `provider` namespace
-   - `privacy_mode` does not redact this endpoint. `user_id`, `platform_id` and
-     `session_number` are returned for anonymous projects too (the app's own Responses
-     tab and XLSX export mask them; the API does not), as is the `response.submitted`
-     webhook payload. Drop those fields at your ingestion boundary if the project
-     promised anonymity.
+   - `privacy_mode: anonymous` redacts this endpoint: `user_id`, `platform_id` and
+     `session_number` come back `null`, and the `response.submitted` webhook nulls the
+     same three (matching the app's Responses tab and XLSX export). Respondent filters
+     (`user_id`, `platform_id`, `session_number`) are refused with a 400 on an anonymous
+     project rather than ignored. `id` still identifies one submission and stays valid for
+     the single-response GET, and `provider` is still returned — the admitting source is
+     not treated as identifying.
 
 5. **Trigger AI Analysis**
    - `POST /communities/{communityId}/projects/{projectId}/analysis` (async; `{"force": true}` re-runs)
