@@ -412,6 +412,42 @@ groundwork converts into citations and organic traffic. One page per intent.
 > code comments and `docs/`** to its Important Patterns — written because `docs/recipes/` was
 > later published on this site, i.e. internal prose is not safe from becoming marketing copy.
 >
+> **✅ DONE (s) `content-blocks-new-way-to-design-survey-flows` revised and PUBLISHED
+> (2026-08-13).** First of the four crawlable drafts to get a ruling: the user judged it a good
+> article, so it went `draft: false` with `updatedDate` rather than being deindexed. Rewritten
+> against the current `blog-writing` skill (9 em dashes cleared, the nine identical
+> numbered-section-plus-blockquote units broken up, stock phrasing cut) and against the app
+> source. **Three product facts were wrong and are now right:**
+> - **Button-label and typing-delay customization is Premium+, not "VIP and above."**
+>   `CanvasPanel.tsx` gates both behind `hasPremiumAccess(serverTier)`. Same class of error as
+>   (n): a real gate, named at the wrong tier.
+> - **Content blocks work in polls too**, not just "surveys and web convos"
+>   (`POLL_ALLOWED_BLOCK_TYPES` in `types/project.ts`). The image field is the survey-only part.
+> - **The welcome screen is a server setting, not an unconditional default.** `Default Survey
+>   Intro` (`defaultIntroEnabled`) seeds an intro block into new non-poll surveys; deleting it
+>   collapses the INTRO section to a **Restore default** button. Post says so, with the user's
+>   screenshot.
+>
+> **New material, which is why the revise was worth more than a proof pass:** a full
+> **variables** section (the `[` / `@` / `:` pickers, the eight picker categories out of
+> `variableRegistry.py` + `useVariables.ts`, answer piping, and score buckets resolving to
+> `[score_<bucket>]` / `[correct_answers]` per `_variable_catalog` in `routes/script.py`), built
+> around the user's two Discord screenshots. Plus **5 FAQ questions** (schema + visible),
+> interlinks to `/templates`, `/recipes` and the published skip-logic post, and a third image
+> lifted from the chat screenshot into `public/images/blog/content-blocks/`.
+>
+> **⚠️ App-side inconsistency spotted, not fixed:** `defaultIntroEnabled` resolves a NULL column
+> to **True** in `serverSurveyLogic.py:663` and `dto/settings.py`, but to **False** in
+> `model/serverSetting.py` and `web2/public_api/routes/projects.py:678`. A community that never
+> touched the setting therefore gets a seeded intro from the app and no intro from the API. The
+> post is written to be true either way (it says "if your community has the setting on"), but
+> the app should pick one.
+>
+> **▶ STILL OPEN — the other three drafts.** `5-discord-community-types-...` has a user verdict
+> (superficial, single-pillar, missing the studios/indie-dev ICP) and a **pending decision on
+> expand vs. split**; `how-to-use-skip-logic-...` and `scheduling-recurring-surveys-...` are
+> unruled.
+>
 > **✅ DONE (q) API anonymous-mode redaction — site copy restored to the truth (2026-08-13).**
 > The user fixed the leak app-side, so the (k) finding — *"the API does not honor privacy modes
 > on the responses endpoint, and `/api` claimed the opposite"* — is closed from both ends. What
