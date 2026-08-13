@@ -306,7 +306,111 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE (next session) — German at 10 pages (2026-08-12); two threads open
+> ### ▶ RESUME HERE (next session) — P7 is unblocking; site-side next move is ES/IT/PT-BR routes
+>
+> **State at end of session 2026-08-12 (b).** House cleaning done, repo committed and pushed,
+> nothing half-finished on the site side. Two things to know before picking up:
+>
+> **1. ⭐ THE P7 GATE HAS OPENED — the scale family shipped.** `rating`, `opinion_scale`, `nps`
+> and `ranking` are **merged into the app repo's `master`** and **deployed to Stage** (user,
+> 2026-08-12). Remaining app-side before Production: **translations + a release brief.** This
+> ends the hard constraint that has frozen P7 since 2026-07-29.
+> **Agreed plan once the brief lands (user, 2026-08-12):** *templates head-on* — **first
+> rewrite the existing 22 templates to use the rating/scale question types, then build new
+> ones.* That ordering matters: it is the "don't build templates you'll rebuild" constraint
+> read forward, so the existing set stops being pre-scale-family legacy before the library grows.
+> **Do not document the four block types on the site until the release brief lands** (the
+> standing rule, and Production hasn't shipped either). When it does, this unlocks together:
+> `src/data/api-surface.json` + the `/api` block-type table, the template rewrites, and P7's
+> `/templates/*` landing pages.
+> **`npm run check` is red right now, and it is honest.** `check:api` reports the four
+> undocumented block types. Previously that red meant "the app repo is on a feature branch";
+> it no longer does. See the revised guard note in P7.
+>
+> **2. Site-side next move, already scoped and verified: ES / IT / PT-BR routes.** The German
+> Tier 1 trick has three unspent copies. Verified 2026-08-12: `surveyConvos` and `about` are
+> **fully translated with zero missing keys against EN** in `es.json`, `it.json` *and*
+> `pt-br.json`, and rendered by **no page at all** — the route `.astro` files were never
+> created. Six new pages, no translation spend, taking ES/IT/PT-BR from 2 → 4 pages each.
+> - **Not a copy-paste job.** All three carry **pre-retune** copy, exactly as FR and DE did:
+>   ES H1 "Encuestas que se sienten como conversaciones", IT "Sondaggi che sembrano
+>   conversazioni", PT-BR "Pesquisas que parecem conversas" — **none says *formulario* /
+>   *modulo* / *formulário***. So it is the two-pass job this doc keeps insisting on: create
+>   the route, then tune title/description/H1 for form intent in that language.
+> - **hreflang must be reciprocal** across every existing copy of both pages (~10 files), the
+>   part DE got right.
+> - **On the BR/ES revenue gate:** the revised order says "verify BR/ES before spending." That
+>   gate was about **spending on translation**, and this slice spends none, so it does not bind.
+>   It is also the cheapest way to *get* the verification the gate asks for: those markets have
+>   no localized commercial page to convert on today, so their Stripe $0 is currently
+>   unfalsifiable.
+>
+> **Also still open, unchanged:** the **German changelog** (last page for FR parity; needs
+> `legacy-releases.ts` widened off its bilingual `titleFr`/`summaryFr` schema plus a new
+> `changelog-blog-de.ts`), **P5 roundup outreach** (yours to send), and the **FR blog
+> infrastructure decision** (see below) which is the real blocker on `sondage discord`.
+>
+> **▶ DECISION WANTED: FR blog infrastructure.** Flagged 2026-08-11, still unmade, and it is
+> the largest single non-English opportunity on the board: `sondage discord` is **756 imp @
+> pos 8.5**, a top-5 non-branded term, and French how-to content has **nowhere to live** — the
+> blog collection has no locale field and `src/pages/blog/` has no FR route. Every FR page's
+> outbound content link currently goes to an English post marked "(en anglais)". This is a
+> schema/routing decision (locale field vs. separate entries, hreflang on posts, how the RSS
+> and sitemap treat translations), not copy, so it wants a deliberate call rather than a shape
+> chosen mid-task.
+>
+> **✅ DONE (o) skip-logic tier claim RULED and fixed across EN/FR/DE (2026-08-12).** The open
+> question from (n) below is closed; the ruling and the lesson are recorded there. Chasing the
+> same fact through the blog turned up **a second, live falsehood in a published post**:
+> `mastering-skip-logic-...` (the post `/features` links to) said *"The Skip Logic option is
+> available for all Premium, VIP and Custom bot subscribers"*, which excludes Free and
+> contradicts the pricing table's ✓ on all four tiers. Fixed, and both editors named. Its
+> `draft: true` sibling `how-to-use-skip-logic-...` said *"advanced skip logic on Premium and
+> above"* in the intro while its own closing line said *VIP and Custom Bot* — the post
+> disagreed with itself two screens apart. Also fixed, plus its remaining 10 prose em dashes
+> (repo precedent: clear them across any post you touch).
+>
+> **▶ FOUND, NOT FIXED — `draft: true` posts are built, crawlable and IN THE SITEMAP.**
+> Discovered while fixing the above, and it needs a ruling rather than a quiet fix, because it
+> is a traffic decision.
+> - **Mechanism:** `src/pages/blog/index.astro:15` filters drafts out of the *listing*
+>   (`posts.filter(post => !post.data.draft)`), but `src/pages/blog/[...slug].astro`'s
+>   `getStaticPaths` maps **every** entry in the collection with no draft filter. So each draft
+>   gets a real page at its public URL, and `@astrojs/sitemap` picks it up.
+> - **Confirmed in `dist/`:** all four drafts are built *and* present in `sitemap-0.xml` —
+>   `5-discord-community-types-surveys-they-should-run`,
+>   `content-blocks-new-way-to-design-survey-flows`,
+>   `how-to-use-skip-logic-smarter-discord-surveys`,
+>   `scheduling-recurring-surveys-community-pulse`.
+> - **This invalidates an assumption written into this doc.** The 2026-08-05 FAQ-schema entry
+>   skipped the Google-Forms post while it was a draft on the grounds that *"schema on an
+>   unpublished post renders nowhere."* It renders, and it is submitted to Google. The 2026-07
+>   note that `content-blocks` is `draft:true` so posts should *"link `action-blocks` instead"*
+>   was also protecting against a link that in fact resolves.
+> - **`/tutorials` links straight into a draft.** `src/pages/tutorials/index.astro:43` points
+>   its skip-logic card at `/blog/how-to-use-skip-logic-smarter-discord-surveys/`, the draft,
+>   rather than the published `mastering-skip-logic-...` that `/features` uses.
+> - **Why this is your call, not a hygiene fix.** Filtering drafts out of `getStaticPaths` is
+>   one line and is almost certainly what `draft: true` was meant to do, but it **deindexes
+>   four live URLs**, and at least one (`5-discord-community-types-...`) is the kind of
+>   listicle that may already earn impressions. Deleting indexed pages to honor a flag is a
+>   real trade, especially mid-migration while non-branded rankings are still recovering.
+>   **Options:** (i) filter drafts from `getStaticPaths` and repoint the `/tutorials` card at
+>   the published post — cleanest, costs whatever those four currently earn; (ii) check Search
+>   Console for the four first, then promote any that perform to `draft: false` after a proof
+>   pass and filter the rest; (iii) leave the build alone and just repoint `/tutorials`.
+>   **(ii) is the honest one** given the whole point of P2 is compounding content: two of these
+>   four are finished-looking posts that were never proofed, not junk.
+>
+> **✅ DONE (p) `subo-glossary` skill vendored into this repo (2026-08-12).** It lived at
+> user level, so the rules travelled with the *machine* rather than with the code that follows
+> them. Now `.claude/skills/subo-glossary/`, byte-identical to the app repo's copy (diffed both
+> ways), and the **user-level copy deleted** after confirming all ten referrers live inside the
+> two repos. CLAUDE.md's House style section gained the **edit one, copy to the other in the
+> same change** rule, since two-copy drift is the failure mode this creates. The app repo
+> carries the matching commit (`8eacffe4`), which also added a **US-English-everywhere rule for
+> code comments and `docs/`** to its Important Patterns — written because `docs/recipes/` was
+> later published on this site, i.e. internal prose is not safe from becoming marketing copy.
 >
 > **✅ DONE (c) API/agent GEO — `subo.gg/api` built and live in-repo (2026-08-04).** Static,
 > crawlable quickstart + 7 recipes + reference tables + FAQ, written against the real
@@ -380,6 +484,22 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   and the pricing table *does* gate a separate "Erweiterter Ausdruckseditor / advanced
 >   expression editor" to VIP. If that editor is what "advanced syntax" meant, the original
 >   claim was clumsy rather than false and the card could name that feature explicitly.
+>   **RULED + FIXED (user, 2026-08-12).** That is exactly what it meant, so the original was
+>   clumsy, not false, and "Available on every plan" was an over-correction: the two editors
+>   are **Visual Editor (all plans)** and **Expression Editor (VIP + Custom)**, the split
+>   being GUI-built conditions vs. open syntax. Confirmed in the app:
+>   `web2/react/.../builder/SkipLogicBuilder.tsx:276` gates the "Switch to Expression Editor"
+>   button behind `hasVIPAccess(serverTier)` with a `PremiumBadge`, while the visual condition
+>   rows are ungated; the pricing table's `Advanced Expression Editor` row is ✗/✗/✓/✓ across
+>   FREE/PREMIUM/VIP/CUSTOM. The `/features` card now names both editors, in **EN, FR and DE**.
+>   Also corrected `how-to-use-skip-logic-smarter-discord-surveys.md`, which had the shape
+>   right but not the names ("Simple logic" / "Advanced logic (VIP only)", understating Custom)
+>   plus a `for yous` typo and two em dashes on the lines touched.
+>   **Lesson worth keeping:** the audit was right that the copy was wrong and wrong about which
+>   direction. A vague claim ("advanced syntax on VIP+") failed to match a real gate whose
+>   product name it never used, and the fix deleted the gate instead of naming it. When a tier
+>   claim doesn't verify, check whether the *feature name* is the thing that's missing before
+>   concluding the tier is.
 >
 > **Remaining in Thread 2 after (h), (j) and (l):**
 > - **(a) Form/no-"bot" follow-ons** — more "app"/"form" vocabulary in existing titles/H2s,
@@ -1191,25 +1311,44 @@ slots into the P2 content → templates → pricing internal-link cluster.
 
 **Gated on the web app roadmap** (`~/.claude/plans/master-roadmap-2026-h2.md`):
 
-> **Status (2026-08-11): the gate is being built.** `npm run check:api` reports four
-> undocumented block types — `rating`, `opinion_scale`, `nps`, `ranking` — i.e. the
-> scale family this section waits on. **Not shipped yet:** app-repo `master` is at
-> `4bdce3d5` and the work sits on an unmerged `feat/scale-blocks` branch (`rating` has a
-> backend, Discord path, web Canvas/Convo/Results and public-API type; the other three are
-> so far only in the OpenAPI enum). Do **not** document them on the site until they merge
-> and a release brief lands.
-> **Guard limitation this exposes:** `check:api` reads the app repo's **working tree**, so
-> whatever branch is checked out there reads as drift. A red `check:api` therefore means
-> "the app repo differs", not "the site is wrong" — check `git -C ../subo branch --show-current`
-> before believing it. Worth teaching the script to compare against the app's `master` (or
-> at minimum warn when the app repo is off it).
+> **⭐ Status (2026-08-12): THE GATE HAS OPENED.** The scale family is **merged into app-repo
+> `master`** (`8cb1ecfa`, `24ca387c`, `732de663`, `c81e1436`, `5eed9c18` — ranking on both
+> surfaces, star ratings in Discord results, skip-logic parsing, and a `survey-authoring`
+> skill update teaching the shipped family) and **deployed to Stage** (user). **Not yet in
+> Production:** translations and a release brief are the remaining app-side work.
+> **Standing rule still holds: do not document `rating` / `opinion_scale` / `nps` / `ranking`
+> on the site until the release brief lands.** Nothing user-visible has shipped, and the site
+> documenting a Stage-only feature is exactly the drift this section exists to prevent.
+> **Agreed plan for when it does (user, 2026-08-12), and the order is the point:**
+> 1. **Rewrite the existing 22 templates** to use the rating/scale question types. The
+>    2026-07-29 constraint ("no new templates until rating-scale ships") was about not
+>    building things you'd rebuild; read forward, it says fix the pre-scale-family set
+>    *before* growing the library, or the rebuild debt just gets larger.
+> 2. **Then build new templates**, with `/templates/*` landing pages + `FAQPage` schema.
+> 3. Site-side companions that unlock in the same beat: `src/data/api-surface.json` + the
+>    `/api` block-type table, and the `/recipes` ↔ `/templates` pairs for anything new.
+>
+> **Guard note, REVISED 2026-08-12 — the old advice now misleads.** The 2026-08-11 note said a
+> red `check:api` means "the app repo is on a feature branch, not that the site is wrong," and
+> told you to check `git -C ../subo branch --show-current`. That test now **passes while the
+> red is real**: the app repo is on `master`, clean, and `master` itself carries the four block
+> types. The script reads the app's **working tree**, so it cannot tell "unmerged branch" from
+> "merged but unreleased" from "genuinely undocumented." The sharper question is **has a
+> release brief landed in `subo/docs/releases/`** — that, not the branch name, is what
+> separates "site is behind" from "site is correctly waiting." Two further wrinkles seen in the
+> wild: app `master` was **18 commits ahead of unpushed `origin/master`**, so even `master` is
+> not a reliable proxy for what is live; and Stage-deployed is not Production-deployed. If the
+> script is ever taught to be smarter, the useful signal is the release-brief file, not the git
+> ref.
 
-- **Hard constraint (user, 2026-07-29): no new templates until the rating-scale
-  feature ships.** Rating scale is **FEAT scale-family blocks in Stage 3** of the
-  master roadmap (rating / opinion-scale / NPS / dropdown / ranking — one schema
-  investment, amortized over five block types). Building templates before those
-  block types land means rebuilding them once the new question types exist. Wait
-  for Stage 3.
+- **~~Hard constraint (user, 2026-07-29): no new templates until the rating-scale feature
+  ships.~~ SATISFIED 2026-08-12 (Stage), pending Production + release brief.** Rating scale
+  was **FEAT scale-family blocks in Stage 3** of the master roadmap (rating / opinion-scale /
+  NPS / dropdown / ranking — one schema investment, amortized over five block types).
+  Building templates before those block types landed meant rebuilding them once the new
+  question types existed. **That is now the argument for step 1 above:** the existing 22
+  templates *are* the pre-scale-family set, so they get rewritten first. Kept here rather
+  than deleted, because the constraint explains the ordering.
 - The master roadmap already treats **template-library / SEO traffic as an input to
   Decision Point D1** (Stage 4, breadth-vs-depth) and wires templates into **GENAI
   Phase P** (engagement planner: "save to plan" on templates) and **GENAI Phase 1**

@@ -16,6 +16,10 @@ Marketing/landing page site for **Subo** (a Discord survey and poll bot) deploye
 - **No em dashes** in user-facing copy.
 - Full rules: the **`subo-glossary`** skill (terminology, capitalization, spelling, tone)
   and the **`blog-writing`** skill (editorial voice, anti-AI-tell rules).
+- **`subo-glossary` is vendored in both repos** (`.claude/skills/subo-glossary/` here and in
+  `subo/`) so each is self-contained and the rules ship with the code that follows them. The
+  two copies are byte-identical by intent: **edit one, copy it to the other in the same
+  change.** A glossary that disagrees with itself across repos is worse than one location.
 
 ## Commands
 

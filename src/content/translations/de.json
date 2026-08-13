@@ -1537,7 +1537,7 @@
           {
             "emoji": "🌿",
             "title": "Skip-Logik und Verzweigung",
-            "desc": "Leite Befragte je nach früheren Antworten zu unterschiedlichen Fragen und löse Belohnungen nach ihrer Wahl aus. In jedem Tarif verfügbar."
+            "desc": "Leite Befragte je nach früheren Antworten zu unterschiedlichen Fragen und löse Belohnungen nach ihrer Wahl aus. Der visuelle Editor ist in jedem Tarif enthalten; VIP und Custom ergänzen einen Ausdruckseditor für freie bedingte Syntax."
           },
           {
             "emoji": "✅",

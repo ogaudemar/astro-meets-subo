@@ -9,17 +9,17 @@ draft: true
 
 # How to Use Skip Logic to Build Smarter Discord Surveys
 
-Nobody wants to answer questions that don't apply to them. If you're running a survey and asking PC gamers about console settings, or asking casual members about admin workflows, you're wasting their time — and losing completion rates.
+Nobody wants to answer questions that don't apply to them. If you're running a survey and asking PC gamers about console settings, or asking casual members about admin workflows, you're wasting their time, and losing completion rates.
 
 Skip logic (also called conditional branching) solves this. It lets you route respondents to different questions based on how they answered a previous question. The result: shorter, more relevant surveys for every individual respondent, and cleaner data for you.
 
-Subo supports simple skip logic on all plans, and advanced skip logic on **Premium and above plans**. Here's everything you need to know.
+Subo gives you skip logic on every plan through the visual builder, and an Expression Editor for open conditional syntax on **VIP and Custom**. Here's everything you need to know.
 
 ## What Is Skip Logic?
 
 Skip logic is a rule that says: *"If the respondent answered X to question 3, show (or hide) question 4. Otherwise, ask question 5."*
 
-In practice, it means different people see different versions of your survey — but they all start from the same survey. You build it once, and Subo handles the routing automatically.
+In practice, it means different people see different versions of your survey, but they all start from the same survey. You build it once, and Subo handles the routing automatically.
 
 **Simple example:**
 
@@ -33,16 +33,16 @@ Without skip logic, everyone sees both Q2 and Q3. Q2 is irrelevant to non-subscr
 
 Skip logic is most valuable when:
 
-- **You have branching audiences** — different segments of your community have genuinely different experiences (e.g., mods vs members, new vs veteran, paid vs free)
-- **Some questions only apply to specific answers** — follow-up questions that are conditional on a prior answer
-- **You want to reduce survey length** — skip irrelevant sections to keep the survey short and focused
-- **You're running complex research** — multiple question paths for different community types, game modes, or use cases
+- **You have branching audiences**: different segments of your community have genuinely different experiences (e.g., mods vs members, new vs veteran, paid vs free)
+- **Some questions only apply to specific answers**: follow-up questions that are conditional on a prior answer
+- **You want to reduce survey length**: skip irrelevant sections to keep the survey short and focused
+- **You're running complex research**: multiple question paths for different community types, game modes, or use cases
 
 ## How to Set Up Skip Logic in Subo
 
 ### Step 1: Build your base survey
 
-Start with your core questions. You don't need to think about branching yet — just write out all the questions you might want to ask any segment of your community.
+Start with your core questions. You don't need to think about branching yet. Just write out all the questions you might want to ask any segment of your community.
 
 ### Step 2: Identify your branch points
 
@@ -56,8 +56,8 @@ Look for questions where different answers should lead to different follow-up qu
 
 In the Subo script builder (via the web admin or using the Discord command), you can set a skip rule to determine if a question will be shown or hidden based on answers to previous questions. 
 
-- **Simple logic** — just follow directions with a simple interface that will build the logic for yous
-- **Advanced logic (VIP only)** — for expert users, you can just write your own custom logic using questions, answers and operator. Start with the simple logic, then edit the syntax to build something more complex.
+- **The visual builder**, on every plan: pick a question, an operator and an answer, and Subo builds the rule for you.
+- **The Expression Editor**, on VIP and Custom: write the condition yourself using questions, answers and operators. Start in the visual builder, then switch over and edit the syntax to build something more complex.
 
 ### Step 4: Test your survey
 
@@ -90,7 +90,7 @@ Always use Subo's test mode before launching. Run through each possible path to 
 
 **Keep your branch logic shallow.** More than 3 levels of branching gets confusing to build and maintain. For most surveys, 1–2 levels is plenty.
 
-**Use it for real differences, not just preferences.** Skip logic is best when different paths genuinely require different questions. Don't branch just to show off — every branch you add is another path you need to test and maintain.
+**Use it for real differences, not just preferences.** Skip logic is best when different paths genuinely require different questions. Don't branch just to show off. Every branch you add is another path you need to test and maintain.
 
 **Make your trigger questions unambiguous.** If respondents can't clearly understand what they're choosing, your branching data will be messy. Keep trigger questions simple and specific.
 
@@ -104,12 +104,12 @@ Beyond completion rates, skip logic has a direct impact on data quality:
 
 - **Eliminates irrelevant "N/A" responses** that would otherwise skew your analysis
 - **Surfaces real preferences** from specific segments without diluting overall results
-- **Reduces respondent frustration** — a shorter, relevant survey gets more honest answers
-- **Enables segment-specific analysis** — you can compare the "new member" path vs the "veteran" path side by side
+- **Reduces respondent frustration**: a shorter, relevant survey gets more honest answers
+- **Enables segment-specific analysis**: you can compare the "new member" path vs the "veteran" path side by side
 
 ## Getting Started
 
-Simple Skip logic is available to all. Advanced Skip Logic is available on Subo VIP and Custom Bot.
+The visual builder is available on every plan. The Expression Editor is available on Subo VIP and Custom Bot.
 
 **[View Subo plans and pricing →](/pricing)**
 

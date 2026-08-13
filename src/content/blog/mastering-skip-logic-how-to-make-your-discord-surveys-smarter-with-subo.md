@@ -56,7 +56,7 @@ When you include an "Other" option, it's a good idea to follow up and learn more
 
 Subo makes setting up skip logic easy. With a few clicks, you can create dynamic surveys that keep your audience engaged and deliver better insights without the fluff.
 
-The Skip Logic option is available for all Premium, VIP and Custom bot subscribers. See [all plans](/pricing).
+Skip logic is available on every plan, free included, through the visual builder. VIP and Custom add the Expression Editor, where you write the condition yourself instead of picking it from menus. See [all plans](/pricing).
 
 Two recipes show skip logic doing real work: a [moderator application](/recipes/volunteer-moderator-funnel) where two opposite conditions decide who gets a trial role and who gets the waitlist, and a [welcome quiz](/recipes/welcome-quiz) that routes new members by region and hands out the matching roles. The [template library](/templates) ships scripts with the logic already wired.
 

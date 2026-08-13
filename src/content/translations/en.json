@@ -1106,7 +1106,7 @@
         { "emoji": "💬", "title": "Conversational format", "desc": "Questions appear one at a time, like a chat, not a form wall. Higher completion, less friction." },
         { "emoji": "🤖", "title": "AI-assisted drafting", "desc": "Use <code>/draft</code> to describe your goal in plain English. Subo generates a full multi-question survey instantly." },
         { "emoji": "🖥️", "title": "Web admin builder", "desc": "Design, preview, and manage surveys from the Subo web dashboard, no Discord commands needed." },
-        { "emoji": "🌿", "title": "Skip logic & branching", "desc": "Route respondents to different questions based on earlier answers, and trigger rewards from what they picked. Available on every plan." },
+        { "emoji": "🌿", "title": "Skip logic & branching", "desc": "Route respondents to different questions based on earlier answers, and trigger rewards from what they picked. The visual builder is on every plan; VIP and Custom add an Expression Editor for open conditional syntax." },
         { "emoji": "✅", "title": "4 question types", "desc": "Open Text, Numeric, Single Choice (yes/no included), Multiple Choice, covering every feedback scenario." },
         { "emoji": "📢", "title": "Content blocks", "desc": "Add a message anywhere in your survey without asking a question: a welcome intro, a GIF, a warning to acknowledge, or a mid-survey pause. Respondents continue after a timer or by clicking a button." },
         { "emoji": "😄", "title": "Custom Discord emojis", "desc": "Use your server's custom emojis in questions, answer options, and responses, even when respondents take the survey on the web." }
