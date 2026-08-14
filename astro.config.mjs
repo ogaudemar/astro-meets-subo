@@ -16,6 +16,12 @@ const NOINDEX_PATHS = new Set([
   "https://subo.gg/subscriptions/",
 ]);
 
+// Retired content URLs live in `public/_redirects`, not in a `redirects` block
+// here: Astro emits each config redirect as `<path>/index.html`, so the
+// with-slash and without-slash forms of one path collide on the same file, and
+// the indexed URL is the with-slash one. The Cloudflare adapter appends its own
+// entries to `public/_redirects`, so that file is the single place to add them.
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://subo.gg",

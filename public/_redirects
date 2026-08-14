@@ -1,0 +1,17 @@
+# Cloudflare redirect rules, served ahead of the static assets.
+#
+# Retired content URLs go here rather than in astro.config.mjs `redirects`:
+# Astro emits each config redirect as `<path>/index.html`, so registering both
+# the with-slash and without-slash form of one path is a route collision, and
+# both forms need to work. The Cloudflare adapter appends its own entries to
+# this file at build time, so nothing here is lost.
+#
+# Only for URLs that were live and crawlable. A path that never shipped should
+# 404, not redirect.
+
+# Merged into the older, already-indexed skip-logic post (2026-08-14). Both
+# covered the same intent; the draft was crawlable and in the sitemap, and the
+# two split the internal links between them (/features -> one, /tutorials ->
+# the other).
+/blog/how-to-use-skip-logic-smarter-discord-surveys   /blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo/   301
+/blog/how-to-use-skip-logic-smarter-discord-surveys/  /blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo/  301

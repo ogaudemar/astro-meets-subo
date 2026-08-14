@@ -412,6 +412,61 @@ groundwork converts into citations and organic traffic. One page per intent.
 > code comments and `docs/`** to its Important Patterns — written because `docs/recipes/` was
 > later published on this site, i.e. internal prose is not safe from becoming marketing copy.
 >
+> **✅ DONE (u) the two skip-logic posts MERGED, and the draft 301'd (2026-08-14).** They were
+> one article written twice (what-is-it → when → examples → getting-started, same intent), and
+> the split was doing real damage: **`/features` linked to one and `/tutorials` to the other**,
+> so a single intent's internal link equity was divided across two URLs, one of them an unlisted
+> draft.
+> - **Survivor: `mastering-skip-logic-...`** (Sep 2024, `draft:false`, has a hero). Kept because
+>   it is the URL with indexing history and `/features` already pointed at it. Its slug is worse
+>   for the query, but **moving URLs mid-migration to buy a slug is the wrong trade**; retitled
+>   instead ("Skip Logic for Discord Surveys: Show, Hide, and Reward Based on Answers").
+> - **`how-to-use-skip-logic-...` deleted and 301'd** to the survivor. `/tutorials` repointed,
+>   which also closes the "links straight into a draft" item from the drafts block below.
+> - **New mechanism: `public/_redirects`.** First retired-URL redirect on the site. It is *not*
+>   in `astro.config.mjs`'s `redirects` block, and the comment in both files records why: Astro
+>   emits each config redirect as `<path>/index.html`, so the with-slash and without-slash forms
+>   of one path **collide as duplicate static routes** (verified: build warns and it is slated to
+>   become a hard error). Both forms need to work and the indexed one is with-slash. The
+>   Cloudflare adapter **appends** its own entries to `public/_redirects`, so nothing is lost by
+>   owning the file. Use it for future retirements.
+> - **Content, all verified against the app:** the operator table per block type
+>   (`OPERATORS_BY_BLOCK_TYPE` / `OPERATOR_LABELS` in `types/skipLogic.ts`), the two panel names
+>   (**"Who should see this?"** on question/content blocks, **"When should this fire?"** on
+>   action blocks, `CanvasPanel.tsx:1094`/`1530`), conditional rewards keyed on
+>   `correct_answers`, and the Expression Editor's one-way Expert Mode. 6 FAQ questions, the
+>   user's three screenshots, no new hero needed (another reason merging beat keeping two).
+> - **Scale family documented** (Rating / Opinion Scale / NPS / Ranking): allowed now, brief
+>   `2026-08-13-scale-family-blocks.md` exists and it is **live on production**. Only the skip-
+>   logic-relevant facts are used: scales compare numerically (so NPS `<= 6` is one visual
+>   condition), and ranking gets **two** readings, *top choice is* and *ranked*. Likert is
+>   deliberately **not** called a block type, per the brief.
+> - **Precision worth keeping: polls.** Question-block skip logic is **hidden** for polls
+>   (`!isPoll` at `CanvasPanel.tsx:1530`); what a poll gets is a **conditional action block** in
+>   the outro (`isPoll && isActionBlock`). "Skip logic works in polls" is true only in that
+>   narrower sense, and the post says so.
+>
+> **▶ Brief 2 is the templates brief.** `2026-08-13-scale-family-blocks.md` is **version 1 of
+> 2** and states plainly that the built-in templates still fake scales with choice/numeric
+> questions and that **no copy may promise updated templates yet**. That is the next session's
+> work (the agreed "templates head-on" ordering), and brief 2 arrives with it.
+>
+> **✅ DONE (t) `5-discord-community-types-...` rebuilt as a three-pillar hub (2026-08-13).**
+> Ruled per the recommendation: **split by audience, don't expand the matrix, and keep the URL.**
+> Five types on the Understand pillar only became six audiences read across Understand / Engage /
+> Get things done, 1,692 → 1,249 words, with the sample-question lists replaced by **27 internal
+> links** (all resolving) into the templates and recipes that already hold them. **Game studios
+> and indie developers** added as its own section, the ICP the draft missed; it maps onto the
+> existing `audiences: ["Gamers", "Businesses"]` facet, so no new taxonomy was invented. Title
+> now names polls and forms too, which feeds the P2 form-intent cluster. 4 FAQ questions,
+> `draft: false`.
+> **Reasoning kept, because it generalizes:** the draft was *a hub in the wrong taxonomy*. The
+> site's real axes are audience × pillar (encoded in the templates collection as `audiences` ×
+> `dimension`), "5 community types" cuts across that grain, and that is why the post had nothing
+> to link to and nothing linking in. **Per-audience spokes are the follow-on work**, one post per
+> ICP covering all three pillars, starting with game studios. Not started; P2 remains
+> migration-gated to ~Q4 and templates come first.
+>
 > **✅ DONE (s) `content-blocks-new-way-to-design-survey-flows` revised and PUBLISHED
 > (2026-08-13).** First of the four crawlable drafts to get a ruling: the user judged it a good
 > article, so it went `draft: false` with `updatedDate` rather than being deindexed. Rewritten
@@ -443,10 +498,12 @@ groundwork converts into citations and organic traffic. One page per intent.
 > post is written to be true either way (it says "if your community has the setting on"), but
 > the app should pick one.
 >
-> **▶ STILL OPEN — the other three drafts.** `5-discord-community-types-...` has a user verdict
-> (superficial, single-pillar, missing the studios/indie-dev ICP) and a **pending decision on
-> expand vs. split**; `how-to-use-skip-logic-...` and `scheduling-recurring-surveys-...` are
-> unruled.
+> **▶ STILL OPEN — one draft left.** Three of the four crawlable drafts are now ruled: content
+> blocks published (s), community types rebuilt as a hub (t), skip logic merged away (u). Only
+> **`scheduling-recurring-surveys-community-pulse`** is unread and unruled. Note the pattern in
+> the three verdicts: none of them was "deindex it." Each was worth more revised than deleted,
+> which is evidence for option (ii) on the remaining one rather than the blanket
+> `getStaticPaths` filter.
 >
 > **✅ DONE (q) API anonymous-mode redaction — site copy restored to the truth (2026-08-13).**
 > The user fixed the leak app-side, so the (k) finding — *"the API does not honor privacy modes
