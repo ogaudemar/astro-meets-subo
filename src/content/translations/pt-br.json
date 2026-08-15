@@ -612,14 +612,19 @@
     }
   ],
   "questionTypesTitle": "TIPOS DE BLOCOS",
-  "questionTypesSubtitle": "4 tipos de perguntas para todo tipo de resposta, blocos de conteúdo para mensagens e pausas, e blocos de ação que recompensam a participação.",
+  "questionTypesSubtitle": "8 tipos de perguntas para todo tipo de resposta, incluindo avaliações, escalas, NPS e ranking, blocos de conteúdo para mensagens e pausas, e blocos de ação que recompensam a participação.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Texto Aberto", "desc": "Respostas escritas livres" },
-    { "emoji": "🔢", "name": "Numérico", "desc": "Números, classificações ou intervalos" },
+    { "emoji": "🔢", "name": "Numérico", "desc": "Qualquer número: um total, uma idade, um preço" },
     { "emoji": "🔘", "name": "Escolha Única", "desc": "Escolha uma entre múltiplas opções (sim/não incluído)" },
     { "emoji": "☑️", "name": "Múltipla Escolha", "desc": "Selecione todas as que se aplicam" },
+    { "emoji": "⭐", "name": "Avaliação", "desc": "Avalie de 2 a 10 pontos, em estrelas, números ou seus próprios emojis" },
+    { "emoji": "🎚️", "name": "Escala de opinião", "desc": "Concordância ou satisfação entre dois extremos nomeados, Likert incluída" },
+    { "emoji": "📈", "name": "NPS", "desc": "A pergunta padrão de recomendação, de 0 a 10" },
+    { "emoji": "🥇", "name": "Ranking", "desc": "Coloque as opções em ordem, ou só o seu top 3" },
     { "emoji": "📢", "name": "Bloco de Conteúdo", "desc": "Mensagem, intro, GIF ou pausa — sem resposta necessária" },
-    { "emoji": "⚡", "name": "Bloco de Ação", "desc": "Recompensa XP, cargos ou conquistas — conforme as respostas" }
+    { "emoji": "⚡", "name": "Bloco de Ação", "desc": "Recompensa XP, cargos ou conquistas, conforme as respostas" },
+    { "emoji": "🧮", "name": "Campo calculado", "desc": "Calcula uma pontuação, um segmento ou um valor a partir das respostas anteriores" }
   ],
   "webTitle": "NO DISCORD E NA WEB",
   "webDesc": "As survey convos funcionam nativamente dentro do Discord — mas o Subo também suporta uma experiência de pesquisa pela web. Os administradores escolhem se uma pesquisa funciona no Discord ou na web, e se está aberta a qualquer pessoa ou restrita aos membros da comunidade. De qualquer forma, você gerencia pesquisas, visualiza resultados e analisa dados pelo admin web do Subo.",
@@ -650,7 +655,7 @@
   "statsTitle": "EM NÚMEROS",
   "stats": [
     { "number": "15.000+", "label": "Servidores no Discord" },
-    { "number": "6", "label": "Tipos de blocos (4 tipos de perguntas, conteúdo, ação)" },
+    { "number": "11", "label": "Tipos de blocos (8 tipos de perguntas, conteúdo, ação, calculado)" },
     { "number": "3", "label": "Camadas de gamificação" },
     { "number": "1", "label": "Objetivo: a voz da sua comunidade" }
   ],

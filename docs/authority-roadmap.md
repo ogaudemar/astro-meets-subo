@@ -1625,26 +1625,61 @@ in line with production.
         a ranking writes **one row per ranked item**, `value` = the rank position;
       - the **five worked payloads** from brief §5 are lifted from the app's own authoring
         guidance and are known-correct. Use them verbatim.
-- [ ] **S1.4 Recipe correction: the hand-rolled rating is now wrong.** Brief §6: any copy
-      telling readers to build a rating as a `single_punch` with `score_values` 1 to 5 is
-      obsolete and produces a dataset nothing can average, because the answer is an option
-      id. Six recipes mention `score_values` — **most legitimately** (Hogwarts sorting and
-      member-segmentation distribute personality/segment points, the quizzes grade
-      right/wrong; none of that is a scale). **Audit for the specific pattern**: a 1-to-5
-      satisfaction or intensity ladder. Check `pre-post-assessment` and `study-quiz` closely.
-      Point any real instance at `rating` or `opinion_scale`.
-- [ ] **S1.5 ⚠️ "4 question types" is now false in all six locales.** Found 2026-08-14 and
-      it is the highest-visibility factual drift on the site: the product has **8 question
-      types and 11 block types**. Live wrong strings:
-      | Key | File | Says |
-      |---|---|---|
-      | `questionTypesSubtitle` | en/fr/de/es/it/pt-br | "**4 question types** for every kind of answer…" |
-      | stats list entry | en/fr/de | "**7** — Block types (**4 question types**, content, action, calculated)" |
-      | `featuresPage` callout | en/fr/de/es/it/pt-br | "**4 question types** — Open Text, Numeric, Single Choice…, Multiple Choice, covering every feedback scenario." |
-      The third one **enumerates** the four, so it cannot be fixed by changing a digit. This
-      is the single best place to surface the new capability without announcing it: the
-      features card becomes the natural home for "star and emoji ratings, agreement scales,
-      NPS, ranking". Fix EN first, then FR/DE (written, not translated flat), then ES/IT/PT-BR.
+- [x] **S1.4 Recipe correction — DONE 2026-08-14.** Audited all ten recipes for the
+      pattern. **Exactly one carried it, and taught it explicitly**: `pre-post-assessment`
+      had a section headed *"Attitude items (Likert-encoded as score_values)"* building a
+      4-point agreement item as a `single_punch` with `score_values` 1 to 4. Every other
+      `score_values` hit is legitimate and untouched (Hogwarts and member-segmentation
+      distribute personality/segment points; the quizzes grade right/wrong). **The
+      audit's own conclusion is the reusable part: `score_values` is not the smell — a
+      1-to-N intensity ladder is.**
+      The rewrite was more than a type swap, because the recipe's construct scores were
+      *built out of* those weights:
+      - attitude items are now `opinion_scale` with a label on every point, and the
+        section names the two things that differ from a choice question (`option.value`
+        is the point number, and a scale carries no `score_values` at all);
+      - the construct score becomes a `calculated_block` averaging the items, a **mean on
+        the scale's own 1.0-4.0 range** — the same move the app made converting its own
+        templates in batch 1, and easier to read across waves than "9 out of 12";
+      - the score-bucket prerequisites table splits into two kinds, because knowledge
+        items legitimately keep `score_values` and attitude items no longer can;
+      - **the low-to-high direction rule** is stated, with the consequence the app plan
+        flagged: reverse-framed items need reverse-scoring in the formula (`5 - [Item]`),
+        **not** a reversed label set, which would silently invert every average;
+      - a dated note records what the recipe used to say, so a reader who built the old
+        way is not left wondering;
+      - **fixed in passing:** the recipe recommended a `button_list` block type, which
+        **does not exist**. Its only occurrence on the site.
+      The flow diagram, clone-comparability note, FAQ answers and description were all
+      carrying the bucket vocabulary and were brought along; `updatedDate` set.
+      **Pre-existing and not mine:** the build emits a `Duplicate id "pre-post-assessment"`
+      glob-loader warning. Verified present on a clean tree before these edits.
+- [x] **S1.5 "4 question types" — FIXED IN ALL SIX LOCALES, 2026-08-14.** Now 8 question
+      types and 11 block types. Three strings each in EN/FR/DE, two in ES/IT/PT-BR:
+      `questionTypesSubtitle`, the `about` stats entry, and the `featuresPage` card that
+      **enumerates** the types (so it needed the four names, not a new digit). The
+      `questionTypesList` on `/survey-convos` gained Rating, Opinion Scale, NPS and
+      Ranking in every locale.
+      **Three things the fix surfaced that were not in the plan:**
+      1. **Numeric's description said "numbers, ratings, or ranges" in all six
+         languages.** With Rating shipping as its own type that reads as the wrong block,
+         so Numeric is now described as a plain number.
+      2. **ES, IT, PT-BR and DE were missing the Calculated Field entry entirely** and
+         claimed **6** block types where EN claimed 7. Their lists had never been updated
+         when calculated fields shipped. Adding it was required to make the corrected
+         count true rather than newly inconsistent, so all four now list it.
+      3. **ES/IT/PT-BR render none of this yet** — they are still homepage + pricing only,
+         so their `surveyConvos` and `about` blocks are correct-but-unrendered. That is
+         the same unspent Tier 1 trick the ES/IT/PT-BR routes item describes, and these
+         edits mean those routes now ship accurate when someone creates them.
+      **⚠️ One assumption to verify, logged rather than guessed at.** The brief says the
+      four names exist in all nine languages *in the product*, but the translated catalog
+      lives in the production DB and is not in either repo, so the non-English names here
+      (FR *Notation* / *Échelle d'opinion* / *Classement*, DE *Bewertung* /
+      *Meinungsskala* / *Rangfolge*, and the ES/IT/PT-BR equivalents; **NPS untranslated
+      everywhere**) were written, not looked up. **Check them against the app's
+      `Web_BlockType_*` translations when the catalog is next to hand** and align the site
+      to the product if they differ. Low risk, real drift class.
 - [ ] **S1.6 Where else to surface it, once S1.5 is done.** In priority order, and none of
       these is an announcement:
       1. **`/features`** — the question-types card above, plus the skip-logic card can now

@@ -612,14 +612,19 @@
     }
   ],
   "questionTypesTitle": "TIPI DI BLOCCHI",
-  "questionTypesSubtitle": "4 tipi di domande per ogni tipo di risposta, blocchi di contenuto per messaggi e pause, e blocchi di azione che premiano la partecipazione.",
+  "questionTypesSubtitle": "8 tipi di domande per ogni tipo di risposta, comprese valutazioni, scale, NPS e classifiche, blocchi di contenuto per messaggi e pause, e blocchi di azione che premiano la partecipazione.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Testo Aperto", "desc": "Risposte scritte libere" },
-    { "emoji": "🔢", "name": "Numerico", "desc": "Numeri, valutazioni o intervalli" },
+    { "emoji": "🔢", "name": "Numerico", "desc": "Un numero qualsiasi: un totale, un’età, un prezzo" },
     { "emoji": "🔘", "name": "Scelta Singola", "desc": "Scegli una tra più opzioni (sì/no inclusi)" },
     { "emoji": "☑️", "name": "Scelta Multipla", "desc": "Seleziona tutto ciò che si applica" },
+    { "emoji": "⭐", "name": "Valutazione", "desc": "Vota da 2 a 10 punti, con stelle, numeri o le tue emoji" },
+    { "emoji": "🎚️", "name": "Scala di opinione", "desc": "Accordo o soddisfazione tra due estremi con nome, Likert inclusa" },
+    { "emoji": "📈", "name": "NPS", "desc": "La domanda standard di raccomandazione, da 0 a 10" },
+    { "emoji": "🥇", "name": "Classifica", "desc": "Metti le opzioni in ordine, o solo le prime 3" },
     { "emoji": "📢", "name": "Blocco di contenuto", "desc": "Messaggio, intro, GIF o pausa — nessuna risposta necessaria" },
-    { "emoji": "⚡", "name": "Blocco di azione", "desc": "Premia XP, ruoli o obiettivi — in base alle risposte" }
+    { "emoji": "⚡", "name": "Blocco di azione", "desc": "Premia XP, ruoli o obiettivi, in base alle risposte" },
+    { "emoji": "🧮", "name": "Campo calcolato", "desc": "Calcola un punteggio, un segmento o un valore dalle risposte precedenti" }
   ],
   "webTitle": "SU DISCORD E SUL WEB",
   "webDesc": "Le conversazioni sondaggio funzionano nativamente all'interno di Discord — ma Subo supporta anche un'esperienza di sondaggio basata sul web. Gli amministratori scelgono se un sondaggio viene eseguito su Discord o sul web, e se è aperto a tutti o limitato ai membri della community. In ogni caso, gestisci i sondaggi, visualizzi i risultati e analizzi i dati dall'admin web di Subo.",
@@ -650,7 +655,7 @@
   "statsTitle": "I NUMERI",
   "stats": [
     { "number": "15.000+", "label": "Server Discord" },
-    { "number": "6", "label": "Tipi di blocchi (4 tipi di domande, contenuto, azione)" },
+    { "number": "11", "label": "Tipi di blocchi (8 tipi di domande, contenuto, azione, calcolato)" },
     { "number": "3", "label": "Livelli di gamification" },
     { "number": "1", "label": "Obiettivo: la voce della tua community" }
   ],

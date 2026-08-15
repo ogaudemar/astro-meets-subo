@@ -758,7 +758,7 @@
       }
     ],
     "questionTypesTitle": "BLOCKTYPEN",
-    "questionTypesSubtitle": "4 Fragetypen für jede Art von Feedback, Inhaltsblöcke für Nachrichten und Pausen, und Aktionsblöcke, die Teilnahme belohnen.",
+    "questionTypesSubtitle": "8 Fragetypen für jede Art von Feedback, darunter Bewertungen, Skalen, NPS und Rangfolge, Inhaltsblöcke für Nachrichten und Pausen, Aktionsblöcke, die Teilnahme belohnen, und berechnete Felder, die Antworten in Punkte verwandeln.",
     "questionTypesList": [
       {
         "emoji": "💬",
@@ -768,7 +768,7 @@
       {
         "emoji": "🔢",
         "name": "Numerisch",
-        "desc": "Zahlen, Bewertungen oder Bereiche"
+        "desc": "Eine beliebige Zahl: eine Anzahl, ein Alter, ein Preis"
       },
       {
         "emoji": "🔘",
@@ -781,6 +781,26 @@
         "desc": "Alle zutreffenden Optionen auswählen"
       },
       {
+        "emoji": "⭐",
+        "name": "Bewertung",
+        "desc": "Bewerte auf 2 bis 10 Punkten, mit Sternen, Zahlen oder euren eigenen Emojis"
+      },
+      {
+        "emoji": "🎚️",
+        "name": "Meinungsskala",
+        "desc": "Zustimmung oder Zufriedenheit zwischen zwei benannten Enden, Likert inklusive"
+      },
+      {
+        "emoji": "📈",
+        "name": "NPS",
+        "desc": "Die Standardfrage zur Weiterempfehlung, von 0 bis 10"
+      },
+      {
+        "emoji": "🥇",
+        "name": "Rangfolge",
+        "desc": "Bring die Optionen in eine Reihenfolge, oder nur deine Top 3"
+      },
+      {
         "emoji": "📢",
         "name": "Inhaltsblock",
         "desc": "Nachricht, Intro, GIF oder Pause, keine Antwort nötig"
@@ -789,6 +809,11 @@
         "emoji": "⚡",
         "name": "Aktionsblock",
         "desc": "Belohne XP, Rollen oder Erfolge, je nach Antwort"
+      },
+      {
+        "emoji": "🧮",
+        "name": "Berechnetes Feld",
+        "desc": "Berechnet einen Punktwert, ein Segment oder einen Wert aus früheren Antworten"
       }
     ],
     "webTitle": "IN DISCORD UND IM WEB",
@@ -823,8 +848,8 @@
         "label": "Discord-Server"
       },
       {
-        "number": "6",
-        "label": "Blocktypen (4 Fragetypen, Inhalt, Aktion)"
+        "number": "11",
+        "label": "Blocktypen (8 Fragetypen, Inhalt, Aktion, berechnet)"
       },
       {
         "number": "3",
@@ -1541,8 +1566,8 @@
           },
           {
             "emoji": "✅",
-            "title": "4 Fragetypen",
-            "desc": "Offener Text, Numerisch, Einzelauswahl (Ja/Nein inklusive) und Mehrfachauswahl, für jede Art von Feedback."
+            "title": "8 Fragetypen",
+            "desc": "Offener Text, Numerisch, Einzelauswahl (Ja/Nein inklusive), Mehrfachauswahl, Bewertung, Meinungsskala, NPS und Rangfolge, für jede Art von Feedback."
           },
           {
             "emoji": "📢",

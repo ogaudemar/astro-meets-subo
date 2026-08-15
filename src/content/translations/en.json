@@ -623,12 +623,16 @@
     }
   ],
   "questionTypesTitle": "BLOCK TYPES",
-  "questionTypesSubtitle": "4 question types for every kind of answer, content blocks for messages and pauses, action blocks that reward participation, and calculated fields that turn answers into scores.",
+  "questionTypesSubtitle": "8 question types for every kind of answer, including ratings, scales, NPS and ranking, content blocks for messages and pauses, action blocks that reward participation, and calculated fields that turn answers into scores.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Open Text", "desc": "Free-form written answers" },
-    { "emoji": "🔢", "name": "Numeric", "desc": "Numbers, ratings, or ranges" },
+    { "emoji": "🔢", "name": "Numeric", "desc": "Any number: a count, an age, a price" },
     { "emoji": "🔘", "name": "Single Choice", "desc": "Pick one from multiple options (yes/no included)" },
     { "emoji": "☑️", "name": "Multiple Choice", "desc": "Select all that apply" },
+    { "emoji": "⭐", "name": "Rating", "desc": "Rate on 2 to 10 points, in stars, numbers, or your own emoji" },
+    { "emoji": "🎚️", "name": "Opinion Scale", "desc": "Agreement or satisfaction between two named ends, Likert included" },
+    { "emoji": "📈", "name": "NPS", "desc": "The standard 0 to 10 recommendation question" },
+    { "emoji": "🥇", "name": "Ranking", "desc": "Put options in order, or rank just the top few" },
     { "emoji": "📢", "name": "Content Block", "desc": "Message, intro, GIF, or pause, no answer needed" },
     { "emoji": "⚡", "name": "Action Block", "desc": "Reward XP, roles, or achievements, conditionally on answers" },
     { "emoji": "🧮", "name": "Calculated Field", "desc": "Compute a score, segment, or value from earlier answers" }
@@ -662,7 +666,7 @@
   "statsTitle": "BY THE NUMBERS",
   "stats": [
     { "number": "15,000+", "label": "Discord servers" },
-    { "number": "7", "label": "Block types (4 question types, content, action, calculated)" },
+    { "number": "11", "label": "Block types (8 question types, content, action, calculated)" },
     { "number": "3", "label": "Gamification layers" },
     { "number": "1", "label": "Goal: your community's voice" }
   ],
@@ -1107,7 +1111,7 @@
         { "emoji": "🤖", "title": "AI-assisted drafting", "desc": "Use <code>/draft</code> to describe your goal in plain English. Subo generates a full multi-question survey instantly." },
         { "emoji": "🖥️", "title": "Web admin builder", "desc": "Design, preview, and manage surveys from the Subo web dashboard, no Discord commands needed." },
         { "emoji": "🌿", "title": "Skip logic & branching", "desc": "Route respondents to different questions based on earlier answers, and trigger rewards from what they picked. The visual builder is on every plan; VIP and Custom add an Expression Editor for open conditional syntax." },
-        { "emoji": "✅", "title": "4 question types", "desc": "Open Text, Numeric, Single Choice (yes/no included), Multiple Choice, covering every feedback scenario." },
+        { "emoji": "✅", "title": "8 question types", "desc": "Open Text, Numeric, Single Choice (yes/no included), Multiple Choice, Rating, Opinion Scale, NPS, and Ranking, covering every feedback scenario." },
         { "emoji": "📢", "title": "Content blocks", "desc": "Add a message anywhere in your survey without asking a question: a welcome intro, a GIF, a warning to acknowledge, or a mid-survey pause. Respondents continue after a timer or by clicking a button." },
         { "emoji": "😄", "title": "Custom Discord emojis", "desc": "Use your server's custom emojis in questions, answer options, and responses, even when respondents take the survey on the web." }
       ],

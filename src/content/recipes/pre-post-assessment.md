@@ -1,7 +1,8 @@
 ---
 title: "Pre and Post Survey: Measuring Program Impact in a Community"
-description: "Measure whether an event, course or campaign actually changed anything. Two identical survey waves with the same score buckets give you a before and after you can compare per member."
+description: "Measure whether an event, course or campaign actually changed anything. Two identical survey waves, scored the same way, give you a before and after you can compare per member."
 pubDate: "Aug 05 2026"
+updatedDate: "Aug 14 2026"
 audience: "community researchers, developers or educators running structured programs on Discord, moderators tracking the effect of specific initiatives"
 setupTime: "~20 minutes per wave (identical questions; second project is a clone with the dates changed)"
 bestFor: "any community running a program where you want evidence of impact, not just anecdote"
@@ -11,15 +12,15 @@ relatedSlugs: ["member-segmentation", "study-quiz", "welcome-quiz"]
 templateSlugs: ["community-health-engagement"]
 faq:
   - q: "How do you measure the impact of a community program?"
-    a: "Run the same survey twice, once before the program and once after, with identical questions and identical score bucket names. The change in each score is your evidence, rather than anecdote."
+    a: "Run the same survey twice, once before the program and once after, with identical questions and identical scoring. The change in each score is your evidence, rather than anecdote."
   - q: "How do you match responses between the two waves?"
     a: "The Discord handle is the natural join key because it is consistent across both waves and requires no extra question."
   - q: "Why score several questions per dimension?"
-    a: "A single item conflates dimensions and is noisy. Three or four items scored into one bucket produce a more stable construct score you can actually compare across waves."
+    a: "A single item conflates dimensions and is noisy. Three or four opinion_scale items averaged into one construct score produce a more stable measure you can actually compare across waves."
   - q: "Should the rating scale have a midpoint?"
-    a: "Avoid one. Midpoints attract satisficing responses and add noise without adding information about direction."
+    a: "Avoid one. Midpoints attract satisficing responses and add noise without adding information about direction. An opinion_scale with an even number of points has no middle to hide in."
   - q: "Do I have to rebuild the survey for wave two?"
-    a: "No. Clone wave one and change the dates. All blocks, weights and bucket names carry over, which is what keeps the two waves comparable."
+    a: "No. Clone wave one and change the dates. All blocks, scale points, calculated fields and bucket names carry over, which is what keeps the two waves comparable."
 ---A two-wave survey design that measures change in knowledge or attitudes
 across your community before and after an intervention: an event, a
 content series, a campaign, or a moderation change. Each wave is a separate
@@ -51,10 +52,10 @@ by how much, and in which dimensions.
 
 ## Design principles
 
-### Same questions, same weights, different projects
+### Same questions, same scoring, different projects
 
-Both waves use identical question blocks and identical `score_values`
-weights. Using separate projects (not retakes of a single project)
+Both waves use identical question blocks, identical scale points and
+identical calculated-field names. Using separate projects (not retakes of a single project)
 is deliberate:
 
 - `max_completes_per_user: 1` on each project prevents strategic
@@ -64,31 +65,32 @@ is deliberate:
   questions or reference the program in the intro) without changing
   the scored items.
 
-Clone Wave 1's project to create Wave 2, so all blocks, weights, and bucket
-names copy exactly. Change the project name and intro text; leave everything
+Clone Wave 1's project to create Wave 2, so all blocks, scale points,
+calculated fields and bucket names copy exactly. Change the project name and intro text; leave everything
 else identical.
 
 ### Use scored attitudes, not just counts
 
-A single "How confident are you?" rating question gives a 1-5 score but
+A single "How confident are you?" rating question gives you one number but
 conflates dimensions. Scoring across multiple items per dimension, even
 3-4 items, produces a more stable and interpretable construct score.
 
 Example: measuring **"confidence in shipping"** across three items:
-- "I have a clear picture of what I'd cut to hit a deadline" (1-4 scale,
-  encoded as score_values 1-4 on the options)
-- "I've shipped something, even small" (binary: 0 or 5)
-- "I'd know how to scope a feature for a demo" (1-4 scale)
+- "I have a clear picture of what I'd cut to hit a deadline" (4-point
+  agreement scale)
+- "I'd know how to scope a feature for a demo" (4-point agreement scale)
+- "I could name the one thing I would cut first" (4-point agreement scale)
 
-The `[score_shipping]` bucket total for this respondent ranges 2-13.
-That range is more diagnostic than a single 1-5 rating.
+Averaged, those give a `Shipping` score on a 1.0 to 4.0 range. That is more
+diagnostic than a single rating, and it stays on a scale a reader already
+understands.
 
-### Closed options, not free text, for pre/post
+### Closed questions, not free text, for pre/post
 
-Use `single_punch` or `button_list` questions with fixed options and
-`score_values`. Free text answers cannot be scored automatically; they
-require manual coding and break the join logic. Save open-ended questions
-for items that are not part of the scored constructs.
+Use `opinion_scale` for attitude items and `single_punch` for knowledge
+items. Free text answers cannot be scored automatically; they require manual
+coding and break the join logic. Save open-ended questions for items that
+are not part of the scored constructs.
 
 ### Include a response-matching anchor
 
@@ -111,15 +113,15 @@ free-text "nickname" question whose answer can serve as a secondary key.
                     ▼
   ┌──────────────────────────────────────────┐
   │ q2–q5: Dimension 1 items (4 questions)   │
-  │ "Confidence in shipping"                 │
-  │ score_values → [score_shipping]          │
+  │ "Confidence in shipping" (opinion_scale) │
+  │ averaged → [Shipping], 1.0-4.0           │
   └──────────────────────────────────────────┘
                     │
                     ▼
   ┌──────────────────────────────────────────┐
   │ q6–q9: Dimension 2 items (4 questions)   │
-  │ "Confidence in scoping"                  │
-  │ score_values → [score_scoping]           │
+  │ "Confidence in scoping" (opinion_scale)  │
+  │ averaged → [Scoping], 1.0-4.0            │
   └──────────────────────────────────────────┘
                     │
                     ▼
@@ -140,7 +142,7 @@ free-text "nickname" question whose answer can serve as a secondary key.
                     ▼
   ┌──────────────────────────────────────────┐
   │ q14: Summary content_block               │
-  │ Shows [score_shipping], [score_scoping], │
+  │ Shows [Shipping], [Scoping] and          │
   │ [correct_answers]/[max_correct_answers]  │
   └──────────────────────────────────────────┘
 ```
@@ -149,13 +151,19 @@ free-text "nickname" question whose answer can serve as a secondary key.
 
 ## Prerequisites
 
-### Score buckets (3 total, same names in both projects)
+### Constructs (3 total, same names in both projects)
 
-| Display name | Variable key | Meaning |
-|---|---|---|
-| Shipping | `shipping` → `[score_shipping]` | Confidence in shipping decisions |
-| Scoping | `scoping` → `[score_scoping]` | Confidence in scoping and prioritizing |
-| Knowledge | `knowledge` → `[score_knowledge]` | Factual knowledge of the topic domain |
+Two kinds, because attitude items and knowledge items score differently now:
+
+| Display name | How it is built | Range | Meaning |
+|---|---|---|---|
+| Shipping | `calculated_block` averaging the `opinion_scale` items | 1.0-4.0 | Confidence in shipping decisions |
+| Scoping | `calculated_block` averaging the `opinion_scale` items | 1.0-4.0 | Confidence in scoping and prioritizing |
+| Knowledge | score bucket `knowledge` → `[score_knowledge]` | 0-N | Factual knowledge of the topic domain |
+
+Knowledge items keep `score_values`, which is what score buckets are for:
+one option is right and carries the points. Attitude items do not, because
+the scale already stores a number.
 
 ### Projects (2 total)
 
@@ -175,37 +183,92 @@ POST /v1/communities/{communityId}/projects/{wave1Id}/clone
 // → add attendance question (q13) at the end of scored items
 ```
 
-**Important:** verify that the cloned Wave 2 project has identical bucket
-names and identical `score_values` before publishing. A mismatch in
-bucket names breaks comparability. Wave 1 `[score_shipping]` and Wave 2
-`[score_shipping_confidence]` are different columns in the export.
+**Important:** verify that the cloned Wave 2 project has identical block
+names, identical calculated-field names and identical bucket names before
+publishing. A mismatch breaks comparability: Wave 1 `[Shipping]` and Wave 2
+`[Shipping_confidence]` are different columns in the export, and a scale
+whose points were re-typed in a different order is worse, because it lines
+up silently and averages the wrong way.
 
 ---
 
 ## Scored item design
 
-### Attitude items (Likert-encoded as score_values)
+### Attitude items (`opinion_scale`, one word on every point)
 
-Encode a 4-point Likert scale directly into `score_values`. Avoid 5-point
-scales with a midpoint: midpoints attract satisficing responses and add
-noise in small community samples.
+Use an `opinion_scale` with a label on every point. That is a Likert item,
+and the stored answer is the point **number**, so it averages and compares
+across waves with nothing configured. Avoid 5-point scales with a midpoint:
+midpoints attract satisficing responses and add noise in small community
+samples. A 4-point scale has no middle to hide in.
 
 ```jsonc
 {
-  "type": "single_punch",
+  "type": "opinion_scale",
   "prompt": "I have a clear picture of what I would cut to hit a deadline.",
+  "min": 1, "max": 4,
   "options": [
-    { "value": "Strongly disagree", "label": "Strongly disagree", "score_values": { "shipping": 1 } },
-    { "value": "Disagree",          "label": "Disagree",          "score_values": { "shipping": 2 } },
-    { "value": "Agree",             "label": "Agree",             "score_values": { "shipping": 3 } },
-    { "value": "Strongly agree",    "label": "Strongly agree",    "score_values": { "shipping": 4 } }
+    { "value": "1", "label": "Strongly disagree", "emoji": "😡" },
+    { "value": "2", "label": "Disagree",          "emoji": "🙁" },
+    { "value": "3", "label": "Agree",             "emoji": "🙂" },
+    { "value": "4", "label": "Strongly agree",    "emoji": "😍" }
   ]
 }
 ```
 
-Group 3-4 items per dimension. Mix positively and negatively framed items
-if your sample is sophisticated enough to avoid acquiescence bias. For
-most Discord communities, consistently positive framing is less confusing.
+Two things to notice, because they are where this differs from a choice
+question. `option.value` is the **point number as a string**, not the words:
+the words go in `label`, and the number is what gets stored. And a scale
+carries **no `score_values`** at all, because it does not need them. The
+construct score comes from a calculated field instead, which is the next
+section.
+
+> **Before August 2026** this recipe built the same item as a `single_punch`
+> with `score_values` 1 to 4 on the options. That was the right workaround
+> when Subo had no scale types, but it stores an option id rather than a
+> number, so nothing downstream can average it. If you have surveys built the
+> old way, they keep working; build new ones with `opinion_scale`.
+
+**The direction rule, and it bites hardest here.** A labelled set must run
+low to high. The stored answer is the point number, so a set with "Strongly
+agree" at 1 silently inverts every average and every `>= 3` condition built
+on it. That also means **reverse-framed items cannot just be dropped in**:
+if you write a negatively worded statement to guard against acquiescence
+bias, it needs reverse-scoring in the calculated field
+(`5 - [Item]` on a 1-4 scale), not a reversed label set. For most Discord
+communities, consistently positive framing is less confusing and avoids the
+problem entirely.
+
+Group 3-4 items per dimension.
+
+### Turning the items into a construct score
+
+A scale has no score bucket, so a dimension's score is a `calculated_block`
+over the items by name:
+
+```jsonc
+{
+  "type": "calculated_block",
+  "name": "Shipping",
+  "formula": "([Ship1] + [Ship2] + [Ship3]) / 3"
+}
+```
+
+That is a **mean on the scale's own 1.0 to 4.0 range**, which is easier to
+read across waves than a bucket total: a wave-one 2.3 against a wave-two 3.1
+needs no explaining, where "9 out of 12" does.
+
+Two constraints worth knowing before you build it:
+
+- **The formula is arithmetic only because the items pipe numbers.** Label a
+  point and `[Ship1]` still resolves to the number in a calculation, but keep
+  the item names stable across waves or the two projects stop lining up.
+- **Keep a construct homogeneous.** A binary check ("I have shipped
+  something, even small") is a `single_punch` and still belongs in a score
+  bucket, so it will not sum into the same calculated field for free. Either
+  give it its own column or keep it out of the construct. Mixing a 0/5 binary
+  into a 1-4 attitude mean was always doing something odd to the scale;
+  splitting them is better measurement, not just easier plumbing.
 
 ### Knowledge items (right/wrong with deferred feedback)
 
@@ -309,7 +372,7 @@ attended 3 or more sessions."
 ### Three-wave design (pre / mid / post)
 
 Add a Wave 1.5 survey at the midpoint of the program. Same structure,
-same bucket names. A mid-program dip in confidence is common: members
+same block, field and bucket names. A mid-program dip in confidence is common: members
 learn how much they don't know, and the pre/mid/post trajectory tells a
 richer story than a single before/after comparison.
 

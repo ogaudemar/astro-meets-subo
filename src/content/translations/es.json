@@ -377,14 +377,19 @@
     }
   ],
   "questionTypesTitle": "TIPOS DE BLOQUES",
-  "questionTypesSubtitle": "4 tipos de preguntas para cada tipo de respuesta, bloques de contenido para mensajes y pausas, y bloques de acción que recompensan la participación.",
+  "questionTypesSubtitle": "8 tipos de preguntas para cada tipo de respuesta, incluidas valoraciones, escalas, NPS y ranking, bloques de contenido para mensajes y pausas, y bloques de acción que recompensan la participación.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Texto abierto", "desc": "Respuestas escritas en formato libre" },
-    { "emoji": "🔢", "name": "Numérico", "desc": "Números, valoraciones o rangos" },
+    { "emoji": "🔢", "name": "Numérico", "desc": "Cualquier número: un total, una edad, un precio" },
     { "emoji": "🔘", "name": "Opción única", "desc": "Elige una entre múltiples opciones (sí/no incluido)" },
     { "emoji": "☑️", "name": "Opción múltiple", "desc": "Selecciona todo lo que aplique" },
+    { "emoji": "⭐", "name": "Valoración", "desc": "Puntúa de 2 a 10 puntos, en estrellas, números o tus propios emojis" },
+    { "emoji": "🎚️", "name": "Escala de opinión", "desc": "Acuerdo o satisfacción entre dos extremos con nombre, Likert incluido" },
+    { "emoji": "📈", "name": "NPS", "desc": "La pregunta estándar de recomendación, de 0 a 10" },
+    { "emoji": "🥇", "name": "Ranking", "desc": "Ordena las opciones por preferencia, o solo tu top 3" },
     { "emoji": "📢", "name": "Bloque de contenido", "desc": "Mensaje, intro, GIF o pausa — sin respuesta necesaria" },
-    { "emoji": "⚡", "name": "Bloque de acción", "desc": "Recompensa XP, roles o logros — según las respuestas" }
+    { "emoji": "⚡", "name": "Bloque de acción", "desc": "Recompensa XP, roles o logros, según las respuestas" },
+    { "emoji": "🧮", "name": "Campo calculado", "desc": "Calcula una puntuación, un segmento o un valor a partir de respuestas anteriores" }
   ],
   "webTitle": "EN DISCORD Y EN LA WEB",
   "webDesc": "Las survey convos funcionan de forma nativa dentro de Discord, pero Subo también admite una experiencia web. Los administradores eligen si la encuesta se ejecuta en Discord o en la web, y si está abierta a cualquiera o restringida a los miembros de la comunidad. En cualquier caso, gestionas las encuestas, ves los resultados y analizas los datos desde el panel de administración web de Subo.",
@@ -415,7 +420,7 @@
   "statsTitle": "EN NÚMEROS",
   "stats": [
     { "number": "15,000+", "label": "Servidores Discord" },
-    { "number": "6", "label": "Tipos de bloques (4 tipos de preguntas, contenido, acción)" },
+    { "number": "11", "label": "Tipos de bloques (8 tipos de preguntas, contenido, acción, calculado)" },
     { "number": "3", "label": "Capas de gamificación" },
     { "number": "1", "label": "Objetivo: la voz de tu comunidad" }
   ],
