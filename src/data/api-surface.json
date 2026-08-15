@@ -11,6 +11,10 @@
     { "type": "multi_punch", "desc": "Pick several options." },
     { "type": "open_text", "desc": "Free text. The input for AI analysis." },
     { "type": "open_numeric", "desc": "A number." },
+    { "type": "rating", "desc": "Rate on 2-10 points. Stars, numbers or an emoji set." },
+    { "type": "opinion_scale", "desc": "Agreement or satisfaction between two named ends. Label every point for a Likert item." },
+    { "type": "nps", "desc": "The standard 0-10 recommendation question. Range and anchors are locked." },
+    { "type": "ranking", "desc": "Put options in order, best first. rank_top_n asks for a partial ranking." },
     { "type": "content_block", "desc": "Says something without asking anything." },
     { "type": "action_block", "desc": "Grants XP, a role or an achievement mid-conversation." },
     { "type": "calculated_block", "desc": "Computes a value from earlier answers." }

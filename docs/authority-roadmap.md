@@ -306,7 +306,18 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE (next session) — P7 is unblocking; site-side next move is ES/IT/PT-BR routes
+> ### ▶ RESUME HERE — the scale-family launch is the active project
+>
+> **2026-08-14: the scale family is LIVE ON PRODUCTION and brief 1 has landed.** The plan
+> for all site-side work is its own section: **[SCALE-FAMILY LAUNCH](#-scale-family-launch--cross-cutting-site-plan-opened-2026-08-14)**,
+> below P7. Start there. **Phases S1 (API + site copy) and S2 (template pages) are unblocked
+> and are the next work**; all announcements are gated on brief 2 by the user's call.
+> `npm run check:api` is red and it is honest — S1.1 fixes it. The ES/IT/PT-BR route item
+> below is still valid and still cheap, but it is no longer the next move.
+>
+> ---
+>
+> ### ▶ Previous resume note — P7 unblocking; ES/IT/PT-BR routes
 >
 > **State at end of session 2026-08-12 (b).** House cleaning done, repo committed and pushed,
 > nothing half-finished on the site side. Two things to know before picking up:
@@ -1438,6 +1449,18 @@ slots into the P2 content → templates → pricing internal-link cluster.
 
 **Gated on the web app roadmap** (`~/.claude/plans/master-roadmap-2026-h2.md`):
 
+> **⭐⭐ Status (2026-08-14): SHIPPED TO PRODUCTION, brief 1 landed, and the site-side plan
+> now lives in its own section — [SCALE-FAMILY LAUNCH](#-scale-family-launch--cross-cutting-site-plan-opened-2026-08-14),
+> directly below.** Everything in the 2026-08-12 note beneath is superseded on status but
+> kept for its reasoning. The standing "do not document the four block types until the brief
+> lands" rule is **now satisfied and lifted**: the brief is
+> `subo/docs/releases/2026-08-13-scale-family-blocks.md`. The guard note below is still
+> correct about *why* `check:api` cannot tell "unreleased" from "undocumented" — the useful
+> signal is the release-brief file, and it now exists. Template work runs as **Phase S2**
+> against the app's conversion list (`subo/docs/template-library-plan.md` §14.1), which
+> replaces the vaguer "rewrite the existing 22 templates" framing below: **only 9 of the 22
+> convert**, and the plan says which and why the rest are deliberately left alone.
+>
 > **⭐ Status (2026-08-12): THE GATE HAS OPENED.** The scale family is **merged into app-repo
 > `master`** (`8cb1ecfa`, `24ca387c`, `732de663`, `c81e1436`, `5eed9c18` — ranking on both
 > surfaces, star ratings in Discord results, skip-logic parsing, and a `survey-authoring`
@@ -1489,6 +1512,252 @@ to pricing.
 
 **Success metric:** template pages ranking for "[use-case] survey/poll template"
 queries; template → pricing funnel visible in PostHog.
+
+---
+
+## ⭐ SCALE-FAMILY LAUNCH — cross-cutting site plan (opened 2026-08-14)
+
+The biggest question-type expansion since launch shipped to production 2026-08-13:
+**Rating, Opinion Scale, NPS, Ranking**, on Discord and web, in the builder, the API,
+reports and downloads. This section is the site-side plan and the progress log. It cuts
+across P1 (directories), P2 (blog), P4/P5 (channels) and P7 (templates), so it lives in
+one place rather than being scattered through them.
+
+**Source of truth: the release brief**, `subo/docs/releases/2026-08-13-scale-family-blocks.md`.
+It is **version 1 of 2** and self-contained: feature names, value prop, admin/respondent/
+report/API changes, a **Not in this release** accuracy list, the exact `api-surface.json`
+entries, five worked payloads, eighteen described screenshots, terminology, and four post
+angles. **Brief 2 carries the templates** (app-side conversion batches) and is the gate on
+every announcement below. Read the brief before writing any copy; do not re-derive facts
+from the app source.
+
+### Decisions taken (user, 2026-08-14)
+
+| # | Decision | Consequence |
+|---|---|---|
+| L1 | **Ship API + site copy now; hold every announcement for brief 2.** | Phase S1 and S2 run immediately. Phase S3/S4 are gated. The feature is live-but-unannounced in the meantime, deliberately. |
+| L2 | **Three posts: brief-1 Post 1 (launch) + Post 4 (ranking), then a template-led post on brief 2.** | Brief angles 2 and 3 (four-questions-by-job, NPS recipe) are **not** committed; NPS keyword intent gets served inside Post 1 and by the template page. Revisit after Post 1 performs. |
+| L2b | Both posts must **leave the "and there is a template for it" slot open** at the end, per the brief. | They are drafted after brief 2 anyway, so the slot gets filled rather than left. |
+| L3 | **Update site template pages from the app repo's conversion batches as they land**, not from brief 2. | The conversion list is `subo/docs/template-library-plan.md` §14.1. Batch 1 and 2 are already done app-side and the site is already wrong about them (below). |
+| L4 | **All four channels**: Discord `@Updates` post, `/changelog` entry, X thread, top.gg refresh. | All in Phase S4, all gated on the blog post existing to point at. |
+
+**Two standing rules from the brief that bind every piece of copy here:**
+- **No "Subo calculates your NPS score."** There is no promoter/passive/detractor rollup.
+  "Ask the NPS question, read the distribution and the average" is true and enough.
+- **Do not frame this as catching up to Google Forms or Typeform**, and **do not build a
+  post around what we chose not to build**. The grid/matrix question gets answered only
+  where a reader asks it, in the constructive form the brief supplies ("a grid is a
+  layout, not a question").
+
+---
+
+### Phase S1 — API and site copy (UNBLOCKED, do now)
+
+No announcement, no promise of templates. This is bringing the site's own factual surface
+in line with production.
+
+- [x] **S1.1 `src/data/api-surface.json` — four block types. DONE 2026-08-14.** The four
+      entries added after `open_numeric` with the brief's `desc` strings. **`npm run
+      check:api` is green**, and so is the full `npm run check` (build + tsc + wrangler
+      dry-run). This was the only part of S1 the guard can see; S1.2 and S1.3 below are
+      prose it explicitly does not verify.
+- [x] **S1.2 `public/llms.txt` — DONE 2026-08-14.** Both lines the brief named: the
+      block-type list (which claimed to be "the complete set the API accepts" and was
+      wrong) and the "Rich Script System" sentence. **Two additions beyond the brief**,
+      because this file's only audience is agents and the plan's third objective is that a
+      caller recognizes the instrument without reading our docs twice: a *Key Features*
+      bullet stating that the three scales store the picked integer (so analysis returns a
+      real average, not option counts) and ranking stores one row per item with `value` =
+      rank position; and a **`Scale family:` reference line** carrying the `min`/`max` vs
+      `scale` object split, the `options[].value` = point-number rule, the three
+      `answer_style` vocabularies and `rank_top_n`. Those are the four facts an agent gets
+      wrong unprompted.
+- [x] **S1.3 `src/pages/api.astro` — DONE 2026-08-14.** Three additions:
+      - **A new recipe section, `#scales`** ("Rating, scale, NPS and ranking"), placed
+        after *Write the script yourself* and added to the on-page TOC. Leads with the
+        thing that makes the family different (the answer is a number), then: range is
+        `min`/`max` and **not** in the `scale` object; **`options` means something new**
+        (point number as a string, carrying that point's `emoji` or `label`; a plain star
+        or number scale sends none); **all five worked payloads verbatim** from brief §5;
+        anchors XOR per-point labels and why NPS refuses a custom range, custom anchors and
+        a select menu; `rank_top_n` vs `max` and why `min`/`max` are ignored on update;
+        `randomize_options` (400s on the scales, and the argument for turning it on for
+        rankings is measurement bias, not cosmetics); and what comes back from
+        `/responses` and `/analysis`, including that **lower `average_rank` is better** and
+        must be read next to `ranked_count`.
+      - **Two new reference tables**: ranges/defaults (brief §4) and **`answer_style` by
+        block family**, with a rejected-with-400 column. Followed by the note naming the
+        predictable confusion outright: **how a scale draws its points is `scale.icon`, not
+        an answer style.**
+      - **Three FAQ entries** (visible + `FAQPage` JSON-LD, since this page already carries
+        that schema): how to create a rating or Likert scale; does the API support NPS
+        (with the explicit "Subo does not compute a promoter/passive/detractor rollup", per
+        the brief's standing rule); and **can I create a matrix or grid question**, in the
+        brief's constructive framing. That last one is the highest-GEO placement available
+        for the grid answer, and it is exactly the "where a reader asks it" the brief asked
+        for. `pageDescription` now names rating, Likert, NPS and ranking.
+
+      **Original scope of S1.3, kept as the record of what was covered:** the reference
+      tables and the prose around them.
+      Beyond the guard's reach and **worth a read, not a find-and-replace**, because a
+      scale block is shaped unlike anything documented so far:
+      - the block-type table gains four rows, plus the ranges/defaults table from brief §4;
+      - **`options` means something new**: on a scale, `option.value` is the *point number
+        as a string* and the option carries that point's `emoji` or `label`; a plain star
+        or number scale has **no options at all**. Any prose saying "options are the
+        answers a respondent picks" needs a scale caveat;
+      - the new **`scale` object** (`icon`, `label_left`, `label_center`, `label_right`) —
+        and the range is **not** in it, it is the block's `min`/`max`;
+      - **`answer_style` now has three vocabularies** (choice / scale family / ranking).
+        This is the easiest thing on the page to get wrong, and **"a scale's point
+        rendering is `scale.icon`, not an answer style"** is the predictable confusion —
+        say it explicitly;
+      - **`rank_top_n`** (ranking only; `min`/`max` ignored on update so they cannot
+        quietly rewrite it) and **`randomize_options`** (new via `1083ecd1`, 400s on the
+        three scale types, and `anchor_position`'s description already referenced it so
+        that copy can finally point at a real field);
+      - the **400s a caller will actually hit**: anchors XOR per-point labels; NPS refuses
+        a custom range, custom anchors and a select menu; ranking takes 2 to 20 items;
+      - **analysis** gains a `ranking` array (`average_rank`, `first_choice_count`,
+        `ranked_count`) — state in prose that **lower `average_rank` is better** and that
+        it is computed only over respondents who ranked the item;
+      - **responses**: a scale answer has `option_id: null` and `value` = the point number;
+        a ranking writes **one row per ranked item**, `value` = the rank position;
+      - the **five worked payloads** from brief §5 are lifted from the app's own authoring
+        guidance and are known-correct. Use them verbatim.
+- [ ] **S1.4 Recipe correction: the hand-rolled rating is now wrong.** Brief §6: any copy
+      telling readers to build a rating as a `single_punch` with `score_values` 1 to 5 is
+      obsolete and produces a dataset nothing can average, because the answer is an option
+      id. Six recipes mention `score_values` — **most legitimately** (Hogwarts sorting and
+      member-segmentation distribute personality/segment points, the quizzes grade
+      right/wrong; none of that is a scale). **Audit for the specific pattern**: a 1-to-5
+      satisfaction or intensity ladder. Check `pre-post-assessment` and `study-quiz` closely.
+      Point any real instance at `rating` or `opinion_scale`.
+- [ ] **S1.5 ⚠️ "4 question types" is now false in all six locales.** Found 2026-08-14 and
+      it is the highest-visibility factual drift on the site: the product has **8 question
+      types and 11 block types**. Live wrong strings:
+      | Key | File | Says |
+      |---|---|---|
+      | `questionTypesSubtitle` | en/fr/de/es/it/pt-br | "**4 question types** for every kind of answer…" |
+      | stats list entry | en/fr/de | "**7** — Block types (**4 question types**, content, action, calculated)" |
+      | `featuresPage` callout | en/fr/de/es/it/pt-br | "**4 question types** — Open Text, Numeric, Single Choice…, Multiple Choice, covering every feedback scenario." |
+      The third one **enumerates** the four, so it cannot be fixed by changing a digit. This
+      is the single best place to surface the new capability without announcing it: the
+      features card becomes the natural home for "star and emoji ratings, agreement scales,
+      NPS, ranking". Fix EN first, then FR/DE (written, not translated flat), then ES/IT/PT-BR.
+- [ ] **S1.6 Where else to surface it, once S1.5 is done.** In priority order, and none of
+      these is an announcement:
+      1. **`/features`** — the question-types card above, plus the skip-logic card can now
+         say a scale compares numerically (the merged skip-logic post already does).
+      2. **`/use-cases/research`** — the research narrative is where NPS, Likert and
+         "averages, not counts" belong. Strongest fit of the three pillars.
+      3. **`/use-cases/get-things-done`** — ranking is a prioritization instrument; "let
+         your community rank what you build next" is this page's story.
+      4. **`/use-cases/engagement`** — emoji ratings and ranking as a low-effort one-tap ask.
+      5. **`/survey-convos`** — one line at most; the page's job is form intent, not a
+         feature list.
+      6. **`/polls`** — **nothing.** Rating and ranking are **not in polls yet** (brief:
+         `/poll` is unchanged). Do not let the capability leak onto this page.
+- [ ] **S1.7 Screenshots into the repo.** Eighteen exist at
+      `Pictures/Assets/Subo/screenshots/Scale-family/` → `public/images/blog/scale-family/`,
+      following the `pickers/` convention. **Three housekeeping items on the way in**,
+      per the brief: rename `Analytics-opinion-scale-satisfaction-5.png` →
+      `Analytics-opinion-scale-agreement-5.png` (it contains an agreement card); **drop**
+      `Analytics-opinion-scale-5.png` (stale duplicate with a typo); and do not place
+      `Analytics-rating-emojis.png` directly beside `emoji-rating-respondent-pov-discord.png`
+      (older prompt wording). All eighteen are dark mode. Can be done in S1 so the posts are
+      unblocked the moment brief 2 lands.
+
+**S1 exit:** `npm run check` green, `/api` and `llms.txt` true, no page claiming four
+question types, screenshots in place.
+
+---
+
+### Phase S2 — Template page corrections (UNBLOCKED, runs per batch)
+
+Per L3. The app's conversion list is `subo/docs/template-library-plan.md` §14.1, and
+**batches 1 and 2 are already applied to production**, so these site pages are describing
+scripts that no longer exist. This is drift with a customer-visible edge: the page explains
+mechanics the member will not find in the template.
+
+| Batch | App template | Site page | What the site now gets wrong |
+|---|---|---|---|
+| 1 ✅ | NPS + reason follow-up | `nps-reason-followup.md` | Mildest of the three. Q1 is now a native `nps` block; branches and both calc fields are untouched, so the page is not false, but "export the score column for the headline NPS" and the FAQ can now say the question is the standard locked instrument, translated for every respondent. **Opportunity, not a fix.** |
+| 1 ✅ | Community Health / Engagement | `community-health-engagement.md` | **Materially wrong.** Two `emoji_only` single-punches became `rating` blocks with emoji points + endpoint anchors; **`scoring_enabled` is off** and the health index is a `calculated_block`, `([Belonging] + [Value]) / 2`, range 1.0–5.0. The page says "weighted and summed", "Only the two rating scales carry weight", "add scored scales for a richer index", and an FAQ answer explaining the weighting. All of that describes the old script. The new one is **better copy anyway**: an average on the scale's own 1-to-5 range needs no explaining. |
+| 2 ✅ | Playtest / Beta Feedback | `playtest-beta-feedback.md` | **Materially wrong, and the worst of the three.** Four `rating` blocks now; `scoring_enabled` off; `[score]`/20 replaced by a **mean** `([Fun]+[Engagement]+[Polish]+[Recommend]) / 4`, 1.0–5.0. The page says "each rating option is weighted one to five", "Subo sums the weighted answers", a **step** telling the admin to tune the weights, and an FAQ answering "where does the satisfaction score come from?" with the summing story. Also: "Recommend" **stays a 1–5 rating, not an NPS** (user's call), and the app template **dropped its "(NPS+)" title and `nps` tag** — so the site's "Is this an NPS survey? It's NPS-style…" FAQ needs re-reading against that, and `features: ["Rating scales", "Satisfaction score", …]` should say what it now is. |
+| 3 ⏳ | Six one-block ordinal ladders | `playtester-beta-recruitment`, `governance-proposal-vote`, `feature-roadmap-vote`, `suggestion-box`, `churn-cancellation`, `player-onboarding-profiler` | Not yet converted app-side. Each becomes an `opinion_scale` with per-point labels. **Five are authored high→low and must be reversed** app-side; if any site page quotes the ladder in its old order, it changes. Wait for the batch. |
+| 4 ⏳ | Feature Prioritization | `feature-prioritization.md` | **Naming correction, not a type swap** — non-linear weights (3/2/0) and a named framework, so it stays `single_punch`. But the app plan flags that **"MoSCoW" is the wrong name** (MoSCoW has four levels) and wants a user decision. The site page describes it as "must-have, nice-to-have, or skip" and never says MoSCoW, so **the site may already be right**; align once the app names it. See open questions. |
+| — | Bug Report Form, Product-Market-Fit, Pricing/WTP, quizzes, prediction + the four polls | unchanged | **Left alone on purpose** app-side: weighted triage thresholds, a benchmarked Sean Ellis instrument, unbounded currency, no-correct-answer scales, and polls (the family is not in polls yet). **No site edits, and no copy implying otherwise.** |
+
+- [ ] S2.1 `community-health-engagement.md` — rewrite the scoring story as the mean.
+- [ ] S2.2 `playtest-beta-feedback.md` — same, plus the NPS framing and `features` list.
+- [ ] S2.3 `nps-reason-followup.md` — opportunistic upgrade to the locked-instrument story.
+- [ ] S2.4 Re-check `/use-cases/*` example → template links and the `features:` facets once
+      the above change (the facets are a filter surface, so wrong values are a UX bug, not
+      just prose).
+- [ ] S2.5 Batches 3 and 4 as they land.
+
+**S2 exit:** every site template page describes the script that is actually on production.
+
+---
+
+### Phase S3 — Editorial (GATED on brief 2)
+
+Per L1 and L2. Do not start drafting until brief 2 lands; do start collecting screenshots
+(S1.7) and reserving slugs.
+
+- [ ] **Post 1 — the launch post. "Now you can measure it, not just count it."** Opens on
+      the Discord ranking hero (`ranking-full-answer-respondent-pov-discord.png`), the shot
+      **no competitor can produce**. The argument: a five-point question used to be five
+      options, and options can be counted but never averaged; now the answer *is* a number,
+      so it comes back as 4.4 out of 5 with a distribution behind it, inside Discord. Walk
+      the four types with a screenshot each, close on the results cards. Landing line:
+      **ask it in the chat, read it as a score.** Carries the NPS material and the Likert
+      grid FAQ (the constructive framing), so brief angles 2 and 3 are absorbed here.
+      Target: *Discord rating scale*, *star rating Discord bot*, *Discord NPS survey*.
+- [ ] **Post 2 — "Let your community rank what you build next."** The brief's strongest
+      second post: ranking has the most obvious community use and the least competition in
+      search. A roadmap vote, a tournament map pool, a merch drop; "rank your top 3 of 10",
+      tapped in Discord, reported as an ordered table. Screenshots 1, 2, 7 and 5 tell it
+      end to end. Target: *ranking question Discord*, *rank options poll Discord*.
+- [ ] **Post 3 — template-led, on brief 2.** The "and there is a template for it" post.
+      Shape decided when brief 2 names the new templates.
+- [ ] Both posts get **`faq` frontmatter** (the collection emits `FAQPage` JSON-LD from the
+      visible Q&A) and interlinks into `/templates`, `/recipes`, the merged skip-logic post
+      and `/use-cases/*`.
+- [ ] **`draft: false` on publish.** Note the standing finding: drafts are built, crawlable
+      and in the sitemap, so `draft: true` does not mean unpublished here.
+
+---
+
+### Phase S4 — Channels (GATED on Post 1 existing)
+
+- [ ] **Discord `@Updates` announcement** — `discord-announcement` skill. Points at Post 1.
+      The ranking screenshot is the embed image.
+- [ ] **`/changelog` entry** — EN, and FR for parity (the FR changelog exists; the German
+      one is still the open `legacy-releases.ts` schema item).
+- [ ] **X thread** — `x-thread` skill. The Discord ranking shot is the hook image; the
+      "every competitor's rating scale is a web page" line is the thread's spine.
+- [ ] **top.gg soft refresh** — the P1 item that has been pending anyway now has a real
+      reason and fresh screenshots. Manual edit, not a kit paste (curated screenshots).
+
+---
+
+### Open questions / decisions wanted
+
+1. **MoSCoW naming (batch 4)** is an app-side decision with a site consequence. The site
+   page already avoids the name, so it may need nothing; confirm when the app rules.
+2. **FR/DE parity for this content.** S1.5's string fixes must reach all six locales
+   (factual). The *posts* are a different question: there is still no FR blog route, which
+   is the standing infrastructure decision blocking `sondage discord`. Not a blocker here,
+   but a ranking post in French would be a strong first FR post if that decision lands.
+3. **Does `/templates` want a question-type facet?** The collection has `features: []`
+   already doing facet duty. "Rating", "Ranking", "NPS" as feature values would make the
+   library filterable by instrument. Cheap; decide with brief 2 when the new templates
+   define the vocabulary.
+4. **Post 3 of the brief (a standalone NPS recipe)** is deliberately uncommitted per L2.
+   `Discord NPS survey` is called the highest-intent term in the release, so if Post 1
+   ranks for it, a dedicated recipe is the obvious follow-on. Revisit with data.
 
 ---
 

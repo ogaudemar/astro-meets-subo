@@ -41,7 +41,7 @@ const OPENAPI_URL = 'https://api.subo.ai/v1/openapi.json';
 
 const pageTitle = 'Subo API Quickstart and Recipes';
 const pageDescription =
-  'Create Discord surveys and polls programmatically with the Subo REST API. Copy-paste recipes for AI-generated scripts, opening a project, pulling responses, running AI analysis and verifying webhooks.';
+  'Create Discord surveys and polls programmatically with the Subo REST API. Copy-paste recipes for AI-generated scripts, rating, Likert, NPS and ranking questions, opening a project, pulling responses, running AI analysis and verifying webhooks.';
 
 const faqs = [
   {
@@ -59,6 +59,18 @@ const faqs = [
   {
     q: 'What are the Subo API rate limits?',
     a: 'Limits are per API key and depend on the community tier: 60 requests per minute on Free, 300 on Premium, 600 on VIP and 1000 on Custom Bot. Every response carries X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset headers, and a 429 includes Retry-After.',
+  },
+  {
+    q: 'How do I create a rating or Likert scale question with the Subo API?',
+    a: 'Send a block with type rating or opinion_scale. The point range is the block’s min and max; the scale object sets the icon (numbers, stars or emoji) and the endpoint anchors. Per-point content goes in options, where option.value is the point number as a string and carries that point’s emoji or label. A label on every point is a Likert item. A plain star or number scale sends no options at all.',
+  },
+  {
+    q: 'Does the Subo API support NPS?',
+    a: 'Yes. Send { "type": "nps", "prompt": "..." } and nothing else. The range is locked to 0 to 10 and the standard anchors are rendered rather than stored, so every respondent reads them in their own language and no caller can edit them. Analysis returns the distribution and the average. Subo does not compute a promoter, passive and detractor rollup for you.',
+  },
+  {
+    q: 'Can I create a matrix or grid question with the Subo API?',
+    a: 'No, and it is a deliberate choice. A grid is a layout, not a question: every row of one is a single agreement or likelihood question. In Subo you send one opinion_scale block per statement with the same points on each, which takes about as long to write and reports as its own scale. Facing a grid all at once, respondents tend to run a straight line down one column; asked one at a time, they answer the question in front of them. A grid is also a wide table, which does not fit a phone or a chat client.',
   },
   {
     q: 'How do I get survey responses out of Subo?',
@@ -103,6 +115,7 @@ const toc = [
   { href: '#quickstart', label: 'Quickstart' },
   { href: '#generate', label: 'Generate a survey with AI' },
   { href: '#script', label: 'Write the script yourself' },
+  { href: '#scales', label: 'Rating, scale, NPS and ranking' },
   { href: '#open', label: 'Open it to an audience' },
   { href: '#responses', label: 'Pull the responses' },
   { href: '#analysis', label: 'Summarize with AI' },
@@ -291,6 +304,116 @@ const toc = [
               <code>show_when</code> / <code>hide_when</code> object and compiles it into a
               correct precondition for you. Prefer the structured form: it removes a
               whole class of quoting and inversion mistakes.
+            </p>
+          </section>
+
+          <!-- ── Scale family ───────────────────────────────────────────── -->
+          <section id="scales" class="api-section">
+            <h2 class="mono">Recipe: ask a rating, a scale, an NPS or a ranking</h2>
+            <p>
+              Four of the block types are ordered question types, and they behave
+              differently enough from the choice blocks to be worth their own section.
+              The thing to know first: <strong>they store the number the respondent
+              picked</strong>, not a reference to an option. That is what makes an
+              average, a distribution and a <code>&gt;= 4</code> condition work with
+              nothing configured.
+            </p>
+
+            <h3>The point range is <code>min</code> / <code>max</code></h3>
+            <p>
+              Not part of the <code>scale</code> object. The <code>scale</code> object
+              carries whole-scale presentation only: <code>icon</code>
+              (<code>numbers</code>, <code>stars</code> or <code>emoji</code>) and the
+              endpoint anchors <code>label_left</code>, <code>label_center</code> and
+              <code>label_right</code>.
+            </p>
+
+            <h3><code>options</code> means something different here</h3>
+            <p>
+              On a choice block, options are the answers. On a scale,
+              <strong><code>option.value</code> is the point number as a string</strong>
+              and the option carries that point's <code>emoji</code> or
+              <code>label</code>. A plain star or number scale sends <strong>no options
+              at all</strong>. A <code>label</code> on every point is how you build a
+              Likert item.
+            </p>
+            <pre><code>{`// Rating with an emoji set: options ARE the per-point presentation
+{ "type": "rating", "prompt": "How was the playtest build?",
+  "min": 1, "max": 5,
+  "scale": { "icon": "emoji" },
+  "options": [ { "value": "1", "emoji": "\u{1F616}" }, { "value": "2", "emoji": "\u{1F641}" },
+               { "value": "3", "emoji": "\u{1F610}" }, { "value": "4", "emoji": "\u{1F642}" },
+               { "value": "5", "emoji": "\u{1F60D}" } ] }
+
+// Opinion scale with endpoint anchors (the semantic-differential shape)
+{ "type": "opinion_scale", "prompt": "How was the pacing?",
+  "min": 1, "max": 7,
+  "scale": { "label_left": "Way too slow", "label_center": "Just right",
+             "label_right": "Way too fast" } }
+
+// Likert item: a word on every point. The stored answer is still the number,
+// so averages and >= conditions keep working.
+{ "type": "opinion_scale", "prompt": "The tutorial explained the controls well.",
+  "min": 1, "max": 5, "answer_style": "select_menu",
+  "options": [ { "value": "1", "label": "Strongly disagree", "emoji": "\u{1F621}" },
+               { "value": "2", "label": "Disagree",          "emoji": "\u{1F641}" },
+               { "value": "3", "label": "Neutral",           "emoji": "\u{1F610}" },
+               { "value": "4", "label": "Agree",             "emoji": "\u{1F642}" },
+               { "value": "5", "label": "Strongly agree",    "emoji": "\u{1F60D}" } ] }
+
+// NPS: send the type and nothing else.
+{ "type": "nps", "prompt": "How likely are you to recommend us to a friend?" }
+
+// Ranking: items are options, rank_top_n (NOT max) asks for a partial ranking
+{ "type": "ranking", "prompt": "Rank these features by what you want first.",
+  "answer_style": "full_text", "rank_top_n": 3, "randomize_options": true,
+  "options": [ { "value": "Mod support",  "emoji": "\u{1F6E0}\u{FE0F}" },
+               { "value": "Co-op mode",   "emoji": "\u{1F465}" },
+               { "value": "New maps",     "emoji": "\u{1F5FA}\u{FE0F}" },
+               { "value": "Ranked play",  "emoji": "\u{1F3C6}" } ] }`}</code></pre>
+
+            <h3>Anchors and per-point labels are mutually exclusive</h3>
+            <p>
+              Sending both returns a <code>400</code>. Labelling every point already
+              names the ends, so pick one. <code>nps</code> refuses a custom range,
+              custom anchors and a select menu on the same grounds: an NPS you can edit
+              is a number you cannot compare with anyone else's. Its anchors are never
+              stored, only rendered, so every respondent reads the standard wording in
+              their own language.
+            </p>
+
+            <h3>Ranking uses <code>rank_top_n</code>, not <code>max</code></h3>
+            <p>
+              On a <code>multi_punch</code>, <code>max</code> means the maximum number of
+              selections, so ranking gets its own field for "rank your top 3 of 10".
+              <code>min</code> and <code>max</code> are ignored when you update a ranking
+              so they cannot quietly rewrite it. A ranking takes 2 to 20 items, and a
+              respondent submits it complete or not at all.
+            </p>
+            <p>
+              <code>randomize_options</code> applies to every block with options and
+              returns a <code>400</code> on the three scale types, which are ordered by
+              definition. Turn it on for rankings: whichever item sits first gets tapped
+              first, and that bias lands in the average rank your report shows.
+            </p>
+
+            <h3>What comes back</h3>
+            <p>
+              In <code>/responses</code>, a scale answer has <code>option_id: null</code>
+              and <code>value</code> set to the point number. A ranking writes
+              <strong>one row per ranked item</strong>, with <code>value</code> set to the
+              rank position.
+            </p>
+            <p>
+              In <code>/analysis</code>, the three scales return their distribution with
+              <code>value</code> as the point <em>number</em>, because a caller is a
+              program. A ranking block returns a <code>ranking</code> array instead, with
+              <code>average_rank</code>, <code>first_choice_count</code> and
+              <code>ranked_count</code> per item, best first.
+              <strong>A lower <code>average_rank</code> is better</strong>, which inverts
+              the reflex every other metric trains, and it is computed only over the
+              respondents who ranked that item, so read it next to
+              <code>ranked_count</code>.
             </p>
           </section>
 
@@ -561,6 +684,50 @@ curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/templates/$TEMPLATE_ID/clone
                 </tbody>
               </table>
             </div>
+
+            <h3>Scale family: ranges and defaults</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Type</th><th>Range</th><th>Default when omitted</th></tr></thead>
+                <tbody>
+                  <tr><td><code>rating</code></td><td>2 to 10 points, always starts at 1</td><td>1 to 5, stars</td></tr>
+                  <tr><td><code>opinion_scale</code></td><td>starts at 0 or 1, up to 11 points</td><td>1 to 10, numbers</td></tr>
+                  <tr><td><code>nps</code></td><td>locked 0 to 10</td><td>0 to 10, not overridable</td></tr>
+                  <tr><td><code>ranking</code></td><td>2 to 20 items</td><td>rank all items</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3><code>answer_style</code> by block family</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Family</th><th>Accepted values</th><th>Rejected with 400</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td>Choice (<code>single_punch</code>, <code>multi_punch</code>)</td>
+                    <td><code>full_text</code>, <code>emoji_only</code>, <code>select_menu</code></td>
+                    <td>&mdash;</td>
+                  </tr>
+                  <tr>
+                    <td>Scales (<code>rating</code>, <code>opinion_scale</code>, <code>nps</code>)</td>
+                    <td><code>buttons</code> (default), <code>select_menu</code></td>
+                    <td><code>full_text</code>, <code>emoji_only</code>; <code>nps</code> also refuses <code>select_menu</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>ranking</code></td>
+                    <td><code>full_text</code> (default), <code>emoji_only</code></td>
+                    <td><code>select_menu</code>, because a dropdown cannot express an order</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="api-note">
+              The predictable confusion: <strong>how a scale draws its points is
+              <code>scale.icon</code>, not an answer style.</strong> Stars, numbers and
+              emoji are <code>icon</code> values; <code>answer_style</code> only chooses
+              between a row of buttons and a dropdown. A dropdown is the better widget
+              from about six labelled points up, where a button row wraps.
+            </p>
 
             <h3>Privacy modes</h3>
             <div class="table-wrap">

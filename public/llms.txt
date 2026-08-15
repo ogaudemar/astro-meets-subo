@@ -128,7 +128,8 @@ for agents but NOT canonical:
 ## Key Features Agents Love
 - **AI Script Generation**: Turn a plain-text goal into a complete multi-block survey script in one call.
 - **Real-time Webhooks**: Get notified instantly when new responses arrive or analysis is ready.
-- **Rich Script System**: Supports single/multiple choice, open text, numeric, conditional logic (structured `show_when` / `hide_when`, compiled to a precondition), and content, action and calculated blocks. The block-type list at the bottom of this file is the complete set the API accepts; a Discord-only question type such as yes/no is sent as `single_punch`.
+- **Rich Script System**: Supports single/multiple choice, open text, numeric, rating, opinion scale, NPS, ranking, conditional logic (structured `show_when` / `hide_when`, compiled to a precondition), and content, action and calculated blocks. The block-type list at the bottom of this file is the complete set the API accepts; a Discord-only question type such as yes/no is sent as `single_punch`.
+- **Ordered question types that store numbers**: `rating`, `opinion_scale` and `nps` store the picked integer, so analysis returns a real average and distribution rather than option counts. `ranking` stores one row per ranked item, `value` = the rank position.
 - **Analysis**: Built-in AI summarization of qualitative answers.
 
 ## Best Practices for Agents
@@ -140,7 +141,8 @@ for agents but NOT canonical:
 Base URL: https://api.subo.ai
 Version: /v1/ (non-breaking changes in-place; breaking changes under /v2/)
 Idempotency: Pass `Idempotency-Key` (UUID v4) header on write operations.
-Block types: `single_punch`, `multi_punch`, `open_text`, `open_numeric`, `content_block`, `action_block`, `calculated_block`.
+Block types: `single_punch`, `multi_punch`, `open_text`, `open_numeric`, `rating`, `opinion_scale`, `nps`, `ranking`, `content_block`, `action_block`, `calculated_block`.
+Scale family: point range is the block's `min` / `max`; whole-scale presentation is the `scale` object (`icon`, `label_left`, `label_center`, `label_right`). On a scale, `options[].value` is the point number as a string and carries that point's `emoji` or `label` — a plain star or number scale sends no options at all. `answer_style` is `buttons` | `select_menu` on the three scales, `full_text` | `emoji_only` on `ranking`; `rank_top_n` (ranking only) asks for a partial ranking.
 Privacy modes: `transparent`, `semi-private`, `anonymous` (omitting `privacy_mode` inherits the community's configured default, `anonymous` for a community that never changed it — set it explicitly when anonymity matters).
 Errors: `400 invalid_request`, `402 payment_required` (out of bot credits / tier-gated), `403 forbidden`, `404 not_found`, `429 rate_limit_exceeded` (honor `Retry-After`).
 
