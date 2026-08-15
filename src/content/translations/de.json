@@ -758,7 +758,7 @@
       }
     ],
     "questionTypesTitle": "BLOCKTYPEN",
-    "questionTypesSubtitle": "8 Fragetypen für jede Art von Feedback, darunter Bewertungen, Skalen, NPS und Rangfolge, Inhaltsblöcke für Nachrichten und Pausen, Aktionsblöcke, die Teilnahme belohnen, und berechnete Felder, die Antworten in Punkte verwandeln.",
+    "questionTypesSubtitle": "8 Fragetypen für jede Art von Feedback, darunter Bewertungen, Skalen, NPS und Ranking, Inhaltsblöcke für Nachrichten und Pausen, Aktionsblöcke, die Teilnahme belohnen, und berechnete Felder, die Antworten in Punkte verwandeln.",
     "questionTypesList": [
       {
         "emoji": "💬",
@@ -797,7 +797,7 @@
       },
       {
         "emoji": "🥇",
-        "name": "Rangfolge",
+        "name": "Ranking",
         "desc": "Bring die Optionen in eine Reihenfolge, oder nur deine Top 3"
       },
       {
@@ -1567,7 +1567,7 @@
           {
             "emoji": "✅",
             "title": "8 Fragetypen",
-            "desc": "Offener Text, Numerisch, Einzelauswahl (Ja/Nein inklusive), Mehrfachauswahl, Bewertung, Meinungsskala, NPS und Rangfolge, für jede Art von Feedback."
+            "desc": "Offener Text, Numerisch, Einzelauswahl (Ja/Nein inklusive), Mehrfachauswahl, Bewertung, Meinungsskala, NPS und Ranking, für jede Art von Feedback."
           },
           {
             "emoji": "📢",

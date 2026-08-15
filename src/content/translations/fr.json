@@ -617,13 +617,13 @@
     }
   ],
   "questionTypesTitle": "TYPES DE BLOCS",
-  "questionTypesSubtitle": "8 types de questions pour tous les retours, dont les notations, les échelles, le NPS et le classement, des blocs de contenu pour les messages et pauses, des blocs d'action qui récompensent la participation, et des champs calculés qui transforment les réponses en scores.",
+  "questionTypesSubtitle": "8 types de questions pour tous les retours, dont les évaluations, les échelles, le NPS et le classement, des blocs de contenu pour les messages et pauses, des blocs d'action qui récompensent la participation, et des champs calculés qui transforment les réponses en scores.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Texte libre", "desc": "Réponses écrites en format libre" },
     { "emoji": "🔢", "name": "Numérique", "desc": "Un nombre : un total, un âge, un prix" },
     { "emoji": "🔘", "name": "Choix unique", "desc": "Une seule réponse parmi plusieurs options (oui/non inclus)" },
     { "emoji": "☑️", "name": "Choix multiple", "desc": "Sélectionne tout ce qui s'applique" },
-    { "emoji": "⭐", "name": "Notation", "desc": "Note de 2 à 10 points, en étoiles, en chiffres ou avec tes propres emojis" },
+    { "emoji": "⭐", "name": "Évaluation", "desc": "Note de 2 à 10 points, en étoiles, en chiffres ou avec tes propres emojis" },
     { "emoji": "🎚️", "name": "Échelle d’opinion", "desc": "Accord ou satisfaction entre deux extrêmes nommés, Likert inclus" },
     { "emoji": "📈", "name": "NPS", "desc": "La question de recommandation standard, de 0 à 10" },
     { "emoji": "🥇", "name": "Classement", "desc": "Classe les options par ordre de préférence, ou seulement le top 3" },
@@ -1122,7 +1122,7 @@
         { "emoji": "🤖", "title": "Rédaction assistée par IA", "desc": "Utilise <code>/draft</code> pour décrire ton objectif en langage naturel. Subo génère instantanément un sondage complet avec plusieurs questions." },
         { "emoji": "🖥️", "title": "Interface d'administration web", "desc": "Crée, prévisualise et gère tes sondages depuis le tableau de bord web Subo, sans commandes Discord." },
         { "emoji": "🌿", "title": "Logique de saut et branchement", "desc": "Dirige les répondants vers différentes questions selon leurs réponses précédentes, et déclenche des récompenses selon leur choix. L'éditeur visuel est inclus dans tous les plans ; VIP et Custom ajoutent un éditeur d'expressions pour une syntaxe conditionnelle libre." },
-        { "emoji": "✅", "title": "8 types de questions", "desc": "Texte libre, numérique, choix unique (oui/non inclus), choix multiple, notation, échelle d’opinion, NPS et classement : tous les scénarios de feedback couverts." },
+        { "emoji": "✅", "title": "8 types de questions", "desc": "Texte libre, numérique, choix unique (oui/non inclus), choix multiple, évaluation, échelle d’opinion, NPS et classement : tous les scénarios de feedback couverts." },
         { "emoji": "📢", "title": "Blocs de contenu", "desc": "Ajoute un message n'importe où dans ton sondage sans poser de question : une intro de bienvenue, un GIF, un avertissement à accepter ou une pause en milieu de sondage. Les répondants continuent après un minuteur ou en cliquant sur un bouton." },
         { "emoji": "😄", "title": "Emojis Discord personnalisés", "desc": "Utilise les emojis personnalisés de ton serveur dans les questions, options de réponse et réponses, même quand les répondants passent par le web." }
       ],

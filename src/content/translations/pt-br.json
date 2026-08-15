@@ -612,7 +612,7 @@
     }
   ],
   "questionTypesTitle": "TIPOS DE BLOCOS",
-  "questionTypesSubtitle": "8 tipos de perguntas para todo tipo de resposta, incluindo avaliações, escalas, NPS e ranking, blocos de conteúdo para mensagens e pausas, e blocos de ação que recompensam a participação.",
+  "questionTypesSubtitle": "8 tipos de perguntas para todo tipo de resposta, incluindo avaliações, escalas, NPS e classificação, blocos de conteúdo para mensagens e pausas, e blocos de ação que recompensam a participação.",
   "questionTypesList": [
     { "emoji": "💬", "name": "Texto Aberto", "desc": "Respostas escritas livres" },
     { "emoji": "🔢", "name": "Numérico", "desc": "Qualquer número: um total, uma idade, um preço" },
@@ -621,7 +621,7 @@
     { "emoji": "⭐", "name": "Avaliação", "desc": "Avalie de 2 a 10 pontos, em estrelas, números ou seus próprios emojis" },
     { "emoji": "🎚️", "name": "Escala de opinião", "desc": "Concordância ou satisfação entre dois extremos nomeados, Likert incluída" },
     { "emoji": "📈", "name": "NPS", "desc": "A pergunta padrão de recomendação, de 0 a 10" },
-    { "emoji": "🥇", "name": "Ranking", "desc": "Coloque as opções em ordem, ou só o seu top 3" },
+    { "emoji": "🥇", "name": "Classificação", "desc": "Coloque as opções em ordem, ou só o seu top 3" },
     { "emoji": "📢", "name": "Bloco de Conteúdo", "desc": "Mensagem, intro, GIF ou pausa — sem resposta necessária" },
     { "emoji": "⚡", "name": "Bloco de Ação", "desc": "Recompensa XP, cargos ou conquistas, conforme as respostas" },
     { "emoji": "🧮", "name": "Campo calculado", "desc": "Calcula uma pontuação, um segmento ou um valor a partir das respostas anteriores" }

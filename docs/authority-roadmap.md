@@ -1672,14 +1672,34 @@ in line with production.
          so their `surveyConvos` and `about` blocks are correct-but-unrendered. That is
          the same unspent Tier 1 trick the ES/IT/PT-BR routes item describes, and these
          edits mean those routes now ship accurate when someone creates them.
-      **⚠️ One assumption to verify, logged rather than guessed at.** The brief says the
-      four names exist in all nine languages *in the product*, but the translated catalog
-      lives in the production DB and is not in either repo, so the non-English names here
-      (FR *Notation* / *Échelle d'opinion* / *Classement*, DE *Bewertung* /
-      *Meinungsskala* / *Rangfolge*, and the ES/IT/PT-BR equivalents; **NPS untranslated
-      everywhere**) were written, not looked up. **Check them against the app's
-      `Web_BlockType_*` translations when the catalog is next to hand** and align the site
-      to the product if they differ. Low risk, real drift class.
+      **✅ Names VERIFIED against the product catalog, 2026-08-14** (user supplied the
+      path). Source: `Subo shared/Messages Translations/new-path/user_messages_all_2026-08-12.xlsx`,
+      sheet `User Messages`, keys `Web_BlockType_*` and `QuestionType_enum_label_*`. **Keep
+      that file in mind as the lookup for any future product noun on the site** — it is the
+      merged archive of all nine languages and the only place outside the production DB
+      where these strings exist.
+
+      **Four of the five written guesses were wrong**, which retires the "low risk"
+      reading of this drift class:
+      | Type | Was written | Product actually says |
+      |---|---|---|
+      | Rating (FR) | *Notation* | **Évaluation** |
+      | Ranking (DE) | *Rangfolge* | **Ranking** (German keeps the English word) |
+      | Ranking (ES) | *Ranking* | **Clasificación** |
+      | Ranking (PT-BR) | *Ranking* | **Classificação** |
+      All four corrected, in the type list, the subtitle and the enumerating card alike.
+      Italian was already right (*Valutazione / Scala di opinione / NPS / Classifica*), and
+      **NPS is untranslated in all nine languages**, as assumed. Note the shape of the
+      error: the two guesses that failed hardest were the ones where the *product* made
+      the less obvious call, keeping an English loanword in German and refusing it in
+      Spanish and Portuguese. That is not something a translator infers.
+
+      **⚠️ Pre-existing drift the lookup exposed, NOT fixed here.** The site's names for
+      the *older* block types were never checked against the catalog either, and at least
+      one disagrees: German Single Choice is **"Einzelne Auswahl"** on the site and
+      **"Einfachauswahl"** in the product. The English list has its own gaps (site
+      "Numeric" vs product "Number Input"). Worth a pass over `questionTypesList` in all
+      six locales against the same spreadsheet; out of scope for the scale-family work.
 - [ ] **S1.6 Where else to surface it, once S1.5 is done.** In priority order, and none of
       these is an announcement:
       1. **`/features`** — the question-types card above, plus the skip-logic card can now
