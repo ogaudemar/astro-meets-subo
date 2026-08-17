@@ -310,10 +310,12 @@ groundwork converts into citations and organic traffic. One page per intent.
 >
 > **2026-08-14: the scale family is LIVE ON PRODUCTION and brief 1 has landed.** The plan
 > for all site-side work is its own section: **[SCALE-FAMILY LAUNCH](#-scale-family-launch--cross-cutting-site-plan-opened-2026-08-14)**,
-> below P7. Start there. **Phases S1 (API + site copy) and S2 (template pages) are unblocked
-> and are the next work**; all announcements are gated on brief 2 by the user's call.
-> `npm run check:api` is red and it is honest — S1.1 fixes it. The ES/IT/PT-BR route item
-> below is still valid and still cheap, but it is no longer the next move.
+> below P7. Start there. **Phase S1 is done apart from S1.6 and S1.7 (screenshots), and
+> Phase S2 is COMPLETE as of 2026-08-16** — every template page now matches production
+> across all four conversion batches. All announcements remain gated on brief 2 by the
+> user's call, so **S1.7 (screenshots into the repo) is the next unblocked move**, followed
+> by S1.6. `npm run check` is green. The ES/IT/PT-BR route item below is still valid and
+> still cheap, but it is no longer the next move.
 >
 > ---
 >
@@ -1728,31 +1730,69 @@ question types, screenshots in place.
 
 ---
 
-### Phase S2 — Template page corrections (UNBLOCKED, runs per batch)
+### Phase S2 — Template page corrections (✅ DONE 2026-08-16 for batches 1-4)
 
-Per L3. The app's conversion list is `subo/docs/template-library-plan.md` §14.1, and
-**batches 1 and 2 are already applied to production**, so these site pages are describing
-scripts that no longer exist. This is drift with a customer-visible edge: the page explains
-mechanics the member will not find in the template.
+Per L3. The app's conversion list is `subo/docs/template-library-plan.md` §14.1. **All four
+batches are now applied to production** (1 and 2 on 2026-08-14/15, 3 and 4 on 2026-08-15),
+and every site page has been brought in line. This was drift with a customer-visible edge:
+the page explained mechanics the member would not find in the template.
 
 | Batch | App template | Site page | What the site now gets wrong |
 |---|---|---|---|
 | 1 ✅ | NPS + reason follow-up | `nps-reason-followup.md` | Mildest of the three. Q1 is now a native `nps` block; branches and both calc fields are untouched, so the page is not false, but "export the score column for the headline NPS" and the FAQ can now say the question is the standard locked instrument, translated for every respondent. **Opportunity, not a fix.** |
 | 1 ✅ | Community Health / Engagement | `community-health-engagement.md` | **Materially wrong.** Two `emoji_only` single-punches became `rating` blocks with emoji points + endpoint anchors; **`scoring_enabled` is off** and the health index is a `calculated_block`, `([Belonging] + [Value]) / 2`, range 1.0–5.0. The page says "weighted and summed", "Only the two rating scales carry weight", "add scored scales for a richer index", and an FAQ answer explaining the weighting. All of that describes the old script. The new one is **better copy anyway**: an average on the scale's own 1-to-5 range needs no explaining. |
 | 2 ✅ | Playtest / Beta Feedback | `playtest-beta-feedback.md` | **Materially wrong, and the worst of the three.** Four `rating` blocks now; `scoring_enabled` off; `[score]`/20 replaced by a **mean** `([Fun]+[Engagement]+[Polish]+[Recommend]) / 4`, 1.0–5.0. The page says "each rating option is weighted one to five", "Subo sums the weighted answers", a **step** telling the admin to tune the weights, and an FAQ answering "where does the satisfaction score come from?" with the summing story. Also: "Recommend" **stays a 1–5 rating, not an NPS** (user's call), and the app template **dropped its "(NPS+)" title and `nps` tag** — so the site's "Is this an NPS survey? It's NPS-style…" FAQ needs re-reading against that, and `features: ["Rating scales", "Satisfaction score", …]` should say what it now is. |
-| 3 ⏳ | Six one-block ordinal ladders | `playtester-beta-recruitment`, `governance-proposal-vote`, `feature-roadmap-vote`, `suggestion-box`, `churn-cancellation`, `player-onboarding-profiler` | Not yet converted app-side. Each becomes an `opinion_scale` with per-point labels. **Five are authored high→low and must be reversed** app-side; if any site page quotes the ladder in its old order, it changes. Wait for the batch. |
-| 4 ⏳ | Feature Prioritization | `feature-prioritization.md` | **Naming correction, not a type swap** — non-linear weights (3/2/0) and a named framework, so it stays `single_punch`. But the app plan flags that **"MoSCoW" is the wrong name** (MoSCoW has four levels) and wants a user decision. The site page describes it as "must-have, nice-to-have, or skip" and never says MoSCoW, so **the site may already be right**; align once the app names it. See open questions. |
+| 3 ✅ | Six one-block ordinal ladders | `playtester-beta-recruitment`, `governance-proposal-vote`, `feature-roadmap-vote`, `suggestion-box`, `churn-cancellation`, `player-onboarding-profiler` | Applied to prod 2026-08-15. **Nothing false on the site**, and that is worth recording: every one of the six pages describes its ladder *functionally* ("a strength read", "a priority read", "the availability question") and none quotes the option words or their order, so reversing five ladders high→low broke no copy. Vague prose survived a schema change that precise prose would not have. One real bug found anyway, in `feature-roadmap-vote`: a variant told the reader to **add** a "how soon do you need this?" read the template has had all along. |
+| 4 ✅ | Feature Prioritization | `feature-prioritization.md` | The app **kept the name and fixed the framework** (user's call): a real four-level MoSCoW, Must have (3) / Should have (2) / Could have (1) / Won't have this time (0), `[max_score]` 12, still `single_punch`. So the site was **not** already right: "must-have, nice-to-have, or skip" is now a three-rung description of a four-level instrument, in the description, the hero, two callouts, a step, and the body. Corrected, and the framework name is now used deliberately (see below). |
 | — | Bug Report Form, Product-Market-Fit, Pricing/WTP, quizzes, prediction + the four polls | unchanged | **Left alone on purpose** app-side: weighted triage thresholds, a benchmarked Sean Ellis instrument, unbounded currency, no-correct-answer scales, and polls (the family is not in polls yet). **No site edits, and no copy implying otherwise.** |
 
-- [ ] S2.1 `community-health-engagement.md` — rewrite the scoring story as the mean.
-- [ ] S2.2 `playtest-beta-feedback.md` — same, plus the NPS framing and `features` list.
-- [ ] S2.3 `nps-reason-followup.md` — opportunistic upgrade to the locked-instrument story.
-- [ ] S2.4 Re-check `/use-cases/*` example → template links and the `features:` facets once
-      the above change (the facets are a filter surface, so wrong values are a UX bug, not
-      just prose).
-- [ ] S2.5 Batches 3 and 4 as they land.
+- [x] **S2.1 `community-health-engagement.md` — DONE 2026-08-16.** The scoring story is now
+      the mean. Five places carried the old script: the FAQ answer ("weighted and summed"),
+      a second FAQ ("only the two rating scales carry weight"), the body paragraph, the
+      "keep the two scored scales" step, and a variant offering "add scored scales". All
+      now describe the calculated field, `(belonging + value) / 2`, landing between 1.0 and
+      5.0. `features:` went `["Scoring", "Health score", …]` → `["Rating scales",
+      "Calculated field", …]`, because **`scoring_enabled` is off on this template now** and
+      "Scoring" was the single most misleading value on the page.
+- [x] **S2.2 `playtest-beta-feedback.md` — DONE 2026-08-16.** The worst of them, and it took
+      seven edits: the description, the hero, the "each scale is weighted one to five"
+      callout, the **step telling the admin to tune weights that no longer exist**, the
+      "where does the satisfaction score come from?" FAQ, the body, and the variants. The
+      NPS FAQ was rewritten from "it's NPS-style" to a plain **no** with a link to the NPS
+      template, which matches the app dropping the "(NPS+)" title and the `nps` tag, and is
+      a better answer anyway: it stops competing with our own NPS page for the term.
+- [x] **S2.3 `nps-reason-followup.md` — DONE 2026-08-16.** Taken as the opportunity it was.
+      New callout and new FAQ on the native instrument (eleven tap targets, translated
+      anchors, a number in every export), and the standing **"no promoter/detractor rollup"**
+      rule is stated *inside* the FAQ answer rather than left to be inferred. The "can I use
+      it for CSAT or CES?" FAQ now points at the two step-7 templates that did not exist when
+      it was written.
+- [x] **S2.4 Facets and links re-checked — DONE 2026-08-16.** The `features:` values were
+      the quiet half of this: they are chips on `/templates` (first three shown), so a stale
+      one is a wrong label on the index, not just on the page. Aligned to the instrument
+      vocabulary the step-7 pages introduced ("Star rating", "Opinion scale", "Ranking"):
+      `NPS question` added to the NPS template, `Opinion scale` to the roadmap vote,
+      `MoSCoW framework` to prioritization, `Calculated field` to both mean-based templates.
+      The `/use-cases/*` and `en.json` example → template links were checked and need no
+      change; none of them describes mechanics, they only name the job.
+- [x] **S2.5 Batches 3 and 4 — DONE 2026-08-16**, see the table rows above.
 
-**S2 exit:** every site template page describes the script that is actually on production.
+**Two things worth carrying forward:**
+1. **The MoSCoW correction is a search opportunity, not just a fix.** The page now names the
+   framework in the `<title>`, carries a **crawlable four-row table** of the levels with
+   their weights, and opens the FAQ with *"What is MoSCoW prioritization?"* — the highest-GEO
+   slot on the page, answered in the framework's own terms including why "Won't have **this
+   time**" is scoped to the release. That is a question people actually ask, and we now
+   answer it on a page that also sells the instrument. `TemplatePage.astro` gained the
+   `.tpl-prose` table styling ported from `RecipePage.astro` to render it.
+2. **Every corrected page gained a "how do members answer this?" FAQ.** One tap on a face
+   emoji, the answer stored as a number, an average and a distribution per scale. It is the
+   same fact three times because it is the fact that makes the scale family worth having,
+   and per-page FAQ entries are what get quoted. `updatedDate` set on all five touched pages.
+
+**S2 exit:** met. Every site template page describes the script that is actually on
+production. **Batch 5 is the step-7 closing set** (ranking / CSAT / CES), whose hub pages
+already shipped in `a5ca699`; nothing outstanding there.
 
 ---
 
@@ -1800,16 +1840,21 @@ Per L1 and L2. Do not start drafting until brief 2 lands; do start collecting sc
 
 ### Open questions / decisions wanted
 
-1. **MoSCoW naming (batch 4)** is an app-side decision with a site consequence. The site
-   page already avoids the name, so it may need nothing; confirm when the app rules.
+1. ~~**MoSCoW naming (batch 4)**~~ **RESOLVED (app 2026-08-15, site 2026-08-16).** The app
+   kept the name and made the instrument match it (four levels). The site page did need
+   changing, in the opposite direction to the guess here: it was avoiding a name that is now
+   accurate and worth ranking for.
 2. **FR/DE parity for this content.** S1.5's string fixes must reach all six locales
    (factual). The *posts* are a different question: there is still no FR blog route, which
    is the standing infrastructure decision blocking `sondage discord`. Not a blocker here,
    but a ranking post in French would be a strong first FR post if that decision lands.
-3. **Does `/templates` want a question-type facet?** The collection has `features: []`
-   already doing facet duty. "Rating", "Ranking", "NPS" as feature values would make the
-   library filterable by instrument. Cheap; decide with brief 2 when the new templates
-   define the vocabulary.
+3. **Does `/templates` want a question-type facet?** Half-answered in practice: the step-7
+   pages shipped with instrument-named `features` values ("Star rating", "Opinion scale",
+   "Ranking", "Seven point Likert"), and S2.4 aligned the converted templates to the same
+   vocabulary. So the *values* now exist and read consistently as chips. What does **not**
+   exist is a filter UI on `/templates` — the index renders the first three values as inert
+   chips grouped only by dimension. Building the filter is the open half, and it is now
+   cheap because the vocabulary is already in the data.
 4. **Post 3 of the brief (a standalone NPS recipe)** is deliberately uncommitted per L2.
    `Discord NPS survey` is called the highest-intent term in the release, so if Post 1
    ranks for it, a dedicated recipe is the obvious follow-on. Revisit with data.

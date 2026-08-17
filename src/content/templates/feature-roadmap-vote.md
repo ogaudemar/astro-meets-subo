@@ -6,7 +6,7 @@ templateId: 102103
 kind: "hub"
 dimension: "understand"
 audiences: ["Gamers", "Businesses"]
-features: ["Skip logic", "Tell-us-why follow-up", "Answer piping", "Single-choice vote"]
+features: ["Skip logic", "Tell-us-why follow-up", "Opinion scale", "Answer piping", "Single-choice vote"]
 eyebrow: "Discover · Roadmap vote"
 heroTitle: "A roadmap vote that asks why, not just what"
 heroSubtitle: "Members pick what to build next, then Subo asks why, and the follow-up adapts to their vote. You learn the reasoning that actually drives a roadmap, not just a tally."
@@ -22,6 +22,9 @@ featureCallouts:
   - emoji: "🔀"
     title: "The follow-up adapts"
     desc: "A listed-feature voter is asked what that feature would unlock for them; a write-in voter is asked what they'd build instead. Each question reads naturally."
+  - emoji: "🌡️"
+    title: "How badly they need it"
+    desc: "A four-point urgency scale closes the survey, and because its answer is a number it averages. A feature with 12 votes averaging 3.8 outranks one with 15 votes averaging 2.2."
   - emoji: "↩️"
     title: "No dead ends"
     desc: "The 'none of these' voter gets a graceful write-in branch instead of a wall, so you capture the idea you didn't think to list."
@@ -46,6 +49,7 @@ faq:
 recipeUrl: "/recipes#understand"
 relatedSlugs: ["playtest-beta-feedback", "bug-report-form", "player-onboarding-profiler"]
 pubDate: 2026-07-02
+updatedDate: 2026-08-16
 draft: false
 ---
 
@@ -63,5 +67,5 @@ The example runs as a studio's next-update vote. Rename the options and the bran
 
 - **Product feature vote:** list candidate features and ask paying users what each would unlock for their workflow.
 - **Community activity vote:** let members choose the next event and tell you what would make them show up.
-- **Prioritization with urgency:** add a "how soon do you need this?" read to separate nice-to-have from blocking.
+- **Prioritization with urgency:** the built-in urgency scale already separates nice-to-have from blocking. Reword its points to your own release language if "soon" means something specific to your team.
 - **Quarterly check-in:** run it on a schedule to keep the roadmap grounded in what people actually want.

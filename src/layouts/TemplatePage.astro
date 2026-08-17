@@ -363,6 +363,21 @@ const jsonLd: Array<Record<string, any>> = [
 .tpl-prose :global(a) { color: var(--accent); }
 .tpl-prose :global(ul), .tpl-prose :global(ol) { padding-left: 1.25rem; }
 .tpl-prose :global(li) { margin-bottom: 0.4rem; }
+/* Tables in the prose slot, same treatment as RecipePage: a crawlable markdown
+   table is the readable way to lay out a framework's levels or a scale's points. */
+.tpl-prose :global(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.92rem;
+}
+.tpl-prose :global(th), .tpl-prose :global(td) {
+  border: 1px solid rgba(226, 226, 226, 0.14);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+.tpl-prose :global(th) { background: rgba(255, 255, 255, 0.05); color: var(--text-white); }
 .tpl-steps {
   max-width: 760px;
   margin: 0 auto;

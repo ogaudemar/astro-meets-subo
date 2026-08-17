@@ -1,33 +1,36 @@
 ---
 title: "NPS Survey Template with Follow-up Questions"
-description: "More than a 0-10 score. Ask the NPS question, then branch — detractors tell you what broke, promoters tell you what they love and whether you can quote them."
+description: "More than a 0-10 score. Ask the NPS question, then branch. Detractors tell you what broke, promoters tell you what they love and whether you can quote them."
 slug: "nps-reason-followup"
 templateId: 102133
 kind: "hub"
 dimension: "understand"
 audiences: ["Businesses", "Product teams", "Communities"]
-features: ["Skip logic", "Chained calculated fields", "Testimonial capture"]
+features: ["NPS question", "Skip logic", "Chained calculated fields", "Testimonial capture"]
 eyebrow: "Discover · Satisfaction"
 heroTitle: "An NPS survey that asks why"
-heroSubtitle: "A lone 0-10 score tells you that something's wrong, never what. This template branches on the score, so detractors, passives, and promoters each answer the follow-up that actually matters — in under a minute."
+heroSubtitle: "A lone 0-10 score tells you that something's wrong, never what. This template branches on the score, so detractors, passives, and promoters each answer the follow-up that actually matters, in under a minute."
 ctaLabel: "Use this template"
 workedExample: "any product or community running a satisfaction pulse"
 featureCallouts:
   - emoji: "🔀"
     title: "Three paths, one number"
-    desc: "Detractors (0-6) tell you what broke. Passives (7-8) tell you the one thing that would win them over. Promoters (9-10) tell you what they love — and whether you can quote them."
+    desc: "Detractors (0-6) tell you what broke. Passives (7-8) tell you the one thing that would win them over. Promoters (9-10) tell you what they love, and whether you can quote them."
   - emoji: "⭐"
     title: "Turn fans into testimonials"
-    desc: "Promoters get a consent question, so your happiest users become marketing assets you're cleared to use — captured in the same flow as the score."
+    desc: "Promoters get a consent question, so your happiest users become marketing assets you're cleared to use, captured in the same flow as the score."
   - emoji: "🧮"
     title: "A tailored closing line"
-    desc: "Chained calculated fields read the score and give each respondent a tier-appropriate sign-off — encouraging for fans, empathetic for detractors — automatically."
+    desc: "Chained calculated fields read the score and give each respondent a tier-appropriate sign-off automatically: encouraging for fans, empathetic for detractors."
+  - emoji: "🔟"
+    title: "The standard question, natively"
+    desc: "The 0-to-10 ask is Subo's built-in NPS question: eleven tap targets with 'Not at all likely' and 'Extremely likely' anchors, translated for every respondent. Nobody types 11 or 'seven'."
   - emoji: "🌐"
     title: "Discord and web"
     desc: "Run your recurring pulse where your audience already is; export the score column for the headline NPS."
 steps:
   - title: "Swap in your product"
-    desc: "Replace the [Product] placeholder once — the question, branches, and close all update."
+    desc: "Replace the [Product] placeholder once, and the question, branches, and close all update."
   - title: "Keep the score bands"
     desc: "0-6 detractor, 7-8 passive, 9-10 promoter are the NPS standard. The branches are wired to them; leave them or adjust."
   - title: "Run it as a pulse"
@@ -37,25 +40,28 @@ steps:
 faq:
   - q: "What is NPS?"
     a: "Net Promoter Score asks how likely you are to recommend a product on a 0-10 scale. The headline number is the percentage of promoters (9-10) minus the percentage of detractors (0-6), calculated across all respondents."
+  - q: "How do respondents answer the 0-to-10 question?"
+    a: "It's a native NPS question, so they tap one of eleven points instead of typing a number, with translated 'Not at all likely' and 'Extremely likely' anchors at the ends. The answer is stored as a number, which means you get an average and a 0-to-10 distribution in the report and a clean numeric column in every export. Subo does not roll the responses up into a promoter-minus-detractor headline; you compute that from the exported scores."
   - q: "Why add follow-up questions?"
-    a: "The number alone isn't actionable. Branching on the score means detractors tell you what to fix, passives tell you what would win them over, and promoters tell you what to market — the actionable half of NPS."
+    a: "The number alone isn't actionable. Branching on the score means detractors tell you what to fix, passives tell you what would win them over, and promoters tell you what to market. That's the actionable half of NPS."
   - q: "How does it capture testimonials?"
     a: "Promoters get a short consent question after describing what they love, so you leave with quotable praise you're cleared to publish."
   - q: "Can I use it for CSAT or CES instead?"
-    a: "Yes. Reword the number question and adjust the bands, and the same branch-and-follow-up structure works for customer satisfaction or effort scores."
+    a: "You can reword the number question and adjust the bands, and the same branch-and-follow-up structure works. There are also purpose-built versions: the <a href=\"/templates/csat-satisfaction\">CSAT template</a> for satisfaction and the <a href=\"/templates/ces-customer-effort\">CES template</a> for effort, each using the instrument's own scale."
 recipeUrl: "/recipes#understand"
 relatedSlugs: ["product-market-fit", "churn-cancellation", "playtest-beta-feedback"]
 pubDate: 2026-07-03
+updatedDate: 2026-08-16
 draft: false
 ---
 
-Most NPS surveys stop at the number, which is where they go wrong. A 3 and a 9 both mean *something*, but the score never says what. This template asks the standard 0-10 recommend question, then **branches on the answer** so each respondent goes down the path that fits their score.
+Most NPS surveys stop at the number, which is where they go wrong. A 3 and a 9 both mean *something*, but the score never says what. This template asks the standard 0-10 recommend question, using Subo's native NPS question so respondents tap a point instead of typing a number, then **branches on the answer** so each respondent goes down the path that fits their score.
 
-Detractors tell you what let them down. Passives tell you the one thing that would move them to a 10. Promoters tell you what they love — and get a consent question that turns them into a testimonial you're cleared to use. Same thirty seconds, three targeted conversations, and a headline NPS you compute from the exported scores.
+Detractors tell you what let them down. Passives tell you the one thing that would move them to a 10. Promoters tell you what they love, and get a consent question that turns them into a testimonial you're cleared to use. Same thirty seconds, three targeted conversations, and a headline NPS you compute from the exported scores.
 
 ## A close that fits the score
 
-Two chained calculated fields read the 0-10 answer and generate a tier-appropriate closing line — warm for fans, empathetic for detractors — with no extra blocks to manage. It's a small touch that makes the survey feel human, and a live demo of calculated fields feeding each other, something almost nobody knows Subo can do.
+Two chained calculated fields read the 0-10 answer and generate a tier-appropriate closing line, warm for fans and empathetic for detractors, with no extra blocks to manage. It's a small touch that makes the survey feel human, and a live demo of calculated fields feeding each other, something almost nobody knows Subo can do.
 
 ## Variants
 
