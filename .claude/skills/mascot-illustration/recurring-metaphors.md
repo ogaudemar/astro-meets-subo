@@ -19,6 +19,7 @@ visual metaphor. Use exactly one metaphor per image.**
 | "[Competitor] alternative" post (series) | Investigative newsroom / findings board | Investigative journalist (reserved-text base template) |
 | Monitoring / live results | Control room | Operator |
 | XP history / auditable point record | Bank passbook & statement (warm teller's counter) | Friendly bank teller / records clerk |
+| Rating / scale / NPS / ranking questions (the scale family) | Scoring bench (judging table, score cards, a 1-2-3 rostrum) | Cheerful score-keeper who hands the paddle over |
 
 When a **new** feature needs an image, first ask: *what everyday place or role
 makes this feature obvious in one glance?* Add the new pairing to this table so
@@ -88,6 +89,19 @@ pointedly ignored. Optionally 2 to 3 more chat bubbles queued softly behind the 
 it about the *method* (conversation over form), no named competitor. Keep baked text
 minimal and story-serving (e.g. the bubble's question); specify it in the brief, since
 the model renders it reliably now.
+
+### Scoring bench (rating / opinion scale / NPS / ranking)
+See [examples/scoring-bench.md](examples/scoring-bench.md). Warm wood-and-metal judging
+bench in soft daylight, the register of a county-fair or diving-competition judging table.
+Subo is the cheerful **score-keeper** who **hands the scoring card to the blob** rather than
+judging anything himself, which is what keeps the "Subo enables, the blob discovers" dynamic
+intact on a feature that is literally about scoring. One held score card reading a decimal
+average, one small distribution board, one three-tier rostrum with 1 / 2 / 3 numerals for the
+ranking half. **Numerals only, no words**, so it survives localization. **Cyan/aqua (#00f4ff)
+is the scale-family hue**, used on the score numerals and the board glow (amber belongs to XP).
+Distinct from the game-show stage (no neon, no buzzers, no contestant podiums, no quiz
+scoreboard) and from the poll desk (no studio, no broadcast, no option bars with labels).
+**No dials, needles or gauges**: Subo has no slider, and a gauge would promise one.
 
 ### Painting workshop (invitation customization)
 Paint palette, brush, paint swatches / color chips. A Discord embed card floating

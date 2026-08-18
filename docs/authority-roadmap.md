@@ -308,14 +308,26 @@ groundwork converts into citations and organic traffic. One page per intent.
 
 > ### ▶ RESUME HERE — the scale-family launch is the active project
 >
-> **2026-08-14: the scale family is LIVE ON PRODUCTION and brief 1 has landed.** The plan
-> for all site-side work is its own section: **[SCALE-FAMILY LAUNCH](#-scale-family-launch--cross-cutting-site-plan-opened-2026-08-14)**,
-> below P7. Start there. **Phase S1 is done apart from S1.6 and S1.7 (screenshots), and
-> Phase S2 is COMPLETE as of 2026-08-16** — every template page now matches production
-> across all four conversion batches. All announcements remain gated on brief 2 by the
-> user's call, so **S1.7 (screenshots into the repo) is the next unblocked move**, followed
-> by S1.6. `npm run check` is green. The ES/IT/PT-BR route item below is still valid and
-> still cheap, but it is no longer the next move.
+> **2026-08-16: brief 2 has landed, Post 1 is published, and the announcement gate is
+> open.** The plan for all site-side work is its own section:
+> **[SCALE-FAMILY LAUNCH](#-scale-family-launch--cross-cutting-site-plan-opened-2026-08-14)**,
+> below P7. Start there. State: **S1 is done apart from S1.6**; **S1.7 (seventeen screenshots
+> in `public/images/blog/scale-family/`) done 2026-08-16**; **S2 COMPLETE** across all four
+> conversion batches; **S3 Post 1 published** as
+> `blog/discord-rating-scale-nps-ranking-questions`. `npm run check` is green.
+>
+> **2026-08-17: the ranking spoke is published too**, so the blog side of the launch has its
+> two pages. **Read L5 and L6 in the decisions table before writing any more of this content**
+> — they amend L2: the plan is now a hub (Post 1, doubling as the permanent rating page) plus
+> instrument spokes, **NPS is held** until the promoter/detractor rollup ships, and **rating
+> and ranking polls must not be teased at all**.
+>
+> **Next moves, in order:** **Phase S4 channels**, which the user will send as a **single
+> announcement linking both posts and the templates** (server, X, possibly email later), so
+> they are not one-post-at-a-time gated. Then **S1.6** (surfacing the family on `/features`
+> and the use-case pages, remembering `/polls` gets nothing) and **Spoke 2** (Likert + the
+> grid answer). The ES/IT/PT-BR route item below is still valid and still cheap, but it is
+> behind those.
 >
 > ---
 >
@@ -1526,19 +1538,22 @@ across P1 (directories), P2 (blog), P4/P5 (channels) and P7 (templates), so it l
 one place rather than being scattered through them.
 
 **Source of truth: the release brief**, `subo/docs/releases/2026-08-13-scale-family-blocks.md`.
-It is **version 1 of 2** and self-contained: feature names, value prop, admin/respondent/
-report/API changes, a **Not in this release** accuracy list, the exact `api-surface.json`
-entries, five worked payloads, eighteen described screenshots, terminology, and four post
-angles. **Brief 2 carries the templates** (app-side conversion batches) and is the gate on
-every announcement below. Read the brief before writing any copy; do not re-derive facts
-from the app source.
+It is now **version 2 of 2** (2026-08-16), updated in place rather than accompanied by a
+second file, and self-contained: feature names, value prop, admin/respondent/report/API
+changes, a **Not in this release** accuracy list, the exact `api-surface.json` entries, five
+worked payloads, eighteen described screenshots, terminology, four post angles, and a
+**Templates** section covering the nine conversions plus the three new step-7 templates.
+**The announcement gate it carried is lifted.** Read the brief before writing any copy; do
+not re-derive facts from the app source.
 
 ### Decisions taken (user, 2026-08-14)
 
 | # | Decision | Consequence |
 |---|---|---|
 | L1 | **Ship API + site copy now; hold every announcement for brief 2.** | Phase S1 and S2 run immediately. Phase S3/S4 are gated. The feature is live-but-unannounced in the meantime, deliberately. |
-| L2 | **Three posts: brief-1 Post 1 (launch) + Post 4 (ranking), then a template-led post on brief 2.** | Brief angles 2 and 3 (four-questions-by-job, NPS recipe) are **not** committed; NPS keyword intent gets served inside Post 1 and by the template page. Revisit after Post 1 performs. |
+| L2 | **Three posts: brief-1 Post 1 (launch) + Post 4 (ranking), then a template-led post on brief 2.** | Brief angles 2 and 3 (four-questions-by-job, NPS recipe) are **not** committed; NPS keyword intent gets served inside Post 1 and by the template page. Revisit after Post 1 performs. **AMENDED 2026-08-16, see L5.** |
+| L5 | **AMENDS L2 (user, 2026-08-16). Hub plus three instrument spokes, and NPS is HELD.** Post 1 does double duty as the announcement *and* the permanent rating page (its title already leads on *Discord Rating Scales* and it owns the emoji/star material). Spokes, in order: **1. ranking**, **2. Likert carrying the grid answer**, **3. NPS, held until the promoter/detractor rollup ships**, at which point it becomes that feature's launch post. The three-benchmark (NPS/CSAT/CES) post drops to last and is treated as an internal-linking play, not a ranking one. | **Why NPS is held, and it is the reusable reasoning:** the page's whole value is owning *Discord NPS survey*, and what we ship today is the **instrument, not the metric** (average, median and distribution on a 0-10 scale, no `%promoters - %detractors`). A reader who searches that term wants the score. Ranking a page that then hands them a subtraction to do is worse than not ranking it, and it is a bad thing for an assistant to cite us for. There is **no land-grab pressure**: near-zero competition now and in three months, content ROI is migration-gated to ~Q4 anyway, so publishing at rollup costs almost no ranking timeline and **buys an announcement moment** a post published now would spend for nothing. Post 1's NPS section and FAQ catch the query cheaply and are accurate about the limit. **Ranking goes first for the inverse reason:** its reporting is the one that is *complete* (average rank, first-choice count, ranked count, unranked shown as a finding, one column per item in the export), so the post can promise the full loop and deliver it. |
+| L6 | **No teasing rating or ranking polls** (user, 2026-08-16), until they are planned and designed. | Removed from Post 1 in both places it appeared (the polls FAQ answer and the closing line's "for now"). **This also kills a keyword:** the brief's *"rank options poll Discord"* target is unservable and comes off the ranking post's list. The poll-framed page is a **deferred slot**, and a valuable one, since polls are the site's biggest organic cluster (poll how-to 477 sessions vs survey how-to 141, plus the ~2,700 imp/6mo poll-bot cluster) and it is the one cluster this release cannot touch. |
 | L2b | Both posts must **leave the "and there is a template for it" slot open** at the end, per the brief. | They are drafted after brief 2 anyway, so the slot gets filled rather than left. |
 | L3 | **Update site template pages from the app repo's conversion batches as they land**, not from brief 2. | The conversion list is `subo/docs/template-library-plan.md` §14.1. Batch 1 and 2 are already done app-side and the site is already wrong about them (below). |
 | L4 | **All four channels**: Discord `@Updates` post, `/changelog` entry, X thread, top.gg refresh. | All in Phase S4, all gated on the blog post existing to point at. |
@@ -1656,6 +1671,14 @@ in line with production.
       carrying the bucket vocabulary and were brought along; `updatedDate` set.
       **Pre-existing and not mine:** the build emits a `Duplicate id "pre-post-assessment"`
       glob-loader warning. Verified present on a clean tree before these edits.
+      **✅ DIAGNOSED (2026-08-17, refined 08-18).** It was never a duplicate file. It is a
+      **stale Astro content-layer cache**: the warning re-points itself at whichever entries
+      were most recently added or edited (it named the two new scale-family posts, with only
+      one file of each name on disk), and **`rm -rf node_modules/.astro` clears it**. It comes
+      back on the next edit and goes away on the next clean build, so it is **cosmetic and
+      recurring, not a defect to chase** — the built output was correct in both states
+      (verified: one sitemap entry and one `/blog` card per post either way). Clear the cache
+      before hunting a duplicate that is not there.
 - [x] **S1.5 "4 question types" — FIXED IN ALL SIX LOCALES, 2026-08-14.** Now 8 question
       types and 11 block types. Three strings each in EN/FR/DE, two in ES/IT/PT-BR:
       `questionTypesSubtitle`, the `about` stats entry, and the `featuresPage` card that
@@ -1715,7 +1738,24 @@ in line with production.
          feature list.
       6. **`/polls`** — **nothing.** Rating and ranking are **not in polls yet** (brief:
          `/poll` is unchanged). Do not let the capability leak onto this page.
-- [ ] **S1.7 Screenshots into the repo.** Eighteen exist at
+- [x] **S1.7 Screenshots into the repo — DONE 2026-08-16.** Seventeen of the eighteen are
+      now in `public/images/blog/scale-family/`, copied from
+      `OneDrive - ClearSwell LLC\Pictures\Assets\Subo\screenshots\Scale-family\` (note the
+      path: it is the **OneDrive** Pictures library, not `%USERPROFILE%\Pictures`). All three
+      housekeeping items discharged: `Analytics-opinion-scale-satisfaction-5.png` came in as
+      **`Analytics-opinion-scale-agreement-5.png`** (it holds an agreement card),
+      `Analytics-opinion-scale-5.png` was **not copied** (stale duplicate with a doubled
+      word), and Post 1 uses `Analytics-rating-stars.png` rather than
+      `Analytics-rating-emojis.png` for its rating results card, so the older prompt wording
+      never sits beside the corrected one.
+      **Worth knowing for placement:** `global.css`'s `.prose img` caps inline images at
+      `max-height: 400px`, so the tall builder shots (`script-editor-star-rating-tahiti.png`
+      at 773x944, `script-editor-ranking-young.png` at 425x746) render narrow. The analytics
+      cards are all ~1200px wide and short, and they read best. The hero
+      (`ranking-full-answer-respondent-pov-discord.png`) is 1271x247, which suits the hero
+      frame; `img { height: auto }` overrides the layout's hardcoded `height={510}`, so a
+      non-2:1 hero is not distorted.
+      **Original instruction, kept as the record:** Eighteen exist at
       `Pictures/Assets/Subo/screenshots/Scale-family/` → `public/images/blog/scale-family/`,
       following the `pickers/` convention. **Three housekeeping items on the way in**,
       per the brief: rename `Analytics-opinion-scale-satisfaction-5.png` →
@@ -1726,7 +1766,7 @@ in line with production.
       unblocked the moment brief 2 lands.
 
 **S1 exit:** `npm run check` green, `/api` and `llms.txt` true, no page claiming four
-question types, screenshots in place.
+question types, screenshots in place. **Met except S1.6**, which is the one remaining item.
 
 ---
 
@@ -1796,12 +1836,46 @@ already shipped in `a5ca699`; nothing outstanding there.
 
 ---
 
-### Phase S3 — Editorial (GATED on brief 2)
+### Phase S3 — Editorial (UNGATED — brief 2 landed 2026-08-16)
 
-Per L1 and L2. Do not start drafting until brief 2 lands; do start collecting screenshots
-(S1.7) and reserving slugs.
+Per L1 and L2. **The gate is open:** `2026-08-13-scale-family-blocks.md` is now **version 2
+of 2**, updated in place, with a **Templates** section and the "copy must not promise
+templates" rule explicitly **lifted**. So L2b resolves the way it predicted: the "and there
+is a template for it" slot gets filled rather than left open, and Phase S4 is now gated only
+on Post 1 existing.
 
-- [ ] **Post 1 — the launch post. "Now you can measure it, not just count it."** Opens on
+- [x] **Post 1 — SHIPPED 2026-08-16.**
+      `src/content/blog/discord-rating-scale-nps-ranking-questions.md`, `draft: false`.
+      Title: *"Discord Rating Scales, NPS and Ranking: Ask It in the Chat, Read It as a
+      Score"* — the brief's landing line kept as the second half, with the three target terms
+      in the first half.
+      **Deliberate departure from the brief's angle line:** "now you can measure it, not just
+      count it" is the `blog-writing` skill's banned *"not just X, Y"* shape, so the argument
+      is made without it (options are identifiers, and the average of five identifiers is not
+      a number). The brief's phrasing survives as the reasoning, not as the headline.
+      **Shape:** hero (the Discord ranking shot) → why a number changes the report → one
+      section per type with its screenshot(s) → *What comes back* (the reports-read-for-humans
+      / downloads-read-by-tools / calculations-are-always-numbers rule, then four results
+      cards) → *Where to start* (the templates). **Twelve of the seventeen screenshots used**,
+      all resolving in `dist/`.
+      **Both standing rules honored, and both are load-bearing in the copy rather than merely
+      avoided:** the NPS section says Subo gives you the question, the distribution and the
+      average and *does not* roll answers up into promoters/passives/detractors, then turns
+      that into the `<= 6` skip-logic follow-up (which is the useful advice anyway); Google
+      Forms and Typeform are **not named anywhere**. The grid answer went into the **FAQ**, in
+      the brief's constructive framing, which is the "where a reader asks it" placement.
+      **7 FAQ entries** (`FAQPage` JSON-LD verified in the built page), absorbing brief angles
+      2 and 3: how to add a star rating, how to build a Likert scale, can I run an NPS survey
+      in Discord, matrix/grid, how ranking works without dragging, not-in-polls-yet, and the
+      all-plans answer. Interlinks: the merged skip-logic post, `/api`, and the four template
+      pages (`csat-satisfaction`, `ces-customer-effort`, `rank-your-favorites`,
+      `nps-reason-followup`). `npm run check` green.
+      **One accuracy call worth keeping:** `response-details-scale-ranking.png` (shot 11) was
+      **left out on purpose**. The post makes the "built-in reports show the readable form"
+      claim, and that shot shows a labeled scale rendering as a bare `5`, which is open item 3
+      in the brief. Using it would have illustrated the claim with a counterexample. It stays
+      available for Post 2, where the point is "you can read one person's ranking".
+      **Original scope, kept as the record:** Opens on
       the Discord ranking hero (`ranking-full-answer-respondent-pov-discord.png`), the shot
       **no competitor can produce**. The argument: a five-point question used to be five
       options, and options can be counted but never averaged; now the answer *is* a number,
@@ -1810,13 +1884,75 @@ Per L1 and L2. Do not start drafting until brief 2 lands; do start collecting sc
       **ask it in the chat, read it as a score.** Carries the NPS material and the Likert
       grid FAQ (the constructive framing), so brief angles 2 and 3 are absorbed here.
       Target: *Discord rating scale*, *star rating Discord bot*, *Discord NPS survey*.
-- [ ] **Post 2 — "Let your community rank what you build next."** The brief's strongest
-      second post: ranking has the most obvious community use and the least competition in
-      search. A roadmap vote, a tournament map pool, a merch drop; "rank your top 3 of 10",
-      tapped in Discord, reported as an ordered table. Screenshots 1, 2, 7 and 5 tell it
-      end to end. Target: *ranking question Discord*, *rank options poll Discord*.
-- [ ] **Post 3 — template-led, on brief 2.** The "and there is a template for it" post.
-      Shape decided when brief 2 names the new templates.
+- [x] **Spoke 1 (was Post 2) — ranking — SHIPPED 2026-08-17.**
+      `src/content/blog/discord-ranking-questions-rank-what-you-build-next.md`,
+      `draft: false`. Title: *"Ranking Questions in Discord: Let Your Community Rank What You
+      Build Next."* ~2,000 words, 6 screenshots, 7 FAQ entries, `FAQPage` JSON-LD verified in
+      `dist/`.
+      **Written use-case led, not mechanics led**, because Post 1 already spent the mechanics.
+      Opens on the failure it replaces (nine features in a multi-select, seven clear 60%,
+      everything popular and nothing first), then the instrument argument: **approval is cheap
+      because nobody pays anything to check a box, and a ranking makes the respondent spend
+      something.** Three jobs (roadmap vote, tournament map pool, merch drop), then setup,
+      then a long *Reading the results* section, then skip logic, then templates.
+      **Target terms: *ranking question Discord*, *rank options Discord survey*.**
+      Per **L6**, *rank options poll Discord* is **off the list** and the post says plainly
+      that ranking is a survey question type with `/poll` unchanged.
+      **The section that earns the post its keep is the three-figure read:** average rank
+      (lower is better), Ranked 1st (the number to announce, because members understand it
+      without explanation) and Ranked by (what stops you misreading the first column, since
+      average rank is computed only over the people who ranked that item). Plus **unranked
+      items are a finding, not a gap** — that is the answer about what to cut.
+      **Screenshot split from Post 1, deliberate:** this post takes the **table view**
+      (`Analytics-ranking-table-bowie.png`) and the **individual response panel**
+      (`response-details-scale-ranking.png`, safe here because this post makes no
+      readable-form claim about scales), and points at Post 1 for the first-choice bars rather
+      than repeating them. Hero is the **web Convo shot** (1294x652, a clean 2:1) so the two
+      posts do not show the same card image on `/blog`; the Discord tap-in-order shot runs
+      inline in the first section, so the Discord argument still lands above the fold.
+      **Reciprocal link added** from Post 1's ranking section.
+- [x] **Post 1's mascot hero — RENDERED AND SHIPPED 2026-08-18.**
+      `public/images/blog/scale-family/scale-family-hero.webp` (1200x600), `heroImage` swapped
+      off the interim screenshot, so the 4.4 card no longer appears twice on the page. The
+      render came back on-brief, including both product-accuracy constraints (no gauge, no
+      promoter/detractor split). **Two canon drifts shipped as-is** and are logged in
+      `examples/scoring-bench.md` with prompt fixes for next time: the head bar charts came
+      back pink/magenta/purple/cyan instead of purple/grey/aqua, and both eyes are
+      square-in-square where a grinning, presenting Subo should have the checkbox right eye.
+      Neither justifies a re-render alone.
+      **The original ruling, kept because it is the reasoning:** the user judged 2026-08-18 that the
+      two posts were opening on near-identical ranking screenshots, so **Spoke 1 takes the
+      Discord ranking shot as its hero** (it is the ranking post, and it is the image no
+      competitor can produce) and **Post 1 gets a bespoke mascot illustration**.
+      **Brief written and canon updated:** new metaphor **scoring bench** added to
+      `recurring-metaphors.md` (table + environment language), full fill-in brief at
+      `.claude/skills/mascot-illustration/examples/scoring-bench.md`. Subo is the cheerful
+      score-keeper who **hands the score card to the blob** rather than judging, which keeps
+      the "Subo enables, the blob discovers" dynamic on a feature that is literally about
+      scoring. Deliberately **not** the game-show stage, which is already canon for quizzes
+      (a scale has no correct answer). Two product-accuracy constraints are baked into the
+      NEGATIVE line and are the reason to read the brief rather than re-improvise it: **no
+      dials, needles or gauges** (we have no slider, and a gauge would promise one) and **no
+      promoter/detractor split** on the card.
+      **Screenshot ownership was re-split at the same time**, so the two posts no longer read
+      as the same article: Post 1 lost the web Convo shot and its opening was rewritten off
+      the ranking hero entirely (it now leads on the two claims, a number rather than a tally
+      and answered inside Discord); Spoke 1 gained the web Convo shot inline. Only
+      `ranking-emoji-respondent-pov-discord.png` is shared, doing two different jobs.
+      **One accuracy fix fell out of it:** Spoke 1 had invited the reader to compare item
+      order across "the two Discord screenshots and the web Convo" as proof of randomization,
+      but one of those is the Bob Dylan question and the others are Neil Young. Comparing
+      different questions proves nothing; it now compares the two Neil Young shots only.
+- [ ] **Spoke 2 — Likert, carrying the grid answer.** Per L5. Fully deliverable today, no
+      reporting gap, and the matrix/grid question is the highest-citation-value material in
+      the release (it is asked of assistants more than of search boxes). Currently one FAQ
+      entry on Post 1; it wants its own page with the one-at-a-time argument as the spine.
+      Target: *Likert scale Discord*, *matrix question alternative*.
+- [ ] **Spoke 3 — NPS. HELD per L5** until the promoter/detractor rollup ships, then written
+      as that feature's launch post. Do not write it against the current reporting.
+- [ ] **Lowest priority — the three-benchmark post (NPS/CSAT/CES).** Treated as an
+      internal-linking play for the three template pages, not a ranking play; CSAT and CES
+      intent is owned by SaaS support content. The NPS spoke can carry those links instead.
 - [ ] Both posts get **`faq` frontmatter** (the collection emits `FAQPage` JSON-LD from the
       visible Q&A) and interlinks into `/templates`, `/recipes`, the merged skip-logic post
       and `/use-cases/*`.
@@ -1825,7 +1961,10 @@ Per L1 and L2. Do not start drafting until brief 2 lands; do start collecting sc
 
 ---
 
-### Phase S4 — Channels (GATED on Post 1 existing)
+### Phase S4 — Channels (UNBLOCKED 2026-08-16 — Post 1 exists)
+
+All four point at `/blog/discord-rating-scale-nps-ranking-questions`. The hero screenshot is
+in the repo at `/images/blog/scale-family/ranking-full-answer-respondent-pov-discord.png`.
 
 - [ ] **Discord `@Updates` announcement** — `discord-announcement` skill. Points at Post 1.
       The ranking screenshot is the embed image.
