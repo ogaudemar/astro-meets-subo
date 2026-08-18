@@ -308,26 +308,39 @@ groundwork converts into citations and organic traffic. One page per intent.
 
 > ### ▶ RESUME HERE — the scale-family launch is the active project
 >
-> **2026-08-16: brief 2 has landed, Post 1 is published, and the announcement gate is
-> open.** The plan for all site-side work is its own section:
+> **End of session 2026-08-18. Everything below is committed and pushed (`215dec7` on
+> `main`), working tree clean, `npm run check` green. Nothing is half-finished.** The plan
+> for all site-side work is its own section:
 > **[SCALE-FAMILY LAUNCH](#-scale-family-launch--cross-cutting-site-plan-opened-2026-08-14)**,
-> below P7. Start there. State: **S1 is done apart from S1.6**; **S1.7 (seventeen screenshots
-> in `public/images/blog/scale-family/`) done 2026-08-16**; **S2 COMPLETE** across all four
-> conversion batches; **S3 Post 1 published** as
-> `blog/discord-rating-scale-nps-ranking-questions`. `npm run check` is green.
+> below P7. Start there.
 >
-> **2026-08-17: the ranking spoke is published too**, so the blog side of the launch has its
-> two pages. **Read L5 and L6 in the decisions table before writing any more of this content**
-> — they amend L2: the plan is now a hub (Post 1, doubling as the permanent rating page) plus
-> instrument spokes, **NPS is held** until the promoter/detractor rollup ships, and **rating
-> and ranking polls must not be teased at all**.
+> **Shipped state:** brief 2 landed (it is brief 1 updated in place, not a second file);
+> **S1 done apart from S1.6**; **S1.7 done** (seventeen screenshots plus the mascot hero in
+> `public/images/blog/scale-family/`); **S2 COMPLETE** across all four conversion batches;
+> **S3 has its two posts live** — `blog/discord-rating-scale-nps-ranking-questions` (the hub)
+> and `blog/discord-ranking-questions-rank-what-you-build-next` (the ranking spoke).
 >
-> **Next moves, in order:** **Phase S4 channels**, which the user will send as a **single
-> announcement linking both posts and the templates** (server, X, possibly email later), so
-> they are not one-post-at-a-time gated. Then **S1.6** (surfacing the family on `/features`
-> and the use-case pages, remembering `/polls` gets nothing) and **Spoke 2** (Likert + the
-> grid answer). The ES/IT/PT-BR route item below is still valid and still cheap, but it is
-> behind those.
+> **⚠️ Read L5 and L6 in the decisions table before writing any more of this content.** They
+> amend L2 and they are the two things most likely to be re-derived wrongly from scratch:
+> - **The shape is a hub plus instrument spokes.** Post 1 doubles as the permanent *rating*
+>   page; ranking is its own page. Spoke 2 is **Likert carrying the grid answer**. **Spoke 3
+>   (NPS) is deliberately HELD** until the promoter/detractor rollup ships app-side, because
+>   what we have today is the instrument and not the metric, and ranking a page that then
+>   hands the reader a subtraction is worse than not ranking it.
+> - **Rating and ranking polls must not be teased at all** (user, 2026-08-16), which also
+>   removes *"rank options poll Discord"* from the keyword list. The poll-framed page is a
+>   deferred slot, and a valuable one, since polls are the site's biggest organic cluster.
+>
+> **Next moves, in order:**
+> 1. **Phase S4 channels.** The user sends **one announcement covering both posts and the
+>    templates** (server, X, email possibly later), so these are not one-post-at-a-time
+>    gated. Drafts wanted: Discord `@Updates` (`discord-announcement` skill), X thread
+>    (`x-thread` skill), `/changelog` entry EN + FR, top.gg soft refresh.
+> 2. **S1.6** — surface the family on `/features` and the use-case pages. **`/polls` gets
+>    nothing**, on purpose.
+> 3. **Spoke 2** — the Likert post with the grid/matrix answer as its spine.
+>
+> The ES/IT/PT-BR route item below is still valid and still cheap, but it is behind those.
 >
 > ---
 >
