@@ -308,9 +308,8 @@ groundwork converts into citations and organic traffic. One page per intent.
 
 > ### ▶ RESUME HERE — the scale-family launch is the active project
 >
-> **End of session 2026-08-18. Everything below is committed and pushed (`215dec7` on
-> `main`), working tree clean, `npm run check` green. Nothing is half-finished.** The plan
-> for all site-side work is its own section:
+> **End of session 2026-08-18 (b). Working tree clean, `npm run check` green. Nothing is
+> half-finished.** The plan for all site-side work is its own section:
 > **[SCALE-FAMILY LAUNCH](#-scale-family-launch--cross-cutting-site-plan-opened-2026-08-14)**,
 > below P7. Start there.
 >
@@ -318,7 +317,16 @@ groundwork converts into citations and organic traffic. One page per intent.
 > **S1 done apart from S1.6**; **S1.7 done** (seventeen screenshots plus the mascot hero in
 > `public/images/blog/scale-family/`); **S2 COMPLETE** across all four conversion batches;
 > **S3 has its two posts live** — `blog/discord-rating-scale-nps-ranking-questions` (the hub)
-> and `blog/discord-ranking-questions-rank-what-you-build-next` (the ranking spoke).
+> and `blog/discord-ranking-questions-rank-what-you-build-next` (the ranking spoke);
+> **S4 is drafted and the changelog half of it is shipped.**
+>
+> **⚠️ THE BALL IS WITH THE USER ON S4.** The Discord message, the five-post X thread and the
+> top.gg news post are written and waiting in
+> **[scale-family-launch-channels.md](scale-family-launch-channels.md)** — a paste-from kit,
+> the same shape as `directory-listing-kit.md`. **Sending them is yours**, in the canonical
+> order (Support Server → X → top.gg). Nothing in the repo blocks on them.
+> The **tier line ("all plans, free included") was confirmed by the user on 2026-08-18** and
+> that confirmation is session-scoped: **re-confirm it before reusing that copy later.**
 >
 > **⚠️ Read L5 and L6 in the decisions table before writing any more of this content.** They
 > amend L2 and they are the two things most likely to be re-derived wrongly from scratch:
@@ -332,13 +340,11 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   deferred slot, and a valuable one, since polls are the site's biggest organic cluster.
 >
 > **Next moves, in order:**
-> 1. **Phase S4 channels.** The user sends **one announcement covering both posts and the
->    templates** (server, X, email possibly later), so these are not one-post-at-a-time
->    gated. Drafts wanted: Discord `@Updates` (`discord-announcement` skill), X thread
->    (`x-thread` skill), `/changelog` entry EN + FR, top.gg soft refresh.
-> 2. **S1.6** — surface the family on `/features` and the use-case pages. **`/polls` gets
->    nothing**, on purpose.
-> 3. **Spoke 2** — the Likert post with the grid/matrix answer as its spine.
+> 1. **S1.6** — surface the family on `/features` and the use-case pages. **`/polls` gets
+>    nothing**, on purpose. This is now the top in-repo item, since S4 drafting is done.
+> 2. **Spoke 2** — the Likert post with the grid/matrix answer as its spine.
+> 3. **top.gg listing soft refresh** — the last S4 box, and a manual edit rather than a
+>    paste (curated screenshots).
 >
 > The ES/IT/PT-BR route item below is still valid and still cheap, but it is behind those.
 >
@@ -1974,19 +1980,51 @@ on Post 1 existing.
 
 ---
 
-### Phase S4 — Channels (UNBLOCKED 2026-08-16 — Post 1 exists)
+### Phase S4 — Channels (DRAFTED 2026-08-18 — sending is the user's)
 
-All four point at `/blog/discord-rating-scale-nps-ranking-questions`. The hero screenshot is
-in the repo at `/images/blog/scale-family/ranking-full-answer-respondent-pov-discord.png`.
+**All copy lives in [scale-family-launch-channels.md](scale-family-launch-channels.md)**, a
+paste-from kit in the shape of `directory-listing-kit.md` and `roundup-outreach-kit.md`. It
+holds the Discord message, the five X posts with their image assignments, and the top.gg
+news post, plus the record of the changelog work. Written as one batch because the user
+sends **one announcement covering both posts and the templates**, so these were never
+one-post-at-a-time gated.
 
-- [ ] **Discord `@Updates` announcement** — `discord-announcement` skill. Points at Post 1.
-      The ranking screenshot is the embed image.
-- [ ] **`/changelog` entry** — EN, and FR for parity (the FR changelog exists; the German
-      one is still the open `legacy-releases.ts` schema item).
-- [ ] **X thread** — `x-thread` skill. The Discord ranking shot is the hook image; the
-      "every competitor's rating scale is a web page" line is the thread's spine.
-- [ ] **top.gg soft refresh** — the P1 item that has been pending anyway now has a real
-      reason and fresh screenshots. Manual edit, not a kit paste (curated screenshots).
+**Tier line confirmed in-session (user, 2026-08-18): all plans, free included.** Stated once
+per channel, as good news, per the `feature-launch` hard rule. That confirmation does not
+carry to a future session.
+
+- [~] **Discord `@Updates` announcement — DRAFTED.** 1,216 characters, one message, inside
+      the 2,000 limit and near the skill's ~1,200 aim. **Two features in one message**
+      (the four types, then ranking-plus-templates) rather than the single-feature shape,
+      which is what the "one announcement covering both posts" decision requires.
+      **Link-embed control is the mechanical part worth keeping:** Post 1's URL is bare so it
+      renders the card, and the ranking post and `/templates` are wrapped in `<>`, because
+      three bare links would be a wall of cards. The mascot hero is now Post 1's `heroImage`,
+      so the embed card carries the illustration rather than the screenshot the original plan
+      assumed.
+- [x] **`/changelog` entry — DONE 2026-08-18.** EN needed **no edit at all**: the page derives
+      from the blog collection and Post 1 already carries the `announcement` tag with
+      `draft: false`. FR needed a row in `src/data/changelog-blog-fr.ts`, since a missing slug
+      there falls back to the English title and description and the French page silently mixes
+      languages. Both verified in `dist/` (`grep -c "Discord Rating Scales"
+      dist/fr/changelog/index.html` returns 0, i.e. no fallback left).
+      **Spoke 1 is deliberately not tagged `announcement`** — it is an editorial spoke, and
+      tagging it would list one release twice on the timeline.
+- [~] **X thread — DRAFTED.** Five posts, **every one verified under 280** with URLs counted
+      at X's flat 23 characters. The hook is *"Every rating scale you have ever sent your
+      community was a web page they had to leave Discord for"*, which is the roadmap's intended
+      spine turned into the reader's problem rather than our claim about competitors: it names
+      what the reader already does and never mentions a competitor by name, so it also stays
+      clear of the brief's don't-frame-as-catching-up rule. An image on all four posts after
+      the hook, split so no post repeats another's screenshot.
+      **Post 4 carries no link on purpose:** it is the multi-select-versus-ranking argument,
+      the one piece of the release a stranger can judge without clicking anything.
+- [~] **top.gg news post — DRAFTED.** ~370 words, written cold, leading with capability
+      ("most survey tools ask you to send your community somewhere else") rather than release
+      news, with the four types as named bold paragraphs and one link to `subo.gg`.
+- [ ] **top.gg listing soft refresh** — still open, and **separate from the news post above**.
+      The P1 item that has been pending anyway now has a real reason and fresh screenshots.
+      Manual edit, not a kit paste (curated screenshots).
 
 ---
 

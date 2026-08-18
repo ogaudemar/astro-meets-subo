@@ -66,4 +66,10 @@ export const blogFr: Record<string, BlogFrRow> = {
 		summary:
 			"Tes membres voient enfin comment et pourquoi leurs XP ont changé : un historique complet et vérifiable, sur le web et dans Discord. Disponible sur tous les plans, même le gratuit.",
 	},
+	"discord-rating-scale-nps-ranking-questions": {
+		title:
+			"Évaluations, NPS et classement dans Discord : pose la question dans le chat, lis un score",
+		summary:
+			"Quatre nouveaux types de questions : évaluations en étoiles ou en emojis, échelles d'accord et de satisfaction (Likert inclus), la question NPS standard et le classement sans glisser-déposer. La réponse est stockée comme un nombre, donc elle revient en moyenne avec sa distribution derrière. Disponible sur tous les plans, même le gratuit.",
+	},
 };
