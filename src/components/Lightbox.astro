@@ -1,0 +1,112 @@
+---
+// Click-to-zoom for images inside `.prose`. Blog images are capped at
+// max-height: 400px (global.css) so screenshots read as thumbnails; this lets a
+// reader open one at full size without leaving the page.
+//
+// Progressive enhancement on purpose: the markup below is inert until the
+// script runs, and posts stay plain markdown `![alt](src)` with no per-image
+// wrapper. Images already wrapped in a link are skipped so the link still wins.
+---
+
+<dialog class="lightbox" aria-label="Expanded image">
+	<button class="lightbox-close" type="button" aria-label="Close image">&times;</button>
+	<img class="lightbox-img" src="" alt="" />
+</dialog>
+
+<style is:global>
+	.prose img.zoomable {
+		cursor: zoom-in;
+	}
+	/* showModal() blocks interaction but not wheel scrolling of the page
+	   underneath, which reads as the overlay drifting. */
+	html:has(dialog.lightbox[open]) {
+		overflow: hidden;
+	}
+	.prose img.zoomable:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 3px;
+	}
+</style>
+
+<style>
+	.lightbox {
+		/* inset + margin:0 rather than the dialog default (margin:auto), which
+		   would center a 100%-sized box and push it past the viewport. */
+		position: fixed;
+		inset: 0;
+		margin: 0;
+		border: none;
+		padding: 0;
+		background: transparent;
+		max-width: none;
+		max-height: none;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	.lightbox::backdrop {
+		background: rgba(0, 0, 0, 0.85);
+	}
+	.lightbox[open] {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.lightbox-img {
+		max-width: 95vw;
+		max-height: 92vh;
+		width: auto;
+		height: auto;
+		border-radius: 8px;
+		box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+		cursor: zoom-out;
+	}
+	.lightbox-close {
+		position: fixed;
+		top: 1rem;
+		right: 1.25rem;
+		width: 2.5rem;
+		height: 2.5rem;
+		font-size: 1.75rem;
+		line-height: 1;
+		color: #fff;
+		background: rgba(255, 255, 255, 0.12);
+		border: 1px solid rgba(255, 255, 255, 0.25);
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	.lightbox-close:hover {
+		background: rgba(255, 255, 255, 0.24);
+	}
+</style>
+
+<script>
+	const dialog = document.querySelector<HTMLDialogElement>('dialog.lightbox');
+	const full = dialog?.querySelector<HTMLImageElement>('.lightbox-img');
+	const closeBtn = dialog?.querySelector<HTMLButtonElement>('.lightbox-close');
+	if (dialog && full && closeBtn) {
+		document.querySelectorAll<HTMLImageElement>('.prose img').forEach((img) => {
+			if (img.closest('a')) return;
+			img.classList.add('zoomable');
+			img.tabIndex = 0;
+			img.setAttribute('role', 'button');
+			const open = () => {
+				full.src = img.currentSrc || img.src;
+				full.alt = img.alt;
+				dialog.showModal();
+			};
+			img.addEventListener('click', open);
+			img.addEventListener('keydown', (e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					open();
+				}
+			});
+		});
+
+		// Clicking the image or the surrounding backdrop both close it.
+		dialog.addEventListener('click', () => dialog.close());
+		closeBtn.addEventListener('click', () => dialog.close());
+		// Esc needs no handler: the dialog element closes itself.
+	}
+</script>
