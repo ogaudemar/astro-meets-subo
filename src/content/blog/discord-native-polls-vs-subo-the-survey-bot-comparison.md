@@ -20,8 +20,6 @@ draft: false
 heroImage: "/images/blog/native-polls/subo-poll-toolkit.webp"
 ---
 
-# Discord native polls vs Subo: what the built-in feature can't do
-
 For years Discord was the odd one out. Reddit, Telegram, WhatsApp, X, Guilded, Facebook Groups: they all had polls built into the main UI, while Discord left you choosing between hacky reaction polls or a third-party bot. That changed in April 2024, when Discord finally shipped native polls. Two years on they're a standard part of the client, and they've made the old reaction-poll bots redundant.
 
 So the question isn't "which poll bot should I install?" anymore. It's "when is the built-in feature enough, and when do I still want a bot like Subo?" This post answers exactly that, head to head.

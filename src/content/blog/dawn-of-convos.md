@@ -8,8 +8,6 @@ tags: ["survey", "convo", "roadmap"]
 draft: false
 ---
 
-# The Dawn of Convos 
-
 Every era has its dominant framework. Once it takes hold, it becomes so natural that we can hardly imagine another way of doing things. For decades, forms has been how data has been collected. And surveys have been using forms to listen at scale.
 
 But every framework eventually reaches its breaking point. And forms and surveys have reached theirs.  

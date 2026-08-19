@@ -7,8 +7,6 @@ tags: ["scheduling", "recurring surveys", "automation", "community management"]
 draft: true
 ---
 
-# Scheduling Recurring Surveys: How to Take a Weekly Pulse of Your Community
-
 The best community managers don't just collect feedback once — they collect it continuously. A community that was thriving six months ago might be struggling today. The server that felt chaotic last quarter might have found its rhythm now. You can't know unless you're asking regularly.
 
 But "asking regularly" is hard when it means manually launching a new survey every week. You have other things to do.

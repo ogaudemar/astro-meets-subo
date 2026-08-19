@@ -18,8 +18,6 @@ faq:
 draft: false
 ---
 
-# Simple Poll alternative for Discord: what to use instead
-
 Simple Poll is one of the oldest and most widely installed poll bots on Discord. For years it was the default: post a question, and members vote by clicking an emoji reaction. That long head start is why it still shows a huge install count, and why people keep searching for an alternative to it.
 
 Here's the honest starting point. The thing Simple Poll does, a quick reaction-style vote, is now built into Discord itself, for free. So for a lot of servers the real answer to "what should I replace Simple Poll with?" isn't another bot at all. It depends on whether a basic vote was ever all you needed.

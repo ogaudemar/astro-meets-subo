@@ -133,7 +133,16 @@ const jsonLd = [
 			}
 			.title h2 {
 				margin: 0 0 0.5em 0;
-				
+
+			}
+			/* The post h1 comes from frontmatter, so posts carry no `# Title` of
+			   their own. `.prose h1` in global.css is `!important` throughout,
+			   hence the matching weights here. */
+			.title h1.blog-title {
+				margin: 0 0 0.6em 0 !important;
+				color: #fff !important;
+				font-size: clamp(1.9rem, 4.5vw, 2.75rem) !important;
+				line-height: 1.15;
 			}
 			.date {
 				margin-bottom: 0.5em;
@@ -243,6 +252,7 @@ const jsonLd = [
 				</div>
 				<div class="prose">
 					<div class="title">
+						<h1 class="blog-title">{title}</h1>
 						{author && (
 							<div class="author">
 								By <span class="author-name">{author}</span>
@@ -258,7 +268,6 @@ const jsonLd = [
 								)
 							}
 						</div>
-						<!-- <h1 class="blog-title primary">{title}</h1> -->
 						<hr />
 					</div>
 					<slot />

@@ -8,8 +8,6 @@ tags: ["ai", "survey analysis", "features", "open-ended responses", "text analys
 draft: false
 ---
 
-# AI-Powered Survey Summaries: How Subo Reads 1,000 Responses in Seconds
-
 Open-ended questions are where you learn the most. "What would you change about our events?" "Why did you join this server?" "What do you want to see more of?" These questions get you real answers instead of just checkbox data.
 
 The problem is what happens after. If you get 200 responses to an open-ended question, reading through them all takes hours. And if you get 1,000? Most community managers simply don't do it. The data exists, but it never gets used.

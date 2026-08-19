@@ -9,8 +9,6 @@ draft: false
 
 ---
 
-# Welcome to Subo's New Website
-
 We're excited to announce the launch of our brand new website, built with modern technologies to provide you with the best possible experience when learning about Subo and managing your Discord surveys.
 
 ## What's New

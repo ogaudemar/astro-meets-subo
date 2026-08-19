@@ -8,8 +8,6 @@ heroImage: "https://static.klipy.com/ii/8ce8357c78ea940b9c2015daf05ce1a5/1b/6e/3
 draft: false
 ---
 
-# How to Gamify Your Discord Community with XP, Leaderboards, and Role Rewards
-
 Getting members to answer polls and surveys is one of the perennial challenges of community management. You can ask nicely, remind them twice, and still end up with a 5% response rate from a server full of engaged, active members.
 
 The problem isn't apathy. It's incentive. Members will happily spend hours on your server chatting and gaming, but clicking a survey link feels like work. Shorter surveys help. The real fix is to make participation itself rewarding.

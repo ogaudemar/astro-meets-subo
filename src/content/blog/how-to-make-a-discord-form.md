@@ -17,8 +17,6 @@ faq:
 draft: false
 ---
 
-# How to Run a Form or Survey in Discord (and Why a Conversation Beats a Form)
-
 You need to collect something from your community. Mod applications. Bug reports. Event sign-ups. A read on what members actually think about the last update. So you do the obvious thing and go looking for a form.
 
 The instinct is right. Collecting structured answers is exactly what you need. The format is where it goes wrong, because a form is built for a website, and your community lives in Discord.

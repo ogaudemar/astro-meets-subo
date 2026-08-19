@@ -8,7 +8,6 @@ draft: false
 heroImage: "/images/blog/clyde/Clyde.jpeg"
 ---
 
-# The Mysterious Disappearance of Clyde AI
 What Happened to Discord's AI Assistant? A survey has some answers.
 
 #### STORY HIGHLIGHTS

@@ -26,8 +26,6 @@ faq:
 draft: false
 ---
 
-# Subo vs Google Forms and Typeform: which one fits a Discord community
-
 Let's start with the part most comparison posts skip: as form builders, Google Forms and Typeform are better than Subo. They have more question types, more integrations, and years of polish on the form-building experience. If someone tells you otherwise, they are selling something.
 
 The questions worth asking are different ones. Where are the people you want answers from? Do you know who they are? And what happens to the answers afterwards?

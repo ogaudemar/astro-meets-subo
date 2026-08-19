@@ -19,8 +19,6 @@ faq:
 draft: false
 ---
 
-# The Complete Guide to Anonymous Surveys in Discord
-
 The most important feedback is often the hardest to collect. When members feel like their answers might be traced back to them, they self-censor. They tell you what they think you want to hear, not what they actually think.
 
 This is especially true in Discord communities where members know each other, where the server owner is often a public figure, and where saying the wrong thing can mean losing access to a community they value.

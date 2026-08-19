@@ -18,8 +18,6 @@ faq:
 draft: false
 ---
 
-# How to Create a Multi-Question Survey in Your Discord Community with Subo the Survey Bot
-
 Understanding their community is the superpower of the most powerful brands and creators.
 
 Whether you're running a Discord server to connect with your followers, fans, customers, users, colleagues, fellow fans or friends, gathering feedback helps your community feel heard, and helps you understand who they are, what they need, and where to improve.

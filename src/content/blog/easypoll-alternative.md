@@ -18,8 +18,6 @@ faq:
 draft: false
 ---
 
-# EasyPoll alternative for Discord: when a poll bot isn't enough
-
 Let's be fair to EasyPoll before we talk about replacing it. It's the most-installed dedicated poll bot on Discord, it's free, and it does polling well: anonymous voting, timers, role restrictions, live edits, a web dashboard, an API, and support for 13 languages. If polls are all you need, EasyPoll is a good answer and you probably don't need to switch.
 
 So why look for an alternative at all? Because a poll bot has a ceiling, and it's the same ceiling for every bot whose whole job is polls. You hit it the moment you want the poll to do something after the vote, or you want more than a single question. That's the honest reason to move, and it's what this page is about.
