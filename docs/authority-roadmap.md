@@ -339,11 +339,15 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   removes *"rank options poll Discord"* from the keyword list. The poll-framed page is a
 >   deferred slot, and a valuable one, since polls are the site's biggest organic cluster.
 >
+> **✅ S1.6 SHIPPED 2026-08-24 in EN, FR and DE**, which closes Phase S1 entirely. See the
+> S1.6 item for what landed and for the three user rulings on the draft, one of which
+> (**no rating card on `/use-cases/engagement` until rating and ranking polls ship**) is L6
+> read forward and will govern the deferred poll-framed slot too.
+>
 > **Next moves, in order:**
-> 1. **S1.6** — surface the family on `/features` and the use-case pages. **`/polls` gets
->    nothing**, on purpose. This is now the top in-repo item, since S4 drafting is done.
-> 2. **Spoke 2** — the Likert post with the grid/matrix answer as its spine.
-> 3. **top.gg listing soft refresh** — the last S4 box, and a manual edit rather than a
+> 1. **Spoke 2** — the Likert post with the grid/matrix answer as its spine. Now the top
+>    in-repo item.
+> 2. **top.gg listing soft refresh** — the last S4 box, and a manual edit rather than a
 >    paste (curated screenshots).
 >
 > The ES/IT/PT-BR route item below is still valid and still cheap, but it is behind those.
@@ -1744,8 +1748,45 @@ in line with production.
       **"Einfachauswahl"** in the product. The English list has its own gaps (site
       "Numeric" vs product "Number Input"). Worth a pass over `questionTypesList` in all
       six locales against the same spreadsheet; out of scope for the scale-family work.
-- [ ] **S1.6 Where else to surface it, once S1.5 is done.** In priority order, and none of
-      these is an announcement:
+- [x] **S1.6 Where else to surface it — DONE 2026-08-24 in EN, FR and DE.** All three locales
+      render `/features` and the three use-case pages, so each edit was made three times,
+      **written in-language rather than translated flat**. Blog links in FR/DE carry the
+      existing `(en anglais)` / `(auf Englisch)` marker, since the posts are English-only.
+      What shipped:
+      - **`/features`** — the skip-logic card now says a scale answer is a number and gives
+        the NPS `<= 6` follow-up as the example; the question-types card links to Post 1; the
+        custom-emoji card names rating scales; and a **new ANALYZE card, "Scores, averages and
+        distributions"**. The last one is beyond the roadmap's literal wording and is the one
+        worth keeping: the family's value lands in the *report*, not the builder, and ANALYZE
+        had no card saying so.
+      - **`/use-cases/research`** — new card **"Measure it, don't tally it"** in FROM ANSWERS
+        TO INSIGHT (the number is stored, so a repeat run is comparable), linking Post 1, plus
+        a `csat-satisfaction` example row.
+      - **`/use-cases/get-things-done`** — new card **"Decide what comes first"** (ranking
+        makes people order requests instead of approving all of them) linking Spoke 1, plus a
+        `rank-your-favorites` example row.
+      - **`/use-cases/engagement`** — one `rank-your-favorites` example row only. See the
+        ruling below.
+      - **`/survey-convos`** — one benefits line, as specified.
+      - **`/polls`** — untouched. Verified in `dist/` for all three locales: no
+        rating/ranking/scale/NPS. (`fr/polls` matches *classement* once, in pre-existing XP
+        leaderboard copy, unrelated to the question type.)
+      **Three user rulings on the first draft, all worth keeping:**
+      1. **The Expression Editor tier sentence came off the skip-logic card** ("visual builder
+         on every plan; VIP and Custom add an Expression Editor"), in all three locales, as too
+         much for a card. Note this is the sentence added by finding (n) on 2026-08-12 to fix a
+         false tier claim. **Nothing false is reintroduced** — the card no longer makes a tier
+         claim at all — and the gate is still stated where it belongs, on the pricing table's
+         `Advanced Expression Editor` row.
+      2. **A "One-tap ratings" card was drafted for `/use-cases/engagement` and cut** as
+         forced. The reasoning is the useful part and it is **L6 read forward**: the engagement
+         page's spine is polls, the family is not in polls yet, so a rating card there is
+         selling on the one page that cannot deliver it. **That page gets its copy when rating
+         and ranking polls ship.**
+      3. Custom emojis on rating scales are worth naming, so the emoji card says so.
+      **Fixed in passing:** an em dash in the EN research examples ("what to build next — and
+      why"), against house style.
+      **Original priority order, kept as the record:**
       1. **`/features`** — the question-types card above, plus the skip-logic card can now
          say a scale compares numerically (the merged skip-logic post already does).
       2. **`/use-cases/research`** — the research narrative is where NPS, Likert and
@@ -1785,7 +1826,8 @@ in line with production.
       unblocked the moment brief 2 lands.
 
 **S1 exit:** `npm run check` green, `/api` and `llms.txt` true, no page claiming four
-question types, screenshots in place. **Met except S1.6**, which is the one remaining item.
+question types, screenshots in place. **✅ MET 2026-08-24**, in all three locales that render
+these pages. Nothing outstanding in S1.
 
 ---
 

@@ -823,6 +823,7 @@
       "👋 Begrüßt Mitglieder mit Namen und belohnt sie unterwegs, nicht erst am Ziel",
       "📱 Funktioniert auf Mobilgeräten ohne Aufwand",
       "🤫 Optionaler anonymer Modus für ehrliches, ungefiltertes Feedback",
+      "⭐ Bewertungen, Skalen und Rankings mit einem Tap beantwortet und als Zahlen ausgewertet",
       "🔀 Skip-Logik, irrelevante Fragen überspringen und Belohnungen je nach Antwort auslösen",
       "📢 Inhaltsblöcke, füge Intro, wichtigen Kontext, GIF oder eine Pause mitten in der Umfrage ein, ohne eine Frage zu stellen",
       "⏱️ Geplante und wiederkehrende Umfragen laufen automatisch",
@@ -1014,6 +1015,11 @@
             "emoji": "⚡",
             "title": "Automatische Rollen zum Abschluss",
             "desc": "Aktionsblöcke vergeben eine Rolle in dem Moment, in dem jemand fertig wird, etwa eine Onboarding- oder Bewerber-Rolle."
+          },
+          {
+            "emoji": "🥇",
+            "title": "Entscheiden, was zuerst drankommt",
+            "desc": "Eine Ranking-Frage zwingt dazu, Wünsche in eine Reihenfolge zu bringen, statt allen zuzustimmen. Eine Sammelrunde endet damit mit einer Shortlist, mit der du arbeiten kannst. <a href=\"/blog/discord-ranking-questions-rank-what-you-build-next\">Ranking-Fragen ansehen (auf Englisch) →</a>"
           }
         ],
         "blogLink": {
@@ -1029,6 +1035,7 @@
       "📝 Neue Mitglieder mit interaktiven Checklisten einführen",
       "💡 Vorschläge und Feature-Wünsche entgegennehmen",
       "🚀 Fragen, welche Funktionen oder Belohnungen als Nächstes kommen sollen",
+      "🥇 Eine Shortlist von Wünschen nach Priorität ordnen lassen",
       "🪙 Eine Abstimmung über einen Vorschlag durchführen",
       "📅 Einen Termin finden, an dem alle können",
       "🎤 Mitglieder befragen, die sich auf eine Staff-Rolle bewerben",
@@ -1117,6 +1124,7 @@
       "🧩 Schnelle Abstimmungen während Turnieren oder Matches",
       "🍕 Über den besten Pizzabelag abstimmen",
       "🏀 MVPs und Highlight-Momente wählen",
+      "🥇 Die besten Maps, Charaktere oder Tracks in eine Rangfolge bringen",
       "🍿 Abstimmen, was bei der nächsten Watch-Party läuft",
       "🦖 Dem Community-Dinosaurier einen Namen geben",
       "🌈 Fragen, wie die Stimmung heute so ist",
@@ -1170,6 +1178,11 @@
             "desc": "Aggregierte Antworten, sobald sie eintreffen: Diagramme für geschlossene Fragen, Antwortlisten für offenen Text."
           },
           {
+            "emoji": "📉",
+            "title": "Messen statt zählen",
+            "desc": "Bewertung, Meinungsskala und NPS speichern die Zahl, die dein Mitglied gewählt hat. Zufriedenheit kommt damit als Mittelwert zurück, mit der Verteilung dahinter, und dieselbe Frage im nächsten Quartal bleibt vergleichbar. <a href=\"/blog/discord-rating-scale-nps-ranking-questions\">Wie Skalen und NPS funktionieren (auf Englisch) →</a>"
+          },
+          {
             "emoji": "✨",
             "title": "KI-Zusammenfassungen offener Antworten",
             "desc": "Subo liest jede offene Antwort und schreibt eine kompakte Synthese. Der Kern aus 500 Antworten in Sekunden."
@@ -1203,6 +1216,7 @@
       "🧑‍🤝‍🧑 Verstehen, wer deine Mitglieder wirklich sind",
       "🔥 Herausfinden, was deine Community begeistert",
       "📈 Zufriedenheit in regelmäßigen Abständen messen",
+      "⭐ Ein Release, eine Session oder ein Event bewerten lassen",
       "💖 Einen Stimmungs- oder Kultur-Check durchführen",
       "💡 Vorschläge und Feature-Wünsche sammeln",
       "🗺️ Abstimmen lassen, was als Nächstes kommt, und warum",
@@ -1562,12 +1576,12 @@
           {
             "emoji": "🌿",
             "title": "Skip-Logik und Verzweigung",
-            "desc": "Leite Befragte je nach früheren Antworten zu unterschiedlichen Fragen und löse Belohnungen nach ihrer Wahl aus. Der visuelle Editor ist in jedem Tarif enthalten; VIP und Custom ergänzen einen Ausdruckseditor für freie bedingte Syntax."
+            "desc": "Leite Befragte je nach früheren Antworten zu unterschiedlichen Fragen und löse Belohnungen nach ihrer Wahl aus. Eine Skalen-Antwort ist eine Zahl, also kann eine Bedingung sie vergleichen: hake bei allen nach, die bei einer NPS-Frage 6 oder weniger geantwortet haben."
           },
           {
             "emoji": "✅",
             "title": "8 Fragetypen",
-            "desc": "Offener Text, Numerisch, Einzelauswahl (Ja/Nein inklusive), Mehrfachauswahl, Bewertung, Meinungsskala, NPS und Ranking, für jede Art von Feedback."
+            "desc": "Offener Text, Numerisch, Einzelauswahl (Ja/Nein inklusive), Mehrfachauswahl, Bewertung, Meinungsskala, NPS und Ranking, für jede Art von Feedback. <a href=\"/blog/discord-rating-scale-nps-ranking-questions\">Bewertung, Skala und Ranking ansehen (auf Englisch) →</a>"
           },
           {
             "emoji": "📢",
@@ -1577,7 +1591,7 @@
           {
             "emoji": "😄",
             "title": "Eigene Discord-Emojis",
-            "desc": "Nutze die Custom-Emojis deines Servers in Fragen, Antwortoptionen und Rückmeldungen, auch wenn Befragte die Umfrage im Web ausfüllen."
+            "desc": "Nutze die Custom-Emojis deines Servers in Fragen, Antwortoptionen, Bewertungsskalen und Rückmeldungen, auch wenn Befragte die Umfrage im Web ausfüllen."
           }
         ],
         "screenshot": {
@@ -1649,6 +1663,11 @@
             "emoji": "📊",
             "title": "Live-Ergebnisse im Dashboard",
             "desc": "Sieh aggregierte Antworten, sobald sie eintreffen: Diagramme für geschlossene Fragen, Antwortlisten für offenen Text."
+          },
+          {
+            "emoji": "📉",
+            "title": "Werte, Mittelwerte und Verteilungen",
+            "desc": "Antworten auf Bewertung, Meinungsskala und NPS werden als die Zahl gespeichert, die dein Mitglied gewählt hat. Die Frage kommt also als Mittelwert zurück, mit der Verteilung dahinter. Ranking liefert den durchschnittlichen Rang und wie oft jede Option auf Platz eins landete."
           },
           {
             "emoji": "✨",

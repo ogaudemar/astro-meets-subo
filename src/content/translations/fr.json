@@ -638,6 +638,7 @@
     "👋 Salue tes membres par leur nom et les récompense au fur et à mesure, pas seulement à la fin",
     "📱 Fonctionne sur mobile sans friction",
     "🤫 Mode anonyme optionnel pour des retours sincères et sans filtre",
+    "⭐ Évaluations, échelles et classements répondus en un tap, et restitués en chiffres",
     "🔀 Logique de saut : passe les questions non pertinentes et déclenche des récompenses selon les réponses",
     "📢 Blocs de contenu : ajoute une intro, du contexte clé, un GIF ou une pause en milieu de sondage sans poser de question",
     "⏱️ Sondages programmés et récurrents qui tournent automatiquement",
@@ -788,7 +789,8 @@
         { "emoji": "📅", "title": "Ouverture et fermeture planifiées", "desc": "Ouvre les inscriptions à une date et ferme-les à une deadline, automatiquement." },
         { "emoji": "🎯", "title": "Choisir qui peut soumettre", "desc": "Restreins à des rôles spécifiques, tout ton serveur, ou ouvre à n'importe qui avec le lien." },
         { "emoji": "🧩", "title": "Intros et confirmations", "desc": "Les blocs de contenu ajoutent un message de bienvenue, des règles à accepter ou un message de confirmation n'importe où dans le flux." },
-        { "emoji": "⚡", "title": "Attribution de rôle automatique", "desc": "Les blocs d'action attribuent un rôle dès que quelqu'un termine, comme un rôle d'onboarding ou de candidat." }
+        { "emoji": "⚡", "title": "Attribution de rôle automatique", "desc": "Les blocs d'action attribuent un rôle dès que quelqu'un termine, comme un rôle d'onboarding ou de candidat." },
+        { "emoji": "🥇", "title": "Décider quoi faire en premier", "desc": "Une question de classement oblige les gens à mettre les demandes dans l'ordre plutôt qu'à toutes les approuver : une session de collecte se termine donc par une short-list sur laquelle agir. <a href=\"/blog/discord-ranking-questions-rank-what-you-build-next\">Voir les questions de classement (en anglais) →</a>" }
       ],
       "blogLink": { "text": "Voir tout ce que Subo peut faire →", "href": "/fr/features" }
     }
@@ -803,6 +805,7 @@
     "🧾 Traiter des commandes, drops ou demandes de réclamation",
     "🎫 Gérer une prise en charge de tickets ou support",
     "🚀 Demander quels outils ou récompenses les gens veulent ensuite",
+    "🥇 Classer une short-list de demandes par ordre de priorité",
     "🧱 Inscrire des playtesters et utilisateurs bêta"
   ]
 },
@@ -850,6 +853,7 @@
     "🧙‍♂️ Trier les membres dans les maisons de Poudlard",
     "🍕 Voter pour la meilleure garniture de pizza",
     "🏀 Voter pour les MVPs et moments forts",
+    "🥇 Classer les meilleures maps, personnages ou morceaux",
     "🍿 Organiser des votes de soirée ciné pour les prochaines séries",
     "🦖 Nommer le dinosaure mascotte de la communauté",
     "🌈 Demander à tout le monde son niveau de vibe du jour"
@@ -881,6 +885,7 @@
       "sub": "Des graphiques en direct aux résumés synthétisés par l'IA, tes données font le gros du travail.",
       "cards": [
         { "emoji": "📊", "title": "Tableau de bord des résultats en direct", "desc": "Réponses agrégées au fil de leur arrivée : graphiques pour les questions fermées, listes de réponses pour le texte libre." },
+        { "emoji": "📉", "title": "Mesure au lieu de compter", "desc": "Les questions évaluation, échelle d'opinion et NPS stockent le nombre choisi par ton membre : la satisfaction revient en moyenne, avec la distribution derrière, et la même question relancée le trimestre suivant reste comparable. <a href=\"/blog/discord-rating-scale-nps-ranking-questions\">Comment marchent les échelles et le NPS (en anglais) →</a>" },
         { "emoji": "✨", "title": "Résumés IA des réponses ouvertes", "desc": "Subo lit chaque réponse ouverte et rédige une synthèse concise. L'essentiel de 500 réponses en quelques secondes." },
         { "emoji": "📥", "title": "Export CSV", "desc": "Récupère le jeu de données complet dans Excel, Google Sheets ou tes propres outils pour une analyse approfondie." },
         { "emoji": "🔗", "title": "Partage les résultats", "desc": "Publie un résumé des résultats sur Discord pour boucler la boucle de feedback avec ta communauté." }
@@ -900,6 +905,7 @@
     "🧑‍🤝‍🧑 Comprendre qui sont vraiment tes membres",
     "🔥 Savoir ce qui enflamme ta communauté",
     "📈 Suivre la satisfaction à intervalles réguliers",
+    "⭐ Noter une sortie, une session ou un événement",
     "🗣️ Obtenir des retours sur un événement passé",
     "🌟 Collecter des avis et témoignages",
     "💖 Faire un point culture ou bien-être",
@@ -1121,10 +1127,10 @@
         { "emoji": "💬", "title": "Format conversationnel", "desc": "Les questions apparaissent une à la fois, comme un chat, pas un mur de formulaire. Meilleur taux de complétion, moins de friction." },
         { "emoji": "🤖", "title": "Rédaction assistée par IA", "desc": "Utilise <code>/draft</code> pour décrire ton objectif en langage naturel. Subo génère instantanément un sondage complet avec plusieurs questions." },
         { "emoji": "🖥️", "title": "Interface d'administration web", "desc": "Crée, prévisualise et gère tes sondages depuis le tableau de bord web Subo, sans commandes Discord." },
-        { "emoji": "🌿", "title": "Logique de saut et branchement", "desc": "Dirige les répondants vers différentes questions selon leurs réponses précédentes, et déclenche des récompenses selon leur choix. L'éditeur visuel est inclus dans tous les plans ; VIP et Custom ajoutent un éditeur d'expressions pour une syntaxe conditionnelle libre." },
-        { "emoji": "✅", "title": "8 types de questions", "desc": "Texte libre, numérique, choix unique (oui/non inclus), choix multiple, évaluation, échelle d’opinion, NPS et classement : tous les scénarios de feedback couverts." },
+        { "emoji": "🌿", "title": "Logique de saut et branchement", "desc": "Dirige les répondants vers différentes questions selon leurs réponses précédentes, et déclenche des récompenses selon leur choix. Une réponse sur une échelle est un nombre, donc une condition peut la comparer : relance tous ceux qui ont répondu 6 ou moins à une question NPS." },
+        { "emoji": "✅", "title": "8 types de questions", "desc": "Texte libre, numérique, choix unique (oui/non inclus), choix multiple, évaluation, échelle d’opinion, NPS et classement : tous les scénarios de feedback couverts. <a href=\"/blog/discord-rating-scale-nps-ranking-questions\">Voir les types évaluation, échelle et classement (en anglais) →</a>" },
         { "emoji": "📢", "title": "Blocs de contenu", "desc": "Ajoute un message n'importe où dans ton sondage sans poser de question : une intro de bienvenue, un GIF, un avertissement à accepter ou une pause en milieu de sondage. Les répondants continuent après un minuteur ou en cliquant sur un bouton." },
-        { "emoji": "😄", "title": "Emojis Discord personnalisés", "desc": "Utilise les emojis personnalisés de ton serveur dans les questions, options de réponse et réponses, même quand les répondants passent par le web." }
+        { "emoji": "😄", "title": "Emojis Discord personnalisés", "desc": "Utilise les emojis personnalisés de ton serveur dans les questions, options de réponse, échelles d'évaluation et réponses, même quand les répondants passent par le web." }
       ],
       "screenshot": {
         "src": "/images/blog/web-app-launch/subo-web-app-launch.webp",
@@ -1168,6 +1174,7 @@
       "sub": "Des graphiques de résultats en direct aux résumés synthétisés par l'IA, tes données font le gros du travail.",
       "cards": [
         { "emoji": "📊", "title": "Tableau de bord des résultats en direct", "desc": "Vois les réponses agrégées au fil de leur arrivée : graphiques pour les questions fermées, listes de réponses pour le texte libre." },
+        { "emoji": "📉", "title": "Scores, moyennes et distributions", "desc": "Les réponses aux questions évaluation, échelle d'opinion et NPS sont stockées comme le nombre choisi par ton membre : la question revient donc sous forme de moyenne, avec la distribution derrière. Le classement donne le rang moyen et le nombre de fois où chaque option est arrivée première." },
         { "emoji": "✨", "title": "Résumés IA des réponses ouvertes", "desc": "Subo lit chaque réponse ouverte et génère une synthèse concise. L'essentiel de 500 réponses en quelques secondes." },
         { "emoji": "📥", "title": "Export CSV", "desc": "Télécharge toutes les réponses pour une analyse approfondie dans Excel, Google Sheets ou tes propres outils." },
         { "emoji": "🔀", "title": "Logique de saut pour de meilleures données", "desc": "Chaque répondant ne voit que les questions pertinentes. Pas de bruit \"N/A\" qui pollue tes résultats." },

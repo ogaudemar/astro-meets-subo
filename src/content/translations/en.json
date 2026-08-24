@@ -644,6 +644,7 @@
     "👋 Greets members by name and rewards them as they go, not just at the finish line",
     "📱 Works on mobile without any friction",
     "🤫 Optional anonymous mode for honest, unfiltered feedback",
+    "⭐ Ratings, scales and rankings answered with a tap, and reported as numbers",
     "🔀 Skip logic: skip irrelevant questions, and trigger rewards based on answers",
     "📢 Content blocks: add an intro, key context, GIF, or mid-survey pause without asking a question",
     "⏱️ Scheduled and recurring surveys run automatically",
@@ -772,7 +773,8 @@
         { "emoji": "📅", "title": "Scheduled open & close", "desc": "Open registrations on a date and close them on a deadline, automatically." },
         { "emoji": "🎯", "title": "Choose who can submit", "desc": "Restrict to specific roles, your whole server, or open it to anyone with the link." },
         { "emoji": "🧩", "title": "Intros & confirmations", "desc": "Content blocks add a welcome, rules to acknowledge, or a confirmation message anywhere in the flow." },
-        { "emoji": "⚡", "title": "Auto-roles on completion", "desc": "Action blocks can assign a role the moment someone finishes, like an onboarding or applicant role." }
+        { "emoji": "⚡", "title": "Auto-roles on completion", "desc": "Action blocks can assign a role the moment someone finishes, like an onboarding or applicant role." },
+        { "emoji": "🥇", "title": "Decide what comes first", "desc": "A ranking question makes people put requests in order instead of approving all of them, so an intake round ends with a shortlist you can act on. <a href=\"/blog/discord-ranking-questions-rank-what-you-build-next\">See ranking questions →</a>" }
       ],
       "blogLink": { "text": "See everything Subo can do →", "href": "/features" }
     }
@@ -784,6 +786,7 @@
     { "text": "📝 Onboard new members with interactive checklists", "template": "onboarding-certification" },
     { "text": "💡 Take in suggestions and feature requests", "template": "feature-prioritization" },
     { "text": "🚀 Ask what utilities or rewards people want next", "template": "feature-prioritization" },
+    { "text": "🥇 Rank a shortlist of requests in priority order", "template": "rank-your-favorites" },
     { "text": "🪙 Run a governance or proposal vote", "template": "governance-proposal-vote" },
     { "text": "📅 Find a time the whole community can make", "template": "scheduling-availability-poll" },
     { "text": "🎤 Interview members who apply for a staff role" },
@@ -834,6 +837,7 @@
     { "text": "🧩 Quick polls during tournaments or matches", "template": "match-prediction-poll" },
     { "text": "🍕 Vote on the best pizza topping", "template": "this-or-that-poll" },
     { "text": "🏀 Vote on MVPs and highlight moments", "template": "pick-favorite-poll" },
+    { "text": "🥇 Rank the best maps, characters or tracks", "template": "rank-your-favorites" },
     { "text": "🍿 Host watch-party votes for upcoming shows", "template": "pick-favorite-poll" },
     { "text": "🦖 Name the community pet dinosaur", "template": "pick-favorite-poll" },
     { "text": "🌈 Ask how everyone's vibe level is today", "template": "this-or-that-quick-poll" },
@@ -867,6 +871,7 @@
       "sub": "From live charts to AI-synthesized summaries, your data does the heavy lifting.",
       "cards": [
         { "emoji": "📊", "title": "Live results dashboard", "desc": "Aggregated responses as they arrive: charts for closed questions, response lists for open text." },
+        { "emoji": "📉", "title": "Measure it, don't tally it", "desc": "Rating, Opinion Scale and NPS questions store the number your member picked, so satisfaction comes back as an average with a distribution behind it, and the same question run next quarter is comparable. <a href=\"/blog/discord-rating-scale-nps-ranking-questions\">How scales and NPS work →</a>" },
         { "emoji": "✨", "title": "AI open-text summaries", "desc": "Subo reads every open answer and writes a concise synthesis. The gist of 500 responses in seconds." },
         { "emoji": "📥", "title": "CSV export", "desc": "Take the full dataset into Excel, Google Sheets, or your own tooling for deeper analysis." },
         { "emoji": "🔗", "title": "Share findings", "desc": "Post a results summary back into Discord to close the feedback loop with your community." }
@@ -886,9 +891,10 @@
     { "text": "🧑‍🤝‍🧑 Understand who your members really are", "template": "player-onboarding-profiler" },
     { "text": "🔥 Find out what gets your community fired up", "template": "content-preference" },
     { "text": "📈 Track satisfaction at regular intervals", "template": "nps-reason-followup" },
+    { "text": "⭐ Rate a release, a session or an event", "template": "csat-satisfaction" },
     { "text": "💖 Run a culture or pulse check", "template": "community-health-engagement" },
     { "text": "💡 Gather suggestions and feature requests", "template": "suggestion-box" },
-    { "text": "🗺️ Vote on what to build next — and why", "template": "feature-roadmap-vote" },
+    { "text": "🗺️ Vote on what to build next, and why", "template": "feature-roadmap-vote" },
     { "text": "🎮 Collect playtest and beta feedback", "template": "playtest-beta-feedback" },
     { "text": "🚪 Run an exit interview when members leave", "template": "churn-cancellation" },
     { "text": "🎯 Learn what topics members want next", "template": "content-preference" },
@@ -1110,10 +1116,10 @@
         { "emoji": "💬", "title": "Conversational format", "desc": "Questions appear one at a time, like a chat, not a form wall. Higher completion, less friction." },
         { "emoji": "🤖", "title": "AI-assisted drafting", "desc": "Use <code>/draft</code> to describe your goal in plain English. Subo generates a full multi-question survey instantly." },
         { "emoji": "🖥️", "title": "Web admin builder", "desc": "Design, preview, and manage surveys from the Subo web dashboard, no Discord commands needed." },
-        { "emoji": "🌿", "title": "Skip logic & branching", "desc": "Route respondents to different questions based on earlier answers, and trigger rewards from what they picked. The visual builder is on every plan; VIP and Custom add an Expression Editor for open conditional syntax." },
-        { "emoji": "✅", "title": "8 question types", "desc": "Open Text, Numeric, Single Choice (yes/no included), Multiple Choice, Rating, Opinion Scale, NPS, and Ranking, covering every feedback scenario." },
+        { "emoji": "🌿", "title": "Skip logic & branching", "desc": "Route respondents to different questions based on earlier answers, and trigger rewards from what they picked. Scale answers are numbers, so a condition can compare them: follow up with anyone who answered 6 or below on an NPS question." },
+        { "emoji": "✅", "title": "8 question types", "desc": "Open Text, Numeric, Single Choice (yes/no included), Multiple Choice, Rating, Opinion Scale, NPS, and Ranking, covering every feedback scenario. <a href=\"/blog/discord-rating-scale-nps-ranking-questions\">See the rating, scale and ranking types →</a>" },
         { "emoji": "📢", "title": "Content blocks", "desc": "Add a message anywhere in your survey without asking a question: a welcome intro, a GIF, a warning to acknowledge, or a mid-survey pause. Respondents continue after a timer or by clicking a button." },
-        { "emoji": "😄", "title": "Custom Discord emojis", "desc": "Use your server's custom emojis in questions, answer options, and responses, even when respondents take the survey on the web." }
+        { "emoji": "😄", "title": "Custom Discord emojis", "desc": "Use your server's custom emojis in questions, answer options, rating scales, and responses, even when respondents take the survey on the web." }
       ],
       "screenshot": {
         "src": "/images/blog/web-app-launch/subo-web-app-launch.webp",
@@ -1157,6 +1163,7 @@
       "sub": "From live result charts to AI-synthesized summaries, your data does the heavy lifting.",
       "cards": [
         { "emoji": "📊", "title": "Live results dashboard", "desc": "See aggregated responses as they come in: charts for closed questions, response lists for open text." },
+        { "emoji": "📉", "title": "Scores, averages and distributions", "desc": "Rating, Opinion Scale and NPS answers are stored as the number your member picked, so a question comes back as an average with the distribution behind it. Ranking reports average rank and how often each item was picked first." },
         { "emoji": "✨", "title": "AI-powered open text summaries", "desc": "Subo reads every open-text response and generates a concise synthesis. Get the gist of 500 answers in seconds." },
         { "emoji": "📥", "title": "CSV export", "desc": "Download all responses for deeper analysis in Excel, Google Sheets, or your own tooling." },
         { "emoji": "🔀", "title": "Skip logic means better data", "desc": "Every respondent only sees relevant questions. No \"N/A\" noise polluting your results." },
