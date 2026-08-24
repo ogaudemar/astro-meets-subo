@@ -798,15 +798,17 @@
   "examplesLabel": "MIS EN PRATIQUE",
   "examplesTitle": "Ce que les communautés font avec Subo",
   "examples": [
-    "🎤 Interviewer les membres qui postulent pour un rôle de modération",
-    "🎟️ Collecter des RSVPs, infos participants et questions",
-    "📝 Onboarder les nouveaux membres avec des checklists interactives",
-    "💡 Recevoir des suggestions et demandes de fonctionnalités",
-    "🧾 Traiter des commandes, drops ou demandes de réclamation",
-    "🎫 Gérer une prise en charge de tickets ou support",
-    "🚀 Demander quels outils ou récompenses les gens veulent ensuite",
-    "🥇 Classer une short-list de demandes par ordre de priorité",
-    "🧱 Inscrire des playtesters et utilisateurs bêta"
+    { "text": "🎤 Interviewer les membres qui postulent pour un rôle de modération" },
+    { "text": "🎟️ Collecter des RSVPs, infos participants et questions" },
+    { "text": "📝 Onboarder les nouveaux membres avec des checklists interactives", "template": "onboarding-certification" },
+    { "text": "💡 Recevoir des suggestions et demandes de fonctionnalités", "template": "feature-prioritization" },
+    { "text": "🧾 Traiter des commandes, drops ou demandes de réclamation" },
+    { "text": "🎫 Gérer une prise en charge de tickets ou support" },
+    { "text": "🚀 Demander quels outils ou récompenses les gens veulent ensuite", "template": "feature-prioritization" },
+    { "text": "🥇 Classer une short-list de demandes par ordre de priorité", "template": "rank-your-favorites" },
+    { "text": "🪙 Organiser un vote de gouvernance ou sur une proposition", "template": "governance-proposal-vote" },
+    { "text": "📅 Trouver un créneau qui convient à toute la communauté", "template": "scheduling-availability-poll" },
+    { "text": "🧱 Inscrire des playtesters et utilisateurs bêta", "template": "playtester-beta-recruitment" }
   ]
 },
 
@@ -846,17 +848,17 @@
   "examplesLabel": "IDÉES À PIQUER",
   "examplesTitle": "Ce que les communautés font avec Subo",
   "examples": [
-    "🧠 Lancer des quiz notés et vérifications de connaissances",
-    "🔮 Lancer des concours de prédiction sur les prochains matchs",
-    "🧩 Sondages rapides pendant les tournois ou matchs",
-    "🐸 Bracket de mèmes : couronne le mème ultime",
-    "🧙‍♂️ Trier les membres dans les maisons de Poudlard",
-    "🍕 Voter pour la meilleure garniture de pizza",
-    "🏀 Voter pour les MVPs et moments forts",
-    "🥇 Classer les meilleures maps, personnages ou morceaux",
-    "🍿 Organiser des votes de soirée ciné pour les prochaines séries",
-    "🦖 Nommer le dinosaure mascotte de la communauté",
-    "🌈 Demander à tout le monde son niveau de vibe du jour"
+    { "text": "🧠 Lancer des quiz notés et vérifications de connaissances", "template": "lore-trivia-quiz" },
+    { "text": "🔮 Lancer des concours de prédiction sur les prochains matchs", "template": "event-prediction-contest" },
+    { "text": "🧩 Sondages rapides pendant les tournois ou matchs", "template": "match-prediction-poll" },
+    { "text": "🐸 Bracket de mèmes : couronne le mème ultime" },
+    { "text": "🧙‍♂️ Trier les membres dans les maisons de Poudlard" },
+    { "text": "🍕 Voter pour la meilleure garniture de pizza", "template": "this-or-that-poll" },
+    { "text": "🏀 Voter pour les MVPs et moments forts", "template": "pick-favorite-poll" },
+    { "text": "🥇 Classer les meilleures maps, personnages ou morceaux", "template": "rank-your-favorites" },
+    { "text": "🍿 Organiser des votes de soirée ciné pour les prochaines séries", "template": "pick-favorite-poll" },
+    { "text": "🦖 Nommer le dinosaure mascotte de la communauté", "template": "pick-favorite-poll" },
+    { "text": "🌈 Demander à tout le monde son niveau de vibe du jour", "template": "this-or-that-quick-poll" }
   ]
 },
 
@@ -901,17 +903,20 @@
   "examplesLabel": "QU'EST-CE QUE TU VAS DÉCOUVRIR ?",
   "examplesTitle": "Questions que les communautés posent à Subo",
   "examples": [
-    "💡 Retour sur une nouvelle idée, un produit ou un tarif",
-    "🧑‍🤝‍🧑 Comprendre qui sont vraiment tes membres",
-    "🔥 Savoir ce qui enflamme ta communauté",
-    "📈 Suivre la satisfaction à intervalles réguliers",
-    "⭐ Noter une sortie, une session ou un événement",
-    "🗣️ Obtenir des retours sur un événement passé",
-    "🌟 Collecter des avis et témoignages",
-    "💖 Faire un point culture ou bien-être",
-    "💡 Recueillir des suggestions et demandes de fonctionnalités",
-    "🌍 Savoir comment les membres t'ont découvert",
-    "🎯 Connaître les sujets que les membres veulent ensuite"
+    { "text": "💡 Retour sur une nouvelle idée, un produit ou un tarif", "template": "product-market-fit" },
+    { "text": "🧑‍🤝‍🧑 Comprendre qui sont vraiment tes membres", "template": "player-onboarding-profiler" },
+    { "text": "🔥 Savoir ce qui enflamme ta communauté", "template": "content-preference" },
+    { "text": "📈 Suivre la satisfaction à intervalles réguliers", "template": "nps-reason-followup" },
+    { "text": "⭐ Noter une sortie, une session ou un événement", "template": "csat-satisfaction" },
+    { "text": "🗣️ Obtenir des retours sur un événement passé" },
+    { "text": "🌟 Collecter des avis et témoignages" },
+    { "text": "💖 Faire un point culture ou bien-être", "template": "community-health-engagement" },
+    { "text": "💡 Recueillir des suggestions et demandes de fonctionnalités", "template": "suggestion-box" },
+    { "text": "🗺️ Voter sur ce qu'il faut construire ensuite, et pourquoi", "template": "feature-roadmap-vote" },
+    { "text": "🎮 Collecter les retours de playtest et de bêta", "template": "playtest-beta-feedback" },
+    { "text": "🚪 Faire un entretien de départ quand des membres s'en vont", "template": "churn-cancellation" },
+    { "text": "🌍 Savoir comment les membres t'ont découvert" },
+    { "text": "🎯 Connaître les sujets que les membres veulent ensuite", "template": "content-preference" }
   ]
 },
 

@@ -1786,6 +1786,27 @@ in line with production.
       3. Custom emojis on rating scales are worth naming, so the emoji card says so.
       **Fixed in passing:** an em dash in the EN research examples ("what to build next — and
       why"), against house style.
+      **✅ FOLLOW-ON, DONE 2026-08-24: FR and DE use-case examples now link to templates**
+      (user's call, after the shape difference surfaced during the S1.6 pass). The EN example
+      chips have always been `{ text, template }` objects rendering as links to
+      `/templates/<slug>`; **FR and DE were plain strings and rendered as inert chips**, so
+      three high-intent pages per locale sent nothing into the template library. Fixed at both
+      ends:
+      - **Six route files patched** (`src/pages/{fr,de}/use-cases/*.astro`) to the same
+        dual-form renderer EN already had (`typeof ex === 'string'` falls back to a chip), plus
+        the `.uc-example--link` style. **The EN renderer was already tolerant of both shapes**,
+        which is why this was a copy-in rather than a redesign.
+      - **All six arrays converted to objects.** **81 template links across the three locales,
+        every slug verified against `src/content/templates/` and every built href verified to
+        resolve in `dist/`.** Rows with no honest template match (RSVPs, ticket intake, meme
+        brackets, Hogwarts, "how did you find us") stay unlinked chips rather than being
+        pointed at an approximate template.
+      - **Links go to the English `/templates/<slug>`**, per the user, since there is no
+        localized template route. Same call as the `(en anglais)` / `(auf Englisch)` blog links.
+      - **⚠️ Scope note: FR gained five example rows** to reach EN/DE parity, so this was not
+        purely mechanical. Research gained roadmap-vote, playtest-feedback and exit-interview;
+        get-things-done gained the governance vote and the availability poll. All five existed
+        in EN and DE and had templates waiting; FR was the odd list out.
       **Original priority order, kept as the record:**
       1. **`/features`** — the question-types card above, plus the skip-logic card can now
          say a scale compares numerically (the merged skip-logic post already does).

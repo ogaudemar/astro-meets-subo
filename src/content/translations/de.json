@@ -1031,17 +1031,17 @@
     "examplesLabel": "IN DIE PRAXIS BRINGEN",
     "examplesTitle": "Was Communities mit Subo abwickeln",
     "examples": [
-      "🧱 Playtester und Beta-Nutzer anmelden",
-      "📝 Neue Mitglieder mit interaktiven Checklisten einführen",
-      "💡 Vorschläge und Feature-Wünsche entgegennehmen",
-      "🚀 Fragen, welche Funktionen oder Belohnungen als Nächstes kommen sollen",
-      "🥇 Eine Shortlist von Wünschen nach Priorität ordnen lassen",
-      "🪙 Eine Abstimmung über einen Vorschlag durchführen",
-      "📅 Einen Termin finden, an dem alle können",
-      "🎤 Mitglieder befragen, die sich auf eine Staff-Rolle bewerben",
-      "🎟️ Zusagen, Teilnehmerdaten und Fragen sammeln",
-      "🧾 Bestellungen, Drops oder Ansprüche bearbeiten",
-      "🎫 Eine schlanke Ticket- oder Support-Erfassung betreiben"
+      { "text": "🧱 Playtester und Beta-Nutzer anmelden", "template": "playtester-beta-recruitment" },
+      { "text": "📝 Neue Mitglieder mit interaktiven Checklisten einführen", "template": "onboarding-certification" },
+      { "text": "💡 Vorschläge und Feature-Wünsche entgegennehmen", "template": "feature-prioritization" },
+      { "text": "🚀 Fragen, welche Funktionen oder Belohnungen als Nächstes kommen sollen", "template": "feature-prioritization" },
+      { "text": "🥇 Eine Shortlist von Wünschen nach Priorität ordnen lassen", "template": "rank-your-favorites" },
+      { "text": "🪙 Eine Abstimmung über einen Vorschlag durchführen", "template": "governance-proposal-vote" },
+      { "text": "📅 Einen Termin finden, an dem alle können", "template": "scheduling-availability-poll" },
+      { "text": "🎤 Mitglieder befragen, die sich auf eine Staff-Rolle bewerben" },
+      { "text": "🎟️ Zusagen, Teilnehmerdaten und Fragen sammeln" },
+      { "text": "🧾 Bestellungen, Drops oder Ansprüche bearbeiten" },
+      { "text": "🎫 Eine schlanke Ticket- oder Support-Erfassung betreiben" }
     ]
   },
   "useCasesEngagement": {
@@ -1119,17 +1119,17 @@
     "examplesLabel": "IDEEN ZUM KLAUEN",
     "examplesTitle": "Wie Communities mit Subo spielen",
     "examples": [
-      "🧠 Automatisch bewertete Quiz und Wissenstests starten",
-      "🔮 Tippspiele zu den nächsten Spielen veranstalten",
-      "🧩 Schnelle Abstimmungen während Turnieren oder Matches",
-      "🍕 Über den besten Pizzabelag abstimmen",
-      "🏀 MVPs und Highlight-Momente wählen",
-      "🥇 Die besten Maps, Charaktere oder Tracks in eine Rangfolge bringen",
-      "🍿 Abstimmen, was bei der nächsten Watch-Party läuft",
-      "🦖 Dem Community-Dinosaurier einen Namen geben",
-      "🌈 Fragen, wie die Stimmung heute so ist",
-      "🐸 Meme-Turnier: krönt den ultimativen Meme-Lord",
-      "🧙‍♂️ Mitglieder in Hogwarts-Häuser einteilen"
+      { "text": "🧠 Automatisch bewertete Quiz und Wissenstests starten", "template": "lore-trivia-quiz" },
+      { "text": "🔮 Tippspiele zu den nächsten Spielen veranstalten", "template": "event-prediction-contest" },
+      { "text": "🧩 Schnelle Abstimmungen während Turnieren oder Matches", "template": "match-prediction-poll" },
+      { "text": "🍕 Über den besten Pizzabelag abstimmen", "template": "this-or-that-poll" },
+      { "text": "🏀 MVPs und Highlight-Momente wählen", "template": "pick-favorite-poll" },
+      { "text": "🥇 Die besten Maps, Charaktere oder Tracks in eine Rangfolge bringen", "template": "rank-your-favorites" },
+      { "text": "🍿 Abstimmen, was bei der nächsten Watch-Party läuft", "template": "pick-favorite-poll" },
+      { "text": "🦖 Dem Community-Dinosaurier einen Namen geben", "template": "pick-favorite-poll" },
+      { "text": "🌈 Fragen, wie die Stimmung heute so ist", "template": "this-or-that-quick-poll" },
+      { "text": "🐸 Meme-Turnier: krönt den ultimativen Meme-Lord" },
+      { "text": "🧙‍♂️ Mitglieder in Hogwarts-Häuser einteilen" }
     ]
   },
   "useCasesResearch": {
@@ -1212,20 +1212,20 @@
     "examplesLabel": "WAS WIRST DU HERAUSFINDEN?",
     "examplesTitle": "Fragen, die Communities mit Subo stellen",
     "examples": [
-      "💡 Feedback zu einer neuen Idee, einem Produkt oder dem Preis",
-      "🧑‍🤝‍🧑 Verstehen, wer deine Mitglieder wirklich sind",
-      "🔥 Herausfinden, was deine Community begeistert",
-      "📈 Zufriedenheit in regelmäßigen Abständen messen",
-      "⭐ Ein Release, eine Session oder ein Event bewerten lassen",
-      "💖 Einen Stimmungs- oder Kultur-Check durchführen",
-      "💡 Vorschläge und Feature-Wünsche sammeln",
-      "🗺️ Abstimmen lassen, was als Nächstes kommt, und warum",
-      "🎮 Feedback aus Playtests und Betas einsammeln",
-      "🚪 Ein Austrittsgespräch führen, wenn Mitglieder gehen",
-      "🎯 Erfahren, welche Themen sich Mitglieder als Nächstes wünschen",
-      "🗣️ Feedback zu einem vergangenen Event einholen",
-      "🌟 Bewertungen und Erfahrungsberichte sammeln",
-      "🌍 Sehen, wie Mitglieder auf dich aufmerksam wurden"
+      { "text": "💡 Feedback zu einer neuen Idee, einem Produkt oder dem Preis", "template": "product-market-fit" },
+      { "text": "🧑‍🤝‍🧑 Verstehen, wer deine Mitglieder wirklich sind", "template": "player-onboarding-profiler" },
+      { "text": "🔥 Herausfinden, was deine Community begeistert", "template": "content-preference" },
+      { "text": "📈 Zufriedenheit in regelmäßigen Abständen messen", "template": "nps-reason-followup" },
+      { "text": "⭐ Ein Release, eine Session oder ein Event bewerten lassen", "template": "csat-satisfaction" },
+      { "text": "💖 Einen Stimmungs- oder Kultur-Check durchführen", "template": "community-health-engagement" },
+      { "text": "💡 Vorschläge und Feature-Wünsche sammeln", "template": "suggestion-box" },
+      { "text": "🗺️ Abstimmen lassen, was als Nächstes kommt, und warum", "template": "feature-roadmap-vote" },
+      { "text": "🎮 Feedback aus Playtests und Betas einsammeln", "template": "playtest-beta-feedback" },
+      { "text": "🚪 Ein Austrittsgespräch führen, wenn Mitglieder gehen", "template": "churn-cancellation" },
+      { "text": "🎯 Erfahren, welche Themen sich Mitglieder als Nächstes wünschen", "template": "content-preference" },
+      { "text": "🗣️ Feedback zu einem vergangenen Event einholen" },
+      { "text": "🌟 Bewertungen und Erfahrungsberichte sammeln" },
+      { "text": "🌍 Sehen, wie Mitglieder auf dich aufmerksam wurden" }
     ]
   },
   "customSurveyBot": {

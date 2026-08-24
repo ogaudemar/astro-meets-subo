@@ -66,7 +66,13 @@ const t = translations.useCasesEngagement;
             <h2 class="uc-section__title">{t.examplesTitle}</h2>
           </div>
           <div class="uc-examples">
-            {t.examples.map((ex) => <span class="uc-example">{ex}</span>)}
+            {t.examples.map((ex) => {
+              const text = typeof ex === 'string' ? ex : ex.text;
+              const template = typeof ex === 'string' ? null : ex.template;
+              return template
+                ? <a class="uc-example uc-example--link" href={`/templates/${template}`}>{text}</a>
+                : <span class="uc-example">{text}</span>;
+            })}
           </div>
         </div>
       </section>
@@ -166,6 +172,12 @@ const t = translations.useCasesEngagement;
   padding: 0.5rem 1rem;
   font-size: 0.92rem;
 }
+.uc-example--link {
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, color 0.15s;
+}
+.uc-example--link:hover { border-color: var(--accent); color: var(--accent); }
 .uc-blog-link { text-align: center; margin: 0; }
 .uc-blog-link a { font-size: 0.9rem; color: var(--accent); text-decoration: none; }
 .uc-blog-link a:hover { text-decoration: underline; }
