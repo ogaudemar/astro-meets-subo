@@ -308,17 +308,20 @@ groundwork converts into citations and organic traffic. One page per intent.
 
 > ### ▶ RESUME HERE — the scale-family launch is the active project
 >
-> **End of session 2026-08-18 (b). Working tree clean, `npm run check` green. Nothing is
-> half-finished.** The plan for all site-side work is its own section:
+> **End of session 2026-08-24. Working tree clean, `npm run check` green, both commits pushed
+> to `origin/main` (`2bd8af2`, `02b111e`). Nothing is half-finished.** The plan for all
+> site-side work is its own section:
 > **[SCALE-FAMILY LAUNCH](#-scale-family-launch--cross-cutting-site-plan-opened-2026-08-14)**,
 > below P7. Start there.
 >
 > **Shipped state:** brief 2 landed (it is brief 1 updated in place, not a second file);
-> **S1 done apart from S1.6**; **S1.7 done** (seventeen screenshots plus the mascot hero in
-> `public/images/blog/scale-family/`); **S2 COMPLETE** across all four conversion batches;
-> **S3 has its two posts live** — `blog/discord-rating-scale-nps-ranking-questions` (the hub)
-> and `blog/discord-ranking-questions-rank-what-you-build-next` (the ranking spoke);
+> **PHASE S1 IS COMPLETE** (S1.6 closed 2026-08-24 in EN/FR/DE), including S1.7's seventeen
+> screenshots plus the mascot hero in `public/images/blog/scale-family/`; **S2 COMPLETE**
+> across all four conversion batches; **S3 has its two posts live** —
+> `blog/discord-rating-scale-nps-ranking-questions` (the hub) and
+> `blog/discord-ranking-questions-rank-what-you-build-next` (the ranking spoke);
 > **S4 is drafted and the changelog half of it is shipped.**
+> **So the only in-repo work left in the whole launch is Spoke 2.**
 >
 > **⚠️ THE BALL IS WITH THE USER ON S4.** The Discord message, the five-post X thread and the
 > top.gg news post are written and waiting in
@@ -339,18 +342,34 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   removes *"rank options poll Discord"* from the keyword list. The poll-framed page is a
 >   deferred slot, and a valuable one, since polls are the site's biggest organic cluster.
 >
-> **✅ S1.6 SHIPPED 2026-08-24 in EN, FR and DE**, which closes Phase S1 entirely. See the
-> S1.6 item for what landed and for the three user rulings on the draft, one of which
-> (**no rating card on `/use-cases/engagement` until rating and ranking polls ship**) is L6
-> read forward and will govern the deferred poll-framed slot too.
+> **✅ DONE this session (2026-08-24): S1.6 in EN, FR and DE, which closes Phase S1**, plus a
+> follow-on the pass surfaced. Both are logged in full on the S1.6 item; the two things worth
+> carrying forward without re-deriving them:
+> - **The engagement page deliberately has no rating card.** A drafted "One-tap ratings" card
+>   was cut (user) because that page's spine is polls and the family is not in polls yet. That
+>   is **L6 read forward, and it governs the deferred poll-framed slot too**: don't sell the
+>   scale family on a surface that cannot yet deliver it.
+> - **FR and DE use-case example chips now link to templates.** They were plain strings
+>   rendering as inert chips while EN's were `{ text, template }` objects, so six high-intent
+>   pages sent nothing into the template library. 81 links across the three locales, all
+>   verified to resolve. **Pattern worth remembering: when EN and a locale disagree, check the
+>   data *shape*, not only the strings.** The renderer already tolerated both forms.
 >
 > **Next moves, in order:**
-> 1. **Spoke 2** — the Likert post with the grid/matrix answer as its spine. Now the top
->    in-repo item.
+> 1. **Spoke 2** — the Likert post with the grid/matrix answer as its spine. **The only
+>    in-repo item left in the launch**, and the highest-citation-value material in the release
+>    (the grid question is asked of assistants more than of search boxes). It currently has one
+>    FAQ entry on Post 1 and wants its own page, with the one-at-a-time argument as the spine.
+>    Target: *Likert scale Discord*, *matrix question alternative*. Read **L5, L6 and the two
+>    standing rules from the brief** before drafting.
 > 2. **top.gg listing soft refresh** — the last S4 box, and a manual edit rather than a
->    paste (curated screenshots).
+>    paste (curated screenshots). Yours.
 >
 > The ES/IT/PT-BR route item below is still valid and still cheap, but it is behind those.
+> **After Spoke 2 the launch is finished in-repo**, and the board reopens to the standing
+> items: the **FR blog infrastructure decision** (the real blocker on `sondage discord`), the
+> **German changelog**, **P5 roundup outreach**, and the **last unruled draft post**
+> (`scheduling-recurring-surveys-community-pulse`).
 >
 > ---
 >
