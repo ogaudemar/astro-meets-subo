@@ -308,20 +308,21 @@ groundwork converts into citations and organic traffic. One page per intent.
 
 > ### ▶ RESUME HERE — the scale-family launch is the active project
 >
-> **End of session 2026-08-24. Working tree clean, `npm run check` green, both commits pushed
-> to `origin/main` (`2bd8af2`, `02b111e`). Nothing is half-finished.** The plan for all
-> site-side work is its own section:
+> **End of session 2026-08-24 (b). `npm run check` green. Nothing is half-finished.** The plan
+> for all site-side work is its own section:
 > **[SCALE-FAMILY LAUNCH](#-scale-family-launch--cross-cutting-site-plan-opened-2026-08-14)**,
 > below P7. Start there.
 >
 > **Shipped state:** brief 2 landed (it is brief 1 updated in place, not a second file);
 > **PHASE S1 IS COMPLETE** (S1.6 closed 2026-08-24 in EN/FR/DE), including S1.7's seventeen
 > screenshots plus the mascot hero in `public/images/blog/scale-family/`; **S2 COMPLETE**
-> across all four conversion batches; **S3 has its two posts live** —
-> `blog/discord-rating-scale-nps-ranking-questions` (the hub) and
-> `blog/discord-ranking-questions-rank-what-you-build-next` (the ranking spoke);
+> across all four conversion batches; **S3 HAS ITS THREE POSTS LIVE** —
+> `blog/discord-rating-scale-nps-ranking-questions` (the hub),
+> `blog/discord-ranking-questions-rank-what-you-build-next` (Spoke 1, ranking) and
+> `blog/discord-likert-scale-one-statement-at-a-time` (Spoke 2, Likert + the grid answer);
 > **S4 is drafted and the changelog half of it is shipped.**
-> **So the only in-repo work left in the whole launch is Spoke 2.**
+> **⭐ THE LAUNCH IS NOW FINISHED IN-REPO.** Spoke 3 (NPS) is held by L5, not outstanding, and
+> everything else left in S4 is the user's to send.
 >
 > **⚠️ THE BALL IS WITH THE USER ON S4.** The Discord message, the five-post X thread and the
 > top.gg news post are written and waiting in
@@ -342,7 +343,21 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   removes *"rank options poll Discord"* from the keyword list. The poll-framed page is a
 >   deferred slot, and a valuable one, since polls are the site's biggest organic cluster.
 >
-> **✅ DONE this session (2026-08-24): S1.6 in EN, FR and DE, which closes Phase S1**, plus a
+> **✅ DONE this session (2026-08-24 b): SPOKE 2 SHIPPED**, which closes the launch in-repo.
+> `blog/discord-likert-scale-one-statement-at-a-time`, ~1,700 words, 8 FAQ entries, `FAQPage`
+> JSON-LD verified, reciprocal link added from Post 1. Full log on the S3 item; the three
+> things worth carrying forward:
+> - **The grid answer is now a section, not an FAQ line**, written in the brief's constructive
+>   form (a grid is a layout, its replacement is one Opinion Scale per statement, and only then
+>   why the replacement is better). No competitor is named anywhere.
+> - **The post concedes where a grid wins** (replicating an established battery item-for-item).
+>   `blog-writing` bans manufactured both-sides, not an honest limit, and a survey-literate
+>   reader trusts the straightlining argument more for it.
+> - **⚠️ Screenshot gap found: there is no respondent-POV shot of an opinion scale as a button
+>   row** anywhere in the eighteen. All three of Spoke 2's images are shared with Post 1
+>   because of it. Add to the brief's gap list before any refresh of this content.
+>
+> **✅ DONE earlier the same day: S1.6 in EN, FR and DE, which closes Phase S1**, plus a
 > follow-on the pass surfaced. Both are logged in full on the S1.6 item; the two things worth
 > carrying forward without re-deriving them:
 > - **The engagement page deliberately has no rating card.** A drafted "One-tap ratings" card
@@ -355,21 +370,23 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   verified to resolve. **Pattern worth remembering: when EN and a locale disagree, check the
 >   data *shape*, not only the strings.** The renderer already tolerated both forms.
 >
-> **Next moves, in order:**
-> 1. **Spoke 2** — the Likert post with the grid/matrix answer as its spine. **The only
->    in-repo item left in the launch**, and the highest-citation-value material in the release
->    (the grid question is asked of assistants more than of search boxes). It currently has one
->    FAQ entry on Post 1 and wants its own page, with the one-at-a-time argument as the spine.
->    Target: *Likert scale Discord*, *matrix question alternative*. Read **L5, L6 and the two
->    standing rules from the brief** before drafting.
-> 2. **top.gg listing soft refresh** — the last S4 box, and a manual edit rather than a
->    paste (curated screenshots). Yours.
+> **Next moves, in order. The launch no longer sets the agenda; the board is reopened.**
+> 1. **Yours, not the repo's:** send the S4 channel copy (Support Server → X → top.gg) from
+>    the kit, then the **top.gg listing soft refresh** (a manual edit, curated screenshots).
+> 2. **▶ DECISION WANTED: FR blog infrastructure.** The largest single non-English
+>    opportunity on the board and the real blocker on `sondage discord` (756 imp @ pos 8.5).
+>    See the previous resume note below for the full framing. It is a schema/routing call, so
+>    it wants a deliberate answer rather than a shape chosen mid-task.
+> 3. **ES/IT/PT-BR routes** — six new pages, zero translation spend, still valid and still
+>    cheap. Detail in the previous resume note.
+> 4. **German changelog** (last page for FR parity; needs `legacy-releases.ts` widened off its
+>    bilingual `titleFr`/`summaryFr` schema plus a new `changelog-blog-de.ts`).
+> 5. **The last unruled draft post**, `scheduling-recurring-surveys-community-pulse`. Note the
+>    pattern in the three rulings that came before it: none was "deindex it."
 >
-> The ES/IT/PT-BR route item below is still valid and still cheap, but it is behind those.
-> **After Spoke 2 the launch is finished in-repo**, and the board reopens to the standing
-> items: the **FR blog infrastructure decision** (the real blocker on `sondage discord`), the
-> **German changelog**, **P5 roundup outreach**, and the **last unruled draft post**
-> (`scheduling-recurring-surveys-community-pulse`).
+> Two follow-ons the launch generated that are now free-standing: the **per-audience spokes**
+> off the community-types hub (game studios first), and **`/templates` question-type filter
+> UI** (open question 3 below: the vocabulary is already in the data, only the UI is missing).
 >
 > ---
 >
@@ -2044,21 +2061,59 @@ on Post 1 existing.
       order across "the two Discord screenshots and the web Convo" as proof of randomization,
       but one of those is the Bob Dylan question and the others are Neil Young. Comparing
       different questions proves nothing; it now compares the two Neil Young shots only.
-- [ ] **Spoke 2 — Likert, carrying the grid answer.** Per L5. Fully deliverable today, no
-      reporting gap, and the matrix/grid question is the highest-citation-value material in
-      the release (it is asked of assistants more than of search boxes). Currently one FAQ
-      entry on Post 1; it wants its own page with the one-at-a-time argument as the spine.
-      Target: *Likert scale Discord*, *matrix question alternative*.
+- [x] **Spoke 2 — Likert, carrying the grid answer — SHIPPED 2026-08-24.**
+      `src/content/blog/discord-likert-scale-one-statement-at-a-time.md`, `draft: false`.
+      Title: *"Likert Scales in Discord: Ask a Grid One Statement at a Time"*, ~1,700 words,
+      3 screenshots, **8 FAQ entries** (`FAQPage` JSON-LD verified in `dist/`), every link
+      target verified to resolve.
+      **The spine is the one-at-a-time argument, as L5 required**, and the grid gets a
+      **full section** (*"The grid, straightened out"*) rather than the single FAQ entry it
+      had on Post 1, plus its own FAQ answer here. Written in the brief's constructive form:
+      it opens on what a grid *is* (a layout, not a question), shows the replacement (one
+      Opinion Scale block per statement, same preset clicked on each), and only then gives
+      the two reasons the replacement is better (each statement gets its own report card;
+      each statement gets answered on its own, straightlining being the named failure of
+      grids). Google Forms and Typeform are **not named anywhere**, per the standing rule.
+      **One deliberate departure worth keeping: the post concedes the case where a grid
+      wins.** "If you are replicating an established battery item-for-item and the layout is
+      part of what you are replicating, Subo is the wrong tool for that specific job."
+      `blog-writing` bans *manufactured* both-sides, not an honest limit, and a survey-literate
+      reader who has met straightlining will trust the rest of the argument more for it.
+      **Material this post owns that Post 1 could not carry:** the labels-run-low-to-high
+      direction rule with reverse-scoring in the formula (`5 - [Item]`) rather than in the
+      labels; the point-count argument (even numbers for community samples, no midpoint to
+      hide in, but use the benchmark's count when reproducing a benchmark); and the construct
+      score built from three or four items as the real replacement for a grid's battery. All
+      three come from `recipes/pre-post-assessment` (rewritten in S1.4), which the post links
+      as "the closest thing to a grid this site publishes."
+      **Screenshots: all three are shared with Post 1**, and that is a real constraint rather
+      than laziness. The set has **no respondent-POV shot of an opinion scale as a button
+      row** at all: the only respondent-side scale images are the NPS keycaps and the closed
+      dropdown riding along in `ranking-emoji-respondent-pov-discord.png`. Worth adding to the
+      brief's gap list if any of this content is refreshed.
+      **Hero is `Analytics-opinion-scale-agreement-5.png`** (1200x359, the widest scale card),
+      which is inline in Post 1 but does not collide on `/blog`, where Post 1's card is the
+      mascot illustration and Spoke 1's is the Discord ranking shot. A bespoke mascot hero is
+      the obvious upgrade if this post performs; it did not seem worth a render to ship.
+      **Reciprocal link added** from Post 1's Opinion Scale section. Post 1's grid FAQ was
+      left self-contained on purpose: FAQ answers are what get quoted, so they should not
+      depend on a click.
+      Target: *Likert scale Discord*, *matrix question alternative*. `npm run check` green.
 - [ ] **Spoke 3 — NPS. HELD per L5** until the promoter/detractor rollup ships, then written
       as that feature's launch post. Do not write it against the current reporting.
 - [ ] **Lowest priority — the three-benchmark post (NPS/CSAT/CES).** Treated as an
       internal-linking play for the three template pages, not a ranking play; CSAT and CES
       intent is owned by SaaS support content. The NPS spoke can carry those links instead.
-- [ ] Both posts get **`faq` frontmatter** (the collection emits `FAQPage` JSON-LD from the
-      visible Q&A) and interlinks into `/templates`, `/recipes`, the merged skip-logic post
-      and `/use-cases/*`.
-- [ ] **`draft: false` on publish.** Note the standing finding: drafts are built, crawlable
-      and in the sitemap, so `draft: true` does not mean unpublished here.
+- [x] **`faq` frontmatter + interlinks on all three posts — DONE.** 7, 7 and 8 entries, every
+      one emitting `FAQPage` JSON-LD from the visible Q&A, verified in `dist/` each time.
+      Between them they link `/templates` (7 pages), `/recipes/pre-post-assessment`, `/api`,
+      the merged skip-logic post, `/use-cases/get-things-done` and each other.
+- [x] **`draft: false` on all three.** The standing finding still holds for anything new here:
+      drafts are built, crawlable and in the sitemap, so `draft: true` does not mean
+      unpublished on this site.
+
+**S3 exit:** met for everything L5 committed. The hub and both deliverable spokes are live;
+Spoke 3 is held by decision, not by work.
 
 ---
 

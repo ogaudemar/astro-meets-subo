@@ -67,7 +67,7 @@ Two to eleven points, starting at 0 or 1, and two ways to label it. The builder 
 
 ![The Opinion Scale editor with Points set to 5, Starts at 1 selected, five preset chips reading Agreement, Satisfaction, Likelihood, Importance and Frequency, and the five points filled in below as 1 angry face Strongly disagree, 2 thumbs down Disagree, 3 neutral face Neutral, 4 thumbs up Agree, 5 raised hands Strongly agree, with a Buttons and Select menu answer-style toggle](/images/blog/scale-family/script-editor-scale-agreement-set.png)
 
-Likert is a preset of the Opinion Scale, not a question type of its own. It writes labels; the stored answer is still the point number, which is why an agreement item can be averaged and read with a `>= 4` condition like anything else.
+Likert is a preset of the Opinion Scale, not a question type of its own. It writes labels; the stored answer is still the point number, which is why an agreement item can be averaged and read with a `>= 4` condition like anything else. For how to use one well, including what replaces a matrix question, see [Likert scales in Discord](/blog/discord-likert-scale-one-statement-at-a-time).
 
 The **Buttons / Select menu** toggle at the bottom of that panel matters from about six labeled points up, where a button row starts to wrap. Above that a dropdown reads better. It is a choice about the widget, not about the scale.
 
