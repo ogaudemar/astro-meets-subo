@@ -356,10 +356,44 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   404s on any page missing in a locale (`/de/polls` → `/it/polls`); the blog makes it certain
 >   rather than likely. Left alone deliberately: fixing it well means a locale-aware URL map,
 >   which is a site-wide change, not a blog one.
-> - **More FR posts.** The infrastructure is the expensive part and it is paid for. The next
->   obvious ones are the FR twins of the pages `/fr/*` currently links to marked "(en anglais)":
->   the native-polls comparison and the best-poll-bots roundup both sit in the same
->   `sondage discord` cluster.
+> - **More FR posts — prioritized below. Don't re-derive this.**
+>
+> **▶ FRENCH TRANSLATION BACKLOG (analysis 2026-08-25)**
+>
+> **The corpus is smaller than it looks. 30 posts: 1 draft, 29 published English.** But only
+> **13** are evergreen how-to / guide / comparison material. The rest: **12 announcements**
+> (~zero SEO value in any language, and `/fr/changelog` already carries French row labels for
+> them), 2 competitor-"alternative" posts (brand-name intent, effectively language-agnostic,
+> the EN page already serves it), 2 dated/meta. **Realistic target is ~10 French posts, not 29**,
+> and the first four carry most of the value.
+>
+> **Ranking signals, in weight order:** (1) proven French demand, (2) a French page already
+> links there, (3) no cannibalization with an existing FR landing page, (4) evergreen and
+> self-contained. Note that **"sondage" is French for both *poll* and *survey***, so FR demand
+> concentrates where EN splits, and two English posts can collide into one French term.
+>
+> | # | Post | Status | Why |
+> |---|---|---|---|
+> | 0 | poll how-to | ✅ `comment-creer-un-sondage-sur-discord` | The `sondage discord` term itself. |
+> | 1 | native-polls comparison | ✅ `sondages-natifs-discord-vs-subo` | EN's #4 organic page; was the only post linked **twice** from `/fr/*`. |
+> | 2 | `complete-guide-anonymous-surveys-discord` | **next** | Anonymous cluster proven in EN (355 + 307 imp @ pos 5-7). **No FR page covers it**, so zero cannibalization. "sondage anonyme discord". |
+> | 3 | `how-to-make-a-discord-form` | queued | "formulaire Discord". `/fr/survey-convos` is already retuned for *formulaire* and links here apologetically. The adjacent cluster this doc says to seed deliberately. |
+> | 4 | `best-discord-poll-bots` | queued | "meilleur bot de sondage Discord", the EN money cluster. Costs more: competitor facts need re-verifying, not translating. |
+>
+> **Wave 2, after wave 1 has data:** skip logic, XP/gamification, the Google Forms comparison,
+> the scale-family hub.
+>
+> **⚠️ `how-to-create-a-survey-with-subo-…` is a trap despite being EN's #3 page.** In French it
+> collides head-on with post 0: both land on "créer un sondage Discord", because *sondage* is one
+> word for two English concepts. Translating it as-is builds a competitor to our own new page.
+> Only worth doing with a deliberately distinct angle (multi-question conversation vs. one-question
+> vote), and **not in wave 1**.
+>
+> **⚠️ This ranking is inferred from ENGLISH Search Console data.** `sondage discord` (756 imp @
+> 8.5) is the only FR term we have hard numbers for; everything else is intent reasoning off the
+> EN corpus. **Before committing to wave 2, pull a France / French-language segment from Search
+> Console** and replace the inference with real FR volumes. It is a five-minute export and it
+> could reorder this table.
 > - **✅ `docs/content.md` cleaned up (2026-08-25), after the FR commit.** It had drifted badly.
 >   Fixed: **5 question types → 8** (now a table, pointing at `api-surface.json`'s `blockTypes`
 >   as the machine-checked source, since `check:api` guards it and a hand-maintained twin just
