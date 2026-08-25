@@ -360,12 +360,22 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   obvious ones are the FR twins of the pages `/fr/*` currently links to marked "(en anglais)":
 >   the native-polls comparison and the best-poll-bots roundup both sit in the same
 >   `sondage discord` cluster.
-> - **`docs/content.md` has stale product facts** noticed while editing it, and left alone as
->   out of scope: it still says **5 question types** (there are 8 since the scale family) and
->   still carries the **skip-logic tier claim that was ruled wrong and fixed sitewide on
->   2026-08-12** ("advanced custom logic on VIP and Custom Bot only"). Its draft list is stale
->   too. Worth a cleanup pass, since internal docs on this repo have a habit of becoming
->   marketing copy.
+> - **✅ `docs/content.md` cleaned up (2026-08-25), after the FR commit.** It had drifted badly.
+>   Fixed: **5 question types → 8** (now a table, pointing at `api-surface.json`'s `blockTypes`
+>   as the machine-checked source, since `check:api` guards it and a hand-maintained twin just
+>   drifts again); the **repo cross-reference path** pointed at `Code\survey\web2\react`, a
+>   directory that does not exist, instead of `Code\subo\`; the **draft list** named four posts
+>   when only `scheduling-recurring-surveys-community-pulse` is still a draft, so it is now a
+>   `grep` recipe plus the record of what each of the other three was ruled; the **Content
+>   Collections** section knew only about `blog` and missed `templates` and `recipes` entirely.
+>   Added the drafts-are-crawlable warning and the note that command names resolve from
+>   `user_messages` before `defaultMessages.py`, so the Python constant is not proof of the live
+>   name (`Wizard_comamnd_name` is still `"wizard"` in code while published copy says `/draft`).
+>   **Correction to what this note said earlier: the Skip Logic section was NOT wrong.** Checked
+>   against `priceTable` in `en.json`: "simple on all plans, Advanced Expression Editor on VIP
+>   and Custom" matches the table exactly (✓✓✓✓ and ✗✗✓✓). The 2026-08-12 falsehood was in a
+>   blog post, not in this doc. It now carries that verification inline so the next reader does
+>   not re-suspect it.
 >
 > **Everything below this line is the previous resume note**, still accurate for items 1, 3, 4
 > and 5 of its *Next moves* list. **Item 2 (FR blog infrastructure) is now done** — the next
