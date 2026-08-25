@@ -306,37 +306,42 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE — the scale-family launch is the active project
+> ### ▶ RESUME HERE — the scale-family launch is CLOSED; the board is reopened
 >
-> **End of session 2026-08-24 (b). `npm run check` green. Nothing is half-finished.** The plan
-> for all site-side work is its own section:
-> **[SCALE-FAMILY LAUNCH](#-scale-family-launch--cross-cutting-site-plan-opened-2026-08-14)**,
-> below P7. Start there.
+> **End of session 2026-08-24 (b). Working tree clean, `npm run check` green, both commits
+> pushed to `origin/main` (`7822f41`, `a281b08`). Nothing is half-finished, and for the first
+> time since 2026-08-14 nothing in the repo is blocked on the scale family.**
 >
-> **Shipped state:** brief 2 landed (it is brief 1 updated in place, not a second file);
-> **PHASE S1 IS COMPLETE** (S1.6 closed 2026-08-24 in EN/FR/DE), including S1.7's seventeen
-> screenshots plus the mascot hero in `public/images/blog/scale-family/`; **S2 COMPLETE**
-> across all four conversion batches; **S3 HAS ITS THREE POSTS LIVE** —
+> **⭐ THE LAUNCH IS FINISHED IN-REPO.** Its plan and full progress log stay in their own
+> section, **[SCALE-FAMILY LAUNCH](#-scale-family-launch--cross-cutting-site-plan-opened-2026-08-14)**
+> below P7, as the record. **You do not need to start there any more.** Start at *Next moves*
+> at the bottom of this note. Read the launch section only if you are writing more of that
+> content, in which case **L5 and L6 bind** (below).
+>
+> **Final shipped state:** brief 2 landed (it is brief 1 updated in place, not a second file);
+> **PHASE S1 COMPLETE** (S1.6 closed 2026-08-24 in EN/FR/DE), with nineteen images now in
+> `public/images/blog/scale-family/` (S1.7's seventeen, the mascot hero, and shot 19 below);
+> **S2 COMPLETE** across all four conversion batches; **S3 HAS ITS THREE POSTS LIVE** —
 > `blog/discord-rating-scale-nps-ranking-questions` (the hub),
 > `blog/discord-ranking-questions-rank-what-you-build-next` (Spoke 1, ranking) and
 > `blog/discord-likert-scale-one-statement-at-a-time` (Spoke 2, Likert + the grid answer);
-> **S4 is drafted and the changelog half of it is shipped.**
-> **⭐ THE LAUNCH IS NOW FINISHED IN-REPO.** Spoke 3 (NPS) is held by L5, not outstanding, and
-> everything else left in S4 is the user's to send.
+> **S4 drafted, with the changelog half shipped.**
+> **Spoke 3 (NPS) is held by decision, not outstanding work**, and everything else left in S4
+> is the user's to send.
 >
-> **⚠️ THE BALL IS WITH THE USER ON S4.** The Discord message, the five-post X thread and the
-> top.gg news post are written and waiting in
-> **[scale-family-launch-channels.md](scale-family-launch-channels.md)** — a paste-from kit,
-> the same shape as `directory-listing-kit.md`. **Sending them is yours**, in the canonical
-> order (Support Server → X → top.gg). Nothing in the repo blocks on them.
-> The **tier line ("all plans, free included") was confirmed by the user on 2026-08-18** and
-> that confirmation is session-scoped: **re-confirm it before reusing that copy later.**
+> **⚠️ ONE CAVEAT ON THE WAITING S4 COPY** (the sends themselves are move 1 below). The kit at
+> **[scale-family-launch-channels.md](scale-family-launch-channels.md)** states the tier line
+> **"all plans, free included"** in every channel. That was **confirmed by the user on
+> 2026-08-18 and the confirmation is session-scoped**: re-confirm it before pasting, and before
+> reusing the line in any new copy. It is the one claim in the kit that a pricing change would
+> turn into a public falsehood.
 >
 > **⚠️ Read L5 and L6 in the decisions table before writing any more of this content.** They
 > amend L2 and they are the two things most likely to be re-derived wrongly from scratch:
-> - **The shape is a hub plus instrument spokes.** Post 1 doubles as the permanent *rating*
->   page; ranking is its own page. Spoke 2 is **Likert carrying the grid answer**. **Spoke 3
->   (NPS) is deliberately HELD** until the promoter/detractor rollup ships app-side, because
+> - **The shape is a hub plus instrument spokes**, and three of the four slots are filled.
+>   Post 1 doubles as the permanent *rating* page; ranking and Likert each have their own.
+>   **Spoke 3 (NPS) is deliberately HELD** until the promoter/detractor rollup ships app-side,
+>   because
 >   what we have today is the instrument and not the metric, and ranking a page that then
 >   hands the reader a subtraction is worse than not ranking it.
 > - **Rating and ranking polls must not be teased at all** (user, 2026-08-16), which also
@@ -373,19 +378,58 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   verified to resolve. **Pattern worth remembering: when EN and a locale disagree, check the
 >   data *shape*, not only the strings.** The renderer already tolerated both forms.
 >
-> **Next moves, in order. The launch no longer sets the agenda; the board is reopened.**
-> 1. **Yours, not the repo's:** send the S4 channel copy (Support Server → X → top.gg) from
->    the kit, then the **top.gg listing soft refresh** (a manual edit, curated screenshots).
-> 2. **▶ DECISION WANTED: FR blog infrastructure.** The largest single non-English
->    opportunity on the board and the real blocker on `sondage discord` (756 imp @ pos 8.5).
->    See the previous resume note below for the full framing. It is a schema/routing call, so
->    it wants a deliberate answer rather than a shape chosen mid-task.
-> 3. **ES/IT/PT-BR routes** — six new pages, zero translation spend, still valid and still
->    cheap. Detail in the previous resume note.
-> 4. **German changelog** (last page for FR parity; needs `legacy-releases.ts` widened off its
->    bilingual `titleFr`/`summaryFr` schema plus a new `changelog-blog-de.ts`).
-> 5. **The last unruled draft post**, `scheduling-recurring-surveys-community-pulse`. Note the
->    pattern in the three rulings that came before it: none was "deindex it."
+> **▶ NEXT MOVES — start here. The launch no longer sets the agenda.**
+>
+> Nothing below is blocked by anything else, so the order is by value, not by dependency.
+> **Items 1 and 2 want the user before code.**
+>
+> 1. **⚠️ YOURS, NOT THE REPO'S — the S4 sends.** The Discord `@Updates` message, the five-post
+>    X thread and the top.gg news post are written and waiting in
+>    **[scale-family-launch-channels.md](scale-family-launch-channels.md)**. Send in the
+>    canonical order (Support Server → X → top.gg), then do the **top.gg listing soft refresh**
+>    (a separate thing from the news post: a manual edit, because the listing carries curated
+>    screenshots). **Re-confirm the tier line before pasting** (below). Log outcomes in the kit.
+> 2. **▶ DECISION WANTED, and it is the biggest thing on the board: FR blog infrastructure.**
+>    `sondage discord` is **756 imp @ pos 8.5**, a top-5 non-branded term, and French how-to
+>    content has **nowhere to live**: the blog collection has no locale field and
+>    `src/pages/blog/` has no FR route, so every FR page's outbound content link currently
+>    points at an English post marked "(en anglais)". The call is a schema/routing one, not a
+>    copy one: locale field vs. separate entries, hreflang on posts, and how RSS and the
+>    sitemap treat translations. **It wants a deliberate answer rather than a shape chosen
+>    mid-task**, which is why it has sat open since 2026-08-11. Once it lands, **a French
+>    ranking or Likert post is the obvious first FR post** (open question 2 in the launch
+>    section).
+> 3. **ES/IT/PT-BR routes — six new pages, zero translation spend.** `surveyConvos` and `about`
+>    are fully translated with no missing keys in `es.json`, `it.json` and `pt-br.json` and
+>    rendered by no page at all; the route `.astro` files were never created. Takes those three
+>    locales from 2 → 4 pages each. **Not a copy-paste job:** all three carry **pre-retune**
+>    copy (ES "Encuestas que se sienten como conversaciones", IT "Sondaggi che sembrano
+>    conversazioni", PT-BR "Pesquisas que parecem conversas", none of them saying
+>    *formulario* / *modulo* / *formulário*), so it is create-the-route then tune title,
+>    description and H1 for form intent in that language. **hreflang must be reciprocal**
+>    across every existing copy of both pages (~10 files), the part DE got right. The BR/ES
+>    revenue gate does **not** bind here: that gate was about spending on translation, this
+>    slice spends none, and it is the cheapest way to *get* the verification the gate wants.
+> 4. **German changelog** — the last page for FR parity. Needs `legacy-releases.ts` widened off
+>    its bilingual `titleFr`/`summaryFr` schema plus a new `changelog-blog-de.ts`. Note the
+>    live trap that FR already hit: **a slug missing from the locale's changelog map falls back
+>    to the English title and description**, so the page silently mixes languages.
+> 5. **The last unruled draft post**, `scheduling-recurring-surveys-community-pulse`. It is the
+>    only one of the four crawlable drafts never read. Note the pattern in the three rulings
+>    before it: content blocks published, community types rebuilt as a hub, skip logic merged
+>    away. **None was "deindex it."**
+>
+> **Two follow-ons the launch generated, now free-standing:** the **per-audience spokes** off
+> the community-types hub (game studios first, the ICP the original draft missed), and the
+> **`/templates` question-type filter UI** (open question 3 in the launch section: the
+> instrument vocabulary is already in the data as `features` values, only the filter is
+> missing, so it is cheap now).
+>
+> **Standing context that has not changed:** content ROI is still **migration-gated to ~Q4**
+> (branded recovered, non-branded lagging), so an early "the new posts aren't ranking" is
+> migration lag and not the content. The AI crawlers were unblocked 2026-08-04 and recrawl runs
+> weeks-to-months, so **P2's "LLM citations for best Discord survey bot" metric is testable
+> now** and worth checking cold.
 >
 > Two follow-ons the launch generated that are now free-standing: the **per-audience spokes**
 > off the community-types hub (game studios first), and **`/templates` question-type filter
