@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import { getCollection } from 'astro:content';
+import { getBlogPosts, postUrl } from '../utils/blog';
 import translations from '../content/translations/en.json';
 import { legacyReleases } from '../data/legacy-releases';
 
@@ -15,13 +15,16 @@ type Entry = { date: Date; title: string; summary: string; href: string | null }
 // Website-era releases: derived from the blog collection. Every published post
 // tagged "announcement" is a release entry — the launch post is the single
 // source of truth, so there is no separate list to keep in sync.
-const derived: Entry[] = (await getCollection('blog'))
-	.filter((post) => !post.data.draft && (post.data.tags ?? []).includes('announcement'))
+//
+// English posts only (getBlogPosts filters by locale). A release announced in
+// two languages is ONE release; deriving from every locale would list it twice.
+const derived: Entry[] = (await getBlogPosts('en'))
+	.filter((post) => (post.data.tags ?? []).includes('announcement'))
 	.map((post) => ({
 		date: post.data.pubDate,
 		title: post.data.title,
 		summary: post.data.description,
-		href: `/blog/${post.id}/`,
+		href: postUrl(post),
 	}));
 
 // Pre-website history: a frozen archive of milestones announced only in the

@@ -26,6 +26,35 @@ const blog = defineCollection({
   author: z.string(), // <-- Add this line
   tags: z.array(z.string()).optional(), // <-- Add this line for tags
   draft: z.boolean().optional(), // <-- Add this line for draft status
+
+  // Language of the post. One collection holds every locale; the
+  // locale-specific routes filter on this. Defaulting to "en" is deliberate:
+  // the existing English corpus needs no frontmatter edits, and a new English
+  // post keeps working if the author forgets the field.
+  //
+  // Non-English posts live in `src/content/blog/{locale}/` (the glob already
+  // recurses) and are served from `/{locale}/blog/<slug>/`, matching every
+  // other localized route on the site. Their slug is written in that language,
+  // because the point is ranking for e.g. `sondage discord`, not for a
+  // transliterated English slug.
+  //
+  // EVERY consumer of getCollection('blog') must filter on this, or a French
+  // post leaks into the English listing, the English RSS feed and both
+  // changelog pages. Consumers: src/pages/blog/index.astro,
+  // src/pages/blog/[...slug].astro, src/pages/rss.xml.js,
+  // src/pages/changelog.astro, src/pages/fr/changelog.astro, plus the /fr
+  // equivalents of the first three.
+  locale: z.enum(["en", "fr"]).default("en"),
+
+  // The `id` of the counterpart post in another language, when this post is a
+  // translation of one. Stored in one direction only; the reverse is
+  // derivable, and storing both invites the two halves to disagree.
+  //
+  // Drives hreflang: BlogPost emits alternates ONLY for a linked pair. A post
+  // with no counterpart gets none, which is correct — hreflang must be
+  // reciprocal, and locale-original posts (French-first content with no
+  // English twin) are expected to be the common case here, not the exception.
+  translationOf: z.string().optional(),
   }),
 });
 

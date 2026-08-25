@@ -2,21 +2,35 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 import { render } from 'astro:content';
+import { getBlogPosts, postSlug, postAlternates } from '../../utils/blog';
 
+// English posts only. The blog collection is shared across languages, so
+// without the locale filter a French post would also be built at /blog/<slug>/,
+// i.e. at an English URL. The /fr twin of this file serves the French ones.
+//
+// Drafts are deliberately still mapped here: `draft: true` currently hides a
+// post from the listing but keeps its public URL live, which is a standing
+// open decision about four indexed URLs, not something to settle in passing.
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+	return posts
+		.filter((post) => post.data.locale === 'en')
+		.map((post) => ({
+			params: { slug: postSlug(post) },
+			props: post,
+		}));
 }
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+// "Read more" stays inside one language; hreflang needs both, so it reads the
+// full collection rather than the filtered list.
+const localePosts = await getBlogPosts('en', { includeDrafts: true });
 const allPosts = await getCollection('blog');
+const alternates = postAlternates(post, allPosts, Astro.site);
 ---
 
-<BlogPost {...post.data} posts={allPosts}>
+<BlogPost {...post.data} posts={localePosts} alternates={alternates}>
 	<Content />
 </BlogPost>

@@ -4,7 +4,14 @@
 
 Blog posts live in `src/content/blog/`. The collection is defined in `src/content.config.ts`.
 
-**Frontmatter schema:** `title`, `description`, `pubDate`, `author` (required); `updatedDate`, `heroImage`, `heroHeadline`, `tags`, `draft`, `faq` (optional).
+**Frontmatter schema:** `title`, `description`, `pubDate`, `author` (required); `updatedDate`, `heroImage`, `heroHeadline`, `tags`, `draft`, `faq`, `locale`, `translationOf` (optional).
+
+**The collection holds every language** (since 2026-08-25). `locale` defaults to `"en"`;
+non-English posts live in `src/content/blog/{locale}/` and are served from
+`/{locale}/blog/<slug>/`. **Never call `getCollection('blog')` directly from a page** —
+use `getBlogPosts(locale)` / `postUrl()` from `src/utils/blog.ts`, or French posts end up
+in the English listing, feed and changelog. Full rules in
+**[i18n.md](i18n.md#blog--one-collection-many-languages)**.
 
 `faq` is an array of `{q, a}`. When present, `BlogPost.astro` renders it as a visible
 FAQ section at the end of the post **and** emits `FAQPage` JSON-LD alongside the usual

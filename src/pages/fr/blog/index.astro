@@ -1,23 +1,19 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import FormattedDate from '../../components/FormattedDate.astro';
-import { getBlogPosts, postUrl } from '../../utils/blog';
+import BaseHead from '../../../components/BaseHead.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import FormattedDate from '../../../components/FormattedDate.astro';
+import { getBlogPosts, postUrl, DATE_LOCALE } from '../../../utils/blog';
 
-import translations from '../../content/translations/en.json';
+import translations from '../../../content/translations/fr.json';
 
-// English, published, newest first. The locale filter lives in getBlogPosts so
-// French posts can never surface in this listing.
-const PublishedPosts = await getBlogPosts('en');
+const PublishedPosts = await getBlogPosts('fr');
 
 const placeholders = [
 	'/images/blog/placeholders/blog-placeholder-2.jpg',
 	'/images/blog/placeholders/blog-placeholder-3.jpg',
 	'/images/blog/placeholders/blog-placeholder-4.jpg',
 	'/images/blog/placeholders/blog-placeholder-5.jpg',
-	// Add more as needed
 ];
 function getRandomPlaceholder() {
 	return placeholders[Math.floor(Math.random() * placeholders.length)];
@@ -25,25 +21,24 @@ function getRandomPlaceholder() {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} alternates={[
+		<BaseHead title={translations.siteTitle} description={translations.siteDescription} alternates={[
 			{lang: 'x-default', href: 'https://subo.gg/blog'},
 			{lang: 'en', href: 'https://subo.gg/blog'},
 			{lang: 'fr', href: 'https://subo.gg/fr/blog'},
 		]} />
-		<link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="https://subo.gg/rss.xml" />
+		<link rel="alternate" type="application/rss+xml" title={translations.siteTitle} href="https://subo.gg/fr/rss.xml" />
 		<style>
 			body {
 				background: linear-gradient(var(--dark), var(--secondary-dark), var(--primary-dark));
 				padding: 10rem 0 0 0;
 			}
-			
+
 			main {
 				max-width: 960px;
 				margin: 0 auto;
 				padding: 0 0 10rem 0;
-				
 			}
 			ul {
 				display: flex;
@@ -101,7 +96,6 @@ function getRandomPlaceholder() {
 				ul li {
 					width: 95%;
 					text-align: center;
-					
 				}
 				ul li .title {
 					font-size: 1.1em;
@@ -138,7 +132,7 @@ function getRandomPlaceholder() {
 									/>
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
+										<FormattedDate date={post.data.pubDate} locale={DATE_LOCALE.fr} />
 									</p>
 								</a>
 							</li>

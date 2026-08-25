@@ -718,6 +718,13 @@
   "empty": "No releases published yet. Check back soon."
 },
 
+"blogPost": {
+  "by": "By",
+  "lastUpdatedOn": "Last updated on",
+  "readMoreTitle": "Read more",
+  "faqTitle": "Frequently asked questions"
+},
+
 "pricingPage": {
   "pageTitle": "Pricing & Plans for Discord Surveys & Polls | Subo",
   "pageDescription": "Compare Subo's free and paid plans for Discord surveys, polls, and quizzes — unlock more responses, AI summaries, XP rewards, and advanced analytics as your community grows.",

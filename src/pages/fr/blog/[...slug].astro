@@ -1,0 +1,30 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BlogPost from '../../../layouts/BlogPost.astro';
+import { render } from 'astro:content';
+import { getBlogPosts, postSlug, postAlternates } from '../../../utils/blog';
+
+// French posts, served from /fr/blog/<slug>/. The slug comes from the filename
+// under src/content/blog/fr/ and is written in French — the term we want to
+// rank for is `sondage discord`, not a translated English slug.
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts
+		.filter((post) => post.data.locale === 'fr')
+		.map((post) => ({
+			params: { slug: postSlug(post) },
+			props: post,
+		}));
+}
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { Content } = await render(post);
+const localePosts = await getBlogPosts('fr', { includeDrafts: true });
+const allPosts = await getCollection('blog');
+const alternates = postAlternates(post, allPosts, Astro.site);
+---
+
+<BlogPost {...post.data} posts={localePosts} alternates={alternates}>
+	<Content />
+</BlogPost>

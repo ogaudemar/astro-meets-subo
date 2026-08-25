@@ -306,7 +306,74 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE — the scale-family launch is CLOSED; the board is reopened
+> ### ▶ RESUME HERE — FR blog infrastructure is BUILT and the first French post is live
+>
+> **End of session 2026-08-25.** The decision that had sat open since 2026-08-11 is made and
+> shipped. `npm run check` green.
+>
+> **✅ DONE: the FR blog decision, ruled and implemented.** The shape, so nobody re-derives it:
+> **one collection, `locale` + `translationOf` frontmatter, locale-prefixed URLs.** Rejected
+> alternative: a separate `blogFr` collection, which forks the schema, the layout plumbing and
+> both changelog derivations, so every future collection-wide pass (the FAQ backfill, the
+> em-dash sweeps, the draft ruling) would have had two places to go. Full spec in
+> **[i18n.md](i18n.md#blog--one-collection-many-languages)**; the parts worth carrying forward:
+> - **`locale` defaults to `"en"`**, so all 30 existing posts needed zero frontmatter edits and
+>   their URLs did not move. Nothing about adding French touched an indexed English URL.
+> - **French slugs, not translated English ones.** `/fr/blog/comment-creer-un-sondage-sur-discord`.
+>   Ranking for `sondage discord` was the whole reason this decision existed.
+> - **⚠️ The one thing that will bite: every `getCollection('blog')` caller must filter by
+>   locale.** There were six, including **both** changelog pages, and an unfiltered read now
+>   puts French posts in the English listing, the English feed and the changelog. That filter
+>   lives in **`src/utils/blog.ts`** (`getBlogPosts` / `postUrl` / `postAlternates`) precisely so
+>   it can't be forgotten at one call site out of six. Use it; don't read the collection raw.
+> - **hreflang only for a linked pair.** A post with no counterpart emits none, on purpose:
+>   hreflang must be reciprocal, and French-first originals with no English twin are the
+>   expected common case, not the exception. Verified reciprocal in `dist/` in both directions.
+> - **One feed per language.** `/rss.xml` EN-only, `/fr/rss.xml` FR-only. **Caught in passing:
+>   the English feed had been syndicating drafts** (it read the collection unfiltered), so
+>   subscribers were getting posts `/blog` deliberately hid. Fixed; 30 items → 29.
+> - **Sitemap needs no change, and `@astrojs/sitemap`'s `i18n` option must stay OFF** — it
+>   assumes every URL exists in every locale, which is false here, and would emit hreflang
+>   pointing at 404s.
+>
+> **✅ DONE: the first French post**, `fr/comment-creer-un-sondage-sur-discord`, aimed straight
+> at `sondage discord` (756 imp @ pos 8.5). Written as a French-native adaptation of the EN poll
+> how-to rather than a flat translation, and paired to it via `translationOf`, so both pages
+> now reinforce each other through hreflang. 6 FAQ entries in French, no em dashes.
+> **`/fr/polls` links into it first**, above its English links, via a new guarded
+> `blogLinkLocal` key, so the one link a French reader can actually read is not third in the list.
+> FR nav and footer "Blog" now point at `/fr/blog` instead of the English listing.
+> **`/fr/changelog` also upgraded itself**: rows now prefer a real French translation (French
+> copy, French link) over `changelog-blog-fr.ts` (French copy, English link) over the English
+> post, so publishing a French translation improves its changelog row for free.
+>
+> **▶ Follow-ons this opened, none blocking:**
+> - **French screenshots.** The FR post reuses the English poll-tutorial images, which show
+>   English bot UI. The bot itself is localized, so these are re-shootable in French. **Yours,
+>   not the repo's.**
+> - **`LanguageSwitcher` 404s on blog posts.** It swaps the locale prefix and keeps the path,
+>   and blog slugs differ by language by design. Same path-preserving behavior that already
+>   404s on any page missing in a locale (`/de/polls` → `/it/polls`); the blog makes it certain
+>   rather than likely. Left alone deliberately: fixing it well means a locale-aware URL map,
+>   which is a site-wide change, not a blog one.
+> - **More FR posts.** The infrastructure is the expensive part and it is paid for. The next
+>   obvious ones are the FR twins of the pages `/fr/*` currently links to marked "(en anglais)":
+>   the native-polls comparison and the best-poll-bots roundup both sit in the same
+>   `sondage discord` cluster.
+> - **`docs/content.md` has stale product facts** noticed while editing it, and left alone as
+>   out of scope: it still says **5 question types** (there are 8 since the scale family) and
+>   still carries the **skip-logic tier claim that was ruled wrong and fixed sitewide on
+>   2026-08-12** ("advanced custom logic on VIP and Custom Bot only"). Its draft list is stale
+>   too. Worth a cleanup pass, since internal docs on this repo have a habit of becoming
+>   marketing copy.
+>
+> **Everything below this line is the previous resume note**, still accurate for items 1, 3, 4
+> and 5 of its *Next moves* list. **Item 2 (FR blog infrastructure) is now done** — the next
+> highest-value item on that list is **item 3, IT + PT-BR routes**, which has a written playbook.
+>
+> ---
+>
+> ### ▶ Previous resume note — the scale-family launch is CLOSED; the board is reopened
 >
 > **End of session 2026-08-24 (b). Working tree clean, `npm run check` green, both commits
 > pushed to `origin/main` (`7822f41`, `a281b08`). Nothing is half-finished, and for the first

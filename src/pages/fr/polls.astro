@@ -69,6 +69,14 @@ const t = translations.pollsPage;
 					{t.outro.body.map((para) => (
 						<p>{para}</p>
 					))}
+					{/* Same-language post first: the others still send a French reader
+					    to English content, so the one link they can actually read
+					    should not be third in the list. */}
+					{t.outro.blogLinkLocal && (
+						<p class="poll-blog-link">
+							<a href={t.outro.blogLinkLocal.href}>{t.outro.blogLinkLocal.text}</a>
+						</p>
+					)}
 					<p class="poll-blog-link">
 						<a href={t.outro.blogLink.href}>{t.outro.blogLink.text}</a>
 					</p>

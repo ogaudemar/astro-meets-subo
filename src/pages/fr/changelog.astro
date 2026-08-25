@@ -4,7 +4,7 @@ import Header from '../../components/Header.astro';
 import CTA from '../../components/CTA.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
-import { getCollection } from 'astro:content';
+import { getBlogPosts, postUrl } from '../../utils/blog';
 import translations from '../../content/translations/fr.json';
 import { legacyReleases } from '../../data/legacy-releases';
 import { blogFr } from '../../data/changelog-blog-fr';
@@ -13,19 +13,30 @@ const t = translations.changelog;
 
 type Entry = { date: Date; title: string; summary: string; href: string | null };
 
-// Website-era releases: derived from the blog collection. The posts stay
-// English and the row links to the English post, but the title + summary shown
-// here are translated via blogFr (keyed by slug), falling back to the post's
-// English copy if a translation is missing.
-const derived: Entry[] = (await getCollection('blog'))
-	.filter((post) => !post.data.draft && (post.data.tags ?? []).includes('announcement'))
+// Website-era releases, derived from the English announcement posts — one row
+// per release, whatever languages it was written in.
+//
+// Three sources for the row's copy and link, best first:
+//   1. A real French post (linked by `translationOf`): its own title and
+//      description, linked to the French URL. This is the only case where the
+//      reader lands on something they can actually read.
+//   2. `blogFr`, the hand-translated row labels: French copy, English link.
+//      The row reads in French but the post behind it does not.
+//   3. The English post, unchanged.
+// So publishing a French translation upgrades its changelog row for free, and
+// blogFr becomes a fallback for releases that never got one.
+const frPosts = await getBlogPosts('fr');
+
+const derived: Entry[] = (await getBlogPosts('en'))
+	.filter((post) => (post.data.tags ?? []).includes('announcement'))
 	.map((post) => {
+		const translated = frPosts.find((p) => p.data.translationOf === post.id);
 		const fr = blogFr[post.id];
 		return {
 			date: post.data.pubDate,
-			title: fr?.title ?? post.data.title,
-			summary: fr?.summary ?? post.data.description,
-			href: `/blog/${post.id}/`,
+			title: translated?.data.title ?? fr?.title ?? post.data.title,
+			summary: translated?.data.description ?? fr?.summary ?? post.data.description,
+			href: postUrl(translated ?? post),
 		};
 	});
 

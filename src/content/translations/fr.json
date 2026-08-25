@@ -30,7 +30,7 @@
       { "text": "Tutoriels", "href": "/tutorials" },
       { "text": "Serveur de support", "href": "/support" },
       { "text": "Portail de facturation", "href": "/portal" },
-      { "text": "Blog", "href": "/blog" }
+      { "text": "Blog", "href": "/fr/blog" }
     ],
     "cta": "Ajoute à Discord",
     "upgrade": "Upgrade",
@@ -69,7 +69,7 @@
           { "text": "À propos", "href": "/fr/about" },
           { "text": "Serveur de support", "href": "/support", "external": true },
           { "text": "Tutoriels", "href": "/tutorials" },
-          { "text": "Blog", "href": "/blog" },
+          { "text": "Blog", "href": "/fr/blog" },
           { "text": "Changelog", "href": "/fr/changelog" },
           { "text": "Portail Stripe", "href": "/portal", "external": true },
           { "text": "Boutique Discord", "href": "/discordstore", "external": true }
@@ -103,6 +103,13 @@
     "readMore": "Lire l'annonce",
     "legacyNote": "Annoncé sur le serveur de support",
     "empty": "Aucune version publiée pour le moment. Reviens bientôt."
+  },
+
+  "blogPost": {
+    "by": "Par",
+    "lastUpdatedOn": "Mis à jour le",
+    "readMoreTitle": "À lire aussi",
+    "faqTitle": "Questions fréquentes"
   },
 
   "hero": {
@@ -1093,6 +1100,10 @@
       "Avec Subo, chaque réponse est liée au membre qui l'a donnée (sauf si le mode anonyme est activé), donc tu peux faire le lien au fil du temps : voir comment les opinions évoluent, faire un suivi et comprendre les préférences individuelles, pas seulement le décompte global.",
       "Les sondages natifs de Discord ne peuvent pas faire ça."
     ],
+    "blogLinkLocal": {
+      "text": "Comment créer un sondage sur Discord, le guide complet →",
+      "href": "/fr/blog/comment-creer-un-sondage-sur-discord"
+    },
     "blogLink": {
       "text": "Voir tout le nouveau dans les sondages (en anglais) →",
       "href": "/blog/polls-grading-invite-customization"

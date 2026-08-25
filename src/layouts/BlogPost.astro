@@ -6,10 +6,25 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Lightbox from '../components/Lightbox.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+import { postUrl, DATE_LOCALE, HTML_LANG } from '../utils/blog';
+import en from '../content/translations/en.json';
+import fr from '../content/translations/fr.json';
 
-const { title, description, pubDate, updatedDate, heroImage, heroHeadline, tags, author, draft, faq, posts } = Astro.props;
-import translations from '../content/translations/en.json';
+type Props = CollectionEntry<'blog'>['data'] & {
+	posts: CollectionEntry<'blog'>[];
+	/** hreflang pairs, built by the route via postAlternates(). Empty for a post with no counterpart. */
+	alternates?: Array<{ lang: string; href: string }>;
+};
+
+const { title, description, pubDate, updatedDate, heroImage, heroHeadline, tags, author, draft, faq, posts, locale = 'en', alternates = [] } = Astro.props;
+
+// The layout is shared by every language, so its chrome comes from the post's
+// own locale file rather than being hardcoded English. `posts` is already
+// filtered to this locale by the route, so "Read more" never crosses languages.
+const translations = ({ en, fr } as const)[locale];
+const t = translations.blogPost;
+const htmlLang = HTML_LANG[locale];
+const dateLocale = DATE_LOCALE[locale];
 
 // BlogPosting schema (SEO/GEO) — one block covers every post rendered through
 // this layout, giving article rich-result eligibility and better LLM citation.
@@ -27,6 +42,7 @@ const blogPostingJsonLd = {
 	publisher: { '@id': 'https://subo.gg/#organization' },
 	mainEntityOfPage: canonical,
 	url: canonical,
+	inLanguage: htmlLang,
 	...(tags?.length ? { keywords: tags.join(', ') } : {}),
 };
 
@@ -50,9 +66,9 @@ const jsonLd = [
 ];
 ---
 
-<html lang="en">
+<html lang={htmlLang}>
 	<head>
-		<BaseHead title={title} description={description} image={heroImage} jsonLd={jsonLd} />
+		<BaseHead title={title} description={description} image={heroImage} jsonLd={jsonLd} alternates={alternates} />
 		<style>
 			main {
 				width: 100%; /*calc(100% - 2em)*/
@@ -255,15 +271,15 @@ const jsonLd = [
 						<h1 class="blog-title">{title}</h1>
 						{author && (
 							<div class="author">
-								By <span class="author-name">{author}</span>
+								{t.by} <span class="author-name">{author}</span>
 							</div>
 						)}
 						<div class="date">
-							<FormattedDate date={pubDate} />
+							<FormattedDate date={pubDate} locale={dateLocale} />
 							{
 								updatedDate && (
 									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
+										{t.lastUpdatedOn} <FormattedDate date={updatedDate} locale={dateLocale} />
 									</div>
 								)
 							}
@@ -273,7 +289,7 @@ const jsonLd = [
 					<slot />
 					{faq && faq.length > 0 && (
 						<section class="post-faq">
-							<h2>Frequently asked questions</h2>
+							<h2>{t.faqTitle}</h2>
 							{faq.map((f) => (
 								<div class="post-faq-item">
 									<h3>{f.q}</h3>
@@ -285,21 +301,25 @@ const jsonLd = [
 				</div>
 			</article>
 			<!-- Read More Section -->
-			<section class="read-more-section">
-				{(() => {
-					// Use the posts prop passed from the page
-					const otherPosts = posts
-						.filter(post => post.data.title !== title && !post.data.draft);
-					// Sort by pubDate descending
-					otherPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-					const readMorePosts = otherPosts.slice(0, 3);
-					return (
+			{(() => {
+				// `posts` is already filtered to this post's language by the route,
+				// so "Read more" never sends a reader into another language.
+				const otherPosts = posts
+					.filter(post => post.data.title !== title && !post.data.draft);
+				// Sort by pubDate descending
+				otherPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+				const readMorePosts = otherPosts.slice(0, 3);
+				// A language with a single post has nothing to recommend; render
+				// nothing rather than a heading over an empty list.
+				if (readMorePosts.length === 0) return null;
+				return (
+					<section class="read-more-section">
 						<div class="read-more-container">
-							<h2 class="read-more-title">Read more</h2>
+							<h2 class="read-more-title">{t.readMoreTitle}</h2>
 							<ul class="read-more-list">
 								{readMorePosts.map(post => (
 									<li class="read-more-item">
-										<a href={`/blog/${post.id}/`}>
+										<a href={postUrl(post)}>
 											<span class="read-more-img">
 												{post.data.heroImage && <img src={post.data.heroImage} alt="" />}
 											</span>
@@ -309,9 +329,9 @@ const jsonLd = [
 								))}
 							</ul>
 						</div>
-					);
-				})()}
-			</section>
+					</section>
+				);
+			})()}
 			</main>
 					<Lightbox />
 					<Footer translations={translations.footer}/>
