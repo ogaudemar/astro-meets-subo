@@ -1,23 +1,23 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import CTA from '../components/CTA.astro';
-import Footer from '../components/Footer.astro';
-import translations from '../content/translations/en.json';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import translations from '../../content/translations/es.json';
 
 const t = translations.about;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<BaseHead title={t.pageTitle} description={t.pageDescription} alternates={[
-      {lang: 'x-default', href: 'https://subo.gg/about'},
-      {lang: 'en', href: 'https://subo.gg/about'},
-      {lang: 'fr', href: 'https://subo.gg/fr/about'},
-      {lang: 'es', href: 'https://subo.gg/es/about'},
-      {lang: 'de', href: 'https://subo.gg/de/about'},
-    ]} />
+			{lang: 'x-default', href: 'https://subo.gg/about'},
+			{lang: 'en', href: 'https://subo.gg/about'},
+			{lang: 'fr', href: 'https://subo.gg/fr/about'},
+			{lang: 'es', href: 'https://subo.gg/es/about'},
+			{lang: 'de', href: 'https://subo.gg/de/about'},
+		]} />
 	</head>
 	<body>
 		<Header translations={translations.header} />

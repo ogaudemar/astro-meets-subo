@@ -1,23 +1,23 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import CTA from '../components/CTA.astro';
-import Footer from '../components/Footer.astro';
-import translations from '../content/translations/en.json';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import translations from '../../content/translations/es.json';
 
 const t = translations.surveyConvos;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<BaseHead title={t.pageTitle} description={t.pageDescription} alternates={[
-      {lang: 'x-default', href: 'https://subo.gg/survey-convos'},
-      {lang: 'en', href: 'https://subo.gg/survey-convos'},
-      {lang: 'fr', href: 'https://subo.gg/fr/survey-convos'},
-      {lang: 'es', href: 'https://subo.gg/es/survey-convos'},
-      {lang: 'de', href: 'https://subo.gg/de/survey-convos'},
-    ]} />
+			{lang: 'x-default', href: 'https://subo.gg/survey-convos'},
+			{lang: 'en', href: 'https://subo.gg/survey-convos'},
+			{lang: 'fr', href: 'https://subo.gg/fr/survey-convos'},
+			{lang: 'es', href: 'https://subo.gg/es/survey-convos'},
+			{lang: 'de', href: 'https://subo.gg/de/survey-convos'},
+		]} />
 	</head>
 	<body>
 		<Header translations={translations.header} />

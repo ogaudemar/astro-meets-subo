@@ -399,17 +399,17 @@ groundwork converts into citations and organic traffic. One page per intent.
 >    mid-task**, which is why it has sat open since 2026-08-11. Once it lands, **a French
 >    ranking or Likert post is the obvious first FR post** (open question 2 in the launch
 >    section).
-> 3. **ES/IT/PT-BR routes — six new pages, zero translation spend.** `surveyConvos` and `about`
->    are fully translated with no missing keys in `es.json`, `it.json` and `pt-br.json` and
->    rendered by no page at all; the route `.astro` files were never created. Takes those three
->    locales from 2 → 4 pages each. **Not a copy-paste job:** all three carry **pre-retune**
->    copy (ES "Encuestas que se sienten como conversaciones", IT "Sondaggi che sembrano
->    conversazioni", PT-BR "Pesquisas que parecem conversas", none of them saying
->    *formulario* / *modulo* / *formulário*), so it is create-the-route then tune title,
->    description and H1 for form intent in that language. **hreflang must be reciprocal**
->    across every existing copy of both pages (~10 files), the part DE got right. The BR/ES
->    revenue gate does **not** bind here: that gate was about spending on translation, this
->    slice spends none, and it is the cheapest way to *get* the verification the gate wants.
+> 3. **~~ES/IT/PT-BR routes~~ — ✅ ES IS DONE (2026-08-24 c), IT and PT-BR remain.** Spanish
+>    went **2 → 10 pages**, full parity with German, in one pass: six new blocks in `es.json`,
+>    eight routes, hreflang reciprocal across all 32 files, the `/survey-convos` form-intent
+>    retune, and 17 em dashes cleared. Full log in the language backlog. **IT and PT-BR are
+>    still at 2 pages each** and their cheap half is unchanged: `surveyConvos` and `about` are
+>    fully translated in `it.json` and `pt-br.json` and rendered by no page at all. Both carry
+>    **pre-retune** copy (IT "Sondaggi che sembrano conversazioni", PT-BR "Pesquisas que
+>    parecem conversas", neither saying *modulo* / *formulário*), so it is create-the-route
+>    then tune title, description and H1 for form intent. Both also still carry their em
+>    dashes (IT 18, PT-BR 20). **The ES pass is now the template for both** — read that
+>    backlog entry before starting rather than re-deriving the shape.
 > 4. **German changelog** — the last page for FR parity. Needs `legacy-releases.ts` widened off
 >    its bilingual `titleFr`/`summaryFr` schema plus a new `changelog-blog-de.ts`. Note the
 >    live trap that FR already hit: **a slug missing from the locale's changelog map falls back
@@ -1803,6 +1803,9 @@ in line with production.
          so their `surveyConvos` and `about` blocks are correct-but-unrendered. That is
          the same unspent Tier 1 trick the ES/IT/PT-BR routes item describes, and these
          edits mean those routes now ship accurate when someone creates them.
+         **✅ Paid off for ES on 2026-08-24:** the routes were created and this fix shipped
+         with them, so `/es/survey-convos` was accurate on its first build. Still unspent
+         for IT and PT-BR.
       **✅ Names VERIFIED against the product catalog, 2026-08-14** (user supplied the
       path). Source: `Subo shared/Messages Translations/new-path/user_messages_all_2026-08-12.xlsx`,
       sheet `User Messages`, keys `Web_BlockType_*` and `QuestionType_enum_label_*`. **Keep
@@ -2318,6 +2321,9 @@ to justify — especially since the highest-ROI channels for a Discord bot
       **`surveyConvos` and `about` are fully translated in all four and rendered by no
       page at all**, because the route `.astro` file was never created. A homepage-and-price-
       list locale cannot rank for a single commercial term.
+      *(Superseded in part: **DE reached 10 pages 2026-08-12** and **ES reached 10 pages
+      2026-08-24**. As of 2026-08-24 the count is EN 16 / FR 11 / DE 10 / ES 10 / IT 2 /
+      PT-BR 2.)*
 
       **Dataset 1 — GA4 country, 90 days.** Brazil #4, Germany #6, France #8, Canada #9,
       Spain #10, Japan #11, Poland #12, Korea #13, Italy #14, NL #16, Mexico #18. So Brazil
@@ -2420,3 +2426,47 @@ to justify — especially since the highest-ROI channels for a Discord bot
             is that the LLM pass **is** the pass, so German copy gets written deliberately
             rather than translated flat, and a native read remains the highest-value cheap
             audit if one ever becomes available.
+
+- [x] **Spanish to parity with German — DONE 2026-08-24.** ES went **2 → 10 pages**, the
+      same set German holds, in one pass rather than the two tiers German took. `es.json` is
+      now **key-complete against `en.json`** (verified programmatically; only `changelog`
+      is absent, and German lacks it too).
+      - **Six blocks written into `es.json`:** `featuresPage`, `pollsPage`,
+        `customSurveyBot`, and the three `useCases*`. Plus `developerApi.ctaGuide`, a single
+        key ES had been missing since `/api` shipped.
+      - **Eight routes** cloned from the German ones (identical markup, verified by diffing
+        each generated file against its DE source modulo the locale swap):
+        `es/{about,survey-convos,features,polls,custom-survey-bot}` and
+        `es/use-cases/{research,engagement,get-things-done}`.
+      - **hreflang reciprocal across all 32 page files** (EN/FR/DE/ES × 8 pages), inserted
+        after the `fr` line to hold the site's existing `x-default, en, fr, es, de, it`
+        order. Audited in `dist/`, not just in source. All 10 ES URLs in the sitemap; no
+        broken internal link on any ES page.
+      - **Written, not translated flat**, per the German precedent. `/polls` leads on *bot
+        de sondeos para Discord*; `/features` on *funcionalidades*; `/use-cases/get-things-
+        done` on *candidaturas, inscripciones y peticiones*. Question-type nouns taken from
+        the product catalog names already in `es.json` (**Valoración / Escala de opinión /
+        NPS / Clasificación**), not re-guessed. Cross-links to English-only posts marked
+        *(en inglés)*, matching the FR/DE convention.
+      - **`/survey-convos` pre-retune copy FIXED**, the same gap FR and DE each had. Title
+        and H1 never said *formulario*; they now lead on **"App de encuestas y formularios
+        para Discord"** / **"El formulario de Discord que se siente como una conversación"**,
+        with the Google Forms line and the `/blog/how-to-make-a-discord-form` link the EN
+        page carries. Also added the scale-family benefit line (ratings answered with a tap,
+        reported as numbers) that the S1.5 pass put in EN and ES never received.
+      - **Example chips are `{text, template}` objects, not the flat strings German
+        originally shipped.** That flattening was reverted for FR/DE on 2026-08-24; ES was
+        built against the current shape, so its three use-case pages carry **27 template
+        links** (11/9/7), matching FR and DE exactly.
+      - **Internal links repointed to `/es/*`** in `header`, `footer`, the homepage
+        `features` tiles and `usecasesCategories` — all of which were still sending Spanish
+        readers to English pages.
+      - **17 em dashes cleared from `es.json`**, rewritten rather than stripped. FR was
+        already at zero and DE at three (all inherited from EN); ES had the worst count of
+        the six locales. **IT (18) and PT-BR (20) still carry theirs** — worth a pass when
+        those locales get their routes.
+      - **On the BR/ES revenue gate:** it did not bind, for the reason the routes item
+        already recorded. The gate was about spending on translation before verifying the
+        market; Spain's Stripe $0 is currently **unfalsifiable** because ES had no localized
+        commercial page to convert on. This slice is the cheapest way to *get* that
+        verification. Watch `/es/*` in the P0 funnel breakdown before spending further.
