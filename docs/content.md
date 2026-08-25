@@ -91,9 +91,13 @@ that way in copy; the release brief is explicit about it.
 
 ⚠️ **Command names are localized and DB-backed.** They resolve through
 `user_messages` first and `surveyLib/model/defaultMessages.py` only as a fallback, so the
-Python constant is not proof of the live name. `Wizard_comamnd_name` is still `"wizard"`
-in the code fallback while published copy consistently says `/draft`. Check the DB, or a
-live server, before changing a command name in copy.
+Python constant is not proof of the live name. Check the DB, or a live server, before
+changing a command name in copy.
+
+**Worked example: `/draft`.** `Wizard_comamnd_name = "wizard"` in `defaultMessages.py`.
+The live command has been **`/draft` since launch** (user, confirmed 2026-08-25), so the
+code constant is simply stale and the DB has always overridden it. Copy saying `/draft` is
+correct. Anyone re-deriving command names from the Python source will get this one wrong.
 
 ### Survey Invite Flow
 Subo **posts an invite message in a Discord channel** — it does not DM members directly. Members click the invite and respond privately (in Discord or on the web).
