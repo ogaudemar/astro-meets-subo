@@ -28,6 +28,8 @@ Un sondage, c'est le moyen le plus rapide de faire trancher ta communauté sans 
 - **Le sondage natif de Discord** : gratuit, instantané, suffisant pour un vote rapide.
 - **Un bot de sondage comme [Subo](/invite)** : quand tu as besoin de plus (images, plus de 10 options, vote anonyme, rôles requis, récompenses, notation pour un quiz ou un concours de prédiction, planification, ou des résultats exportables).
 
+Tu hésites simplement entre Subo et les sondages intégrés de Discord ? On les compare point par point dans [sondages natifs Discord vs Subo](/fr/blog/sondages-natifs-discord-vs-subo). Cet article-ci est le mode d'emploi.
+
 > **Rapide ou élaboré ?** Pour un vote ponctuel, la commande `/poll` ci-dessous prend quelques secondes, sans quitter Discord. Pour tout ce qui est plus construit (sondages conversationnels à plusieurs questions, quiz notés, logique de saut, récompenses conditionnelles), l'[app web Subo](https://app.subo.gg) est la bonne porte d'entrée. Commence simple dans Discord, puis passe à l'app web quand tes projets grossissent.
 
 ## Option 1 : le sondage natif de Discord

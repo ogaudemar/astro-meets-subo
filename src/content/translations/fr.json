@@ -1109,8 +1109,8 @@
       "href": "/blog/polls-grading-invite-customization"
     },
     "blogLink2": {
-      "text": "Comparer Subo et les sondages natifs de Discord (en anglais) →",
-      "href": "/blog/discord-native-polls-vs-subo-the-survey-bot-comparison"
+      "text": "Comparer Subo et les sondages natifs de Discord →",
+      "href": "/fr/blog/sondages-natifs-discord-vs-subo"
     },
     "blogLink3": {
       "text": "Voir ce que valent les meilleurs bots de sondage Discord (en anglais) →",
@@ -1228,7 +1228,7 @@
       },
       "blogLink": {
         "text": "Subo vs. sondages natifs Discord →",
-        "href": "/blog/discord-native-polls-vs-subo-the-survey-bot-comparison"
+        "href": "/fr/blog/sondages-natifs-discord-vs-subo"
       }
     }
   ]
