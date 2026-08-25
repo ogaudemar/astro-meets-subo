@@ -353,9 +353,12 @@ groundwork converts into citations and organic traffic. One page per intent.
 > - **The post concedes where a grid wins** (replicating an established battery item-for-item).
 >   `blog-writing` bans manufactured both-sides, not an honest limit, and a survey-literate
 >   reader trusts the straightlining argument more for it.
-> - **⚠️ Screenshot gap found: there is no respondent-POV shot of an opinion scale as a button
->   row** anywhere in the eighteen. All three of Spoke 2's images are shared with Post 1
->   because of it. Add to the brief's gap list before any refresh of this content.
+> - **A screenshot gap was found and closed in the same session.** The eighteen-shot set had
+>   no respondent-POV opinion scale as a button row, so the first draft's three images were
+>   all shared with Post 1. The user shot **`agreement-scale-respondent-pov-discord.png`**
+>   (shot 19), which shows **two agreement statements in a row with the same preset**, and it
+>   is now the hero: the grid argument as an image. Post rearranged so the results card sits
+>   inline reporting the exact statement the hero asks.
 >
 > **✅ DONE earlier the same day: S1.6 in EN, FR and DE, which closes Phase S1**, plus a
 > follow-on the pass surfaced. Both are logged in full on the S1.6 item; the two things worth
@@ -2086,15 +2089,23 @@ on Post 1 existing.
       score built from three or four items as the real replacement for a grid's battery. All
       three come from `recipes/pre-post-assessment` (rewritten in S1.4), which the post links
       as "the closest thing to a grid this site publishes."
-      **Screenshots: all three are shared with Post 1**, and that is a real constraint rather
-      than laziness. The set has **no respondent-POV shot of an opinion scale as a button
-      row** at all: the only respondent-side scale images are the NPS keycaps and the closed
-      dropdown riding along in `ranking-emoji-respondent-pov-discord.png`. Worth adding to the
-      brief's gap list if any of this content is refreshed.
-      **Hero is `Analytics-opinion-scale-agreement-5.png`** (1200x359, the widest scale card),
-      which is inline in Post 1 but does not collide on `/blog`, where Post 1's card is the
-      mascot illustration and Spoke 1's is the Discord ranking shot. A bespoke mascot hero is
-      the obvious upgrade if this post performs; it did not seem worth a render to ship.
+      **✅ THE SCREENSHOT GAP WAS CLOSED THE SAME DAY.** The first draft shipped with all
+      three images shared with Post 1, because the eighteen-shot set had **no respondent-POV
+      opinion scale as a button row** anywhere: the only respondent-side scale images were the
+      NPS keycaps and the closed dropdown riding along in
+      `ranking-emoji-respondent-pov-discord.png`. The user shot it (**shot 19**,
+      `agreement-scale-respondent-pov-discord.png`, 1026x343), and it is better than the gap
+      note asked for: it holds **two consecutive agreement statements with the same preset on
+      each**, which is the post's grid argument rendered rather than argued. Add it to the
+      brief's set if that document is ever revised.
+      **Hero swapped to it, and the post rearranged around it.** It is now the shot no
+      competitor can produce (the same logic that gave Spoke 1 its hero), the `/blog` card is
+      distinct from both siblings, and the grid section points up at it ("a grid with the
+      table taken away"). `Analytics-opinion-scale-agreement-5.png` moved inline into
+      *Reading agreement as a number*, where it lands better anyway: **it reports the exact
+      statement the hero asks**, so the section reads asked-then-reported instead of referring
+      back to a card at the top of the page. A bespoke mascot hero is no longer worth
+      considering here; the real screenshot beats it for this post.
       **Reciprocal link added** from Post 1's Opinion Scale section. Post 1's grid FAQ was
       left self-contained on purpose: FAQ answers are what get quoted, so they should not
       depend on a click.

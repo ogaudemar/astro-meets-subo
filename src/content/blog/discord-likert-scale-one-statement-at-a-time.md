@@ -3,7 +3,7 @@ title: "Likert Scales in Discord: Ask a Grid One Statement at a Time"
 description: "Agreement, satisfaction and frequency scales run inside Discord as a row of buttons or a dropdown, one statement at a time. What that replaces a matrix question with, and why the answers are usually better."
 pubDate: "Aug 24 2026"
 author: "Subo Team"
-heroImage: "/images/blog/scale-family/Analytics-opinion-scale-agreement-5.png"
+heroImage: "/images/blog/scale-family/agreement-scale-respondent-pov-discord.png"
 tags: ["feature", "survey design", "Likert", "opinion scale", "research", "product"]
 faq:
   - q: "What is a Likert scale?"
@@ -61,7 +61,9 @@ Labeling every point already names the ends, so the builder hides the anchor fie
 
 A grid is a layout, not a question. Every row of one is a single agreement or likelihood question that happens to have been drawn next to its neighbors. Ten statements about your onboarding, or a list of upcoming games against one shared how-likely-are-you-to-buy scale, are ten questions and a list of ten questions.
 
-So build them as ten Opinion Scale blocks with the same preset clicked on each. In the Script Editor that is a block, a statement, one preset click, and repeat. It takes about as long as filling in the rows of a grid, and you get two things a grid cannot give you.
+So build them as ten Opinion Scale blocks with the same preset clicked on each. In the Script Editor that is a block, a statement, one preset click, and repeat. It takes about as long as filling in the rows of a grid.
+
+The image at the top of this post is what two of those rows look like once they are questions: two statements about the same holiday destination, arriving one after another in a Discord channel, each with the same five agreement buttons under it. That is a grid with the table taken away, and it is the whole idea. You get two things out of it that a grid cannot give you.
 
 **Each statement gets its own report.** A grid reports as a wall of stacked bars that nobody reads across. Ten Opinion Scale blocks report as ten cards, each with its own average and distribution, and the one that came back at 2.9 is visible at a glance instead of being one row among ten.
 
@@ -89,7 +91,11 @@ Nothing about the data changes. It is a choice about the widget.
 
 Because the answer is stored as an integer, an agreement item comes back as a score with a distribution behind it rather than a set of five counts.
 
-The image at the top of this post is one of those cards: a statement, an average of 4.6, a median, and a histogram whose axis runs from "Strongly disagree" to "Strongly agree" with the preset's own glyphs on it. That is the built-in report, and it follows the rule the whole scale family follows.
+This is the first statement from the top of this post, reported:
+
+![An agreement scale results card for the statement Tahiti is the ultimate honeymoon and luxury vacation spot, showing an average of 4.6, Median 5.0, 10 responses, and a histogram whose axis runs from an angry face Strongly disagree to raised hands Strongly agree](/images/blog/scale-family/Analytics-opinion-scale-agreement-5.png)
+
+An average, a median, and a histogram whose axis carries the preset's own words and glyphs rather than a bare 1 to 5. That is the built-in report, and it follows the rule the whole scale family follows.
 
 - **Built-in reports are read by a person**, so they show the readable form: the word and the glyph, next to the number.
 - **Downloads are read by a tool**, so xlsx and CSV carry the bare number, always.
