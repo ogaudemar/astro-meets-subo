@@ -1832,11 +1832,13 @@ Three French vocabularies are live at once, and no artifact reconciles them:
 | Live Discord commands (user, 2026) | **/sondage** | **/enquete** | What users type |
 | Marketing site (`fr.json`, blog) | **sondage** | *drifting, see below* | What ranks |
 
-- **The skill's FR row is half-migrated.** The user's first translation was poll=*vote rapide*,
-  survey=*sondage*; the second was poll=*sondage*, survey=*enquête*. The table's **survey column
-  matches the current naming and its poll column still matches the abandoned one.** Consequence
-  worth checking: a French user may type `/sondage` and get a reply calling it a *vote*.
-  **Not verified — nobody has read the live French `user_messages` rows.** That audit is action A1.
+- **The skill's FR row looked half-migrated.** The user's first translation was poll=*vote
+  rapide*, survey=*sondage*; the second was poll=*sondage*, survey=*enquête*. The table's survey
+  column matches the current naming and its poll column matches the abandoned one.
+  **⚠️ RESOLVED BY A1, and not the way this predicted — see [A1
+  RESULT](#a1-result-the-live-poll-nouns-2026-08-26).** The skill is an *accurate* record of the
+  app; the split is inside the app itself, between the command (`sondage`) and the web UI
+  (`vote`). This was never documentation drift.
 - **`subo-localization` lives only in the app repo.** `subo-glossary` is deliberately vendored in
   both, and its site-repo copy points at `subo-localization` **four times** ("Per-language
   equivalents: see subo-localization"). From this repo that is a dangling pointer to the one
@@ -1930,7 +1932,7 @@ table. In six of nine locales, Discord's word for POLL is exactly Subo's word fo
 | Locale | Discord poll | Subo poll | Subo survey | |
 |---|---|---|---|---|
 | **PT-BR** | enquete | **enquete** | pesquisa | ✅ aligned |
-| **FR** | sondage | vote *(live: `/sondage`)* | enquête | ⚠️ table stale, live app correct |
+| **FR** | sondage | vote *(command is `/sondage`)* | enquête | ⚠️ app split, see A1 RESULT |
 | **NL** | peiling | poll *(English)* | enquête | ⚠️ untranslated, no collision |
 | **ES** | encuesta | votación | **encuesta** | ❌ inverted |
 | **DE** | Umfrage | Meinungsumfrage | **Umfrage** | ❌ inverted |
@@ -2025,6 +2027,66 @@ Consequence: the French *formulaire* and *quiz* doors are worth seeding **for en
 even at low traffic**, which is a stronger argument than the volume-based one this section
 carried on 2026-08-26 ("positioning word now, ranking bet later").
 
+### A1 RESULT — the live poll nouns (2026-08-26)
+
+Two `user_messages` rows, supplied by the user, in column order
+**EN, DE, ES, FR, IT, NL, PL, PT-BR, ?, RU, TR**:
+
+| Locale | Discord's poll word | `Poll_Command_name` (what users type) | `Web_InviteTab_Poll` (web UI) | T2b |
+|---|---|---|---|---|
+| EN | poll | poll | poll | ✅ |
+| **PT-BR** | enquete | **enquete** | **enquete** | ✅ |
+| FR | sondage | **sondage** ✅ | **vote** ❌ | ⚠️ **split** |
+| DE | Umfrage | meinung**u**mfrage | meinungsumfrage | ❌ |
+| ES | encuesta | votación | votación | ❌ |
+| IT | sondaggio | poll | poll | ❌ |
+| NL | peiling | opiniepeiling | poll | ❌ ⚠️ split |
+| PL | ankieta | głosowanie | głosowanie | ❌ |
+| RU | опрос | голосование | голосование | ❌ |
+| TR | anket | oylama | oylama | ❌ |
+
+**What this settles, changes, or corrects:**
+
+1. **⚠️ CORRECTION to what this section said on 2026-08-26.** It claimed the
+   `subo-localization` FR row was "stale" and the live app "correct". **Wrong.** The skill's
+   `FR poll = vote` matches `Web_InviteTab_Poll` **exactly**, and its NL, DE, ES, PL, PT-BR, RU,
+   TR and IT rows all match the live data too. **The skill is an accurate record of the app.**
+   The split is inside the app: the *command* was migrated to `sondage` and the *web UI* was
+   not. So this was never a documentation-drift problem, and A2 is not "fix a stale row".
+2. **`/sondage` is confirmed live**, so T2b's French half is done and the 2026-08-26 blog
+   instruction to type `/poll` is confirmed wrong (A4).
+3. **FR `Web_InviteTab_Poll` = *vote* is a one-cell fix and the highest value-per-effort item on
+   the board.** A French user types `/sondage` and the web app calls the result a *vote*.
+4. **Only PT-BR passes T2b on both surfaces**, reinforcing it as the model locale and as the
+   next locale after French.
+5. **Two live data defects found in passing:** DE `Poll_Command_name` is misspelled
+   **`meinungumfrage`** (missing the `s`; the web row has it) and both DE values are lowercase,
+   which is wrong for a German noun. NL disagrees with itself across the two rows
+   (`opiniepeiling` vs `poll`).
+6. **⚠️ An unidentified 11th column.** Ten languages ship, but these rows carry eleven values.
+   Column 9 is **empty** in `Poll_Command_name` and contains **`claude2-13-26`** in
+   `Web_InviteTab_Poll`, which looks like a translation-batch artifact rather than a word.
+   **If that column is a live locale, some users are seeing `claude2-13-26` as the word for
+   Poll.** Worth confirming what it is before the A2 migration touches these rows.
+
+**7. ⭐ THE FINDING THAT EXPLAINS WHY THIS HAS BEEN STUCK.** T2b cannot be applied one column at
+a time. In **six locales the Discord poll word is already Subo's survey word** (DE *Umfrage*,
+ES *encuesta*, IT *sondaggio*, PL *ankieta*, RU *опрос*, TR *anket*), so **moving poll onto
+Discord's word creates an in-product collision unless the survey word moves in the same edit.**
+The poll fix and the survey fix are one operation per locale, not two.
+
+That produces a clean split, because T9's evidence test resolves differently on each side:
+
+- **Poll side: evidence exists for all ten locales right now** (Discord's own localized UI).
+- **Survey side: evidence is per-locale and mostly missing.** FR has it (*questionnaire*, 314
+  imp) and PT-BR already holds *pesquisa*. DE, ES, IT, RU need a search export before their
+  survey word can move, and **PL/TR stay held under T9.**
+
+**So the actionable set today is exactly the locales with no collision:** **FR** (one cell:
+`Web_InviteTab_Poll` *vote* → *sondage*), **NL** (→ *peiling* on both rows, which also fixes its
+internal disagreement), and the **DE spelling/casing defect** regardless of whether the word
+moves. Everything else is paired work gated on a per-locale export.
+
 ### Implementation: a data file with a guard, NOT a document
 
 **The markdown skill already proved it drifts** — the FR poll row went stale across two naming
@@ -2062,15 +2124,31 @@ that works.
 Ordered by value. **A1 and A2 are the unblockers; nothing else should be written in a non-English
 locale until they land.**
 
-- [ ] **A1. Audit the live French `user_messages` rows** for poll/survey nouns and the two command
-      names. Settles whether prose says *vote* or *sondage*, and whether `/sondage` + `/enquete`
-      are actually live. **User's, and it gates A2.** Everything else here is inference until it runs.
+- [x] **A1. Audit the live `user_messages` poll rows — DONE (user, 2026-08-26).** Results and
+      what they change are in **[A1 RESULT](#a1-result-the-live-poll-nouns-2026-08-26)** below.
+      Headline: `/sondage` confirmed live, **the web UI still says *vote***, and only PT-BR
+      passes T2b.
 - [ ] **A2. Build `lexicon.json` + `check:lexicon`** per the Implementation section above, and
-      **vendor it into both repos** the way `subo-glossary` already is. Fill **EN and FR first**
-      (FR's poll row set by A1), point `subo-localization` at it instead of its inline table, and
-      fix that table's stale FR poll row. Kills the dangling pointer: **the site repo currently
-      cannot see the rules it is told to follow.** Start the guard with the two checks that bite
-      hardest, one-word-one-URL and Convo-not-in-H1.
+      **vendor it into both repos** the way `subo-glossary` already is. Fill **EN, FR and PT-BR
+      first** (the three locales A1 shows are settled or nearly so), then point
+      `subo-localization` at it instead of its inline table. Kills the dangling pointer: **the
+      site repo currently cannot see the rules it is told to follow.** Start the guard with the
+      two checks that bite hardest, one-word-one-URL and Convo-not-in-H1.
+      **Not "fix a stale row"** — A1 showed the skill matches the app; the lexicon's job is to
+      make Discord alignment checkable, which nothing does today.
+- [ ] **A2b. ⚠️ USER'S — the three `user_messages` fixes A1 unblocked, none of which need an
+      export.** (i) **FR `Web_InviteTab_Poll` *vote* → *sondage***, one cell, the best
+      value-per-effort item on the board and it ends a live contradiction with `/sondage`.
+      (ii) **NL → *peiling*** on both rows, which also fixes NL disagreeing with itself.
+      (iii) **DE spelling/casing**: `meinungumfrage` → the `s` is missing, and both DE values are
+      lowercase for a German noun. Fix (iii) even if the DE word does not move yet.
+      **Also confirm what column 9 is** and whether `claude2-13-26` is reaching users.
+- [ ] **A2c. The paired poll+survey migration, per locale, gated per locale.** Finding 7 in
+      A1 RESULT: in DE/ES/IT/PL/RU/TR the Discord poll word **is** Subo's current survey word, so
+      the two must move in **one** edit or the collision lands in-product. Poll-side evidence
+      exists everywhere (Discord's UI); **survey-side evidence is the gate**. Needs a per-locale
+      search export for DE, ES, IT, RU. **PL and TR stay held under T9.** Do not start any of
+      these before `lexicon.json` exists to record the pairs.
 - [ ] **A3. Export the live command names + descriptions somewhere greppable** from both repos, so
       blog and site copy stop quoting code placeholders. Small data file, same role as
       `api-surface.json`. Would have prevented both 2026-08-26 errors outright.
