@@ -1,4 +1,29 @@
 ---
+/**
+ * Language switcher.
+ *
+ * Renders REAL <a href> links, resolved at build time. It used to be a <select>
+ * whose only navigation was `window.location.pathname = …` in a click handler,
+ * which meant the localized tree had no crawlable inbound links at all: an audit
+ * on 2026-08-25 found that ZERO of 98 English pages linked to any /fr/ page, and
+ * Search Console reported "Referring page: None detected" for /fr/polls/ while
+ * that page sat in "Crawled - currently not indexed".
+ *
+ * Two rules this file now keeps:
+ *
+ * 1. Links are anchors, so Google can follow them and pass equity between
+ *    locales instead of treating each language as an island.
+ * 2. Hrefs carry the trailing slash, matching the canonical. Internal links
+ *    elsewhere on the site still omit it (119 URLs, ~7,900 instances) and
+ *    Google is not crediting those to the canonical URL. Don't add more.
+ *
+ * Targets are checked against the real route list rather than guessed. Astro's
+ * `import.meta.glob` enumerates the page files at build time, so a locale that
+ * genuinely lacks a page links to that locale's homepage instead of 404-ing,
+ * which is what the old handler did on every blog post (slugs differ per
+ * language by design).
+ */
+
 const { currentLang = "en", availableLangs = [
   { code: "en", label: "English" },
   { code: "fr", label: "Français" },
@@ -7,98 +32,101 @@ const { currentLang = "en", availableLangs = [
   { code: "pt-br", label: "Português" },
   { code: "it", label: "Italiano" }
 ] } = Astro.props;
+
+const LOCALES = ["fr", "es", "de", "pt-br", "it"];
+
+// Every static page route in the project, as a set of canonical paths.
+// Dynamic routes ([...slug], [redirect]) are skipped: their params are not
+// knowable here, and a blog post has no same-slug twin in another language
+// anyway, so those correctly fall through to the locale homepage.
+const routes = new Set(
+  Object.keys(import.meta.glob("/src/pages/**/*.astro"))
+    .map((file) =>
+      file
+        .replace("/src/pages", "")
+        .replace(/\.astro$/, "")
+        .replace(/\/index$/, "")
+    )
+    .filter((route) => !route.includes("["))
+    .map((route) => (route === "" ? "/" : `${route}/`))
+);
+
+/** Locale-stripped path: "/fr/use-cases/research/" -> "use-cases/research" */
+const segments = Astro.url.pathname.replace(/^\/+|\/+$/g, "").split("/").filter(Boolean);
+const basePath = LOCALES.includes(segments[0]) ? segments.slice(1).join("/") : segments.join("/");
+
+/** Canonical path for `basePath` in `lang`, with the trailing slash. */
+function pathFor(lang: string, path: string) {
+  const prefix = lang === "en" ? "" : `/${lang}`;
+  return path ? `${prefix}/${path}/` : `${prefix}/`;
+}
+
+const links = availableLangs.map((lang: { code: string; label: string }) => {
+  const wanted = pathFor(lang.code, basePath);
+  // Fall back to the locale homepage when this page has no counterpart there.
+  const href = routes.has(wanted) ? wanted : pathFor(lang.code, "");
+  return { ...lang, href, isFallback: href !== wanted };
+});
+
+const current = links.find((l) => l.code === currentLang) ?? links[0];
 ---
 
 <div class="language-switcher">
   <span class="language-switcher-label">🌐</span>
   <div class="custom-select" id="custom-lang-select">
-    <select id="lang-select">
-      {availableLangs.map(lang => (
-        <option value={lang.code} selected={lang.code === currentLang}>{lang.label}</option>
+    <button
+      type="button"
+      class="custom-select-selected"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >{current.label}</button>
+    <div class="custom-select-options">
+      {links.map((lang) => (
+        <a
+          class:list={["custom-select-option", { selected: lang.code === currentLang }]}
+          href={lang.href}
+          hreflang={lang.code}
+          data-lang={lang.code}
+        >{lang.label}</a>
       ))}
-    </select>
-    <div class="custom-select-selected"></div>
-    <div class="custom-select-options"></div>
+    </div>
   </div>
 </div>
 
 <script>
 (function() {
-  // Setup custom select
-  const select = document.getElementById('lang-select');
   const customSelect = document.getElementById('custom-lang-select');
-  const selectedDiv = customSelect.querySelector('.custom-select-selected');
-  const optionsDiv = customSelect.querySelector('.custom-select-options');
-  let preferredLang = localStorage.getItem('preferredLang') || select.value;
+  if (!customSelect) return;
+  const selected = customSelect.querySelector('.custom-select-selected') as HTMLButtonElement | null;
+  const optionsDiv = customSelect.querySelector('.custom-select-options') as HTMLElement | null;
+  if (!selected || !optionsDiv) return;
 
-  // Hide original select
-  select.style.display = 'none';
-
-  // Build custom options
-  function buildOptions() {
-    optionsDiv.innerHTML = '';
-    Array.from(select.options).forEach(option => {
-      const optDiv = document.createElement('div');
-      optDiv.className = 'custom-select-option';
-      optDiv.textContent = option.textContent;
-      optDiv.dataset.value = option.value;
-      if (option.value === preferredLang) optDiv.classList.add('selected');
-      optDiv.addEventListener('click', function(e) {
-        // Update original select
-        select.value = option.value;
-        localStorage.setItem('preferredLang', option.value);
-        updateSelected(option.value);
-        closeOptions();
-        // Redirect
-        let path = window.location.pathname;
-        let parts = path.replace(/^\/+/, '').split('/');
-        if (['en', 'fr', 'es', 'de', 'pt-br', 'it'].includes(parts[0])) parts.shift();
-        if (option.value === 'en') {
-          window.location.pathname = '/' + parts.join('/');
-        } else {
-          window.location.pathname = '/' + option.value + (parts.length ? '/' + parts.join('/') : '');
-        }
-      });
-      optionsDiv.appendChild(optDiv);
-    });
+  function close() {
+    optionsDiv!.style.display = 'none';
+    customSelect!.classList.remove('open');
+    selected!.setAttribute('aria-expanded', 'false');
+  }
+  function open() {
+    optionsDiv!.style.display = 'block';
+    customSelect!.classList.add('open');
+    selected!.setAttribute('aria-expanded', 'true');
   }
 
-  function updateSelected(value) {
-    const selectedOption = Array.from(select.options).find(opt => opt.value === value);
-    selectedDiv.textContent = selectedOption ? selectedOption.textContent : '';
-    Array.from(optionsDiv.children).forEach(optDiv => {
-      optDiv.classList.toggle('selected', optDiv.dataset.value === value);
-    });
-  }
-
-  function closeOptions() {
-    optionsDiv.style.display = 'none';
-    customSelect.classList.remove('open');
-  }
-
-  function openOptions() {
-    optionsDiv.style.display = 'block';
-    customSelect.classList.add('open');
-  }
-
-  selectedDiv.addEventListener('click', function(e) {
+  selected.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (optionsDiv.style.display === 'block') {
-      closeOptions();
-    } else {
-      openOptions();
-    }
+    customSelect.classList.contains('open') ? close() : open();
   });
+  document.addEventListener('click', close);
 
-  document.addEventListener('click', closeOptions);
-
-  // Initial setup
-  buildOptions();
-  updateSelected(preferredLang);
-
-  // Sync custom select if select changes (e.g. by script)
-  select.addEventListener('change', function(e) {
-    updateSelected(select.value);
+  // Remember the choice, then let the anchor navigate on its own. The
+  // preference is what BaseHead's redirect script reads on / and /pricing.
+  optionsDiv.querySelectorAll<HTMLAnchorElement>('.custom-select-option').forEach((option) => {
+    option.addEventListener('click', () => {
+      const lang = option.dataset.lang;
+      if (lang) {
+        try { localStorage.setItem('preferredLang', lang); } catch (err) { /* private mode */ }
+      }
+    });
   });
 })();
 </script>
@@ -109,9 +137,6 @@ const { currentLang = "en", availableLangs = [
   display: inline-block;
   min-width: 120px;
   font-family: inherit;
-}
-#lang-select {
-  display: none !important;
 }
 .custom-select-selected {
   background: rgba(30,30,30,0.8);
@@ -129,6 +154,9 @@ const { currentLang = "en", availableLangs = [
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  font-family: inherit;
+  text-align: left;
 }
 .custom-select-selected::after {
   content: '';
@@ -163,8 +191,19 @@ const { currentLang = "en", availableLangs = [
   overflow: hidden;
   padding: 0.4em 0;
 }
-
-
-
-
+.custom-select-option {
+  display: block;
+  padding: 0.5em 1.2em;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.custom-select-option:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--accent, #ffb347);
+}
+.custom-select-option.selected {
+  font-weight: 700;
+  color: var(--accent, #ffb347);
+}
 </style>
