@@ -306,9 +306,107 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE — FR blog infrastructure is BUILT and the first French post is live
+> ### ▶ RESUME HERE — next session starts with the two French content items
 >
-> **End of session 2026-08-25.** The decision that had sat open since 2026-08-11 is made and
+> **End of session 2026-08-25.** Ten commits, pushed (`3fe5506..1e1fda1`). `npm run check`
+> green with both guards. Nothing half-finished.
+>
+> **▶ START HERE, in this order. Both come straight out of the French search data.**
+>
+> 1. **The "vote" edit.** ~815 FR impressions sit on *vote* phrasing ("comment faire un vote
+>    sur discord" 323, "faire un vote sur discord" 282, "discord vote" 148, "bot vote discord"
+>    62) and the shipped post says *sondage* throughout. **This is an edit to
+>    `src/content/blog/fr/comment-creer-un-sondage-sur-discord.md`, not a new post**: work the
+>    vote wording in naturally plus a section, and add an explicit "sondage Discord sans bot"
+>    section and FAQ entry (28 imp, already answered in substance). Cheapest win on the board.
+> 2. **The "questionnaire Discord" post.** The FR `questionnaire` / `enquête` cluster is 314
+>    imp at **2.55% CTR, the best of any non-commercial cluster**. French separates
+>    *questionnaire* (multi-question) from *sondage* (one vote), which is what makes this
+>    safe: it resolves the cannibalization trap that blocked translating the survey how-to.
+>    Source post: `how-to-create-a-survey-with-subo-the-survey-bot-877951089`. **Frame it as
+>    "questionnaire", never compete for "sondage".**
+>
+> Then the **SEO CHECKBACK on/after 2026-09-08** (its own block below, with the exact regex).
+>
+> **✅ SHIPPED THIS SESSION (2026-08-25), in one line each:**
+> - **FR blog infrastructure** — one collection, `locale` + `translationOf`, `/fr/blog/…`.
+> - **Two French posts** — the poll how-to (the 7,363-impression cluster) and the native-polls
+>   comparison.
+> - **hreflang fixed sitewide** — 42 of 52 pages had a canonical absent from their own cluster.
+> - **`check:hreflang`** — guards self-reference, reciprocity, live targets, duplicates.
+> - **Language switcher emits real links** — 0 → 86 English pages linking into `/fr/`.
+> - **Sitemap `lastmod`** — 0 → 122 URLs, 37 real distinct dates.
+> - **Internal links** — 7,893 → 0 pointing at non-canonical URLs.
+> - **`docs/content.md`** — corrected (8 question types, not 5; the rest in its own commit).
+>
+> ---
+>
+> ### ⏰ SEO CHECKBACK — run on or after 2026-09-08 (set 2026-08-25)
+>
+> Two weeks after the 2026-08-25 SEO work. **Everything needed to run this is in this block;
+> do not try to reconstruct the regex from memory.**
+>
+> ⏰ **A scheduled cloud agent fires 2026-09-08 16:00 UTC (9am PT)** and will read this block
+> back, quote the regex verbatim, and report whether the two French content items shipped:
+> [routine trig_012M6rN4Gw7rpLdGG5skitrg](https://claude.ai/code/routines/trig_012M6rN4Gw7rpLdGG5skitrg).
+> It is a reminder, not an executor: **it cannot reach Search Console**, so steps A-D are the
+> user's to run. If that routine is ever deleted, this block is still the source of truth.
+>
+> **A. Re-run the French query export, this time on the `subo.gg` property.**
+>
+> Search Console → property **subo.gg** → Performance → Search results → Date: last 16 months
+> → **+ New filter → Query → Custom (regex) → Matches regex**, paste exactly:
+>
+> ```
+> (?i)sondage|questionnaire|formulaire|enqu[êe]te|meilleur|anonyme|gratuit|comment (cr[ée]er|faire)
+> ```
+>
+> Then **QUERIES** tab, sort by Impressions, **Export**. `(?i)` = case-insensitive; `[êe]`
+> catches unaccented typing. Repeat on **subo.ai** to see whether the old domain is still
+> holding the impressions.
+>
+> **The one number that matters: does subo.gg return anything at all?** On 2026-08-25 it
+> returned **nothing**, while subo.ai held 15,048 impressions over 16 months.
+>
+> **B. Re-inspect two URLs** (URL Inspection, exact form, trailing slash included):
+> - `https://subo.gg/fr/polls/` — was **Crawled - currently not indexed**, last crawl Aug 23.
+> - `https://subo.gg/fr/blog/comment-creer-un-sondage-sur-discord/` — published Aug 25, never
+>   yet crawled. This is the real test: a purpose-built page for the biggest FR cluster.
+>
+> **C. Check the Page indexing report** for movement on: **54 Crawled - currently not indexed**,
+> and the **1 "Duplicate, Google chose different canonical than user"** (`/pricing/`, which the
+> hreflang fix should resolve).
+>
+> **D. Check Sitemaps.** Resubmitted 2026-08-25. Before: last read **Jul 30**, **78 pages**
+> known against 122 live. Expect a fresh read and 122.
+>
+> **Baselines to compare against (subo.ai, 16mo, as of 2026-08-25):**
+>
+> | | Impressions | Clicks | CTR | Avg pos |
+> |---|---|---|---|---|
+> | HOW-TO cluster | 7,363 | 5 | 0.07% | 7.0 |
+> | Head terms | 5,763 | 10 | 0.17% | 6.8 |
+> | Commercial ("bot sondage discord") | 1,215 | 59 | 4.86% | 4.5 |
+> | **Total (61 queries)** | **15,048** | **82** | | |
+>
+> `/fr/` monthly impressions on subo.ai: **2,577 (May) → 581 (Jun) → 11 (Jul) → 336 (Aug)**.
+>
+> **How to read the result, decided in advance so it isn't rationalized after the fact:**
+> - **subo.gg starts showing French impressions** → migration recovery is under way. Keep
+>   going on French content; the plan is working.
+> - **Still nothing on subo.gg AND subo.ai still holds them** → the migration is still
+>   processing. Expected, not alarming; the roadmap has said ~Q4 since July. Do not start
+>   re-architecting.
+> - **Nothing on either** → the impressions are genuinely gone, not moved. That is the only
+>   outcome that justifies re-opening the technical investigation.
+> - **`/fr/polls/` still not indexed but the new blog post IS** → confirms the read that this
+>   was a page-value verdict, not a plumbing one, and that content is the right lever.
+>
+> ---
+>
+> ### ▶ Previous resume note — FR blog infrastructure BUILT, first French post live
+>
+> **Session 2026-08-25 (earlier).** The decision that had sat open since 2026-08-11 is made and
 > shipped. `npm run check` green.
 >
 > **✅ DONE: the FR blog decision, ruled and implemented.** The shape, so nobody re-derives it:
