@@ -113,6 +113,13 @@ const t = translations.surveyConvos;
 					<ul class="benefits-list">
 						{t.benefitsList.map((b: string) => <li>{b}</li>)}
 					</ul>
+					{/* Same-language post: this page's only outbound content link, and
+					    it has to be one a French reader can actually read. */}
+					{t.blogLinkLocal && (
+						<p class="sc-blog-link">
+							<a href={t.blogLinkLocal.href}>{t.blogLinkLocal.text}</a>
+						</p>
+					)}
 				</div>
 			</section>
 
@@ -339,5 +346,17 @@ const t = translations.surveyConvos;
 	padding: 0.9rem 1.25rem;
 	font-size: 0.95rem;
 	color: var(--grey-light);
+}
+.sc-blog-link {
+	text-align: center;
+	margin-top: 1.5rem;
+}
+.sc-blog-link a {
+	color: var(--accent);
+	text-decoration: none;
+	font-weight: 600;
+}
+.sc-blog-link a:hover {
+	text-decoration: underline;
 }
 </style>

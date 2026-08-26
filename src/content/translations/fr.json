@@ -651,7 +651,11 @@
     "⏱️ Sondages programmés et récurrents qui tournent automatiquement",
     "🏆 XP, rôles et succès pour booster la participation",
     "🤖 Résumés IA des réponses ouvertes"
-  ]
+  ],
+  "blogLinkLocal": {
+    "text": "Comment créer un questionnaire sur Discord, le guide pas à pas →",
+    "href": "/fr/blog/comment-creer-un-questionnaire-sur-discord/"
+  }
 },
 
 "about": {

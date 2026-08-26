@@ -306,27 +306,58 @@ visible in PostHog.
 Target the queries buyers actually search. This is where the schema + `llms.txt`
 groundwork converts into citations and organic traffic. One page per intent.
 
-> ### ▶ RESUME HERE — next session starts with the two French content items
+> ### ▶ RESUME HERE — the French wave is shipped; next is the 2026-09-08 checkback
 >
-> **End of session 2026-08-25.** Ten commits, pushed (`3fe5506..1e1fda1`). `npm run check`
-> green with both guards. Nothing half-finished.
+> **End of session 2026-08-26.** `npm run check` green with both guards, hreflang verified
+> reciprocal in `dist/`. Nothing half-finished. **Both items the previous note queued are
+> done**, so the French content plan has now spent everything the search data justified, and
+> the next scheduled thing is the **SEO CHECKBACK on/after 2026-09-08** (its own block below,
+> with the exact regex). Do not open new French topics before that export lands: the whole
+> point of the checkback is to find out whether `subo.gg` is receiving French impressions at
+> all, and writing more French content before knowing that is spending against an unverified
+> assumption.
 >
-> **▶ START HERE, in this order. Both come straight out of the French search data.**
+> **✅ SHIPPED 2026-08-26:**
 >
-> 1. **The "vote" edit.** ~815 FR impressions sit on *vote* phrasing ("comment faire un vote
->    sur discord" 323, "faire un vote sur discord" 282, "discord vote" 148, "bot vote discord"
->    62) and the shipped post says *sondage* throughout. **This is an edit to
->    `src/content/blog/fr/comment-creer-un-sondage-sur-discord.md`, not a new post**: work the
->    vote wording in naturally plus a section, and add an explicit "sondage Discord sans bot"
->    section and FAQ entry (28 imp, already answered in substance). Cheapest win on the board.
-> 2. **The "questionnaire Discord" post.** The FR `questionnaire` / `enquête` cluster is 314
->    imp at **2.55% CTR, the best of any non-commercial cluster**. French separates
->    *questionnaire* (multi-question) from *sondage* (one vote), which is what makes this
->    safe: it resolves the cannibalization trap that blocked translating the survey how-to.
->    Source post: `how-to-create-a-survey-with-subo-the-survey-bot-877951089`. **Frame it as
->    "questionnaire", never compete for "sondage".**
+> 1. **The "vote" edit** (`fr/comment-creer-un-sondage-sur-discord.md`), against the ~815
+>    impressions sitting on *vote* rather than *sondage*. Not a new post, an edit, as ruled:
+>    - **Title and description now carry both words**, and "sans bot": *"Comment faire un
+>      sondage ou un vote sur Discord (sans bot ou avec Subo)"*. The H1 moved off "créer" and
+>      onto "faire", which is the verb the vote queries actually use.
+>    - **A new section, "Sondage ou vote : sur Discord, c'est le même outil"**, placed before
+>      Option 1. It exists to answer the vocabulary confusion head-on (Discord says *sondage*,
+>      servers say *vote*) and then move the distinction to where it is real: the native vote
+>      has no rules, `/poll` is where rules live. That framing also feeds Option 2 rather than
+>      just disambiguating and stopping.
+>    - **Option 1 renamed "faire un sondage Discord sans bot (le vote natif)"**, which is the
+>      explicit *sans bot* section the plan asked for. The matching FAQ entry already existed;
+>      two new ones added ("Comment faire un vote sur Discord ?", "Quel bot utiliser pour faire
+>      un vote sur Discord ?"), taking the post to 8.
+>    - Option 2 renamed to name the bot ("les sondages et les votes avec un bot (Subo)"),
+>      against *bot vote discord*.
+> 2. **The "questionnaire Discord" post** — `fr/comment-creer-un-questionnaire-sur-discord`,
+>    paired via `translationOf` to `how-to-create-a-survey-with-subo-the-survey-bot-877951089`,
+>    8 FAQ entries, no em dashes, reusing the `survey-tuto` image set.
+>    - **The framing rule was followed literally: "sondage" appears in title, description and
+>      no H2 at all.** It appears in the body only where it disambiguates, and every one of
+>      those mentions links out to the sondage post. The two French posts are therefore
+>      cooperating rather than cannibalizing, which was the whole condition for writing this one.
+>    - **The English source claims 5 question types; the post ships 8.** The five basic types
+>      are described in the `/survey` flow where they belong, then the scale family (notation,
+>      échelle d'opinion, NPS, classement) is named as a separate group **built in the web
+>      app**, which is what the hub post actually states. ⚠️ **Not verified: whether the Discord
+>      `/survey` wizard offers the four new types in its picker.** The app repo has
+>      `QuestionType_enum_label_{Rating,Scale,Nps,Ranking}` *and* a separate `Web_BlockType_*`
+>      family, which does not settle it. The post is worded so it is correct either way; if you
+>      ever confirm the wizard exposes them, the French post and the English source both want
+>      updating. **The English post is still stale at 5 types.**
+>    - **`/fr/survey-convos` now links to it**, via a `blogLinkLocal` key mirroring the
+>      `/fr/polls` pattern. That page previously had **no outbound content link at all**, in any
+>      locale. **Follow-on, not done: the English `/survey-convos` still has none**, and the
+>      obvious fix is the same block pointing at the English survey how-to.
 >
-> Then the **SEO CHECKBACK on/after 2026-09-08** (its own block below, with the exact regex).
+> **Standing caveat that did not change:** content ROI is migration-gated to ~Q4. Neither of
+> these posts should be judged on rankings before then.
 >
 > **✅ SHIPPED THIS SESSION (2026-08-25), in one line each:**
 > - **FR blog infrastructure** — one collection, `locale` + `translationOf`, `/fr/blog/…`.
@@ -514,6 +545,8 @@ groundwork converts into citations and organic traffic. One page per intent.
 >    cluster beats breadth into new topics. This inverts the English-derived plan.
 >
 > **▶ REVISED PLAN: deepen the cluster we just entered, don't open new ones.**
+> **A, B and C were all shipped 2026-08-26** (see the resume note at the top of P2 for what
+> each one became). D still stands: nothing else in French clears the bar.
 >
 > - **A. "Vote" is a separate French wording we do not target.** "comment faire un vote sur
 >   discord" (323), "faire un vote sur discord" (282), "discord vote" (148), "bot vote discord"
