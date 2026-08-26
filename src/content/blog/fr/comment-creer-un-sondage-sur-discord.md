@@ -1,8 +1,8 @@
 ---
-title: "Comment créer un sondage sur Discord (en natif ou avec un bot comme Subo)"
-description: "Créer un sondage sur Discord : la méthode native en quelques clics, et la méthode complète avec un bot de sondage comme Subo (vote anonyme, rôles, notation, planification, API)."
+title: "Comment faire un sondage ou un vote sur Discord (sans bot ou avec Subo)"
+description: "Créer un sondage ou lancer un vote sur Discord : la méthode native sans bot en quelques clics, et la méthode complète avec un bot comme Subo (vote anonyme, rôles, notation, API)."
 pubDate: "Aug 25 2026"
-tags: ["tutoriel", "discord", "sondages", "how-to"]
+tags: ["tutoriel", "discord", "sondages", "vote", "how-to"]
 author: "Subo Team"
 locale: "fr"
 translationOf: "how-to-create-a-discord-poll-with-or-without-a-bot"
@@ -10,6 +10,8 @@ heroImage: "/images/blog/poll-tuto/poll-tuto-hero.webp"
 faq:
   - q: "Comment créer un sondage sur Discord ?"
     a: "Dans la zone de saisie de n'importe quel salon, ouvre le menu <strong>+</strong> ou l'icône sondage et choisis <strong>Créer un sondage</strong>. Tape ta question, ajoute jusqu'à 10 réponses, choisis une durée entre 1 heure et 1 semaine, puis envoie. Tes membres votent en cliquant sur une réponse et le décompte se met à jour en direct. Aucun bot nécessaire."
+  - q: "Comment faire un vote sur Discord ?"
+    a: "Sur Discord, un vote et un sondage sont le même outil : tu poses une question, tes membres cliquent sur une réponse. Ouvre le menu <strong>+</strong> dans la zone de saisie, choisis <strong>Créer un sondage</strong>, tape la question et les choix, et envoie. Si tu veux un vrai vote encadré (un seul vote par personne, bulletin anonyme, réservé à certains rôles), il te faut un bot comme Subo et sa commande <code>/poll</code>."
   - q: "Peut-on faire un sondage Discord sans bot ?"
     a: "Oui. Discord intègre ses propres sondages, et pour un vote rapide c'est le bon outil. Les limites : les résultats sont toujours publics, n'importe qui dans le salon peut voter, il n'y a ni anonymat ni restriction par rôle, aucune récompense pour ceux qui participent, et tu ne peux pas exporter les données."
   - q: "Combien d'options peut avoir un sondage Discord ?"
@@ -18,12 +20,14 @@ faq:
     a: "Les sondages natifs ne peuvent pas être anonymes. Il te faut un bot : avec Subo, ajoute l'option <code>privacy</code> à la commande <code>/poll</code> et choisis Anonyme. Personne ne peut voir qui a voté quoi, toi non plus."
   - q: "Comment lancer un sondage avec Subo ?"
     a: "Trois façons. <code>/poll</code> pour le construire directement dans Discord, <code>/template</code> pour partir d'un modèle prêt à l'emploi, ou <code>/draft</code> pour laisser l'IA de Subo l'écrire. Tu peux aussi créer et gérer tes sondages visuellement dans l'<a href=\"https://app.subo.gg\">app web</a>."
+  - q: "Quel bot utiliser pour faire un vote sur Discord ?"
+    a: "Subo couvre les cas que le vote natif ne sait pas traiter : bulletin anonyme, vote réservé à un rôle, un seul choix par personne, vote modifiable ou verrouillé, résultats masqués jusqu'à la clôture, récompenses en XP ou en rôle. Une seule commande, <code>/poll</code>, avec 23 options pour régler le vote avant de le publier."
   - q: "Quel est le meilleur bot de sondage pour Discord ?"
     a: "Ça dépend de ce que tu veux en faire. Pour un vote jetable, le sondage natif suffit. Dès que tu tiens à l'anonymat, à limiter le vote à certains rôles, à récompenser la participation, à noter un quiz ou à récupérer les données, il te faut un bot. Subo couvre ces quatre besoins dans une seule commande."
 draft: false
 ---
 
-Un sondage, c'est le moyen le plus rapide de faire trancher ta communauté sans lancer un débat de trois jours dans le salon général. Discord propose ses propres sondages depuis un moment, et ils font très bien le travail pour un vote sans enjeu. Ce guide couvre les deux méthodes :
+Un sondage, c'est le moyen le plus rapide de faire voter ta communauté sans lancer un débat de trois jours dans le salon général. Discord propose ses propres sondages depuis un moment, et ils font très bien le travail pour un vote sans enjeu. Ce guide couvre les deux méthodes :
 
 - **Le sondage natif de Discord** : gratuit, instantané, suffisant pour un vote rapide.
 - **Un bot de sondage comme [Subo](/invite/)** : quand tu as besoin de plus (images, plus de 10 options, vote anonyme, rôles requis, récompenses, notation pour un quiz ou un concours de prédiction, planification, ou des résultats exportables).
@@ -32,7 +36,13 @@ Tu hésites simplement entre Subo et les sondages intégrés de Discord ? On les
 
 > **Rapide ou élaboré ?** Pour un vote ponctuel, la commande `/poll` ci-dessous prend quelques secondes, sans quitter Discord. Pour tout ce qui est plus construit (sondages conversationnels à plusieurs questions, quiz notés, logique de saut, récompenses conditionnelles), l'[app web Subo](https://app.subo.gg) est la bonne porte d'entrée. Commence simple dans Discord, puis passe à l'app web quand tes projets grossissent.
 
-## Option 1 : le sondage natif de Discord
+## Sondage ou vote : sur Discord, c'est le même outil
+
+Beaucoup de gens cherchent « comment faire un vote sur Discord » et repartent avec des résultats qui parlent de sondages. Ce n'est pas une erreur : Discord appelle *sondage* (poll en anglais) ce que la plupart des serveurs appellent un vote. Une question, des choix, un clic par membre.
+
+La différence n'est pas dans le mot, elle est dans les règles. Le vote natif de Discord n'en a presque aucune : tout le monde peut voter, tout le monde voit qui a voté quoi, et rien ne garantit qu'un membre ne change pas d'avis trois fois. Dès que ton vote a un enjeu (choisir un horaire de raid, élire un modérateur, trancher une roadmap), tu veux pouvoir dire qui a le droit de voter, combien de choix chacun peut cocher, si le vote se verrouille, et si le bulletin est anonyme. C'est exactement ce que la commande `/poll` de Subo ajoute, et c'est l'objet de l'option 2.
+
+## Option 1 : faire un sondage Discord sans bot (le vote natif)
 
 Discord intègre les sondages, sans bot :
 
@@ -42,9 +52,9 @@ Discord intègre les sondages, sans bot :
 4. Choisis une **durée** (de 1 heure à 1 semaine) et, si tu veux autoriser plusieurs choix, active **Autoriser plusieurs réponses**.
 5. Envoie. Tes membres votent en cliquant sur une réponse, et le décompte se met à jour en direct.
 
-C'est pratique et c'est gratuit. Les limites arrivent vite : les résultats sont toujours publics, n'importe qui dans le salon peut voter, il n'y a ni anonymat ni restriction par rôle, personne n'est récompensé pour avoir participé, et les données ne sortent pas de Discord. Quand un de ces points compte, il faut un bot.
+C'est pratique, c'est gratuit, et c'est tout ce qu'il faut tant que tu veux juste faire voter le salon. Les limites arrivent vite : les résultats sont toujours publics, n'importe qui dans le salon peut voter, il n'y a ni anonymat ni restriction par rôle, personne n'est récompensé pour avoir participé, et les données ne sortent pas de Discord. Quand un de ces points compte, il faut un bot.
 
-## Option 2 : les sondages avec Subo
+## Option 2 : les sondages et les votes avec un bot (Subo)
 
 [Subo](/invite/) transforme le sondage en outil que tu peux vraiment utiliser pour faire tourner une communauté : anonyme ou transparent, réservé à certains rôles, récompensé, noté, planifié, et exportable avec le reste de tes données.
 
