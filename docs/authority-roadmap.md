@@ -21,10 +21,12 @@ the SearchAtlas model (~$3.5k/yr platform + per-link/per-PR fees). Ordered
   usable for that audience (esp. non-Discord admin onboarding). Until then: prep,
   don't promote. Don't market what a user can't yet do.
 - **Borrowed words are the door, product words are the room.** We rank for the category
-  people search (*sondage*, *questionnaire*, *formulaire*) and differentiate once they
-  arrive (Convo). Never the reverse: an invented category has no demand to capture, and a
-  generic noun in the wrong language erases what makes the product different. Each word
-  owns exactly one URL per locale. See **[TERMINOLOGY ARCHITECTURE](#-terminology-architecture--disambiguation-as-an-authority-lever-opened-2026-08-26)**.
+  people search (*sondage*, *questionnaire*, *formulaire*, *quiz*) and differentiate once they
+  arrive (`poll`, `Convo`). Never the reverse: an invented category has no demand to capture,
+  and a generic noun in the wrong language erases what makes the product different. Two
+  vocabularies, joined at one named point per surface. Each door word owns exactly one URL per
+  locale, and the rule for what gets translated is **localize what the platform owns, brand
+  what you own**. Full framework: **[TERMINOLOGY ARCHITECTURE](#-terminology-architecture--disambiguation-as-an-authority-lever-opened-2026-08-26)**.
 - **Don't only chase what you already rank for.** Search Console history is
   backward-looking — it shows demand for terms our *current* (bot-framed) content
   already surfaces for, and is structurally blind to intent we've never targeted. SEO
@@ -366,6 +368,22 @@ groundwork converts into citations and organic traffic. One page per intent.
 >      locale. **Follow-on, not done: the English `/survey-convos` still has none**, and the
 >      obvious fix is the same block pointing at the English survey how-to.
 >
+> ### ⛔ CONTENT FREEZE + PLANNED ROADMAP RESTART (user, 2026-08-26)
+>
+> **"We need this clarity and clean up before adding more content."** Two standing instructions
+> that override the priority order everywhere else in this file:
+>
+> 1. **No new content in any locale** (English included) until the terminology framework is
+>    implemented: actions **A1 → A2** in [TERMINOLOGY
+>    ARCHITECTURE](#-terminology-architecture--disambiguation-as-an-authority-lever-opened-2026-08-26).
+>    Writing more pages now just adds to the pile that has to be reconciled afterwards. The
+>    cleanup items (A3b–A6) are *not* content and are fine to do.
+> 2. **The next session restructures this document before doing the work.** It has accreted
+>    ~2,900 lines and five stacked resume notes, and the terminology framework is now the thing
+>    that should be near the top rather than buried after P2. **Restructure first, then start
+>    on A1/A2.** The framework section and the 2026-09-08 checkback block are the two pieces
+>    that must survive the rewrite intact.
+>
 > **⭐ ALSO OPENED 2026-08-26, and it now gates non-English content: [TERMINOLOGY
 > ARCHITECTURE](#-terminology-architecture--disambiguation-as-an-authority-lever-opened-2026-08-26).**
 > The French wave surfaced that three French vocabularies are live at once and no artifact
@@ -409,12 +427,21 @@ groundwork converts into citations and organic traffic. One page per intent.
 > → **+ New filter → Query → Custom (regex) → Matches regex**, paste exactly:
 >
 > ```
-> (?i)sondage|questionnaire|formulaire|enqu[êe]te|meilleur|anonyme|gratuit|comment (cr[ée]er|faire)
+> (?i)sondage|questionnaire|formulaire|enqu[êe]te|quiz|pronostic|vote|meilleur|anonyme|gratuit|comment (cr[ée]er|faire)
 > ```
 >
 > Then **QUERIES** tab, sort by Impressions, **Export**. `(?i)` = case-insensitive; `[êe]`
 > catches unaccented typing. Repeat on **subo.ai** to see whether the old domain is still
 > holding the impressions.
+>
+> ⚠️ **The regex was amended 2026-08-26; use the version above, not any earlier copy.** It was
+> missing `vote`, `quiz` and `pronostic`. **`vote` matters most**: ~490 of the 815 vote
+> impressions ("faire un vote sur discord" 282, "discord vote" 148, "bot vote discord" 62) did
+> **not** match the old pattern, since only "comment faire un vote…" caught on the
+> `comment faire` branch — so the export could not have measured the 2026-08-26 vote edit at
+> all. `quiz` and `pronostic` were added because **T10 (corpus balance)** needs them: they are
+> the two non-research clusters, and without them the export cannot show whether the French
+> corpus is skewing market-research-ward.
 >
 > **The one number that matters: does subo.gg return anything at all?** On 2026-08-25 it
 > returned **nothing**, while subo.ai held 15,048 impressions over 16 months.
@@ -1821,22 +1848,108 @@ Three French vocabularies are live at once, and no artifact reconciles them:
 - **Both French blog posts instruct readers to type `/poll`, `/survey`, `/template`, `/draft`.**
   See ruling T6 for why that is half-wrong rather than wrong, and what the fix is.
 
+### ⭐ THE FRAMEWORK (settled 2026-08-26) — two vocabularies, joined at one point
+
+**This is the section to read if you read nothing else here.** It reconciles the market/SEO
+imperative (the words people use for the *need* they have) with the product/marketing mandate
+(a clear vision of what Subo actually is). The two were fighting because they were being asked
+to share one vocabulary. They get two.
+
+**1. Problem vocabulary (demand side).** What a person calls their need before they know Subo
+exists. Many words, localized, job-indexed, evidence-driven: *sondage, questionnaire,
+formulaire, quiz, encuesta, Fragebogen*. These are **doors**. They belong in titles, H1s, meta
+descriptions, blog topics, command descriptions and directory listings.
+
+**2. Product vocabulary (supply side).** What Subo actually has. **Exactly two nouns: `poll`
+and `Convo`.** They belong in the app UI, schema, `llms.txt`, the API and the glossary.
+
+**3. The rule that decides which one gets translated:**
+
+> ### Localize what the platform owns. Brand what you own.
+
+`poll` is **Discord's** primitive and Discord already localized it, so we adopt Discord's word
+in every locale (T2b). `Convo` is **Subo's** invention, so it stays invariant everywhere. The
+split is not half-hearted localization; it is two different ownership situations.
+
+**4. The reclassification this forces, and it is the useful part: "survey" is a problem word,
+not a product word.** It stays as the English door and the brand descriptor (Survey Bot,
+`/survey`), but it is not a primitive. `subo-localization` already half-says this with "survey
+(a.k.a. convo)". **Nothing needs renaming.** Every existing word just gets sorted into one of
+the two buckets, and the errors fall out on their own: *sondage conversationnel* is a problem
+word wearing a product word's clothes, which is exactly why it reads wrong.
+
+**5. The join.** Every surface converts problem to product at one named place: *"You came for X.
+In Subo that's a Y."* On a page that is the first section under the H1; in the app it is the
+command description. **Give it a place or it degenerates into a vibe.**
+
+**6. Do not invent a job taxonomy.** The three jobs (**engage / understand / organize**) are
+already the site's three use-case pillars: built, localized, carrying template links. Door words
+attach to a pillar *and* resolve to an instrument, which makes it a matrix rather than a list,
+because a poll can serve engage or understand. Inventing a fourth axis is the main way this
+goes wrong.
+
 ### Rulings
 
-**T1. Disambiguate by job, not by question count.** This also matches the three use-case
-pillars the site already ships, so the vocabulary and the IA reinforce each other instead of
-cutting across.
+**T1. Disambiguate by job, not by question count.** Matches the three use-case pillars, so
+vocabulary and IA reinforce each other instead of cutting across.
 
-**T2. The French lexicon.** `enquête` and `vote` are *activities*; `sondage`, `questionnaire`,
-`formulaire` are *artifacts*. That is why they never felt like clean alternatives to each other.
+**T2. The lexicon is per-locale × per-job, NOT one word per locale.**
+⚠️ **Amended 2026-08-26 after the market-research objection (user).** An earlier draft of this
+table had a single "survey / Convo" column, which collapsed jobs that T1 had just separated and
+put Subo in a market-research box. **Every borrowed noun in every language drags in a
+market-research frame** that reads wrong for quizzes, application forms and onboarding flows.
+`subo-localization` already identified this and already ruled the answer (Convo, untranslated);
+the site simply never received it.
 
-| Word | Job | Owns (one canonical URL) | Never |
+**Borrowed nouns are job-specific by nature. That is the feature, not the defect.** No
+translated word can span quizzes, forms and research, which is precisely why Convo has to be a
+brand noun. French, as the worked example:
+
+| Job / pillar | Door words (borrowed) | Owns (one canonical URL) | Resolves to |
 |---|---|---|---|
-| **sondage** | decide | `/fr/polls`, the poll how-to | multi-question anything |
-| **vote** | decide (the act) | title + body of the poll post | a product noun |
-| **questionnaire** | understand | the questionnaire how-to, `/fr/survey-convos` | a synonym for sondage |
-| **enquête** | understand (the activity) | body copy, "enquête de satisfaction" | an H1 or a ranking target |
-| **formulaire** | process a submission | `/fr/use-cases/get-things-done` | the general word for Convo |
+| decide | **sondage**, **vote** | `/fr/polls`, the poll how-to | `poll` |
+| understand | **questionnaire**, **enquête** | the questionnaire how-to | `Convo` |
+| organize (get things done) | **formulaire** | `/fr/use-cases/get-things-done` | `Convo` |
+| engage | **quiz**, **pronostics** | none yet | `poll` or `Convo` |
+
+`enquête` and `vote` are *activities*; `sondage`, `questionnaire`, `formulaire` are *artifacts*.
+That is why they never felt like clean alternatives to each other. **`questionnaire` is one door
+among four** and is banned from being the site's general product noun, or appearing in any
+string that must also cover a quiz or an application form. Concretely: the questionnaire how-to
+is fine as a door, but **`/fr/survey-convos` must not take *questionnaire* as its H1 noun** (DE
+and ES already went to *Formular* / *formularios*, which was the same instinct).
+
+**T2b. A locale's poll word IS Discord's poll word. No exceptions.** Fighting the platform's
+vocabulary is unwinnable: Discord's UI sets every user's mental model. Trivially verifiable,
+and it settles a debate that has now recurred three times. **The user reached this
+independently for French** (switching to `/sondage` was aligning with Discord) and it was right.
+
+**Discord's native poll term per locale (user-supplied, 2026-08-26), vs. the `subo-localization`
+table. In six of nine locales, Discord's word for POLL is exactly Subo's word for SURVEY:**
+
+| Locale | Discord poll | Subo poll | Subo survey | |
+|---|---|---|---|---|
+| **PT-BR** | enquete | **enquete** | pesquisa | ✅ aligned |
+| **FR** | sondage | vote *(live: `/sondage`)* | enquête | ⚠️ table stale, live app correct |
+| **NL** | peiling | poll *(English)* | enquête | ⚠️ untranslated, no collision |
+| **ES** | encuesta | votación | **encuesta** | ❌ inverted |
+| **DE** | Umfrage | Meinungsumfrage | **Umfrage** | ❌ inverted |
+| **IT** | sondaggio | poll *(English)* | **sondaggio** | ❌ inverted |
+| **PL** | ankieta | głosowanie | **ankieta** | ❌ inverted |
+| **TR** | anket | oylama | **anket** | ❌ inverted |
+| **RU** | опрос | голосование | **опрос** | ❌ inverted |
+
+- **Spanish is worse than French ever was**, because the site adds a third word: `/es/polls`
+  leads on *bot de sondeos* while `/es/survey-convos` leads on *encuestas*, and Discord says
+  *encuesta* = poll. **Spanish poll searchers land on the survey page.**
+- **German argues for the site over the skill:** `/de/polls` already leads on *Umfrage-Bot*,
+  matching Discord, while the skill says *Meinungsumfrage*. The site is right.
+- **`ankietę` is accusative** (from a UI string like "Utwórz ankietę"); the lexicon needs
+  nominative *ankieta*. Same for the capitalized *Anket*.
+- **The questionnaire solution generalizes.** Nearly every language has a distinct
+  questionnaire-noun Discord did *not* take: *cuestionario, Fragebogen, questionario,
+  анкета, vragenlijst*. French was not a special case, it was the first instance of a general
+  fix. **PL and TR do not resolve cleanly** and are held under T9.
 | **Convo** | the product | the differentiation + definitional layers | a title tag or H1 |
 
 **T3. Convo stays untranslated, and "sondage/enquête conversationnel(le)" is retired.** This is
@@ -1893,6 +2006,57 @@ inert.
   is not to sync the strings; it is to stop the file claiming to be the source of truth**, plus
   give content work a greppable export of the live names (action A3).
 
+**T9. The evidence standard, which substitutes for native review.** There are no volunteer
+translators (recorded in the language backlog: "I have no alternative at this point"), so
+quality cannot be a judgment call. Make it a test instead:
+
+> **A door word ships only if it comes from Discord's own localized UI, or from search data.
+> Never invented.**
+
+Polish and Turkish fail that test today, so they **wait** rather than shipping a guess. This
+converts an unresolvable caveat into a rule that resolves itself, and it is the standard the
+`subo-localization` skill already gestures at ("flag genuine ambiguities rather than guessing").
+
+**T10. Balance the corpus, not just the page.** Entity signal is built from the corpus in
+aggregate, not page by page, so per-page discipline does not protect against a skew. **French
+currently has three research-flavored doors shipped (sondage, vote, questionnaire) and zero form
+or quiz doors.** That is how Subo ends up read as a French market-research bot despite T2.
+Consequence: the French *formulaire* and *quiz* doors are worth seeding **for entity balance
+even at low traffic**, which is a stronger argument than the volume-based one this section
+carried on 2026-08-26 ("positioning word now, ranking bet later").
+
+### Implementation: a data file with a guard, NOT a document
+
+**The markdown skill already proved it drifts** — the FR poll row went stale across two naming
+rounds and nobody noticed. This repo already has the better pattern in `src/data/api-surface.json`
+plus `npm run check:api`, and `check:hreflang` already proves that parsing `dist/` works.
+
+**One `lexicon.json`, vendored in both repos** the way `subo-glossary` already is (byte-identical
+by intent, edit one and copy in the same change). Per locale, per pillar it records: the door
+words, the page that owns each, the instrument it resolves to (`poll` / `Convo`), **the bridge
+sentence**, and a per-locale denylist. Storing the bridge sentence next to the word is what makes
+the framework **generative rather than restrictive**: the conversion copy gets written once per
+locale instead of improvised per page.
+
+**`check:lexicon` enforces more than you would expect:**
+
+| Mechanically checkable | Needs a human |
+|---|---|
+| poll word == Discord's word, per locale (T2b) | whether *kwestionariusz* reads naturally |
+| one door word → at most one page title/H1 (T5) | whether the bridge sentence is any good |
+| `Convo` absent from every title tag and H1 (T4) | tone and register |
+| denylisted phrases absent from the locale JSON (T3) | |
+| the resolving product noun present in each page body (T4) | |
+
+The **one-word-one-URL check over `dist/` is the highest-value one**: it is the anti-
+cannibalization rule made enforceable, and it is the exact failure the French corpus is now
+exposed to.
+
+**The app repo shares the file, not the guard.** `subo-localization` reads its terms from
+`lexicon.json` instead of an inline table, and translation batches validate against it.
+**The `user_messages` authoring workflow is untouched**, which matters, because it is the part
+that works.
+
 ### Actions
 
 Ordered by value. **A1 and A2 are the unblockers; nothing else should be written in a non-English
@@ -1901,14 +2065,19 @@ locale until they land.**
 - [ ] **A1. Audit the live French `user_messages` rows** for poll/survey nouns and the two command
       names. Settles whether prose says *vote* or *sondage*, and whether `/sondage` + `/enquete`
       are actually live. **User's, and it gates A2.** Everything else here is inference until it runs.
-- [ ] **A2. Make one lexicon authoritative.** Fix the `subo-localization` FR poll row to match
-      whatever A1 finds, add the T2 job column and the `formulaire`/`questionnaire` distinction,
-      then **vendor the skill into `subo-site/` the way `subo-glossary` already is** (byte-identical,
-      edit one and copy in the same change). Kills the dangling pointer. **The site repo cannot
-      currently see the rules it is told to follow.**
+- [ ] **A2. Build `lexicon.json` + `check:lexicon`** per the Implementation section above, and
+      **vendor it into both repos** the way `subo-glossary` already is. Fill **EN and FR first**
+      (FR's poll row set by A1), point `subo-localization` at it instead of its inline table, and
+      fix that table's stale FR poll row. Kills the dangling pointer: **the site repo currently
+      cannot see the rules it is told to follow.** Start the guard with the two checks that bite
+      hardest, one-word-one-URL and Convo-not-in-H1.
 - [ ] **A3. Export the live command names + descriptions somewhere greppable** from both repos, so
       blog and site copy stop quoting code placeholders. Small data file, same role as
       `api-surface.json`. Would have prevented both 2026-08-26 errors outright.
+- [ ] **A3b. ⚠️ FIX THE CHECKBACK REGEX BEFORE 2026-09-08 — DONE, see the P2 block.** It had no
+      `vote`, no `quiz`, no `pronostic`, so it was blind to ~490 of the 815 vote impressions we
+      just built content for, and to both of the clusters T10 says we need in order to detect a
+      research-ward skew. A scheduled routine quotes it verbatim.
 - [ ] **A4. Fix the two French posts to name both commands** per T6, and retire the four
       "conversationnel" phrasings in `fr.json` per T3. Cheap, and the posts are currently telling
       French readers to type commands their client may not offer.
@@ -1917,20 +2086,23 @@ locale until they land.**
       other nine locales.
 - [ ] **A6. Apply T4's layer discipline to the existing FR pages** on their next edit. Not a
       dedicated pass; too cheap to justify one and too easy to forget without a rule.
-- [ ] **A7. Per-locale lexicon tables for DE/ES/IT/PT-BR**, same shape as T2, written when each
-      locale's routes are built. **PT-BR is the one locale whose ruled table already matches
-      measured demand** (`enquete` = poll, and "como fazer enquete no discord" is its top query).
-      Fold into the LOCALE-PARITY PLAYBOOK rather than doing it standalone.
+- [ ] **A7. Backfill `lexicon.json` for DE/ES/PT-BR, then IT.** **⚠️ ES and DE are not
+      cosmetic** — both are currently inverted against Discord (T2b), and Spanish sends poll
+      searchers to the survey page. **PT-BR is the model locale**: Discord's word, the skill's
+      word and its top measured query (*como fazer enquete no discord*) all agree, which is a
+      second argument for doing PT-BR before Italian. **PL and TR are HELD under T9** until a
+      door word with evidence behind it exists. Runs as Step 0 of the LOCALE-PARITY PLAYBOOK,
+      not standalone.
+- [ ] **A8. Seed the French `formulaire` and `quiz` doors** once A2 lands. **Justified by T10
+      (corpus balance), not by volume** — 24 FR impressions at position 20.8 is the circularity
+      this roadmap's own guiding principle warns about, since we have no French page targeting it
+      and rank at 20. It is also the job where Convo's difference is most visible, because a form
+      is the thing people already dislike.
 
-**On `formulaire` specifically:** 24 FR impressions at position 20.8 is not evidence of no
-demand, it is the circularity this roadmap's own guiding principle warns about, since we have no
-French page targeting it and rank at 20. **Positioning word now, ranking bet later** — and it is
-the job where Convo's difference is most visible, because a form is the thing people already
-dislike. Let the 2026-09-08 checkback establish that French traffic exists at all first.
-
-**Success metric:** one lexicon, readable from both repos; no French page competing with another
-French page for the same word; and the definitional layer consistent enough that an LLM asked
-"what is a Subo Convo" answers in our words.
+**Success metric:** one lexicon, readable from both repos and enforced by a guard; no page
+competing with another page in the same locale for the same word; every locale's poll word equal
+to Discord's; and the definitional layer consistent enough that an LLM asked "what is a Subo
+Convo" answers in our words.
 
 ---
 
