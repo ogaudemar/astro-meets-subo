@@ -86,8 +86,8 @@ No one can see individual answers, not even you, the creator. Only aggregated to
 
 You choose the mode per project, or set a server-wide default:
 
-- **On a poll:** add the `privacy` option to the `/poll` command and pick Transparent, Semi-Private, or Anonymous. (See the [poll how-to](/blog/how-to-create-a-discord-poll-with-or-without-a-bot).)
-- **On a survey:** build your questionnaire with `/survey` or `/draft`, hit `Continue` to enter Edit Mode, then press `Edit Privacy Mode` and choose. (See the [survey how-to](/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089).)
+- **On a poll:** add the `privacy` option to the `/poll` command and pick Transparent, Semi-Private, or Anonymous. (See the [poll how-to](/blog/how-to-create-a-discord-poll-with-or-without-a-bot/).)
+- **On a survey:** build your questionnaire with `/survey` or `/draft`, hit `Continue` to enter Edit Mode, then press `Edit Privacy Mode` and choose. (See the [survey how-to](/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/).)
 - **Server default:** set the default for every new project with `/settings`. A fresh install defaults to Anonymous.
 
 You can change the mode as many times as you like before the project starts. The one exception is the permanence rule above: an Anonymous project locks after its first response.
@@ -169,8 +169,8 @@ This means you get the benefits of anonymity (honest responses, no social pressu
 
 Every privacy mode is available on all Subo plans. A new server defaults to Anonymous, so set the mode you want when you create a poll or survey, or change your server default in `/settings`.
 
-If you want a starting point rather than a blank script, the [anonymous proposal vote template](/templates/governance-proposal-vote) and the [suggestion box](/templates/suggestion-box) are both built for candid answers, and the rest of the [template library](/templates) can be switched to Anonymous the same way.
+If you want a starting point rather than a blank script, the [anonymous proposal vote template](/templates/governance-proposal-vote/) and the [suggestion box](/templates/suggestion-box/) are both built for candid answers, and the rest of the [template library](/templates/) can be switched to Anonymous the same way.
 
-**[Add Subo to your Discord server →](/invite)**
+**[Add Subo to your Discord server →](/invite/)**
 
-**[View all plans and features →](/pricing)**
+**[View all plans and features →](/pricing/)**

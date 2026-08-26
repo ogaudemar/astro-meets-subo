@@ -83,8 +83,8 @@ const jsonLd = [
         </p>
         <p class="hub-links">
           Want the outcome without authoring the script? Start from a
-          <a href="/templates">template</a>. Wiring this up programmatically? See the
-          <a href="/api">API quickstart</a>.
+          <a href="/templates/">template</a>. Wiring this up programmatically? See the
+          <a href="/api/">API quickstart</a>.
         </p>
       </header>
 
@@ -97,7 +97,7 @@ const jsonLd = [
             <ul class="cards">
               {inGroup.map((r) => (
                 <li>
-                  <a href={`/recipes/${r.id}`}>
+                  <a href={`/recipes/${r.id}/`}>
                     <strong>{r.data.title}</strong>
                     <span class="desc">{r.data.description}</span>
                     <span class="time">{r.data.setupTime}</span>
@@ -114,11 +114,11 @@ const jsonLd = [
         <p>
           Every recipe here runs on the free tier. Author it in the
           <a href="https://app.subo.gg/app">web app</a> or send the script to the
-          <a href="/api">public API</a>.
+          <a href="/api/">public API</a>.
         </p>
         <p class="cta-row">
-          <a class="btn btn-primary" href="/invite">Add Subo to your server</a>
-          <a class="btn btn-ghost" href="/tutorials">Browse tutorials</a>
+          <a class="btn btn-primary" href="/invite/">Add Subo to your server</a>
+          <a class="btn btn-ghost" href="/tutorials/">Browse tutorials</a>
         </p>
       </section>
     </main>

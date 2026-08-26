@@ -307,7 +307,7 @@ toolbar with a selection.
 
 ## Related
 
-- [World Capitals Quiz](/recipes/world-capitals-quiz): right/wrong quiz with immediate per-question feedback
-- [Hogwarts House Sorting Hat](/recipes/hogwarts-house-sorting-quiz): multi-bucket hidden scoring
-- [Study quiz](/recipes/study-quiz): knowledge assessment with per-attempt XP and mastery achievement
+- [World Capitals Quiz](/recipes/world-capitals-quiz/): right/wrong quiz with immediate per-question feedback
+- [Hogwarts House Sorting Hat](/recipes/hogwarts-house-sorting-quiz/): multi-bucket hidden scoring
+- [Study quiz](/recipes/study-quiz/): knowledge assessment with per-attempt XP and mastery achievement
 - [Scoring variables reference](https://api.subo.ai/docs#tag/Script/operation/replaceScript): score_values, source_key, and dynamic XP docs

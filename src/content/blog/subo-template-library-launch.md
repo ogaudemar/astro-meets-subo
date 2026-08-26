@@ -32,10 +32,10 @@ They're built around the three things every community manager actually wants to 
 
 **The fun, high-participation stuff that brings people together.**
 
-- **[Event Prediction Contest](/templates/event-prediction-contest)** lets your members predict the winners of a match, tournament, or awards show, keeps a live leaderboard, and reveals who called it. Great for the World Cup, a season finale, or your own in-game event.
-- **[This-or-That and Tier-List polls](/templates/this-or-that-poll)** take a simple vote and turn it into a conversation: members pick a side, then tell you why.
-- **[Lore Trivia Quiz](/templates/lore-trivia-quiz)** tests your community's knowledge, gives instant right or wrong feedback, and awards an achievement to everyone who passes.
-- **[Pick Your Favorite](/templates/pick-favorite-poll)** and **[Match Prediction](/templates/match-prediction-poll)** polls bring emoji-rich options and a bit of friendly competition to something Discord keeps basic.
+- **[Event Prediction Contest](/templates/event-prediction-contest/)** lets your members predict the winners of a match, tournament, or awards show, keeps a live leaderboard, and reveals who called it. Great for the World Cup, a season finale, or your own in-game event.
+- **[This-or-That and Tier-List polls](/templates/this-or-that-poll/)** take a simple vote and turn it into a conversation: members pick a side, then tell you why.
+- **[Lore Trivia Quiz](/templates/lore-trivia-quiz/)** tests your community's knowledge, gives instant right or wrong feedback, and awards an achievement to everyone who passes.
+- **[Pick Your Favorite](/templates/pick-favorite-poll/)** and **[Match Prediction](/templates/match-prediction-poll/)** polls bring emoji-rich options and a bit of friendly competition to something Discord keeps basic.
 
 ---
 
@@ -43,10 +43,10 @@ They're built around the three things every community manager actually wants to 
 
 **The templates that help you discover what your members really think.**
 
-- **[Playtest and Beta Feedback](/templates/playtest-beta-feedback)** measures what's landing with proper rating scales and open questions.
-- **[Community Health](/templates/community-health-engagement)** takes the temperature of your server, and the **[Suggestion Box](/templates/suggestion-box)** collects ideas and asks the right follow-up automatically.
-- **[Feature and Roadmap Vote](/templates/feature-roadmap-vote)** asks what to build or do next, then asks the more useful question: why.
-- Running something more like a business? There's a whole research shelf too: **[Product-Market-Fit](/templates/product-market-fit)**, **[Pricing](/templates/pricing-willingness-to-pay)**, **[NPS](/templates/nps-reason-followup)**, and a **[Churn survey](/templates/churn-cancellation)** that adapts to why someone's leaving.
+- **[Playtest and Beta Feedback](/templates/playtest-beta-feedback/)** measures what's landing with proper rating scales and open questions.
+- **[Community Health](/templates/community-health-engagement/)** takes the temperature of your server, and the **[Suggestion Box](/templates/suggestion-box/)** collects ideas and asks the right follow-up automatically.
+- **[Feature and Roadmap Vote](/templates/feature-roadmap-vote/)** asks what to build or do next, then asks the more useful question: why.
+- Running something more like a business? There's a whole research shelf too: **[Product-Market-Fit](/templates/product-market-fit/)**, **[Pricing](/templates/pricing-willingness-to-pay/)**, **[NPS](/templates/nps-reason-followup/)**, and a **[Churn survey](/templates/churn-cancellation/)** that adapts to why someone's leaving.
 
 ---
 
@@ -54,10 +54,10 @@ They're built around the three things every community manager actually wants to 
 
 **The templates that turn answers into action, so a survey does the work for you.**
 
-- **[Playtester Recruitment](/templates/playtester-beta-recruitment)** screens applicants and automatically grants a "Beta Tester" badge to everyone who qualifies.
-- **[Bug Report Form](/templates/bug-report-form)** figures out a bug's priority on its own and tells the reporter where it landed.
-- **[Governance / Proposal Vote](/templates/governance-proposal-vote)** runs a fully anonymous vote with a private "explain your choice" follow-up, so people can be honest.
-- **[Scheduling polls](/templates/scheduling-availability-poll)**, **[Feature Prioritization](/templates/feature-prioritization)**, and a **[Certification quiz](/templates/onboarding-certification)** that grants a badge when someone passes round out the shelf.
+- **[Playtester Recruitment](/templates/playtester-beta-recruitment/)** screens applicants and automatically grants a "Beta Tester" badge to everyone who qualifies.
+- **[Bug Report Form](/templates/bug-report-form/)** figures out a bug's priority on its own and tells the reporter where it landed.
+- **[Governance / Proposal Vote](/templates/governance-proposal-vote/)** runs a fully anonymous vote with a private "explain your choice" follow-up, so people can be honest.
+- **[Scheduling polls](/templates/scheduling-availability-poll/)**, **[Feature Prioritization](/templates/feature-prioritization/)**, and a **[Certification quiz](/templates/onboarding-certification/)** that grants a badge when someone passes round out the shelf.
 
 ---
 
@@ -85,7 +85,7 @@ And we're not done. This is one more step in a never-ending effort to make Subo 
 
 The library shows up in all the places you already are:
 
-- **On the web:** browse the full gallery at [subo.gg/templates](/templates), then open one in the [Subo Web App](https://app.subo.gg/app/templates) to preview it and clone it.
+- **On the web:** browse the full gallery at [subo.gg/templates](/templates/), then open one in the [Subo Web App](https://app.subo.gg/app/templates) to preview it and clone it.
 - **In Discord:** run `/template` right in your server and deploy one without leaving chat.
 - **For developers and agents:** every template is available through the [Subo API](https://api.subo.ai/docs) too.
 
@@ -95,9 +95,9 @@ Next time you see a survey and think "I wish I could make that," you can.
 
 ---
 
-Want to see how one is put together before you clone it? The [recipes](/recipes) take eight of these builds apart block by block: the scoring, the skip logic, and the roles or XP each one hands out. [Pricing](/pricing) covers what runs on the free tier.
+Want to see how one is put together before you clone it? The [recipes](/recipes/) take eight of these builds apart block by block: the scoring, the skip logic, and the roles or XP each one hands out. [Pricing](/pricing/) covers what runs on the free tier.
 
-[Browse the template library](/templates)
+[Browse the template library](/templates/)
 
 ---
 

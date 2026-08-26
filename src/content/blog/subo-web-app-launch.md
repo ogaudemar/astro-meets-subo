@@ -62,7 +62,7 @@ Now there's a proper visual editor: a canvas where you drag in question blocks, 
 
 You can set skip logic. Add image attachments. Limit the number of selections on multi-punch questions. Everything that used to require knowing the right slash command syntax is now a click.
 
-Every text field in the editor also takes three shortcut keys: `@` for a role mention, `[` for a variable like the respondent's own name, `:` for an emoji. [Here's what each one does](/blog/personalize-discord-survey-messages).
+Every text field in the editor also takes three shortcut keys: `@` for a role mention, `[` for a variable like the respondent's own name, `:` for an emoji. [Here's what each one does](/blog/personalize-discord-survey-messages/).
 
 
 ### Real-Time Results
@@ -141,11 +141,11 @@ We didn't build a standalone survey platform that happens to have a Discord inte
 
 If you've been running Subo surveys through the bot, all your existing projects, settings, and history are right there in the dashboard.
 
-If you haven't tried Subo yet, the web app is the best place to start. You do not have to start from a blank canvas either: the [template library](/templates) has ready-made scripts you can clone and edit, the [recipes](/recipes) walk through how the more involved ones are built, and [pricing](/pricing) covers what sits on the free tier.
+If you haven't tried Subo yet, the web app is the best place to start. You do not have to start from a blank canvas either: the [template library](/templates/) has ready-made scripts you can clone and edit, the [recipes](/recipes/) walk through how the more involved ones are built, and [pricing](/pricing/) covers what sits on the free tier.
 
 ---
 
-[Try the new Subo Web App](/app)
+[Try the new Subo Web App](/app/)
 
 ---
 

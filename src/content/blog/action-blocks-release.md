@@ -31,11 +31,11 @@ Action Blocks support skip logic, so rewards only fire when members answer a spe
 
 A few examples where that becomes very handy:
 
-- Use `give-role` to assign personalized server roles the moment a new member completes your [onboarding survey](/recipes/welcome-quiz)
-- Use `give-xp` to reward [quiz respondents who get the right answers](/recipes/world-capitals-quiz), rather than everyone who finishes
-- Use `give-achievement` to tag selected beta testers in a [recruitment survey](/recipes/playtester-selection), with a linked Discord role attached to access the test
+- Use `give-role` to assign personalized server roles the moment a new member completes your [onboarding survey](/recipes/welcome-quiz/)
+- Use `give-xp` to reward [quiz respondents who get the right answers](/recipes/world-capitals-quiz/), rather than everyone who finishes
+- Use `give-achievement` to tag selected beta testers in a [recruitment survey](/recipes/playtester-selection/), with a linked Discord role attached to access the test
 
-Two action blocks with opposite conditions is the whole trick behind an application funnel: one grants a trial role, the other a waitlist role, and exactly one fires per applicant. The [moderator application recipe](/recipes/volunteer-moderator-funnel) builds that out, and the [templates library](/templates) has ready-made scripts that already use these blocks.
+Two action blocks with opposite conditions is the whole trick behind an application funnel: one grants a trial role, the other a waitlist role, and exactly one fires per applicant. The [moderator application recipe](/recipes/volunteer-moderator-funnel/) builds that out, and the [templates library](/templates/) has ready-made scripts that already use these blocks.
 
 ### Block messaging that matches your tone
 

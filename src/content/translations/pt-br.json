@@ -12,25 +12,25 @@
   "navItems": [
     { "text": "Produto", "href": "/" },
     { "text": "Recursos", "href": "/" },
-    { "text": "Preços", "href": "/pt-br/pricing" }
+    { "text": "Preços", "href": "/pt-br/pricing/" }
   ],
   "product": [
-    { "text": "Funcionalidades", "href": "/features" },
-    { "text": "Survey Convos", "href": "/survey-convos" },
-    { "text": "Enquetes", "href": "/polls" },
-    { "text": "Bot Personalizado", "href": "/custom-survey-bot" }
+    { "text": "Funcionalidades", "href": "/features/" },
+    { "text": "Survey Convos", "href": "/survey-convos/" },
+    { "text": "Enquetes", "href": "/polls/" },
+    { "text": "Bot Personalizado", "href": "/custom-survey-bot/" }
   ],
   "resources": [
-    { "text": "Tutoriais", "href": "/tutorials" },
-    { "text": "Servidor de Suporte", "href": "/support" },
-    { "text": "Portal de Cobrança", "href": "/portal" },
-    { "text": "Blog", "href": "/blog" }
+    { "text": "Tutoriais", "href": "/tutorials/" },
+    { "text": "Servidor de Suporte", "href": "/support/" },
+    { "text": "Portal de Cobrança", "href": "/portal/" },
+    { "text": "Blog", "href": "/blog/" }
   ],
   "useCasesLabel": "Casos de uso",
   "useCases": [
-    { "text": "Engajar", "href": "/use-cases/engagement" },
-    { "text": "Entender", "href": "/use-cases/research" },
-    { "text": "Resolver", "href": "/use-cases/get-things-done" }
+    { "text": "Engajar", "href": "/use-cases/engagement/" },
+    { "text": "Entender", "href": "/use-cases/research/" },
+    { "text": "Resolver", "href": "/use-cases/get-things-done/" }
   ],
   "cta": "Adicionar ao Discord",
   "upgrade": "Upgrade",
@@ -47,39 +47,39 @@
     {
       "title": "Produto",
       "links": [
-        { "text": "Survey Convos", "href": "/survey-convos" },
-        { "text": "Bot Personalizado", "href": "/custom-survey-bot" },
-        { "text": "Enquetes", "href": "/polls" },
-        { "text": "Preços", "href": "/pt-br/pricing" },
-        { "text": "Adicionar ao Discord", "href": "/invite", "external": true }
+        { "text": "Survey Convos", "href": "/survey-convos/" },
+        { "text": "Bot Personalizado", "href": "/custom-survey-bot/" },
+        { "text": "Enquetes", "href": "/polls/" },
+        { "text": "Preços", "href": "/pt-br/pricing/" },
+        { "text": "Adicionar ao Discord", "href": "/invite/", "external": true }
       ]
     },
     {
       "title": "Casos de uso",
       "links": [
-        { "text": "Engajar", "href": "/use-cases/engagement" },
-        { "text": "Entender", "href": "/use-cases/research" },
-        { "text": "Resolver", "href": "/use-cases/get-things-done" }
+        { "text": "Engajar", "href": "/use-cases/engagement/" },
+        { "text": "Entender", "href": "/use-cases/research/" },
+        { "text": "Resolver", "href": "/use-cases/get-things-done/" }
       ]
     },
     {
       "title": "Recursos",
       "links": [
-        { "text": "Web App", "href": "/app", "external": true },
-        { "text": "Sobre", "href": "/about" },
-        { "text": "Servidor de Suporte", "href": "/support", "external": true },
-        { "text": "Tutoriais", "href": "/tutorials" },
-        { "text": "Blog", "href": "/blog" },
-        { "text": "Portal de cobrança Stripe", "href": "/portal", "external": true },
-        { "text": "Discord App Store", "href": "/discordstore", "external": true }
+        { "text": "Web App", "href": "/app/", "external": true },
+        { "text": "Sobre", "href": "/about/" },
+        { "text": "Servidor de Suporte", "href": "/support/", "external": true },
+        { "text": "Tutoriais", "href": "/tutorials/" },
+        { "text": "Blog", "href": "/blog/" },
+        { "text": "Portal de cobrança Stripe", "href": "/portal/", "external": true },
+        { "text": "Discord App Store", "href": "/discordstore/", "external": true }
       ]
     },
     {
       "title": "Jurídico",
       "links": [
-        { "text": "Termos de Serviço", "href": "/terms" },
-        { "text": "Política de Privacidade", "href": "/privacy" },
-        { "text": "Política de Cookies", "href": "/cookies" }
+        { "text": "Termos de Serviço", "href": "/terms/" },
+        { "text": "Política de Privacidade", "href": "/privacy/" },
+        { "text": "Política de Cookies", "href": "/cookies/" }
       ]
     },
     {
@@ -133,17 +133,17 @@
         {
         "title": "PERGUNTE EM UMA CONVERSA",
         "body": "O Subo faz uma pergunta de cada vez, como num bate-papo. Os membros se abrem e você descobre coisas que uma parede de formulário nunca revela.",
-        "href": "/survey-convos"
+        "href": "/survey-convos/"
         },
         {
         "title": "ENQUETES QUE FAZEM MAIS",
         "body": "Uma única pergunta que pode pontuar respostas, corrigir um quiz ou criar um bolão de palpites, e então recompensar os vencedores automaticamente.",
-        "href": "/polls"
+        "href": "/polls/"
         },
         {
         "title": "PARTICIPAÇÃO QUE VALE A PENA",
         "body": "Distribua XP, cargos e conquistas, ajustados ao modo como os membros realmente respondem. Reconhecimento que faz as pessoas voltarem.",
-        "href": "/features"
+        "href": "/features/"
         }
     ]
     },
@@ -157,19 +157,19 @@
       "emoji": "🎉",
       "title": "Engajar",
       "body": "Enquetes, quizzes e bolões divertidos que fazem os membros voltarem sempre.",
-      "href": "/use-cases/engagement"
+      "href": "/use-cases/engagement/"
     },
     {
       "emoji": "🔎",
       "title": "Entender",
       "body": "Descubra quem são seus membros e o que eles querem, e aja com base nisso.",
-      "href": "/use-cases/research"
+      "href": "/use-cases/research/"
     },
     {
       "emoji": "✅",
       "title": "Resolver",
       "body": "Inscrições, cadastros, pedidos e solicitações, como uma conversa em vez de um formulário.",
-      "href": "/use-cases/get-things-done"
+      "href": "/use-cases/get-things-done/"
     }
   ],
   "usecasesInspireBtn": "🎲 Clique aqui para se inspirar!",
@@ -551,7 +551,7 @@
         {
         "text": "Instalar Grátis",
         "class": "button button--dark-accent-border",
-        "href": "/invite"
+        "href": "/invite/"
         },
         {
         "text": "Upgrade",

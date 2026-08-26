@@ -43,7 +43,7 @@ faq:
     a: "No. Change-your-vote is off on purpose. A prediction should be a real call, cast once and committed."
   - q: "How is this different from the prediction contest?"
     a: "This is a single match in one poll. The Event Prediction Contest is a multi-category survey with a leaderboard, for awards shows, tournaments, or a full slate of games."
-recipeUrl: "/recipes/prediction-poll"
+recipeUrl: "/recipes/prediction-poll/"
 relatedSlugs: ["event-prediction-contest", "this-or-that-quick-poll", "pick-favorite-poll"]
 pubDate: 2026-07-03
 draft: false

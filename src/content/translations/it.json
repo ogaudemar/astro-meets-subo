@@ -12,25 +12,25 @@
   "navItems": [
     { "text": "Prodotto", "href": "/" },
     { "text": "Risorse", "href": "/" },
-    { "text": "Prezzi", "href": "/it/pricing" }
+    { "text": "Prezzi", "href": "/it/pricing/" }
   ],
   "product": [
-    { "text": "Funzionalità", "href": "/features" },
-    { "text": "Survey Convos", "href": "/survey-convos" },
-    { "text": "Sondaggi", "href": "/polls" },
-    { "text": "Bot Personalizzato", "href": "/custom-survey-bot" }
+    { "text": "Funzionalità", "href": "/features/" },
+    { "text": "Survey Convos", "href": "/survey-convos/" },
+    { "text": "Sondaggi", "href": "/polls/" },
+    { "text": "Bot Personalizzato", "href": "/custom-survey-bot/" }
   ],
   "resources": [
-    { "text": "Tutorial", "href": "/tutorials" },
-    { "text": "Server di Supporto", "href": "/support" },
-    { "text": "Portale di Fatturazione", "href": "/portal" },
-    { "text": "Blog", "href": "/blog" }
+    { "text": "Tutorial", "href": "/tutorials/" },
+    { "text": "Server di Supporto", "href": "/support/" },
+    { "text": "Portale di Fatturazione", "href": "/portal/" },
+    { "text": "Blog", "href": "/blog/" }
   ],
   "useCasesLabel": "Casi d'uso",
   "useCases": [
-    { "text": "Coinvolgere", "href": "/use-cases/engagement" },
-    { "text": "Capire", "href": "/use-cases/research" },
-    { "text": "Gestire", "href": "/use-cases/get-things-done" }
+    { "text": "Coinvolgere", "href": "/use-cases/engagement/" },
+    { "text": "Capire", "href": "/use-cases/research/" },
+    { "text": "Gestire", "href": "/use-cases/get-things-done/" }
   ],
   "cta": "Aggiungi a Discord",
   "upgrade": "Aggiorna",
@@ -47,39 +47,39 @@
     {
       "title": "Prodotto",
       "links": [
-        { "text": "Conversazioni Sondaggio", "href": "/survey-convos" },
-        { "text": "Bot Personalizzato", "href": "/custom-survey-bot" },
-        { "text": "Votazioni", "href": "/polls" },
-        { "text": "Prezzi", "href": "/it/pricing" },
-        { "text": "Aggiungi a Discord", "href": "/invite", "external": true }
+        { "text": "Conversazioni Sondaggio", "href": "/survey-convos/" },
+        { "text": "Bot Personalizzato", "href": "/custom-survey-bot/" },
+        { "text": "Votazioni", "href": "/polls/" },
+        { "text": "Prezzi", "href": "/it/pricing/" },
+        { "text": "Aggiungi a Discord", "href": "/invite/", "external": true }
       ]
     },
     {
       "title": "Casi d'uso",
       "links": [
-        { "text": "Coinvolgere", "href": "/use-cases/engagement" },
-        { "text": "Capire", "href": "/use-cases/research" },
-        { "text": "Gestire", "href": "/use-cases/get-things-done" }
+        { "text": "Coinvolgere", "href": "/use-cases/engagement/" },
+        { "text": "Capire", "href": "/use-cases/research/" },
+        { "text": "Gestire", "href": "/use-cases/get-things-done/" }
       ]
     },
     {
       "title": "Risorse",
       "links": [
-        { "text": "Web App", "href": "/app", "external": true },
-        { "text": "Chi siamo", "href": "/about" },
-        { "text": "Server di Supporto", "href": "/support", "external": true },
-        { "text": "Tutorial", "href": "/tutorials" },
-        { "text": "Blog", "href": "/blog" },
-        { "text": "Portale di fatturazione Stripe", "href": "/portal", "external": true },
-        { "text": "Discord App Store", "href": "/discordstore", "external": true }
+        { "text": "Web App", "href": "/app/", "external": true },
+        { "text": "Chi siamo", "href": "/about/" },
+        { "text": "Server di Supporto", "href": "/support/", "external": true },
+        { "text": "Tutorial", "href": "/tutorials/" },
+        { "text": "Blog", "href": "/blog/" },
+        { "text": "Portale di fatturazione Stripe", "href": "/portal/", "external": true },
+        { "text": "Discord App Store", "href": "/discordstore/", "external": true }
       ]
     },
     {
       "title": "Legale",
       "links": [
-        { "text": "Termini di Servizio", "href": "/terms" },
-        { "text": "Informativa sulla Privacy", "href": "/privacy" },
-        { "text": "Informativa sui Cookie", "href": "/cookies" }
+        { "text": "Termini di Servizio", "href": "/terms/" },
+        { "text": "Informativa sulla Privacy", "href": "/privacy/" },
+        { "text": "Informativa sui Cookie", "href": "/cookies/" }
       ]
     },
     {
@@ -133,17 +133,17 @@
         {
         "title": "CHIEDI IN UNA CONVERSAZIONE",
         "body": "Subo fa una domanda alla volta, come in una chat. I membri si aprono e scopri cose che un muro di modulo non rivela mai.",
-        "href": "/survey-convos"
+        "href": "/survey-convos/"
         },
         {
         "title": "VOTAZIONI CHE FANNO DI PIÙ",
         "body": "Una sola domanda che può valutare le risposte, assegnare un punteggio a un quiz o lanciare un concorso a pronostici, e poi premiare automaticamente i vincitori.",
-        "href": "/polls"
+        "href": "/polls/"
         },
         {
         "title": "PARTECIPAZIONE CHE RIPAGA",
         "body": "Distribuisci XP, ruoli e obiettivi, calibrati su come i membri rispondono davvero. Un riconoscimento che li fa tornare.",
-        "href": "/features"
+        "href": "/features/"
         }
     ]
     },
@@ -157,19 +157,19 @@
       "emoji": "🎉",
       "title": "Coinvolgere",
       "body": "Votazioni, quiz e concorsi a pronostici divertenti che fanno tornare i membri.",
-      "href": "/use-cases/engagement"
+      "href": "/use-cases/engagement/"
     },
     {
       "emoji": "🔎",
       "title": "Capire",
       "body": "Scopri chi sono i tuoi membri e cosa vogliono, poi agisci di conseguenza.",
-      "href": "/use-cases/research"
+      "href": "/use-cases/research/"
     },
     {
       "emoji": "✅",
       "title": "Gestire",
       "body": "Candidature, iscrizioni, ordini e richieste, come una conversazione invece di un modulo.",
-      "href": "/use-cases/get-things-done"
+      "href": "/use-cases/get-things-done/"
     }
   ],
   "usecasesInspireBtn": "🎲 Cliccami per ispirazione!",
@@ -551,7 +551,7 @@
         {
         "text": "Installa Gratis",
         "class": "button button--dark-accent-border",
-        "href": "/invite"
+        "href": "/invite/"
         },
         {
         "text": "Aggiorna",

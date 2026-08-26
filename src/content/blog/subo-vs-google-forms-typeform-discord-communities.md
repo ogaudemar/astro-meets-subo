@@ -72,12 +72,12 @@ That location gives you things a web form structurally cannot do, because they d
 
 - **Roles and XP as the incentive.** You can award XP for completing a survey and grant a Discord role on completion, which gives you a reward that costs nothing and means something inside your community. This is where the gift-card problem goes away: you are paying in status, not money, and status is what people are in a community for. XP works on every plan; custom XP naming and per-survey role rewards are Premium features, as is the monthly leaderboard.
 - **Role-based targeting.** Ask only the members who hold a specific role. A web form is open to whoever has the link.
-- **Three privacy modes, anonymous by default.** Transparent, Semi-Private, and Anonymous, set per project. New servers default to Anonymous, so honest answers are the starting point. The <a href="/blog/complete-guide-anonymous-surveys-discord">anonymous surveys guide</a> covers when to use which.
-- **A role granted from the answer itself.** With <a href="/blog/action-blocks-release">action blocks</a>, picking an option can assign a role, which turns a survey into onboarding, opt-in routing, or an application funnel.
-- **Scoring.** Mark correct answers and the survey becomes <a href="/blog/scoring-piping-quizzes">a quiz or a prediction contest</a> with a leaderboard.
+- **Three privacy modes, anonymous by default.** Transparent, Semi-Private, and Anonymous, set per project. New servers default to Anonymous, so honest answers are the starting point. The <a href="/blog/complete-guide-anonymous-surveys-discord/">anonymous surveys guide</a> covers when to use which.
+- **A role granted from the answer itself.** With <a href="/blog/action-blocks-release/">action blocks</a>, picking an option can assign a role, which turns a survey into onboarding, opt-in routing, or an application funnel.
+- **Scoring.** Mark correct answers and the survey becomes <a href="/blog/scoring-piping-quizzes/">a quiz or a prediction contest</a> with a leaderboard.
 - **Results back into the server.** Post aggregate results to a channel so members see what the community thinks. The survey becomes a community moment instead of an extraction.
 
-Beyond the Discord-specific parts, the pieces you would expect are there: skip logic (simple on all plans, advanced custom logic on VIP), AI summaries of open-ended answers, a <a href="/templates">template library</a>, scheduling and recurring surveys, a web app for building and analysis, and a <a href="/api">public API</a>.
+Beyond the Discord-specific parts, the pieces you would expect are there: skip logic (simple on all plans, advanced custom logic on VIP), AI summaries of open-ended answers, a <a href="/templates/">template library</a>, scheduling and recurring surveys, a web app for building and analysis, and a <a href="/api/">public API</a>.
 
 ## Where Subo is behind, and where it just disagrees
 
@@ -125,4 +125,4 @@ These three are not interchangeable, and the two form builders are not equivalen
 
 Plenty of communities end up running two of these, which is a sensible outcome rather than a failure to commit. Typeform for the public form on the website, Subo for everything asked of members.
 
-If you are about to paste a form link into your server, it is worth trying the in-Discord version first. Start on the <a href="/survey-convos">survey convos page</a>, read <a href="/blog/how-to-make-a-discord-form">how to run a form in Discord</a>, or <a href="/invite">add Subo</a> and run `/survey`.
+If you are about to paste a form link into your server, it is worth trying the in-Discord version first. Start on the <a href="/survey-convos/">survey convos page</a>, read <a href="/blog/how-to-make-a-discord-form/">how to run a form in Discord</a>, or <a href="/invite/">add Subo</a> and run `/survey`.

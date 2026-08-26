@@ -35,7 +35,7 @@ When Subo turns a survey into a conversation, it isn't a person typing back to y
 
 That distinction is the whole point. A form shows all its questions at once and dares you to finish. A structured conversation asks one thing, waits, acknowledges the answer, and moves to the next. If an answer makes a later question irrelevant, skip logic drops it. The member is answering the same questionnaire either way. The experience is closer to a chat with a helpful mod than to filling out a tax document.
 
-You can read the longer version of this argument on the [survey convos page](/survey-convos), including a side-by-side of what forms and structured conversations each do.
+You can read the longer version of this argument on the [survey convos page](/survey-convos/), including a side-by-side of what forms and structured conversations each do.
 
 ## Why the format gets more answers
 
@@ -43,9 +43,9 @@ A few things change once the questionnaire runs as a conversation inside Discord
 
 - **Nobody leaves the server.** Members answer in a DM with the bot or in a thread, right where they already are. No new tab, no context switch.
 - **One question at a time lowers the wall.** A five-question form looks like work. Five questions asked one after another feel like a short exchange.
-- **It knows who's answering.** Because the member is authenticated through Discord, you get their identity and roles for free, without a name field to fill in or fake. It can also [use what it knows](/blog/personalize-discord-survey-messages): greet each person by name, mention the role they're applying for, and put your community's own emoji on the buttons.
+- **It knows who's answering.** Because the member is authenticated through Discord, you get their identity and roles for free, without a name field to fill in or fake. It can also [use what it knows](/blog/personalize-discord-survey-messages/): greet each person by name, mention the role they're applying for, and put your community's own emoji on the buttons.
 - **You can reward participation.** Action blocks can hand out XP, a role, or an achievement as someone answers, so finishing is worth something instead of being a favor to you.
-- **Honest answers when you need them.** For sensitive topics you can run the whole thing in anonymous mode, covered in the [guide to anonymous surveys in Discord](/blog/complete-guide-anonymous-surveys-discord).
+- **Honest answers when you need them.** For sensitive topics you can run the whole thing in anonymous mode, covered in the [guide to anonymous surveys in Discord](/blog/complete-guide-anonymous-surveys-discord/).
 
 ## What you can build this way
 
@@ -59,13 +59,13 @@ Most of the "I need a form in Discord" moments fall into a handful of jobs. All 
 
 **Sign-ups and registrations.** Events, playtests, giveaways, tournaments. Collect the details you need, gate entry behind a role if you want, and export the list when you're done.
 
-If you'd rather start from a ready-made structure than a blank one, [browse the templates](/templates) and adapt one. And for the wider "forms, reinvented" version of these jobs, the [get things done use cases](/use-cases/get-things-done) page walks through more of them.
+If you'd rather start from a ready-made structure than a blank one, [browse the templates](/templates/) and adapt one. And for the wider "forms, reinvented" version of these jobs, the [get things done use cases](/use-cases/get-things-done/) page walks through more of them.
 
 ## How to set one up
 
 A few ways to build it, depending on how you like to work:
 
-1. **Start from a template.** Pick a ready-made structure from [the template library](/templates) or the Templates section of the web app, then adapt it to your server instead of starting from a blank page.
+1. **Start from a template.** Pick a ready-made structure from [the template library](/templates/) or the Templates section of the web app, then adapt it to your server instead of starting from a blank page.
 2. **Run `/survey` in your server** and add questions one at a time. Open text, numeric, single choice, multiple choice, plus content blocks for context and action blocks for rewards.
 3. **Run `/draft`** and describe what you want to collect. Subo's AI generates a first draft you can edit, handy when you know what you want to learn but not how to word it.
 4. **Build it in the web app**, where the same survey lays out on a visual canvas.
@@ -80,8 +80,8 @@ It's one mode or the other, not both at once. If you build a survey in Discord a
 
 ## The short version
 
-If you're about to paste a Google Form link into your server, try the structured-conversation version first. Same questions, asked in the place your community already is, with better completion and answers you can actually act on. Start on the [survey convos page](/survey-convos), or add Subo to your server and run `/survey`.
+If you're about to paste a Google Form link into your server, try the structured-conversation version first. Same questions, asked in the place your community already is, with better completion and answers you can actually act on. Start on the [survey convos page](/survey-convos/), or add Subo to your server and run `/survey`.
 
-For the two form-shaped jobs people ask about most, there are worked builds: a [moderator application](/recipes/volunteer-moderator-funnel) that hands out a trial or waitlist role from one gating question, and a [playtester signup](/recipes/playtester-selection) that splits applicants into a cohort and a waitlist. The [bug report](/templates/bug-report-form) and [suggestion box](/templates/suggestion-box) templates are the clone-and-go versions.
+For the two form-shaped jobs people ask about most, there are worked builds: a [moderator application](/recipes/volunteer-moderator-funnel/) that hands out a trial or waitlist role from one gating question, and a [playtester signup](/recipes/playtester-selection/) that splits applicants into a cohort and a waitlist. The [bug report](/templates/bug-report-form/) and [suggestion box](/templates/suggestion-box/) templates are the clone-and-go versions.
 
-Weighing it up against the tool you already use? [Subo vs Google Forms and Typeform](/blog/subo-vs-google-forms-typeform-discord-communities) is the honest split, including where the form builders are genuinely better. [Pricing](/pricing) covers what the free tier includes.
+Weighing it up against the tool you already use? [Subo vs Google Forms and Typeform](/blog/subo-vs-google-forms-typeform-discord-communities/) is the honest split, including where the form builders are genuinely better. [Pricing](/pricing/) covers what the free tier includes.

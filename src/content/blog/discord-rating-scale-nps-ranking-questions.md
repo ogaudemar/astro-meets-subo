@@ -67,7 +67,7 @@ Two to eleven points, starting at 0 or 1, and two ways to label it. The builder 
 
 ![The Opinion Scale editor with Points set to 5, Starts at 1 selected, five preset chips reading Agreement, Satisfaction, Likelihood, Importance and Frequency, and the five points filled in below as 1 angry face Strongly disagree, 2 thumbs down Disagree, 3 neutral face Neutral, 4 thumbs up Agree, 5 raised hands Strongly agree, with a Buttons and Select menu answer-style toggle](/images/blog/scale-family/script-editor-scale-agreement-set.png)
 
-Likert is a preset of the Opinion Scale, not a question type of its own. It writes labels; the stored answer is still the point number, which is why an agreement item can be averaged and read with a `>= 4` condition like anything else. For how to use one well, including what replaces a matrix question, see [Likert scales in Discord](/blog/discord-likert-scale-one-statement-at-a-time).
+Likert is a preset of the Opinion Scale, not a question type of its own. It writes labels; the stored answer is still the point number, which is why an agreement item can be averaged and read with a `>= 4` condition like anything else. For how to use one well, including what replaces a matrix question, see [Likert scales in Discord](/blog/discord-likert-scale-one-statement-at-a-time/).
 
 The **Buttons / Select menu** toggle at the bottom of that panel matters from about six labeled points up, where a button row starts to wrap. Above that a dropdown reads better. It is a choice about the widget, not about the scale.
 
@@ -83,7 +83,7 @@ Nothing about the NPS block is editable. It arrives with the standard question w
 
 A Net Promoter Score you can edit is a number you cannot compare with anyone else's, which is why an admin who wants a different range wants an Opinion Scale instead. The anchors go one step further: they are never stored, only rendered, so every respondent reads them in their own language and nobody can break the benchmark by editing them.
 
-Subo gives you the question, the distribution and the average. It does not roll the answers up into promoters, passives and detractors for you. If you want the detractor conversation, the useful move is a follow-up gated on `<= 6` with [skip logic](/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo), which works because the answer is a number.
+Subo gives you the question, the distribution and the average. It does not roll the answers up into promoters, passives and detractors for you. If you want the detractor conversation, the useful move is a follow-up gated on `<= 6` with [skip logic](/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo/), which works because the answer is a number.
 
 ---
 
@@ -103,7 +103,7 @@ That frame carries a bonus. The question above the ranking is a labeled frequenc
 
 The web Convo runs the same interaction rather than a different one, so the same survey behaves identically whether you send it to Discord or to a web link.
 
-A respondent submits a complete ranking, or the complete top N, or skips the question if it is optional. There is no half-ranking, and that is what keeps every response comparable. For what to do with one once you have it, from roadmap votes to reading the average rank, see [ranking questions in Discord](/blog/discord-ranking-questions-rank-what-you-build-next). A Discord ranking is capped at 20 items, because that is what fits in a message, and there is no "switch to web" escape hatch for a 21st, because a 21-item ranking is a bad instrument on any surface.
+A respondent submits a complete ranking, or the complete top N, or skips the question if it is optional. There is no half-ranking, and that is what keeps every response comparable. For what to do with one once you have it, from roadmap votes to reading the average rank, see [ranking questions in Discord](/blog/discord-ranking-questions-rank-what-you-build-next/). A Discord ranking is capped at 20 items, because that is what fits in a message, and there is no "switch to web" escape hatch for a 21st, because a 21-item ranking is a bad instrument on any surface.
 
 ---
 
@@ -139,6 +139,6 @@ The fastest thing to picture is a five-star question, and there is a template fo
 
 For ranking, [Rank Your Favorites](/templates/rank-your-favorites/) is a top 3 of 6 with items shuffled per respondent and a follow-up that names the respondent's own number one back to them. For the recommendation question, [NPS + reason follow-up](/templates/nps-reason-followup/) now uses the native NPS block and branches on the score.
 
-If you would rather build from scratch, the four blocks are in the Script Editor palette under their own category, and each one opens with a working default. Authoring them through the [Public API](/api) works too: `rating`, `opinion_scale`, `nps` and `ranking`, with the point number carried in `options[].value` and partial ranking set by `rank_top_n`.
+If you would rather build from scratch, the four blocks are in the Script Editor palette under their own category, and each one opens with a working default. Authoring them through the [Public API](/api/) works too: `rating`, `opinion_scale`, `nps` and `ranking`, with the point number carried in `options[].value` and partial ranking set by `rank_top_n`.
 
 One thing to know before you build: these are survey question types. `/poll` is unchanged.

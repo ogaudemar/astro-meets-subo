@@ -8,13 +8,13 @@ author: "Subo Team"
 heroImage: "/images/blog/survey-tuto/kittens-invite.png"
 faq:
   - q: "How do you create a survey in Discord?"
-    a: "Add Subo to your server and type <code>/survey</code>. A private thread opens where you answer Subo's questions to build yours: name the survey, write each question, and pick the question type. You can also start from a <a href=\"/templates\">template</a>, have AI draft one with <code>/draft</code>, or build it visually in the <a href=\"https://app.subo.gg\">web app</a>."
+    a: "Add Subo to your server and type <code>/survey</code>. A private thread opens where you answer Subo's questions to build yours: name the survey, write each question, and pick the question type. You can also start from a <a href=\"/templates/\">template</a>, have AI draft one with <code>/draft</code>, or build it visually in the <a href=\"https://app.subo.gg\">web app</a>."
   - q: "What is the difference between a poll and a survey in Discord?"
     a: "A poll is a single question with a live tally in the channel. A survey is a set of questions asked in sequence, one at a time, with the answers collected per respondent so you can analyse and export them. Subo does both."
   - q: "Should I build my survey in Discord or in the web app?"
     a: "Use <code>/survey</code> in Discord for simple, quick surveys. Build in the web app for anything more involved: skip logic, scoring and quizzes, conversational action blocks, team management, or richer analytics. Everything in the Discord flow has a visual equivalent there."
   - q: "Is Subo free?"
-    a: "Subo follows a freemium model: free for most users, with Premium tiers for power users. Every privacy mode, including Anonymous, is available on all plans. See <a href=\"/pricing\">pricing</a> for what each tier adds."
+    a: "Subo follows a freemium model: free for most users, with Premium tiers for power users. Every privacy mode, including Anonymous, is available on all plans. See <a href=\"/pricing/\">pricing</a> for what each tier adds."
 draft: false
 ---
 
@@ -24,13 +24,13 @@ Whether you're running a Discord server to connect with your followers, fans, cu
 
 One of the most effective ways to gather that feedback is a survey.
 
-Subo the Survey Bot lets you create one-question polls and multi-question surveys natively in your Discord server. You can build from scratch with the `/survey` command, let AI draft one for you with `/draft`, or start from a ready-made [template](/templates).
+Subo the Survey Bot lets you create one-question polls and multi-question surveys natively in your Discord server. You can build from scratch with the `/survey` command, let AI draft one for you with `/draft`, or start from a ready-made [template](/templates/).
 
-> **Two ways to build, pick by complexity.** This guide walks through creating a survey right inside Discord with `/survey`, which is perfect for simple, quick surveys. For anything more elaborate, like [skip logic](/pricing), [scoring and quizzes](/blog/scoring-piping-quizzes), [conversational Action Blocks](/blog/action-blocks-release), team management, or richer analytics, build visually in the **[Subo web app](https://app.subo.gg)**, which is the recommended way for bigger projects. Everything below has a visual equivalent there. Subo follows a freemium model: free for most users, with Premium tiers for power-users (see [pricing](/pricing)).
+> **Two ways to build, pick by complexity.** This guide walks through creating a survey right inside Discord with `/survey`, which is perfect for simple, quick surveys. For anything more elaborate, like [skip logic](/pricing/), [scoring and quizzes](/blog/scoring-piping-quizzes/), [conversational Action Blocks](/blog/action-blocks-release/), team management, or richer analytics, build visually in the **[Subo web app](https://app.subo.gg)**, which is the recommended way for bigger projects. Everything below has a visual equivalent there. Subo follows a freemium model: free for most users, with Premium tiers for power-users (see [pricing](/pricing/)).
 
 In this post, we'll create a multi-question survey from scratch in Discord with Subo the Survey Bot.
 
-1. [Invite Subo the Survey Bot](/invite) to your Discord server. Follow the directions to give Subo the recommended permissions.
+1. [Invite Subo the Survey Bot](/invite/) to your Discord server. Follow the directions to give Subo the recommended permissions.
 
 2. Type `/survey`. You can type the command in the channel where you want to post the survey (or from another channel and move it later).
 ![Screenshot with the /survey > New command to create a new survey](/images/blog/survey-tuto/survey-1-ljbkw.png) 
@@ -75,7 +75,7 @@ Example: ⚪ _Margarita;_ 🍍 _Hawaiian;_ 🔴 _Pepperoni;_ 🍄 _Regina_
 ![Click Yes to add an image to the question](/images/blog/survey-tuto/survey9-0bz3g.png)
 ![Pas the image link of the image you want to add to the question](/images/blog/survey-tuto/survey10-zb8cl.png)
 
-9. Add more questions if needed, by repeating steps 5 to 8 for each new question. Add as many questions as your survey needs (see [pricing](/pricing) for what each plan includes).
+9. Add more questions if needed, by repeating steps 5 to 8 for each new question. Add as many questions as your survey needs (see [pricing](/pricing/) for what each plan includes).
 ![Repeat the process for as many questions as you want in the convo](/images/blog/survey-tuto/survey11-oiqb0.png)
 
 If you only have 1 question to ask, Subo will ask you to choose between poll and survey mode:
@@ -111,10 +111,10 @@ Customize the many default options that come from your settings (you can edit th
 
 Want to make it even easier next time? Instead of starting from scratch:
 
-- Start from a ready-made **[template](/templates)** with the `/template` command and tweak it to fit. See the [template library](/blog/subo-template-library-launch), or the [recipes](/recipes) if you would rather see how a survey is built block by block.
+- Start from a ready-made **[template](/templates/)** with the `/template` command and tweak it to fit. See the [template library](/blog/subo-template-library-launch/), or the [recipes](/recipes/) if you would rather see how a survey is built block by block.
 - Let Subo's AI **draft** a questionnaire for you based on your objectives with the `/draft` command.
-- **[Clone](/blog/clone-surveys-across-servers)** an existing survey, even across servers, and modify it.
-- Build and edit visually in the **[web app](https://app.subo.gg)** when you need [scoring and quizzes](/blog/scoring-piping-quizzes), [conversational Action Blocks](/blog/action-blocks-release), or team access. Read [why we built it](/blog/subo-web-app-launch).
+- **[Clone](/blog/clone-surveys-across-servers/)** an existing survey, even across servers, and modify it.
+- Build and edit visually in the **[web app](https://app.subo.gg)** when you need [scoring and quizzes](/blog/scoring-piping-quizzes/), [conversational Action Blocks](/blog/action-blocks-release/), or team access. Read [why we built it](/blog/subo-web-app-launch/).
 
 Remember to design effective surveys with clear and concise questions.
 

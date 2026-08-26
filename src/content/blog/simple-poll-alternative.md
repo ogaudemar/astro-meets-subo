@@ -22,7 +22,7 @@ Simple Poll is one of the oldest and most widely installed poll bots on Discord.
 
 Here's the honest starting point. The thing Simple Poll does, a quick reaction-style vote, is now built into Discord itself, for free. So for a lot of servers the real answer to "what should I replace Simple Poll with?" isn't another bot at all. It depends on whether a basic vote was ever all you needed.
 
-For the wider field of poll bots, see the [best Discord poll bots](/blog/best-discord-poll-bots) roundup. This page is about what to move to when you're done with Simple Poll specifically.
+For the wider field of poll bots, see the [best Discord poll bots](/blog/best-discord-poll-bots/) roundup. This page is about what to move to when you're done with Simple Poll specifically.
 
 ## What Simple Poll actually is
 
@@ -48,7 +48,7 @@ If you used Simple Poll for a fast "which day works?" or "yes or no?", you proba
 
 Start a poll straight from the message bar with the `+` button: type a question, add up to 10 answers, pick a duration, and post. The results animate in Discord's own interface, with nothing to install and nothing to learn.
 
-The trade-offs are the same ones Simple Poll had, plus a lower option cap. Native polls max out at 10 options, there's no anonymity, and there are no rewards, no export, and no way to reuse a poll. For a throwaway vote, none of that matters. We break down exactly where the line falls in [Discord native polls vs Subo](/blog/discord-native-polls-vs-subo-the-survey-bot-comparison).
+The trade-offs are the same ones Simple Poll had, plus a lower option cap. Native polls max out at 10 options, there's no anonymity, and there are no rewards, no export, and no way to reuse a poll. For a throwaway vote, none of that matters. We break down exactly where the line falls in [Discord native polls vs Subo](/blog/discord-native-polls-vs-subo-the-survey-bot-comparison/).
 
 **Use native polls if:** you want a quick, public, casual vote and nothing more. They've made the old reaction-poll bots redundant for this.
 
@@ -58,7 +58,7 @@ If you're leaving Simple Poll because a reaction poll couldn't do what you actua
 
 Subo is a Discord survey and poll app. It covers the polling basics a reaction bot never had, then keeps going:
 
-- **Anonymous by default.** Three privacy modes: Transparent (everyone sees who voted), Semi-Private (only you can), and Anonymous (no one can, not even you). New servers start on Anonymous, so honest answers are the default. Here's how the [privacy modes](/blog/complete-guide-anonymous-surveys-discord) work.
+- **Anonymous by default.** Three privacy modes: Transparent (everyone sees who voted), Semi-Private (only you can), and Anonymous (no one can, not even you). New servers start on Anonymous, so honest answers are the default. Here's how the [privacy modes](/blog/complete-guide-anonymous-surveys-discord/) work.
 - **Room to breathe.** Up to 24 options, with effectively no character limit in emoji-only mode, plus timers, role restrictions, live edits, scheduling, and vote-change control.
 - **Work you can keep.** Every poll lives in the [Subo web app](https://app.subo.gg), not just in a channel that scrolls away, so you can find, clone, and reopen past polls instead of rebuilding them.
 
@@ -99,6 +99,6 @@ Match it to why you're switching:
 
 **You outgrew basic voting.** Real poll controls like scheduling, selection caps, reuse, and vote-change, and then rewards, scoring, or a survey, quiz, or form when you need one. That's past every reaction-poll bot, and it's where Subo fits.
 
-To skip the setup, the [template library](/templates) has poll builds ready to clone, including a [one-tap this-or-that poll](/templates/this-or-that-quick-poll) and an [anonymous proposal vote](/templates/governance-proposal-vote).
+To skip the setup, the [template library](/templates/) has poll builds ready to clone, including a [one-tap this-or-that poll](/templates/this-or-that-quick-poll/) and an [anonymous proposal vote](/templates/governance-proposal-vote/).
 
-**[Add Subo to your Discord server for free →](/invite)**, see everything it does on the [polls page](/polls), learn [how to create a Discord poll](/blog/how-to-create-a-discord-poll-with-or-without-a-bot) step by step, or compare [plans](/pricing).
+**[Add Subo to your Discord server for free →](/invite/)**, see everything it does on the [polls page](/polls/), learn [how to create a Discord poll](/blog/how-to-create-a-discord-poll-with-or-without-a-bot/) step by step, or compare [plans](/pricing/).

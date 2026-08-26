@@ -273,7 +273,7 @@ Two constraints worth knowing before you build it:
 ### Knowledge items (right/wrong with deferred feedback)
 
 For knowledge items, set `correct_answer_index` and `score_values` on the
-correct option only, the same pattern as the [World Capitals Quiz](/recipes/world-capitals-quiz).
+correct option only, the same pattern as the [World Capitals Quiz](/recipes/world-capitals-quiz/).
 
 In Wave 1, leave `when_correct` and `when_incorrect` blank: you do not
 want to give feedback that helps respondents perform better on Wave 2
@@ -378,7 +378,7 @@ richer story than a single before/after comparison.
 
 ### Segment change by onboarding type
 
-If you've run the [Member Segmentation](/recipes/member-segmentation) survey,
+If you've run the [Member Segmentation](/recipes/member-segmentation/) survey,
 join the segmentation export to the pre/post export on Discord handle. Do
 Competitors improve their shipping confidence more than Socials? Do Creators
 enter with higher baseline scoping scores? Cross-segment change analysis
@@ -430,7 +430,7 @@ judgement.
 
 ## Related
 
-- [Member segmentation](/recipes/member-segmentation): onboarding survey with multi-bucket hidden scoring
-- [Study quiz](/recipes/study-quiz): per-attempt knowledge assessment with immediate feedback and retakes
-- [World Capitals Quiz](/recipes/world-capitals-quiz): right/wrong knowledge quiz, single wave
+- [Member segmentation](/recipes/member-segmentation/): onboarding survey with multi-bucket hidden scoring
+- [Study quiz](/recipes/study-quiz/): per-attempt knowledge assessment with immediate feedback and retakes
+- [World Capitals Quiz](/recipes/world-capitals-quiz/): right/wrong knowledge quiz, single wave
 - [Scoring variables reference](https://api.subo.ai/docs#tag/Script/operation/replaceScript)

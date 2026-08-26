@@ -42,7 +42,7 @@ For a snap decision ("what time works for the raid?") it's the right tool. The l
 - No participation rewards, no results export
 - By default any member with permission to send messages can create a poll (Discord later added a role permission to restrict this, so it's manageable now)
 
-**Best for:** fast, casual, low-stakes votes where you don't care who sees the results. For a closer look at where the built-in feature runs out, see [Discord native polls vs Subo](/blog/discord-native-polls-vs-subo-the-survey-bot-comparison).
+**Best for:** fast, casual, low-stakes votes where you don't care who sees the results. For a closer look at where the built-in feature runs out, see [Discord native polls vs Subo](/blog/discord-native-polls-vs-subo-the-survey-bot-comparison/).
 
 ## Simple Poll
 
@@ -52,7 +52,7 @@ There's no anonymity (reactions are public by nature), no cap on how many option
 
 Being blunt: Discord's native polls now do everything Simple Poll does and more, inside the client, for free. If you're choosing today, there's no scenario where Simple Poll beats native polls. It's on this list because it's still widely installed, not because it's still the right call.
 
-**Best for:** honestly, nothing new in 2026. Existing users are better off switching to native polls. If you're specifically weighing what to move to, see the [Simple Poll alternative](/blog/simple-poll-alternative) guide.
+**Best for:** honestly, nothing new in 2026. Existing users are better off switching to native polls. If you're specifically weighing what to move to, see the [Simple Poll alternative](/blog/simple-poll-alternative/) guide.
 
 ## MEE6
 
@@ -70,7 +70,7 @@ That leaves the two bots genuinely worth comparing on features. Both are activel
 
 EasyPoll is the most-installed dedicated poll bot on Discord, and its head start shows: it's polished, free, and does polling well. Up to 25 options per poll, genuinely anonymous voting (no one sees who chose what, results reveal at the end), timers up to 30 days, voting restricted to specific roles, live edits without deleting the poll, and it runs in 13 languages.
 
-It also has a web dashboard (with poll duplication and basic response analysis, though no charts) and a public API, so it reaches beyond in-chat use. If your need is "polls, done well, for free," EasyPoll delivers and has for years. Its scope is deliberately narrow, though: it's a poll bot. No multi-question surveys, no quiz scoring, and no rewards tied to your server. When you want the poll to *do* something after the vote, that's where it stops. We go deeper on that trade-off in the [EasyPoll alternative](/blog/easypoll-alternative) guide.
+It also has a web dashboard (with poll duplication and basic response analysis, though no charts) and a public API, so it reaches beyond in-chat use. If your need is "polls, done well, for free," EasyPoll delivers and has for years. Its scope is deliberately narrow, though: it's a poll bot. No multi-question surveys, no quiz scoring, and no rewards tied to your server. When you want the poll to *do* something after the vote, that's where it stops. We go deeper on that trade-off in the [EasyPoll alternative](/blog/easypoll-alternative/) guide.
 
 ### Subo
 
@@ -78,7 +78,7 @@ Subo shares a lot of ground with EasyPoll: up to 24 options (and effectively no 
 
 - **Rewards for voting, including conditional ones.** Award XP and Discord roles for taking part, with a leaderboard to keep engagement going. **Action blocks** go further: grant a role based on *how* someone answered, so the poll can drive an outcome on its own. This conditional-reward layer is Subo's clearest edge over a pure poll bot.
 - **Scoring and correct answers.** Mark options right or wrong so a poll doubles as a scored quiz.
-- **Three privacy modes** instead of a single anonymous toggle: Transparent (everyone sees who voted), Semi-Private (only you as the creator can), and Anonymous (no one can, not even you). New servers default to Anonymous, so honest feedback is the starting point rather than something you have to switch on. We cover how the modes work in the [anonymous surveys guide](/blog/complete-guide-anonymous-surveys-discord).
+- **Three privacy modes** instead of a single anonymous toggle: Transparent (everyone sees who voted), Semi-Private (only you as the creator can), and Anonymous (no one can, not even you). New servers default to Anonymous, so honest feedback is the starting point rather than something you have to switch on. We cover how the modes work in the [anonymous surveys guide](/blog/complete-guide-anonymous-surveys-discord/).
 - The expected controls too: cap how many options each person can pick, schedule a poll to post later, let people change their vote or lock it, choose when results are visible, reveal hidden results at the end, add an image or custom color.
 
 The bigger difference is scope. The same bot runs full multi-question surveys and quizzes with skip logic, respondents answer privately (in Discord or on the web, no account needed for web links), and Subo can summarize open-text answers with AI and post results back to a channel. You start with a poll and grow into real research without switching tools.
@@ -123,6 +123,6 @@ EasyPoll and Subo are close enough on core polling that feature lists only get y
 
 One last thing worth weighing is longevity. Discord's history is full of once-popular free bots that stalled or quietly shut down when the people running them moved on. A tool with a business model behind it has a reason to keep pace as Discord ships changes and new features. Subo's paid plans fund a small team that keeps it current, and they're what let a poll you run today grow into scoring, rewards, and full surveys down the line. If you want a tool that keeps up with your community rather than one you might have to replace, that is where Subo stands out.
 
-If you want to see the difference rather than read about it, the [poll templates](/templates) are one-click builds of the things a poll bot cannot do: a [prediction contest](/templates/event-prediction-contest) that pays XP by how bold the call was, an [anonymous proposal vote](/templates/governance-proposal-vote), a [this-or-that debate poll](/templates/this-or-that-poll).
+If you want to see the difference rather than read about it, the [poll templates](/templates/) are one-click builds of the things a poll bot cannot do: a [prediction contest](/templates/event-prediction-contest/) that pays XP by how bold the call was, an [anonymous proposal vote](/templates/governance-proposal-vote/), a [this-or-that debate poll](/templates/this-or-that-poll/).
 
-**[Add Subo to your Discord server for free →](/invite)**, see everything it does with polls on the [polls page](/polls), or compare [plans and pricing](/pricing).
+**[Add Subo to your Discord server for free →](/invite/)**, see everything it does with polls on the [polls page](/polls/), or compare [plans and pricing](/pricing/).

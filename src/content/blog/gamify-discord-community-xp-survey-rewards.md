@@ -131,18 +131,18 @@ Gamification isn't about manipulation. It's about making the value exchange expl
 - **Roles** = status and access that reflect investment
 - **Leaderboards** = recognition and friendly competition
 
-And with [XP History](/blog/xp-history), that proof is auditable: every member can see how and why each point moved, on the web and in Discord, so the rewards you hand out are ones they trust.
+And with [XP History](/blog/xp-history/), that proof is auditable: every member can see how and why each point moved, on the web and in Discord, so the rewards you hand out are ones they trust.
 
 When members can see their ranking and know that consistent participation leads to tangible status in the community, participation becomes part of community identity rather than an interruption.
 
 ## Three builds that already do this
 
-If you want the mechanics rather than the theory, three recipes wire XP into a working survey. An [attendance streak](/recipes/event-rsvp-streak) turns repeat RSVPs into tier achievements without anyone tracking who showed up. A [prediction contest](/recipes/prediction-poll) pays XP in proportion to how bold the call was. A [study quiz](/recipes/study-quiz) awards XP equal to the score and lets members retake it to improve. The [template library](/templates) has clone-and-go versions of the first two.
+If you want the mechanics rather than the theory, three recipes wire XP into a working survey. An [attendance streak](/recipes/event-rsvp-streak/) turns repeat RSVPs into tier achievements without anyone tracking who showed up. A [prediction contest](/recipes/prediction-poll/) pays XP in proportion to how bold the call was. A [study quiz](/recipes/study-quiz/) awards XP equal to the score and lets members retake it to improve. The [template library](/templates/) has clone-and-go versions of the first two.
 
 ## Getting Started
 
 The XP system is available on all plans (including free). Custom XP names, values, and role rewards for monthly XP require Premium or above. Per-survey role rewards require Premium or above.
 
-**[Add Subo to your Discord server →](/invite)**
+**[Add Subo to your Discord server →](/invite/)**
 
-**[See all plans and features →](/pricing)**
+**[See all plans and features →](/pricing/)**

@@ -33,7 +33,7 @@ hardest constraint on a useful playtest isn't enthusiasm or skill. It's
 **reliable weekly availability**. The right gate filters for that.
 
 This recipe uses the same single-decisive-question pattern as the
-[volunteer recruitment recipe](/recipes/volunteer-moderator-funnel), with
+[volunteer recruitment recipe](/recipes/volunteer-moderator-funnel/), with
 two differences:
 
 1. The qualifying outcome is an **achievement** (`give_achievement`),
@@ -263,7 +263,7 @@ multiple games or different difficulty modes.
 - **You want skill-based selection** ("only experienced playtesters").
   A single yes/no skill gate is easy, but real skill assessment means
   scoring across several questions, as the
-  [member segmentation recipe](/recipes/member-segmentation) does. Keeping
+  [member segmentation recipe](/recipes/member-segmentation/) does. Keeping
   it simple here, weigh q4 (genre fit) and q5 (writing sample) manually.
 - **You need to limit slots automatically.** No built-in cap; close
   manually as described in Variations.
@@ -277,9 +277,9 @@ multiple games or different difficulty modes.
 ---
 
 ## Related
-- [Welcome quiz recipe](/recipes/welcome-quiz): onboarding pattern
-- [Volunteer recruitment recipe](/recipes/volunteer-moderator-funnel): same gate-and-route shape, community-manager framing
-- [Event RSVP recipe](/recipes/event-rsvp-streak): recurring engagement pattern
+- [Welcome quiz recipe](/recipes/welcome-quiz/): onboarding pattern
+- [Volunteer recruitment recipe](/recipes/volunteer-moderator-funnel/): same gate-and-route shape, community-manager framing
+- [Event RSVP recipe](/recipes/event-rsvp-streak/): recurring engagement pattern
 - [Skip logic reference](https://api.subo.ai/docs#tag/Script): operator and value-type tables
 
 ---
@@ -296,5 +296,5 @@ regardless of Discord-side role housekeeping. By linking a Discord role
 *to* the achievement, you get the role grant for free during the active
 playtest window, and the badge stays after.
 
-See the [achievements vs. roles table in the welcome-quiz recipe](/recipes/welcome-quiz#achievements-vs-roles)
+See the [achievements vs. roles table in the welcome-quiz recipe](/recipes/welcome-quiz/#achievements-vs-roles)
 for the broader rule.

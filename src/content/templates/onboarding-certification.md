@@ -43,7 +43,7 @@ faq:
     a: "Achievements are platform-neutral and survive being cloned into another server, where a raw role would break. The badge can still unlock a linked role once it's set up for your community."
   - q: "Can I use it for product certification, not just community rules?"
     a: "Yes. Swap the rules questions for product-knowledge questions and rename the badge. It's equally a customer certification, partner training, or employee onboarding quiz."
-recipeUrl: "/recipes/study-quiz"
+recipeUrl: "/recipes/study-quiz/"
 relatedSlugs: ["lore-trivia-quiz", "player-onboarding-profiler", "playtester-beta-recruitment"]
 pubDate: 2026-07-03
 draft: false

@@ -441,14 +441,14 @@ a different House.
   House the member sorted into).
 - **You want a right/wrong quiz instead of a personality quiz**: use
   `correct_answer_id` on each question and `when_correct` / `when_incorrect`
-  messages. See the [World Capitals recipe](/recipes/world-capitals-quiz) for that
+  messages. See the [World Capitals recipe](/recipes/world-capitals-quiz/) for that
   pattern.
 
 ---
 
 ## Related
 
-- [World Capitals geography quiz](/recipes/world-capitals-quiz): traditional right/wrong quiz with per-question feedback and score-based XP
-- [Welcome quiz](/recipes/welcome-quiz): skip-logic routing pattern without scoring
+- [World Capitals geography quiz](/recipes/world-capitals-quiz/): traditional right/wrong quiz with per-question feedback and score-based XP
+- [Welcome quiz](/recipes/welcome-quiz/): skip-logic routing pattern without scoring
 - [Skip logic reference](https://api.subo.ai/docs#tag/Script): operator and value-type tables
 - [Scoring variables reference](https://api.subo.ai/docs#tag/Script/operation/replaceScript): full list of `[score_*]` tokens

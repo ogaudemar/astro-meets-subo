@@ -27,7 +27,7 @@ Pendant des années, Discord a été le mauvais élève. Reddit, Telegram, Whats
 
 La question n'est donc plus « quel bot de sondage installer ». C'est « quand est-ce que la fonction intégrée suffit, et quand est-ce que je veux encore un bot comme Subo ». Ce comparatif répond à ça, point par point.
 
-Si tu cherches le panorama complet (Simple Poll, MEE6, EasyPoll, et où chacun s'arrête), va voir le [comparatif des meilleurs bots de sondage Discord](/blog/best-discord-poll-bots) (en anglais). Cette page reste concentrée sur les sondages natifs face à Subo.
+Si tu cherches le panorama complet (Simple Poll, MEE6, EasyPoll, et où chacun s'arrête), va voir le [comparatif des meilleurs bots de sondage Discord](/blog/best-discord-poll-bots/) (en anglais). Cette page reste concentrée sur les sondages natifs face à Subo.
 
 ## Les sondages natifs de Discord
 
@@ -94,16 +94,16 @@ Subo est une app Discord gratuite lancée en 2022, construite par des gens qui v
 
 ### Trois modes de confidentialité, anonyme par défaut
 
-Au lieu du décompte public unique des sondages natifs, Subo propose trois modes : **Transparent** (tout le monde voit qui a voté), **Semi-privé** (toi seul, en tant que créateur), et **Anonyme** (personne, pas même toi). Les nouveaux serveurs démarrent en Anonyme, donc la réponse honnête est le point de départ plutôt qu'une case à penser à cocher. Le détail de chaque mode et quand l'utiliser est dans le [guide des sondages anonymes](/blog/complete-guide-anonymous-surveys-discord) (en anglais).
+Au lieu du décompte public unique des sondages natifs, Subo propose trois modes : **Transparent** (tout le monde voit qui a voté), **Semi-privé** (toi seul, en tant que créateur), et **Anonyme** (personne, pas même toi). Les nouveaux serveurs démarrent en Anonyme, donc la réponse honnête est le point de départ plutôt qu'une case à penser à cocher. Le détail de chaque mode et quand l'utiliser est dans le [guide des sondages anonymes](/blog/complete-guide-anonymous-surveys-discord/) (en anglais).
 
 ### Fait pour être réutilisé et géré
 
 C'est la couche que les sondages natifs n'ont pas du tout, et c'est ce qui compte le plus si tu sondes régulièrement.
 
-- **Dupliquer n'importe quel sondage.** Relance le même vote hebdomadaire ou mensuel sans le reconstruire. Tu reprends un sondage passé, tu ajustes ce qui a changé, tu republies. Ça marche aussi [d'un serveur à l'autre](/blog/clone-surveys-across-servers) (en anglais).
+- **Dupliquer n'importe quel sondage.** Relance le même vote hebdomadaire ou mensuel sans le reconstruire. Tu reprends un sondage passé, tu ajustes ce qui a changé, tu republies. Ça marche aussi [d'un serveur à l'autre](/blog/clone-surveys-across-servers/) (en anglais).
 - **Rouvrir un sondage fermé.** Prolonge-le, ou réactive un ancien pour récolter plus de réponses au lieu de repartir de zéro.
 - **Une app web qui garde ton travail.** Chaque sondage, questionnaire et quiz que tu as lancé vit dans l'[app web Subo](https://app.subo.gg), pas seulement dans un salon qui défile. Tu retrouves tes projets passés, tu compares les résultats dans le temps, tu réactives, dupliques ou modifies n'importe lequel.
-- **De l'aide à la création.** Pars d'un [modèle prêt à l'emploi](/templates) (en anglais), ou laisse l'IA de Subo rédiger le sondage quand tu as le sujet mais pas les questions. Les sondages natifs te donnent une case vide, Subo te donne un point de départ.
+- **De l'aide à la création.** Pars d'un [modèle prêt à l'emploi](/templates/) (en anglais), ou laisse l'IA de Subo rédiger le sondage quand tu as le sujet mais pas les questions. Les sondages natifs te donnent une case vide, Subo te donne un point de départ.
 
 ### Des sondages qui font quelque chose après le vote
 
@@ -154,4 +154,4 @@ Il y a une façon plus simple de tracer la ligne. Si tu sondes souvent, si ta co
 
 Les deux ne sont pas vraiment concurrents. Les sondages natifs prennent les questions jetables, Subo prend celles dont le résultat compte. Beaucoup de serveurs font tourner les deux.
 
-**[Ajoute Subo à ton serveur Discord, gratuitement →](/invite)**, vois tout ce qu'il sait faire sur la [page bot de sondage](/fr/polls), apprends [comment créer un sondage sur Discord](/fr/blog/comment-creer-un-sondage-sur-discord) pas à pas, ou compare les [tarifs](/fr/pricing).
+**[Ajoute Subo à ton serveur Discord, gratuitement →](/invite/)**, vois tout ce qu'il sait faire sur la [page bot de sondage](/fr/polls/), apprends [comment créer un sondage sur Discord](/fr/blog/comment-creer-un-sondage-sur-discord/) pas à pas, ou compare les [tarifs](/fr/pricing/).

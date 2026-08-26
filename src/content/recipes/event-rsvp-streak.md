@@ -270,9 +270,9 @@ but also less rewarding for the borderline-engaged.
 ---
 
 ## Related
-- [Welcome quiz recipe](/recipes/welcome-quiz): onboarding pattern
-- [Volunteer recruitment recipe](/recipes/volunteer-moderator-funnel): gate-and-route pattern (same shape, no streaks)
-- [Playtester selection recipe](/recipes/playtester-selection): gate-and-route pattern (game-dev)
+- [Welcome quiz recipe](/recipes/welcome-quiz/): onboarding pattern
+- [Volunteer recruitment recipe](/recipes/volunteer-moderator-funnel/): gate-and-route pattern (same shape, no streaks)
+- [Playtester selection recipe](/recipes/playtester-selection/): gate-and-route pattern (game-dev)
 - [Skip logic reference](https://api.subo.ai/docs#tag/Script): operator and value-type tables
 
 ---
@@ -288,5 +288,5 @@ public milestones that emerge. The recipe leans on XP as the **stream**
 and achievements as the **markers in the stream**, which is the
 architecture Subo's reward system is designed for.
 
-See the [achievements vs. roles table in the welcome-quiz recipe](/recipes/welcome-quiz#achievements-vs-roles)
+See the [achievements vs. roles table in the welcome-quiz recipe](/recipes/welcome-quiz/#achievements-vs-roles)
 for the broader rule.

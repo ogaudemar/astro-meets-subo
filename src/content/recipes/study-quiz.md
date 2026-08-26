@@ -293,6 +293,6 @@ and join on Discord handle to measure individual improvement.
 
 ## Related
 
-- [World Capitals Quiz](/recipes/world-capitals-quiz): right/wrong quiz recipe (simpler, single-topic)
-- [Hogwarts House Sorting Hat](/recipes/hogwarts-house-sorting-quiz): multi-bucket personality scoring
+- [World Capitals Quiz](/recipes/world-capitals-quiz/): right/wrong quiz recipe (simpler, single-topic)
+- [Hogwarts House Sorting Hat](/recipes/hogwarts-house-sorting-quiz/): multi-bucket personality scoring
 - [Scoring variables reference](https://api.subo.ai/docs#tag/Script/operation/replaceScript): full list of `[score_*]`, `[correct_answers]` tokens

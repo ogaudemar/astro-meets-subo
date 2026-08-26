@@ -6,6 +6,12 @@ import sitemap from "@astrojs/sitemap";
 import cloudflare from "@astrojs/cloudflare";
 
 import { trackedRedirects } from "./src/config/redirects.js";
+import { buildLastmodLookup } from "./src/config/sitemap-lastmod.js";
+
+// Real per-URL <lastmod>, from frontmatter for content pages and from git for
+// static ones. See src/config/sitemap-lastmod.js for why it is not just the
+// build date. A URL we cannot date honestly gets no lastmod at all.
+const LASTMOD = buildLastmodLookup();
 
 // Pages that should NOT appear in the sitemap: outbound redirect stubs
 // (from redirects.js) plus thin/transactional utility pages. These are
@@ -29,6 +35,10 @@ export default defineConfig({
     mdx(),
     sitemap({
       filter: (page) => !NOINDEX_PATHS.has(page),
+      serialize: (item) => {
+        const lastmod = LASTMOD.get(item.url);
+        return lastmod ? { ...item, lastmod } : item;
+      },
     }),
   ],
   adapter: cloudflare({

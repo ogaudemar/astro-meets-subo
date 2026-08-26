@@ -144,4 +144,4 @@ Content blocks sit in the same drag and drop canvas as question blocks in the [S
 
 Skip logic treats it like any other block, so you can gate who sees it on anything answered earlier. And because it takes variables, the same block can greet a hundred people by name, hand each of them their own score, and quote something they said four questions ago.
 
-Ready to build one? Start from a [template](/templates), read the [survey design recipes](/recipes), or see how [skip logic](/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo) decides who sees what.
+Ready to build one? Start from a [template](/templates/), read the [survey design recipes](/recipes/), or see how [skip logic](/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo/) decides who sees what.

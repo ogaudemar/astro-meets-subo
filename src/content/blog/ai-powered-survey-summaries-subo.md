@@ -36,7 +36,7 @@ Subo's Text Analysis is different in a few ways:
 
 **It's reliable for large datasets.** Copy-pasting hundreds or thousands of responses into a general AI tool has practical limits. Subo handles this through its backend integration, so the data flows directly without you managing size limits.
 
-**It's transparent about data handling.** Text Analysis is powered by OpenAI (of ChatGPT fame). Open-text answers are sent to the OpenAI API to produce the summary. Per OpenAI's policy, that data is not used to train their models and is retained only for abuse monitoring (up to 30 days, unless the law requires otherwise). For the full picture, see [Subo's Privacy Policy](/privacy).
+**It's transparent about data handling.** Text Analysis is powered by OpenAI (of ChatGPT fame). Open-text answers are sent to the OpenAI API to produce the summary. Per OpenAI's policy, that data is not used to train their models and is retained only for abuse monitoring (up to 30 days, unless the law requires otherwise). For the full picture, see [Subo's Privacy Policy](/privacy/).
 
 ## When to Use AI Summaries
 
@@ -58,13 +58,13 @@ Regular pulse surveys with one open-ended question ("How's the vibe in the serve
 
 ## AI Credits
 
-Text Analysis and the `/draft` command both run on Subo's AI credits. All new accounts in the Free plan come with enough credits to run analysis for a few surveys. If your server is big, you may need to upgrade to a paid plan to get more credits. Paid plans include a monthly allowance of AI credits that resets each billing period, with higher tiers getting a larger allowance. The credit cost scales with how much text is being analyzed, and the allowances are sized so most servers won't come close to running out. See [pricing](/pricing) for the current allowance on each plan.
+Text Analysis and the `/draft` command both run on Subo's AI credits. All new accounts in the Free plan come with enough credits to run analysis for a few surveys. If your server is big, you may need to upgrade to a paid plan to get more credits. Paid plans include a monthly allowance of AI credits that resets each billing period, with higher tiers getting a larger allowance. The credit cost scales with how much text is being analyzed, and the allowances are sized so most servers won't come close to running out. See [pricing](/pricing/) for the current allowance on each plan.
 
 ## The `/draft` Command: AI-Powered Survey Creation
 
 While we're on the topic of AI, Subo's `/draft` command is the other side of the same coin. It uses the same AI credits, but instead of summarizing responses, it generates survey questions for you.
 
-Tell Subo what you're trying to find out, for example "I want to understand what keeps my members engaged and what's causing them to leave," and `/draft` generates a full set of suggested questions. You can edit, remove, or add to them, but the starting point is already built. It's especially useful when you're drawing a blank on how to structure a survey, or want to cover every angle on a topic without spending 30 minutes writing questions. See the [survey how-to](/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089) for where `/draft` fits in the build flow.
+Tell Subo what you're trying to find out, for example "I want to understand what keeps my members engaged and what's causing them to leave," and `/draft` generates a full set of suggested questions. You can edit, remove, or add to them, but the starting point is already built. It's especially useful when you're drawing a blank on how to structure a survey, or want to cover every angle on a topic without spending 30 minutes writing questions. See the [survey how-to](/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/) for where `/draft` fits in the build flow.
 
 ## Limitations to Know About
 
@@ -82,8 +82,8 @@ AI summarization is powerful but not perfect. A few things to be aware of:
 
 Text Analysis is available on all plans. Turn it on in `/settings`, run a survey with at least one open-text question, and your next report will include the summary. Need to regenerate after more responses arrive? Use `Refresh Text Analysis`.
 
-It earns its keep on surveys that ask a real open question. The [suggestion box](/templates/suggestion-box) and the [community health survey](/templates/community-health-engagement) are both built that way, and the [pre and post assessment recipe](/recipes/pre-post-assessment) pairs open answers with scores you can compare across two waves.
+It earns its keep on surveys that ask a real open question. The [suggestion box](/templates/suggestion-box/) and the [community health survey](/templates/community-health-engagement/) are both built that way, and the [pre and post assessment recipe](/recipes/pre-post-assessment/) pairs open answers with scores you can compare across two waves.
 
-**[Add Subo to your Discord server →](/invite)**
+**[Add Subo to your Discord server →](/invite/)**
 
-**[See all plans and features →](/pricing)**
+**[See all plans and features →](/pricing/)**

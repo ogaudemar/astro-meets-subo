@@ -644,7 +644,7 @@ function verifySuboWebhook(rawBody, header, secret) {
           <section id="templates" class="api-section">
             <h2 class="mono">Recipe: clone a ready-made template</h2>
             <p>
-              Subo ships curated <a href="/templates">templates</a>: quizzes, prediction
+              Subo ships curated <a href="/templates/">templates</a>: quizzes, prediction
               contests, feedback surveys. Cloning one is faster than writing a script and
               carries over the scoring, grading and reward blocks that make it work.
             </p>
@@ -763,7 +763,7 @@ curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/templates/$TEMPLATE_ID/clone
               Limits are counted per key in a one-minute window. Every response carries
               <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code> and
               <code>X-RateLimit-Reset</code>; a <code>429</code> adds <code>Retry-After</code>.
-              See <a href="/pricing">pricing</a> for what else each tier includes.
+              See <a href="/pricing/">pricing</a> for what else each tier includes.
             </p>
 
             <h3>Errors</h3>
@@ -798,8 +798,8 @@ curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/templates/$TEMPLATE_ID/clone
               <li><a href={REFERENCE_URL} target="_blank" rel="noopener noreferrer">Full endpoint reference</a> for every field and response shape.</li>
               <li><a href={OPENAPI_URL} target="_blank" rel="noopener noreferrer">OpenAPI 3.1 spec</a> to generate a client or feed an agent.</li>
               <li><a href="/llms.txt">llms.txt</a> if you are pointing an AI agent at Subo.</li>
-              <li><a href="/tutorials">Tutorials</a> for the no-code path through the same features.</li>
-              <li><a href="/support">Support server</a> when something behaves in a way this page did not predict.</li>
+              <li><a href="/tutorials/">Tutorials</a> for the no-code path through the same features.</li>
+              <li><a href="/support/">Support server</a> when something behaves in a way this page did not predict.</li>
             </ul>
           </section>
 

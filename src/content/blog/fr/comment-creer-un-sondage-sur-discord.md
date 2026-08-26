@@ -26,9 +26,9 @@ draft: false
 Un sondage, c'est le moyen le plus rapide de faire trancher ta communauté sans lancer un débat de trois jours dans le salon général. Discord propose ses propres sondages depuis un moment, et ils font très bien le travail pour un vote sans enjeu. Ce guide couvre les deux méthodes :
 
 - **Le sondage natif de Discord** : gratuit, instantané, suffisant pour un vote rapide.
-- **Un bot de sondage comme [Subo](/invite)** : quand tu as besoin de plus (images, plus de 10 options, vote anonyme, rôles requis, récompenses, notation pour un quiz ou un concours de prédiction, planification, ou des résultats exportables).
+- **Un bot de sondage comme [Subo](/invite/)** : quand tu as besoin de plus (images, plus de 10 options, vote anonyme, rôles requis, récompenses, notation pour un quiz ou un concours de prédiction, planification, ou des résultats exportables).
 
-Tu hésites simplement entre Subo et les sondages intégrés de Discord ? On les compare point par point dans [sondages natifs Discord vs Subo](/fr/blog/sondages-natifs-discord-vs-subo). Cet article-ci est le mode d'emploi.
+Tu hésites simplement entre Subo et les sondages intégrés de Discord ? On les compare point par point dans [sondages natifs Discord vs Subo](/fr/blog/sondages-natifs-discord-vs-subo/). Cet article-ci est le mode d'emploi.
 
 > **Rapide ou élaboré ?** Pour un vote ponctuel, la commande `/poll` ci-dessous prend quelques secondes, sans quitter Discord. Pour tout ce qui est plus construit (sondages conversationnels à plusieurs questions, quiz notés, logique de saut, récompenses conditionnelles), l'[app web Subo](https://app.subo.gg) est la bonne porte d'entrée. Commence simple dans Discord, puis passe à l'app web quand tes projets grossissent.
 
@@ -46,11 +46,11 @@ C'est pratique et c'est gratuit. Les limites arrivent vite : les résultats sont
 
 ## Option 2 : les sondages avec Subo
 
-[Subo](/invite) transforme le sondage en outil que tu peux vraiment utiliser pour faire tourner une communauté : anonyme ou transparent, réservé à certains rôles, récompensé, noté, planifié, et exportable avec le reste de tes données.
+[Subo](/invite/) transforme le sondage en outil que tu peux vraiment utiliser pour faire tourner une communauté : anonyme ou transparent, réservé à certains rôles, récompensé, noté, planifié, et exportable avec le reste de tes données.
 
 ### Trois façons de lancer un sondage Subo
 
-Une fois [Subo ajouté à ton serveur](/invite) :
+Une fois [Subo ajouté à ton serveur](/invite/) :
 
 - **`/poll`** : construis-le directement dans Discord (le pas à pas juste en dessous).
 - **`/template`** : pars d'un modèle prêt à l'emploi et adapte-le. Les modèles marchent dans le bot Discord, et se retouchent encore plus facilement dans l'[app web](https://app.subo.gg).
@@ -123,16 +123,16 @@ Après avoir validé, Subo affiche un récapitulatif avant que quoi que ce soit 
 
 La commande `/poll` est rapide, mais pour du travail plus gros ou récurrent, l'**[app web Subo](https://app.subo.gg)** est la bonne porte d'entrée. C'est un éditeur visuel pour les sondages, les sondages conversationnels et les quiz, avec la gestion complète, les analyses et l'accès en équipe.
 
-- **Pars d'un modèle** : sondages « ceci ou cela », votes de priorisation de fonctionnalités, concours de prédiction, propositions de gouvernance, prêts à lancer. Voir la [bibliothèque de modèles](/templates) (en anglais).
+- **Pars d'un modèle** : sondages « ceci ou cela », votes de priorisation de fonctionnalités, concours de prédiction, propositions de gouvernance, prêts à lancer. Voir la [bibliothèque de modèles](/templates/) (en anglais).
 - **Construis un vrai quiz** avec la notation intégrée : bonnes réponses, points par option, et classement.
 - **Soigne l'invitation** pour qu'elle donne envie de cliquer.
 
 ### Automatiser tes sondages avec l'API
 
-Subo a aussi une [API publique](/api) (en anglais), pour créer et publier des sondages par programme. Confie-la à ton agent IA préféré et laisse-le tourner : par exemple, publier un nouveau sondage sur ton serveur chaque matin.
+Subo a aussi une [API publique](/api/) (en anglais), pour créer et publier des sondages par programme. Confie-la à ton agent IA préféré et laisse-le tourner : par exemple, publier un nouveau sondage sur ton serveur chaque matin.
 
 ## Lequel choisir ?
 
-Pour un vote jetable, le sondage natif de Discord fait le travail, et il ne coûte rien. Dès que tu tiens à la sincérité des réponses, à qui a le droit de voter, à récompenser la participation, à noter un quiz, à automatiser ou à garder les données, prends Subo. Le détail des fonctionnalités est sur la page [bot de sondage Discord](/fr/polls), et ce qui est gratuit ou Premium sur la page [tarifs](/fr/pricing).
+Pour un vote jetable, le sondage natif de Discord fait le travail, et il ne coûte rien. Dès que tu tiens à la sincérité des réponses, à qui a le droit de voter, à récompenser la participation, à noter un quiz, à automatiser ou à garder les données, prends Subo. Le détail des fonctionnalités est sur la page [bot de sondage Discord](/fr/polls/), et ce qui est gratuit ou Premium sur la page [tarifs](/fr/pricing/).
 
-Prêt à lancer ? [Ajoute Subo à ton serveur](/invite) et lance ton premier `/poll`.
+Prêt à lancer ? [Ajoute Subo à ton serveur](/invite/) et lance ton premier `/poll`.

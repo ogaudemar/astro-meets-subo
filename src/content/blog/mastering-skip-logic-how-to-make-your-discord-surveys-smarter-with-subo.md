@@ -78,7 +78,7 @@ Two details in that screenshot worth stealing:
 - Giving an achievement **also grants the Discord role linked to it**, so you configure the reward once in Settings and the survey just names it.
 - The message body takes the same pickers as any other block. `@` for a role mention, `[` for a variable, `:` for an emoji. "You passed with [correct_answers] correct answers, [UserName]!" reads like something a person wrote.
 
-Gate a role behind a screening question and you have an application flow. Gate XP behind a correct answer and you have a quiz with stakes. The [volunteer moderator funnel](/recipes/volunteer-moderator-funnel) recipe does the first with two opposite conditions, one handing out a trial role and one routing to a waitlist.
+Gate a role behind a screening question and you have an application flow. Gate XP behind a correct answer and you have a quiz with stakes. The [volunteer moderator funnel](/recipes/volunteer-moderator-funnel/) recipe does the first with two opposite conditions, one handing out a trial role and one routing to a waitlist.
 
 ## The Expression Editor
 
@@ -118,10 +118,10 @@ Polls are a single question, so there is nothing to branch questions on, and the
 
 ## Getting started
 
-The Visual Editor is on every plan, Free included. The Expression Editor is on VIP and Custom Bot. See [all plans](/pricing).
+The Visual Editor is on every plan, Free included. The Expression Editor is on VIP and Custom Bot. See [all plans](/pricing/).
 
-Two recipes show the whole pattern working: the [volunteer moderator funnel](/recipes/volunteer-moderator-funnel), where two opposite conditions decide who gets a trial role and who gets the waitlist, and the [welcome quiz](/recipes/welcome-quiz), which routes new members by region and hands out the matching roles. The [template library](/templates) ships scripts with the logic already wired, and [content blocks](/blog/content-blocks-new-way-to-design-survey-flows) are what you put on the end of a branch when you want to say something rather than ask something.
+Two recipes show the whole pattern working: the [volunteer moderator funnel](/recipes/volunteer-moderator-funnel/), where two opposite conditions decide who gets a trial role and who gets the waitlist, and the [welcome quiz](/recipes/welcome-quiz/), which routes new members by region and hands out the matching roles. The [template library](/templates/) ships scripts with the logic already wired, and [content blocks](/blog/content-blocks-new-way-to-design-survey-flows/) are what you put on the end of a branch when you want to say something rather than ask something.
 
-[Add Subo to your Discord server](/invite) and build one.
+[Add Subo to your Discord server](/invite/) and build one.
 
 ![A survey bot wonders which way to go at an intersection](/images/blog/skip-logic/subo-skip-logic2.webp)

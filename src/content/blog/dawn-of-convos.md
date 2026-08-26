@@ -83,11 +83,11 @@ The future belongs to convos.
 At **Subo**, we’re not simply asking questions.  
 We’re starting conversations.
 
-The convo idea is no longer only a manifesto. See [how a convo actually runs](/survey-convos) in a Discord server today, or [how to run a form or survey in Discord](/blog/how-to-make-a-discord-form) without pasting a form link into a channel.  
+The convo idea is no longer only a manifesto. See [how a convo actually runs](/survey-convos/) in a Discord server today, or [how to run a form or survey in Discord](/blog/how-to-make-a-discord-form/) without pasting a form link into a channel.  
 
 ---
 
 ## 🚀 Join the movement  
 
 Convos are the future of surveys.  
-Let’s build a new way of listening. Join our [Discord server](/support) and join the conversation!  
+Let’s build a new way of listening. Join our [Discord server](/support/) and join the conversation!  

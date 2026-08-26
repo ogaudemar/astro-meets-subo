@@ -18,58 +18,58 @@
       },
       {
         "text": "Precios",
-        "href": "/es/pricing"
+        "href": "/es/pricing/"
       }
     ],
     "product": [
       {
         "text": "Funcionalidades",
-        "href": "/es/features"
+        "href": "/es/features/"
       },
       {
         "text": "Survey Convos",
-        "href": "/es/survey-convos"
+        "href": "/es/survey-convos/"
       },
       {
         "text": "Encuestas",
-        "href": "/es/polls"
+        "href": "/es/polls/"
       },
       {
         "text": "Bot Personalizado",
-        "href": "/es/custom-survey-bot"
+        "href": "/es/custom-survey-bot/"
       }
     ],
     "resources": [
       {
         "text": "Tutoriales",
-        "href": "/tutorials"
+        "href": "/tutorials/"
       },
       {
         "text": "Servidor de Soporte",
-        "href": "/support"
+        "href": "/support/"
       },
       {
         "text": "Portal de Facturación",
-        "href": "/portal"
+        "href": "/portal/"
       },
       {
         "text": "Blog",
-        "href": "/blog"
+        "href": "/blog/"
       }
     ],
     "useCasesLabel": "Casos de uso",
     "useCases": [
       {
         "text": "Entretener",
-        "href": "/es/use-cases/engagement"
+        "href": "/es/use-cases/engagement/"
       },
       {
         "text": "Entender",
-        "href": "/es/use-cases/research"
+        "href": "/es/use-cases/research/"
       },
       {
         "text": "Gestionar",
-        "href": "/es/use-cases/get-things-done"
+        "href": "/es/use-cases/get-things-done/"
       }
     ],
     "cta": "Agregar a Discord",
@@ -87,23 +87,23 @@
         "links": [
           {
             "text": "Survey Convos",
-            "href": "/es/survey-convos"
+            "href": "/es/survey-convos/"
           },
           {
             "text": "Bot Personalizado",
-            "href": "/es/custom-survey-bot"
+            "href": "/es/custom-survey-bot/"
           },
           {
             "text": "Sondeos",
-            "href": "/es/polls"
+            "href": "/es/polls/"
           },
           {
             "text": "Precios",
-            "href": "/es/pricing"
+            "href": "/es/pricing/"
           },
           {
             "text": "Agregar a Discord",
-            "href": "/invite",
+            "href": "/invite/",
             "external": true
           }
         ]
@@ -113,15 +113,15 @@
         "links": [
           {
             "text": "Entretener",
-            "href": "/es/use-cases/engagement"
+            "href": "/es/use-cases/engagement/"
           },
           {
             "text": "Entender",
-            "href": "/es/use-cases/research"
+            "href": "/es/use-cases/research/"
           },
           {
             "text": "Gestionar",
-            "href": "/es/use-cases/get-things-done"
+            "href": "/es/use-cases/get-things-done/"
           }
         ]
       },
@@ -130,34 +130,34 @@
         "links": [
           {
             "text": "Web App",
-            "href": "/app",
+            "href": "/app/",
             "external": true
           },
           {
             "text": "Acerca de",
-            "href": "/es/about"
+            "href": "/es/about/"
           },
           {
             "text": "Servidor de Soporte",
-            "href": "/support",
+            "href": "/support/",
             "external": true
           },
           {
             "text": "Tutoriales",
-            "href": "/tutorials"
+            "href": "/tutorials/"
           },
           {
             "text": "Blog",
-            "href": "/blog"
+            "href": "/blog/"
           },
           {
             "text": "Portal de facturación Stripe",
-            "href": "/portal",
+            "href": "/portal/",
             "external": true
           },
           {
             "text": "Tienda de Discord",
-            "href": "/discordstore",
+            "href": "/discordstore/",
             "external": true
           }
         ]
@@ -167,15 +167,15 @@
         "links": [
           {
             "text": "Términos de servicio",
-            "href": "/terms"
+            "href": "/terms/"
           },
           {
             "text": "Política de privacidad",
-            "href": "/privacy"
+            "href": "/privacy/"
           },
           {
             "text": "Política de cookies",
-            "href": "/cookies"
+            "href": "/cookies/"
           }
         ]
       },
@@ -261,17 +261,17 @@
       {
         "title": "PREGUNTA EN UNA CONVERSACIÓN",
         "body": "Subo hace una pregunta a la vez, como en un chat. Los miembros se abren y descubres cosas que un muro de formulario nunca revela.",
-        "href": "/es/survey-convos"
+        "href": "/es/survey-convos/"
       },
       {
         "title": "SONDEOS QUE HACEN MÁS",
         "body": "Una sola pregunta que puede puntuar respuestas, calificar un quiz o lanzar un concurso de predicciones, y luego recompensar a los ganadores automáticamente.",
-        "href": "/es/polls"
+        "href": "/es/polls/"
       },
       {
         "title": "PARTICIPACIÓN QUE VALE LA PENA",
         "body": "Reparte XP, roles y logros, ajustados a cómo responden realmente los miembros. Reconocimiento que los hace volver.",
-        "href": "/es/features"
+        "href": "/es/features/"
       }
     ]
   },
@@ -282,19 +282,19 @@
       "emoji": "🎉",
       "title": "Entretener",
       "body": "Sondeos, quizzes y concursos de predicciones divertidos que hacen que los miembros vuelvan.",
-      "href": "/es/use-cases/engagement"
+      "href": "/es/use-cases/engagement/"
     },
     {
       "emoji": "🔎",
       "title": "Entender",
       "body": "Descubre quiénes son tus miembros y qué quieren, y actúa en consecuencia.",
-      "href": "/es/use-cases/research"
+      "href": "/es/use-cases/research/"
     },
     {
       "emoji": "✅",
       "title": "Gestionar",
       "body": "Solicitudes, registros, pedidos y peticiones, como una conversación en lugar de un formulario.",
-      "href": "/es/use-cases/get-things-done"
+      "href": "/es/use-cases/get-things-done/"
     }
   ],
   "usecasesInspireBtn": "🎲 ¡Inspírame!",
@@ -681,7 +681,7 @@
       {
         "text": "Instalar gratis",
         "class": "button button--dark-accent-border",
-        "href": "/invite"
+        "href": "/invite/"
       },
       {
         "text": "Mejorar",
@@ -711,7 +711,7 @@
       "Una survey convo es una conversación privada entre un miembro de tu comunidad y Subo, el bot, directamente dentro de tu servidor de Discord o en la web. Si buscabas un formulario para Discord, un cuestionario o una alternativa a Google Forms para tu servidor, es esto, sin el formulario frío.",
       "En lugar de enviar a tus miembros a rellenar un formulario frío, Subo los invita a un chat. Las preguntas aparecen de una en una, en formato de mensajes. Se siente como hablar con alguien, no rellenar papeleo.",
       "El resultado: <strong>tasas de finalización más altas</strong>, respuestas más ricas y miembros que realmente disfrutan la experiencia.",
-      "¿Es la primera vez que recoges datos en tu servidor? Lee la guía práctica: <a href=\"/blog/how-to-make-a-discord-form\">cómo crear un formulario o una encuesta en Discord (en inglés)</a>."
+      "¿Es la primera vez que recoges datos en tu servidor? Lee la guía práctica: <a href=\"/blog/how-to-make-a-discord-form/\">cómo crear un formulario o una encuesta en Discord (en inglés)</a>."
     ],
     "formsVsConvosTitle": "FORMULARIOS TRADICIONALES vs. SURVEY CONVOS",
     "formsColumn": "Formularios tradicionales",
@@ -939,7 +939,7 @@
           {
             "emoji": "💬",
             "title": "Un paso cada vez",
-            "desc": "Las preguntas llegan como un chat, así que una candidatura de 20 campos se siente como un intercambio rápido. <a href=\"/es/survey-convos\">Ver las survey convos →</a>"
+            "desc": "Las preguntas llegan como un chat, así que una candidatura de 20 campos se siente como un intercambio rápido. <a href=\"/es/survey-convos/\">Ver las survey convos →</a>"
           },
           {
             "emoji": "📨",
@@ -986,12 +986,12 @@
           {
             "emoji": "🥇",
             "title": "Decide qué va primero",
-            "desc": "Una pregunta de clasificación obliga a ordenar las peticiones en lugar de aprobarlas todas, así que una ronda de recogida termina con una lista corta sobre la que puedes actuar. <a href=\"/blog/discord-ranking-questions-rank-what-you-build-next\">Ver las preguntas de clasificación (en inglés) →</a>"
+            "desc": "Una pregunta de clasificación obliga a ordenar las peticiones en lugar de aprobarlas todas, así que una ronda de recogida termina con una lista corta sobre la que puedes actuar. <a href=\"/blog/discord-ranking-questions-rank-what-you-build-next/\">Ver las preguntas de clasificación (en inglés) →</a>"
           }
         ],
         "blogLink": {
           "text": "Ver todo lo que Subo puede hacer →",
-          "href": "/es/features"
+          "href": "/es/features/"
         }
       }
     ],
@@ -1056,7 +1056,7 @@
           {
             "emoji": "🗳️",
             "title": "Sondeos que hacen más",
-            "desc": "Puntúa las respuestas, marca las correctas y recompensa a los ganadores automáticamente. <a href=\"/es/polls\">Ver los sondeos de Discord →</a>"
+            "desc": "Puntúa las respuestas, marca las correctas y recompensa a los ganadores automáticamente. <a href=\"/es/polls/\">Ver los sondeos de Discord →</a>"
           },
           {
             "emoji": "🧠",
@@ -1103,12 +1103,12 @@
           {
             "emoji": "📜",
             "title": "Historial de XP",
-            "desc": "Tus miembros ven cómo y por qué cambió cada punto, en la web y en Discord. Confía en las recompensas que repartes. <a href=\"/blog/xp-history\">Ver el historial de XP (en inglés) →</a>"
+            "desc": "Tus miembros ven cómo y por qué cambió cada punto, en la web y en Discord. Confía en las recompensas que repartes. <a href=\"/blog/xp-history/\">Ver el historial de XP (en inglés) →</a>"
           }
         ],
         "blogLink": {
           "text": "Ver todas las funcionalidades de participación →",
-          "href": "/es/features#engage"
+          "href": "/es/features/#engage"
         }
       }
     ],
@@ -1175,7 +1175,7 @@
           {
             "emoji": "💬",
             "title": "Conversaciones, no formularios",
-            "desc": "Una pregunta a la vez, como un chat. Más finalización y respuestas más meditadas. <a href=\"/es/survey-convos\">Ver las survey convos →</a>"
+            "desc": "Una pregunta a la vez, como un chat. Más finalización y respuestas más meditadas. <a href=\"/es/survey-convos/\">Ver las survey convos →</a>"
           },
           {
             "emoji": "🕵️",
@@ -1207,7 +1207,7 @@
           {
             "emoji": "📉",
             "title": "Mídelo, no lo cuentes a mano",
-            "desc": "Las preguntas de Valoración, Escala de opinión y NPS guardan el número que eligió el miembro, así que la satisfacción vuelve como una media con una distribución detrás, y la misma pregunta lanzada el trimestre siguiente es comparable. <a href=\"/blog/discord-rating-scale-nps-ranking-questions\">Cómo funcionan las escalas y el NPS (en inglés) →</a>"
+            "desc": "Las preguntas de Valoración, Escala de opinión y NPS guardan el número que eligió el miembro, así que la satisfacción vuelve como una media con una distribución detrás, y la misma pregunta lanzada el trimestre siguiente es comparable. <a href=\"/blog/discord-rating-scale-nps-ranking-questions/\">Cómo funcionan las escalas y el NPS (en inglés) →</a>"
           },
           {
             "emoji": "✨",
@@ -1232,7 +1232,7 @@
         },
         "blogLink": {
           "text": "Ver todas las funcionalidades de análisis →",
-          "href": "/es/features#analyze"
+          "href": "/es/features/#analyze"
         }
       }
     ],
@@ -1302,11 +1302,11 @@
       "subtitle": "Todo lo que te gusta de Subo, pero con tu propia marca",
       "ctaPrimary": {
         "text": "Crea tu propio bot de encuestas",
-        "href": "/es/pricing"
+        "href": "/es/pricing/"
       },
       "ctaSecondary": {
         "text": "Contáctanos",
-        "href": "/support"
+        "href": "/support/"
       },
       "image": {
         "src": "/images/feedback-kitty.png",
@@ -1347,7 +1347,7 @@
           "description": "Visita nuestra página de precios y elige la opción anual «Custom Bot».",
           "link": {
             "text": "Suscribirse ahora",
-            "href": "/es/pricing",
+            "href": "/es/pricing/",
             "external": false
           }
         },
@@ -1417,11 +1417,11 @@
       "description": "Únete a los servidores que ya tienen su propio bot de encuestas con marca propia. Toda la potencia de Subo con tu identidad.",
       "ctaPrimary": {
         "text": "Empezar: 99,99 $/año",
-        "href": "/es/pricing"
+        "href": "/es/pricing/"
       },
       "ctaSecondary": {
         "text": "Contactar con soporte",
-        "href": "/support"
+        "href": "/support/"
       }
     }
   },
@@ -1579,15 +1579,15 @@
       ],
       "blogLink": {
         "text": "Ver todas las novedades en sondeos (en inglés) →",
-        "href": "/blog/polls-grading-invite-customization"
+        "href": "/blog/polls-grading-invite-customization/"
       },
       "blogLink2": {
         "text": "Comparar Subo con los sondeos nativos de Discord (en inglés) →",
-        "href": "/blog/discord-native-polls-vs-subo-the-survey-bot-comparison"
+        "href": "/blog/discord-native-polls-vs-subo-the-survey-bot-comparison/"
       },
       "blogLink3": {
         "text": "Ver cómo se compara Subo con los mejores bots de sondeos de Discord (en inglés) →",
-        "href": "/blog/best-discord-poll-bots"
+        "href": "/blog/best-discord-poll-bots/"
       }
     }
   },
@@ -1647,7 +1647,7 @@
           {
             "emoji": "✅",
             "title": "8 tipos de preguntas",
-            "desc": "Texto abierto, Numérico, Opción única (sí/no incluido), Opción múltiple, Valoración, Escala de opinión, NPS y Clasificación, para cubrir cualquier escenario de feedback. <a href=\"/blog/discord-rating-scale-nps-ranking-questions\">Ver los tipos de valoración, escala y clasificación (en inglés) →</a>"
+            "desc": "Texto abierto, Numérico, Opción única (sí/no incluido), Opción múltiple, Valoración, Escala de opinión, NPS y Clasificación, para cubrir cualquier escenario de feedback. <a href=\"/blog/discord-rating-scale-nps-ranking-questions/\">Ver los tipos de valoración, escala y clasificación (en inglés) →</a>"
           },
           {
             "emoji": "📢",
@@ -1668,7 +1668,7 @@
         },
         "blogLink": {
           "text": "Aprende a crear tu primera encuesta (en inglés) →",
-          "href": "/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089"
+          "href": "/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/"
         }
       },
       {
@@ -1716,7 +1716,7 @@
         },
         "blogLink": {
           "text": "Por qué las conversaciones ganan a los formularios (en inglés) →",
-          "href": "/blog/dawn-of-convos"
+          "href": "/blog/dawn-of-convos/"
         }
       },
       {
@@ -1764,7 +1764,7 @@
         },
         "blogLink": {
           "text": "Crea encuestas más inteligentes con lógica de salto (en inglés) →",
-          "href": "/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo"
+          "href": "/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo/"
         }
       },
       {
@@ -1776,7 +1776,7 @@
           {
             "emoji": "⭐",
             "title": "Recompensas de XP",
-            "desc": "Cada proyecto completado otorga puntos de XP. Disponible en todos los planes, incluido el gratuito. Los miembros ven cómo y por qué cambió cada punto con el <a href=\"/blog/xp-history\">historial de XP (en inglés)</a>."
+            "desc": "Cada proyecto completado otorga puntos de XP. Disponible en todos los planes, incluido el gratuito. Los miembros ven cómo y por qué cambió cada punto con el <a href=\"/blog/xp-history/\">historial de XP (en inglés)</a>."
           },
           {
             "emoji": "🏆",
@@ -1812,7 +1812,7 @@
         },
         "blogLink": {
           "text": "Subo frente a los sondeos nativos de Discord (en inglés) →",
-          "href": "/blog/discord-native-polls-vs-subo-the-survey-bot-comparison"
+          "href": "/blog/discord-native-polls-vs-subo-the-survey-bot-comparison/"
         }
       }
     ]

@@ -35,7 +35,7 @@ const dimTemplates = (await getCollection('templates'))
           <span class="uc-eyebrow mono">{t.eyebrow}</span>
           <h1 class="mono">{t.heroTitle}</h1>
           <p class="uc-hero__subtitle">{t.heroSubtitle}</p>
-          <a href="/invite" class="button button--accent-bg">{t.heroCta}</a>
+          <a href="/invite/" class="button button--accent-bg">{t.heroCta}</a>
         </div>
       </section>
 
@@ -81,14 +81,14 @@ const dimTemplates = (await getCollection('templates'))
             </div>
             <div class="uc-templates">
               {dimTemplates.map((tpl) => (
-                <a class="uc-template-card" href={`/templates/${tpl.data.slug}`}>
+                <a class="uc-template-card" href={`/templates/${tpl.data.slug}/`}>
                   <h3 class="uc-template-card__title">{tpl.data.heroTitle}</h3>
                   <p class="uc-template-card__desc">{tpl.data.description}</p>
                   <span class="uc-template-card__cta">Use this template →</span>
                 </a>
               ))}
             </div>
-            <p class="uc-blog-link"><a href="/templates">Browse all templates →</a></p>
+            <p class="uc-blog-link"><a href="/templates/">Browse all templates →</a></p>
           </div>
         </section>
       )}
@@ -105,7 +105,7 @@ const dimTemplates = (await getCollection('templates'))
               const text = typeof ex === 'string' ? ex : ex.text;
               const template = typeof ex === 'string' ? null : ex.template;
               return template
-                ? <a class="uc-example uc-example--link" href={`/templates/${template}`}>{text}</a>
+                ? <a class="uc-example uc-example--link" href={`/templates/${template}/`}>{text}</a>
                 : <span class="uc-example">{text}</span>;
             })}
           </div>

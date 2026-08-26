@@ -334,7 +334,7 @@ auto-granted. Use this when region is operational metadata, not identity.
 Set the project's `max_completes_per_user > 1` (e.g. `99`) so members can
 retake annually to update their answers. To award fresh XP each retake,
 add an outro give-XP action block with `fire_scope: "session"`. See
-[the Event RSVP recipe](/recipes/event-rsvp-streak) for the same pattern
+[the Event RSVP recipe](/recipes/event-rsvp-streak/) for the same pattern
 applied to recurring events.
 
 ---
@@ -347,7 +347,7 @@ applied to recurring events.
   (`q1 = "Americas" AND q2 = "English"`) but the action-block count
   explodes quickly. Use a single combined question instead, or score the
   combination into a bucket as the
-  [member segmentation recipe](/recipes/member-segmentation) does.
+  [member segmentation recipe](/recipes/member-segmentation/) does.
 - **You need to verify the answer** ("is this person actually in the
   Americas?"). This recipe uses honor-system answers. Identity
   verification integrations (Steam, Patreon, Twitch) aren't built yet.
@@ -359,9 +359,9 @@ applied to recurring events.
 ---
 
 ## Related
-- [Volunteer / moderator recruitment funnel](/recipes/volunteer-moderator-funnel)
-- [Event RSVP with attendance streaks](/recipes/event-rsvp-streak)
-- [Playtester selection](/recipes/playtester-selection)
+- [Volunteer / moderator recruitment funnel](/recipes/volunteer-moderator-funnel/)
+- [Event RSVP with attendance streaks](/recipes/event-rsvp-streak/)
+- [Playtester selection](/recipes/playtester-selection/)
 - [Skip logic reference](https://api.subo.ai/docs#tag/Script): operator and value-type tables
 
 ---

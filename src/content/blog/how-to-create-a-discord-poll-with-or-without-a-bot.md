@@ -23,11 +23,11 @@ draft: false
 Polls are one of the fastest ways to get feedback from your community and make decisions everyone feels part of. This guide covers the two ways to run a poll in Discord:
 
 - **Discord's built-in poll**: free, instant, good enough for a quick vote.
-- **A survey bot like [Subo](/invite)**: when you need more flexibility or more features (e.g. images, more than 10 options, anonymous voting, required roles, rewards, scoring for a quiz or prediction, scheduling, or results you can export...)
+- **A survey bot like [Subo](/invite/)**: when you need more flexibility or more features (e.g. images, more than 10 options, anonymous voting, required roles, rewards, scoring for a quiz or prediction, scheduling, or results you can export...)
 
 > **Quick or elaborate?** For a simple one-off vote, the `/poll` slash command below takes seconds, right inside Discord. For anything more involved (multi-question surveys, quizzes with scoring, skip logic, conditional rewards, or reusable templates), the [Subo web app](https://app.subo.gg) is the recommended way to build. Start simple in Discord, then move to the web app when your projects get bigger.
 
-Just weighing Subo against Discord's native polls? We compare them head-to-head in [Discord native polls vs Subo](/blog/discord-native-polls-vs-subo-the-survey-bot-comparison). This article is the how-to.
+Just weighing Subo against Discord's native polls? We compare them head-to-head in [Discord native polls vs Subo](/blog/discord-native-polls-vs-subo-the-survey-bot-comparison/). This article is the how-to.
 
 ## Option 1: Discord's native poll
 
@@ -43,11 +43,11 @@ Native polls are convenient for a quick, casual vote. Their limits: results are 
 
 ## Option 2: Polls with Subo
 
-[Subo the Survey Bot](/invite) turns a poll into something you can actually run a community on: anonymous or transparent, role-gated, rewarded, scored, scheduled, and exportable alongside your survey data.
+[Subo the Survey Bot](/invite/) turns a poll into something you can actually run a community on: anonymous or transparent, role-gated, rewarded, scored, scheduled, and exportable alongside your survey data.
 
 ### Three ways to start a Subo poll
 
-Once [Subo is on your server](/invite), you can create a poll three ways:
+Once [Subo is on your server](/invite/), you can create a poll three ways:
 
 - **`/poll`**: build one directly in Discord (the walkthrough below).
 - **`/template`**: start from a ready-made poll template and tweak it. Templates work right in the Discord bot, and are even easier to adapt in the [web app](https://app.subo.gg).
@@ -113,7 +113,7 @@ That's the whole flow for a basic poll. But this is where Subo pulls ahead of a 
 - **`name`**: give the poll a memorable name so it's easy to find later.
 - **`channel`**: pick the channel or thread to post in.
 
-After you hit Enter, Subo shows a summary before anything goes live. Click **Edit** to fine-tune further: set multiple required roles, auto-post results to a channel when the poll closes, tweak the invitation, or [clone the poll](/blog/clone-surveys-across-servers) for repeated use.
+After you hit Enter, Subo shows a summary before anything goes live. Click **Edit** to fine-tune further: set multiple required roles, auto-post results to a channel when the poll closes, tweak the invitation, or [clone the poll](/blog/clone-surveys-across-servers/) for repeated use.
 
 ![Example of a community using Subo polls with no vote change allowed](/images/blog/poll-tuto/5-o00pt.png)
 
@@ -121,16 +121,16 @@ After you hit Enter, Subo shows a summary before anything goes live. Click **Edi
 
 The `/poll` command is fast, but for bigger or recurring work the **[Subo web app](https://app.subo.gg)** is the recommended way to build. It's a visual editor for polls, surveys, and quizzes with full management, analytics, and team access.
 
-- **Start from a [template](/templates)**: this-or-that polls, feature-prioritization votes, prediction contests, governance proposals and more, ready to run in a click. See the [template library](/blog/subo-template-library-launch).
-- **Design a full quiz** with [native scoring](/blog/scoring-piping-quizzes): correct answers, per-option points, and a leaderboard. The [prediction poll](/recipes/prediction-poll) and [trivia quiz](/recipes/world-capitals-quiz) recipes walk through both builds end to end.
-- **Dress up the invitation** with a [custom design](/blog/polls-grading-invite-customization) worth clicking.
+- **Start from a [template](/templates/)**: this-or-that polls, feature-prioritization votes, prediction contests, governance proposals and more, ready to run in a click. See the [template library](/blog/subo-template-library-launch/).
+- **Design a full quiz** with [native scoring](/blog/scoring-piping-quizzes/): correct answers, per-option points, and a leaderboard. The [prediction poll](/recipes/prediction-poll/) and [trivia quiz](/recipes/world-capitals-quiz/) recipes walk through both builds end to end.
+- **Dress up the invitation** with a [custom design](/blog/polls-grading-invite-customization/) worth clicking.
 
 ### Automate polls with the API
 
-Subo also has a [public API](/blog/public-api-launch), so you can create and post polls programmatically. Hand it to your favorite AI agent or LLM and let it run: for example, have it post a fresh poll to your server automatically every morning. See the [API launch post](/blog/public-api-launch) for what's possible.
+Subo also has a [public API](/blog/public-api-launch/), so you can create and post polls programmatically. Hand it to your favorite AI agent or LLM and let it run: for example, have it post a fresh poll to your server automatically every morning. See the [API launch post](/blog/public-api-launch/) for what's possible.
 
 ## Which should you use?
 
-For a throwaway vote, Discord's native poll is fine. The moment you care about honest answers, who can vote, rewarding participation, scoring a quiz, automating, or keeping the data, reach for Subo. For the full breakdown, read [Discord native polls vs Subo](/blog/discord-native-polls-vs-subo-the-survey-bot-comparison). Weighing other bots too? See the [best Discord poll bots comparison](/blog/best-discord-poll-bots), and [pricing](/pricing) for what's free vs Premium.
+For a throwaway vote, Discord's native poll is fine. The moment you care about honest answers, who can vote, rewarding participation, scoring a quiz, automating, or keeping the data, reach for Subo. For the full breakdown, read [Discord native polls vs Subo](/blog/discord-native-polls-vs-subo-the-survey-bot-comparison/). Weighing other bots too? See the [best Discord poll bots comparison](/blog/best-discord-poll-bots/), and [pricing](/pricing/) for what's free vs Premium.
 
-Ready to go? [Invite Subo to your server](/invite) and run your first `/poll`.
+Ready to go? [Invite Subo to your server](/invite/) and run your first `/poll`.

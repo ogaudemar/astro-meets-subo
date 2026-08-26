@@ -10,7 +10,7 @@ draft: false
 
 When it started, Subo was something you ran inside Discord. You typed a command, a survey appeared, your members answered. 
 
-[Earlier this year, we launched a web app](/blog/subo-web-app-launch) to make it easier to manage projects and to bring surveys outside of Discord.
+[Earlier this year, we launched a web app](/blog/subo-web-app-launch/) to make it easier to manage projects and to bring surveys outside of Discord.
 
 Today, community managers are ready for something more. They want tools that handle the operational overhead (moving data between systems, managing survey logistics, organizing responses) so they can focus on what matters: listening to members, building real relationships, and making decisions grounded in what their people actually think.
 
@@ -92,7 +92,7 @@ The OpenAPI 3.1.0 spec is at `api.subo.ai/v1/openapi.json`. Import it into Postm
 
 ## Where to Start
 
-The [API quickstart on subo.gg](/api) is the fastest way in: an authenticated first call, then end-to-end recipes for generating a script with AI, opening a survey to a Discord or web audience, paging through responses, and verifying a webhook signature. For the survey design itself rather than the wiring, the [recipes section](/recipes) covers the scoring, skip logic and reward blocks behind each build.
+The [API quickstart on subo.gg](/api/) is the fastest way in: an authenticated first call, then end-to-end recipes for generating a script with AI, opening a survey to a Discord or web audience, paging through responses, and verifying a webhook signature. For the survey design itself rather than the wiring, the [recipes section](/recipes/) covers the scoring, skip logic and reward blocks behind each build.
 
 ---
 
@@ -122,7 +122,7 @@ If you're building something with the API and run into gaps, we want to know. Th
 
 ---
 
-[Start with the API quickstart and recipes →](/api)
+[Start with the API quickstart and recipes →](/api/)
 
 [Explore the full API reference →](https://api.subo.ai/docs)
 

@@ -7,7 +7,7 @@ heroImage: "/images/blog/pickers/role-variable-emojis-respondent-pov-discord-inv
 tags: ["announcement", "features", "customization", "script editor", "invitations"]
 faq:
   - q: "How do I mention a Discord role in a Subo survey message?"
-    a: "Type <code>@</code> in any message field in Subo and a picker lists your community's Discord roles. Choose one and it inserts a chip reading @RoleName. You never have to look up a role ID. The picker is in the Invite tab's Call-to-Action field, in Settings, in the <a href=\"/blog/subo-web-app-launch\">Script Editor</a> block text and outro, in the four Poll Messages, and in the correct and incorrect feedback fields on graded questions."
+    a: "Type <code>@</code> in any message field in Subo and a picker lists your community's Discord roles. Choose one and it inserts a chip reading @RoleName. You never have to look up a role ID. The picker is in the Invite tab's Call-to-Action field, in Settings, in the <a href=\"/blog/subo-web-app-launch/\">Script Editor</a> block text and outro, in the four Poll Messages, and in the correct and incorrect feedback fields on graded questions."
   - q: "Does mentioning a role in a Subo survey notify everyone in it?"
     a: "It depends where the survey runs. On Discord a role mention behaves exactly as it does anywhere else in the platform, so members with that role are pinged. For someone answering through a web survey link, the mention renders as the readable name @RoleName and notifies nobody, because a web respondent has no Discord membership to notify. @everyone and @here are available but sit behind a confirmation step."
   - q: "Can I use my community's custom emoji in a Subo poll or survey?"
@@ -15,7 +15,7 @@ faq:
   - q: "How do I put a member's name in a Discord survey question?"
     a: "Type <code>[</code> in the block text and pick User Name from the Respondent category. Subo fills in each respondent's display name when the block is shown, so one script greets every member by name."
   - q: "Can I show someone their quiz score in the closing message?"
-    a: "Yes. Type <code>[</code> in the outro message and the picker offers a Scores category with correct_answers, max_correct_answers, score_correct and max_score_correct, plus any calculated fields and rewards on the project. See the <a href=\"/recipes/world-capitals-quiz\">graded trivia quiz recipe</a> for a full build."
+    a: "Yes. Type <code>[</code> in the outro message and the picker offers a Scores category with correct_answers, max_correct_answers, score_correct and max_score_correct, plus any calculated fields and rewards on the project. See the <a href=\"/recipes/world-capitals-quiz/\">graded trivia quiz recipe</a> for a full build."
 draft: false
 ---
 
@@ -59,17 +59,17 @@ The previews caught up too. Settings previews and the Script Editor preview pane
 
 ## `[` pulls in context you would otherwise retype
 
-The variable picker has been quietly in place since the [web app](/blog/subo-web-app-launch) brought the Script Editor with it. Type `[` and you get a categorized list with plain-English descriptions of what each one resolves to.
+The variable picker has been quietly in place since the [web app](/blog/subo-web-app-launch/) brought the Script Editor with it. Type `[` and you get a categorized list with plain-English descriptions of what each one resolves to.
 
 ![The variable picker open in the Call-to-Action field, showing Survey and Community categories](/images/blog/pickers/variable-picker.png)
 
-In the same Call-to-Action field, that is Survey Name, Survey Roles, Created By, Server Name and Channel Name. Write your invitation once and it stays correct when you clone it into another project, or [into another community](/blog/clone-surveys-across-servers).
+In the same Call-to-Action field, that is Survey Name, Survey Roles, Created By, Server Name and Channel Name. Write your invitation once and it stays correct when you clone it into another project, or [into another community](/blog/clone-surveys-across-servers/).
 
 It reaches further than invitations. In the Script Editor, typing `[user.` surfaces the Respondent category:
 
 ![The variable picker in the Script Editor showing the Respondent category with User Name](/images/blog/pickers/variable-picker-username-intro-script-editor.png)
 
-**User Name** resolves to each respondent's display name, so one intro block greets every member by name. That is the difference between a form and a [conversation](/survey-convos), and it costs you one keystroke.
+**User Name** resolves to each respondent's display name, so one intro block greets every member by name. That is the difference between a form and a [conversation](/survey-convos/), and it costs you one keystroke.
 
 ![The same intro block as a respondent sees it in a web Convo, greeting them by their display name](/images/blog/pickers/web-convo-intro-username-variable.png)
 
@@ -79,7 +79,7 @@ The advanced end is quiz scores. On a final block, the picker offers a Scores ca
 
 ![The variable picker on a final block, showing the Scores category with correct_answers and max_correct_answers](/images/blog/pickers/variable-picker-scoring-variables-action-block.png)
 
-`correct_answers`, `max_correct_answers`, `score_correct` and `max_score_correct`, plus calculated fields and rewards. "You scored [correct_answers] out of [max_correct_answers]" is a closing message that writes itself for every respondent. If you have not used [scoring and grading](/blog/scoring-piping-quizzes) yet, the [graded trivia recipe](/recipes/world-capitals-quiz) walks through a full build.
+`correct_answers`, `max_correct_answers`, `score_correct` and `max_score_correct`, plus calculated fields and rewards. "You scored [correct_answers] out of [max_correct_answers]" is a closing message that writes itself for every respondent. If you have not used [scoring and grading](/blog/scoring-piping-quizzes/) yet, the [graded trivia recipe](/recipes/world-capitals-quiz/) walks through a full build.
 
 ---
 
@@ -95,7 +95,7 @@ Emoji work on individual answer options too, and the picker includes your commun
 
 ![The emoji picker open on an answer option, showing Frequently Used and Custom Emojis sections](/images/blog/pickers/emoji-picker-custom-emoji-single-question.png)
 
-Frequently Used at the top, a full Custom Emojis section under it, and Remove emoji when you change your mind. This is the same customization surface that arrived with [poll invitations](/blog/polls-grading-invite-customization), now reachable without knowing the emoji's exact name.
+Frequently Used at the top, a full Custom Emojis section under it, and Remove emoji when you change your mind. This is the same customization surface that arrived with [poll invitations](/blog/polls-grading-invite-customization/), now reachable without knowing the emoji's exact name.
 
 ---
 
@@ -111,7 +111,7 @@ All eleven strings are translated into the nine languages Subo ships in, so the 
 
 Role mentions and the Insert bar are available on **all plans, including free**, and they are live now. Open any project's Invite tab, or the Experience section of your Settings, and the bar is above the message field.
 
-If you want somewhere to try it, the [welcome quiz recipe](/recipes/welcome-quiz) uses all three: a role mention in the invitation, the member's name in the intro, and emoji on the answer options. Or clone something from the [template library](/templates) and rewrite its messages in your own voice.
+If you want somewhere to try it, the [welcome quiz recipe](/recipes/welcome-quiz/) uses all three: a role mention in the invitation, the member's name in the intro, and emoji on the answer options. Or clone something from the [template library](/templates/) and rewrite its messages in your own voice.
 
 [Come see it in the Support Server →](https://subo.gg/support)
 

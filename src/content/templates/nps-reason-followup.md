@@ -47,7 +47,7 @@ faq:
   - q: "How does it capture testimonials?"
     a: "Promoters get a short consent question after describing what they love, so you leave with quotable praise you're cleared to publish."
   - q: "Can I use it for CSAT or CES instead?"
-    a: "You can reword the number question and adjust the bands, and the same branch-and-follow-up structure works. There are also purpose-built versions: the <a href=\"/templates/csat-satisfaction\">CSAT template</a> for satisfaction and the <a href=\"/templates/ces-customer-effort\">CES template</a> for effort, each using the instrument's own scale."
+    a: "You can reword the number question and adjust the bands, and the same branch-and-follow-up structure works. There are also purpose-built versions: the <a href=\"/templates/csat-satisfaction/\">CSAT template</a> for satisfaction and the <a href=\"/templates/ces-customer-effort/\">CES template</a> for effort, each using the instrument's own scale."
 recipeUrl: "/recipes#understand"
 relatedSlugs: ["product-market-fit", "churn-cancellation", "playtest-beta-feedback"]
 pubDate: 2026-07-03

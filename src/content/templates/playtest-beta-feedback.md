@@ -36,7 +36,7 @@ steps:
     desc: "Compare satisfaction across playtests in the results, then read the open answers to know exactly what to fix before launch."
 faq:
   - q: "Is this an NPS survey?"
-    a: "No, it's a satisfaction survey. The recommend question is a 1-to-5 rating like the other three, not the 0-to-10 NPS instrument, which keeps all four dimensions on one comparable scale. If you want NPS specifically, the <a href=\"/templates/nps-reason-followup\">NPS template</a> uses the native NPS question and branches on the score."
+    a: "No, it's a satisfaction survey. The recommend question is a 1-to-5 rating like the other three, not the 0-to-10 NPS instrument, which keeps all four dimensions on one comparable scale. If you want NPS specifically, the <a href=\"/templates/nps-reason-followup/\">NPS template</a> uses the native NPS question and branches on the score."
   - q: "Do players have to type?"
     a: "Only if they want to. The four ratings are one-tap emoji answers, and the two open questions are optional depth. Most players finish in under a minute."
   - q: "Can I use it outside of games?"
@@ -68,6 +68,6 @@ The example runs four ratings and two open questions on a studio's beta weekend.
 
 - **Product or beta CSAT:** rename the scales to setup, performance, value, and recommend for a SaaS beta check-in.
 - **Event feedback:** repoint it at a tournament, workshop, or community event and ask how it went.
-- **Classic NPS:** swap the recommend rating for an NPS question and branch detractors into a "what went wrong?" follow-up. The [NPS template](/templates/nps-reason-followup) already builds that.
+- **Classic NPS:** swap the recommend rating for an NPS question and branch detractors into a "what went wrong?" follow-up. The [NPS template](/templates/nps-reason-followup/) already builds that.
 - **Words instead of faces:** swap a rating for an opinion scale where the wording of each point matters more than the tap target.
 - **Quick pulse:** keep only two ratings and one open question for a 20-second post-session pulse, and divide the formula by two.

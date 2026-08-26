@@ -24,7 +24,7 @@ For years Discord was the odd one out. Reddit, Telegram, WhatsApp, X, Guilded, F
 
 So the question isn't "which poll bot should I install?" anymore. It's "when is the built-in feature enough, and when do I still want a bot like Subo?" This post answers exactly that, head to head.
 
-If you want the wider field (Simple Poll, MEE6, EasyPoll, and where each one stops), read the [best Discord poll bots comparison](/blog/best-discord-poll-bots). This page stays focused on native polls versus Subo.
+If you want the wider field (Simple Poll, MEE6, EasyPoll, and where each one stops), read the [best Discord poll bots comparison](/blog/best-discord-poll-bots/). This page stays focused on native polls versus Subo.
 
 ## Discord's native polls
 
@@ -91,16 +91,16 @@ Subo is a free Discord app launched in 2022, built by people who came from the s
 
 ### Three privacy modes, anonymous by default
 
-Instead of the single public tally native polls give you, Subo has three modes: **Transparent** (everyone sees who voted), **Semi-Private** (only you, the creator, can), and **Anonymous** (no one can, not even you). New servers default to Anonymous, so honest feedback is the starting point rather than something you have to remember to switch on. We cover how each mode works, and when to use which, in the [anonymous surveys guide](/blog/complete-guide-anonymous-surveys-discord).
+Instead of the single public tally native polls give you, Subo has three modes: **Transparent** (everyone sees who voted), **Semi-Private** (only you, the creator, can), and **Anonymous** (no one can, not even you). New servers default to Anonymous, so honest feedback is the starting point rather than something you have to remember to switch on. We cover how each mode works, and when to use which, in the [anonymous surveys guide](/blog/complete-guide-anonymous-surveys-discord/).
 
 ### Built to be reused and managed
 
 This is the layer native polls don't have at all, and it's what matters most if you poll regularly.
 
-- **Clone any poll.** Run the same weekly or monthly vote without rebuilding it. Duplicate a past poll, tweak what changed, and post it again in seconds. You can even [clone across servers](/blog/clone-surveys-across-servers).
+- **Clone any poll.** Run the same weekly or monthly vote without rebuilding it. Duplicate a past poll, tweak what changed, and post it again in seconds. You can even [clone across servers](/blog/clone-surveys-across-servers/).
 - **Reopen a closed poll.** Extend it, or reactivate an old one to gather more responses instead of starting over.
 - **A web app that keeps your work.** Every poll, survey, and quiz you've run lives in the [Subo web app](https://app.subo.gg), not just in a channel that scrolls away. Search your past projects, compare results over time, and reactivate, clone, or edit any of them.
-- **Help creating one.** Start from a [ready-made template](/templates), or let Subo's AI draft a poll for you when you have a topic but not the questions. Native polls give you a blank box; Subo gives you a starting point.
+- **Help creating one.** Start from a [ready-made template](/templates/), or let Subo's AI draft a poll for you when you have a topic but not the questions. Native polls give you a blank box; Subo gives you a starting point.
 
 ### Polls that do something after the vote
 
@@ -151,6 +151,6 @@ There's a simpler way to draw the line, too. If you poll often, run an active co
 
 The two aren't really competitors. Native polls handle the throwaway questions, and Subo handles the ones where the result matters. Plenty of servers run both.
 
-The reuse gap is easiest to see from the other side: the [template library](/templates) is polls you clone instead of retype, and the [prediction poll recipe](/recipes/prediction-poll) shows what a poll looks like once scoring and XP are wired into it.
+The reuse gap is easiest to see from the other side: the [template library](/templates/) is polls you clone instead of retype, and the [prediction poll recipe](/recipes/prediction-poll/) shows what a poll looks like once scoring and XP are wired into it.
 
-**[Add Subo to your Discord server for free →](/invite)**, see everything it does on the [polls page](/polls), learn [how to create a Discord poll](/blog/how-to-create-a-discord-poll-with-or-without-a-bot) step by step, or compare [plans](/pricing).
+**[Add Subo to your Discord server for free →](/invite/)**, see everything it does on the [polls page](/polls/), learn [how to create a Discord poll](/blog/how-to-create-a-discord-poll-with-or-without-a-bot/) step by step, or compare [plans](/pricing/).

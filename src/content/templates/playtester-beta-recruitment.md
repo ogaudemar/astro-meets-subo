@@ -43,7 +43,7 @@ faq:
     a: "Skip logic reads the availability answer. Applicants who can commit weekly are routed to the achievement; everyone else sees the waitlist message. Exactly one path fires."
   - q: "Can I use it beyond playtesting?"
     a: "Yes. It's a general screen-and-reward intake: an early-access list, a moderator or volunteer application, or any signup where you qualify people and grant a credential on the spot."
-recipeUrl: "/recipes/playtester-selection"
+recipeUrl: "/recipes/playtester-selection/"
 relatedSlugs: ["playtest-beta-feedback", "bug-report-form", "player-onboarding-profiler"]
 pubDate: 2026-07-02
 draft: false

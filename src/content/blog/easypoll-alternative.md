@@ -22,7 +22,7 @@ Let's be fair to EasyPoll before we talk about replacing it. It's the most-insta
 
 So why look for an alternative at all? Because a poll bot has a ceiling, and it's the same ceiling for every bot whose whole job is polls. You hit it the moment you want the poll to do something after the vote, or you want more than a single question. That's the honest reason to move, and it's what this page is about.
 
-If you want the full field instead of a one-to-one comparison, we keep a wider [best Discord poll bots](/blog/best-discord-poll-bots) roundup. This page stays on EasyPoll and where you'd outgrow it.
+If you want the full field instead of a one-to-one comparison, we keep a wider [best Discord poll bots](/blog/best-discord-poll-bots/) roundup. This page stays on EasyPoll and where you'd outgrow it.
 
 ## What EasyPoll does well
 
@@ -53,7 +53,7 @@ None of that is a flaw in EasyPoll. It's the boundary of the category. When your
 
 Subo is a Discord survey and poll app built by people who came from the survey industry. It does polls at parity with a dedicated poll bot, then keeps going where one stops.
 
-On the polling basics it lines up closely with EasyPoll: up to 24 options (with effectively no character limit in emoji-only mode), timers or no time limit at all, role restrictions, live edits, a web app, and a public API. It also has three privacy modes instead of a single anonymous toggle: Transparent (everyone sees who voted), Semi-Private (only you can), and Anonymous (no one can, not even you), with new servers defaulting to Anonymous. We cover how those work in the [anonymous surveys guide](/blog/complete-guide-anonymous-surveys-discord).
+On the polling basics it lines up closely with EasyPoll: up to 24 options (with effectively no character limit in emoji-only mode), timers or no time limit at all, role restrictions, live edits, a web app, and a public API. It also has three privacy modes instead of a single anonymous toggle: Transparent (everyone sees who voted), Semi-Private (only you can), and Anonymous (no one can, not even you), with new servers defaulting to Anonymous. We cover how those work in the [anonymous surveys guide](/blog/complete-guide-anonymous-surveys-discord/).
 
 The reason to switch is the layer past the vote:
 
@@ -94,6 +94,6 @@ The honest answer depends on one question: do you only need polls?
 
 There's also the case for not running two bots. If you already reach for a survey now and then, doing polls *and* surveys in one app is simpler than a poll bot plus a form tool. That consolidation is often the real reason servers move.
 
-The quickest way to judge the difference is to clone one of the [poll and quiz templates](/templates) and run it in your own server. If you would rather see how one is put together first, the [prediction poll recipe](/recipes/prediction-poll) shows the scoring and the XP payout end to end.
+The quickest way to judge the difference is to clone one of the [poll and quiz templates](/templates/) and run it in your own server. If you would rather see how one is put together first, the [prediction poll recipe](/recipes/prediction-poll/) shows the scoring and the XP payout end to end.
 
-**[Add Subo to your Discord server for free →](/invite)**, see what it does with polls on the [polls page](/polls), read [how to create a Discord poll](/blog/how-to-create-a-discord-poll-with-or-without-a-bot) step by step, or check [plans and pricing](/pricing).
+**[Add Subo to your Discord server for free →](/invite/)**, see what it does with polls on the [polls page](/polls/), read [how to create a Discord poll](/blog/how-to-create-a-discord-poll-with-or-without-a-bot/) step by step, or check [plans and pricing](/pricing/).

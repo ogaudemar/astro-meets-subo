@@ -384,7 +384,7 @@ segments. Segment drift is an early signal of engagement trajectory.
 
 ## Related
 
-- [Hogwarts House Sorting Hat](/recipes/hogwarts-house-sorting-quiz): same multi-bucket argmax pattern, community-entertainment framing
-- [Pre/post attitude assessment](/recipes/pre-post-assessment): longitudinal change measurement using two-wave scoring surveys
-- [Welcome quiz](/recipes/welcome-quiz): self-reported onboarding without hidden scoring
+- [Hogwarts House Sorting Hat](/recipes/hogwarts-house-sorting-quiz/): same multi-bucket argmax pattern, community-entertainment framing
+- [Pre/post attitude assessment](/recipes/pre-post-assessment/): longitudinal change measurement using two-wave scoring surveys
+- [Welcome quiz](/recipes/welcome-quiz/): self-reported onboarding without hidden scoring
 - [Scoring variables reference](https://api.subo.ai/docs#tag/Script/operation/replaceScript)

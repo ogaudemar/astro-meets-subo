@@ -29,7 +29,7 @@ const t = translations.useCasesResearch;
           <span class="uc-eyebrow mono">{t.eyebrow}</span>
           <h1 class="mono">{t.heroTitle}</h1>
           <p class="uc-hero__subtitle">{t.heroSubtitle}</p>
-          <a href="/invite" class="button button--accent-bg">{t.heroCta}</a>
+          <a href="/invite/" class="button button--accent-bg">{t.heroCta}</a>
         </div>
       </section>
 
@@ -77,7 +77,7 @@ const t = translations.useCasesResearch;
               const text = typeof ex === 'string' ? ex : ex.text;
               const template = typeof ex === 'string' ? null : ex.template;
               return template
-                ? <a class="uc-example uc-example--link" href={`/templates/${template}`}>{text}</a>
+                ? <a class="uc-example uc-example--link" href={`/templates/${template}/`}>{text}</a>
                 : <span class="uc-example">{text}</span>;
             })}
           </div>

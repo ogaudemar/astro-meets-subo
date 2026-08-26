@@ -116,6 +116,6 @@ The Subo web admin lets you compare results across survey runs, making this tren
 
 Scheduling and recurring surveys are available on Subo **Premium** ($2.99/month) and above. Free tier users can manually launch surveys but can't set automated schedules.
 
-**[Add Subo to your Discord server →](/invite)**
+**[Add Subo to your Discord server →](/invite/)**
 
-**[View all plans and pricing →](/pricing)**
+**[View all plans and pricing →](/pricing/)**

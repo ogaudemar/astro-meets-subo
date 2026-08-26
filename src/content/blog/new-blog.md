@@ -23,5 +23,5 @@ Astro allows us to build a lightning-fast website while maintaining the flexibil
 
 Stay tuned for more updates, tutorials, and insights about using Subo effectively in your Discord community!
 
-Ready to get started? [Add Subo to your Discord server](/invite) today!
+Ready to get started? [Add Subo to your Discord server](/invite/) today!
 

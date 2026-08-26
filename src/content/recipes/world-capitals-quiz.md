@@ -511,6 +511,6 @@ improve their score week-over-week.
 
 ## Related
 
-- [Hogwarts House Sorting Hat](/recipes/hogwarts-house-sorting-quiz): personality quiz with multi-bucket scoring and argmax
-- [Welcome quiz](/recipes/welcome-quiz): skip-logic routing without scoring
+- [Hogwarts House Sorting Hat](/recipes/hogwarts-house-sorting-quiz/): personality quiz with multi-bucket scoring and argmax
+- [Welcome quiz](/recipes/welcome-quiz/): skip-logic routing without scoring
 - [Scoring variables reference](https://api.subo.ai/docs#tag/Script/operation/replaceScript): full list of `[score_*]`, `[correct_answers]`, `[max_correct_answers]` tokens

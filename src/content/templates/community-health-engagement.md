@@ -45,7 +45,7 @@ faq:
     a: "Quarterly, or after a major change. Trending the score over time is where the value is, so a consistent cadence matters more than any single run."
   - q: "Can I make it anonymous?"
     a: "Yes. Switch to anonymous for franker answers on a sensitive community. The score still aggregates."
-recipeUrl: "/recipes/pre-post-assessment"
+recipeUrl: "/recipes/pre-post-assessment/"
 relatedSlugs: ["nps-reason-followup", "suggestion-box", "content-preference"]
 pubDate: 2026-07-03
 updatedDate: 2026-08-16

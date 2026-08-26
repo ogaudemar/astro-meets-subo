@@ -227,7 +227,7 @@ and open-text answer without needing to dig into responses.
 - **You want to weight multiple criteria** (e.g. "qualify if 3 of 5
   criteria met"). Skip logic supports compound expressions but the
   action-block count grows quickly. Scoring is the clean path there: see
-  the [member segmentation recipe](/recipes/member-segmentation). This
+  the [member segmentation recipe](/recipes/member-segmentation/). This
   recipe deliberately picks the single most predictive question instead.
 - **You need to verify experience claims.** This recipe asks. If you
   need *evidence* (links to communities they've moderated, references),
@@ -241,9 +241,9 @@ and open-text answer without needing to dig into responses.
 ---
 
 ## Related
-- [Welcome quiz recipe](/recipes/welcome-quiz): onboarding pattern (region / language / notifications)
-- [Event RSVP recipe](/recipes/event-rsvp-streak): recurring engagement pattern
-- [Playtester selection recipe](/recipes/playtester-selection): same single-gate funnel pattern, game-dev framing
+- [Welcome quiz recipe](/recipes/welcome-quiz/): onboarding pattern (region / language / notifications)
+- [Event RSVP recipe](/recipes/event-rsvp-streak/): recurring engagement pattern
+- [Playtester selection recipe](/recipes/playtester-selection/): same single-gate funnel pattern, game-dev framing
 - [Skip logic reference](https://api.subo.ai/docs#tag/Script): operator and value-type tables
 
 ---
@@ -259,5 +259,5 @@ If your community treats "I was a mod here" as a milestone (e.g. a
 permanent retirement badge after someone steps down), switch the Mod
 Trial branch to `give_achievement` with a "Mod Alumni" achievement
 that's also linked to the Mod Trial role. See the
-[achievements vs. roles table in the welcome-quiz recipe](/recipes/welcome-quiz#achievements-vs-roles)
+[achievements vs. roles table in the welcome-quiz recipe](/recipes/welcome-quiz/#achievements-vs-roles)
 for the broader rule.

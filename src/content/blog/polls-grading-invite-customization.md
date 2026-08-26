@@ -59,10 +59,10 @@ A few touches that apply across polls and surveys alike:
 
 - **A post-vote preview** so you can see exactly what a voter sees, right in the app's Script Editor .
 - **Inline `:` emoji picker** in every script-editor field: type a colon, pick an emoji, keep going.
-- **Inline `[` variable picker** in every script-editor field: type a bracket to display the variables that be dynamically piped into your poll/project. *(Both pickers have since been joined by an `@` role picker and a hint bar that points at all three. See [the three keys that write your messages for you](/blog/personalize-discord-survey-messages).)*
+- **Inline `[` variable picker** in every script-editor field: type a bracket to display the variables that be dynamically piped into your poll/project. *(Both pickers have since been joined by an `@` role picker and a hint bar that points at all three. See [the three keys that write your messages for you](/blog/personalize-discord-survey-messages/).)*
 - **Default survey intros** toggle and welcome message, so a new project opens in your voice instead. *(The toggle is free; server-level defaut for custom intro message is Premium.)*
 - **A live preview that better matches Discord**: colors, markdown, bold, and emoji all render the way they'll actually appear. *(Free, always)*
-- **Member management**: add and remove badges and roles directly from the Members page and the Responses page. Members get a DM when you grant them a role by hand. And with [XP History](/blog/xp-history), both you and the member can see every point change, including manual adjustments, on the web and in Discord
+- **Member management**: add and remove badges and roles directly from the Members page and the Responses page. Members get a DM when you grant them a role by hand. And with [XP History](/blog/xp-history/), both you and the member can see every point change, including manual adjustments, on the web and in Discord
 - **Option edits and ordering**: we made it easier to edit options or change the order in which they appear. We even added a randomization option so that options which are not pinned are displayed in a different order for each respondent
 
 ---
@@ -71,6 +71,6 @@ A few touches that apply across polls and surveys alike:
 
 - Go to the web app's Settings page to update your defaults and messages.
 - Create a poll, mark a correct answer, give the options some points, and dress up the invitation.
-- Or start from a built one: the [poll and quiz templates](/templates) clone in a click, and the [prediction poll recipe](/recipes/prediction-poll) shows how score weights turn a poll into a contest.
+- Or start from a built one: the [poll and quiz templates](/templates/) clone in a click, and the [prediction poll recipe](/recipes/prediction-poll/) shows how score weights turn a poll into a contest.
 
 Built something clever? Hit a rough edge? **Drop it in our [support server](https://subo.gg/support).**

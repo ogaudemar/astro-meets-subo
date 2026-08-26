@@ -47,7 +47,7 @@ If your items have long names, switch the answer style to emoji mode: the full l
 
 ![A Discord ranking in emoji mode, with nine Neil Young albums listed above with their emoji and a row of emoji-only buttons below carrying rank numbers 1, 2 and 3, plus Undo, Start over and Submit](/images/blog/scale-family/ranking-emoji-respondent-pov-discord.png)
 
-The mechanics of the whole scale family, including how rating and opinion scales work, are in [the launch post](/blog/discord-rating-scale-nps-ranking-questions). This post is about what to do with a ranking once you have one.
+The mechanics of the whole scale family, including how rating and opinion scales work, are in [the launch post](/blog/discord-rating-scale-nps-ranking-questions/). This post is about what to do with a ranking once you have one.
 
 ---
 
@@ -91,7 +91,7 @@ Three figures per item, and they answer different questions:
 - **Ranked 1st** is how many people made it their top choice. This is the number to lead with when you announce a result, because it is the one members understand without explanation.
 - **Ranked by** is how many people ranked the item at all, and it is what stops you misreading the first column. An item ranked by three people with an average of 1.3 is a niche favorite. An item ranked by forty people with an average of 2.4 is your priority.
 
-The other view draws bars from first-choice picks rather than from average rank, which is deliberate: average rank is the one metric here where lower is better, and a bar chart cannot express that without teaching the reader to read it backwards. You can see that view in [the launch post](/blog/discord-rating-scale-nps-ranking-questions).
+The other view draws bars from first-choice picks rather than from average rank, which is deliberate: average rank is the one metric here where lower is better, and a bar chart cannot express that without teaching the reader to read it backwards. You can see that view in [the launch post](/blog/discord-rating-scale-nps-ranking-questions/).
 
 **Items nobody ranked are shown, not hidden.** When you ask for a top 3 of 10, seven items go unranked by each respondent, and the ones that end up unranked by almost everybody are a finding. That is your answer about what to cut.
 
@@ -107,7 +107,7 @@ Downloads carry the raw positions: one column per item, holding that item's rank
 
 ## Branching on a ranking
 
-[Skip logic](/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo) reads rankings two ways, and both are named in plain words in the condition builder.
+[Skip logic](/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo/) reads rankings two ways, and both are named in plain words in the condition builder.
 
 **Top choice is** fires on what someone put first. Use it to ask a targeted follow-up: someone whose number one is "mod support" gets a different question than someone whose number one is "ranked play."
 
@@ -119,6 +119,6 @@ Downloads carry the raw positions: one column per item, holding that item's rank
 
 [Rank Your Favorites](/templates/rank-your-favorites/) is the fastest way to see one working: a top 3 of 6 with items shuffled per respondent, and a follow-up that names the respondent's own number one back to them. It is built around favorite game genres, so it is swappable for anything your community argues about.
 
-For the roadmap version, [Feature Roadmap Vote](/templates/feature-roadmap-vote/) asks the priority question with a follow-up on urgency, and [Feature Prioritization](/templates/feature-prioritization/) takes a different route to the same decision using MoSCoW levels, which is the better instrument when your items are release-scope commitments rather than wishes. More of this shape lives in [get things done](/use-cases/get-things-done).
+For the roadmap version, [Feature Roadmap Vote](/templates/feature-roadmap-vote/) asks the priority question with a follow-up on urgency, and [Feature Prioritization](/templates/feature-prioritization/) takes a different route to the same decision using MoSCoW levels, which is the better instrument when your items are release-scope commitments rather than wishes. More of this shape lives in [get things done](/use-cases/get-things-done/).
 
 Ranking is a survey question type, so `/poll` is unchanged.
