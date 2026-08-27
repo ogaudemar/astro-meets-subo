@@ -138,10 +138,16 @@ for (const [loc, row] of Object.entries(lex.locales)) {
 
     const hits = [];
     for (const [path, value] of strings) {
-      // URL paths and hrefs are identifiers, not copy.
-      if (rule.exemptPaths && (path.endsWith('.href') || /^\/|https?:\/\//.test(value))) continue;
+      let copy = value;
+      // URL paths and hrefs are identifiers, not copy. Whole-value URLs are
+      // skipped; prose that links inline keeps its words and loses its hrefs,
+      // or a "See Convos →" link to /survey-convos/ flags its own slug.
+      if (rule.exemptPaths) {
+        if (path.endsWith('.href') || /^\/|https?:\/\//.test(value)) continue;
+        copy = value.replace(/href\s*=\s*(["'])[^"']*\1/g, '');
+      }
 
-      const haystack = rule.caseSensitive ? value : value.toLocaleLowerCase();
+      const haystack = rule.caseSensitive ? copy : copy.toLocaleLowerCase();
       const needle = rule.caseSensitive ? rule.phrase : rule.phrase.toLocaleLowerCase();
 
       if (rule.caseSensitive) {

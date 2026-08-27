@@ -587,16 +587,16 @@
   "heroTitle": "The Discord form that feels like a <strong class=\"accent\">conversation</strong>",
   "heroSubtitle": "Not a form. Not just a poll. A friendly one-on-one chat where your members actually want to respond.",
   "heroCta": "Add to Discord, Free",
-  "whatTitle": "WHAT IS A SURVEY CONVO?",
+  "whatTitle": "WHAT IS A CONVO?",
   "whatBody": [
-    "A survey convo is a private message conversation between your community member and Subo, the bot, right inside your Discord server or on the web. If you've been looking for a Discord form, a questionnaire, or a Google Forms alternative for your server, this is it, minus the cold form.",
+    "A Convo is a private message conversation between your community member and Subo, the bot, right inside your Discord server or on the web. If you've been looking for a Discord form, a questionnaire, or a Google Forms alternative for your server, this is it, minus the cold form.",
     "Instead of sending members to a cold, generic form, Subo invites them to a chat. Questions appear one at a time, in a friendly message format. It feels like talking to someone, not filling out paperwork.",
     "The result? <strong>Higher completion rates</strong>, richer answers, and members who actually enjoy the experience.",
     "New to collecting data in your server? Read the practical walkthrough: <a href=\"/blog/how-to-make-a-discord-form/\">how to run a form or survey in Discord</a>."
   ],
-  "formsVsConvosTitle": "TRADITIONAL FORMS vs. SURVEY CONVOS",
+  "formsVsConvosTitle": "TRADITIONAL FORMS vs. CONVOS",
   "formsColumn": "Traditional Forms",
-  "convosColumn": "Survey Convos with Subo",
+  "convosColumn": "Convos with Subo",
   "formsVsConvosItems": [
     { "forms": "Cold, impersonal interface", "convos": "Warm, chat-style experience" },
     { "forms": "Long pages that feel overwhelming", "convos": "One question at a time" },
@@ -638,8 +638,8 @@
     { "emoji": "🧮", "name": "Calculated Field", "desc": "Compute a score, segment, or value from earlier answers" }
   ],
   "webTitle": "ON DISCORD AND ON THE WEB",
-  "webDesc": "Survey convos work natively inside Discord, but Subo also supports a web-based survey experience. Admins choose whether a survey runs in Discord or on the web, and whether it's open to anyone or restricted to community members. Either way, you manage surveys, view results, and analyze data from the Subo web admin.",
-  "benefitsTitle": "WHY SURVEY CONVOS WORK BETTER",
+  "webDesc": "Convos work natively inside Discord, but Subo also supports a web-based survey experience. Admins choose whether a survey runs in Discord or on the web, and whether it's open to anyone or restricted to community members. Either way, you manage surveys, view results, and analyze data from the Subo web admin.",
+  "benefitsTitle": "WHY CONVOS WORK BETTER",
   "benefitsList": [
     "👋 Greets members by name and rewards them as they go, not just at the finish line",
     "📱 Works on mobile without any friction",
@@ -766,7 +766,7 @@
       "title": "More people finish what they start",
       "sub": "A long form scares people off. Subo asks one step at a time, right where your members already are.",
       "cards": [
-        { "emoji": "💬", "title": "One step at a time", "desc": "Questions arrive like a chat, so a 20-field application feels like a quick exchange. <a href=\"/survey-convos/\">See survey convos →</a>" },
+        { "emoji": "💬", "title": "One step at a time", "desc": "Questions arrive like a chat, so a 20-field application feels like a quick exchange. <a href=\"/survey-convos/\">See Convos →</a>" },
         { "emoji": "📨", "title": "No link-out", "desc": "It runs inside Discord, or on the web when you need it. No redirect to a form nobody trusts." },
         { "emoji": "🔀", "title": "Branch on answers", "desc": "Skip logic routes each person to the questions that actually apply to them. Shorter, smarter intake." },
         { "emoji": "🕵️", "title": "Right level of privacy", "desc": "Keep submissions identified for follow-up, or anonymous when that fits the request." }
@@ -866,7 +866,7 @@
       "title": "Better questions get better data",
       "sub": "A form wall makes people rush or bail. Subo asks like a person, so the answers are more complete and more honest.",
       "cards": [
-        { "emoji": "💬", "title": "Conversations, not forms", "desc": "One question at a time, like a chat. Higher completion and more thoughtful answers. <a href=\"/survey-convos/\">See survey convos →</a>" },
+        { "emoji": "💬", "title": "Conversations, not forms", "desc": "One question at a time, like a chat. Higher completion and more thoughtful answers. <a href=\"/survey-convos/\">See Convos →</a>" },
         { "emoji": "🕵️", "title": "Three privacy modes", "desc": "Transparent, Semi-Private, or Anonymous. Set the level of trust per survey and get candid feedback on sensitive topics." },
         { "emoji": "🎯", "title": "Role targeting", "desc": "Survey the right segment, your paying members, your mods, your lurkers, separately, so you compare like with like." },
         { "emoji": "🔀", "title": "Skip logic, cleaner data", "desc": "Everyone sees only relevant questions. No \"N/A\" noise polluting your results." }
@@ -1080,7 +1080,7 @@
   "outro": {
     "title": "🧠 Build a clearer picture over time",
     "body": [
-      "When you want to learn more about your community, one strategy is a survey convo with several questions. Another is to run quick polls regularly.",
+      "When you want to learn more about your community, one strategy is a Convo with several questions. Another is to run quick polls regularly.",
       "With Subo, every response is tied to the member who gave it (unless anonymous mode is on), so you can connect the dots over time: see how opinions evolve, follow up, and understand individual preferences, not just the overall tally.",
       "Discord's native polls can't do that."
     ],

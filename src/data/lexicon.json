@@ -118,7 +118,7 @@
         { "word": "quiz",          "pillar": "engage",     "resolvesTo": "poll",  "owns": null,                          "evidence": "not yet targeted" }
       ],
       "deny": [
-        { "phrase": "survey convo",  "use": "Convo",      "why": "T3. Lowercase compound; a problem word wearing a product word's clothes. 4 strings in en.json." },
+        { "phrase": "survey convo",  "use": "Convo",      "why": "T3. Lowercase compound; a problem word wearing a product word's clothes. The prose is done; what remains is the nav label 'Survey Convos', which is a naming decision, not a typo." },
         { "phrase": "convo",         "use": "Convo",      "why": "T3. Capitalized always. Case-sensitive rule; identifiers and /convos/ URL paths are exempt.", "caseSensitive": true, "exemptPaths": true },
         { "phrase": "polls and surveys",  "use": "projects", "why": "A1b Class A. Admin-facing doublet; the umbrella already exists.", "scope": "app" },
         { "phrase": "surveys and polls",  "use": "projects", "why": "A1b Class A.", "scope": "app" },
@@ -181,8 +181,8 @@
       "clearedBy": "A4"
     },
     "en.deny": {
-      "reason": "4 'survey convo' strings in en.json; ~31 doublet cells and 6 lowercase-convo cells in user_messages.",
-      "clearedBy": "A1c"
+      "reason": "en.json prose is DONE (2026-08-27): 11 'survey convo' strings down to 2, and lowercase 'convo' is gone. The 2 left are the header and footer nav labels for /survey-convos/, held pending the page-name decision. The app side is untouched: ~31 doublet cells and 6 lowercase-convo cells in user_messages.",
+      "clearedBy": "A1c (app cells) + the /survey-convos/ nav-label decision"
     },
     "t2b.fr": {
       "reason": "app.pollWord.fr.webUi is 'vote' while Discord and the /sondage command say 'sondage'.",

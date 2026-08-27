@@ -108,12 +108,33 @@ The 6 real ones: `Web_About_Description`, `web_link_inactive`,
 `Web_ProjectDetails_LogCompletes_Help`, `Web_ProjectDetails_ResponseNotifications_Description`,
 `SurveyBuilder_name_survey` ("name for your survey convo"), `Web_NewProject_TypeQuestion` (also Class C).
 
-## And on the site: `en.json` (4 strings)
+## And on the site: `en.json` — ✅ DONE (2026-08-27)
 
-The same lowercase phrasing, English-side: **"survey convo"** in `surveyConvos.whatBody`,
-`surveyConvos.webDesc`, `useCasesResearch.sections[0].cards[0].desc`,
-`useCasesGetThingsDone.sections[0].cards[0].desc`. Do these in the same pass so the app and the
-site land on one phrasing at once.
+**This section said 4 strings. There were 11**, and the guard is what found the other 7: the
+all-caps section headings (`WHAT IS A SURVEY CONVO?`, `TRADITIONAL FORMS vs. SURVEY CONVOS`,
+`WHY SURVEY CONVOS WORK BETTER`) do not match a `[Ss]urvey [Cc]onvo` grep, which is the whole
+argument for `check:lexicon` existing.
+
+Nine are now `Convo`: the three headings above, `convosColumn`, `surveyConvos.whatBody[0]`,
+`surveyConvos.webDesc`, the two *"See survey convos →"* CTAs in `useCasesResearch` /
+`useCasesGetThingsDone`, and the `pollsPage` prose. **Lowercase `convo` is gone from `en.json`.**
+
+**Two are held, deliberately:** `header.product[1].text` and `footer.sections[0].links[1].text`,
+both the nav label **"Survey Convos"** for `/survey-convos/`. That is the page's public name, not a
+typo, and the URL keeps its slug either way. It needs a naming decision, so it stays in the
+`en.deny` baseline with that noted.
+
+⚠️ **Two English strings outside `en.json` still carry the phrasing** and were left alone because
+neither is plain copy:
+
+- `src/components/BaseHead.astro:16` — the site-wide default `<title>` / description
+  (*"Discord Survey Convo & Poll Bot"*, *"polls and survey convos"*). A meta title is a T4/T5
+  decision, not a prose fix.
+- `src/content/blog/content-blocks-new-way-to-design-survey-flows.md:40` — *"Discord survey
+  convos, web convos and polls"* in a published post. Also the only place `web convos` appears.
+
+**DE / ES / FR carry all of it too**, translated faithfully (`WAS IST EIN SURVEY CONVO?`,
+`¿QUÉ ES UNA SURVEY CONVO?`). Out of scope here; it lands with A5/A7.
 
 ---
 
