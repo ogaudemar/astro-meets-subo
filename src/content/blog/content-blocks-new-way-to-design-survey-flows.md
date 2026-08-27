@@ -37,7 +37,7 @@ It is a message. The respondent reads it and moves on, in one of two ways:
 - **Auto-advance.** The conversation continues on its own after a typing delay (2 seconds by default, adjustable from 1 to 10).
 - **Require acknowledgement.** A button appears and the respondent has to click it. The default label is "Continue"; the hero image at the top of this post shows one relabeled "Begin the trial 🧠".
 
-Content blocks work in Discord survey convos, web convos and polls. The block itself is on every plan. Two things need Premium or above: the button label and the typing delay.
+Content blocks work in Convos, on Discord and on the web, and in polls. The block itself is on every plan. Two things need Premium or above: the button label and the typing delay.
 
 You can attach an image or a GIF (surveys only, not polls), and on Discord you can set the embed's border color, which is how the hero block gets its teal stripe.
 

@@ -119,19 +119,27 @@ Nine are now `Convo`: the three headings above, `convosColumn`, `surveyConvos.wh
 `surveyConvos.webDesc`, the two *"See survey convos →"* CTAs in `useCasesResearch` /
 `useCasesGetThingsDone`, and the `pollsPage` prose. **Lowercase `convo` is gone from `en.json`.**
 
-**Two are held, deliberately:** `header.product[1].text` and `footer.sections[0].links[1].text`,
-both the nav label **"Survey Convos"** for `/survey-convos/`. That is the page's public name, not a
-typo, and the URL keeps its slug either way. It needs a naming decision, so it stays in the
-`en.deny` baseline with that noted.
+**The last two, the nav labels, went the same way on the user's call (2026-08-27)**, and the
+argument is now **T11** in the roadmap. `header.product[1].text` and
+`footer.sections[0].links[1].text` read **"Convos"**; the slug `/survey-convos/` is unchanged, as
+are the page's title, description and H1, which is where its door words actually live.
 
-⚠️ **Two English strings outside `en.json` still carry the phrasing** and were left alone because
-neither is plain copy:
+**The nav label was an SEO liability, not an asset.** Header and footer render on all 60 pages, so
+the old label was 60 sitewide internal anchors reading "Survey" and pointing at a page the lexicon
+says does not own "survey" — the how-to does. **`en.json` is now clean**, and the `en.deny`
+baseline entry is deleted, so the guard enforces it from here.
 
-- `src/components/BaseHead.astro:16` — the site-wide default `<title>` / description
-  (*"Discord Survey Convo & Poll Bot"*, *"polls and survey convos"*). A meta title is a T4/T5
-  decision, not a prose fix.
-- `src/content/blog/content-blocks-new-way-to-design-survey-flows.md:40` — *"Discord survey
-  convos, web convos and polls"* in a published post. Also the only place `web convos` appears.
+**The two strings outside `en.json` are done too**, under the same rule:
+
+- `src/components/BaseHead.astro` — the sitewide default `<title>` / description. It said
+  *"Discord Survey Convo & Poll Bot"*. **Verified unreachable**: all 60 `<BaseHead>` call sites
+  pass a title, and the string appears in zero built pages. It now falls back to `SITE_TITLE` /
+  `SITE_DESCRIPTION` from `consts.ts` instead of carrying its own copy — a duplicate nothing serves
+  is a duplicate nobody notices going stale, which is T8 in miniature.
+- `src/content/blog/content-blocks-new-way-to-design-survey-flows.md` — mid-body, not the title,
+  H1 or slug, and the post targets *content blocks*. *"Discord survey convos, web convos and
+  polls"* → *"Convos, on Discord and on the web, and in polls"*. It was the only `web convos` on
+  the site.
 
 **DE / ES / FR carry all of it too**, translated faithfully (`WAS IST EIN SURVEY CONVO?`,
 `¿QUÉ ES UNA SURVEY CONVO?`). Out of scope here; it lands with A5/A7.

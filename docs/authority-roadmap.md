@@ -2036,6 +2036,40 @@ Consequence: the French *formulaire* and *quiz* doors are worth seeding **for en
 even at low traffic**, which is a stronger argument than the volume-based one this section
 carried on 2026-08-26 ("positioning word now, ranking bet later").
 
+**T11. Arrival decides the word. T4, extended from pages to every surface (2026-08-27).**
+T4 sorts the *inside of a page* into three layers, which left every surface that is not a page
+(nav labels, code defaults, published posts, Discord strings) to be argued one at a time. Three
+such arguments in a row resolved the same way, so it is a rule:
+
+> **Convo replaces a door word wherever the reader has already arrived. Door words hold the
+> surfaces the reader has not arrived at yet.**
+
+| Reader has NOT arrived → door words | Reader HAS arrived → `poll` / `Convo` |
+|---|---|
+| title tags, meta descriptions, H1s and H2s | nav labels and in-page links |
+| URL slugs | body copy below the fold |
+| directory listings, top.gg, social bios | app UI, settings, `llms.txt`, schema |
+| blog post titles and target terms | code defaults and placeholder copy |
+
+**The counter-intuitive consequence, and the one that makes the rule worth having: a nav label
+carrying a door word is an SEO *liability*, not an asset.** The header and footer render on all
+60 pages, so `Survey Convos → /survey-convos/` was 60 instances of sitewide internal anchor text
+pushing "survey" at a page the lexicon says does not own it (the how-to does). That is the exact
+cannibalization T5 exists to prevent, arriving through a surface nobody was watching because it
+looked like navigation rather than SEO. **Renaming it to "Convos" is a small T5 tailwind, not a
+cost.** The honest magnitude: internal anchor text is a modest signal, and the reason to do it is
+product clarity. The point is that the SEO objection people expect here does not survive contact
+with the framework.
+
+**Two corollaries.**
+- **A missing door in the nav is fixed by adding a nav item, never by mislabeling a product
+  page.** If the nav should carry "survey", it links to the how-to that owns it.
+- **`X and Convos` is not the compromise it looks like.** "Surveys & Convos" is the same doublet
+  shape A1c is deleting from 31 app cells. A surface picks a layer; it does not hedge.
+
+**Where it was first applied (2026-08-27):** the header/footer nav labels, `BaseHead`'s default
+title, and one published post. See A1c.
+
 ### A1 RESULT — the live poll nouns (2026-08-26)
 
 Two `user_messages` rows, supplied by the user, in column order

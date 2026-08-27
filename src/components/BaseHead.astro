@@ -2,6 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 interface Props {
 	title: string;
@@ -13,7 +14,11 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title ="Subo - Discord Survey Convo & Poll Bot | Get to know your community", description = "Subo makes surveys fun! Subo helps you engage and understand your friends and community with polls and survey convos in your Discord server", image = '/images/subo-og.png', alternates = [], jsonLd } = Astro.props;
+// Every one of the 60 call sites passes a title and description, so these
+// defaults render on no page today. They fall back to consts.ts rather than
+// carrying their own copy: a duplicate that nothing serves is a duplicate
+// nobody notices going stale (it still said "survey convos" in 2026-08).
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = '/images/subo-og.png', alternates = [], jsonLd } = Astro.props;
 
 const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
