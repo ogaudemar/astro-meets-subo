@@ -15,9 +15,13 @@ description: >-
 
 # Subo Glossary
 
-Subo is a Discord-first conversational survey and polling platform. Brand belief: the best
-survey feels like a conversation, not a form. This skill governs the **English source** copy
-so every surface uses the same words. For non-English translation, use **subo-localization**.
+Subo is a Discord-first, Gamified Conversational Data Collection Platform. Brand belief: the best
+interactions with members feel like conversations, not like forms. This skill governs the **English source** copy
+so every surface uses the same words. For non-English translation, use **subo-localization**
+(app repo only). **The per-locale terminology record is `lexicon.json`**, vendored byte-identical
+in both repos like this glossary: `subo-site/src/data/lexicon.json` and
+`subo/.claude/skills/subo-localization/lexicon.json`. It carries door words, the page that owns
+each, bridge sentences and denylists, and is enforced by `npm run check:lexicon` in `subo-site`.
 
 ## Canonical product nouns
 
@@ -47,13 +51,12 @@ They are not interchangeable and "server" is not a legacy word to be corrected a
 
 - Use **community** for the product noun and anywhere the sentence should hold true beyond
   Discord: UI strings, settings labels, the public API, and anything that will still be
-  accurate once YouTube, Twitch, Steam or Patreon communities are live.
+  accurate once YouTube, Twitch, Steam, Patreon, Roblox, Reddit or other communities are live.
 - Use **server** when you specifically mean a Discord server, especially in copy written for
   Discord owners who call it that themselves: social posts, directory listings, top.gg,
   acquisition pages. "Your server is about to get busy again" is correct and "your community
   is about to get busy again" reads like product jargon.
-- **`guild` stays banned** in all user-facing copy. It is the Discord API's internal word,
-  not a word any admin says.
+- **`guild` stays banned** in all user-facing copy, except to describe specifically a gaming guild (which may have a Discord server). It is the Discord API's internal word.
 
 The rule of thumb: if swapping in a non-Discord platform would make the sentence wrong, you
 want *server*. If it would still be true, you want *community*.

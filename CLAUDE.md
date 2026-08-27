@@ -20,6 +20,14 @@ Marketing/landing page site for **Subo** (a Discord survey and poll bot) deploye
   `subo/`) so each is self-contained and the rules ship with the code that follows them. The
   two copies are byte-identical by intent: **edit one, copy it to the other in the same
   change.** A glossary that disagrees with itself across repos is worse than one location.
+- **`lexicon.json` is vendored the same way**, and carries the per-locale half the glossary
+  doesn't: door words, the page that owns each, bridge sentences, denylists, and Discord's poll
+  word per locale. It lives at **`src/data/lexicon.json` here** and
+  **`.claude/skills/subo-localization/lexicon.json` in `subo/`**. Same rule: **edit one, copy it
+  to the other in the same change.** Unlike the glossary it is **machine-checked** —
+  `npm run check:lexicon` (part of `npm run check`) enforces the checkable rulings and carries a
+  `knownViolations` baseline that is meant to be emptied, not grown. Rulings and reasoning:
+  [docs/authority-roadmap.md](docs/authority-roadmap.md) § TERMINOLOGY ARCHITECTURE.
 
 ## Commands
 

@@ -58,7 +58,13 @@ The conversational survey experience itself — the respondent-facing chat (Conv
 ## poll vs. survey — distinct concepts, never conflate
 - **poll** = a single closed question (one vote).
 - **survey / Convo** = a conversational series of questions, open or closed.
-- **Never** call a poll a survey or vice-versa. Per-language equivalents: see subo-localization.
+- **Never** call a poll a survey or vice-versa.
+- **Per-language equivalents: `lexicon.json`.** Vendored byte-identical in both repos, like this
+  glossary — `subo-site/src/data/lexicon.json` and
+  `subo/.claude/skills/subo-localization/lexicon.json`. **Edit one, copy to the other in the same
+  change.** Enforced by `npm run check:lexicon` in `subo-site`; rulings T1..T10 in
+  `subo-site/docs/authority-roadmap.md`. Prefer it over the `subo-localization` table, which is a
+  human-readable mirror and has drifted before.
 
 ## member
 A platform user (Discord account) linked to a community, with an access level

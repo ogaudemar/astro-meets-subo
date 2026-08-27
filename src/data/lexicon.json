@@ -1,0 +1,223 @@
+{
+  "$schema": "./lexicon.schema.md",
+  "$about": [
+    "The Subo terminology lexicon. ONE file, vendored byte-identical in subo-site/ and subo/,",
+    "the way .claude/skills/subo-glossary/ already is: edit one, copy to the other in the same change.",
+    "",
+    "It exists because the markdown skill drifted. The FR poll row went stale across two naming",
+    "rounds and nobody noticed, because nothing could check it. This file is checkable:",
+    "`npm run check:lexicon` enforces the parts a machine can enforce.",
+    "",
+    "Reasoning lives in docs/authority-roadmap.md (TERMINOLOGY ARCHITECTURE). Rulings referenced",
+    "here as T1..T10 are defined there. Do not restate the reasoning in this file; it will drift."
+  ],
+  "version": 1,
+  "updated": "2026-08-26",
+
+  "framework": {
+    "$about": [
+      "Two vocabularies, joined at one named point per surface.",
+      "Problem vocabulary (demand side) = what someone calls their need before they know Subo.",
+      "Product vocabulary (supply side) = what Subo actually has.",
+      "The rule that decides which gets translated: LOCALIZE WHAT THE PLATFORM OWNS, BRAND WHAT YOU OWN."
+    ],
+    "pillars": ["decide", "understand", "organize", "engage"],
+    "instruments": {
+      "poll": {
+        "owner": "discord",
+        "localize": true,
+        "$why": "poll is Discord's primitive and Discord already localized it. Adopt Discord's word per locale (T2b). Fighting the platform's vocabulary is unwinnable."
+      },
+      "convo": {
+        "owner": "subo",
+        "localize": false,
+        "canonical": "Convo",
+        "$why": "Convo is Subo's invention, so it stays invariant in every locale (T3). Capitalized always; lowercase 'convo' is a defect everywhere except identifiers and URL paths."
+      }
+    },
+    "umbrella": {
+      "item": "project",
+      "group": null,
+      "$about": [
+        "'project' is the admin/creator umbrella for one poll or one Convo. Already the public-API",
+        "noun (project/projectId, type: convo|poll) and already in 131 English user_messages cells.",
+        "",
+        "AUDIENCE DECIDES THE UMBRELLA (settled 2026-08-26 from the A1b audit):",
+        "  admin/creator surfaces  -> 'project'",
+        "  respondent surfaces     -> name the instrument ('poll' / 'Convo'), never 'project'",
+        "A member who just answered a question has no concept of a project.",
+        "",
+        "OPEN QUESTION (user, 2026-08-26): reserve 'project' for GROUPS of items instead, e.g. a",
+        "tracker grouping survey waves for cross-wave reporting. 'group' is null because that",
+        "concept does not ship yet. RECOMMENDATION when it does: give the GROUP a new noun",
+        "(tracker / program / series) and leave 'project' on the item. Renaming the item breaks the",
+        "public API (project/projectId/type), ~131 strings, the whole web UI and the docs, to free",
+        "one word; naming the new concept costs nothing because nothing uses it yet.",
+        "",
+        "Note for anyone reading the code: internally every item is a 'survey' (survey_id,",
+        "serverSurvey, SurveyService). That is the code layer and is deliberately NOT user-facing",
+        "vocabulary. See T8: code strings are not proof of the live product noun."
+      ]
+    }
+  },
+
+  "discord": {
+    "$about": [
+      "Discord's own localized word for its native poll feature, per locale. This is the T2b",
+      "reference: a locale's poll word IS Discord's poll word, no exceptions. Evidence standard",
+      "T9: a door word ships only if it comes from Discord's localized UI or from search data.",
+      "Source: user-supplied from Discord's UI, 2026-08-26."
+    ],
+    "pollWord": {
+      "en": "poll",
+      "fr": "sondage",
+      "pt-BR": "enquete",
+      "de": "Umfrage",
+      "es": "encuesta",
+      "it": "sondaggio",
+      "nl": "peiling",
+      "pl": "ankieta",
+      "ru": "опрос",
+      "tr": "anket"
+    }
+  },
+
+  "app": {
+    "$about": [
+      "What the live app actually calls a poll, per locale, from the user_messages export",
+      "(user_messages_all_2026-08-18.xlsx). Two surfaces because they can and do disagree.",
+      "check:lexicon compares these against discord.pollWord to enforce T2b. This comparison is",
+      "the thing nothing in either repo could do before this file existed.",
+      "",
+      "Refresh with `!test user_messages` in Discord, which DMs the xlsx."
+    ],
+    "source": "user_messages_all_2026-08-18.xlsx",
+    "pollWord": {
+      "en":    { "command": "poll",          "webUi": "poll" },
+      "fr":    { "command": "sondage",       "webUi": "vote" },
+      "pt-BR": { "command": "enquete",       "webUi": "enquete" },
+      "de":    { "command": "meinungumfrage", "webUi": "meinungsumfrage" },
+      "es":    { "command": "votación",      "webUi": "votación" },
+      "it":    { "command": "poll",          "webUi": "poll" },
+      "nl":    { "command": "opiniepeiling", "webUi": "poll" },
+      "pl":    { "command": "głosowanie",    "webUi": "głosowanie" },
+      "ru":    { "command": "голосование",   "webUi": "голосование" },
+      "tr":    { "command": "oylama",        "webUi": "oylama" }
+    }
+  },
+
+  "locales": {
+    "en": {
+      "status": "active",
+      "instruments": { "poll": "poll", "convo": "Convo" },
+      "bridge": "You came for a survey. In Subo that is a Convo: one question at a time, in a chat instead of a form.",
+      "doors": [
+        { "word": "poll",          "pillar": "decide",     "resolvesTo": "poll",  "owns": "/polls/",                      "evidence": "search: 'discord poll bot' 1003 imp @ 9.96" },
+        { "word": "survey",        "pillar": "understand", "resolvesTo": "convo", "owns": "/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/", "evidence": "search: 'survey bot' cluster; also the brand descriptor (Subo, the Survey Bot)", "$note": "NOT /survey-convos/: that page's H1 leads on 'form', not 'survey'. See t5 findings." },
+        { "word": "form",          "pillar": "organize",   "resolvesTo": "convo", "owns": "/use-cases/get-things-done/", "evidence": "search: 'how to make a discord form'" },
+        { "word": "quiz",          "pillar": "engage",     "resolvesTo": "poll",  "owns": null,                          "evidence": "not yet targeted" }
+      ],
+      "deny": [
+        { "phrase": "survey convo",  "use": "Convo",      "why": "T3. Lowercase compound; a problem word wearing a product word's clothes. 4 strings in en.json." },
+        { "phrase": "convo",         "use": "Convo",      "why": "T3. Capitalized always. Case-sensitive rule; identifiers and /convos/ URL paths are exempt.", "caseSensitive": true, "exemptPaths": true },
+        { "phrase": "polls and surveys",  "use": "projects", "why": "A1b Class A. Admin-facing doublet; the umbrella already exists.", "scope": "app" },
+        { "phrase": "surveys and polls",  "use": "projects", "why": "A1b Class A.", "scope": "app" },
+        { "phrase": "polls/surveys",      "use": "projects", "why": "A1b Class A.", "scope": "app" },
+        { "phrase": "surveys/polls",      "use": "projects", "why": "A1b Class A.", "scope": "app" },
+        { "phrase": "survey/poll",        "use": "project",  "why": "A1b Class A.", "scope": "app" }
+      ]
+    },
+
+    "fr": {
+      "status": "active",
+      "instruments": { "poll": "sondage", "convo": "Convo" },
+      "bridge": "Tu viens chercher un questionnaire. Chez Subo, c'est une Convo : une question à la fois, dans une conversation plutôt que dans un formulaire.",
+      "doors": [
+        { "word": "sondage",       "pillar": "decide",     "resolvesTo": "poll",  "owns": "/fr/blog/comment-creer-un-sondage-sur-discord/",       "evidence": "search: 7363 imp how-to + 5763 head" },
+        { "word": "vote",          "pillar": "decide",     "resolvesTo": "poll",  "owns": "/fr/blog/comment-creer-un-sondage-sur-discord/",       "evidence": "search: ~815 imp; folded into the sondage post 2026-08-26, not its own URL" },
+        { "word": "questionnaire", "pillar": "understand", "resolvesTo": "convo", "owns": "/fr/blog/comment-creer-un-questionnaire-sur-discord/", "evidence": "search: 314 imp @ 2.55% CTR" },
+        { "word": "enquête",       "pillar": "understand", "resolvesTo": "convo", "owns": null,                                                   "evidence": "search: in the 314 imp cluster; also the live /enquete command name" },
+        { "word": "formulaire",    "pillar": "organize",   "resolvesTo": "convo", "owns": "/fr/use-cases/get-things-done/",                       "evidence": "search: 24 imp @ 20.8. Seeded for corpus balance per T10, not volume." },
+        { "word": "quiz",          "pillar": "engage",     "resolvesTo": "poll",  "owns": null,                                                   "evidence": "T10 corpus balance; not yet measured" },
+        { "word": "pronostics",    "pillar": "engage",     "resolvesTo": "poll",  "owns": null,                                                   "evidence": "T10 corpus balance; not yet measured" }
+      ],
+      "deny": [
+        { "phrase": "sondage conversationnel",     "use": "Convo", "why": "T3. Retired phrasing." },
+        { "phrase": "sondages conversationnels",   "use": "Convo", "why": "T3. Retired phrasing." },
+        { "phrase": "enquête conversationnelle",   "use": "Convo", "why": "T3. Retired phrasing." },
+        { "phrase": "enquêtes conversationnelles", "use": "Convo", "why": "T3. Retired phrasing." }
+      ]
+    },
+
+    "pt-BR": {
+      "status": "seeded",
+      "$note": "Only /pt-br/index and /pt-br/pricing exist. Doors have no owning URL yet. PT-BR is the model locale: Discord's word, the skill's word and its top measured query all agree.",
+      "instruments": { "poll": "enquete", "convo": "Convo" },
+      "bridge": "Você veio atrás de uma pesquisa. No Subo isso é uma Convo: uma pergunta de cada vez, em uma conversa e não em um formulário.",
+      "doors": [
+        { "word": "enquete",  "pillar": "decide",     "resolvesTo": "poll",  "owns": null, "evidence": "search: 'como fazer enquete no discord' 123 imp + cluster 279 total" },
+        { "word": "pesquisa", "pillar": "understand", "resolvesTo": "convo", "owns": null, "evidence": "subo-localization survey word; no search export yet" }
+      ],
+      "deny": []
+    }
+  },
+
+  "held": {
+    "$about": "Locales held under T9: no door word with evidence behind it, so they wait rather than shipping a guess.",
+    "pl": "Discord says 'ankieta' but it collides with Subo's survey word; needs a paired migration (A2c) and a search export.",
+    "tr": "Same collision shape as pl. 'anket' is Discord's poll word and Subo's survey word."
+  },
+
+  "knownViolations": {
+    "$about": [
+      "Baseline, not permission. Everything here is a REAL violation that predates the guard.",
+      "check:lexicon reports these loudly but does not fail on them, so the guard can be wired in",
+      "today and cannot regress. THE JOB IS TO EMPTY THIS OBJECT. Each entry names the action",
+      "that clears it. Removing an entry that is still violated turns the build red, which is the",
+      "point: you cannot quietly re-accept one."
+    ],
+    "fr.deny": {
+      "reason": "14 strings in fr.json still carry the retired 'conversationnel(le)' phrasings.",
+      "clearedBy": "A4"
+    },
+    "en.deny": {
+      "reason": "4 'survey convo' strings in en.json; ~31 doublet cells and 6 lowercase-convo cells in user_messages.",
+      "clearedBy": "A1c"
+    },
+    "t2b.fr": {
+      "reason": "app.pollWord.fr.webUi is 'vote' while Discord and the /sondage command say 'sondage'.",
+      "clearedBy": "A2b (i), a one-cell user_messages fix"
+    },
+    "t2b.de": {
+      "reason": "'meinungumfrage' vs Discord 'Umfrage'. Also misspelled (missing s) and lowercase for a German noun.",
+      "clearedBy": "A2b (iii) for the spelling, A2c for the word"
+    },
+    "t2b.es": { "reason": "'votación' vs Discord 'encuesta'. Spanish sends poll searchers to the survey page.", "clearedBy": "A2c" },
+    "t2b.it": { "reason": "'poll' (untranslated) vs Discord 'sondaggio'.", "clearedBy": "A2c" },
+    "t2b.nl": { "reason": "'opiniepeiling'/'poll' vs Discord 'peiling'; the two surfaces also disagree with each other.", "clearedBy": "A2b (ii)" },
+    "t2b.pl": { "reason": "'głosowanie' vs Discord 'ankieta'. Held under T9.", "clearedBy": "A2c, gated" },
+    "t2b.ru": { "reason": "'голосование' vs Discord 'опрос'.", "clearedBy": "A2c" },
+    "t2b.tr": { "reason": "'oylama' vs Discord 'anket'. Held under T9.", "clearedBy": "A2c, gated" },
+
+    "t5.en.form": {
+      "reason": "REAL. /survey-convos/ H1 is 'The Discord form that feels like a conversation' and /use-cases/get-things-done/ is 'EVERYTHING YOU USED TO TRAP IN A FORM'. Two commercial pages leading on the same door word.",
+      "clearedBy": "A6 — decide which page owns 'form' and move the other off it"
+    },
+    "t5.fr.formulaire": {
+      "reason": "REAL, and the exact mirror of t5.en.form: /fr/survey-convos/ 'Le formulaire Discord qui ressemble à une conversation' vs /fr/use-cases/get-things-done/ 'TOUT CE QUE TU METTAIS DANS UN FORMULAIRE'. T2 already says /fr/survey-convos must not take a door word as its H1 noun.",
+      "clearedBy": "A6"
+    },
+    "t5.en.survey": {
+      "reason": "LOW RISK. /api/ 'Run Discord surveys from code' and /custom-survey-bot/ '___, YOUR SURVEY BOT' target genuinely different intents (developer, white-label). The guard cannot tell intent apart; a human has.",
+      "clearedBy": "nothing — re-evaluate if either page is rewritten"
+    },
+    "t5.fr.sondage": {
+      "reason": "LOW RISK, mirrors t5.en.survey: /fr/custom-survey-bot/ (white-label) vs /fr/polls/ (commercial poll page).",
+      "clearedBy": "nothing — re-evaluate if either page is rewritten"
+    },
+    "t4./blog/dawn-of-convos/": {
+      "reason": "DELIBERATE. This is the Convo launch announcement, the one page whose subject IS the product noun. T4 bans Convo from title/H1 because we will not rank for an invented category; naming it here is the point, not a ranking bet.",
+      "clearedBy": "nothing — permanent exemption"
+    }
+  }
+}

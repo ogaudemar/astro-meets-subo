@@ -31,9 +31,10 @@
     "astro": "astro",
     "build": "astro build",
     "cf-typegen": "wrangler types",
-    "check": "npm run check:api && astro build && npm run check:hreflang && tsc && wrangler deploy --dry-run",
+    "check": "npm run check:api && astro build && npm run check:hreflang && npm run check:lexicon && tsc && wrangler deploy --dry-run",
     "check:api": "node scripts/check-api-drift.mjs",
     "check:hreflang": "node scripts/check-hreflang.mjs",
+    "check:lexicon": "node scripts/check-lexicon.mjs",
     "deploy": "wrangler deploy",
     "dev": "astro dev",
     "preview": "astro build && wrangler dev"

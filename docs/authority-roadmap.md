@@ -373,6 +373,14 @@ groundwork converts into citations and organic traffic. One page per intent.
 > **"We need this clarity and clean up before adding more content."** Two standing instructions
 > that override the priority order everywhere else in this file:
 >
+> **▶ STATUS 2026-08-26 (b): the freeze holds, and A1b is done.** The user reopened the terminology
+> cleanup with two corrections that both proved right: the **English** column is inconsistent too
+> (and it overrides code, so it *is* the primary surface), and poll/survey span **hundreds** of
+> cells, not one command row. Full evidence in
+> [A1b RESULT](#a1b-result--the-whole-english-surface-2026-08-26). **The unblocker order changed:
+> A1c (finish the English `project` migration) now sits between A2 and the locale work**, because
+> ten translations are faithful mirrors of an English source that says six things.
+>
 > 1. **No new content in any locale** (English included) until the terminology framework is
 >    implemented: actions **A1 → A2** in [TERMINOLOGY
 >    ARCHITECTURE](#-terminology-architecture--disambiguation-as-an-authority-lever-opened-2026-08-26).
@@ -1843,7 +1851,8 @@ Three French vocabularies are live at once, and no artifact reconciles them:
   both, and its site-repo copy points at `subo-localization` **four times** ("Per-language
   equivalents: see subo-localization"). From this repo that is a dangling pointer to the one
   document that answers the question. **This is why the question keeps recurring.**
-- **The site has four phrasings for one product.** `fr.json` carries "ENQUÊTES
+- **The site has four phrasings for one product** — **and A1b found English has a fifth**
+  ("survey convo", lowercase, in `en.json`), which is where the French ones came from. `fr.json` carries "ENQUÊTES
   CONVERSATIONNELLES" (heading), "enquête conversationnelle" (body), "sondages conversationnels"
   (elsewhere); the 2026-08-26 post added a fourth. **All four violate an existing app-side
   ruling** (below) that nobody in this repo could see.
@@ -2063,11 +2072,15 @@ Two `user_messages` rows, supplied by the user, in column order
    **`meinungumfrage`** (missing the `s`; the web row has it) and both DE values are lowercase,
    which is wrong for a German noun. NL disagrees with itself across the two rows
    (`opiniepeiling` vs `poll`).
-6. **⚠️ An unidentified 11th column.** Ten languages ship, but these rows carry eleven values.
+6. **⚠️ An unidentified 11th column. — ✅ RESOLVED: it is `ro`, and it is not a locale at all.**
    Column 9 is **empty** in `Poll_Command_name` and contains **`claude2-13-26`** in
-   `Web_InviteTab_Poll`, which looks like a translation-batch artifact rather than a word.
-   **If that column is a live locale, some users are seeing `claude2-13-26` as the word for
-   Poll.** Worth confirming what it is before the A2 migration touches these rows.
+   `Web_InviteTab_Poll`. The full export names the columns: **twelve** columns
+   (`en-US, de, es-ES, fr, it, nl, pl, pt-BR, ro, ru, tr, uk`) for **ten shipped locales**.
+   **`ro` is the user's deliberate batch/versioning scratch column** (never Romanian, despite what
+   `locales2Lang` says) and `claude2-13-26` is a **batch stamp entered on purpose**. `uk` is
+   stalled partial Ukrainian, its language option since removed. **Nobody is seeing
+   `claude2-13-26`, nothing here is broken, and neither column should be deleted.** Stand down on
+   this alarm entirely. See [A1b RESULT](#a1b-result--the-whole-english-surface-2026-08-26).
 
 **7. ⭐ THE FINDING THAT EXPLAINS WHY THIS HAS BEEN STUCK.** T2b cannot be applied one column at
 a time. In **six locales the Discord poll word is already Subo's survey word** (DE *Umfrage*,
@@ -2086,6 +2099,155 @@ That produces a clean split, because T9's evidence test resolves differently on 
 `Web_InviteTab_Poll` *vote* → *sondage*), **NL** (→ *peiling* on both rows, which also fixes its
 internal disagreement), and the **DE spelling/casing defect** regardless of whether the word
 moves. Everything else is paired work gated on a per-locale export.
+
+### A1b RESULT — the whole English surface (2026-08-26)
+
+**Opened by the user, and both premises were correct.** A1 had audited *two rows*. The user's
+correction: (1) the inconsistency is **not only a translation problem — the English column is
+itself inconsistent**, and since `user_messages` beats `defaultMessages.py`, the English column
+*is* the product's primary string surface; (2) `poll` and `survey` are **not confined to command
+rows**, they are spread across hundreds of cells. Both check out, with numbers below.
+
+**⭐ THE DURABLE UNLOCK: the full live table is already on disk. Stop asking the user for rows.**
+`<TRANSLATIONS_DIR>/user_messages_all_YYYY-MM-DD.xlsx` — the newest as of this session is
+**`user_messages_all_2026-08-18.xlsx`**, **2,568 rows × 12 columns for 10 shipped locales**
+(see the column inventory below — two of the twelve are not locales), sheet `User Messages`,
+column A = key name. `<TRANSLATIONS_DIR>` is
+`…\Subo\Subo shared\Messages Translations\new-path` (per the app repo's
+[docs/translations.md](../../subo/docs/translations.md)). Refresh it with `!test user_messages`
+in Discord, which DMs the same xlsx. **Two gotchas:** the Bash tool gets `PermissionError` on
+that OneDrive path — copy the file to the scratchpad with PowerShell first; and Python's stdout
+needs an explicit UTF-8 wrapper or Cyrillic/Polish rows raise `UnicodeEncodeError`.
+
+**The column inventory, which settles A1's finding 6.** Twelve locale columns ship ten locales.
+**Verified on all three surfaces independently, because one constant is not proof:**
+
+| Surface | Definition | Includes `ro`/`uk`? |
+|---|---|---|
+| Discord bot (Python) | `_SUPPORTED_LOCALES` in `discordSurvey/serverSettingLogic.py:45` | **No** (10) |
+| Admin UI (React) | `SUPPORTED_LOCALES` in `contexts/TranslationContext.tsx:14` | **No** (10) |
+| Both language pickers | `AppNav.tsx:36-45`, `Settings.tsx:46-55` | **No** (10) |
+
+**⚠️ The two extra columns are NOT two dead locales. They are two different things, and an earlier
+draft of this section got both wrong (user, 2026-08-26):**
+
+- **`ro` was never Romanian and is not a locale at all.** It is a **deliberate scratch column the
+  user writes versioning/batch stamps into**, so translation work can be done in batches —
+  `claude2-13-26`, `claude-2-17-26`, `claude-3-9-26` are **batch markers, entered on purpose**, not
+  corruption and not a failed translation. A manual hack the user is aware is inelegant and has
+  **explicitly deprioritized. Do not "clean it up" and do not delete it** — it is load-bearing for
+  how the translation workflow is actually run.
+  - **Useful side effect worth knowing for A1c:** the column is a de-facto *last-touched-in-which-batch*
+    record. When the English migration batches go out, this is how to tell which rows moved when.
+- **`uk` was a real attempt at Ukrainian that stalled.** A volunteer began translating, lost
+  interest, and the flag and language option were removed. The 196 rows are genuine partial
+  Ukrainian, not junk. **Not "dead" so much as parked** — and if a Ukrainian translator ever turns
+  up, it is a head start, so it should not be deleted either.
+- **The residual risk belongs to `uk`, not `ro`.** `ro` was never offered as a language option, so
+  no community can be set to it. **`uk` was**, and `serverSettingLogic.py:49` only validates a
+  locale *derived* from the Discord client — it does not validate a `ServerSettings.locale`
+  **already stored** from before the option was pulled. Such a community would fall back to English
+  for the ~92% of strings `uk` never got. Small blast radius, one query to settle:
+  `select locale, count(*) from server_settings group by locale`.
+- **What is genuinely stale is the code that calls `ro` a language.** `locales2Lang`
+  (`surveyLib/domain/surveyUtils.py:75`) maps `"ro" → "Romanian"` and `defaultMessages.py:1198`
+  carries `Setup_server_langauge_ro_label = "Romanian"`. Neither gates anything, but they assert a
+  meaning the column does not have, which is exactly what sent this audit down the wrong path.
+- **⚠️ The app repo's `docs/translations.md` is wrong about this** — it lists `uk` as supported
+  and omits `ro`. Fix it there when A3 runs.
+
+**⚠️ Correction to T8, small but it should be on the record.** T8 says "A row exists for every
+locale, so the fallback never fires and the code string is inert." **78 keys are missing in at
+least one shipped locale; 65 are missing in all nine**, so for those `defaultMessages.py` *is*
+what renders. Most are non-copy config (`Invite_poll_color`, `GraphGlyph_Percent`,
+`Chart_options`) where English-as-value is correct, but `NetworkPublish*` (~12 keys), `SurveyType_*`
+and a dozen `Web_*` are real copy. **T8's conclusion still stands** — don't sync the file wholesale
+— but its stated reason is too strong, and this is exactly T8's own exception (ii), newly added
+enums nobody has looked at.
+
+**⭐ HOW BIG IS EACH LOCALE, ACTUALLY — the first real sizing (user query, 2026-08-26).**
+`server_settings` grouped by locale, **active communities only** (`deleted = false`):
+
+| Locale | Communities | Share |
+|---|---|---|
+| *(none set → renders English)* | **13,658** | 84.0% |
+| `en-US` | **1,679** | 10.3% |
+| `fr` | 411 | 2.5% |
+| `es-ES` | 200 | 1.2% |
+| `ru` | 83 | 0.5% |
+| `de` | 67 | 0.4% |
+| `pt-BR` | 62 | 0.4% |
+| `it` | 50 | 0.3% |
+| `pl` | 25 | 0.15% |
+| `nl` | 10 | 0.06% |
+| `tr` | 5 | 0.03% |
+| `uk` | 1 | — |
+| **Total active** | **~16,251** | |
+
+**~94% of active communities render English.** This is the strongest argument yet for A1c, and it
+reorders the terminology work on its own: the English cleanup is not merely *upstream* of the
+locale work, it **is** the work for nineteen users out of twenty. Every hour spent on a non-English
+lexicon row before the English source is settled serves <6% of the installed base.
+
+**⚠️ Two metrics, do not mix them up.** These counts measure the **installed base** and should
+drive **in-product string work** (A1c, A2c, A5). **Search demand** — a different and much larger
+population who have not installed anything — drives **content and SEO** (P2). They disagree, and
+both are right for their own question: PT-BR has only 62 communities but demonstrated search
+demand, which is why it stays the model locale for *content*; ES has 200 communities (2nd largest
+non-English) and a known three-way poll/survey word collision, which raises it for *product*
+strings. **`uk` is settled: 1 active community, ignore it** — the A2d query is closed.
+
+**Premise 1: the English column is inconsistent with itself.** English cells containing each term,
+out of 2,568:
+
+| | survey | poll | project | Convo | community | server |
+|---|---|---|---|---|---|---|
+| **`Web_*` (admin/web UI, 1,395 rows)** | 42 | 34 | **74** | 10 | 23 | 31 |
+| **bot/Discord (1,173 rows)** | **162** | 89 | 57 | 5 | 2 | 66 |
+
+**The two halves of the same product speak different languages.** The web UI is largely migrated
+to the glossary's `project` / `community`; the Discord bot is not, and still leads on `survey` /
+`server`. That is the finding: this is not drift between English and the translations, it is
+**an unfinished English migration that the translations then faithfully mirrored into ten locales.**
+
+**Premise 2: the terms are everywhere, and the doublet is the dominant defect.**
+- **31 English cells carry "poll(s) and/or survey(s)" as a doublet** — `polls and surveys`,
+  `survey or poll`, `polls/surveys`, `surveys/polls`, in every combination. They are concentrated
+  exactly where a first-time admin reads: `Setup_server_*` (10 cells: privacy mode, admin role,
+  creator role, channel pick, XP, Creator Network), the four
+  `Survey_Command_*_description` strings, `HelpMessage_content`, `Welcome_dm_text`,
+  `admin_channel_pinned_message`.
+- **The umbrella noun already exists and is already shipped: `project`** (131 English cells,
+  and the glossary defines it as exactly this — a project is a `convo` or a `poll`). So
+  collapsing the doublet is **finishing a migration, not making a new naming decision**, which is
+  what makes it the cheapest real win here. Some cells are already half-migrated in place:
+  `Message_command_message_permission` reads *"edit this survey/poll. A project can only be
+  edited by…"* — both vocabularies, one string.
+- **Lowercase `convo` in 10 English cells**, against the glossary's "never lowercase, it is a
+  proper product noun": `Web_About_Description`, `web_link_inactive`, `Web_ProjectDetails_LogCompletes_Help`,
+  `Web_ProjectDetails_ResponseNotifications_Description`, `SurveyBuilder_name_survey`, and
+  `Web_NewProject_TypeQuestion` — *"a single question in a **poll** or a full survey (aka convo)?"*.
+  That last one is **T4's join written as an aside in parentheses**, on the one screen where every
+  new project starts. It is the single highest-leverage string on the surface.
+- **Not the problem, stated so nobody re-audits it:** `server` (97 cells) is *mostly legitimate* —
+  it genuinely means the Discord-side object (support server, "invite the bot to your server",
+  cross-server cloning). Only a handful read as the tenant (`Web_ToggleStatus_TooManySurveys`,
+  `Web_Settings_AllowCloning_Label`, `Web_Dashboard_ThisServer`). `guild` appears **once**,
+  `questionnaire` **zero** times, `form` once. The glossary's `community` ruling is in better
+  shape in the app than it looks.
+
+**And the site has the same disease in English.** `en.json` (1,125 strings): survey 104, poll 84,
+Convo 15, project 31, community 57, form 26, quiz 19. Note **`community` 57 > `server` 50** —
+the site is *ahead* of the bot on that ruling. But it carries its own lowercase-Convo phrasing,
+**"survey convo"**, in `surveyConvos.whatBody`, `surveyConvos.webDesc`, `useCasesResearch` and
+`useCasesGetThingsDone`. The audit that opened this section counted four French phrasings for one
+product; **English has its own fifth one**, and the French ones are downstream of it.
+
+**What this changes about the plan.** A2's `lexicon.json` was scoped as a *localization* artifact
+keyed by locale. It has to carry **EN as a first-class row with its own denylist** (`polls and
+surveys` → `projects`; lowercase `convo`; `survey convo`), because the evidence now says English
+is where the inconsistency originates and every locale inherited it. Fixing FR/PT-BR against an
+English source that says six things is fixing the copy of the problem.
 
 ### Implementation: a data file with a guard, NOT a document
 
@@ -2122,20 +2284,102 @@ that works.
 ### Actions
 
 Ordered by value. **A1 and A2 are the unblockers; nothing else should be written in a non-English
-locale until they land.**
+locale until they land.** ⚠️ **A1b reorders what comes first: English is now upstream of the
+locale work, so A1c precedes A2c/A7.**
 
 - [x] **A1. Audit the live `user_messages` poll rows — DONE (user, 2026-08-26).** Results and
       what they change are in **[A1 RESULT](#a1-result-the-live-poll-nouns-2026-08-26)** below.
       Headline: `/sondage` confirmed live, **the web UI still says *vote***, and only PT-BR
       passes T2b.
-- [ ] **A2. Build `lexicon.json` + `check:lexicon`** per the Implementation section above, and
-      **vendor it into both repos** the way `subo-glossary` already is. Fill **EN, FR and PT-BR
-      first** (the three locales A1 shows are settled or nearly so), then point
-      `subo-localization` at it instead of its inline table. Kills the dangling pointer: **the
-      site repo currently cannot see the rules it is told to follow.** Start the guard with the
-      two checks that bite hardest, one-word-one-URL and Convo-not-in-H1.
-      **Not "fix a stale row"** — A1 showed the skill matches the app; the lexicon's job is to
-      make Discord alignment checkable, which nothing does today.
+- [x] **A1b. Audit the whole English string surface — DONE (2026-08-26).** Read the full live
+      export off disk (2,568 rows × 12 locales) rather than sampling rows. Results in
+      **[A1b RESULT](#a1b-result--the-whole-english-surface-2026-08-26)**. Headline: the Discord
+      bot and the web UI are on **different English vocabularies** (bot: survey/server; web:
+      project/community), **31 cells carry the `poll(s) and survey(s)` doublet**, `convo` is
+      lowercase in 10 cells, and the `claude2-13-26` scare is closed (`ro` is the user's batch
+      column, not a locale). **~94% of active communities render English**, so this is where the
+      users are, not just where the problem starts.
+- [ ] **A1c. ⭐ Finish the English `project` migration in `user_messages` — the new top item.**
+      This is upstream of every locale: ten translations faithfully mirror an English source that
+      says six things.
+      **⭐ The cell-by-cell work order is its own file:
+      [terminology-english-inventory.md](terminology-english-inventory.md).** Reasoning stays here;
+      execution lives there.
+      **⚠️ It is NOT a find/replace, and that is the audit's main finding.** The 31 doublet cells
+      are three different defects, and one class must not be touched:
+      - **The rule that resolves them: audience decides the umbrella.** Admin/creator strings →
+        **`project(s)`** (the glossary umbrella, already in 131 cells). Respondent strings →
+        **name the instrument, `poll` / `Convo`**, because "project" is jargon to someone who just
+        answered a question. **Contrast strings keep both nouns** and only take `survey` → `Convo`.
+      - **Class A — 17 admin cells collapse to `project`**, plus **5 command descriptions** where
+        T7 also applies (they are scraped into bot directories). Concentrated in `Setup_server_*`,
+        i.e. exactly where a new admin forms their model of the product. Two of them already say
+        both things in one sentence: *"edit this survey/poll. A project can only be edited by…"*.
+      - **Class B — 4 respondent cells** (XP, leaderboard, end-of-survey footer) take
+        *polls and Convos*, not *projects*.
+      - **Class C — 5 cells must KEEP the doublet.** `SurveyBuilder_use_poll_mode` and
+        `Web_NewProject_TypeQuestion` *are* T4's join; flattening them destroys the string.
+        `Web_NewProject_TypeQuestion` is **the highest-leverage string on the whole surface** and
+        currently renders the join as a lowercase parenthetical, *"(aka convo)"*.
+      - Plus **6 lowercase-`Convo` copy cells** (4 more are identifiers — leave them) and
+        **`en.json`'s 4 "survey convo" strings**, done in the same pass.
+      - **⚠️ Merge-field tokens are frozen** — `[SurveyName]`, `[SurveyId]`, `[SurveyRoles]` sit in
+        user-customized invite messages and the default footer, so renaming them breaks live
+        configs. Reword their *descriptions*, never the tokens. **Key names are also out of
+        scope**, misspellings included.
+      ⚠️ **Editing an English cell invalidates its ten translations.** Batch these so the retranslation
+      is one `pending.csv` round-trip, not four.
+      **✅ The A2 gate is lifted (2026-08-26): `lexicon.json` exists and records the target
+      vocabulary**, so A1c is now unblocked and is the next thing to do. Its progress is visible
+      in the guard: clearing the doublets and the lowercase `convo` empties the `en.deny` entry in
+      `knownViolations`.
+- [x] **A2. ✅ BUILT AND WIRED IN (2026-08-26).** `src/data/lexicon.json` +
+      `scripts/check-lexicon.mjs`, `npm run check:lexicon`, now part of `npm run check` (after the
+      build, alongside `check:hreflang`). **Green, with 28 real violations recorded as a baseline.**
+      EN / FR / PT-BR filled, per the plan. What it turned out to be worth knowing:
+      - **`knownViolations` is a baseline, not permission.** Everything in it is a genuine
+        violation that predates the guard; it reports them loudly and does not fail on them, so the
+        guard could be wired in **today** and cannot regress. **The job is to empty that object**,
+        and each entry names the action that clears it. The guard also tells you when an entry
+        stops firing, so paid-off debt gets deleted instead of silently protecting nothing.
+      - **T2b is now machine-checked, which is the thing nothing could do before.** The lexicon
+        carries Discord's poll word per locale *and* the live app's, on both surfaces
+        (`Poll_Command_name`, `Web_InviteTab_Poll`), so the check compares them. **18 of the 28
+        baseline entries are T2b failures**, including three locales where the app disagrees with
+        *itself* (FR, DE, NL).
+      - **T5 needed two passes to be worth anything, and the first version was wrong.** Matching
+        door words against `<title>` flags `/privacy/` and `/cookies/` as competing for "survey",
+        because the brand descriptor sits in every title. It now reads **H1 only**, skips
+        `/templates/` and `/recipes/` (long-tail by design, competitors by construction otherwise),
+        and **compares within a page class**: landing-page collisions fail, blog overlap is a note.
+        Demanding one blog post per door word would be a worse rule than the problem it solves.
+      - **✅ VENDORED, and the dangling pointer is closed.** `lexicon.json` is byte-identical at
+        `subo-site/src/data/lexicon.json` and
+        `subo/.claude/skills/subo-localization/lexicon.json`; the sync rule is recorded in
+        `CLAUDE.md` next to the `subo-glossary` one. `subo-glossary` (both copies, still
+        byte-identical) now names **both paths** instead of pointing at a skill the site repo
+        cannot read, which was the reason this question kept recurring.
+      - **`subo-localization`'s inline table was NOT overwritten with Discord's words, on purpose.**
+        A1 showed it accurately records what the app says *today*; rewriting it to the T2b target
+        would tell translators to use words the app does not use yet. It is now relabeled as the
+        current-state mirror, with Discord's word and a migration status per row, plus an explicit
+        **"do not change a poll word on your own"** warning — because in six locales moving poll
+        onto Discord's word collides with the survey word unless both move in one edit (A2c).
+- [ ] **A2d. Document `ro` and `uk` so no future audit mistakes them for locales. DO NOT DELETE
+      EITHER.** Corrected by the user 2026-08-26 after an earlier draft of this item proposed
+      exactly that. **`ro` is the user's batch/versioning scratch column** (deliberate, in active
+      use, deprioritized by decision) and **`uk` is stalled partial Ukrainian** worth keeping
+      against a future volunteer. The actual work is small and purely descriptive:
+      1. **Fix the app repo's `docs/translations.md`**, which lists `uk` as supported and omits
+         `ro` entirely. State what each column really is.
+      2. **Stop the code asserting `ro` means Romanian** — `locales2Lang` (`surveyUtils.py:75`) and
+         `Setup_server_langauge_ro_label` (`defaultMessages.py:1198`). Neither gates anything;
+         both are why this audit misread the column. Low priority, and **not worth a dedicated
+         change** — fold into the next pass that touches those files.
+      3. ~~One query for the `uk` question.~~ **✅ CLOSED (user, 2026-08-26): exactly 1 active
+         community is stored as `uk`, and is unlikely to be live. Ignore it.** The full locale
+         distribution that query returned is far more valuable than the question that prompted it —
+         it is in [A1b RESULT](#a1b-result--the-whole-english-surface-2026-08-26).
 - [ ] **A2b. ⚠️ USER'S — the three `user_messages` fixes A1 unblocked, none of which need an
       export.** (i) **FR `Web_InviteTab_Poll` *vote* → *sondage***, one cell, the best
       value-per-effort item on the board and it ends a live contradiction with `/sondage`.
