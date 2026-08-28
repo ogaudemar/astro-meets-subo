@@ -12,7 +12,37 @@ This file is the cell-by-cell execution list for **A1c**; the roadmap holds the 
 
 ---
 
-## ⭐ STATUS — 40 edits drafted and verified (2026-08-27), awaiting the round-trip
+## ⭐ STATUS — v2: 42 edits, user-revised and re-verified (2026-08-28)
+
+**The sheet is now `a1c_english_edits_v2.csv`.** The user reviewed all 40 proposals, kept 28
+verbatim and revised 12; v2 adds 2 cells and fixes 3 defects found by re-checking their revision.
+**Nothing was dropped: all 42 rows still differ from the live cell.** The main editorial change is
+theirs and it is a simplification: **in Subo's context an "invitation" needs no qualifier**, so
+*"project invitation"* became *"invitation"* in five cells. Two renames they made are treated
+below, because each reaches past the cell it was made in.
+
+**Three defects found in the revision, all fixed in v2:**
+
+1. **`Participant Channel:` broke the settings block.** The label is 5 characters longer than
+   `Survey Channel:`, which pushed its value to column 23 in a 21-row block aligned at 19 — one
+   row visibly out of line in Discord monospace. **The whole block is repadded to column 21**
+   (widest label + 1), which is *narrower* than the revision's 23 and only 2 wider than today's.
+   Widest rendered line: 59 characters, up from 57.
+2. **A garbled sentence** in the `Setup_server_Q6_channel_change` rewrite: *"To post projects in
+   forum posts and threads and the run the command from…"* → *"To post in a forum post or a thread,
+   run the command from the thread or post where you want the invitation."*
+3. **Two cells named a setting twice and disagreed with themselves** after the rename: the header
+   said *Participation Role* / *Participant channel* while the *"Current setting for…"* line still
+   said *Role reward* / *Survey channel*.
+
+Re-verified on v2: no lowercase `convo`, no command description over Discord's 100 characters,
+every monospace block column-aligned, no row that is a no-op.
+
+⚠️ **Colour did not survive the CSV round-trip.** The revision was sent back as `.csv`, so the
+green-means-no-change marking is not machine-readable. Read here as *"green = my proposal kept
+as-is"*, which matches the 28 rows that are byte-identical to the draft.
+
+## The original draft — 40 edits (2026-08-27)
 
 **The site half is done** (see the `en.json` section below). **The app half is drafted, not
 applied**: `user_messages` is a database table, so the deliverable is a proposed-edit sheet, not a
@@ -68,14 +98,53 @@ XP"*. It is the footer on invitation embeds, read by people scrolling a Discord 
 never heard of Subo — a discovery surface. **Left unchanged**, and it is the one cell dropped from
 the original 31.
 
-### A finding worth its own line: the two surfaces disagree on a button
+### ~~The two surfaces disagree on a button~~ — WITHDRAWN (user, 2026-08-27)
 
-`Dashboard_new_survey_button` is **"New Survey"**. `Web_Projects_NewProject_Button` is
-**"New Project"**. Same action, two products, two vocabularies — A1b's headline finding, visible in
-a button a user presses. `Dashboard_no_suveys_message` quotes *"Hit the `New Survey` button"*, so it
-is **accurate today** and must be changed *with* the button or not at all. Not in the sheet: the
-Discord builder is a bigger rename than A1c, and it needs the `SurveyBuilder_use_poll_mode` button
-labels decided in the same breath.
+An earlier draft of this section read the *"New Survey"* / *"New Project"* button pair as A1b's
+two-vocabularies problem showing up in a button. **It is not a defect. Each label is correct for the
+flow it starts**, and the difference is in the flows, not the words:
+
+- **Discord — "New Survey"** triggers **`/survey`**, and the button is named after the command it
+  runs. `/survey` is technically the command for *both* instruments: build a project with a single
+  closed question and the bot asks whether to make it a poll or a Convo. That prompt is
+  `SurveyBuilder_use_poll_mode`, which is why that string is Class C.
+- **Web — "New Project"** opens a dialog that asks poll-or-Convo **first**, so the button cannot
+  name an instrument yet. `Web_NewProject_TypeQuestion` *is* that dialog.
+
+So the two buttons are two entry points into the same fork, one asking late and one asking early.
+**`Dashboard_no_suveys_message` quoting "Hit the `New Survey` button" is correct** and needs no
+coordinated change. Recorded because the wrong reading was reached from the string surface alone,
+which is what T8 warns about: the strings do not tell you which flow they sit in.
+
+### ⚠️ Two label renames that reach further than the cell they were made in
+
+The user's revision renamed two settings, both to disambiguate a real collision. Both are right and
+both were under-scoped, because the label appears in cells the sheet never touched.
+
+**`Survey channel` → `Participant channel`** (it is where invitations are posted and members answer,
+as against the **Creator channel**, which is for creation and admin). The label lives in **6 cells,
+covering two different settings**:
+
+| Cell | Meaning | v2 |
+|---|---|---|
+| `Setup_server_Q6_channel_change` | the setting itself | renamed |
+| `Setup_server_Q6_channel_label` | its picker title | **added to the sheet** |
+| `ServerSetup_setup_Summary` | its settings-summary row | renamed |
+| `Setup_server_invalid_bot_write_perms` | names it in the misconfiguration error | **added to the sheet** |
+| `Setup_server_survey_room_tip` | ⛔ the **temporary per-project channels** | **left alone** |
+| `SurveyRoomName` | ⛔ same, the Category setting | **left alone** |
+
+The last two are a different feature wearing the same words. Renaming them would have been the
+find/replace error this document opens by warning about.
+
+**`Role reward` → `Participation Role`** is the same shape but much larger: **24 cells, three
+distinct features** — the role for answering any project (`Setup_server_Q10`), the role for
+completing *one* project (`Edit_survey_edit_role_reward*`, `Invite_role_reward`,
+`SurveySummary_reward_role_label`), and XP-threshold rewards (`Xp_Settings_role_*`, plus web labels).
+All three are called "role reward" today. **v2 keeps the new header and makes that cell
+self-consistent**, but the other 23 are a naming exercise across two surfaces, not a terminology
+sweep. **It needs its own item; shipping one renamed cell against 23 unchanged ones leaves the
+product less consistent, not more.**
 
 ### Constraint 5, learned the hard way
 
