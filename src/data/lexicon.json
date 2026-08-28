@@ -91,12 +91,12 @@
       "",
       "Refresh with `!test user_messages` in Discord, which DMs the xlsx."
     ],
-    "source": "user_messages_all_2026-08-18.xlsx",
+    "source": "user_messages_all_2026-08-28.xlsx (A2b applied and uploaded 2026-08-28)",
     "pollWord": {
       "en":    { "command": "poll",          "webUi": "poll" },
-      "fr":    { "command": "sondage",       "webUi": "vote" },
+      "fr":    { "command": "sondage",       "webUi": "sondage" },
       "pt-BR": { "command": "enquete",       "webUi": "enquete" },
-      "de":    { "command": "meinungumfrage", "webUi": "meinungsumfrage" },
+      "de":    { "command": "meinungsumfrage", "webUi": "Meinungsumfrage" },
       "es":    { "command": "votación",      "webUi": "votación" },
       "it":    { "command": "poll",          "webUi": "poll" },
       "nl":    { "command": "opiniepeiling", "webUi": "poll" },
@@ -186,13 +186,9 @@
       "The app half of A1c is unaffected: those deny rules are scope:'app', checked against",
       "user_messages, which this repo cannot read. Status lives in terminology-english-inventory.md."
     ],
-    "t2b.fr": {
-      "reason": "app.pollWord.fr.webUi is 'vote' while Discord and the /sondage command say 'sondage'.",
-      "clearedBy": "A2b (i), a one-cell user_messages fix"
-    },
     "t2b.de": {
-      "reason": "'meinungumfrage' vs Discord 'Umfrage'. Also misspelled (missing s) and lowercase for a German noun.",
-      "clearedBy": "A2b (iii) for the spelling, A2c for the word"
+      "reason": "'Meinungsumfrage' vs Discord 'Umfrage'. The spelling and casing defects are FIXED (A2b, uploaded 2026-08-28) and the two surfaces now agree; what remains is the word itself, which cannot move alone because Umfrage is currently DE's survey word.",
+      "clearedBy": "A2c, the paired poll+survey migration, gated on a DE search export"
     },
     "t2b.es": { "reason": "'votación' vs Discord 'encuesta'. Spanish sends poll searchers to the survey page.", "clearedBy": "A2c" },
     "t2b.it": { "reason": "'poll' (untranslated) vs Discord 'sondaggio'.", "clearedBy": "A2c" },

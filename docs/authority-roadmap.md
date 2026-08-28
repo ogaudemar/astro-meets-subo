@@ -2414,8 +2414,36 @@ locale work, so A1c precedes A2c/A7.**
          community is stored as `uk`, and is unlikely to be live. Ignore it.** The full locale
          distribution that query returned is far more valuable than the question that prompted it —
          it is in [A1b RESULT](#a1b-result--the-whole-english-surface-2026-08-26).
-- [ ] **A2b. ⚠️ USER'S — DRAFTED 2026-08-28 as `a2b_locale_edits.csv`, 21 edits across FR and DE.
-      NL is pulled out and held.** The item was scoped from the **two rows A1 sampled**; scanning
+- [x] **A2b. ✅ SHIPPED 2026-08-28 — 21 edits uploaded (FR 16, DE 5), archive merged, guard
+      updated. NL pulled out and held.** `t2b.fr` is **gone from `knownViolations` entirely**:
+      the web UI says *sondage*, so French agrees with Discord *and* with itself. `t2b.de` drops
+      from three reports to two (the app no longer disagrees with itself). Baseline 26 → 23.
+      Archive is now `user_messages_all_2026-08-28.xlsx`; `lexicon.json`'s `app.pollWord` records
+      the new live state in both repos.
+      **Three process rulings came out of shipping it, and they belong here because the next batch
+      hits all three:**
+      - **⭐ Ship only the columns you are changing** (user, 2026-08-28). A FR/DE-only file is
+        smaller, faster, and cannot carry a stale value into a locale nobody touched. **A blank
+        cell inside an included column DELETES that translation** (English is the fallback), so
+        the column you include, you fill. One file per language beat one file with both: the
+        merged version needed **17 carry-over cells** purely because two languages shared a sheet.
+      - **⚠️ Blank means the OPPOSITE thing in the two files.** In the **upload** file a blank
+        deletes; in the **`apply`** file a blank is skipped. The same CSV cannot serve both, and
+        the mistake is silent in both directions.
+      - **⚠️ `apply` needs `--overwrite` for a translation-only batch.** It writes a language cell
+        only if the cell is empty, or the English changed, or `--overwrite` is passed. A2b changed
+        no English and overwrote existing values, so without the flag **all 21 edits would have
+        been silently skipped** and the archive would have looked fine.
+      - *Noise to ignore next time:* `apply`'s placeholder checker reads markdown link labels as
+        merge tokens, so a correctly translated `[Tutorials](url)` → `[Tutoriels](url)` is
+        reported as a mismatch. Both warnings on this batch were that.
+      **⚠️ DE has a third word, found while inspecting carry-over cells:** *Abstimmung* is used for
+      the poll instrument in `Edit_poll_questions_cmd` and
+      `PollCommand_option_info_display_description`, alongside *Meinungsumfrage* elsewhere. Same
+      shape as the FR *vote*/*sondage* split, so **DE's real count is larger than the 5 cells that
+      shipped**. Folded into A2c.
+
+      **The original scoping, kept because the method is the reusable part:** The item was scoped from the **two rows A1 sampled**; scanning
       the whole FR/DE/NL columns changed all three numbers. Same undercount, same cause, third time.
       - **(i) FR is 16 cells, not one.** `Web_InviteTab_Poll` is real and is the headline, but
         *vote* names the instrument in **15 more**, nearly all in the **web app**
