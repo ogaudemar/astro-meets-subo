@@ -2414,13 +2414,34 @@ locale work, so A1c precedes A2c/A7.**
          community is stored as `uk`, and is unlikely to be live. Ignore it.** The full locale
          distribution that query returned is far more valuable than the question that prompted it —
          it is in [A1b RESULT](#a1b-result--the-whole-english-surface-2026-08-26).
-- [ ] **A2b. ⚠️ USER'S — the three `user_messages` fixes A1 unblocked, none of which need an
-      export.** (i) **FR `Web_InviteTab_Poll` *vote* → *sondage***, one cell, the best
-      value-per-effort item on the board and it ends a live contradiction with `/sondage`.
-      (ii) **NL → *peiling*** on both rows, which also fixes NL disagreeing with itself.
-      (iii) **DE spelling/casing**: `meinungumfrage` → the `s` is missing, and both DE values are
-      lowercase for a German noun. Fix (iii) even if the DE word does not move yet.
-      **Also confirm what column 9 is** and whether `claude2-13-26` is reaching users.
+- [ ] **A2b. ⚠️ USER'S — DRAFTED 2026-08-28 as `a2b_locale_edits.csv`, 21 edits across FR and DE.
+      NL is pulled out and held.** The item was scoped from the **two rows A1 sampled**; scanning
+      the whole FR/DE/NL columns changed all three numbers. Same undercount, same cause, third time.
+      - **(i) FR is 16 cells, not one.** `Web_InviteTab_Poll` is real and is the headline, but
+        *vote* names the instrument in **15 more**, nearly all in the **web app**
+        (`Web_ScriptTab_*`, `Web_ProjectDetails_*`, `Web_Settings_*`, `Web_PollPreview_*`). That is
+        A1's finding confirmed from the other side: **the command was migrated to *sondage* and the
+        web UI was not**, so fixing one cell leaves fifteen contradictions standing.
+      - **⭐ The classifier is the English column, not French intuition.** *Vote* is correct French
+        for the **act** of voting and wrong for the **instrument**. EN says which is which: where
+        EN reads *poll*, FR must read *sondage*; where EN reads *vote / voting / voters*, the French
+        *vote / votants* is right and stays. **Nine cells stay** on that test, including
+        `Web_Settings_RealtimeResults_HelpText` (EN *"as members vote"*) and the three
+        `Poll_answer_*` confirmations (EN *"your vote for X"*). A find/replace of *vote* → *sondage*
+        would have broken every one of them.
+      - **(ii) DE is 5 cells, and the two defects are different sizes.** The **missing `s`** is in
+        **4 cells**, not one: `Poll_Command_name` plus three `PollCommand_*` prose strings. The
+        **casing** defect is only in `Web_InviteTab_Poll`. ⚠️ **`Poll_Command_name` must stay
+        lowercase** — Discord requires lowercase command names, so it takes the `s` and nothing
+        else. This is spelling and capitalization only; the T2b move to *Umfrage* is still A2c.
+      - **(iii) ⚠️ NL is NOT a two-cell fix and is pulled out of A2b.** Dutch is running **three
+        words for one concept**: `poll` (48 cells), `opiniepeiling` (39), `peiling` (11). Changing
+        the two rows A1 sampled fixes 2 of ~98 and leaves the locale as inconsistent as it was.
+        **It also collides with T6:** the command is `/opiniepeiling` and **9 cells tell users to
+        click it**, so moving NL onto Discord's *peiling* is a command rename with a documentation
+        tail, which is exactly what T6 says not to do casually. **T2b and T6 point opposite ways
+        here and a human has to choose.** Held pending that decision, not pending an export.
+      - ~~Confirm what column 9 is.~~ **✅ Already closed by A1b**: `ro`, the user's batch column.
 - [ ] **A2c. The paired poll+survey migration, per locale, gated per locale.** Finding 7 in
       A1 RESULT: in DE/ES/IT/PL/RU/TR the Discord poll word **is** Subo's current survey word, so
       the two must move in **one** edit or the collision lands in-product. Poll-side evidence
