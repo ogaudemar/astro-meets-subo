@@ -91,7 +91,7 @@
       "",
       "Refresh with `!test user_messages` in Discord, which DMs the xlsx."
     ],
-    "source": "user_messages_all_2026-08-28.xlsx (A2b applied and uploaded 2026-08-28)",
+    "source": "user_messages_all_2026-08-18.xlsx + the A2b batch uploaded 2026-08-28. Re-export with `!test user_messages` to confirm against the live DB.",
     "pollWord": {
       "en":    { "command": "poll",          "webUi": "poll" },
       "fr":    { "command": "sondage",       "webUi": "sondage" },

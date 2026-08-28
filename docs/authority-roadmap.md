@@ -2418,8 +2418,7 @@ locale work, so A1c precedes A2c/A7.**
       updated. NL pulled out and held.** `t2b.fr` is **gone from `knownViolations` entirely**:
       the web UI says *sondage*, so French agrees with Discord *and* with itself. `t2b.de` drops
       from three reports to two (the app no longer disagrees with itself). Baseline 26 → 23.
-      Archive is now `user_messages_all_2026-08-28.xlsx`; `lexicon.json`'s `app.pollWord` records
-      the new live state in both repos.
+      `lexicon.json`'s `app.pollWord` records the new live state in both repos.
       **Three process rulings came out of shipping it, and they belong here because the next batch
       hits all three:**
       - **⭐ Ship only the columns you are changing** (user, 2026-08-28). A FR/DE-only file is
@@ -2427,16 +2426,18 @@ locale work, so A1c precedes A2c/A7.**
         cell inside an included column DELETES that translation** (English is the fallback), so
         the column you include, you fill. One file per language beat one file with both: the
         merged version needed **17 carry-over cells** purely because two languages shared a sheet.
-      - **⚠️ Blank means the OPPOSITE thing in the two files.** In the **upload** file a blank
-        deletes; in the **`apply`** file a blank is skipped. The same CSV cannot serve both, and
-        the mistake is silent in both directions.
-      - **⚠️ `apply` needs `--overwrite` for a translation-only batch.** It writes a language cell
-        only if the cell is empty, or the English changed, or `--overwrite` is passed. A2b changed
-        no English and overwrote existing values, so without the flag **all 21 edits would have
-        been silently skipped** and the archive would have looked fine.
-      - *Noise to ignore next time:* `apply`'s placeholder checker reads markdown link labels as
-        merge tokens, so a correctly translated `[Tutorials](url)` → `[Tutoriels](url)` is
-        reported as a mismatch. Both warnings on this batch were that.
+      - **⚠️ The workflow is the upload file and nothing else** (user, 2026-08-28). `user_messages`
+        files in, `user_messages` files out. **The archive refreshes by re-exporting from the bot
+        (`!test user_messages`, which DMs the xlsx), not by merging locally.** The DB is the source
+        of truth, so a fresh export is the record; a locally merged file is a guess about what the
+        upload did.
+      - ⚠️ **`subo-localization` documents a `subo_translate.py apply` merge step that is not in
+        use.** It was run once on this batch before the user corrected it. No harm done (it writes
+        to `--output` and backs up the input; the 2026-08-18 archive is byte-identical to its
+        backup), but **the skill describes a process more elaborate than the real one**, which is
+        how an assistant reading the skill ends up performing steps nobody asked for. Same class of
+        problem as T8: a document that claims to describe the workflow, believed because it is
+        checked in. **Fix the skill before the next batch** — see A9.
       **⚠️ DE has a third word, found while inspecting carry-over cells:** *Abstimmung* is used for
       the poll instrument in `Edit_poll_questions_cmd` and
       `PollCommand_option_info_display_description`, alongside *Meinungsumfrage* elsewhere. Same
