@@ -116,10 +116,10 @@ So the two buttons are two entry points into the same fork, one asking late and 
 coordinated change. Recorded because the wrong reading was reached from the string surface alone,
 which is what T8 warns about: the strings do not tell you which flow they sit in.
 
-### ⚠️ Two label renames that reach further than the cell they were made in
+### ⚠️ Two label renames, one of which reached further than the cell it was made in
 
-The user's revision renamed two settings, both to disambiguate a real collision. Both are right and
-both were under-scoped, because the label appears in cells the sheet never touched.
+The user's revision renamed two settings. Both are right. **One of them appears in cells the sheet
+never touched; the other only looked like it did.**
 
 **`Survey channel` → `Participant channel`** (it is where invitations are posted and members answer,
 as against the **Creator channel**, which is for creation and admin). The label lives in **6 cells,
@@ -137,14 +137,27 @@ covering two different settings**:
 The last two are a different feature wearing the same words. Renaming them would have been the
 find/replace error this document opens by warning about.
 
-**`Role reward` → `Participation Role`** is the same shape but much larger: **24 cells, three
-distinct features** — the role for answering any project (`Setup_server_Q10`), the role for
-completing *one* project (`Edit_survey_edit_role_reward*`, `Invite_role_reward`,
-`SurveySummary_reward_role_label`), and XP-threshold rewards (`Xp_Settings_role_*`, plus web labels).
-All three are called "role reward" today. **v2 keeps the new header and makes that cell
-self-consistent**, but the other 23 are a naming exercise across two surfaces, not a terminology
-sweep. **It needs its own item; shipping one renamed cell against 23 unchanged ones leaves the
-product less consistent, not more.**
+**`Role reward` → `Participation Role`: not the same shape, and an earlier draft of this section
+got it backwards.** It read the 24 cells saying "role reward" as one name stretched over three
+features, and called the rename under-scoped. **Corrected by the user, 2026-08-28: they are
+different things and the names are now right.**
+
+- **Role reward is project-level**: complete project A, get role alpha. That is what
+  `Edit_survey_edit_role_reward*`, `Invite_role_reward`, `SurveySummary_reward_role_label` and the
+  `Xp_Settings_role_*` family are about, and they keep the name.
+- **The Settings one is a different setting**: the role a member gets the **first time they
+  participate**, at all, in anything. Renaming *that* to **Participation Role** is a distinction
+  being drawn, not a collision being cleaned up, and it is deliberately scoped to the settings page.
+
+**Verified complete at one cell.** `[ParticipantRoleName]` appears in exactly one cell,
+`Setup_server_Q10_participants_setup`, whose header and *"Current setting for"* line both move in
+v2. Its follow-up prompt `Setup_server_which_participant_role` — *"Which role should be awarded to
+your members the first time they participate?"* — describes the behavior and carries no label, so
+it is already correct. **Nothing is left behind and no follow-up item is needed.**
+
+The lesson is narrower than the one this section originally drew: **a repeated string is not
+evidence of a repeated concept.** The `Survey channel` case above is real because six cells name
+two settings; this one looked identical from a grep and was not.
 
 ### Constraint 5, learned the hard way
 
