@@ -12,6 +12,54 @@ This file is the cell-by-cell execution list for **A1c**; the roadmap holds the 
 
 ---
 
+## ▶ RESUME HERE — locale retranslation, 26 of 42 keys done (2026-08-28)
+
+**English is approved and frozen** (v2, below). **Nothing has been uploaded for A1c**, on purpose:
+it ships as one `user_messages.xlsx`, and building it now would carry 16 rows of stale text.
+
+**⚠️ The working files are NOT in either repo.** `user_messages` is a database table, so no repo
+path owns this work. It lives in:
+
+```
+Subo shared/Messages Translations/A1c-work/
+```
+
+| File | Role |
+|---|---|
+| `a1c_translations_progress.csv` | **Start here.** 42 rows × 9 locales, each marked `translated` or `NOT YET TRANSLATED` |
+| `tr_batch1.py` … `tr_batch5.py` | the translations; batch 1 is finished cells, 2-5 are fragment pairs |
+| `apply_fragments.py` | resolves fragment batches and asserts every fragment exists in the live cell |
+| `consolidate.py` | run it to print what is outstanding and rebuild the progress CSV |
+| `all_locales.json` | the 2026-08-18 export, all 10 columns, so nothing needs re-reading from xlsx |
+
+**Method, and it is not "retranslate the cell".** Every batch is **fragment replacement against the
+live locale value**, asserted to exist, so text nobody re-read stays byte-identical. Full
+retranslation would throw away shipped quality to fix a clause.
+
+**The 16 keys left** are the long ones: `HelpMessage_content`, `Welcome_dm_text`,
+`admin_channel_pinned_message`, `SurveyBuilder_use_poll_mode`, `SurveyBuilder_name_survey`, six
+`Setup_server_*` cells, `Setup_server_invalid_bot_write_perms`, and the three `align` blocks
+(`ServerSetup_setup_Summary`, `Xp_Settings_Summary`, `Xp_Settings_xp_points_question`) — ⚠️ **whose
+monospace columns must be re-measured per locale**, since German and Polish labels are longer than
+the English ones.
+
+**Standing decisions to carry forward:**
+- **Simplify in every language, not just English** (user, 2026-08-28). Each cell takes three passes:
+  terminology, the repetition English dropped, and **formal → informal register** where DE/NL/TR
+  drifted (`Sie` → `du`, `U heeft` → `Je hebt`, `-iniz` → `-in`). Typos get fixed in the same edit.
+- **Convo is feminine** in every gendered locale, from the local word for *conversation*. Recorded
+  in `lexicon.json` under `instruments.convo.grammar`, with plural rules.
+- **Door words per locale come from the `subo-localization` table; `project` comes from the word the
+  locale already ships** in the 131 cells whose English says it (`Projekt`, `proyecto`, `projet`,
+  `progetto`, `project`, `projekt`, `projeto`, `проект`, `proje`).
+- **Upload rule:** ship only the columns being changed, and never leave a blank inside a column you
+  included — a blank deletes that translation.
+
+**⚠️ Separate backlog this uncovered, NOT part of A1c:** the locales never received the original
+`project` migration either. Of the 131 cells whose English already says *project*, each locale still
+says *survey* in roughly a third (DE 39, ES 38, FR 37, IT 40, NL 31, PL 29, PT-BR 33, RU 36, TR 33).
+A1c's 42 will land correctly and still sit beside those. Worth its own item.
+
 ## ⭐ STATUS — v2: 42 edits, user-revised and re-verified (2026-08-28)
 
 **The sheet is now `a1c_english_edits_v2.csv`.** The user reviewed all 40 proposals, kept 28

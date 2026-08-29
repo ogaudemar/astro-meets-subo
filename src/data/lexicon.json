@@ -32,7 +32,14 @@
         "owner": "subo",
         "localize": false,
         "canonical": "Convo",
-        "$why": "Convo is Subo's invention, so it stays invariant in every locale (T3). Capitalized always; lowercase 'convo' is a defect everywhere except identifiers and URL paths."
+        "$why": "Convo is Subo's invention, so it stays invariant in every locale (T3). Capitalized always; lowercase 'convo' is a defect everywhere except identifiers and URL paths.",
+        "grammar": {
+          "$ruling": "Convo takes the gender of the local word for CONVERSATION (user, 2026-08-28). It is feminine in every gendered locale we ship, because conversation is: die Konversation, la conversación, la conversation, la conversazione, a conversa, konwersacja, беседа.",
+          "$why": "An untranslated brand noun still has to agree with articles and adjectives, and a translator with no ruling picks per string. Deriving the gender from the word Convo is short for keeps every locale internally consistent and matches what the noun means.",
+          "gender": { "de": "f", "es": "f", "fr": "f", "it": "f", "pt-BR": "f", "pl": "f", "ru": "f", "nl": "de-word", "tr": "n/a" },
+          "examples": { "de": "die Convo, diese Convo", "es": "la Convo, esta Convo", "fr": "la Convo, cette Convo", "it": "la Convo, questa Convo", "pt-BR": "a Convo, esta Convo", "pl": "ta Convo", "ru": "эта Convo", "nl": "de Convo, deze Convo", "tr": "Convo'yu, Convo'ları (suffix after apostrophe)" },
+          "plural": "English plural where it reads naturally (DE/ES/FR/NL/PT-BR: Convos); uninflected where the language would decline it (IT/PL/RU: Convo); TR attaches suffixes after an apostrophe."
+        }
       }
     },
     "umbrella": {

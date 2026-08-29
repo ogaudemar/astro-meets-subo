@@ -2333,7 +2333,7 @@ locale work, so A1c precedes A2c/A7.**
       lowercase in 10 cells, and the `claude2-13-26` scare is closed (`ro` is the user's batch
       column, not a locale). **~94% of active communities render English**, so this is where the
       users are, not just where the problem starts.
-- [ ] **A1c. ⭐ Finish the English `project` migration in `user_messages` — the new top item.**
+- [~] **A1c. IN PROGRESS — English approved (42 cells); locale retranslation 26/42 keys done 2026-08-28.**
       This is upstream of every locale: ten translations faithfully mirror an English source that
       says six things.
       **⭐ The cell-by-cell work order is its own file:
