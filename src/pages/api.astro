@@ -474,6 +474,65 @@ const toc = [
               Discord audience to specific roles. To close early, call
               <code>POST .../projects/&#123;projectId&#125;/close</code>.
             </p>
+
+            <h3>Choosing where the Convo happens</h3>
+            <p>
+              A Discord audience answers in one of three places, and Subo tries them in
+              order until one works. <code>delivery.answer_surfaces</code> sets that order:
+            </p>
+            <pre><code>{`{
+  "delivery": {
+    "answer_surfaces": ["dm", "web"]
+  }
+}`}</code></pre>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Surface</th><th>Where the member answers</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>thread</code></td>
+                    <td>A private thread in your server, visible to them and your team.</td>
+                  </tr>
+                  <tr>
+                    <td><code>dm</code></td>
+                    <td>A direct message from the bot. Nothing is created in the server.</td>
+                  </tr>
+                  <tr>
+                    <td><code>web</code></td>
+                    <td>A browser link. Always works, so it ends the chain.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Order is the fallback chain, first to last: <code>["dm", "web"]</code> means
+              try a DM, and if their DMs are closed, hand them a link instead. Each surface
+              may appear once. Put <code>web</code> last — it cannot fail, so anything
+              listed after it is never reached. The API accepts such a chain rather than
+              rejecting it, so this one is on you to get right.
+            </p>
+            <ul>
+              <li>
+                <strong><code>null</code> is the default and is not the same as an empty
+                list.</strong> It means no override: Subo picks the chain per press, from
+                the privacy mode and the type of channel the invitation was posted in. Two
+                posts of the same project in different channels can resolve differently, so
+                a project you never set this on has no single answer to read back. Send
+                <code>null</code> to return to that. An empty array is rejected with a
+                <code>400</code> rather than treated as a clear.
+              </li>
+              <li>
+                <strong>It only applies to a Discord audience.</strong> A project with
+                <code>response_channel: "web"</code> answers on the web by definition; a
+                chain set on one is stored, but nothing consults it.
+              </li>
+              <li>
+                An anonymous project should not use <code>thread</code>: a thread is not
+                anonymous to your team, since anyone with Manage Threads can read it.
+              </li>
+            </ul>
           </section>
 
           <!-- ── Responses ──────────────────────────────────────────────── -->

@@ -71,6 +71,19 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
    - Makes the survey live. `delivery.audience` picks the channel:
      `private`+`discord` (answer in Discord), `private`+`web` (members-only link),
      `open_web`+`web` (open link, no Discord account needed)
+   - `delivery.answer_surfaces` orders WHERE a Discord audience answers, as a
+     fallback chain tried first to last: `["thread","dm","web"]`. `thread` is a
+     private thread in the server, `dm` is a direct message from the bot, `web` is
+     a browser link. Each surface may appear once. `web` ends the chain: it
+     cannot fail, so any surface listed after it is never reached (the API
+     accepts such a chain rather than rejecting it — put `web` last).
+     Only meaningful for `response_channel: discord`; stored but never consulted
+     on a web project. Avoid `thread` on an anonymous project — a thread is
+     readable by anyone with Manage Threads.
+   - `answer_surfaces` defaults to `null`, which is NOT an empty chain: it means
+     no override, and Subo resolves the chain per press from the privacy mode and
+     the channel the invitation was posted in, so two posts of one project can
+     resolve differently. Send `null` to clear an override; `[]` returns a 400.
    - Close early with `POST .../projects/{projectId}/close`
 
 4. **List or Get Responses**
