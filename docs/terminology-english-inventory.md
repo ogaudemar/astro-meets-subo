@@ -203,20 +203,54 @@ gate encodes, arrived at from the other direction.
 - **Upload rule:** ship only the columns being changed, and never leave a blank inside a column you
   included — a blank deletes that translation.
 
-**Remaining steps, in order:**
+**Remaining steps:**
 
 1. ~~The outstanding keys, as full refreshes.~~ ✅ **DONE 2026-08-29 — all 42 translated.**
-2. **Re-read the 29 keys done under the old rule** (batches 1-6) against the refresh standard.
-   They are terminology-correct, not necessarily fresh, and batches 7-10 showed what "not fresh"
-   turns out to mean in practice. This is the last open work in A1c.
-3. Build the one `user_messages.xlsx` and upload — **not before step 2**, or it ships 29 rows held
-   to a weaker bar than the 13 beside them. Ship only the columns changed; never blank a cell
-   inside a column you include.
+2. ~~Re-read the 29 keys done under the old rule.~~ **Closed by the user's approval of v4
+   (2026-08-29).** Recorded rather than deleted: batches 1-6 were held to the fragment standard,
+   not the refresh one, so **if a stale cell surfaces later it will most likely be among those 29**.
+   That is a place to look first, not an open task.
+3. ~~Build the file.~~ ✅ **BUILT — `user_messages_A1c_2026-08-29.xlsx`** (see the v4 block above).
+4. **The upload itself is the user's**, and it is the only step left. Afterwards: re-export with
+   `!test user_messages` to make the new export the record — **the DB is the source of truth, and a
+   locally merged file is a guess about what the upload did** (A2b's ruling).
 
 **⚠️ Separate backlog this uncovered, NOT part of A1c:** the locales never received the original
 `project` migration either. Of the 131 cells whose English already says *project*, each locale still
 says *survey* in roughly a third (DE 39, ES 38, FR 37, IT 40, NL 31, PL 29, PT-BR 33, RU 36, TR 33).
 A1c's 42 will land correctly and still sit beside those. Worth its own item.
+
+## ✅ v4 — APPROVED AND BUILT FOR UPLOAD (user, 2026-08-29)
+
+**`Web_About_Description` drops the appositive**: *"created on Discord with Subo, the Survey Bot"* →
+**"with Subo."** Shorter, and it removes a translation problem rather than restating it: the
+appositive was rendered **nine different ways** — kept in English in DE/IT/NL, translated in the
+other six, and **five of those used the locale's survey word**, the exact noun A1c is moving away
+from. Deleting it deletes the whole class.
+
+**With that, the user approved the batch and the upload file is built:**
+`A1c-work/user_messages_A1c_2026-08-29.xlsx`, by `build_upload.py`.
+
+| | |
+|---|---|
+| Rows | **42** (only the changed keys, not 2,568) |
+| Columns | `Name, en-US, de, es-ES, fr, it, nl, pl, pt-BR, ru, tr` |
+| Excluded | ⚠️ **`ro` and `uk`** — `ro` is the batch/scratch column and `uk` is stalled Ukrainian. Ship only what you changed. |
+| Empty cells | **0**, asserted before writing — a blank inside an included column **deletes** that translation |
+| No-op rows | **0**, asserted — a row identical to live does not belong in the file |
+
+**⚠️ The build reads the LIVE 2026-08-28 export, not the 08-18 working copy, and that mattered.**
+A2b uploaded FR/DE edits on 08-28, after `all_locales.json` was taken. Two A1c cells had moved
+underneath the work: `HelpMessage_content`/fr and `Welcome_dm_text`/fr, where A2b had already
+changed *votes* → *sondages*. **Both are supersets, not conflicts** — batch 9 makes the same change
+plus the `/draft` line — and the build asserts A2b's exact strings survive rather than trusting the
+reading. **Any future batch must re-run this check**: a working copy is a snapshot, and the DB is
+the source of truth.
+
+**11 cells ship unchanged, on purpose.** `Survey_audience_modify_post` (8 locales),
+`Setup_server_survey_channel_pick` (es, fr) and `ServerSetup_setup_invite_footer` (ru) are declared
+`KEEP` in their batches: the locale already said what the new English says. They are included with
+their current value because **blanking them would delete them**.
 
 ## ⭐ v3 — three post-approval revisions (user, 2026-08-29)
 

@@ -2333,9 +2333,14 @@ locale work, so A1c precedes A2c/A7.**
       lowercase in 10 cells, and the `claude2-13-26` scare is closed (`ro` is the user's batch
       column, not a locale). **~94% of active communities render English**, so this is where the
       users are, not just where the problem starts.
-- [~] **A1c. English approved (42 cells); ✅ ALL 42 KEYS TRANSLATED in 9 locales 2026-08-29**
-      (378/378 cells, `verify_tr.py` clean). **Two things remain: re-read the 29 keys done under
-      the old method, then one `user_messages.xlsx` upload.**
+- [~] **A1c. ✅ APPROVED AND BUILT 2026-08-29 — the upload is the only step left.**
+      42 keys × 9 locales, 378/378 cells, `verify_tr.py` clean, English approved through v4.
+      The file is `A1c-work/user_messages_A1c_2026-08-29.xlsx`: 42 rows, `Name + en-US + 9
+      locales`, **`ro` and `uk` excluded**, zero empty cells and zero no-op rows, both asserted
+      before writing. ⚠️ **It is built against the LIVE 08-28 export, not the 08-18 working copy**,
+      which caught two FR cells A2b had moved underneath the work (supersets, not conflicts, and
+      asserted as such). After uploading, re-export with `!test user_messages` so the record is the
+      DB rather than a guess about it.
       ⭐ **The method changed on 2026-08-28 and it is the more important half of this item.** The
       locale columns are **not** faithful translations of today's English that need one clause
       corrected: translators did not keep pace with the English, minor edits never went back to
