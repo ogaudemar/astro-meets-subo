@@ -2333,7 +2333,18 @@ locale work, so A1c precedes A2c/A7.**
       lowercase in 10 cells, and the `claude2-13-26` scare is closed (`ro` is the user's batch
       column, not a locale). **~94% of active communities render English**, so this is where the
       users are, not just where the problem starts.
-- [~] **A1c. IN PROGRESS — English approved (42 cells); locale retranslation 26/42 keys done 2026-08-28.**
+- [~] **A1c. English approved (42 cells); ✅ ALL 42 KEYS TRANSLATED in 9 locales 2026-08-29**
+      (378/378 cells, `verify_tr.py` clean). **Two things remain: re-read the 29 keys done under
+      the old method, then one `user_messages.xlsx` upload.**
+      ⭐ **The method changed on 2026-08-28 and it is the more important half of this item.** The
+      locale columns are **not** faithful translations of today's English that need one clause
+      corrected: translators did not keep pace with the English, minor edits never went back to
+      them, and new work was usually new strings only, so some cells are years old. **There is no
+      mandate to preserve them — refresh the cell from the approved English.** Batch 7 is the
+      evidence: `Setup_server_invalid_bot_write_perms` in DE/IT/PT-BR/RU translates an *older
+      English string* (no channel list at all), the FR one ships a half-English heading, and DE's
+      `Q6_channel_change` translated a **merge token** (`[Kanal]` for `[Channel]`), so that line has
+      been rendering brackets literally. See the inventory's METHOD CHANGED block.
       This is upstream of every locale: ten translations faithfully mirror an English source that
       says six things.
       **⭐ The cell-by-cell work order is its own file:
@@ -2504,6 +2515,36 @@ locale work, so A1c precedes A2c/A7.**
       this roadmap's own guiding principle warns about, since we have no French page targeting it
       and rank at 20. It is also the job where Convo's difference is most visible, because a form
       is the thing people already dislike.
+
+- [ ] **A9. Fix the `subo-localization` skill to describe the real workflow.** ⚠️ **Referenced by
+      A2b since 2026-08-28 and never written down until now**, which is itself the T8 failure the
+      item is about. The skill documents a `subo_translate.py apply` merge step **that is not in
+      use**; it was run once on the A2b batch before the user corrected it. The real workflow is
+      `user_messages` files in, `user_messages` files out, and the archive refreshes by
+      re-exporting from the bot (`!test user_messages`), never by merging locally. **A checked-in
+      document is believed**, so a skill that describes a more elaborate process than the real one
+      makes an assistant perform steps nobody asked for.
+- [ ] **A10. ⭐ TRANSLATED MERGE TOKENS — ~31 cells across 8 locales render brackets to users.**
+      Found by accident in A1c batch 7 (`Setup_server_Q6_channel_change`/de said `[Kanal]`, not
+      `[Channel]`), then scanned for deliberately: `A1c-work/scan_tokens.py`, which treats a token
+      as real if the English column uses it anywhere (164 names) and flags anything that appears
+      only in a locale column. **A merge field resolves by name, so a translated one resolves to
+      nothing and Discord shows the user the literal brackets.** Not in A1c's 42 keys, so it is
+      its own item.
+      - **The worst of them are on high-traffic surfaces**: `Setup_server_language_mode`/nl says
+        `[Taal]` — that is the **first screen of `/settings`**; `TooManyRespondentsLimitDirectMessage`/pl
+        says `[TierPlan]` for `[TierName]`, in the DM that tells someone their survey just closed;
+        `web_link_error`/tr says `[Detaylar]`; `Voter_summary_by_answer_hdr`/ru replaced
+        `**#[Xth] [Block]**` with `[Question]` outright.
+      - **`Xp_Settings_role_list_header` is 13 of the 31 on its own** — six locales say `[id]` where
+        English says `[index]`, and add `[expiresDays]` and `[comment]`, which **exist in no English
+        cell anywhere**. Worth checking against the code before assuming the locales are wrong:
+        this shape (locales carrying fields English lacks) is what a *removed* feature looks like.
+      - **`Web_ScriptTab_WarningMessage` translated the pluralizer**: English `response[s]` became
+        `Antwort[en]` (de, nl) and `[e]` (it). Whether `[s]` is special-cased or generic decides
+        whether these are broken or merely odd, and that is a code question, not a copy one.
+      - ⚠️ **Do not batch this with A1c.** Different keys, different cause, and A1c ships as one
+        upload whose column set is already decided.
 
 **Success metric:** one lexicon, readable from both repos and enforced by a guard; no page
 competing with another page in the same locale for the same word; every locale's poll word equal

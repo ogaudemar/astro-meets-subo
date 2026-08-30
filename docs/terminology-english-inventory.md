@@ -12,10 +12,11 @@ This file is the cell-by-cell execution list for **A1c**; the roadmap holds the 
 
 ---
 
-## ▶ RESUME HERE — locale retranslation, 26 of 42 keys done (2026-08-28)
+## ▶ RESUME HERE — ✅ all 42 keys translated in 9 locales (2026-08-29)
 
-**English is approved and frozen** (v2, below). **Nothing has been uploaded for A1c**, on purpose:
-it ships as one `user_messages.xlsx`, and building it now would carry 16 rows of stale text.
+**378 of 378 cells, `verify_tr.py` clean.** English is approved and frozen (v2, below).
+**Nothing has been uploaded yet** — the next step is the re-read pass and then one
+`user_messages.xlsx`.
 
 **⚠️ The working files are NOT in either repo.** `user_messages` is a database table, so no repo
 path owns this work. It lives in:
@@ -27,26 +28,173 @@ Subo shared/Messages Translations/A1c-work/
 | File | Role |
 |---|---|
 | `a1c_translations_progress.csv` | **Start here.** 42 rows × 9 locales, each marked `translated` or `NOT YET TRANSLATED` |
-| `tr_batch1.py` … `tr_batch5.py` | the translations; batch 1 is finished cells, 2-5 are fragment pairs |
-| `apply_fragments.py` | resolves fragment batches and asserts every fragment exists in the live cell |
+| `tr_batch1.py` … `tr_batch6.py` | the translations; batch 1 is finished cells, 2-6 are fragment pairs |
+| `apply_fragments.py` | resolves fragment batches and asserts every fragment exists in the live cell. **`FRAGMENT_BATCHES` here is the one list of batches** — add a batch to it and both other scripts pick it up |
 | `consolidate.py` | run it to print what is outstanding and rebuild the progress CSV |
+| `verify_tr.py` | mechanical checks over **every** batch (no argument) or the ones you name |
 | `all_locales.json` | the 2026-08-18 export, all 10 columns, so nothing needs re-reading from xlsx |
 
-**Method, and it is not "retranslate the cell".** Every batch is **fragment replacement against the
-live locale value**, asserted to exist, so text nobody re-read stays byte-identical. Full
-retranslation would throw away shipped quality to fix a clause.
+⚠️ **Run everything with `PYTHONIOENCODING=utf-8`.** Windows' console codec is cp1252 and the
+scripts print Cyrillic and Turkish; without it a *reported problem* dies in the traceback that
+prints it, so a failing batch can look like a crashing script.
 
-**The 16 keys left** are the long ones: `HelpMessage_content`, `Welcome_dm_text`,
-`admin_channel_pinned_message`, `SurveyBuilder_use_poll_mode`, `SurveyBuilder_name_survey`, six
-`Setup_server_*` cells, `Setup_server_invalid_bot_write_perms`, and the three `align` blocks
-(`ServerSetup_setup_Summary`, `Xp_Settings_Summary`, `Xp_Settings_xp_points_question`) — ⚠️ **whose
-monospace columns must be re-measured per locale**, since German and Polish labels are longer than
-the English ones.
+### Batch 6 — the three role / network cells (2026-08-28)
+
+`Setup_server_admin_role`, `Setup_server_creator_role`,
+`Setup_server_allow_network_push_prompt`. 27 cells, resolved clean. **⚠️ It found that some locale
+cells are not translations of the English at all**, which changes what the remaining 13 keys should
+be expected to cost:
+
+- **`Setup_server_creator_role` is a bare stub in DE and PL** — a bold header and the
+  current-setting lines, no explanation at all. Written out in full from the approved English.
+  The fragment method still applies (the pair is anchored on the header, so the assertion holds),
+  and nothing shipped is discarded, because nothing was there.
+- **`Setup_server_admin_role` in RU wears the *creator* cell's 🎨 and its "(необязательно)"** —
+  copy-paste from the neighbouring setting, on a role that is not optional. Both fixed.
+- **Typos fixed in the same edit**, per the standing decision: NL *"kunnen gebruikers mij en."*
+  (the verb is missing) and *"Zorg ervoor dat deze toestemming heeft"* (the noun is), TR
+  *"yapılandırmalana"*, DE *"fpr"* and *"Diese Umfragen/Umfragen"*, PT-BR *"canal di Criador"* and
+  *"dêem"*. Register: NL `u` → `je`, TR `-siniz` → `-sin`, PT-BR European `Certifica-te` / `Queres`
+  → the `você` forms the rest of the column uses.
+- **⛔ Labels were NOT renamed**, though two read oddly: DE *"Rolle für Umfrageleiter"* and RU
+  *"Роль управляющего опросами"* name these roles in other cells too, the settings summary among
+  them. That is the `Survey channel` lesson — a label rename is its own scoped decision.
+
+### ⭐ Batch 7 — the first full-refresh batch, and the ruling's evidence (2026-08-28)
+
+Five cells, 45 cells of text, resolved clean: `Setup_server_Q6_channel_change`,
+`_Q10_participants_setup`, `_Q19_default_invite_change`, `_anonymous_mode`,
+`_invalid_bot_write_perms`. **Every one of them justified the method change on its own:**
+
+- ⭐ **`Setup_server_invalid_bot_write_perms` in DE, IT, PT-BR and RU is a translation of a
+  different, older English string** — two bullets about message permissions, no channel list at
+  all, where today's English lists four channels and links a tutorial. There was no fragment to
+  patch and no way a patch could have produced the right cell.
+- **The FR cell of that key ships a half-translated heading**, live:
+  *"Problème avec un salon défini Issue with a channel defined in Settings!"*
+- **DE's `Q6_channel_change` says `[Kanal]` where the token is `[Channel]`.** The translator
+  translated the merge token, so that line has been rendering the brackets literally.
+- **PL repeats the permissions URL twice** in the same cell; **`CompleteCount` is undocumented** in
+  five locales' `Q19` even though the field works.
+
+**Decisions taken here that later batches must follow:**
+
+- **Command names come from the export, never from intuition** — `Poll_Command_name` and
+  `Survey_Command_new` per locale (de `meinungsumfrage`/`umfrage`, es `votación`/`encuesta`,
+  fr `sondage`/`enquête`, it `poll`/`sondaggio`, nl `opiniepeiling`/`enquête`,
+  pl `głosowanie`/`ankieta`, pt-BR `enquete`/`pesquisa`, ru `голосование`/`опрос`,
+  tr `oylama`/`anket`). ⚠️ **DE is `meinungsumfrage` with the `s`**: the export still shows the
+  pre-A2b spelling. This is the data A3 wants to make greppable, and it was worth the detour.
+- **`</settings:980107102590754887>` stays verbatim in every locale.** It is a command mention
+  resolved by ID and NL and TR already ship it. Locales that wrote `` `/einstellungen` `` instead
+  were rendering a code span, not a link.
+- ⭐ **The new labels are chosen once, here, because the `align` blocks must agree with them**:
+  Participant channel → Teilnehmerkanal · Canal de participantes · Salon participants · Canale
+  partecipanti · Deelnemerskanaal · Kanał uczestników · Canal de participantes · Канал участников ·
+  Katılımcı kanalı. Participation Role → Teilnahmerolle · Rol de participación · Rôle de
+  participation · Ruolo di partecipazione · Deelnamerol · Rola za udział · Cargo de participação ·
+  Роль за участие · Katılım rolü. **The per-project *role reward* keeps its own name in the same
+  sentence**, since the English distinction is the point of the rename.
+
+**And it caught two more bugs in `verify_tr.py`, both of which were the check being too crude:**
+
+- **Six "placeholder LOST" reports were all correct drops** — `[Kanal]` (never a real token) and
+  `[BotName]` in the four cells that translated the older English. The script now carries a small
+  `DROPPED_ON_PURPOSE` set **with a reason per entry**, because the default reading of a vanished
+  placeholder must stay "something broke".
+- ⚠️ **The FR retired-word check banned *vote* outright, which contradicts A2b.** *Vote* is correct
+  French for the **act** and wrong for the **instrument**, and **the English column is the
+  classifier**. The check now allows FR *vote* exactly where the English says vote/voting/voters —
+  which is what let `Setup_server_anonymous_mode` ("Individual votes and answers") pass honestly
+  instead of by exception.
+
+**Two defects the verifier caught, both in already-"finished" work:**
+
+1. ⭐ **`Poll_edit_confirm` FR was still half-migrated.** English says **poll** three times; French
+   rendered two of them as *"sondage de type 'vote rapide'"* — the pre-A2b hybrid, the retired
+   *vote* instrument word wearing a suffix. Batch 5 fixed the mode line and walked past both.
+   Fixed in `tr_batch5.py`. **The lesson generalizes: A2b's FR sweep and A1c's cells overlap**, so
+   a cell can pass one pass and fail the other.
+2. **`verify_tr.py` had only ever been run on batch 1**, and hardcoded it. Running it over all six
+   showed its placeholder check was wrong: it compared each locale's tokens to **English**, which
+   flags divergence that predates A1c (locales that never mentioned `[AdminChannelName]`, or that
+   add `[BotName]`). **The baseline is now the live locale cell, and only a LOST token fails** —
+   a gained one is usually the point. Locale-vs-English divergence is printed as a note. 38 notes,
+   0 problems.
+
+### ⭐ METHOD CHANGED — full refresh, not fragment replacement (user, 2026-08-28)
+
+**There is no mandate to preserve the legacy translations, and the earlier method assumed there
+was.** The user's account of how the locale columns were actually built:
+
+> Translators did not always keep up with the pace of changes and experiments in English. Minor
+> copy edits almost never went back to them, and new translation work was usually **new strings
+> only**. Some cells were translated several years ago.
+
+So a locale cell is **not** a faithful rendering of today's English that needs one clause corrected.
+It is often a rendering of an English string that no longer exists. **Prefer a real refresh from
+the approved English plus the current glossary strategy.**
+
+This retires the batch 2-6 rule and inverts its reasoning:
+
+| | Old rule (batches 2-6) | ⭐ Now |
+|---|---|---|
+| Default | fragment replacement, asserted against the live value | **retranslate the cell from the approved English** |
+| Untouched text | stays byte-identical by construction | **re-read; keep it only if it is still right** |
+| Justification | "full retranslation throws away shipped quality" | **the shipped text is frequently years stale, so there is often no quality to throw away** |
+
+**Batch 6 hit the wall this ruling removes.** `Setup_server_creator_role` was a bare header in DE
+and PL, and had to be written out in full anyway; RU's `Setup_server_admin_role` carried the wrong
+setting's emoji. Those were treated as exceptions to the method. **They were the method.**
+
+**Fragment replacement is still allowed where it is genuinely the right tool** — a long cell whose
+surrounding paragraphs are demonstrably current, or the `align` blocks, where the point is to move
+one label without disturbing measured padding. It is no longer the default, and `apply_fragments.py`
+keeps working for the batches that use it.
+
+⚠️ **The 29 keys already shipped were done under the old rule**, so they are terminology-correct and
+not necessarily *fresh*. They are worth a re-read pass against this standard; it is cheap next to
+redoing them and is tracked as its own step below rather than silently assumed done.
+
+**The last 8 keys landed in batches 8, 9 and 10 (2026-08-29).** What they added to the record:
+
+- **Batch 8 (full refresh):** `admin_channel_pinned_message` was **stale in all nine locales** —
+  six translate a one-sentence version with no command list, RU translates a third version with a
+  settings summary and three merge tokens no English version ever had. ⚠️ **NL's command mentions
+  were broken by stray spaces** (`</start-stop: 116…>`, `</delete:1 162…>`, `< /premium:…>`); a
+  mention containing a space is not a mention, it is literal text. Also `SurveyBuilder_use_poll_mode`
+  (Class C, both nouns kept, survey → Convo) and `SurveyBuilder_name_survey`, where **RU was
+  missing the 50-character limit** the English states.
+- **Batch 9 (fragments, deliberately):** `HelpMessage_content` and `Welcome_dm_text` are the one
+  case the ruling still reserves for fragments — recently translated, matching today's English line
+  for line in all nine locales, and long. Rewriting 18 accurate cells to change one line each would
+  risk more than it fixes. ⚠️ Both cells confirmed **DE uses *Abstimmung*** (A2b's third German
+  word) and **FR uses *vote*** for the instrument, in cells A2b's sweep did not reach because they
+  belong to A1c.
+- **Batch 10 (the `align` cells): the padding is COMPUTED, not typed.** Each block is declared as
+  labels and values and laid out at *widest label + 1*, the same rule the English follows. No literal
+  run of spaces exists in the source, so no locale can be misaligned by a typo and adding a row
+  cannot silently break a block. Three labels were then shortened because they made the block
+  wrap: RU *Результаты в реальном времени* (30 chars, pushing the settings summary to 69 columns
+  against English's 59), and the DE/NL "XP per vote in a poll" labels, which now match the wording
+  their own `Xp_Settings_Summary` row uses. **Every locale is now within six columns of English.**
+
+⭐ **The verifier caught a mistake of mine in batch 10**: the German `Voting Button` row read
+*Abstimmungs-Button*, and *Abstimmung* is the DE poll noun A2b retired. The row means the **act** of
+casting a vote, so it became *Stimm-Button* — the same act-vs-instrument distinction the FR *vote*
+gate encodes, arrived at from the other direction.
 
 **Standing decisions to carry forward:**
+- **⭐ Refresh, don't patch** (user, 2026-08-28) — see the METHOD CHANGED block above. The legacy
+  text carries no mandate.
 - **Simplify in every language, not just English** (user, 2026-08-28). Each cell takes three passes:
   terminology, the repetition English dropped, and **formal → informal register** where DE/NL/TR
   drifted (`Sie` → `du`, `U heeft` → `Je hebt`, `-iniz` → `-in`). Typos get fixed in the same edit.
+- **What a refresh must still respect**, since "no mandate to preserve" is not "no constraints":
+  merge tokens (`[ModRoleName]`, `[AllowNetworkSurveyPush]`, …) must survive — `verify_tr.py` fails
+  on a lost one; **labels that name a setting in other cells are not renamed here** (DE *Rolle für
+  Umfrageleiter*, RU *Роль управляющего опросами*); and Discord's 100-character limit binds the
+  command descriptions in every locale.
 - **Convo is feminine** in every gendered locale, from the local word for *conversation*. Recorded
   in `lexicon.json` under `instruments.convo.grammar`, with plural rules.
 - **Door words per locale come from the `subo-localization` table; `project` comes from the word the
@@ -54,6 +202,16 @@ the English ones.
   `progetto`, `project`, `projekt`, `projeto`, `проект`, `proje`).
 - **Upload rule:** ship only the columns being changed, and never leave a blank inside a column you
   included — a blank deletes that translation.
+
+**Remaining steps, in order:**
+
+1. ~~The outstanding keys, as full refreshes.~~ ✅ **DONE 2026-08-29 — all 42 translated.**
+2. **Re-read the 29 keys done under the old rule** (batches 1-6) against the refresh standard.
+   They are terminology-correct, not necessarily fresh, and batches 7-10 showed what "not fresh"
+   turns out to mean in practice. This is the last open work in A1c.
+3. Build the one `user_messages.xlsx` and upload — **not before step 2**, or it ships 29 rows held
+   to a weaker bar than the 13 beside them. Ship only the columns changed; never blank a cell
+   inside a column you include.
 
 **⚠️ Separate backlog this uncovered, NOT part of A1c:** the locales never received the original
 `project` migration either. Of the 131 cells whose English already says *project*, each locale still
