@@ -218,6 +218,30 @@ gate encodes, arrived at from the other direction.
 says *survey* in roughly a third (DE 39, ES 38, FR 37, IT 40, NL 31, PL 29, PT-BR 33, RU 36, TR 33).
 A1c's 42 will land correctly and still sit beside those. Worth its own item.
 
+## ⭐ v3 — three post-approval revisions (user, 2026-08-29)
+
+**The approved English is now `a1c_english_edits_v3.csv`**, and `apply_fragments.EN_CSV` is the one
+place that names it. All three revisions were re-translated in all nine locales the same day.
+
+1. **`Setup_server_which_admin_role`: the dash goes.** It read *"allowed as 'admin' - to manage my
+   settings"*. A spaced hyphen doing an em dash's job is the same construction in a smaller glyph,
+   so the house rule applies. Now *"allowed as 'admin', able to manage…"*.
+   ⚠️ **Four locales had copied the construction** (es, fr, it, pt-BR) and are fixed with it.
+   A sweep of all 378 cells then found **one more**, in `Setup_server_creator_role`/fr, also fixed.
+   **The Polish and Russian dashes are deliberately left alone**: `–` and `—` are ordinary
+   punctuation in those languages, and the no-em-dash rule is a house rule for *English* copy.
+2. **`Setup_server_anonymous_mode`: the audit-log caveat is removed.** *"Discord admins may see who
+   participated in the audit logs and opened threads"* is **only true when the answer surface is a
+   Thread**, and an admin can pick Discord DM or Web instead. Stated flatly it reads as a blanket
+   carve-out of the anonymity promise, which is worse than saying nothing.
+3. **`Setup_server_Q6_channel_change`: rewritten, because the feature changed.** The Participant
+   channel is no longer only where invitations are posted: it is **also where Convos run when a
+   project's invite lands somewhere threads cannot be created** (an announcement channel, a forum
+   post). The old "same thread/channel as command" bullet is gone entirely.
+   **Two judgment calls, both flagged rather than silent:** the trailing *"Do you want to edit
+   this?"* is kept, since every sibling setting cell ends with it and the prompt needs the
+   affordance; and `**Participant channel** :` was normalized to no space before the colon.
+
 ## ⭐ STATUS — v2: 42 edits, user-revised and re-verified (2026-08-28)
 
 **The sheet is now `a1c_english_edits_v2.csv`.** The user reviewed all 40 proposals, kept 28

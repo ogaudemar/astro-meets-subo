@@ -2482,7 +2482,66 @@ locale work, so A1c precedes A2c/A7.**
         tail, which is exactly what T6 says not to do casually. **T2b and T6 point opposite ways
         here and a human has to choose.** Held pending that decision, not pending an export.
       - ~~Confirm what column 9 is.~~ **✅ Already closed by A1b**: `ro`, the user's batch column.
-- [ ] **A2c. The paired poll+survey migration, per locale, gated per locale.** Finding 7 in
+### ⭐ A2c-DE RESULT — German is decided, and Convo is what unblocked it (2026-08-29)
+
+**Evidence: Search Console, Country = Germany, last 16 months, 3,777 impressions**
+(`Downloads/subo.ai-Performance-on-Search-2026-08-29/Queries.csv`).
+
+| Cluster | Impressions | Queries | Best position |
+|---|---|---|---|
+| `umfrage*` | **150** | 11 | 1.0 |
+| `abstimmung*` | 44 | 4 | 1.0 |
+| **`meinungsumfrage`** | **0** | 0 | — |
+| `chat-umfrage` / `dialog-umfrage` / `blitzumfrage` | **0** | 0 | — |
+| `fragebogen` / `befragung` / `formular` | 0 | 0 | — |
+| English `anonymous*` | **167** | 15 | 1.0 |
+
+**1. The poll instrument is `Umfrage`, and this is now over-determined.** It is Discord's German
+word (T2b) *and* the measured demand (150 impressions, top position 1.0). **The app currently says
+`Meinungsumfrage`, which returned zero impressions in sixteen months** — Subo's German poll word is
+one that neither Discord uses nor anyone searches. That is both halves of T2b failing at once, so
+DE is no longer waiting on evidence.
+
+**2. ⭐ The Convo rename is what removes A2c's blocker for German.** A2c was gated because in
+DE/ES/IT/PL/RU/TR *"the Discord poll word **is** Subo's current survey word"*, so moving poll onto
+`Umfrage` would collide. **With the survey instrument renamed to `Convo`, there is nothing left to
+collide with** — `Convo` is not a German word. A1c did not just precede A2c for German; it dissolved
+its central obstacle. Worth checking whether the same holds for ES/IT/PL/RU/TR, where the collision
+was described identically.
+
+**3. `Abstimmung` stays retired as an instrument, and stays available as an act.** 44 impressions
+is real demand, but it is German for the *act* of voting, Discord does not use it for the feature,
+and A2b already retired it. The act/instrument split is the same one that governs French *vote*.
+Applied in practice in batch 10, where the `Voting Button` row became **Stimm-Button**, not
+*Abstimmungs-Button*.
+
+**4. `Chat-Umfrage` is a bridge, not a name — adopt it in that role.** German SaaS uses it for
+conversational surveys ([feedbk.ai](https://feedbk.ai/de/blog/conversational-survey-chat-umfrage/)),
+so it is becoming the German category descriptor. **T9 forbids it as a door word** (zero
+impressions), but a bridge is not a door: it is how we explain Convo to someone who already
+arrived. Proposed `locales.de.bridge`: *"Eine Convo ist eine Chat-Umfrage: eine Frage nach der
+anderen, im Gespräch statt im Formular."* **`Dialog-Umfrage` is a synonym we do not need** — one
+bridge term is worth more than two.
+
+**5. ⛔ Do NOT adopt `Blitzumfrage`.** Zero evidence, and it would be a *fourth* German word for a
+thing Discord already calls `Umfrage`. Its only job would be to distinguish the poll from the
+survey, and **Convo already does that job** — this is the German lesson in miniature: adding a word
+to fix an ambiguity that a rename already fixed is how a locale ends up with three words for one
+concept, which is exactly NL's problem (A2b iii).
+
+**6. ⚠️ Germany's largest cluster is English.** `anonymous*` drew **167 impressions across 15
+queries** — more than the entire `umfrage` cluster — and German Discord users search in English.
+Two consequences: German pages cannot be judged on German queries alone, and **anonymity is the
+German demand driver**, which is a content lead, not just a terminology note.
+
+⚠️ **Read the zeroes carefully.** There were no German pages until recently, so `fragebogen`,
+`befragung` and `formular` at zero is *absence of evidence*, not evidence of absence. It is a valid
+reason to hold a German survey-side door word under T9; it is not proof that no German survey door
+exists. The `umfrage` and `meinungsumfrage` findings are safe because they are *comparative*: both
+words had the same chance to appear and only one did.
+
+- [ ] **A2c. The paired poll+survey migration, per locale, gated per locale.**
+      **⭐ DE is decided as of 2026-08-29 — see A2c-DE RESULT above.** Finding 7 in
       A1 RESULT: in DE/ES/IT/PL/RU/TR the Discord poll word **is** Subo's current survey word, so
       the two must move in **one** edit or the collision lands in-product. Poll-side evidence
       exists everywhere (Discord's UI); **survey-side evidence is the gate**. Needs a per-locale
