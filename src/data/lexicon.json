@@ -12,7 +12,7 @@
     "here as T1..T10 are defined there. Do not restate the reasoning in this file; it will drift."
   ],
   "version": 1,
-  "updated": "2026-08-26",
+  "updated": "2026-08-31",
 
   "framework": {
     "$about": [
@@ -98,12 +98,12 @@
       "",
       "Refresh with `!test user_messages` in Discord, which DMs the xlsx."
     ],
-    "source": "user_messages_all_2026-08-18.xlsx + the A2b batch uploaded 2026-08-28. Re-export with `!test user_messages` to confirm against the live DB.",
+    "source": "user_messages_all_2026-08-18.xlsx, plus the A2b batch (2026-08-28), A1c (2026-08-29) and A2c-DE (207 cells, 2026-08-30). ⚠️ The de row reflects the A2c-DE upload, which the importer ACCEPTED but which has not yet been confirmed by re-export. Re-export with `!test user_messages` and reconcile this row against it. This file records what we believe the DB holds; only the export knows.",
     "pollWord": {
       "en":    { "command": "poll",          "webUi": "poll" },
       "fr":    { "command": "sondage",       "webUi": "sondage" },
       "pt-BR": { "command": "enquete",       "webUi": "enquete" },
-      "de":    { "command": "meinungsumfrage", "webUi": "Meinungsumfrage" },
+      "de":    { "command": "umfrage",       "webUi": "Umfrage" },
       "es":    { "command": "votación",      "webUi": "votación" },
       "it":    { "command": "poll",          "webUi": "poll" },
       "nl":    { "command": "opiniepeiling", "webUi": "poll" },
@@ -156,6 +156,41 @@
       ]
     },
 
+    "de": {
+      "status": "active",
+      "$note": [
+        "Added 2026-08-30 from the A2c-DE RESULT block (Search Console, Germany, 16 months, 3,777 imp).",
+        "SURVEY-SIDE DOOR IS HELD under T9: Fragebogen, Befragung and Formular all measured zero, but",
+        "there were no German pages until recently, so that is absence of evidence, not evidence of",
+        "absence. The umfrage-vs-meinungsumfrage finding is safe because it is comparative.",
+        "Germany's largest cluster is ENGLISH: anonymous* drew 167 imp across 15 queries, more than the",
+        "whole umfrage cluster. German pages cannot be judged on German queries alone."
+      ],
+      "instruments": { "poll": "Umfrage", "convo": "Convo" },
+      "bridge": "Eine Convo ist eine Chat-Umfrage: eine Frage nach der anderen, im Gespräch statt im Formular.",
+      "doors": [
+        { "word": "Umfrage", "pillar": "decide", "resolvesTo": "poll", "owns": "/de/polls/", "evidence": "search: umfrage* 150 imp / 11 queries @ position 1.0; also Discord's German poll word (T2b)" }
+      ],
+      "deny": [
+        { "phrase": "Meinungsumfrage", "use": "Umfrage",  "why": "T2b. Neither Discord's word nor a searched one: zero impressions in sixteen months. The app still says it in 62 cells (A2c-DE); the site never did, so this rule guards a clean surface." },
+        { "phrase": "Blitzumfrage",    "use": "Umfrage",  "why": "T9 + A2c-DE finding 5. Zero evidence, and it would be a fourth German word for a thing Discord already calls Umfrage. Convo already does the job of distinguishing the poll from the survey." },
+        {
+          "phrase": "Abstimmung", "use": "Umfrage",
+          "why": "A2b retired Abstimmung as an INSTRUMENT and kept it as the ACT. A14 moved the 29 instrument strings onto Umfrage. The eight in actPaths are the act (English *vote*, *voting*, *a quick vote*) and are correct German; the guard cannot tell act from instrument, so each exception is listed by path and everything else still fails.",
+          "actPaths": [
+            "usecasesList[12]",
+            "usecasesList[23]",
+            "testimonialsList[3].text",
+            "testimonialsList[4].text",
+            "useCasesGetThingsDone.examples[5].text",
+            "useCasesEngagement.sections[0].title",
+            "pollsPage.sections[0].title",
+            "pollsPage.sections[0].sub"
+          ]
+        }
+      ]
+    },
+
     "pt-BR": {
       "status": "seeded",
       "$note": "Only /pt-br/index and /pt-br/pricing exist. Doors have no owning URL yet. PT-BR is the model locale: Discord's word, the skill's word and its top measured query all agree.",
@@ -188,15 +223,19 @@
       "clearedBy": "A4"
     },
     "$cleared": [
+      "t2b.de — PAID OFF 2026-08-30 by A2c-DE, 207 cells uploaded. German's poll word is now",
+      "Umfrage on both surfaces, matching Discord. It was the oldest T2b failure on the list and",
+      "the only one that needed a paired migration to move at all: Umfrage was DE's survey word,",
+      "so the poll could not take it until the survey moved to Convo and /umfrage was renamed to",
+      "/convo in the same upload. ⚠️ Deleting this entry means the guard now enforces the de row",
+      "in app.pollWord — which records what we BELIEVE the DB holds. Reconcile it against the",
+      "next `!test user_messages` re-export; the check cannot do that for you.",
+      "",
       "en.deny — PAID OFF 2026-08-27, entry deleted so the guard bites. All 11 'survey convo'",
       "strings in en.json are gone, nav labels included (T11), and lowercase 'convo' with them.",
       "The app half of A1c is unaffected: those deny rules are scope:'app', checked against",
       "user_messages, which this repo cannot read. Status lives in terminology-english-inventory.md."
     ],
-    "t2b.de": {
-      "reason": "'Meinungsumfrage' vs Discord 'Umfrage'. The spelling and casing defects are FIXED (A2b, uploaded 2026-08-28) and the two surfaces now agree; what remains is the word itself, which cannot move alone because Umfrage is currently DE's survey word.",
-      "clearedBy": "A2c, the paired poll+survey migration, gated on a DE search export"
-    },
     "t2b.es": { "reason": "'votación' vs Discord 'encuesta'. Spanish sends poll searchers to the survey page.", "clearedBy": "A2c" },
     "t2b.it": { "reason": "'poll' (untranslated) vs Discord 'sondaggio'.", "clearedBy": "A2c" },
     "t2b.nl": { "reason": "'opiniepeiling'/'poll' vs Discord 'peiling'; the two surfaces also disagree with each other.", "clearedBy": "A2b (ii)" },
@@ -214,6 +253,10 @@
     },
     "t5.en.survey": {
       "reason": "LOW RISK. /api/ 'Run Discord surveys from code' and /custom-survey-bot/ '___, YOUR SURVEY BOT' target genuinely different intents (developer, white-label). The guard cannot tell intent apart; a human has.",
+      "clearedBy": "nothing — re-evaluate if either page is rewritten"
+    },
+    "t5.de.Umfrage": {
+      "reason": "LOW RISK, the third instance of the same shape as t5.en.survey and t5.fr.sondage: /de/custom-survey-bot/ ('___, DEIN UMFRAGE-BOT', white-label) vs /de/polls/ ('Der Discord Umfrage-Bot, der bewertet, benotet und belohnt', commercial). Different intents; the guard cannot tell intent apart, a human has. That this pattern now recurs in three locales says the white-label page is a systematic T5 false positive, not three coincidences.",
       "clearedBy": "nothing — re-evaluate if either page is rewritten"
     },
     "t5.fr.sondage": {

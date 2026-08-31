@@ -1,6 +1,6 @@
 {
   "siteTitle": "Subo",
-  "siteDescription": "Umfragen, die sich wie Gespräche anfühlen, nicht wie Hausaufgaben. Starte Abstimmungen, dialogbasierte Umfragen und belohne Teilnahme — in Discord und im Web.",
+  "siteDescription": "Umfragen, die sich wie Gespräche anfühlen, nicht wie Hausaufgaben. Starte Umfragen, Convos und belohne Teilnahme — in Discord und im Web.",
   "redirectPage": {
     "redirecting": "Weiterleitung zu",
     "auto": "Du wirst gleich automatisch weitergeleitet.",
@@ -78,7 +78,7 @@
     "skipToMain": "Zum Hauptinhalt springen"
   },
   "footer": {
-    "brandDescription": "Der beste Umfrage-Bot für Discord-Communities. Führe Abstimmungen durch, sammle mehr Feedback in Gesprächen und belohne Teilnehmer mit XP und Rollen.",
+    "brandDescription": "Der beste Umfrage-Bot für Discord-Communities. Starte Umfragen, sammle mehr Feedback in Gesprächen und belohne Teilnehmer mit XP und Rollen.",
     "brandStats": "Vertrauen von 15.000+ Discord-Servern",
     "copyright": "Alle Rechte vorbehalten.",
     "sections": [
@@ -94,7 +94,7 @@
             "href": "/de/custom-survey-bot/"
           },
           {
-            "text": "Abstimmungen",
+            "text": "Umfragen",
             "href": "/de/polls/"
           },
           {
@@ -257,7 +257,7 @@
   },
   "features": {
     "title": "MENSCHEN TEILEN MEHR, WENN SIE DAS GESPRÄCH GENIESSEN.",
-    "subtitle": "Eine Wand voller Formularfelder fühlt sich an wie Hausaufgaben. Subos Abstimmungen, Umfragen und Quizze sind freundliche Gespräche, an denen Menschen wirklich teilnehmen wollen.",
+    "subtitle": "Eine Wand voller Formularfelder fühlt sich an wie Hausaufgaben. Subos Umfragen, Convos und Quizze sind freundliche Gespräche, an denen Menschen wirklich teilnehmen wollen.",
     "list": [
       {
         "title": "IM GESPRÄCH FRAGEN",
@@ -265,7 +265,7 @@
         "href": "/de/survey-convos/"
       },
       {
-        "title": "ABSTIMMUNGEN, DIE MEHR KÖNNEN",
+        "title": "UMFRAGEN, DIE MEHR KÖNNEN",
         "body": "Eine einzige Frage, die Antworten bewerten, ein Quiz benoten oder einen Tippspiel-Wettbewerb starten kann, und die Gewinner dann automatisch belohnt.",
         "href": "/de/polls/"
       },
@@ -282,7 +282,7 @@
     {
       "emoji": "🎉",
       "title": "Begeistern",
-      "body": "Unterhaltsame Abstimmungen, Quizze und Tippspiele, die Mitglieder immer wiederkommen lassen.",
+      "body": "Unterhaltsame Umfragen, Quizze und Tippspiele, die Mitglieder immer wiederkommen lassen.",
       "href": "/de/use-cases/engagement/"
     },
     {
@@ -307,7 +307,7 @@
     "📝 Neue Mitglieder mit interaktiven Checklisten einführen",
     "🎤 Mitglieder interviewen, die sich für eine Moderatorenrolle bewerben",
     "🎟️ RSVPs, Teilnehmerinfos und Fragen vor Events sammeln",
-    "📊 Engagement-Abstimmungen einfach zum Spaß",
+    "📊 Engagement-Umfragen einfach zum Spaß",
     "🔮 Mitglieder zukünftige Spiele und Events vorhersagen lassen",
     "🗣️ Feedback zu einem vergangenen Community-Event einholen",
     "🌟 Bewertungen oder Testimonials sammeln",
@@ -316,7 +316,7 @@
     "💡 Vorschläge oder Feature-Anfragen sammeln",
     "🧠 Quiz und Wissenstests",
     "⚔️ Über Raid-Zeiten, Team-Komps oder die nächste Boss-Strategie abstimmen",
-    "🧩 Schnelle Abstimmungen während Turnieren oder Matches",
+    "🧩 Schnelle Umfragen während Turnieren oder Matches",
     "🏹 Feedback zu neuen Spiel-Patches oder Balance-Änderungen sammeln",
     "👑 Neue Moderatoren, Kapitäne oder Gildenleiter wählen",
     "🎮 Frühe Builds oder Prototypen mit deiner Community testen",
@@ -335,11 +335,11 @@
     "📅 Teamtrainings oder Freizeitspiele koordinieren",
     "📣 Fan-Vorhersagen vor großen Matches einholen",
     "🎧 Zuhörer fragen, welches Thema oder welchen Gast sie als nächstes möchten",
-    "🎬 Abstimmungen zu Lieblingsepisoden, -bögen oder -charakteren",
-    "🍿 Watch-Party-Abstimmungen für kommende Serien oder Filme",
+    "🎬 Umfragen zu Lieblingsepisoden, -bögen oder -charakteren",
+    "🍿 Watch-Party-Umfragen für kommende Serien oder Filme",
     "🥐 Ein für alle Mal klären: Ist ein Hotdog ein Sandwich?",
     "👀 Herausfinden, wer die Ankündigungen wirklich liest",
-    "🦖 Eine Abstimmung zur Benennung des Community-Dinosauriers",
+    "🦖 Eine Umfrage zur Benennung des Community-Dinosauriers",
     "🧙‍♂️ Mitglieder in Hogwarts-Häuser einteilen (kein Druck, Gryffindor)",
     "🍕 Über den besten Pizzabelag abstimmen",
     "🛸 Fragen, ob Außerirdische in deine Community passen würden",
@@ -369,13 +369,13 @@
       "social": ""
     },
     {
-      "text": "Diese App ist perfekt. Und der Support ist ebenfalls erstklassig. Sehr zu empfehlen, wenn ihr Abstimmungen, Umfragen oder Wahlen durchführt.",
+      "text": "Diese App ist perfekt. Und der Support ist ebenfalls erstklassig. Sehr zu empfehlen, wenn ihr Umfragen, Convos oder Abstimmungen durchführt.",
       "author": ".dutty",
       "role": "",
       "social": ""
     },
     {
-      "text": "Das ist aktuell die beste Abstimmungslösung auf Discord. Die Einrichtung ist intuitiv und hat mir nie Probleme bereitet. Als ich einen Server mit über tausend Teilnehmern verwaltet habe und etwas für anonyme Abstimmungen mit anonymen Ergebnissen brauchte, war das der perfekte Bot – andere konnten das nicht. Er berücksichtigt Integrations-Rollen (was große Bots wie carl & MEE6 nicht können), erlaubt Rollenbeschränkungen und sogar Mehrfachauswahl-Umfragen. Und der Support ist top und sehr aufmerksam gegenüber den Nutzern.",
+      "text": "Das ist aktuell die beste Umfragelösung auf Discord. Die Einrichtung ist intuitiv und hat mir nie Probleme bereitet. Als ich einen Server mit über tausend Teilnehmern verwaltet habe und etwas für anonyme Abstimmungen mit anonymen Ergebnissen brauchte, war das der perfekte Bot – andere konnten das nicht. Er berücksichtigt Integrations-Rollen (was große Bots wie carl & MEE6 nicht können), erlaubt Rollenbeschränkungen und sogar Mehrfachauswahl-Umfragen. Und der Support ist top und sehr aufmerksam gegenüber den Nutzern.",
       "author": "DJTiki 🌴",
       "role": "",
       "social": ""
@@ -478,7 +478,7 @@
     "cardFeatures": [
       [
         "250 Befragte / Projekt",
-        "Umfragen, Abstimmungen & Quiz",
+        "Convos, Umfragen & Quiz",
         "XP-System & Sprunglogik"
       ],
       [
@@ -545,14 +545,14 @@
         "50.000 / Projekt"
       ],
       [
-        "Projekte gesamt<br><small>Gesamt gespeicherte Umfragen und Abstimmungen. Alte Projekte löschen, um in einem kleineren Tarif zu bleiben.</small>",
+        "Projekte gesamt<br><small>Gesamt gespeicherte Projekte. Alte Projekte löschen, um in einem kleineren Tarif zu bleiben.</small>",
         "10 / Server",
         "200 / Server",
         "400 / Server",
         "400 / Server"
       ],
       [
-        "Aktive Projekte<br><small>Gleichzeitig offene oder geplante Abstimmungen und Umfragen</small>",
+        "Aktive Projekte<br><small>Gleichzeitig offene oder geplante Umfragen und Convos</small>",
         "5 / Server",
         "20 / Server",
         "40 / Server",
@@ -587,14 +587,14 @@
         "✓"
       ],
       [
-        "Klonen<br><small>Abstimmungen und Umfragen duplizieren</small>",
+        "Klonen<br><small>Umfragen und Convos duplizieren</small>",
         "✗",
         "✓",
         "✓",
         "✓"
       ],
       [
-        "Einige Antworten löschen<br><small>Einige oder alle Antworten einer Umfrage oder Abstimmung löschen</small>",
+        "Einige Antworten löschen<br><small>Einige oder alle Antworten eines Projekts löschen</small>",
         "✗",
         "✓",
         "✓",
@@ -705,7 +705,7 @@
     "pageTitle": "Discord Formular und Umfrage, neu gedacht als Gespräch | Subo",
     "pageDescription": "Subo ist die Discord-App für Umfragen und Formulare, die das kalte Formular durch ein echtes Gespräch ersetzt. Der bessere Weg für Fragebögen, Bewerbungen und Feedback-Formulare in deinem Server oder im Web, mit mehr vollständigen Antworten als bei Google Forms.",
     "heroTitle": "Das Discord-Formular, das sich wie ein <strong class=\"accent\">Gespräch</strong> anfühlt",
-    "heroSubtitle": "Kein Formular. Keine einfache Abstimmung. Ein freundlicher Einzelchat, bei dem deine Mitglieder wirklich antworten möchten.",
+    "heroSubtitle": "Kein Formular. Keine einfache Umfrage. Ein freundlicher Einzelchat, bei dem deine Mitglieder wirklich antworten möchten.",
     "heroCta": "Zu Discord hinzufügen, Kostenlos",
     "whatTitle": "WAS IST EIN SURVEY CONVO?",
     "whatBody": [
@@ -833,7 +833,7 @@
   },
   "about": {
     "pageTitle": "Über Subo | Der Discord Umfrage-Bot",
-    "pageDescription": "Erfahre mehr über Subo, den Discord-Umfrage- und Abstimmungsbot, dem über 15.000+ Communities für Feedback und Mitgliederbindung vertrauen.",
+    "pageDescription": "Erfahre mehr über Subo, den Discord-Umfrage-Bot, dem über 15.000+ Communities für Feedback und Mitgliederbindung vertrauen.",
     "heroTitle": "ÜBER SUBO",
     "heroSubtitle": "SU-BO. Survey Bot. Gebaut für Communities, die echte Antworten wollen.",
     "storyTitle": "WARUM SUBO EXISTIERT",
@@ -931,7 +931,7 @@
       {
         "title": "AUTOMATISIEREN & ERFASSEN",
         "content": [
-          "Erstelle Umfragen und Abstimmungen programmatisch",
+          "Erstelle Convos und Umfragen programmatisch",
           "Generiere automatisch Umfrage-Skripte aus einer Klartextbeschreibung mithilfe von KI",
           "Öffne, schließe, klone und plane Projekte über die API"
         ]
@@ -1045,11 +1045,11 @@
     ]
   },
   "useCasesEngagement": {
-    "pageTitle": "Discord Engagement: Abstimmungen, Quiz und Tippspiele | Subo",
-    "pageDescription": "Halte deine Discord-Community aktiv mit Abstimmungen, automatisch bewerteten Quiz, Tippspielen, XP, Bestenlisten und Rollen-Belohnungen. Teilnahme, auf die sich Mitglieder freuen.",
+    "pageTitle": "Discord Engagement: Umfragen, Quiz und Tippspiele | Subo",
+    "pageDescription": "Halte deine Discord-Community aktiv mit Umfragen, automatisch bewerteten Quiz, Tippspielen, XP, Bestenlisten und Rollen-Belohnungen. Teilnahme, auf die sich Mitglieder freuen.",
     "eyebrow": "VERBINDEN",
     "heroTitle": "SORG DAFÜR, DASS DEINE COMMUNITY WIEDERKOMMT",
-    "heroSubtitle": "Abstimmungen, Quiz und Tippspiele, die aus Mitmachen etwas machen, auf das sich Mitglieder freuen.",
+    "heroSubtitle": "Umfragen, Quiz und Tippspiele, die aus Mitmachen etwas machen, auf das sich Mitglieder freuen.",
     "heroCta": "Zu Discord hinzufügen",
     "sections": [
       {
@@ -1059,8 +1059,8 @@
         "cards": [
           {
             "emoji": "🗳️",
-            "title": "Abstimmungen, die mehr können",
-            "desc": "Bewerte Antworten, markiere die richtigen und belohne die Gewinner automatisch. <a href=\"/de/polls/\">Discord-Abstimmungen ansehen →</a>"
+            "title": "Umfragen, die mehr können",
+            "desc": "Bewerte Antworten, markiere die richtigen und belohne die Gewinner automatisch. <a href=\"/de/polls/\">Discord-Umfragen ansehen →</a>"
           },
           {
             "emoji": "🧠",
@@ -1075,7 +1075,7 @@
           {
             "emoji": "🎉",
             "title": "Einfach zum Spaß",
-            "desc": "Blitz-Abstimmungen, steile Thesen und Meme-Turniere, die deiner Community einen Grund geben, heute vorbeizuschauen."
+            "desc": "Schnelle Umfragen, steile Thesen und Meme-Turniere, die deiner Community einen Grund geben, heute vorbeizuschauen."
           }
         ]
       },
@@ -1121,7 +1121,7 @@
     "examples": [
       { "text": "🧠 Automatisch bewertete Quiz und Wissenstests starten", "template": "lore-trivia-quiz" },
       { "text": "🔮 Tippspiele zu den nächsten Spielen veranstalten", "template": "event-prediction-contest" },
-      { "text": "🧩 Schnelle Abstimmungen während Turnieren oder Matches", "template": "match-prediction-poll" },
+      { "text": "🧩 Schnelle Umfragen während Turnieren oder Matches", "template": "match-prediction-poll" },
       { "text": "🍕 Über den besten Pizzabelag abstimmen", "template": "this-or-that-poll" },
       { "text": "🏀 MVPs und Highlight-Momente wählen", "template": "pick-favorite-poll" },
       { "text": "🥇 Die besten Maps, Charaktere oder Tracks in eine Rangfolge bringen", "template": "rank-your-favorites" },
@@ -1361,7 +1361,7 @@
   },
   "pollsPage": {
     "pageTitle": "Discord Umfrage-Bot: Quiz, Tippspiele & Punktevergabe | Subo",
-    "pageDescription": "Subo ist der Discord Umfrage-Bot, der aus Abstimmungen automatisch bewertete Quiz und Tippspiele macht. Vergib Punkte pro Option, markiere richtige Antworten, belohne mit XP und Rollen und gestalte jede Einladung selbst.",
+    "pageDescription": "Subo ist der Discord Umfrage-Bot, der aus Umfragen automatisch bewertete Quiz und Tippspiele macht. Vergib Punkte pro Option, markiere richtige Antworten, belohne mit XP und Rollen und gestalte jede Einladung selbst.",
     "hero": {
       "title": "Der Discord Umfrage-Bot, der <strong class=\"accent\">bewertet, benotet und belohnt</strong>",
       "subtitle": "Discord hat eigene Umfragen, aber die zählen nur Stimmen. Subo ist der Umfrage-Bot, der Quiz-Abende und Tippspiele durchführt und deine Mitglieder danach automatisch belohnt.",
@@ -1499,7 +1499,7 @@
           {
             "emoji": "⚙️",
             "title": "Standards einmal festlegen",
-            "desc": "Lege die Stimme deiner Umfragen (Call-to-Action, Fußzeile, Bestätigung der Stimmabgabe) auf Server-Ebene fest, und jedes neue Projekt übernimmt sie automatisch."
+            "desc": "Lege die Tonalität deiner Umfragen (Call-to-Action, Fußzeile, Bestätigung der Stimmabgabe) auf Server-Ebene fest, und jedes neue Projekt übernimmt sie automatisch."
           }
         ]
       }
@@ -1734,8 +1734,8 @@
           },
           {
             "emoji": "📣",
-            "title": "Discord-Abstimmungen",
-            "desc": "Starte schnelle Abstimmungen mit einer Frage neben deinen ausführlichen Umfragen. Native Discord-Oberfläche, keine Einrichtung nötig."
+            "title": "Discord-Umfragen",
+            "desc": "Starte schnelle Umfragen mit einer Frage neben deinen ausführlichen Convos. Native Discord-Oberfläche, keine Einrichtung nötig."
           }
         ],
         "screenshot": {

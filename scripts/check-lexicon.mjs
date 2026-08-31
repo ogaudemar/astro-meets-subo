@@ -136,8 +136,16 @@ for (const [loc, row] of Object.entries(lex.locales)) {
     // scope:"app" rules target user_messages, not this repo's site copy.
     if (rule.scope === 'app') continue;
 
+    // actPaths: strings where the denied word is legitimately the ACT, not the
+    // instrument (German `Abstimmung` = "vote"; French `vote` the same way). The
+    // guard cannot tell the two apart, and a whole-locale baseline would hide real
+    // regressions in the other 29 strings, so the exception is per-path and has to
+    // be added deliberately. Anything not listed still fails. See A14.
+    const allowed = new Set(rule.actPaths ?? []);
+
     const hits = [];
     for (const [path, value] of strings) {
+      if (allowed.has(path)) continue;
       let copy = value;
       // URL paths and hrefs are identifiers, not copy. Whole-value URLs are
       // skipped; prose that links inline keeps its words and loses its hrefs,
@@ -158,6 +166,24 @@ for (const [loc, row] of Object.entries(lex.locales)) {
         hits.push(path);
       }
     }
+
+    // An actPath that no longer carries the phrase is a stale exception: the string
+    // was rewritten and the allowance outlived it. Report it, or the list rots into
+    // a second baseline.
+    if (allowed.size) {
+      const byPath = new Map(strings);
+      const stale = [...allowed].filter((p) => {
+        const v = byPath.get(p);
+        return v === undefined || !v.toLocaleLowerCase().includes(rule.phrase.toLocaleLowerCase());
+      });
+      if (stale.length) {
+        notes.push(
+          `${loc}.json: ${stale.length} stale actPaths for "${rule.phrase}" — the string no longer ` +
+            `contains it, so drop the exception: ${stale.join(', ')}`,
+        );
+      }
+    }
+
     if (hits.length) {
       report(
         `${loc}.deny`,

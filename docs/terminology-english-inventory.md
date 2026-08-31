@@ -12,11 +12,22 @@ This file is the cell-by-cell execution list for **A1c**; the roadmap holds the 
 
 ---
 
-## ▶ RESUME HERE — ✅ all 42 keys translated in 9 locales (2026-08-29)
+## ✅ DONE — uploaded and verified in the DB (2026-08-29)
 
-**378 of 378 cells, `verify_tr.py` clean.** English is approved and frozen (v2, below).
-**Nothing has been uploaded yet** — the next step is the re-read pass and then one
-`user_messages.xlsx`.
+**A1c is closed.** 42 keys × 9 locales, 378/378 cells, `verify_tr.py` clean, English approved
+through v4, uploaded, and then **checked against the post-upload re-export rather than against the
+build report**: `verify_upload_landed.py` vs `user_messages_stage_uploaded.xlsx` reports
+**420/420 cells landed, 0 blanked, `ro`/`uk` untouched.**
+
+⚠️ **Verify by re-export, every time.** The build script's report says what we *intended* to ship;
+only the export says what the DB *holds*. `verify_upload_landed.py` is written to be re-pointed at
+the next batch — change the three filenames at the top.
+
+**⚠️ The re-export also carries 56 new keys** (`Web_InviteTab_Surface_*`, `Web_Account_Answers_*`
+and others) added by the app repo, plus one removed key. **They are untranslated and are the next
+batch's input.** They are not A1c and should not be retrofitted into it.
+
+The rest of this file is the work order as executed, kept for the rulings it produced.
 
 **⚠️ The working files are NOT in either repo.** `user_messages` is a database table, so no repo
 path owns this work. It lives in:
@@ -211,9 +222,10 @@ gate encodes, arrived at from the other direction.
    not the refresh one, so **if a stale cell surfaces later it will most likely be among those 29**.
    That is a place to look first, not an open task.
 3. ~~Build the file.~~ ✅ **BUILT — `user_messages_A1c_2026-08-29.xlsx`** (see the v4 block above).
-4. **The upload itself is the user's**, and it is the only step left. Afterwards: re-export with
-   `!test user_messages` to make the new export the record — **the DB is the source of truth, and a
-   locally merged file is a guess about what the upload did** (A2b's ruling).
+4. ~~The upload itself is the user's.~~ ✅ **UPLOADED AND RE-EXPORTED 2026-08-29.** The export
+   (`user_messages_stage_uploaded.xlsx`) is now the record — **the DB is the source of truth, and a
+   locally merged file is a guess about what the upload did** (A2b's ruling). Verified clean by
+   `verify_upload_landed.py`; see the block at the top of this file.
 
 **⚠️ Separate backlog this uncovered, NOT part of A1c:** the locales never received the original
 `project` migration either. Of the 131 cells whose English already says *project*, each locale still
