@@ -152,7 +152,12 @@
         { "phrase": "sondage conversationnel",     "use": "Convo", "why": "T3. Retired phrasing." },
         { "phrase": "sondages conversationnels",   "use": "Convo", "why": "T3. Retired phrasing." },
         { "phrase": "enquête conversationnelle",   "use": "Convo", "why": "T3. Retired phrasing." },
-        { "phrase": "enquêtes conversationnelles", "use": "Convo", "why": "T3. Retired phrasing." }
+        { "phrase": "enquêtes conversationnelles", "use": "Convo", "why": "T3. Retired phrasing." },
+      { "phrase": "sondages et votes", "use": "sondages et Convos", "why": "A16. The poll IS the `sondage` (fr.instruments.poll); fr.json had it inverted, calling the poll a `vote` and the survey a `sondage`. `vote` is a DOOR word (815 imp, resolvesTo poll) and correct French for the ACT, so it cannot be denied outright the way German's `Abstimmung` was — 26 act uses are correct and an actPaths list of 26 guarding 0 violations would be a baseline in disguise. These are the exact collocations the inversion produced, so they guard the regression path without touching the act. ⚠️ Brittle to rephrasing by design: a new inverted phrasing will not be caught." },
+      { "phrase": "sondages, votes", "use": "Convos, sondages", "why": "A16. See the first collocation rule." },
+      { "phrase": "sondage ou vote", "use": "projet", "why": "A16. See the first collocation rule." },
+      { "phrase": "des votes, des sondages", "use": "des sondages, des Convos", "why": "A16. See the first collocation rule." },
+      { "phrase": "juste un vote", "use": "juste un sondage", "why": "A16. See the first collocation rule." }
       ]
     },
 
@@ -219,7 +224,7 @@
       "point: you cannot quietly re-accept one."
     ],
     "fr.deny": {
-      "reason": "14 strings in fr.json still carry the retired 'conversationnel(le)' phrasings.",
+      "reason": "13 strings in fr.json still carry the retired 'conversationnel(le)' phrasings. Was 14; A16 cleared siteDescription in passing. The five A16 collocation rules below fire zero times and are regression guards, not open violations.",
       "clearedBy": "A4"
     },
     "$cleared": [

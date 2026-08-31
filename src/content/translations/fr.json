@@ -1,6 +1,6 @@
 {
   "siteTitle": "Subo",
-  "siteDescription": "Des sondages qui ressemblent à des conversations, pas à des devoirs. Lance des votes, des sondages conversationnels, et récompense la participation, sur Discord et sur le web.",
+  "siteDescription": "Des sondages qui ressemblent à des conversations, pas à des devoirs. Lance des sondages, des Convos, et récompense la participation, sur Discord et sur le web.",
 
   "redirectPage": {
     "redirecting": "Redirection vers",
@@ -370,7 +370,7 @@
     "includesLabel": "Inclus :",
     "inheritsLabel": "Tout dans {tier}, plus :",
     "cardFeatures": [
-      ["250 répondants / projet", "Sondages, votes & quiz", "Système XP & logique de saut"],
+      ["250 répondants / projet", "Convos, sondages & quiz", "Système XP & logique de saut"],
       ["1 000 répondants / projet", "Plus de personnalisation", "Notifications de nouvelles réponses", "Crédits IA pour brouillons & résumés"],
       ["10 000 répondants / projet", "Création de scripts avancés & logique", "Allocation de crédits IA plus élevée"],
       ["Ton propre nom, avatar & bio de bot"]
@@ -424,14 +424,14 @@
         "50 000 / projet"
       ],
       [
-        "Projets totaux<br><small>Total des sondages et votes stockés. Supprime les anciens projets pour rester dans une offre plus petite.</small>",
+        "Projets totaux<br><small>Total des projets stockés. Supprime les anciens projets pour rester dans une offre plus petite.</small>",
         "10 / serveur",
         "200 / serveur",
         "400 / serveur",
         "400 / serveur"
       ],
       [
-        "Projets actifs<br><small>Sondages et votes ouverts ou programmés en même temps</small>",
+        "Projets actifs<br><small>Sondages et Convos ouverts ou programmés en même temps</small>",
         "5 / serveur",
         "20 / serveur",
         "40 / serveur",
@@ -466,14 +466,14 @@
         "✓"
       ],
       [
-        "Clonage<br><small>Duplique tes sondages et votes</small>",
+        "Clonage<br><small>Duplique tes sondages et Convos</small>",
         "✗",
         "✓",
         "✓",
         "✓"
       ],
       [
-        "Suppression de certaines réponses<br><small>Supprime tout ou partie des réponses d’un sondage ou vote</small>",
+        "Suppression de certaines réponses<br><small>Supprime tout ou partie des réponses d’un projet</small>",
         "✗",
         "✓",
         "✓",
@@ -586,7 +586,7 @@
   "pageTitle": "Formulaire et sondage Discord, réinventés en conversation | Subo",
   "pageDescription": "Subo est l'appli de sondage et de formulaire Discord qui remplace le formulaire froid par une vraie conversation. Une meilleure façon de faire passer questionnaires, candidatures et formulaires de retour dans ton serveur ou sur le web, avec plus de réponses complètes qu'un Google Forms.",
   "heroTitle": "Le formulaire Discord qui ressemble à une <strong class=\"accent\">conversation</strong>",
-  "heroSubtitle": "Pas un formulaire. Pas juste un vote. Une discussion conviviale où tes membres ont vraiment envie de répondre.",
+  "heroSubtitle": "Pas un formulaire. Pas juste un sondage. Une discussion conviviale où tes membres ont vraiment envie de répondre.",
   "heroCta": "Ajoute à Discord, gratuit",
   "whatTitle": "C'EST QUOI UNE ENQUÊTE CONVERSATIONNELLE ?",
   "whatBody": [

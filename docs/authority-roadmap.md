@@ -2828,7 +2828,7 @@ migration, not the poll/survey one, and they are now the only German cells left 
 in a non-poll sense. **After this upload German is internally consistent about what a poll is and
 what a Convo is; it is still inconsistent about what a project is.**
 
-### ▶️ RESUME HERE — German is done on both surfaces; French is what's open (2026-08-31)
+### ▶️ RESUME HERE — German and French are both clean on the site; the app is what's left (2026-08-31)
 
 **Done and verified:** A2c-DE, 207 cells, confirmed in the DB (207/207). German's poll is
 `Umfrage`, its Convo is `Convo`, and the commands are `/umfrage` and `/convo`. `t2b.de` is deleted
@@ -2840,15 +2840,17 @@ about the poll on both surfaces**, and the only German thing left is the *projec
 
 **The next four moves, in the order they should happen:**
 
-1. **Verify the A2c-DE fixup.** Uploaded 2026-08-31 as `user_messages.xlsx` (`Name` + `de`, the one
-   `Setup_server_Q6_channel_tip` row). ⚠️ **Blocked on a re-export**: run `!test user_messages`,
-   drop the xlsx in `A1c-work/`, and repoint `verify_upload_landed.py` at it by changing the three
-   filenames at its top. Also **check the Discord client** for `/umfrage` and `/convo`;
-   registration lagged the DB on 2026-08-30.
-2. **A16 — the French `vote` sweep.** `fr.json` has German's exact defect one locale over, and
-   **nothing guards it**: `fr.deny` has no `vote` rule at all. A14 just built the mechanism
-   (`actPaths`) and the act/instrument judgment is fresh. Small, site-side, no gate. This is what
-   the current branch is named for.
+1. ✅ **DONE 2026-08-31 — the A2c-DE fixup is verified.** `verify_upload_landed.py`, repointed at
+   `user_messages_A2c_DE_fixup_2026-08-30.xlsx` / `user_messages_after_fixup_2026-08-31.xlsx` /
+   `user_messages_after_A2c_DE.xlsx`: **1/1 landed, 0 blanked, 0 excluded columns moved, 0 other
+   cells changed.** Live German across the whole DB: **`Meinungsumfrage` 0, `Convo` 162,
+   `Umfrage` 124.** **A2c-DE is closed.**
+   - ⚠️ **Still unchecked: the Discord client**, for `/umfrage` and `/convo`. Registration lagged
+     the DB on 2026-08-30 and nothing since has confirmed it caught up.
+   - **Useful for step 3:** the export shows **0 cells moved since 2026-08-30 22:44**, so the app
+     repo has been quiet and A11-DE's 45 can be re-derived from this file.
+2. ✅ **DONE 2026-08-31 — A16 shipped**, and its premise was wrong in an instructive way. See the
+   A16 RESULT block below.
 3. **A11-DE — 45 cells.** The only German cells still saying `Umfrage` in a non-poll sense, all of
    them the *project* umbrella or the `Umfrageleiter` → *Creator* role. Volume, not judgment.
    ⚠️ **Re-derive the 45 from the newest export**, not from this document — the app repo moved 527
@@ -2865,8 +2867,13 @@ rather than rediscovering them:
   the doublet written as an ellipsis (`(Meinungs-) Umfragen`), identifier-ish strings like thread
   names, and **all-caps headings, which a case-sensitive grep silently drops** (A14). Sweep for all
   four after the batch looks finished.
-- **The poll rename and the survey vacate are one edit.** True on the app side (A2c-DE finding 5)
-  and true again on the site side (A14): any sentence naming both instruments forces the pair.
+- **The poll rename and the survey vacate are one edit.** True on the app side (A2c-DE finding 5),
+  on the German site (A14) and on the French site (A16): any sentence naming both instruments
+  forces the pair. Treat it as locale-independent.
+- **⭐ Check the target locale's own lexicon row before porting the previous locale's remedy.** A16
+  was scoped as "German's defect, one locale over" and every property of that was wrong: French
+  `vote` is a *door word*, not a retired one, so the fix was an inversion repair and the guard had
+  to be a different mechanism. **The shape rhymed; the cause did not.**
 - **A locale's survey noun does not wait for A15.** T3 plus the T9 door-word hold decide it. Only
   sentence-level refresh waits.
 - **Verify by re-export, and ship one locale per file — the second makes the first work.** A
@@ -2928,6 +2935,65 @@ German *Stimme* is both *voice* and *vote*; the reader got the wrong one. Now **
 *Blitz-Abstimmungen* and became **`Schnelle Umfragen`**, not *Blitz-Umfragen* — the deny rule from
 A2c-DE finding 5 held under the one pressure that would actually have broken it, a sentence whose
 English wants a punchier word.
+
+### ⭐ A16 RESULT — French was inverted, not polluted, and the analogy to A14 was wrong (2026-08-31)
+
+**7 strings fixed.** `fr.json` called the **poll** a `vote` and the **survey** a `sondage`, while
+`lexicon.json` says the poll **is** the `sondage` and the survey is a `Convo`. Same inversion
+German's app had between `Meinungsumfrage` and `Umfrage` — one locale over, on the site instead of
+the app.
+
+**⭐ The item as scoped yesterday was wrong, and the way it was wrong is the lesson.** A16 was
+written straight off A14: *"`fr.json` has German's exact defect… add a `vote` deny rule with an
+`actPaths` allowlist."* But **`vote` is a declared French door word** — 815 impressions,
+`resolvesTo: poll`, folded into the sondage post on 2026-08-26 — and it is also correct French for
+the act. `Abstimmung` was **retired**; `vote` is **load-bearing**. Denying it would have attacked
+one of French's own doors.
+- **⭐ The general lesson: a locale's defect is not portable just because its shape rhymes.** A14
+  finished with *"French will want this"*, which was right about there being a defect and wrong
+  about every property of it. **Check the target locale's own lexicon row before assuming the
+  previous locale's remedy applies** — the row is right there and it says `vote` is a door.
+- **The sweep is what caught it.** 33 strings matched `\bvote`; **26 of them are the act and
+  correct** (*"Chaque vote, c'est un membre qui choisit de participer"*, *"Choisir qui peut voter"*,
+  *"ne font que compter les votes"*). Only 7 were the instrument, and all 7 were the same inversion.
+  A find/replace would have wrecked the page.
+
+**Where the inversion lived: the pricing table, and two sitewide strings.** `priceTable` accounted
+for 5 of 7 (*"Sondages, votes & quiz"* for EN *"Surveys, polls & quizzes"*; *"Sondages et votes
+ouverts ou programmés"* for *"Polls and surveys open or scheduled"*), plus `siteDescription` and
+`surveyConvos.heroSubtitle` (*"Pas juste un vote"* for *"Not just a poll"*). **`pollsPage` was
+already correct** — *"Subo est le bot de sondage Discord qui transforme un sondage en quiz"* — so
+the page that owns the poll never had the bug, and the pricing table quietly disagreed with it.
+- **The pairs forced the survey half again**, third time in three items: three of the five
+  `priceTable` rows took **`Convo`**, and two took **`projet`** because the English already said
+  *project*. **A14's pairing lesson is now locale-independent.**
+- **Bonus: `siteDescription` also carried a retired A4 phrasing** (*"sondages conversationnels"*),
+  cleared as a side effect. `fr.deny`'s `sondages conversationnels` rule went 3 → 2 and the
+  `knownViolations` note went 14 → 13.
+
+**⭐ The guard is five collocation rules, and it deliberately is not `actPaths`.** After the fix
+there are **26 act uses and 0 violations** — an `actPaths` allowlist would have been 26 exceptions
+guarding nothing, which is precisely the "baseline in disguise" that `actPaths` exists to prevent.
+So `fr.deny` gained rules on the exact phrasings the inversion produced (`sondages et votes`,
+`sondages, votes`, `sondage ou vote`, `des votes, des sondages`, `juste un vote`). All five fire
+zero times today.
+- ⚠️ **Brittle to rephrasing, on purpose, and that is the honest limit**: a *new* inverted phrasing
+  will not be caught. The alternative was a schema flag (`uiRole: "door-only"` — *may rank, must
+  never name the instrument*) that would have been a documented intention rather than a check.
+  **The gap is real and worth naming: `lexicon.json` cannot currently express "door word, never the
+  instrument's name in UI copy",** which is what `vote` actually is.
+
+**⚠️ Found in passing, not fixed: the `examples` arrays are reordered between EN and FR.** Same
+length and same set in all three use-case pages, different index order (EN
+`useCasesGetThingsDone.examples[8]` is *"Collect RSVPs"*, FR's is *"Organiser un vote de
+gouvernance"*). Nothing is broken — they are independent per-locale lists — but **any tool that
+compares locales by path will silently mis-pair them**, and `actPaths`/`exemptPaths` allowlists are
+path-keyed, so an exception can drift onto a different string. Worth knowing before writing the
+next path-keyed guard.
+
+**The `questionnaire` half of this branch's name is not a cleanup.** All six `questionnaire` strings
+in `fr.json` mirror an English `questionnaire` exactly, and it is a declared door word (314 imp,
+`resolvesTo: convo`, owns `/fr/blog/comment-creer-un-questionnaire-sur-discord/`). Nothing to do.
 
 - [ ] **A2c. The paired poll+survey migration, per locale, gated per locale.**
       **✅ DE IS DONE — decided 2026-08-29, uploaded 2026-08-30 (207 cells), verification by
@@ -3066,7 +3132,14 @@ English wants a punchier word.
         with the word the app is about to move onto.
       - **✅ Done. See the A14 RESULT block below.**
 
-- [ ] **A16. `fr.json` uses `vote` as an instrument — the French A14, and currently unguarded.**
+- [x] **A16. ✅ SHIPPED 2026-08-31 — 7 strings, and the premise below was wrong.**
+      ⚠️ **Read the A16 RESULT block before believing the rest of this item.** It was written from
+      A14 by analogy and got the central fact backwards: French `vote` is a **declared door word**
+      (815 imp, `resolvesTo: poll`), not a retired one, so the `actPaths` plan named below is
+      exactly what A16 could not do. The defect turned out to be narrower and different in kind:
+      an **inversion**, not a retirement. Kept unedited as a record of the wrong guess.
+
+- [ ] ~~**A16 (as originally scoped). `fr.json` uses `vote` as an instrument — the French A14, and currently unguarded.**~~
       Found while executing A14, which is the point: the two files have the same defect and only
       one of them was being checked. `priceTable.cardFeatures[0][1]` is *"Sondages, votes & quiz"*
       for EN *"Surveys, polls & quizzes"*; `priceTable.tableData[4][0]` is *"Sondages et votes
