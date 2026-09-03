@@ -72,4 +72,9 @@ export const blogFr: Record<string, BlogFrRow> = {
 		summary:
 			"Quatre nouveaux types de questions : évaluations en étoiles ou en emojis, échelles d'accord et de satisfaction (Likert inclus), la question NPS standard et le classement sans glisser-déposer. La réponse est stockée comme un nombre, donc elle revient en moyenne avec sa distribution derrière. Disponible sur tous les plans, même le gratuit.",
 	},
+	"convos-in-your-dms": {
+		title: "Tes enquêtes Discord se déroulent maintenant dans les DM de tes membres",
+		summary:
+			"Une Convo se déroule désormais par défaut dans un message privé Discord, avec un fil privé puis un lien web en solutions de repli automatiques. Sur un projet anonyme, c'est le DM ou le web, jamais un fil privé : un fil est lisible par toute personne ayant la permission Gérer les fils. Disponible sur tous les plans, même le gratuit.",
+	},
 };

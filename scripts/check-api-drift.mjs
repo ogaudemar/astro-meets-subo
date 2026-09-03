@@ -135,6 +135,7 @@ const projectPy = readApp('schemas', 'project.py');
 const projectCreatePy = readApp('routes', 'projects.py');
 const responsesPy = readApp('routes', 'responses.py');
 const responseSchemaPy = readApp('schemas', 'response.py');
+const openapiPy = readApp('openapi_spec.py');
 const webhooksPy = readApp('routes', 'webhooks.py');
 const authPy = readApp('auth.py');
 const dispatchPy = readFileSync(
@@ -210,6 +211,26 @@ compareSets(
         'and re-read the prose in src/pages/api.astro and public/llms.txt — both describe this in words.'
       );
     }
+  }
+}
+
+// 2b-bis. The surfaces `answered_in` can report. The enum lives in the OpenAPI
+// spec rather than in a Python constant, because the field is a passthrough of a
+// slug computed upstream. /api renders these values and both /api and llms.txt
+// lean on the "null means not recorded, not thread" rule in prose — a fourth
+// surface appearing upstream would leave that prose quietly incomplete.
+{
+  const block = openapiPy.match(/"answered_in"\s*:\s*\{[\s\S]*?\}/);
+  const enumList = block?.[0].match(/"enum"\s*:\s*\[([^\]]*)\]/);
+  const parsed = enumList ? [...enumList[1].matchAll(/"([^"]+)"/g)].map((m) => m[1]) : null;
+  if (!parsed || !parsed.length) {
+    fail(
+      'answered_in values: could not find the `"answered_in"` enum in web2/public_api/openapi_spec.py. ' +
+      'Either the field moved out of the inline spec or it was renamed — check which before touching ' +
+      'the parser, because /api documents these values and the response sample shows one.'
+    );
+  } else {
+    compareSets('answered_in values', surface.answeredInValues, parsed, { file: SURFACE_FILE });
   }
 }
 

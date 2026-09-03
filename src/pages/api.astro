@@ -30,6 +30,7 @@ const {
   blockTypes,
   privacyModes,
   privacyFallbackOnCreate,
+  answeredInValues,
   rateLimits,
   webhookEvents,
   webhookHeaders,
@@ -492,12 +493,12 @@ const toc = [
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>thread</code></td>
-                    <td>A private thread in your server, visible to them and your team.</td>
-                  </tr>
-                  <tr>
                     <td><code>dm</code></td>
                     <td>A direct message from the bot. Nothing is created in the server.</td>
+                  </tr>
+                  <tr>
+                    <td><code>thread</code></td>
+                    <td>A private thread in your server, visible to them and your team.</td>
                   </tr>
                   <tr>
                     <td><code>web</code></td>
@@ -517,11 +518,11 @@ const toc = [
               <li>
                 <strong><code>null</code> is the default and is not the same as an empty
                 list.</strong> It means no override: Subo picks the chain per press, from
-                the privacy mode and the type of channel the invitation was posted in. Two
-                posts of the same project in different channels can resolve differently, so
-                a project you never set this on has no single answer to read back. Send
-                <code>null</code> to return to that. An empty array is rejected with a
-                <code>400</code> rather than treated as a clear.
+                the privacy mode. The DM is always tried first, so an anonymous project
+                resolves to <code>["dm", "web"]</code> and any other project to
+                <code>["dm", "thread", "web"]</code>. Send <code>null</code> to return to
+                that. An empty array is rejected with a <code>400</code> rather than
+                treated as a clear, as is a repeated surface.
               </li>
               <li>
                 <strong>It only applies to a Discord audience.</strong> A project with
@@ -551,6 +552,7 @@ const toc = [
       "user_id": "...",
       "platform_id": "...",
       "provider": "discord",
+      "answered_in": "dm",
       "answers": [
         { "block_id": 1, "option_id": 2, "value": "A few times a week" },
         { "block_id": 2, "value": "More events in EU hours." }
@@ -570,6 +572,20 @@ const toc = [
               <li>
                 One respondent can appear more than once when a project allows repeat
                 completions. <code>session_number</code> separates those runs.
+              </li>
+              <li>
+                <code>answered_in</code> is where the session happened:
+                {' '}<code>{answeredInValues.map((v) => `"${v}"`).join(', ')}</code>, or
+                <code>null</code>. It is a different axis from <code>provider</code>, which
+                says who admitted the respondent, so a <code>youtube</code> respondent can
+                answer on any of the three.
+                <strong>
+                  {' '}<code>null</code> means not recorded, not <code>"thread"</code>.
+                </strong>
+                {' '}Every session collected before this field existed reads <code>null</code>,
+                so defaulting it to a surface will quietly miscount your history. Like
+                <code>provider</code>, it survives on anonymous projects: where an interview
+                happened is not respondent-identifying.
               </li>
               <li>
                 <strong>Anonymous projects come back redacted.</strong> When the project's

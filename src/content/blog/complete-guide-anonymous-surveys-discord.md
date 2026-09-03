@@ -2,7 +2,7 @@
 title: "The Complete Guide to Anonymous Surveys in Discord"
 description: "Anonymous surveys get you honest feedback. Here's how Subo's three privacy modes (Transparent, Semi-Private, Anonymous) work, when to use each, and how to build trust with your community."
 pubDate: "Feb 14 2026"
-updatedDate: "Jul 28 2026"
+updatedDate: "Sep 2 2026"
 author: "Subo Team"
 tags: ["anonymous surveys", "discord", "community management", "feedback", "privacy"]
 faq:
@@ -14,6 +14,10 @@ faq:
     a: "A new server defaults to Anonymous, so honest feedback is the starting point rather than something you have to switch on. You can change the server default in <code>/settings</code>, or pick a different mode on any individual poll or survey."
   - q: "Can someone answer an anonymous survey twice?"
     a: "No. Subo blocks duplicate responses from the same Discord account even in Anonymous mode. The respondent's identity is never shown in the results, but it is still used at submission time to prevent repeat entries."
+  - q: "Where does an anonymous survey actually take place in Discord?"
+    a: "In a direct message from Subo, falling back to a web link if the member has DMs turned off. An Anonymous project never runs its Convo in a private thread, because a thread is readable by anyone with the Manage Threads permission and appears in the Discord audit log, which would leave a trace the anonymity promise does not allow."
+  - q: "Can a survey be anonymous and still limited to my members?"
+    a: "Yes, and this is hard to do on a general-purpose form platform. Subo authenticates each respondent through their Discord account, so it knows they are a real member of your server and can block a second submission, then discards the link between that account and their answers. An open web form is anonymous but unverified; a signed-in web form is verified but no longer anonymous."
   - q: "Do XP or role rewards break anonymity?"
     a: "Rewards work in every mode, Anonymous included, because Subo authenticates each respondent without tying their identity to their answers. The trade-off is that a completion reward is visible, so you can see who took part, never what they said. In a large server that is harmless. If anonymity is critical and only a few people will respond, skip the reward."
 draft: false
@@ -81,6 +85,26 @@ No one can see individual answers, not even you, the creator. Only aggregated to
 2. **Rewards work, but they show who participated.** Role and XP rewards are still available on an anonymous survey; Subo authenticates each respondent, it just never ties their identity to their answers. The trade-off: a completion reward is visible, so you can tell who took part and who didn't, even if you can't see what anyone said. In a big server that doesn't matter. But if anonymity is critical and only a handful of people will respond, skip the reward, or the list of members who earned it effectively becomes the list of who answered.
 
 > **The mode is always visible to respondents.** Subo prints the active privacy mode right in the invitation embed for every poll and survey. The goal is transparency: members always know whether their answer can be tied to their identity. It's still good practice to restate it in your own announcement, especially for sensitive questions.
+
+## Where an anonymous survey actually happens
+
+Anonymity is a property of the room the conversation happens in, as much as of the results you get back, and that first part is easy to overlook.
+
+Until recently, a Subo Convo on Discord ran inside a private thread created in your server. "Private" there meant private to the channel. A private thread is readable by anyone on your team holding the Manage Threads permission, and its creation appears in the Discord audit log. For a Transparent or Semi-Private project, that is perfectly fine. For a project you had just told members was fully anonymous, it was a gap between the promise and the plumbing.
+
+That gap is closed. An **Anonymous project now runs its Convo in a Discord DM**, and falls back to a web link if the member has DMs turned off. It never runs in a thread. There is no room left behind in your server for a moderator to open later, and nothing in the audit log connecting a member to the interview.
+
+Other privacy modes start in a DM too, and fall back to a thread before the web. If you set a project to Anonymous while its Convos are pointed at a thread, Subo flags the conflict and offers a one-click "Run Convos in a DM instead." The full mechanics are in [Convos in your DMs](/blog/convos-in-your-dms/).
+
+## Anonymous and authenticated at the same time
+
+This is the part that is genuinely hard to do anywhere else, and it is worth understanding before you reach for a web form.
+
+On a general-purpose form platform you get to pick one of two things. Leave the form open to anyone with the link and it is anonymous, but you have no idea whether the people answering are your members, whether one person answered forty times, or whether a link that leaked to another server is now shaping your results. Turn on sign-in to fix that and the platform records an identity against every submission, which means your "anonymous" survey has a name attached to each row and your members are right not to believe you.
+
+Subo does both at once. It authenticates each respondent through their Discord account, so it knows the answer came from a real member of your server (and can gate it further by role), and it blocks a second submission from the same account. Then it discards the link between that account and the answers before anything reaches you. What you receive is the answers, with no author, from a verified population.
+
+The practical effect is that you can say two things to your community in the same breath, and have both be true: only members can answer this, and nobody can see who said what. That combination is also why role and XP rewards still work in Anonymous mode: Subo knows enough to hand out the reward, and not enough to attribute the answers. See the [comparison with Google Forms and Typeform](/blog/subo-vs-google-forms-typeform-discord-communities/) for the rest of that trade-off.
 
 ## How to set the privacy mode
 

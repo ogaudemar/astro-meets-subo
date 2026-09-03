@@ -81,7 +81,7 @@ Example: ⚪ _Margarita;_ 🍍 _Hawaiian;_ 🔴 _Pepperoni;_ 🍄 _Regina_
 If you only have 1 question to ask, Subo will ask you to choose between poll and survey mode:
 
 - ⚡poll mode: your members can vote and see results publicly in the poll embed
-- 📋survey mode: your members will see an invitation message. A private thread channel will open under the invitation embed for them to answer questions privately.
+- 📋survey mode: your members will see an invitation message. When they press the button, Subo sends them the survey in a DM so they can answer privately. If their DMs are closed, it falls back to a private thread under the invitation, and then to a web link, so the button always leads somewhere. On an Anonymous survey there is no thread step: it is the DM or the web, because a private thread is readable by anyone with Manage Threads.
 
 10. Your draft is ready.
 

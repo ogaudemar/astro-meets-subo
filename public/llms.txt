@@ -72,8 +72,8 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
      `private`+`discord` (answer in Discord), `private`+`web` (members-only link),
      `open_web`+`web` (open link, no Discord account needed)
    - `delivery.answer_surfaces` orders WHERE a Discord audience answers, as a
-     fallback chain tried first to last: `["thread","dm","web"]`. `thread` is a
-     private thread in the server, `dm` is a direct message from the bot, `web` is
+     fallback chain tried first to last: `["dm","thread","web"]`. `dm` is a direct
+     message from the bot, `thread` is a private thread in the server, `web` is
      a browser link. Each surface may appear once. `web` ends the chain: it
      cannot fail, so any surface listed after it is never reached (the API
      accepts such a chain rather than rejecting it — put `web` last).
@@ -81,15 +81,23 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
      on a web project. Avoid `thread` on an anonymous project — a thread is
      readable by anyone with Manage Threads.
    - `answer_surfaces` defaults to `null`, which is NOT an empty chain: it means
-     no override, and Subo resolves the chain per press from the privacy mode and
-     the channel the invitation was posted in, so two posts of one project can
-     resolve differently. Send `null` to clear an override; `[]` returns a 400.
+     no override, and Subo resolves the chain per press from the privacy mode.
+     The DM is always tried first: an anonymous project resolves to
+     `["dm","web"]`, any other project to `["dm","thread","web"]`. Send `null` to
+     clear an override; `[]` returns a 400, as does a repeated surface.
    - Close early with `POST .../projects/{projectId}/close`
 
 4. **List or Get Responses**
    - `GET /communities/{communityId}/projects/{projectId}/responses` (paginated; `per_page` max 100)
    - `GET /communities/{communityId}/projects/{projectId}/responses/{responseId}`
    - Join on `user_id` (globally unique); `platform_id` is only unique within its `provider` namespace
+   - `answered_in` is WHERE the session was answered: `thread`, `dm`, `web`, or
+     `null`. A different axis from `provider`, which is WHO admitted the
+     respondent, so a `youtube` respondent can answer on any of the three.
+     `null` means NOT RECORDED, not `thread`: every session collected before this
+     field existed reads `null`, so treating it as a default surface miscounts
+     history. Returned on anonymous projects too, since where an interview
+     happened is not respondent-identifying.
    - `privacy_mode: anonymous` redacts this endpoint: `user_id`, `platform_id` and
      `session_number` come back `null`, and the `response.submitted` webhook nulls the
      same three (matching the app's Responses tab and XLSX export). Respondent filters

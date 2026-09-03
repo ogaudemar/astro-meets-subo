@@ -2,6 +2,7 @@
 title: "Three keys that write your Subo messages for you: @, [ and :"
 description: "Role mentions now work in every message field in Subo, from Settings to the Script Editor, and a new Insert bar puts them alongside the variable and emoji pickers. Available on all plans, including free."
 pubDate: "August 7 2026"
+updatedDate: "Sep 3 2026"
 author: "Subo Team"
 heroImage: "/images/blog/pickers/role-variable-emojis-respondent-pov-discord-invite.png"
 tags: ["announcement", "features", "customization", "script editor", "invitations"]
@@ -9,7 +10,7 @@ faq:
   - q: "How do I mention a Discord role in a Subo survey message?"
     a: "Type <code>@</code> in any message field in Subo and a picker lists your community's Discord roles. Choose one and it inserts a chip reading @RoleName. You never have to look up a role ID. The picker is in the Invite tab's Call-to-Action field, in Settings, in the <a href=\"/blog/subo-web-app-launch/\">Script Editor</a> block text and outro, in the four Poll Messages, and in the correct and incorrect feedback fields on graded questions."
   - q: "Does mentioning a role in a Subo survey notify everyone in it?"
-    a: "It depends where the survey runs. On Discord a role mention behaves exactly as it does anywhere else in the platform, so members with that role are pinged. For someone answering through a web survey link, the mention renders as the readable name @RoleName and notifies nobody, because a web respondent has no Discord membership to notify. @everyone and @here are available but sit behind a confirmation step."
+    a: "It depends where the message lands. In the invitation, which Subo posts in a channel in your server, a role mention behaves exactly as it does anywhere else on Discord, so members with that role are pinged. Inside the Convo it usually does not, because a Convo runs in a DM by default and a DM has no server context: a role mention arrives as the readable text @RoleName and pings nobody. On a web survey link it renders as @RoleName too, since a web respondent has no Discord membership to notify. @everyone and @here are available but sit behind a confirmation step."
   - q: "Can I use my community's custom emoji in a Subo poll or survey?"
     a: "Yes. Type <code>:</code> in a message field, or on an individual answer option, and the emoji picker opens with a Frequently Used section and a Custom Emojis section listing your community's own Discord emoji. You can search by name and remove an emoji you have already set."
   - q: "How do I put a member's name in a Discord survey question?"
@@ -49,7 +50,13 @@ That is the Invite tab's Call-to-Action Message field in dark mode, with `@level
 
 ### What your respondents see
 
-On **Discord**, a role mention is a role mention. A survey runs in a private thread inside your community, so mentions resolve natively and do notify, which is what the invitation at the top of this post shows.
+On **Discord**, where the message lands decides what a mention does, and that is worth knowing before you write one.
+
+The **invitation** is posted in a channel in your server, so a role mention in the Call to Action resolves and notifies exactly as you would expect. That is what the invitation at the top of this post shows.
+
+The **Convo** now [runs in a DM by default](/blog/convos-in-your-dms/), and a DM has no server behind it for Discord to resolve against. A role mention, or another member's username, arrives there as plain readable text: `@Level 1`, `@SomeMember`. It is legible, and it pings nobody. `@everyone` and `@here` are the odd case: they render like a real mention in a DM but notify no one. The only mentions Discord genuinely resolves in a DM are the two people in it (your member and Subo), plus its own `@game` and `@time` entries.
+
+Nothing breaks and nobody gets a stray ping, but it does change where a mention earns its place. Keep the ones meant to notify in the invitation and other channel-facing messages, and treat a mention inside the Convo itself as a label. If a Convo falls back to a private thread, mentions in it resolve and notify normally again, because a thread sits inside your server.
 
 On the **web**, they now read as names. A survey taken through a web link used to show the raw mention code in any message you had written; it now shows **@RoleName**. This is readable text, not a ping. A web respondent has no Discord membership, so nobody is notified.
 

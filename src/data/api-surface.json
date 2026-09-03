@@ -26,6 +26,7 @@
     { "mode": "anonymous", "desc": "Nobody, including admins, can tie an answer to a member." }
   ],
   "privacyFallbackOnCreate": "anonymous",
+  "answeredInValues": ["thread", "dm", "web"],
   "anonymousRedactedFields": ["user_id", "platform_id", "session_number"],
   "anonymousRefusedFilters": ["user_id", "platform_id", "session_number"],
 

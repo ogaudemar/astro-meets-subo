@@ -60,7 +60,7 @@ The reason to switch is the layer past the vote:
 - **Rewards for voting.** Grant XP and Discord roles for taking part, with a leaderboard to keep it going.
 - **Conditional actions.** Action blocks grant a role based on *how* someone answered, so a poll can drive a real outcome instead of just reporting one.
 - **Scoring and correct answers.** Mark options right or wrong and a poll becomes a scored quiz or a prediction contest.
-- **Full surveys, quizzes, and forms.** The same app runs multi-question surveys, scored quizzes with skip logic, applications, and sign-ups: basically anything you'd otherwise build in Google Forms or Typeform. Respondents answer privately, in a Discord thread or on the web with no account needed for the link, and Subo can summarize open-text answers with AI and post results back to a channel.
+- **Full surveys, quizzes, and forms.** The same app runs multi-question surveys, scored quizzes with skip logic, applications, and sign-ups: basically anything you'd otherwise build in Google Forms or Typeform. Respondents answer privately, in a DM from the bot (falling back to a private thread, or to the web with no account needed for the link), and Subo can summarize open-text answers with AI and post results back to a channel.
 
 You start with a poll and grow into real research without changing tools. That's the practical difference: EasyPoll is where polling ends, and Subo is where it keeps going.
 
