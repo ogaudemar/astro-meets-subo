@@ -45,6 +45,14 @@ a while," no throat-clearing.
   **not even true**, since the releases were announced where it mattered and only X was
   skipped. A hook that requires bending a fact is disqualified before it is judged on
   style. Self-deprecation is not a substitute for relevance.
+- **The fix framed as the flaw.** *"Your 'anonymous' survey is not anonymous if it runs in a
+  private thread. Anyone with Manage Threads can open it."* Rejected 2026-09-03. The claim
+  was true and it is the right opening for the blog post, where the reader already uses
+  Subo and the next paragraph resolves it. On X it is read by strangers who never knew
+  there was a problem, and the only sentence that survives the scroll is the one where our
+  product looks bad. **Announce the capability, not the gap it closed.** Where a
+  before-and-after is genuinely the story, state the new behavior plainly and let the
+  improvement be implicit.
 - **Result-first, image-led.** *"This invitation took under a minute to write."* Works in a
   blog post, where the image sits above the fold and the reader already clicked. On X it
   forces the thread to lead with whichever feature the image shows, which in that case was
