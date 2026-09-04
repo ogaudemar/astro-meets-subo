@@ -2,6 +2,7 @@
 title: "Comment créer un questionnaire sur Discord (enquête à plusieurs questions)"
 description: "Créer un questionnaire Discord de A à Z avec Subo : la commande /survey pas à pas, les types de questions, les réponses privées ou anonymes, et l'export des résultats."
 pubDate: "Aug 26 2026"
+updatedDate: "Sep 4 2026"
 tags: ["tutoriel", "discord", "questionnaires", "enquête", "how-to"]
 author: "Subo Team"
 locale: "fr"
@@ -13,7 +14,7 @@ faq:
   - q: "Quelle différence entre un sondage et un questionnaire sur Discord ?"
     a: "Un sondage, c'est une question unique et un décompte public dans le salon : tout le monde voit le résultat en direct. Un questionnaire (ou une enquête) enchaîne plusieurs questions, une par une, et garde les réponses de chaque participant séparément, pour que tu puisses les analyser et les exporter. Subo fait les deux. Pour la question unique, voir <a href=\"/fr/blog/comment-creer-un-sondage-sur-discord/\">comment faire un sondage sur Discord</a>."
   - q: "Où les membres répondent-ils au questionnaire ?"
-    a: "Dans un fil privé qui s'ouvre sous le message d'invitation, rien que pour eux. Ils répondent en cliquant sur des boutons ou en écrivant, sans quitter Discord et sans que le salon voie leurs réponses. Tu peux aussi partager un lien web pour les personnes qui n'ont pas de compte Discord."
+    a: "Dans leurs DM, en message privé avec Subo. Ils répondent en cliquant sur des boutons ou en écrivant, sans quitter Discord et sans que le salon voie leurs réponses. Si leurs DM sont fermés, Subo bascule sur un fil privé, puis sur un lien web, donc le bouton mène toujours quelque part. Tu peux aussi partager un lien web pour les personnes qui n'ont pas de compte Discord."
   - q: "Un questionnaire Discord peut-il être anonyme ?"
     a: "Oui, et sur tous les forfaits, gratuit compris. Le mode Anonyme détache les réponses de leur auteur : personne ne peut voir qui a répondu quoi, toi non plus. Il existe aussi un mode Semi-privé, où toi seul (créateur ou admin) vois les identités."
   - q: "Combien de questions peut contenir un questionnaire ?"
@@ -29,7 +30,7 @@ draft: false
 
 Un sondage tranche une question. Un questionnaire en pose plusieurs, et c'est un exercice différent : les réponses ne servent plus à départager deux options dans le salon général, elles servent à comprendre qui sont tes membres et ce qu'ils veulent. Sur Discord, la plupart des serveurs s'en passent parce que la seule solution évidente consiste à envoyer un lien Google Forms et à regarder les gens ne pas cliquer.
 
-Ce guide montre l'autre méthode : un questionnaire qui se déroule **dans** Discord, question après question, dans un fil privé propre à chaque participant.
+Ce guide montre l'autre méthode : un questionnaire qui se déroule **dans** Discord, question après question, dans le DM de chaque participant.
 
 - Tu cherches un **vote à une seule question** avec décompte public ? C'est l'autre article : [comment faire un sondage sur Discord](/fr/blog/comment-creer-un-sondage-sur-discord/).
 - Tu veux une **enquête à plusieurs questions**, avec des réponses individuelles à analyser ? Continue ici.
@@ -40,7 +41,7 @@ Ce guide montre l'autre méthode : un questionnaire qui se déroule **dans** Dis
 
 Le réflexe habituel est de rédiger l'enquête ailleurs et de coller le lien. Ça marche mal pour une raison simple : cliquer sur un lien, c'est quitter la conversation, ouvrir un onglet, se retrouver devant un formulaire vide et décider si ça vaut le coup. La plupart du temps, non.
 
-Avec Subo, le questionnaire arrive là où tes membres sont déjà. L'invitation s'affiche dans le salon, chacun ouvre son fil privé d'un clic, et répond en tapant sur des boutons. Les réponses restent privées, la conversation ne pollue pas le salon, et personne n'a eu à faire confiance à un domaine inconnu.
+Avec Subo, le questionnaire arrive là où tes membres sont déjà. L'invitation s'affiche dans le salon, chacun reçoit son questionnaire en DM d'un clic, et répond en tapant sur des boutons. Les réponses restent privées, la conversation ne pollue pas le salon, et personne n'a eu à faire confiance à un domaine inconnu.
 
 ## Créer un questionnaire avec la commande `/survey`
 
@@ -94,7 +95,7 @@ Exemple : ⚪ *Margherita;* 🍍 *Hawaïenne;* 🔴 *Pepperoni;* 🍄 *Reine*
 Si tu n'as posé qu'**une seule question**, Subo te demande de choisir entre deux modes :
 
 - ⚡ **mode sondage** : les membres votent et voient le résultat publiquement dans l'embed.
-- 📋 **mode questionnaire** : les membres voient un message d'invitation, et un fil privé s'ouvre en dessous pour qu'ils répondent à l'abri des regards.
+- 📋 **mode questionnaire** : les membres voient un message d'invitation, et Subo leur envoie le questionnaire en DM pour qu'ils répondent à l'abri des regards. Si leurs DM sont fermés, il bascule sur un fil privé, puis sur un lien web.
 
 ## Relire, tester, lancer
 
