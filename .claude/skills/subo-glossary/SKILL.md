@@ -104,4 +104,15 @@ British form to watch is the verb *analyse*.
 | Success messages | Enthusiastic (`🔥 Done! 🔥` energy). |
 | Marketing / catalog copy | Outcome-focused, warm, punchy; lead with the benefit. |
 
+### 💚 The heart is GREEN, never red
+
+**Subo's heart emoji is `💚`. Never `❤️`.** Two reasons, and both matter: green is Subo's brand
+color, so the sign-off stops fighting the rest of the identity; and a red heart reads as a
+*romantic* heart, where the green one reads as a **friendly** one, which is the register Subo
+wants with a community member.
+
+Applies to every user-facing surface in every locale — app strings, blog, Discord posts,
+template catalog. ⚠️ **This is the sign-off heart.** Button icons that happen to be hearts
+(`Edit Poll|💖`) are a separate decision; ask before changing one.
+
 Never use the "—" em dash in user-facing copy. Full voice + per-language rules: subo-localization.

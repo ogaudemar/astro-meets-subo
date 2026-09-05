@@ -3534,6 +3534,11 @@ waiting on the same question A15 asks. Filed correctly as **A18**, not as A11's 
       T2b self-disagreement check was written for.
       - **✅ RE-CONFIRMED against the 2026-09-04 export.** All four cells are still `Vote` and the
         command is still `sondage`. Nothing has moved; this is live right now.
+      - **⏳ BUILT 2026-09-04, NOT YET UPLOADED: `user_messages_A20_fr_poll_2026-09-04.xlsx`**,
+        `Name` + `fr` + `ro`, 4 rows. **`Vote` → `Sondage`, capitalized**, because all four have
+        capitalized English `Poll`. The lowercase siblings (`Poll_Command_name`,
+        `Web_InviteTab_Poll`) already say `sondage` and are **deliberately not shipped**;
+        `ResponseLabel_Singular` is the **act** and is untouched. Guards assert all three.
       - **The row is corrected and `t2b.fr` is now in `knownViolations`.** ⚠️ **This GREW the
         baseline, 22 ids to 23**, against the file's own rule. It is the right call and the reason
         matters: **the violation was always live**; the baseline grew because a hidden defect became
@@ -3568,11 +3573,49 @@ waiting on the same question A15 asks. Filed correctly as **A18**, not as A11's 
       - **The mechanism gap is the durable half.** Consider whether `scope: "app"` deny rules should
         run against the export rather than being skipped, which would make T3 checkable on the
         surface where it is actually being broken.
+      - **⏳ BUILT 2026-09-04, NOT YET UPLOADED:
+        `user_messages_A21_convo_invariant_2026-09-04.xlsx`**, 2 rows × 8 locale columns + `ro`.
+        `en-US` and `de` already say `Convo` and are **not shipped** — ship only what changes.
       - **✅ RE-CONFIRMED against the 2026-09-04 export: exactly 16 cells, unchanged.** The sweep
         also picked up a **third** key whose English is bare `Convo` — **`ConvoThreadLabel`**, added
         since 08-31 — and it is correctly untranslated in all nine. **New strings are being written
         correctly; it is the old two that are wrong**, which narrows this to a fix rather than a
         habit. ⚠️ Still unswept: cells where English embeds `Convo` inside a sentence.
+
+- [ ] **A22. 💚 The heart is GREEN, not red — 62 app cells built, 5 template-catalog cells still
+      owed (user ruling, 2026-09-04).** Subo's heart is `💚`; `❤️` is retired. **Why, in the user's
+      words:** green is Subo's brand color, and a red heart reads as a *romantic* heart where the
+      green one reads as a **friendly** one. The user made the first change by hand in
+      `TierUpgrade/de`, which is how it surfaced — as a collision in A11-DE's verification.
+      - **⏳ BUILT, NOT YET UPLOADED: `user_messages_green_heart_2026-09-04.xlsx`** — 7 keys
+        (`Welcome_dm_text`, `TierUpgrade`, `TierDowngrade`, `TierWarning`,
+        `Web_Checkout_Success_Premium_Body`, `Web_Checkout_Success_VIP_Body`,
+        `PostSurveySatisfactionSurveyGoodBye`), **62 cells across 10 locales**. `ro`/`uk` carry no
+        heart and are excluded.
+      - ⚠️ **Batched across locales, against A2b's one-locale-per-file rule, deliberately.** That
+        rule exists because batching hides collisions in translation *judgment*. This is one glyph,
+        the same edit in every column, no judgment in it — and the control is strong: 7 rows out of
+        2,628, and every changed column provably contained a red heart (asserted at build time).
+      - **The variation selector is the trap.** `❤️` is `U+2764 U+FE0F`; `💚` takes no VS16. The
+        builder strips the trailing selector, or Discord renders a stray box after the heart.
+      - **✅ DONE in the repos:** `subo-glossary` carries the ruling (vendored to both repos), and
+        the Community Health template's 6 occurrences are greened in
+        `subo/docs/templates/community-health-engagement.md` and
+        `subo/scripts/validate_community_health_template.py`. ⚠️ **The validator could not be run**
+        (`quart` is not installed in this environment), so that edit is unexecuted — it is a string
+        literal substitution, but it is unverified.
+      - ⏳ **STILL OWED: the template catalog.** `template_translations.xlsx` carries `❤️` in **5
+        cells** (*"❤️ Community Health Check"* and its de/es/fr/pt-BR titles). **Not built**, and
+        deliberately so: the newest catalog file on disk is from 2026-07-06, and building an upload
+        from a two-month-old export is the exact mistake this section keeps re-learning. **Get a
+        fresh catalog export first.**
+      - ⚠️ **`Edit_poll_questions_cmd` is `Edit Poll|💖`** — a sparkling heart, in all 10 locales.
+        It is a **button icon, not a sign-off**, so it was left alone. The same reasoning arguably
+        applies; it needs its own decision. (That key is also one of **A17**'s.)
+      - ⚠️ **Found while shipping, not fixed: `Welcome_dm_text`/`en-US` contains a stray `U+008F`
+        control character** between the heart and the emoji tag. Preserved faithfully rather than
+        silently cleaned, because it is outside this change. It is invisible, it is in a DM every
+        new installer receives, and it also sits in `web2/react/client/src/i18n/pending.csv`.
 
 **Success metric:** one lexicon, readable from both repos and enforced by a guard; no page
 competing with another page in the same locale for the same word; every locale's poll word equal
