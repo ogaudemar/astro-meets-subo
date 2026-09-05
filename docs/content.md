@@ -75,6 +75,16 @@ Plus **three non-question blocks**: `content_block` (says something without aski
 `action_block` (grants XP, a role or an achievement mid-conversation), `calculated_block`
 (computes a value from earlier answers).
 
+⚠️ **Not all eight are authored in Discord, and this trips writers up.** The `/survey` wizard's
+picker offers **six**: yes/no, single-select, multi-select, open text, open numeric, and a
+content block. **Rating, Opinion Scale, NPS and Ranking are added in the web app's Script
+Editor only** — they are *answered* in Discord like any other question, just not built there.
+Verified 2026-09-05 in `discordSurvey/setupCommands.py` (`__makeQuestionTypeLst`, the non-poll
+branch); the renderer mapping is `discordSurvey/componentFactory.py`.
+**Do not infer the picker from `QuestionType_enum_label_*`** — those labels exist for every
+type because the renderer needs them, so they say nothing about what the wizard offers. That
+wrong inference is what left the survey how-to stale at five types for ten days.
+
 **Don't hand-maintain this list.** The machine-checked copy is
 `src/data/api-surface.json` → `blockTypes`, which `npm run check:api` re-derives from the
 app's Python source and fails on drift. If this table and that file disagree, the file wins.

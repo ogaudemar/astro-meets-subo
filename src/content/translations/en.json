@@ -650,7 +650,11 @@
     "⏱️ Scheduled and recurring surveys run automatically",
     "🏆 XP, roles, and achievements drive higher participation",
     "🤖 AI summaries of open-ended responses"
-  ]
+  ],
+  "blogLinkLocal": {
+    "text": "How to create a Discord survey, step by step →",
+    "href": "/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/"
+  }
 },
 
 "about": {
@@ -770,7 +774,8 @@
         { "emoji": "📨", "title": "No link-out", "desc": "It runs inside Discord, or on the web when you need it. No redirect to a form nobody trusts." },
         { "emoji": "🔀", "title": "Branch on answers", "desc": "Skip logic routes each person to the questions that actually apply to them. Shorter, smarter intake." },
         { "emoji": "🕵️", "title": "Right level of privacy", "desc": "Keep submissions identified for follow-up, or anonymous when that fits the request." }
-      ]
+      ],
+      "blogLink": { "text": "How to run a form or survey in Discord, step by step →", "href": "/blog/how-to-make-a-discord-form/" }
     },
     {
       "label": "RUN IT END TO END",

@@ -28,6 +28,11 @@ Marketing/landing page site for **Subo** (a Discord survey and poll bot) deploye
   `npm run check:lexicon` (part of `npm run check`) enforces the checkable rulings and carries a
   `knownViolations` baseline that is meant to be emptied, not grown. Rulings and reasoning:
   [docs/authority-roadmap.md](docs/authority-roadmap.md) § TERMINOLOGY ARCHITECTURE.
+- **The rulings T1-T11 are canonical here; the per-cell app-string migration is not.** It lives in
+  the app repo at `subo/docs/terminology-migration.md` (moved 2026-09-05) and advances there
+  alongside translation work, because `user_messages` rows are Discord runtime strings with no URL.
+  This repo keeps only what a crawler can read: `fr.json` / `de.json` copy, door words, and the
+  guard. **Do not restate the rulings in the app repo** — cite them by number.
 
 ## Commands
 
@@ -36,7 +41,7 @@ npm run dev        # Start dev server at localhost:4321
 npm run build      # Production build to ./dist/
 npm run preview    # Build + local Cloudflare Workers preview via wrangler
 npm run deploy     # Deploy to Cloudflare Workers via wrangler
-npm run check      # Build + tsc + wrangler dry-run (full validation)
+npm run check      # Build + 4 guards + tsc + wrangler dry-run (full validation)
 npm run cf-typegen # Regenerate Cloudflare Workers types (worker-configuration.d.ts)
 ```
 
@@ -47,6 +52,13 @@ npm run cf-typegen # Regenerate Cloudflare Workers types (worker-configuration.d
 - `src/consts.ts` — site-wide constants (`SITE_TITLE`, `SITE_DESCRIPTION`, `DISCORD_STORE_URL`)
 - `src/config/redirects.js` — tracked outbound redirect pages (invite, support, portal, etc.)
 - All user-facing copy lives in `src/content/translations/en.json` (and language siblings). Components receive a `translations` prop and render from it — no hardcoded strings in components.
+
+**Trailing slashes are load-bearing.** Every internal link and every absolute
+`https://subo.gg/…` URL ends with `/`: the canonical is generated from the URL and always
+carries one, so the slashless form 307s and is not the URL the page declares canonical.
+`npm run check:canonical` guards the JSON-LD and `/templates.json` half of that against
+`dist/`; plain hrefs are still on you. Details and the two regressions that earned the rule:
+[docs/i18n.md](docs/i18n.md) § "Internal links: always end with a trailing slash."
 
 See detailed docs:
 - **[docs/i18n.md](docs/i18n.md)** — languages (EN/FR/ES/DE), translation file structure, add-language checklist, BaseHead redirect logic pitfalls

@@ -2,7 +2,7 @@
 title: "How to Create a Multi-Question Survey in Your Discord Community with Subo the Survey Bot"
 description: "Step-by-step tutorial on creating engaging multi-question surveys in Discord using Subo the Survey Bot, in Discord with /survey or visually in the web app."
 pubDate: "Jun 27 2022"
-updatedDate: "Jul 24 2026"
+updatedDate: "Sep 5 2026"
 tags: ["tutorial", "survey", "discord", "community"] 
 author: "Subo Team"
 heroImage: "/images/blog/survey-tuto/kittens-invite.png"
@@ -10,9 +10,11 @@ faq:
   - q: "How do you create a survey in Discord?"
     a: "Add Subo to your server and type <code>/survey</code>. A private thread opens where you answer Subo's questions to build yours: name the survey, write each question, and pick the question type. You can also start from a <a href=\"/templates/\">template</a>, have AI draft one with <code>/draft</code>, or build it visually in the <a href=\"https://app.subo.gg\">web app</a>."
   - q: "What is the difference between a poll and a survey in Discord?"
-    a: "A poll is a single question with a live tally in the channel. A survey is a set of questions asked in sequence, one at a time, with the answers collected per respondent so you can analyse and export them. Subo does both."
+    a: "A poll is a single question with a live tally in the channel. A survey is a set of questions asked in sequence, one at a time, with the answers collected per respondent so you can analyze and export them. Subo does both."
   - q: "Should I build my survey in Discord or in the web app?"
     a: "Use <code>/survey</code> in Discord for simple, quick surveys. Build in the web app for anything more involved: skip logic, scoring and quizzes, conversational action blocks, team management, or richer analytics. Everything in the Discord flow has a visual equivalent there."
+  - q: "What question types can Subo ask in Discord?"
+    a: "The <code>/survey</code> wizard in Discord offers six: yes/no, single-select, multi-select, open text, open numeric, and a content block that says something without asking anything. Four more are added in the web app's Script Editor and answered in Discord like any other question: Rating, Opinion Scale, NPS and Ranking. Those four store the answer as a number, so the question comes back as a score rather than a tally. See <a href=\"/blog/discord-rating-scale-nps-ranking-questions/\">rating scales, NPS and ranking in Discord</a>."
   - q: "Is Subo free?"
     a: "Subo follows a freemium model: free for most users, with Premium tiers for power users. Every privacy mode, including Anonymous, is available on all plans. See <a href=\"/pricing/\">pricing</a> for what each tier adds."
 draft: false
@@ -65,6 +67,10 @@ Example: _What days are you available for our next movie night?_
 Example: _How can we make the next server event more fun?_
 - `open numeric`: looks like open text, but only accepts numbers (integers) as an answer.
 Example: _How much (in $ per month) would you consider an affordable monthly subscription to get access to this premium channel?_
+- `content block`: says something without asking anything. Use it for an intro, a rule, or a bit of context between two questions.
+Example: _Thanks for taking part. The next three questions are about the new event schedule._
+
+> **Four more types live in the web app.** The picker above is what `/survey` offers in Discord. **Rating** (2 to 10 points, drawn as stars, numbers or emoji), **Opinion Scale** (agreement or satisfaction between two named ends, which is how you write a Likert item), **NPS** (the standard 0 to 10 recommendation question) and **Ranking** (put options in order) are added in the web app's Script Editor instead. They are authored there, not asked there: a member answers them by tapping buttons in Discord like any other question. What differs is the answer, stored as a number, so the question comes back as a score rather than a tally. See [rating scales, NPS and ranking in Discord](/blog/discord-rating-scale-nps-ranking-questions/) for what each one is good for.
 
 7. For single-select and multi-select, enter up to 25 possible options for the answers, with ";" between each option. You can use text and emojis (standard, custom).
 
