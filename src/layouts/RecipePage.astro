@@ -28,7 +28,7 @@ const DIMENSION_LABELS: Record<string, string> = {
 // TechArticle rather than HowTo: Google deprecated HowTo rich results in 2023,
 // and these recipes are a design walkthrough (concepts, script payload,
 // variations) rather than a literal numbered procedure. Same call as /api.
-const canonical = `https://subo.gg/recipes/${slug}`;
+const canonical = `https://subo.gg/recipes/${slug}/`;
 const stripTags = (s: string) => s.replace(/<[^>]+>/g, '');
 const jsonLd: Array<Record<string, any>> = [
   {
@@ -50,7 +50,7 @@ const jsonLd: Array<Record<string, any>> = [
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://subo.gg/' },
-      { '@type': 'ListItem', position: 2, name: 'Recipes', item: 'https://subo.gg/recipes' },
+      { '@type': 'ListItem', position: 2, name: 'Recipes', item: 'https://subo.gg/recipes/' },
       { '@type': 'ListItem', position: 3, name: title, item: canonical },
     ],
   },

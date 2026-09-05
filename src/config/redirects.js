@@ -10,7 +10,7 @@ export const trackedRedirects = {
     description: 'Discord Bot Invite'
   },
   tutorial: {
-    url: 'https://subo.gg/tutorials',
+    url: 'https://subo.gg/tutorials/',
     name: 'tutorials',
     description: 'Tutorials'
   },

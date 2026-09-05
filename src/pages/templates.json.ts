@@ -20,7 +20,7 @@ export async function GET() {
     audiences: t.data.audiences,
     featuresShowcased: t.data.features,
     templateId: t.data.templateId ?? null,
-    url: `https://subo.gg/templates/${t.data.slug}`,
+    url: `https://subo.gg/templates/${t.data.slug}/`,
     cloneUrl: `https://app.subo.gg/app/templates?template=${t.data.slug}`,
     recipeUrl: t.data.recipeUrl ?? null,
   }));
