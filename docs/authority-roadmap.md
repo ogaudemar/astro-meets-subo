@@ -2828,60 +2828,62 @@ migration, not the poll/survey one, and they are now the only German cells left 
 in a non-poll sense. **After this upload German is internally consistent about what a poll is and
 what a Convo is; it is still inconsistent about what a project is.**
 
-### ▶️ RESUME HERE — updated 2026-09-04. ⚠️ French is NOT clean; A20 says so and A2b said otherwise
+### ▶️ RESUME HERE — updated 2026-09-05. Four items closed in two days; the English column is what is left
 
-**Done and verified:** A2c-DE, 207 cells, confirmed in the DB (207/207). German's poll is
-`Umfrage`, its Convo is `Convo`, and the commands are `/umfrage` and `/convo`. `t2b.de` is deleted
-from `lexicon.json`'s `knownViolations` — the oldest T2b failure on the list, paid off.
+**Everything uploaded on 2026-09-04 landed clean.** One re-export
+(`A1c-work/user_messages_all_2026-09-05.xlsx`, 2,628 rows) verified all three files at once:
+**103/103 cells, 0 blanked, 0 excluded columns moved, 0 keys added or removed, and 0 cells changed
+anywhere else in the DB.** The app repo was quiet in this window, unlike A11-DE's 132.
 
-**Done 2026-08-31:** **A14**, the German site half — 29 strings off `Abstimmung`, `de.deny`
-emptied, `knownViolations` down to 22. See the A14 RESULT block below. **German is now consistent
-about the poll on both surfaces**, and the only German thing left is the *project* umbrella.
-- ⚠️ **Two corrections A11-DE's sweep forced on that sentence**, both filed as items: `Abstimmung`
-  survives in **30 app cells** A14 never scanned (**A17**), and the German site's leftover is the
-  **survey vacate**, not the project umbrella (**A18**). "Consistent on both surfaces" was true of
-  the site and of the word A14 checked; it was not true of the app column.
+**✅ Closed since 2026-08-31:** A11-DE (45 cells), A7a (six lexicon rows), A19 (the drifting skill
+table), A20 (the French web UI), A21 (`Convo` invariance), and the app half of A22 (the green
+heart). **`knownViolations` is back to 22 ids** — `t2b.fr` was added and paid off inside one day.
 
-**The next moves, in the order they should happen:**
+**⚠️ Still owed from work already done, and cheap:**
+1. **The Discord client check** — `/umfrage`, `/convo`, and the re-registered Convo wizard option
+   (`umfrage_ziel` → `convo_ziel`). Registration lagged the DB on 2026-08-30 and nothing since has
+   confirmed it caught up. **This is the only part of A2c-DE/A11-DE not closed**, and it needs a
+   human looking at a Discord client. Nothing else is blocked on it.
+2. **A22's template catalog — 5 cells.** `template_translations.xlsx` still carries `❤️` in the
+   Community Health Check title and its de/es/fr/pt-BR translations. **Deliberately not built:** the
+   newest catalog file on disk is 2026-07-06, and building an upload from a two-month-old export is
+   the mistake this section keeps re-learning. **Get a fresh catalog export, then it is one file.**
+3. **A decision, not a task: `Edit_poll_questions_cmd` is `Edit Poll|💖`** in all ten locales — a
+   sparkling heart. It is a **button icon, not a sign-off**, so A22 left it alone. The user's
+   reasoning (green is the brand color; red reads romantic) arguably covers it. ⚠️ That key is also
+   one of **A17**'s, so decide before A17 rather than touching it twice.
 
-1. ✅ **DONE 2026-08-31 — the A2c-DE fixup is verified.** `verify_upload_landed.py`, repointed at
-   `user_messages_A2c_DE_fixup_2026-08-30.xlsx` / `user_messages_after_fixup_2026-08-31.xlsx` /
-   `user_messages_after_A2c_DE.xlsx`: **1/1 landed, 0 blanked, 0 excluded columns moved, 0 other
-   cells changed.** Live German across the whole DB: **`Meinungsumfrage` 0, `Convo` 162,
-   `Umfrage` 124.** **A2c-DE is closed.**
-   - ⚠️ **Still unchecked: the Discord client**, for `/umfrage` and `/convo`. Registration lagged
-     the DB on 2026-08-30 and nothing since has confirmed it caught up.
-   - **Useful for step 3:** the export shows **0 cells moved since 2026-08-30 22:44**, so the app
-     repo has been quiet and A11-DE's 45 can be re-derived from this file.
-2. ✅ **DONE 2026-08-31 — A16 shipped**, and its premise was wrong in an instructive way. See the
-   A16 RESULT block below.
-3. **✅ DONE AND VERIFIED — A11-DE uploaded and confirmed by re-export 2026-09-04.** See the
-   A11-DE VERIFIED block below. **44/45 exact, 0 blanked, 0 excluded columns moved**, and the
-   45th is a concurrent-edit collision in which **our change landed** — not a failure.
-   ⏳ **Still owed: the Discord client check** for `/umfrage`, `/convo` and the re-registered
-   Convo wizard. That is the only part of A11-DE not closed.
-   Original build note: **A11-DE, 45 cells, re-derived from the newest export and it came back at
-   exactly 45.** `user_messages_A11_DE_2026-08-31.xlsx`, `Name` + `de`, all guards green and the
-   post-build sweep clean. **⏳ NOT YET UPLOADED — this is the next action.** Then re-export with
-   `!test user_messages` and run `verify_upload_landed.py` with its three filenames repointed.
-   ⚠️ **`Wizard_command_option_survey_objective_name` changes** (`umfrage_ziel` → `convo_ziel`), so
-   **Discord re-registers the Convo wizard command** — the same tail A2c-DE left, and the Discord
-   client was never confirmed for `/umfrage` and `/convo` either. **Check both at once.**
-   See the A11-DE RESULT block. **It was not volume-not-judgment: 19 of the 45 needed a full
-   refresh, and four defects had nothing to do with the noun.**
-4. **A15 — the 173 English cells.** The largest and the one that unblocks every other locale's
-   survey half. Do it before A11's other eight languages, not after — and now also before **A18**,
-   the German site's survey vacate, which A15's rulings decide.
-5. **A17 — `Abstimmung` in the German app, 30 cells.** Small, and it is the last German thing
-   after A11-DE. ⚠️ **Ship A11-DE first**: one of A17's fixes wants the exact string A11-DE frees up.
-6. **✅ DONE 2026-09-04 — A7a and A19**, both closed. See their RESULT blocks. A19 needed
-   `app.surveyWord` added to the lexicon before its table could be deleted, and reading the export
-   to build it turned up **A20** and **A21**.
-7. **⭐ A20 and A21 are the cheapest live defects on this list and both are French/app one-liners.**
-   A20 is 4 French cells (`Vote` → `sondage` on the web UI) and clears a three-day-old
-   `knownViolations` id; A21 is 16 cells across 8 locales putting a translated `Convo` on the
-   projects filter. **Neither is gated on anything.** ⚠️ A20 wants the same re-export step 3 owes,
-   so **do it in the same pass as A11-DE's verification** rather than as its own upload.
+**The next moves, in order:**
+1. **⭐ A15 — the 173 English cells.** Now unambiguously the critical path. It gates **A11's other
+   eight locales**, **A18** (the German site's survey vacate) and every other locale's survey half.
+   Nothing else on this list unblocks as much, and nothing blocks it.
+2. **A17 — `Abstimmung` in the German app, 29 cells** (re-measured; filed as 30). The last German
+   thing. A11-DE has shipped, so `Edit_poll_questions_cmd` → *Umfrage bearbeiten* is now free —
+   `Survey_Command_Edit_temp_channel_name` moved to `Bearbeitungsmodus` and the collision is gone.
+   **Verified live in the 2026-09-05 export.**
+3. **A12 — 22 strings**, 14 of them the `NetworkPublish*` family. Ungated. ⚠️ **Look at the 13
+   partially-translated keys first**: eight are Russian-only, which is a pipeline artifact rather
+   than a translation gap, and translating them without understanding it repeats it.
+4. **A18** after A15 rules on the English. **A7b** stays gated on per-locale search evidence.
+
+**⭐ What the last two days actually taught, beyond the items:**
+- **Verify by re-export, every time. It is now four for four.** A2c-DE found a collided cell,
+  A11-DE found a concurrent edit, A20 found a three-month-old lie in the lexicon, and A19 found
+  that the interim patch had made the skill table worse. **Not one of those was visible from any
+  document**, and each cost one query against the export.
+- **⭐ A document that restates checkable data will drift, and patching it makes it worse.** A19's
+  mirror table was wrong within three days of being "fixed". **The fix is to delete the restatement
+  and derive it** — the collision column turned out to be `app.surveyWord == discord.pollWord`,
+  computable in six lines, reproducing the hand-written column exactly.
+- **A baseline that grows can be the guard working.** `t2b.fr` grew `knownViolations` because a
+  hidden violation became visible, not because debt was added — and it was paid off the next day.
+  **A guard whose baseline only ever shrinks is being fed comfortable data.**
+- **Ship only the columns AND the rows you change.** A11-DE shipped whole rows and would have
+  silently reverted a concurrent emoji edit had the ordering gone the other way. The three
+  2026-09-04 files each shipped only their own keys and columns, and all three came back clean.
+- **⚠️ A case-sensitive scan needs the English cell to interpret it.** `ConvoThreadLabel` is
+  lowercase `convo` everywhere and is correct; T3 exempts identifiers. The same shape as A11-DE's
+  `keine` finding: *only the English cell, or the code, says what a string is.*
 
 **What the German work taught that the other locales inherit** — carry these into ES/IT/NL/PL/RU/TR
 rather than rediscovering them:
@@ -3525,8 +3527,7 @@ waiting on the same question A15 asks. Filed correctly as **A18**, not as A11's 
         (the French web UI never moved off `Vote`) and **A21** (`Convo` is translated in 16 cells).
         Neither was findable from any document; both took one query against the export.
 
-- [ ] **A20. ⚠️ THE FRENCH WEB UI STILL SAYS `Vote` FOR THE POLL — 4 cells, and A2b closed as
-      done (2026-09-04).** `lexicon.json` recorded `fr.app.pollWord.webUi = "sondage"` on both
+- [x] **A20. ✅ DONE, uploaded and verified 2026-09-05. THE FRENCH WEB UI SAID `Vote` FOR THE POLL — 4 cells, and A2b had closed as done.** `lexicon.json` recorded `fr.app.pollWord.webUi = "sondage"` on both
       surfaces and **that was false**. The export says `Default_Poll_name_prefix`,
       `Web_NewProject_Poll`, `Web_Projects_Filter_Poll` and `Web_Projects_Type_Poll` are all
       **`Vote`**; only `Web_InviteTab_Poll` says `sondage`. The **command** is `sondage`, so a French
@@ -3534,7 +3535,10 @@ waiting on the same question A15 asks. Filed correctly as **A18**, not as A11's 
       T2b self-disagreement check was written for.
       - **✅ RE-CONFIRMED against the 2026-09-04 export.** All four cells are still `Vote` and the
         command is still `sondage`. Nothing has moved; this is live right now.
-      - **⏳ BUILT 2026-09-04, NOT YET UPLOADED: `user_messages_A20_fr_poll_2026-09-04.xlsx`**,
+      - **✅ RESULT 2026-09-05 — 4/4 landed, and `t2b.fr` is DELETED from `knownViolations`.** The
+        baseline is back to **22 ids**, the number it was before A20 was found. It grew for one day.
+        `app.pollWord.fr.webUi` now records `Sondage`, and `ResponseLabel_Singular` is still `vote`
+        (the act), verified live. **Shipped as `user_messages_A20-fr.xlsx`**,
         `Name` + `fr` + `ro`, 4 rows. **`Vote` → `Sondage`, capitalized**, because all four have
         capitalized English `Poll`. The lowercase siblings (`Poll_Command_name`,
         `Web_InviteTab_Poll`) already say `sondage` and are **deliberately not shipped**;
@@ -3553,7 +3557,7 @@ waiting on the same question A15 asks. Filed correctly as **A18**, not as A11's 
         re-export. **A11-DE, A2c-DE and now A20 all say the same thing: verify by re-export, and a
         migration item's own closing note is the least reliable thing about it.** Third occurrence.
 
-- [ ] **A21. `Convo` is TRANSLATED in 16 app cells and should be in none (2026-09-04).**
+- [x] **A21. ✅ DONE, uploaded and verified 2026-09-05. `Convo` WAS TRANSLATED in 16 app cells.**
       `Web_Projects_Filter_Convo` and `Web_Projects_Type_Convo` have English `Convo` and are
       translated in **8 of 9 locales** — every one but German (`Encuesta`, `Enquête`, `Sondaggio`,
       `Enquête`, `Ankieta`, `Pesquisa`, `Опрос`, `Anket`). T3 says the brand noun is invariant in
@@ -3573,21 +3577,27 @@ waiting on the same question A15 asks. Filed correctly as **A18**, not as A11's 
       - **The mechanism gap is the durable half.** Consider whether `scope: "app"` deny rules should
         run against the export rather than being skipped, which would make T3 checkable on the
         surface where it is actually being broken.
-      - **⏳ BUILT 2026-09-04, NOT YET UPLOADED:
-        `user_messages_A21_convo_invariant_2026-09-04.xlsx`**, 2 rows × 8 locale columns + `ro`.
-        `en-US` and `de` already say `Convo` and are **not shipped** — ship only what changes.
+      - **✅ RESULT 2026-09-05 — 16/16 landed. `Convo` is invariant in all ten locales.**
+        Shipped as `user_messages_A21_convo_invariant_2026-09-04.xlsx`, 2 rows × 8 locale columns
+        + `ro`; `en-US` and `de` already said `Convo` and were not shipped.
+      - ⚠️ **`ConvoThreadLabel` is lowercase `convo` in every locale INCLUDING en-US, and that is
+        CORRECT.** A case-sensitive sweep flags it; T3 exempts identifiers and URL paths, and this
+        is a thread-name segment. **Do not "fix" it** — the next person running this scan will see
+        it too. The T3 capitalization rule is about prose, and only the English cell says which a
+        string is.
       - **✅ RE-CONFIRMED against the 2026-09-04 export: exactly 16 cells, unchanged.** The sweep
         also picked up a **third** key whose English is bare `Convo` — **`ConvoThreadLabel`**, added
         since 08-31 — and it is correctly untranslated in all nine. **New strings are being written
         correctly; it is the old two that are wrong**, which narrows this to a fix rather than a
         habit. ⚠️ Still unswept: cells where English embeds `Convo` inside a sentence.
 
-- [ ] **A22. 💚 The heart is GREEN, not red — 62 app cells built, 5 template-catalog cells still
-      owed (user ruling, 2026-09-04).** Subo's heart is `💚`; `❤️` is retired. **Why, in the user's
+- [~] **A22. 💚 The heart is GREEN, not red — 62 app cells DONE and verified 2026-09-05; 5
+      template-catalog cells still owed (user ruling, 2026-09-04).** Subo's heart is `💚`; `❤️` is retired. **Why, in the user's
       words:** green is Subo's brand color, and a red heart reads as a *romantic* heart where the
       green one reads as a **friendly** one. The user made the first change by hand in
       `TierUpgrade/de`, which is how it surfaced — as a collision in A11-DE's verification.
-      - **⏳ BUILT, NOT YET UPLOADED: `user_messages_green_heart_2026-09-04.xlsx`** — 7 keys
+      - **✅ RESULT 2026-09-05 — 62/62 landed. Zero red hearts remain in the DB; 63 green.**
+        Shipped as `user_messages_hearts.xlsx` — 7 keys
         (`Welcome_dm_text`, `TierUpgrade`, `TierDowngrade`, `TierWarning`,
         `Web_Checkout_Success_Premium_Body`, `Web_Checkout_Success_VIP_Body`,
         `PostSurveySatisfactionSurveyGoodBye`), **62 cells across 10 locales**. `ro`/`uk` carry no

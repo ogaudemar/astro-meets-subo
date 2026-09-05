@@ -12,7 +12,7 @@
     "here as T1..T10 are defined there. Do not restate the reasoning in this file; it will drift."
   ],
   "version": 1,
-  "updated": "2026-09-04",
+  "updated": "2026-09-05",
 
   "framework": {
     "$about": [
@@ -98,10 +98,10 @@
       "",
       "Refresh with `!test user_messages` in Discord, which DMs the xlsx."
     ],
-    "source": "✅ CONFIRMED BY RE-EXPORT 2026-09-04 (`new-path/user_messages.xlsx`, 2,628 rows). The de row's A2c-DE upload is verified live, and A11-DE (45 cells) landed on top of it. Live German across the whole DB: Meinungsumfrage 0, Umfrageleiter 0, Umfrage 83 (all polls), Convo 162, Projekt 148, Creator 24. Earlier provenance: user_messages_all_2026-08-18.xlsx, the A2b batch (2026-08-28), A1c (2026-08-29), A2c-DE (207 cells, 2026-08-30), A11-DE (45 cells, 2026-09-04). ⚠️ Every other locale's row is still only as fresh as this export; re-export with `!test user_messages` before trusting one. This file records what we believe the DB holds; only the export knows.",
+    "source": "✅ CONFIRMED BY RE-EXPORT 2026-09-05 (`user_messages_all_2026-09-05.xlsx`, 2,628 rows): the A20, A21 and A22 uploads all landed clean, 103/103 cells, 0 blanked, 0 excluded columns moved, 0 cells changed anywhere else. Previously confirmed 2026-09-04 (`new-path/user_messages.xlsx`, 2,628 rows). The de row's A2c-DE upload is verified live, and A11-DE (45 cells) landed on top of it. Live German across the whole DB: Meinungsumfrage 0, Umfrageleiter 0, Umfrage 83 (all polls), Convo 162, Projekt 148, Creator 24. Earlier provenance: user_messages_all_2026-08-18.xlsx, the A2b batch (2026-08-28), A1c (2026-08-29), A2c-DE (207 cells, 2026-08-30), A11-DE (45 cells, 2026-09-04). ⚠️ Every other locale's row is still only as fresh as this export; re-export with `!test user_messages` before trusting one. This file records what we believe the DB holds; only the export knows.",
     "pollWord": {
       "en":    { "command": "poll",          "webUi": "poll" },
-      "fr":    { "command": "sondage",       "webUi": "Vote",          "$note": "⚠️ A20, 2026-09-04. This row said webUi \"sondage\" and was wrong: `Web_NewProject_Poll`, `Web_Projects_Filter_Poll` and `Web_Projects_Type_Poll` all say `Vote`, and so does `Default_Poll_name_prefix`. Only `Web_InviteTab_Poll` says `sondage`. A2b (2026-08-28) closed as \"command AND web UI\"; the web UI is 3-to-1 against it. Recorded as the majority so t2b.fr fires." },
+      "fr":    { "command": "sondage",       "webUi": "Sondage",       "$note": "✅ A20 FIXED and verified by re-export 2026-09-05. This row claimed webUi \"sondage\" for three months and was wrong — four cells said `Vote` — which is why t2b.fr could never fire. Now `Sondage` on all four (`Default_Poll_name_prefix`, `Web_NewProject_Poll`, `Web_Projects_Filter_Poll`, `Web_Projects_Type_Poll`), capitalized to match their English `Poll`. ⚠️ `ResponseLabel_Singular` is still `vote` and MUST stay: English is `vote`, the act." },
       "pt-BR": { "command": "enquete",       "webUi": "enquete" },
       "de":    { "command": "umfrage",       "webUi": "Umfrage" },
       "es":    { "command": "votación",      "webUi": "votación" },
@@ -129,7 +129,7 @@
       "computes it; do not write a collision column into a document again."
     ],
     "surveyWord": {
-      "en":    { "command": "survey",    "webUi": "Survey", "$note": "⚠️ Mid-migration: `Web_Projects_Filter_Convo` and `Web_Projects_Type_Convo` already say `Convo`, the other four still say `Survey`. A15 settles it." },
+      "en":    { "command": "survey",    "webUi": "Survey", "$note": "⚠️ Mid-migration: the `Web_Projects_*_Convo` pair already says `Convo` (A1c), the other four `Web_*` survey labels still say `Survey`. A15 settles it. NOTE those two keys are the BRAND noun and are now invariant in all ten locales (A21, 2026-09-05); they are not evidence about any locale's survey word." },
       "fr":    { "command": "enquête",   "webUi": "enquête" },
       "pt-BR": { "command": "pesquisa",  "webUi": "pesquisa" },
       "de":    { "command": "convo",     "webUi": "Convo",  "$note": "A2c-DE, 2026-08-30. The only locale where the survey word is actually Convo." },
@@ -330,7 +330,6 @@
       "The app half of A1c is unaffected: those deny rules are scope:'app', checked against",
       "user_messages, which this repo cannot read. Status lives in terminology-english-inventory.md."
     ],
-    "t2b.fr": { "reason": "A20. The French WEB UI says `Vote` for the poll in 4 cells (`Default_Poll_name_prefix`, `Web_NewProject_Poll`, `Web_Projects_Filter_Poll`, `Web_Projects_Type_Poll`) while the command says `sondage`. ⚠️ This entry GREW the baseline on 2026-09-04, and that is the guard working: the violation was always live, and the file said `sondage` on both surfaces so nothing could fire. A2b closed too early.", "clearedBy": "A20" },
     "t2b.es": { "reason": "'votación' vs Discord 'encuesta'. Spanish sends poll searchers to the survey page.", "clearedBy": "A2c" },
     "t2b.it": { "reason": "'poll' (untranslated) vs Discord 'sondaggio'.", "clearedBy": "A2c" },
     "t2b.nl": { "reason": "'opiniepeiling'/'poll' vs Discord 'peiling'; the two surfaces also disagree with each other.", "clearedBy": "A2b (ii)" },
