@@ -2828,7 +2828,7 @@ migration, not the poll/survey one, and they are now the only German cells left 
 in a non-poll sense. **After this upload German is internally consistent about what a poll is and
 what a Convo is; it is still inconsistent about what a project is.**
 
-### ▶️ RESUME HERE — German and French are both clean on the site; the app is what's left (2026-08-31)
+### ▶️ RESUME HERE — updated 2026-09-04. ⚠️ French is NOT clean; A20 says so and A2b said otherwise
 
 **Done and verified:** A2c-DE, 207 cells, confirmed in the DB (207/207). German's poll is
 `Umfrage`, its Convo is `Convo`, and the commands are `/umfrage` and `/convo`. `t2b.de` is deleted
@@ -2837,8 +2837,12 @@ from `lexicon.json`'s `knownViolations` — the oldest T2b failure on the list, 
 **Done 2026-08-31:** **A14**, the German site half — 29 strings off `Abstimmung`, `de.deny`
 emptied, `knownViolations` down to 22. See the A14 RESULT block below. **German is now consistent
 about the poll on both surfaces**, and the only German thing left is the *project* umbrella.
+- ⚠️ **Two corrections A11-DE's sweep forced on that sentence**, both filed as items: `Abstimmung`
+  survives in **30 app cells** A14 never scanned (**A17**), and the German site's leftover is the
+  **survey vacate**, not the project umbrella (**A18**). "Consistent on both surfaces" was true of
+  the site and of the word A14 checked; it was not true of the app column.
 
-**The next four moves, in the order they should happen:**
+**The next moves, in the order they should happen:**
 
 1. ✅ **DONE 2026-08-31 — the A2c-DE fixup is verified.** `verify_upload_landed.py`, repointed at
    `user_messages_A2c_DE_fixup_2026-08-30.xlsx` / `user_messages_after_fixup_2026-08-31.xlsx` /
@@ -2851,12 +2855,33 @@ about the poll on both surfaces**, and the only German thing left is the *projec
      repo has been quiet and A11-DE's 45 can be re-derived from this file.
 2. ✅ **DONE 2026-08-31 — A16 shipped**, and its premise was wrong in an instructive way. See the
    A16 RESULT block below.
-3. **A11-DE — 45 cells.** The only German cells still saying `Umfrage` in a non-poll sense, all of
-   them the *project* umbrella or the `Umfrageleiter` → *Creator* role. Volume, not judgment.
-   ⚠️ **Re-derive the 45 from the newest export**, not from this document — the app repo moved 527
-   cells while A2c-DE was in flight, so the count is a snapshot, not a fact.
+3. **✅ DONE AND VERIFIED — A11-DE uploaded and confirmed by re-export 2026-09-04.** See the
+   A11-DE VERIFIED block below. **44/45 exact, 0 blanked, 0 excluded columns moved**, and the
+   45th is a concurrent-edit collision in which **our change landed** — not a failure.
+   ⏳ **Still owed: the Discord client check** for `/umfrage`, `/convo` and the re-registered
+   Convo wizard. That is the only part of A11-DE not closed.
+   Original build note: **A11-DE, 45 cells, re-derived from the newest export and it came back at
+   exactly 45.** `user_messages_A11_DE_2026-08-31.xlsx`, `Name` + `de`, all guards green and the
+   post-build sweep clean. **⏳ NOT YET UPLOADED — this is the next action.** Then re-export with
+   `!test user_messages` and run `verify_upload_landed.py` with its three filenames repointed.
+   ⚠️ **`Wizard_command_option_survey_objective_name` changes** (`umfrage_ziel` → `convo_ziel`), so
+   **Discord re-registers the Convo wizard command** — the same tail A2c-DE left, and the Discord
+   client was never confirmed for `/umfrage` and `/convo` either. **Check both at once.**
+   See the A11-DE RESULT block. **It was not volume-not-judgment: 19 of the 45 needed a full
+   refresh, and four defects had nothing to do with the noun.**
 4. **A15 — the 173 English cells.** The largest and the one that unblocks every other locale's
-   survey half. Do it before A11's other eight languages, not after.
+   survey half. Do it before A11's other eight languages, not after — and now also before **A18**,
+   the German site's survey vacate, which A15's rulings decide.
+5. **A17 — `Abstimmung` in the German app, 30 cells.** Small, and it is the last German thing
+   after A11-DE. ⚠️ **Ship A11-DE first**: one of A17's fixes wants the exact string A11-DE frees up.
+6. **✅ DONE 2026-09-04 — A7a and A19**, both closed. See their RESULT blocks. A19 needed
+   `app.surveyWord` added to the lexicon before its table could be deleted, and reading the export
+   to build it turned up **A20** and **A21**.
+7. **⭐ A20 and A21 are the cheapest live defects on this list and both are French/app one-liners.**
+   A20 is 4 French cells (`Vote` → `sondage` on the web UI) and clears a three-day-old
+   `knownViolations` id; A21 is 16 cells across 8 locales putting a translated `Convo` on the
+   projects filter. **Neither is gated on anything.** ⚠️ A20 wants the same re-export step 3 owes,
+   so **do it in the same pass as A11-DE's verification** rather than as its own upload.
 
 **What the German work taught that the other locales inherit** — carry these into ES/IT/NL/PL/RU/TR
 rather than rediscovering them:
@@ -2879,6 +2904,17 @@ rather than rediscovering them:
 - **Verify by re-export, and ship one locale per file — the second makes the first work.** A
   single-column upload turns every other column into a checkable control, which is how the one
   collided cell was found. Batching locales would have made it invisible.
+- **⭐ A migration item's own scope note is the least reliable thing about it** (A11-DE). "Volume,
+  not judgment" was written from a count; 19 of the 45 turned out to be full rewrites and four of
+  the real defects were not the noun at all. **Read the cells before believing the estimate**, and
+  expect the reading to generate new items — A11-DE produced two (A17, A18) and corrected a third.
+- **⭐ Read label families as a set, not as cells.** The four `Web_Settings_*` project counters were
+  two inversions and one duplicate — invisible to any check that asks each cell in isolation
+  whether its noun is right. Same shape as A2c-DE's picker collision and A16's French inversion,
+  now three for three.
+- **Diff merge fields both ways on every locale build.** German had *substituted* a merge-field
+  preview, showing users a default footer the product does not have. Cheap check, and A10 is
+  otherwise a whole item waiting to be worked.
 
 ### ⭐ A14 RESULT — the German site now says `Umfrage`, and the act survived (2026-08-31)
 
@@ -2909,8 +2945,10 @@ because the collision forced them.
 - ⚠️ **This is why A14 could not be "36 strings" in isolation.** Same lesson as A2c-DE finding 5:
   the poll rename and the survey vacate are **one edit**, and the pairs are what proves it.
 - **`de.json` says `Convo` in 8 strings and `Umfrage` in ~100.** The German site is still mostly
-  pre-Convo prose; A14 only touched the strings where the collision forced it. **The rest is the
-  site half of A11-DE and is not yet scoped.**
+  pre-Convo prose; A14 only touched the strings where the collision forced it. ~~**The rest is the
+  site half of A11-DE and is not yet scoped.**~~ ⚠️ **Wrong, corrected by A11-DE:** of the 73 whose
+  English never says *poll*, **zero say *project*** and 65 say *survey*. It is the survey vacate,
+  filed as **A18**.
 
 **⭐ The guard learned the act/instrument split instead of being baselined around it.**
 `check-lexicon.mjs` deny rules now take **`actPaths`**, a per-path allowlist. The eight survivors
@@ -2995,6 +3033,124 @@ next path-keyed guard.
 in `fr.json` mirror an English `questionnaire` exactly, and it is a declared door word (314 imp,
 `resolvesTo: convo`, owns `/fr/blog/comment-creer-un-questionnaire-sur-discord/`). Nothing to do.
 
+### ✅ A11-DE VERIFIED — 44/45 exact, and the 45th is the collision arriving on schedule (2026-09-04)
+
+**Verified against `new-path/user_messages.xlsx` (2026-09-04, 2,628 rows)** with
+`verify_a11_de_landed.py` (`verify_upload_landed.py` repointed at the A11-DE trio):
+**44/45 cells landed exactly, 0 blanked, 0 of the 11 excluded columns moved, 0 keys removed.**
+
+**⭐ THE ONE MISMATCH IS THE BEST RESULT IT COULD HAVE HAD, AND IT IS THE SAME SHAPE A2c-DE HIT.**
+`TierUpgrade/de` differs from what we shipped — but **our edit is live**
+(*beim Erstellen einer **Umfrage*** → *beim Erstellen eines **Projekts***). What differs is an
+**unrelated concurrent app-repo edit**: the sign-off emoji moved `❤️` → `💚` and a trailing blank
+line was dropped, after our upload. **Both changes are present in the live cell.**
+- ⚠️ **That outcome was ordering, not safety.** We shipped the WHOLE cell, `❤️` and all. Had our
+  upload landed *after* theirs instead of before, **it would have silently reverted the emoji
+  change** and nothing would have reported it. The existing rule is *ship only the columns you
+  change*; this is the **row-level** version of the same hazard, and there is no guard for it.
+  **A single-cell diff against the live export immediately before upload is the only thing that
+  would catch it.**
+- **This is now three for three**: A2c-DE, A11-DE and A20 each turned up something that only a
+  re-export could see. **Verification has earned its keep every single time it has been run.**
+
+**Live German across the whole DB** (2026-09-04): `Meinungsumfrage` **0**, `Umfrageleiter` **0**,
+`Umfrage` **83** (all polls), `Convo` **162**, `Projekt` **148**, `Creator` **24**, `Abstimmung` 29.
+⚠️ **The A11-DE RESULT block predicted 149 / 170 / 84 / 24.** Projekt, Umfrage and Creator are within
+one; **Convo came in 8 below the prediction**, which the 132 concurrent cell changes in this export
+window are enough to explain but which nothing has actually attributed. Not chased.
+
+**German is finished on the poll, the Convo and the project** — the first locale on all three. What
+is left in German is **A17** (`Abstimmung`, now measured at **29** cells, not the 30 first filed) and
+**A18** (the German *site*'s survey vacate).
+
+### ⭐ A11-DE RESULT — the 45 held, and a third of them were not the noun (2026-08-31)
+
+**Re-derived from the newest export and it came back at exactly 45**, the number the A2c-DE RESULT
+block predicted. `scan_a11_de.py` classifies every DE cell carrying `Umfrage` by what the English
+says: **129 cells in all, 84 whose English says *poll* (correct, and A2c-DE's work), 45 whose
+English never does.** The file is `user_messages_A11_DE_2026-08-31.xlsx` (`build_a11_de_upload.py`
+from `tr_a11_de.py`), **`Name` + `de` only**. **Not yet uploaded.**
+
+**The target vocabulary needed no ruling, because the file had already voted.** Live German says
+`Projekt` in 131 cells and `Creator` in 20 — including `Creator-Kanal`, `Creator-Rolle`,
+`Creator-Netzwerk` and `ServerTopic_Creator`, which sit directly above the prompts that still said
+`Umfrageleiter`. **A11 is finishing a majority, not choosing one.** `lexicon.json` never needed a
+German `project` row and still does not.
+
+**⭐ Only 26 of the 45 were a noun swap. The other 19 translate an English string that no longer
+exists**, which is exactly the hazard the A11 scope note warned about and the reason it says apply
+A1c's method. Patching `Umfrage` → `Projekt` inside them would have preserved a sentence that was
+already wrong:
+- `Edit_survey_edit_role_reward_which_role` — English is **"Select a role"**; German was a whole
+  question about who may take part in the survey.
+- `Setup_server_allow_network_push_prompt` invented a sentence about a role named **`Ersteller`**
+  that the English never had and that contradicted `Creator-Rolle` two settings over.
+- `SurveyBuilder_post_posted` dropped the project ID and the *"Click 'Continue'"* instruction;
+  `Survey_audience_modify_results_sharing_yes_no` dropped *"plus a summary of open responses"*
+  mid-sentence.
+- `ServerSetup_Perimssion_error`, `Setup_server_Q18_default_invite_setup`,
+  `Setup_server_network_announcements_config` and `User_Create_Channel_Perimssion_error` are
+  wholesale different strings.
+
+**⭐ Four defects the scan could not have been looking for, all found by reading the cells.** Each
+is a shape worth carrying into the other eight locales:
+
+1. **The four `Web_Settings_*` labels were inverted AND collided.** `Total Projects` said
+   *Aktive Umfragen* while `Active Projects` said *Gleichzeitige Umfragen* — swapped — and
+   **`Max Active Projects` and `Max Total Projects` were the same German string**, two different
+   numbers under one label on one settings page. Same family as A2c-DE's `Web_Projects_Filter_*`
+   collision and A16's French inversion. **A locale scan that only asks "is the noun right" scores
+   all four as one defect and fixes none of them.**
+2. **`ServerSetup_setup_export_footer`'s last line is a literal merge-field preview**
+   (`` `[SurveyName] ([SurveyId]) by [CreatedBy]` ``) and German had **substituted a different
+   footer** — so the setting showed users a default the product does not use. The builder now
+   diffs merge fields both ways, and refuses a cell that drops one or invents one. **That check
+   belongs in every locale build from now on; it is A10's bug caught at build time.**
+3. **⭐ The escape token in `Edit_survey_reorder_list` IS localized, and that is the opposite of
+   A10.** German told the user to type `keine` where English says `none`. `_reorderQuestions` in
+   `discordSurvey/setupCommands.py` compares against `msgs[DefaultMessages.No_Answer]`, and
+   `No_Answer`/de is `keine`, so **German was right and a merge-field instinct would have broken
+   it.** *A literal the user must type is localized or it is not, and only the code says which.*
+   (The cell still needed work: its three sibling reorder messages say `Blöcke` and
+   `Blockreihenfolge`; this one still said `Fragen`.)
+4. **`Wizard_command_option_survey_objective_name` was `umfrage_ziel`** — a slash-command option
+   name, so outside every prose scan, and **A2c-DE turned it into a lie**: `Umfrage` is now the
+   poll, and this is the Convo wizard. Its own `_description` sibling already says Convo. Now
+   **`convo_ziel`**, ⚠️ **which makes Discord re-register the command.**
+
+**Also swept out while in the file**, since these were unreachable from a prose scan and each cell
+was being rewritten anyway: `Survey_Command_Edit_temp_channel_name` (a thread name reading
+*Umfrage bearbeiten*, the poll word on the Convo editor → `Bearbeitungsmodus`), `Survey_author_label`
+(*Umfrageautor* for a generic **Author** → `Autor`), `admin_mod_role_name` (*umfrageleitung* for
+`subo-admin`, following `default_admin_channel_name`'s precedent of keeping the English identifier),
+and `Setup_server_what_admin_role`, whose German example named the **Creator** role in a prompt
+about the **Admin** role. Two cells hand-wrote `/einstellungen` as a code span where English uses a
+command mention, one of them misspelled (`/eintellungen`); both now use the mention, which Discord
+renders in the reader's own locale for free.
+
+**The post-build sweep (`sweep_a11_de.py`) came back clean on the merged file**: 0 duplicate German
+labels involving a touched cell, 0 `Umfrageleiter` anywhere, and **0 cells left saying `Umfrage`
+where the English never says *poll*.** After this upload the DE column reads `Projekt` 149,
+`Convo` 170, `Umfrage` 84 (all polls), `Creator` 24. **German is then internally consistent about
+the poll, the Convo and the project — the first locale to be finished on all three.**
+
+**⚠️ Two things found and deliberately not fixed**, both new items below:
+- **`Abstimmung` survives in 30 DE app cells** and was never scanned, because A2c-DE searched for
+  `Umfrage`/`Meinungsumfrage` and A14 only ever touched the site. Most are the **act** and correct
+  under A14's own ruling (*Abstimmende*, *Stimmabgabe*, *Nach der Abstimmung*), but a handful are
+  the **instrument** (`Edit_poll_questions_cmd` = *Abstimmung bearbeiten*, `PollCommand_too_many_answers`
+  = *Abstimmungskonfiguration*) and three keys label English **"Individual responses"** as
+  *Abstimmungsdetails*. **A17.**
+- **`Setup_server_which_participant_role`'s German carried a pagination paragraph the English does
+  not have.** Dropped, so the cell stops drifting — but the sibling `Setup_server_which_survey_role`
+  *does* have it in English, so this is an **English-side gap**, not a German one.
+
+**⚠️ And a correction to A14: the German site remainder is not "the site half of A11-DE".** A14
+closed by calling `de.json`'s ~100 remaining `Umfrage` strings that. They are not. Of the **73**
+whose English never says *poll*, **zero say *project*** and **65 say *survey***. The German site's
+leftover is **the survey vacate, not the project umbrella** — the same edit A2c-DE did to the app,
+waiting on the same question A15 asks. Filed correctly as **A18**, not as A11's site half.
+
 - [ ] **A2c. The paired poll+survey migration, per locale, gated per locale.**
       **✅ DE IS DONE — decided 2026-08-29, uploaded 2026-08-30 (207 cells), verification by
       re-export outstanding. See the three A2c-DE blocks above.** Remaining locales: ES, IT, RU
@@ -3021,13 +3177,58 @@ in `fr.json` mirror an English `questionnaire` exactly, and it is a declared doo
       other nine locales.
 - [ ] **A6. Apply T4's layer discipline to the existing FR pages** on their next edit. Not a
       dedicated pass; too cheap to justify one and too easy to forget without a rule.
-- [ ] **A7. Backfill `lexicon.json` for DE/ES/PT-BR, then IT.** **⚠️ ES and DE are not
-      cosmetic** — both are currently inverted against Discord (T2b), and Spanish sends poll
-      searchers to the survey page. **PT-BR is the model locale**: Discord's word, the skill's
-      word and its top measured query (*como fazer enquete no discord*) all agree, which is a
-      second argument for doing PT-BR before Italian. **PL and TR are HELD under T9** until a
-      door word with evidence behind it exists. Runs as Step 0 of the LOCALE-PARITY PLAYBOOK,
-      not standalone.
+- [~] **A7. Backfill `lexicon.json` for DE/ES/PT-BR, then IT. — SPLIT 2026-09-02 into A7a and
+      A7b, because only half of it was ever gated.** **DE and PT-BR are DONE** (entries exist;
+      DE landed with A2c-DE). What remained was ES, IT, NL and RU, plus PL/TR under T9 — and it
+      sat blocked as one item because a `locales` entry was treated as all-or-nothing. It is not:
+      `doors` is optional in the schema (`row.doors ?? []`), so the evidence-free half can ship
+      today. **⚠️ ES is not cosmetic** — it is inverted against Discord (T2b) and Spanish sends
+      poll searchers to the survey page. **PT-BR was the model locale**: Discord's word, the
+      skill's word and its top measured query (*como fazer enquete no discord*) all agree.
+- [x] **A7a. ✅ DONE 2026-09-04.** `instruments`-only `locales` entries for ES, IT, NL, RU, PL and TR. **UNBLOCKED —
+      no evidence needed, no migration implied.** Six entries carrying `instruments.poll` (the
+      word the app says TODAY, from `app.pollWord`) and `instruments.convo: "Convo"`, with
+      `doors` omitted and `deny` empty. **Recording what a locale says is not moving it** — A7a
+      changes nothing a user reads.
+      - ⚠️ **What this buys is NOT the poll word.** `app.pollWord` already covers all ten locales
+        and `check:lexicon` already compares them against `discord.pollWord`; `t2b.es/it/nl/pl/ru/tr`
+        are recorded in `knownViolations` today. Anyone claiming the six are unchecked has misread
+        the guard (this roadmap did, on 2026-09-02 — see A19).
+      - **What it actually buys, in order:** (1) **`instruments.convo` is pinned per locale by a
+        HARD-FAIL check** — the T3 branch pushes straight to `problems` and is not routable to the
+        baseline, so once an entry exists that locale can never quietly stop saying `Convo`;
+        (2) **the locale gains a `deny` list**, which is the mechanism that caught real regressions
+        in FR (A16) and DE (A14) and is unavailable to a locale with no entry; (3) the door/T5
+        machinery is then one field away when evidence arrives.
+      - **Safe to land in one commit:** adding `instruments.poll` fires `t2b.<loc>`, and all six
+        ids are **already** in `knownViolations`, so the build stays green and the entries join an
+        existing baseline instead of growing it. **The one hard requirement is
+        `instruments.convo: "Convo"` exactly** — anything else fails the build immediately, which
+        is the intended behavior, not an obstacle.
+      - **PL and TR get entries too, and `held` stays.** `held` is about door words, not
+        instruments; an entry with no doors is precisely what "held" should look like in the data
+        rather than as an absence a reader has to infer.
+      - **✅ RESULT 2026-09-04 — six rows added, build green, baseline unchanged.** `check:lexicon`
+        now reports **10 locales, 14 door words**. The six new `t2b.<loc>` messages joined the ids
+        already in `knownViolations` rather than creating new ones, exactly as the item predicted.
+      - **The T3 pin was verified by breaking it, not by reading the code.** Setting
+        `tr.instruments.convo` to `Anket` fails the build with `[t3.tr]` and is not routable to the
+        baseline. That is the thing A7a actually bought.
+      - **`locales` gained a `$about`** documenting the three `status` values (`active`, `seeded`,
+        `instruments-only`) and stating why `instruments.poll` records the CURRENT word rather than
+        T2b's target: a row holding the target would be tautological and the check could never fire.
+      - ⚠️ **`check-lexicon.mjs` had to be hardened first.** All four loops iterated
+        `Object.entries(lex.locales)` directly, so adding that `$about` would have been read as a
+        locale and hard-failed on `t3.$about` — a message about Convo, pointing nowhere near the
+        cause. They now go through a `localeRows` helper that skips `$`-prefixed keys, which is the
+        convention the rest of the file already used. **A documentation key should never be able to
+        break the guard that reads the document.**
+
+- [ ] **A7b. Door words, the bridge sentence and the deny list, per locale — STILL GATED on
+      per-locale search evidence.** This is the half T9 governs: a door word carries the page that
+      owns it and the query volume behind it, and inventing either is what T9 forbids. Runs as
+      Step 0 of the LOCALE-PARITY PLAYBOOK, not standalone, one locale at a time as its Search
+      Console export lands. **IT after ES/NL/RU** on the original ordering.
 - [ ] **A8. Seed the French `formulaire` and `quiz` doors** once A2 lands. **Justified by T10
       (corpus balance), not by volume** — 24 FR impressions at position 20.8 is the circularity
       this roadmap's own guiding principle warns about, since we have no French page targeting it
@@ -3089,6 +3290,18 @@ in `fr.json` mirror an English `questionnaire` exactly, and it is a declared doo
         Several of these locale cells translate an English string that no longer exists, so patching
         the noun inside them preserves a sentence that was already wrong.
       - **Ship it one language per file** (A2b's rule), which also lets it land incrementally.
+      - **✅ DE is built — 45 cells, `user_messages_A11_DE_2026-08-31.xlsx`, not yet uploaded.**
+        See the A11-DE RESULT block above. **19 of the 45 needed a full refresh, not a noun swap**,
+        which is the strongest evidence yet for the ⚠️ above: budget roughly **40% rewrites** in
+        the other eight locales, not 100% find/replace.
+      - **Carry three checks into every remaining locale**, all of which caught something in DE:
+        diff the **merge fields both ways** (a substituted merge-field preview showed users a
+        default the product does not have); read the **`Web_Settings_*` label families as a set**
+        (two were inverted and two were the same string); and check **command option names and
+        thread names**, which no prose scan reaches.
+      - ⚠️ **Do not assume a literal the user types is untranslatable.** DE's `keine` for English
+        `none` was **correct** — the code compares against `No_Answer`, which is localized. Only
+        the app source settles it, and it goes the opposite way from A10's merge fields.
 - [ ] **A12. Translate the 56 new keys from the app repo.** Surfaced by A1c's post-upload re-export
       (2026-08-29): 56 keys exist in `en-US` with no translations, concentrated in
       `Web_InviteTab_Surface_*` (the invite-surface picker), `Web_Account_Answers_*` (bulk answer
@@ -3097,6 +3310,51 @@ in `fr.json` mirror an English `questionnaire` exactly, and it is a declared doo
       which is what that pipeline is actually for — unlike A1c, A10 and A11, which are migrations.
       ⚠️ **Do the terminology items first or write these in the new vocabulary from the start**:
       they are brand-new strings, so there is no reason for any of them to say *survey*.
+      - **▶️ STATUS 2026-09-02 — mostly cleared, with a tail that was never A12's.** The
+        `Web_InviteTab_Surface_*`, `Web_Account_Answers_*` and DM-surface keys are **translated and
+        uploaded** (user, all 9 locales). A 15-row batch shipped the same day cleared the rest:
+        **2 genuinely new keys** (`Channel_done_kept`, `ConvoThreadLabel` — the durable-thread
+        ending and the thread-name segment) and **13 that A12 never covered**.
+      - ⚠️ **Those 13 are older than A12 and are the more interesting half.** They were registered
+        **2026-06-01 to 06-03** (poll message settings, the poll `[Answer]` picker, scoring
+        columns), exist in `en-US`, and had **empty cells in all nine locales for three months** —
+        falling back to English the whole time. A1c's re-export found the *new* keys because it
+        diffed against the previous export; **nothing was looking for keys that were always
+        there and always empty.** `subo_translate.py diff` does report them, but only for keys in
+        the `pending.csv` window being passed, so a stale `--since` hides them.
+      - **▶️ SCAN RUN 2026-09-02 (08-29 export, 2,623 keys with English) — the backlog is 22
+        strings, and it is one feature.** Keys with zero of nine locales filled: **65**. Subtract
+        the **13** shipped today and the **~30 that must never be translated** (hex colors,
+        URLs, chart glyphs, bare emoji, token-only strings like `[QuestionPrompt]`, and
+        `QuestionType_enum_label_Role`, whose English literally reads *"Role (skip translation)"*)
+        and what remains is **22 real strings**. Also **13 keys are partially translated** (1 to 8
+        of 9 locales) and nothing has ever looked at those.
+      - ⚠️ **14 of the 22 are the network-publishing family** (`NetworkPublish*`,
+        `NetworkSuveyNoSurveys`, `PickSurveyToPublish`) — one admin feature that shipped
+        English-only and stayed that way. The rest are **5 `SurveyType_enum_label_*`**, **2
+        `tier_label_*`** (`Admin`/`Test`, plausibly internal and skippable), and
+        `Log_Completes_Drop_down_everone` (*"Everyone"*, which per the skill means Discord's
+        `@everyone`). **`SurveyBuilder_name_poll`** was in the list until today and carries the
+        poll noun, so it belongs to A2c, not here.
+      - **So A12 closes at 22 strings, not an open-ended sweep** — and the reusable lesson is the
+        scan itself: *English present, all nine locales empty* is a one-line query nothing in the
+        pipeline was running.
+      - **▶️ RE-SCANNED 2026-09-04 (2,628 rows): the estimate holds.** 54 keys at 0/9; after
+        dropping URLs, hex colors, glyph-only and token-only strings, **~25 real ones** — the 22
+        already scoped plus **2 genuinely new keys** (`BotIntroForSurveyThread`,
+        `User_Thread_Create_Permission_error`) and `SurveyBuilder_name_poll`, which carries the poll
+        noun and belongs to **A2c**, not here. **The 14 `NetworkPublish*` strings are still the bulk.**
+      - ⭐ **`BotIntroForSurveyThread` reads *"Thanks for answering this Convo:"*** — a brand-new
+        English string already written in the settled vocabulary, with no *survey* in it. That is
+        the A12 instruction (*write these in the new vocabulary from the start*) actually being
+        followed, and it is the first evidence of it.
+      - ⚠️ **The 13 partially-translated keys have a pattern nobody has looked at: eight of them are
+        Russian-only (1 of 9).** `QuestionType_enum_label_Color`, `QuestionType_enum_label_Url`,
+        `Voter_summary_by_answer_hdr`, `Web_Account_Avatar_Label`, `tier_label_VIPTier` and
+        `Add_new_group_label` all have `ru` filled and the other eight locales empty. **One locale
+        filled and eight empty is not a translation gap, it is a pipeline artifact** — something
+        wrote `ru` alone, repeatedly. Worth one query before translating them, or the same thing
+        happens again.
 - [ ] **A13. German mixes `Sie` and `du` — 41 cells.** Found while scoping A2c-DE
       (`A1c-work/scan_de.py`): **34 DE cells address the user formally and 7 more use both
       registers in one string**, against **380 that use `du`**. The majority is the house voice, so
@@ -3158,6 +3416,163 @@ in `fr.json` mirror an English `questionnaire` exactly, and it is a declared doo
         cannot simply become *"Sondages, sondages & quiz"*. Same forced pairing A14 hit; the FR
         answer is `Convo`, and `fr.deny` already wants the retired conversational-survey phrasings
         gone (3 open entries in `knownViolations`). **Consider doing both in one edit.**
+
+- [ ] **A17. `Abstimmung` survives in the German APP — 29 cells (re-measured 2026-09-04; filed as 30), and A14 never looked.** Found while
+      sweeping A11-DE. A2c-DE scanned for `Umfrage`/`Meinungsumfrage`; A14 fixed `Abstimmung` but only
+      in `de.json`. **Nothing has ever run A14's act/instrument test against the app column**, which
+      is where the word actually appears 30 times.
+      - **Most are the ACT and must survive**, exactly as `actPaths` protects on the site:
+        `Web_CanvasPanel_DeleteContentBlockDescription` (*Abstimmende … Stimmabgabe*),
+        `Web_PollPreview_AfterVoting` (*Nach der Abstimmung*), `ResponseLabel_Singular` (EN **vote**),
+        `XpHistory_row_pollvote` (EN **Poll vote**), `Setup_server_button_mode` (*Abstimmungsmodus*
+        for EN **Voting Mode**). Roughly 20 cells.
+      - **The instrument uses are the defect**: `Edit_poll_questions_cmd` (*Abstimmung bearbeiten*
+        for EN **Edit Poll**), `PollCommand_too_many_answers` (*Abstimmungskonfiguration*),
+        `PollCommand_option_info_display_description` (*Abstimmungsinfos*),
+        `Web_InviteTab_ChartEmojiHelp` (*Abstimmungsergebnisse*). Target is `Umfrage`, the same word
+        A14 moved the site onto. ⚠️ `Edit_poll_questions_cmd` → *Umfrage bearbeiten* is **only free
+        because A11-DE moved `Survey_Command_Edit_temp_channel_name` off that exact string** — ship
+        A11-DE first or the two collide.
+      - **⭐ A third defect hiding in the same word**: `ExportResults_cmds_details_per_respondent`,
+        `Poll_embed_show_voters_button_emoji` and `Voter_summary_title` all render English
+        **"Individual responses"** as *Abstimmungsdetails* — poll-specific German for a label that
+        is generic in English and appears on Convo results too. That is the **responses** noun
+        (glossary), not the poll one. Likely `Einzelantworten`.
+      - ⚠️ **`PollCommand_button_mode_name` is `abstimmungsknopf`**, a slash-command option name
+        (cap 32). English is `voting_button` — the act — so this one is probably correct and should
+        be left alone. **Check before touching; a rename re-registers the command.**
+      - **Also worth one cell here**: `Targeted_Error_Survey_Missing_Profile` renders EN *"starting
+        your session"* as *"Starten deiner Befragung"*. `Befragung` is German's only use of that
+        word anywhere and it is not the survey noun; EN says **session**.
+
+- [ ] **A18. The German site still says `Umfrage` for the survey — 73 strings.** ⚠️ **A14 filed this
+      as "the site half of A11-DE" and that was wrong.** Of the 73 `de.json` strings carrying
+      `Umfrage` whose English never says *poll*, **zero say *project*** and **65 say *survey***.
+      This is **the survey vacate**, the site counterpart of what A2c-DE did to the app — not the
+      project umbrella.
+      - **The collision is real and it is on the poll's own door.** `/de/polls/` owns `Umfrage`
+        (150 imp, position 1.0, Discord's word). Marketing prose using the same noun for the survey
+        is the exact ambiguity A2c-DE spent 207 cells removing from the app.
+      - **`de.json` says `Convo` in 16 strings and `Umfrage` in 117.** The German site is still
+        mostly pre-Convo prose, and A14 only moved the strings where a poll/survey pair forced it.
+      - ⚠️ **This one is not "volume, not judgment".** The English source often says *survey* as the
+        plain-English category, which the glossary explicitly permits — so each string needs the
+        instrument/category test, and a blanket `Umfrage` → `Convo` would read as product-speak in
+        marketing copy. **Closer to A15's shape than A11's.** Scope it after A15 settles the English.
+
+- [x] **A19. ✅ DONE 2026-09-04. ⭐ THE SKILL'S TABLE RESTATED MACHINE-CHECKED DATA AND NOTHING READ IT — the guard
+      was green while the document said the wrong word.** Found 2026-09-02 while translating a batch:
+      `subo-localization`'s inline poll/survey table still said the German poll word was
+      `Meinungsumfrage`, three days after A2c-DE moved it to `Umfrage` and 207 cells shipped. The
+      table was followed, because a checked-in document gets believed. **The DE cell was caught
+      only because the translator opened `lexicon.json` as well** — nothing failed, nothing warned.
+      - ⚠️ **CORRECTED 2026-09-02, same day: the first diagnosis was wrong, and the wrong one is
+        more flattering.** This was filed as "the guard only covers 4 of 10 locales, so the other
+        6 are unenforced." **It does not hold.** `app.pollWord` carries all ten locales,
+        `check:lexicon` compares every one of them against `discord.pollWord`, and
+        `t2b.es/it/nl/pl/ru/tr` sit in `knownViolations` as recorded baseline. **The lexicon was
+        right and current about German the whole time.** A2 worked.
+      - **The actual failure is one layer up: `SKILL.md`'s table is a hand-maintained copy of
+        machine-checked data, and nothing reads it.** `check:lexicon` reads `lexicon.json`; it has
+        no idea the skill restates the same nine rows in prose. So the guard was green while the
+        document a translator actually opens said `Meinungsumfrage`. **This is A2's stated premise
+        recurring one level out** — "nobody noticed, because nothing could check it" — and it is
+        the same shape as A9: *a checked-in document gets believed.*
+      - ⭐ **So the fix is not more lexicon coverage. It is to stop the table restating the data.**
+        Per the section's own principle (*a data file with a guard, NOT a document*), the poll and
+        survey columns should either be **generated from `lexicon.json`** or **deleted, with the
+        skill instructed to read the JSON** — which sits in the same directory, already vendored
+        byte-identical. What is left in the table afterwards is the part a JSON file cannot carry:
+        status, collision notes, migration history. That part is worth keeping and cannot drift,
+        because nothing else claims to own it.
+      - **A7a is still worth doing, on its own merits** — it pins `instruments.convo` per locale
+        under a hard-fail check and unlocks per-locale deny lists. It is just **not** what would
+        have caught this.
+      - **Interim fix, done 2026-09-02** (`subo/.claude/skills/subo-localization/SKILL.md`): DE
+        corrected to `Umfrage`/`Convo`, FR and PT-BR survey column moved to `Convo` to match
+        `instruments.convo`, and the four mirrored rows marked **🔒** with a note saying the
+        unmarked rows are the table's own unchecked record. **That is a patch, not the fix** — it
+        makes the gap visible instead of closing it, and the next migration will re-open it.
+      - **Not blocked on anything.** Deleting or generating a table needs no search evidence, no
+        migration and no ruling. It is the cheapest item in this section and it removes a class of
+        error rather than an instance of one.
+      - **Do not confuse this with A2c.** Nothing here moves a word a user reads; it only stops a
+        document making claims nothing can falsify.
+      - ⚠️ **The generalization, which is the reason to keep this filed after it ships:** the same
+        shape exists wherever a skill or doc restates data that lives somewhere checkable. A9 was
+        this (a documented workflow step that was not the real one). **Before writing a table into
+        a skill, ask whether a file already owns those columns.**
+      - **✅ RESULT 2026-09-04 — the table is deleted, and deleting it required giving the lexicon
+        one column it never had.** Of the table's four columns, two (`poll (current)`, `Discord's
+        word`) were already in `app.pollWord` and `discord.pollWord`. The third, **the survey word,
+        was owned by nothing** — so the table could not simply be deleted without losing data.
+        Added as **`app.surveyWord`** (10 locales, `{command, webUi}`), derived from the 2026-08-31
+        export: `Survey_Command_new` plus the `Web_*` survey/Convo label family. `SKILL.md` now
+        carries a **JSON-path lookup table** (which path answers which question) and a status column
+        that is history only.
+      - **⭐ THE FOURTH COLUMN WAS DERIVABLE ALL ALONG.** `❌ collides` is just
+        `app.surveyWord.<loc> == discord.pollWord.<loc>`. `check:lexicon` now computes it and prints
+        a `collision:` note. **It reproduces the hand-written column exactly** — es, it, pl, ru, tr
+        collide; de, fr, nl, pt-BR do not. That equality is the proof the column was restated data
+        rather than knowledge, and it is the cheapest possible demonstration of this item's thesis.
+      - ⚠️ **THE INTERIM FIX MADE IT WORSE, WHICH IS THE STRONGEST ARGUMENT AGAINST PATCHING A
+        MIRROR.** On 2026-09-02 the FR and PT-BR survey cells were moved to `Convo` "to match
+        `instruments.convo`". The export says the app calls them **`enquête`** and **`pesquisa`**.
+        The patch corrected the table toward the TARGET while its own header said *WHAT THE APP SAYS
+        TODAY* — so a table created to stop drift acquired two fresh wrong cells in three days.
+        **Only German actually says `Convo`.** A mirror cannot be repaired by editing the mirror.
+      - **Two live defects fell out of reading the export instead of the table.** Filed as **A20**
+        (the French web UI never moved off `Vote`) and **A21** (`Convo` is translated in 16 cells).
+        Neither was findable from any document; both took one query against the export.
+
+- [ ] **A20. ⚠️ THE FRENCH WEB UI STILL SAYS `Vote` FOR THE POLL — 4 cells, and A2b closed as
+      done (2026-09-04).** `lexicon.json` recorded `fr.app.pollWord.webUi = "sondage"` on both
+      surfaces and **that was false**. The export says `Default_Poll_name_prefix`,
+      `Web_NewProject_Poll`, `Web_Projects_Filter_Poll` and `Web_Projects_Type_Poll` are all
+      **`Vote`**; only `Web_InviteTab_Poll` says `sondage`. The **command** is `sondage`, so a French
+      user types `/sondage` and the web UI calls the result a *Vote* — the exact failure mode the
+      T2b self-disagreement check was written for.
+      - **✅ RE-CONFIRMED against the 2026-09-04 export.** All four cells are still `Vote` and the
+        command is still `sondage`. Nothing has moved; this is live right now.
+      - **The row is corrected and `t2b.fr` is now in `knownViolations`.** ⚠️ **This GREW the
+        baseline, 22 ids to 23**, against the file's own rule. It is the right call and the reason
+        matters: **the violation was always live**; the baseline grew because a hidden defect became
+        visible, not because debt was added. A guard that only ever shrinks its baseline is a guard
+        being fed comfortable data.
+      - ⚠️ **`ResponseLabel_Singular` is `Vote` for English *vote* and is CORRECT** — the act, same
+        distinction A14 drew for German `Abstimmung` and A16 for French `vote`. Four cells move,
+        that one does not. **The fifth is why a blanket find/replace is wrong here.**
+      - **Cheap: 4 cells, one locale, one file.** Same shape as A14 but a tenth the size, and it
+        clears a `knownViolations` id that is three days old rather than three months.
+      - **⭐ The lesson is about A2b, not about French.** A2b was closed from an edit, not from a
+        re-export. **A11-DE, A2c-DE and now A20 all say the same thing: verify by re-export, and a
+        migration item's own closing note is the least reliable thing about it.** Third occurrence.
+
+- [ ] **A21. `Convo` is TRANSLATED in 16 app cells and should be in none (2026-09-04).**
+      `Web_Projects_Filter_Convo` and `Web_Projects_Type_Convo` have English `Convo` and are
+      translated in **8 of 9 locales** — every one but German (`Encuesta`, `Enquête`, `Sondaggio`,
+      `Enquête`, `Ankieta`, `Pesquisa`, `Опрос`, `Anket`). T3 says the brand noun is invariant in
+      every locale; this is the single clearest breach of it in the product.
+      - ⚠️ **Nothing could have caught it.** `check:lexicon`'s T3 branch checks
+        `locales.<loc>.instruments.convo` (a lexicon field) and the `deny` rules read **site** JSON;
+        `scope: "app"` rules are skipped outright. **No check reads the app column for T3**, which
+        is the same blind spot A17 sits in.
+      - **These are the two cells that most need to be invariant**, not the least: a projects filter
+        and a type label, side by side with the poll's own label, on the surface where a creator
+        learns what the two instruments are called. A locale that translates `Convo` here teaches
+        the wrong noun at the exact moment the distinction is being made.
+      - **Cheap and ungated**: 16 cells, one word, no ruling and no evidence needed — `Convo` is
+        already settled (T3) and every one of these translations contradicts a value already in
+        `lexicon.json`. ⚠️ **Check for others**: this was found by querying one shape (English cell
+        is exactly `Convo`). Cells where English embeds `Convo` in a sentence were not swept.
+      - **The mechanism gap is the durable half.** Consider whether `scope: "app"` deny rules should
+        run against the export rather than being skipped, which would make T3 checkable on the
+        surface where it is actually being broken.
+      - **✅ RE-CONFIRMED against the 2026-09-04 export: exactly 16 cells, unchanged.** The sweep
+        also picked up a **third** key whose English is bare `Convo` — **`ConvoThreadLabel`**, added
+        since 08-31 — and it is correctly untranslated in all nine. **New strings are being written
+        correctly; it is the old two that are wrong**, which narrows this to a fix rather than a
+        habit. ⚠️ Still unswept: cells where English embeds `Convo` inside a sentence.
 
 **Success metric:** one lexicon, readable from both repos and enforced by a guard; no page
 competing with another page in the same locale for the same word; every locale's poll word equal

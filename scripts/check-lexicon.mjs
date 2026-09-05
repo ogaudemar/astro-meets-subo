@@ -13,6 +13,9 @@
  * What it verifies:
  *   1. T2b  poll word == Discord's word, per locale, on BOTH app surfaces.
  *           This is the check nothing in either repo could do before lexicon.json.
+ *   1b. —    whether the T2b move is a PAIRED migration, derived: a locale collides
+ *           when its survey word already IS Discord's poll word. Reported, never
+ *           declared — this used to be a hand-maintained column in a skill (A19).
  *   2. T3   denylisted phrases absent from each locale's translation JSON.
  *   3. T5   one door word owns at most one page title/H1 per locale (anti-cannibalization).
  *   4. T4   'Convo' absent from every <title> and <h1> (it is not a ranking word).
@@ -49,6 +52,13 @@ const notes = [];
 
 const lex = JSON.parse(readFileSync(LEXICON, 'utf8'));
 const known = lex.knownViolations ?? {};
+
+// $-prefixed keys are documentation, the convention everywhere else in the
+// lexicon (see flatten() below). Iterate locales through this, never through
+// Object.entries directly: a `$about` treated as a locale hard-fails on t3
+// with a message about Convo, which points nowhere near the real cause.
+const localeRows = Object.entries(lex.locales).filter(([k]) => !k.startsWith('$'));
+const localeCodes = localeRows.map(([k]) => k);
 
 /** Route a finding to failure or to the recorded baseline. */
 function report(id, msg) {
@@ -103,9 +113,29 @@ for (const [loc, discordWord] of Object.entries(lex.discord.pollWord)) {
   }
 }
 
+// ── 1b. Collision — derived, because a document used to assert it ───────────
+// Moving a locale's poll word onto Discord's word is a one-line edit UNLESS the
+// locale already uses that exact word for the survey, in which case both words
+// have to move in the same upload (A2c). That is a fact about two values already
+// in this file; SKILL.md restated it as a status column and drifted (A19). It is
+// a state, not a defect, so it is a note: the defect is t2b.<loc>, already fired.
+
+for (const [loc, discordWord] of Object.entries(lex.discord.pollWord)) {
+  const survey = lex.app.surveyWord?.[loc];
+  if (!survey) continue;
+  const norm = (x) => (x ?? '').toLocaleLowerCase();
+  if (norm(survey.command) === norm(discordWord) || norm(survey.webUi) === norm(discordWord)) {
+    notes.push(
+      `collision: ${loc}'s survey word is already "${discordWord}", which is what T2b wants its POLL ` +
+        `to be called. Moving the poll alone would name two things the same; both words move in one ` +
+        `upload (A2c).`,
+    );
+  }
+}
+
 // Every active locale must declare its own instrument words, and the poll one
 // must match the Discord reference it claims to follow.
-for (const [loc, row] of Object.entries(lex.locales)) {
+for (const [loc, row] of localeRows) {
   const discordWord = lex.discord.pollWord[loc];
   if (discordWord && row.instruments?.poll?.toLocaleLowerCase() !== discordWord.toLocaleLowerCase()) {
     report(
@@ -124,7 +154,7 @@ for (const [loc, row] of Object.entries(lex.locales)) {
 
 // ── 2. T3 — denylisted phrases absent from the locale's translation JSON ─────
 
-for (const [loc, row] of Object.entries(lex.locales)) {
+for (const [loc, row] of localeRows) {
   const file = translationFile(loc);
   if (!existsSync(file)) {
     notes.push(`no translations file for "${loc}" (${relative(SITE_ROOT, file)}) — skipping its denylist.`);
@@ -234,7 +264,7 @@ if (!existsSync(DIST)) {
   const localeOf = (p) => {
     const seg = p.split('/')[1];
     if (!SITE_LOCALES.includes(seg)) return 'en';
-    return Object.keys(lex.locales).find((l) => l.toLowerCase() === seg) ?? seg;
+    return localeCodes.find((l) => l.toLowerCase() === seg) ?? seg;
   };
 
   /**
@@ -260,7 +290,7 @@ if (!existsSync(DIST)) {
   // not carry it, the declaration is fiction and every other check built on it is
   // reasoning from a false premise.
 
-  for (const [loc, row] of Object.entries(lex.locales)) {
+  for (const [loc, row] of localeRows) {
     for (const door of row.doors ?? []) {
       if (!door.owns) continue;
       const page = built.get(door.owns);
@@ -293,7 +323,7 @@ if (!existsSync(DIST)) {
   // and /cookies/ as competing for "survey". The H1 is the page's own claim about
   // its subject; the title is mostly furniture.
 
-  for (const [loc, row] of Object.entries(lex.locales)) {
+  for (const [loc, row] of localeRows) {
     for (const door of row.doors ?? []) {
       const re = new RegExp(`\\b${escapeRe(door.word)}s?\\b`, 'i');
       const byClass = new Map();
@@ -350,8 +380,8 @@ function escapeRe(s) {
 
 // ── Report ───────────────────────────────────────────────────────────────────
 
-const locCount = Object.keys(lex.locales).length;
-const doorCount = Object.values(lex.locales).reduce((n, l) => n + (l.doors?.length ?? 0), 0);
+const locCount = localeRows.length;
+const doorCount = localeRows.reduce((n, [, l]) => n + (l.doors?.length ?? 0), 0);
 console.log(`check-lexicon: ${locCount} locales, ${doorCount} door words, lexicon v${lex.version} (${lex.updated})`);
 
 for (const n of notes) console.log(`  note: ${n}`);

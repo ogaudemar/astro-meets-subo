@@ -12,7 +12,7 @@
     "here as T1..T10 are defined there. Do not restate the reasoning in this file; it will drift."
   ],
   "version": 1,
-  "updated": "2026-08-31",
+  "updated": "2026-09-04",
 
   "framework": {
     "$about": [
@@ -98,10 +98,10 @@
       "",
       "Refresh with `!test user_messages` in Discord, which DMs the xlsx."
     ],
-    "source": "user_messages_all_2026-08-18.xlsx, plus the A2b batch (2026-08-28), A1c (2026-08-29) and A2c-DE (207 cells, 2026-08-30). ⚠️ The de row reflects the A2c-DE upload, which the importer ACCEPTED but which has not yet been confirmed by re-export. Re-export with `!test user_messages` and reconcile this row against it. This file records what we believe the DB holds; only the export knows.",
+    "source": "✅ CONFIRMED BY RE-EXPORT 2026-09-04 (`new-path/user_messages.xlsx`, 2,628 rows). The de row's A2c-DE upload is verified live, and A11-DE (45 cells) landed on top of it. Live German across the whole DB: Meinungsumfrage 0, Umfrageleiter 0, Umfrage 83 (all polls), Convo 162, Projekt 148, Creator 24. Earlier provenance: user_messages_all_2026-08-18.xlsx, the A2b batch (2026-08-28), A1c (2026-08-29), A2c-DE (207 cells, 2026-08-30), A11-DE (45 cells, 2026-09-04). ⚠️ Every other locale's row is still only as fresh as this export; re-export with `!test user_messages` before trusting one. This file records what we believe the DB holds; only the export knows.",
     "pollWord": {
       "en":    { "command": "poll",          "webUi": "poll" },
-      "fr":    { "command": "sondage",       "webUi": "sondage" },
+      "fr":    { "command": "sondage",       "webUi": "Vote",          "$note": "⚠️ A20, 2026-09-04. This row said webUi \"sondage\" and was wrong: `Web_NewProject_Poll`, `Web_Projects_Filter_Poll` and `Web_Projects_Type_Poll` all say `Vote`, and so does `Default_Poll_name_prefix`. Only `Web_InviteTab_Poll` says `sondage`. A2b (2026-08-28) closed as \"command AND web UI\"; the web UI is 3-to-1 against it. Recorded as the majority so t2b.fr fires." },
       "pt-BR": { "command": "enquete",       "webUi": "enquete" },
       "de":    { "command": "umfrage",       "webUi": "Umfrage" },
       "es":    { "command": "votación",      "webUi": "votación" },
@@ -110,10 +110,53 @@
       "pl":    { "command": "głosowanie",    "webUi": "głosowanie" },
       "ru":    { "command": "голосование",   "webUi": "голосование" },
       "tr":    { "command": "oylama",        "webUi": "oylama" }
+    },
+
+    "$surveyWordAbout": [
+      "What the live app calls the SURVEY instrument, per locale. Added 2026-09-04 (A19).",
+      "",
+      "It exists because `subo-localization`'s SKILL.md table carried this column and nothing else did,",
+      "so it was the one column of that table a machine could not check — and it had already drifted:",
+      "the 2026-09-02 interim patch moved the FR and PT-BR cells to `Convo` to match instruments.convo,",
+      "which contradicted the table's own header (WHAT THE APP SAYS TODAY). The app says `enquête` and",
+      "`pesquisa`. Only German actually says Convo.",
+      "",
+      "command = `Survey_Command_new`. webUi = the `Web_*` survey/Convo label family, which agrees with",
+      "the command in every locale except en-US. ✅ Re-derived unchanged from the 2026-09-04 export.",
+      "",
+      "COLLISION IS DERIVED FROM THIS, NOT DECLARED: a locale collides when its survey word already IS",
+      "Discord's poll word, which is what makes the T2b move a PAIRED migration (A2c). check:lexicon",
+      "computes it; do not write a collision column into a document again."
+    ],
+    "surveyWord": {
+      "en":    { "command": "survey",    "webUi": "Survey", "$note": "⚠️ Mid-migration: `Web_Projects_Filter_Convo` and `Web_Projects_Type_Convo` already say `Convo`, the other four still say `Survey`. A15 settles it." },
+      "fr":    { "command": "enquête",   "webUi": "enquête" },
+      "pt-BR": { "command": "pesquisa",  "webUi": "pesquisa" },
+      "de":    { "command": "convo",     "webUi": "Convo",  "$note": "A2c-DE, 2026-08-30. The only locale where the survey word is actually Convo." },
+      "es":    { "command": "encuesta",  "webUi": "encuesta" },
+      "it":    { "command": "sondaggio", "webUi": "sondaggio" },
+      "nl":    { "command": "enquête",   "webUi": "enquête" },
+      "pl":    { "command": "ankieta",   "webUi": "ankieta" },
+      "ru":    { "command": "опрос",     "webUi": "опрос" },
+      "tr":    { "command": "anket",     "webUi": "anket" }
     }
   },
 
   "locales": {
+    "$about": [
+      "One row per shipping locale. `status` says how far the row has been taken:",
+      "  active            — instruments, a bridge sentence, doors with evidence, and a working deny list.",
+      "  seeded            — the same, but the doors have no owning URL yet because the pages do not exist.",
+      "  instruments-only  — instruments and an empty deny list, nothing else. A7a. Recording what a locale",
+      "                      SAYS, which moves nothing a user reads. `doors` and `bridge` are OMITTED, not",
+      "                      empty: both need per-locale search evidence (T9) and that is A7b.",
+      "",
+      "`instruments.poll` records the word the app says TODAY, not the word T2b wants it to say. That is",
+      "deliberate and it is what makes the check at t2b.<loc> able to fire; a row holding the target would",
+      "be tautological. `instruments.convo` must be exactly \"Convo\" (T3) and is a HARD failure, never",
+      "routable to knownViolations — once a locale has a row it can no longer quietly stop saying Convo."
+    ],
+
     "en": {
       "status": "active",
       "instruments": { "poll": "poll", "convo": "Convo" },
@@ -206,11 +249,57 @@
         { "word": "pesquisa", "pillar": "understand", "resolvesTo": "convo", "owns": null, "evidence": "subo-localization survey word; no search export yet" }
       ],
       "deny": []
+    },
+
+    "es": {
+      "status": "instruments-only",
+      "$note": "A7a, 2026-09-04. Records what the locale SAYS; it moves nothing. `doors` is omitted because no Spanish search evidence exists yet (T9) — that half is A7b. instruments.poll is the app's live word, not T2b's target, which is why t2b.es fires into the baseline.",
+      "instruments": { "poll": "votación", "convo": "Convo" },
+      "deny": []
+    },
+
+    "it": {
+      "status": "instruments-only",
+      "$note": "A7a, 2026-09-04. See es. The Italian app has never translated the poll noun at all: `poll` is the literal live string on both surfaces, not a placeholder.",
+      "instruments": { "poll": "poll", "convo": "Convo" },
+      "deny": []
+    },
+
+    "nl": {
+      "status": "instruments-only",
+      "$note": "A7a, 2026-09-04. See es. ⚠️ The two app surfaces disagree (command `opiniepeiling`, web UI `poll`), so instruments.poll cannot record both. It records the COMMAND word, the one a user types. app.pollWord keeps the pair, and t2b.nl already fires on the disagreement itself.",
+      "instruments": { "poll": "opiniepeiling", "convo": "Convo" },
+      "deny": []
+    },
+
+    "ru": {
+      "status": "instruments-only",
+      "$note": "A7a, 2026-09-04. See es.",
+      "instruments": { "poll": "голосование", "convo": "Convo" },
+      "deny": []
+    },
+
+    "pl": {
+      "status": "instruments-only",
+      "$note": "A7a, 2026-09-04. See es. ⚠️ HELD under T9 — see the `held` block. The hold is about door words; this entry has none, which is what a held locale should look like in the data rather than as an absence a reader has to infer.",
+      "instruments": { "poll": "głosowanie", "convo": "Convo" },
+      "deny": []
+    },
+
+    "tr": {
+      "status": "instruments-only",
+      "$note": "A7a, 2026-09-04. See es and pl. HELD under T9.",
+      "instruments": { "poll": "oylama", "convo": "Convo" },
+      "deny": []
     }
   },
 
   "held": {
-    "$about": "Locales held under T9: no door word with evidence behind it, so they wait rather than shipping a guess.",
+    "$about": [
+      "Locales held under T9: no door word with evidence behind it, so they wait rather than shipping a guess.",
+      "A hold is about DOOR WORDS only. Since A7a a held locale also has a `locales` row carrying its",
+      "instruments and no doors, which is what the hold looks like in data instead of as a missing key."
+    ],
     "pl": "Discord says 'ankieta' but it collides with Subo's survey word; needs a paired migration (A2c) and a search export.",
     "tr": "Same collision shape as pl. 'anket' is Discord's poll word and Subo's survey word."
   },
@@ -241,6 +330,7 @@
       "The app half of A1c is unaffected: those deny rules are scope:'app', checked against",
       "user_messages, which this repo cannot read. Status lives in terminology-english-inventory.md."
     ],
+    "t2b.fr": { "reason": "A20. The French WEB UI says `Vote` for the poll in 4 cells (`Default_Poll_name_prefix`, `Web_NewProject_Poll`, `Web_Projects_Filter_Poll`, `Web_Projects_Type_Poll`) while the command says `sondage`. ⚠️ This entry GREW the baseline on 2026-09-04, and that is the guard working: the violation was always live, and the file said `sondage` on both surfaces so nothing could fire. A2b closed too early.", "clearedBy": "A20" },
     "t2b.es": { "reason": "'votación' vs Discord 'encuesta'. Spanish sends poll searchers to the survey page.", "clearedBy": "A2c" },
     "t2b.it": { "reason": "'poll' (untranslated) vs Discord 'sondaggio'.", "clearedBy": "A2c" },
     "t2b.nl": { "reason": "'opiniepeiling'/'poll' vs Discord 'peiling'; the two surfaces also disagree with each other.", "clearedBy": "A2b (ii)" },

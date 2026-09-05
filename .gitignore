@@ -32,3 +32,16 @@ pnpm-debug.log*
 
 # Ignore Obsidian workspace configuration
 .obsidian/
+
+# Obsidian stub notes. The repo root is an Obsidian vault, and blog posts link to
+# site routes as root-relative markdown (`](/blog/how-to-make-a-discord-form)`).
+# Obsidian reads those as vault paths and creates an empty .md at that path the
+# moment one is clicked — so `/blog/`, `/use-cases/`, `/tutorials/` and root-level
+# `foo.md` appear out of nowhere. Real content is under src/, docs/ and public/;
+# the only tracked .md files at the root are the two below.
+/*.md
+!/README.md
+!/CLAUDE.md
+/blog/
+/use-cases/
+/tutorials/
