@@ -17,11 +17,11 @@ the number it measures.** Work that cannot answer that is product quality, and b
 
 | # | Do this | Why it is first | Where |
 |---|---|---|---|
-| 1 | **Run the 2026-09-08 Search Console checkback** | The one measurement that says whether subo.gg receives French impressions at all. Every content decision since 2026-08-25 is spending against an unverified assumption. Block carries the exact regex; **do not reconstruct it.** | P2 |
+| 1 | **Run the 2026-09-08 Search Console checkback** ⚠️ **user-only, steps A–D** | The one measurement that says whether subo.gg receives French impressions at all. Every content decision since 2026-08-25 is spending against an unverified assumption. Block carries the exact regex; **do not reconstruct it.** **Pre-flight done 2026-09-07** — every non-Search-Console precondition verified live, so a null result can't be blamed on our plumbing. | P2 |
 | 2 | **Send the roundup outreach** | Editorial backlinks, kit built 2026-08-03, explicitly **not** migration-gated, warm lead already live in CommunityOne. Sitting untouched for a month. | P5 |
 | ~~3~~ | ~~**Claim the four ecosystem links**~~ ❌ **CLOSED 2026-09-07** | Checked one URL at a time: Cloudflare's "Built with Workers" **404s**, Astro's showcase is **`nofollow ugc`** in a 2,374-comment thread, Stripe's Technology track is **invitation-only** and we are a merchant not a partner, and **Discord was already done in P1**. Three of the item's four claims were false and nobody had opened the URLs. P3 is closed, not deferred. | P3 |
 | ~~4~~ | ~~**Fix the `api.subo.ai` duplicate content**~~ ✅ **DONE 2026-09-05** | The canonical header had in fact shipped app-side on 2026-08-07 and this file never noticed. Verifying it live surfaced a *different* live defect: it, and twelve URLs in our own JSON-LD, named the slashless form, which 307s. All fixed and now guarded. See the ITEM 4 note in P2. | P2 / migration block |
-| 5 | **Run the GEO citation test** | Untestable while robots blocked; the block opened 2026-08-05 and a month of recrawl has run. Ask an LLM "best Discord survey bot" and record the answer. | robots.txt block |
+| ~~5~~ | ~~**Run the GEO citation test**~~ ✅ **DONE 2026-09-07** | The recrawl provably happened: Common Crawl went **0 captures (Jun, Jul) → 166 (Aug), 98 fetched, 21 French** the first crawl after the unblock. Citations are split: **#1 and named first for "best Discord survey bot"** on `subo.gg`, but **absent from the poll and form clusters**, and the French answer still cites **`subo.ai`**. Full table in the block. | robots.txt block |
 | 6 | **Finish the no-"bot" / form / app vocabulary wave** ⚠️ **scoped down 2026-09-05** | The only keyword expansion justified by this file's own circularity principle. Half shipped, remaining actions enumerated, then dropped. **The `t5.*.form` half is withdrawn** — the flag did not survive scrutiny and the H1s stand; see A6. What remains is genuine "app"/"form" vocabulary in *other* pages' titles and H2s, and the standalone `/draft` page. | P2 |
 | ~~7~~ | ~~**Two known factual errors on indexed pages**~~ ✅ **DONE 2026-09-05** | The survey how-to said 5 question types and `/survey-convos` had no outbound content link. Both fixed; the wizard question is settled against the code. See the ITEM 7 note in P2. | P2 |
 
@@ -33,11 +33,16 @@ work. Its internal "critical path" is critical to that migration only.
 recovered, non-branded have not). That is an argument for spending this window on items 2-5,
 which are not migration-gated, rather than on more pages.
 
-⚠️ **With item 3 closed, this list is down to three, and only one of them earns links.**
-Item 1 (the checkback) and item 5 (the GEO citation test) are **measurements**; item 6 is
-copy on pages we already own. **Item 2 — the roundup outreach — is now the only unstarted
-item on this roadmap that can produce an external editorial link**, and it has been sitting
-built and unsent since 2026-08-03. If a session has to pick one thing, it is that.
+⚠️ **With items 3 and 5 closed, this list is down to three, and only one of them earns
+links.** Item 1 (the checkback) is a **measurement** the user must run in the Search Console
+UI; item 6 is copy on pages we already own. **Item 2 — the roundup outreach — is now the only
+unstarted item on this roadmap that can produce an external editorial link**, and it has been
+sitting built and unsent since 2026-08-03. If a session has to pick one thing, it is that.
+
+**What item 5 handed to item 6 (2026-09-07):** AI answers name EasyPoll, PollBotPlus, Appy and
+FormBot for *poll* and *form* queries and do not name Subo, while naming Subo **first** for
+*survey*. Item 6's vocabulary thesis was argued from circularity alone; it now has outside
+evidence, and the poll/form rows of that table are its scoreboard.
 
 ## Guiding principles
 
@@ -203,11 +208,71 @@ robots.txt.
       heuristics. The public API already rate-limits per key in code (60/300/600/1000 rpm by
       tier — `check:api` verifies those numbers); a Cloudflare rate-limit rule in front of
       `api.subo.ai` is reasonable defense in depth. Bot Fight Mode is the wrong tool.
-- [ ] After unblocking, this is the moment to re-read P2's success metric ("LLM citations
-      when asking 'best Discord survey bot'") — it was never testable while the block was on.
-      **Expect lag:** those crawlers were turned away, so there is nothing cached to draw
-      on; recrawl and reappearance in AI answers runs weeks-to-months, similar to the domain
-      migration curve.
+- [x] **GEO citation test — RUN 2026-09-07. The gate is open and the recrawl happened.**
+      This was P2's success metric ("LLM citations when asking 'best Discord survey bot'"),
+      untestable while the block was on. Results in the block below.
+
+### ✅ GEO CITATION TEST — run 2026-09-07 (roadmap item 5)
+
+Thirty-three days after the 2026-08-05 unblock. Two measurements: **did the crawlers
+actually come back** (yes, provably), and **do AI answers cite us** (yes for *survey*, no
+for *poll* and *form*).
+
+**1. Common Crawl recrawl — the hard evidence the gate opened.** CCBot was one of the four
+blocked agents, and the Common Crawl index is public, dated and queryable, so it settles the
+"did anything change" question without waiting on an LLM's opinion. Queried
+`index.commoncrawl.org` for `subo.gg/*`:
+
+| Index | Crawl window | Block state | Captures | HTTP 200 | `/fr/` URLs |
+|---|---|---|---|---|---|
+| CC-MAIN-2026-25 | Jun 2026 | **ON** | `No Captures found` | 0 | 0 |
+| CC-MAIN-2026-30 | Jul 10–23 | **ON** | `No Captures found` | 0 | 0 |
+| CC-MAIN-2026-34 | Aug 7–20 | **OFF** (since Aug 5) | **166** | **98** | **21** |
+
+Zero to 98 fetched pages in the first crawl after the fix. **The 2026-08-04 finding was real
+and the 2026-08-05 fix worked** — that is now a matter of public record, not inference.
+Reproduce with:
+
+```
+curl -s "https://index.commoncrawl.org/CC-MAIN-2026-34-index?url=subo.gg%2F*&output=json&limit=2000"
+```
+
+Note the 67 `307`s in that crawl: slashless internal forms (`/about`, `/fr/polls`, …)
+discovered from external and historical links. **Not a live defect** — verified 2026-09-07
+that `src/` emits no slashless internal `href`, so these are inbound links we don't control,
+already 307ing to the right place. Nothing to fix; noted so the next reader doesn't re-open it.
+
+**2. AI-answer citations.** Search-grounded LLM answers, run 2026-09-07:
+
+| Query | Subo cited? | Position | URL cited |
+|---|---|---|---|
+| *best Discord survey bot* | **Yes** | **#1, named first** | `subo.gg/` ✅ |
+| *meilleur bot sondage Discord* | Yes | #4 of 5 | **`subo.ai/fr/`** ⚠️ |
+| *best Discord poll bot 2026* | **No** | — | (a G2 seller page in links only) |
+| *Discord bot for forms and applications* | **No** | — | — |
+
+**How to read this, three findings:**
+
+- **We own "survey bot" in AI answers, on the right domain.** The answer led with Subo, used
+  our own framing ("surveys, forms, polls, quizzes plus XP/role rewards, web dashboard, and
+  developer API") and cited `subo.gg/`. That is `llms.txt` and the schema work paying out.
+- **⚠️ The French answer cites the OLD domain.** `subo.ai/fr/`, not `subo.gg/fr/`. The
+  redirect is fine (verified 2026-09-07: `subo.ai/fr/` → 301 → `subo.gg/fr/`, single hop,
+  200), so this is **retrieval-index lag, not plumbing** — the exact same signature as the
+  Search Console story in item 1, on a second, independent surface. Treat it as corroborating
+  evidence for the checkback's "still processing" reading, and as a standing argument against
+  sunsetting `subo.ai` (see the migration block: do not sunset).
+- **⚠️ We are absent from the poll and form clusters** — the two biggest non-branded
+  opportunities this file has identified. The poll cluster is ~2,700 imp/6mo per the
+  2026-07-29 keyword intel, and the form framing is the whole premise of item 6. AI answers
+  for both name EasyPoll, PollBotPlus, Appy, FormBot. **This is the first outside
+  confirmation of item 6's thesis**, which until now rested on the circularity argument alone:
+  the vocabulary gap is not hypothetical, it is visible in what LLMs say about the category.
+
+**What this changes:** item 5 is done and item 6 is now evidence-backed rather than
+theory-backed. Re-run this table after the item 6 vocabulary wave ships; the poll and form
+rows are the scoreboard.
+
 
 ### Keyword intel from the 6-month Search Console history (2026-07-29)
 
@@ -580,7 +645,9 @@ groundwork converts into citations and organic traffic. One page per intent.
 > hreflang fix should resolve).
 >
 > **D. Check Sitemaps.** Resubmitted 2026-08-25. Before: last read **Jul 30**, **78 pages**
-> known against 122 live. Expect a fresh read and 122.
+> known against 122 live. **Expect a fresh read and 124** — not 122: two more URLs shipped
+> since, verified live 2026-09-07 (`curl -s https://subo.gg/sitemap-0.xml | grep -c '<loc>'`
+> → 124, of which 15 are `/fr/`).
 >
 > **Baselines to compare against (subo.ai, 16mo, as of 2026-08-25):**
 >
@@ -603,6 +670,38 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   outcome that justifies re-opening the technical investigation.
 > - **`/fr/polls/` still not indexed but the new blog post IS** → confirms the read that this
 >   was a page-value verdict, not a plumbing one, and that content is the right lever.
+>
+> ---
+>
+> #### ✅ Pre-flight run 2026-09-07 — everything Search Console does *not* gate
+>
+> Steps A–D need the Search Console UI and are the user's to run. Everything checkable from
+> outside was checked the day before, so the checkback starts from a known-good baseline and
+> a null result cannot be blamed on our own plumbing:
+>
+> | Precondition | Result |
+> |---|---|
+> | `https://subo.gg/fr/polls/` serves | **200**, no redirect |
+> | `https://subo.gg/fr/blog/comment-creer-un-sondage-sur-discord/` serves | **200** |
+> | `https://subo.gg/robots.txt` | Repo file only — no `Cloudflare Managed` section, **no `Disallow` anywhere**, `Content-Signal` line intact |
+> | `https://subo.gg/sitemap-0.xml` | **124 `<loc>`**, 15 under `/fr/` |
+> | `https://subo.ai/fr/` | **301 → `https://subo.gg/fr/`**, single hop, 200 |
+> | Slashless internal `href` in `src/` | **none** — the trailing-slash rule is holding |
+>
+> **Two outside data points that bear directly on step A's one question** ("does subo.gg
+> return anything at all?"), from the GEO citation test run the same day
+> ([block above](#-geo-citation-test--run-2026-09-07-roadmap-item-5)):
+>
+> 1. **French pages are being fetched.** Common Crawl's August index holds **21 `/fr/` URLs
+>    on `subo.gg`**, against zero captures in June and July. Whatever Search Console says, the
+>    French corpus is reachable and is being read. A null result in step A is therefore an
+>    *indexing/attribution* result, not a crawl-access one — which narrows the reading.
+> 2. **A second retrieval surface still points at the old domain.** A search-grounded LLM
+>    answering *"meilleur bot sondage Discord"* cited **`subo.ai/fr/`**, not `subo.gg/fr/`.
+>    Independent corroboration that French equity has not finished moving. If step A comes back
+>    empty on subo.gg while subo.ai still holds impressions, that is now **two** surfaces
+>    telling the same story, and the pre-decided reading ("still processing; do not
+>    re-architect") is the one supported by the evidence.
 >
 > ---
 >
