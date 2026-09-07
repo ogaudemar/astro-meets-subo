@@ -1,5 +1,6 @@
 {
   "siteTitle": "Subo",
+  "homeTitle": "Subo, the Survey Bot | Discord Surveys, Polls & Forms",
   "siteDescription": "Surveys that feel like conversations, not homework. Run polls, conversational surveys, and reward participation, inside Discord and on the web.",
 
   "redirectPage": {
@@ -731,7 +732,7 @@
 
 "pricingPage": {
   "pageTitle": "Pricing & Plans for Discord Surveys & Polls | Subo",
-  "pageDescription": "Compare Subo's free and paid plans for Discord surveys, polls, and quizzes — unlock more responses, AI summaries, XP rewards, and advanced analytics as your community grows.",
+  "pageDescription": "Compare Subo's free and paid plans for Discord surveys, polls, and quizzes. Unlock more responses, AI summaries, XP rewards, and advanced analytics as your community grows.",
   "heroTitleAccent": "LEVEL UP ",
   "heroTitle": "WITH PAID PLANS",
   "heroSubtitle": "Start free. <br/> Upgrade to unlock more features and support future development.",
@@ -917,8 +918,8 @@
 },
 
 "customSurveyBot": {
-  "pageTitle": "Custom Discord Survey Bot — Your Brand, Your Bot | Subo",
-  "pageDescription": "Get everything you love about Subo with your own branding — a fully white-labeled Discord survey bot with your name, avatar, and colors for your community or clients.",
+  "pageTitle": "Custom Discord Survey Bot: Your Brand, Your Bot | Subo",
+  "pageDescription": "Get everything you love about Subo with your own branding: a fully white-labeled Discord survey bot with your name, avatar, and colors for your community or clients.",
   "hero": {
     "title": "___, YOUR SURVEY BOT",
     "subtitle": "Everything you like about Subo, but with your own branding",
@@ -1105,7 +1106,7 @@
 },
 
 "featuresPage": {
-  "pageTitle": "Subo Features: Build, Collect, Analyze, Engage",
+  "pageTitle": "Subo Features: Discord Surveys, Polls, Forms & Analytics",
   "pageDescription": "Everything Subo can do for your Discord community: conversational surveys, AI drafting, role targeting, XP rewards, and more.",
   "hero": {
     "title": "EVERYTHING YOU NEED TO UNDERSTAND YOUR COMMUNITY",

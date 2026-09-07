@@ -26,7 +26,7 @@ const jsonLd = {
 	applicationCategory: 'BusinessApplication',
 	operatingSystem: 'Discord, Web',
 	url: 'https://subo.gg/',
-	description: SITE_DESCRIPTION,
+	description: translations.siteDescription,
 	publisher: { '@id': 'https://subo.gg/#organization' },
 	offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 	aggregateRating: {
@@ -43,7 +43,7 @@ const jsonLd = {
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} alternates={[
+		<BaseHead title={translations.homeTitle} description={translations.siteDescription} alternates={[
 			{lang: 'x-default', href: 'https://subo.gg/'},
 			{lang: 'en', href: 'https://subo.gg/'},
 			{lang: 'fr', href: 'https://subo.gg/fr/'},

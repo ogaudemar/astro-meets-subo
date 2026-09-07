@@ -22,7 +22,7 @@ the number it measures.** Work that cannot answer that is product quality, and b
 | ~~3~~ | ~~**Claim the four ecosystem links**~~ ❌ **CLOSED 2026-09-07** | Checked one URL at a time: Cloudflare's "Built with Workers" **404s**, Astro's showcase is **`nofollow ugc`** in a 2,374-comment thread, Stripe's Technology track is **invitation-only** and we are a merchant not a partner, and **Discord was already done in P1**. Three of the item's four claims were false and nobody had opened the URLs. P3 is closed, not deferred. | P3 |
 | ~~4~~ | ~~**Fix the `api.subo.ai` duplicate content**~~ ✅ **DONE 2026-09-05** | The canonical header had in fact shipped app-side on 2026-08-07 and this file never noticed. Verifying it live surfaced a *different* live defect: it, and twelve URLs in our own JSON-LD, named the slashless form, which 307s. All fixed and now guarded. See the ITEM 4 note in P2. | P2 / migration block |
 | ~~5~~ | ~~**Run the GEO citation test**~~ ✅ **DONE 2026-09-07** | The recrawl provably happened: Common Crawl went **0 captures (Jun, Jul) → 166 (Aug), 98 fetched, 21 French** the first crawl after the unblock. Citations are split: **#1 and named first for "best Discord survey bot"** on `subo.gg`, but **absent from the poll and form clusters**, and the French answer still cites **`subo.ai`**. Full table in the block. | robots.txt block |
-| 6 | **Finish the no-"bot" / form / app vocabulary wave** ⚠️ **scoped down 2026-09-05** | The only keyword expansion justified by this file's own circularity principle. Half shipped, remaining actions enumerated, then dropped. **The `t5.*.form` half is withdrawn** — the flag did not survive scrutiny and the H1s stand; see A6. What remains is genuine "app"/"form" vocabulary in *other* pages' titles and H2s, and the standalone `/draft` page. | P2 |
+| 6 | **Finish the no-"bot" / form / app vocabulary wave** ⚠️ **scoped down 2026-09-05** | The only keyword expansion justified by this file's own circularity principle. Half shipped, remaining actions enumerated, then dropped. **The `t5.*.form` half is withdrawn** — the flag did not survive scrutiny and the H1s stand; see A6. **Title layer DONE 2026-09-07** — it turned out 11 URLs shared one English `<title>`, including all six locale homepages; fixed, and the poll half reassigned to item 2 (it is a ranking problem, not a vocabulary one). What remains is the **form landing page** and the standalone `/draft` page. | P2 |
 | ~~7~~ | ~~**Two known factual errors on indexed pages**~~ ✅ **DONE 2026-09-05** | The survey how-to said 5 question types and `/survey-convos` had no outbound content link. Both fixed; the wizard question is settled against the code. See the ITEM 7 note in P2. | P2 |
 
 **Not on this list, on purpose:** the per-cell app-string migration. It moved to
@@ -262,17 +262,107 @@ already 307ing to the right place. Nothing to fix; noted so the next reader does
   Search Console story in item 1, on a second, independent surface. Treat it as corroborating
   evidence for the checkback's "still processing" reading, and as a standing argument against
   sunsetting `subo.ai` (see the migration block: do not sunset).
-- **⚠️ We are absent from the poll and form clusters** — the two biggest non-branded
-  opportunities this file has identified. The poll cluster is ~2,700 imp/6mo per the
-  2026-07-29 keyword intel, and the form framing is the whole premise of item 6. AI answers
-  for both name EasyPoll, PollBotPlus, Appy, FormBot. **This is the first outside
-  confirmation of item 6's thesis**, which until now rested on the circularity argument alone:
-  the vocabulary gap is not hypothetical, it is visible in what LLMs say about the category.
+- **⚠️ We are absent from the poll and form head terms** — AI answers for both name
+  EasyPoll, PollBotPlus, Appy and FormBot. **⚠️ CORRECTED 2026-09-07 (same day):** the first
+  write-up read both absences as one vocabulary gap and credited them both to item 6. Follow-up
+  queries show they are **two different problems**, and only one of them is item 6's:
+  - **Poll is a ranking problem, not a vocabulary or crawl one.** Asked
+    *"Discord native polls vs Subo what the built-in feature can't do"*, the answer was built
+    almost entirely out of our pages and cited **three** of them —
+    `/blog/discord-native-polls-vs-subo-the-survey-bot-comparison/`, `/features/` and
+    `/polls/`. The poll corpus is crawled, indexed, retrievable and quotable. It simply loses
+    the **head** term to third-party roundups (rally.casa, peakbot.pro) and EasyPoll's own
+    page. That is authority and links — **item 2** — not words. Do not spend item 6 on it.
+  - **Form is the real vocabulary gap, and it is narrower than "we have no content."** We have
+    two crawled form posts (`how-to-make-a-discord-form`, whose FAQ literally answers *"Is there
+    a Google Forms for Discord?"*, and `subo-vs-google-forms-typeform-discord-communities`), and
+    *"google forms alternative for Discord collect responses without leaving the server"* still
+    returns **zero Subo**. The competitors that do surface — Formcord, Formeer — answer that
+    framing with a **product landing page**. We answer it with blog posts. The one landing page
+    that owns "form" is `/use-cases/get-things-done/`, and it is framed as a use case
+    ("EVERYTHING YOU USED TO TRAP IN A FORM"), not as the thing being searched for.
 
-**What this changes:** item 5 is done and item 6 is now evidence-backed rather than
-theory-backed. Re-run this table after the item 6 vocabulary wave ships; the poll and form
-rows are the scoreboard.
+**What this changes:** item 5 is done. **Item 6 keeps only the form half**; the poll half is
+reassigned to item 2 (links). Re-run this table after the item 6 wave ships — the *form* row is
+the scoreboard, and the *poll* row measures item 2 instead.
 
+
+### ✅ ITEM 6, TITLE LAYER — shipped 2026-09-07
+
+The audit that item 6 kept describing as "weave app/form vocabulary into titles/H2s" was never
+actually run. Running it found something bigger than a wording tweak.
+
+**The finding: eleven URLs shared one identical `<title>` and one identical English
+`<meta description>`.**
+
+```
+<title>Subo | Survey Bot</title>
+  /  /blog/  /cookies/  /de/  /es/  /fr/  /it/  /privacy/  /pt-br/  /success/  /terms/
+```
+
+**Six of those eleven are the locale homepages.** `/fr/` — the page that exists to rank for
+*sondage discord* (756 imp @ 8.5, our top non-branded French term) — was declaring an
+**English** title and an **English** description. So were `/de/`, `/es/`, `/it/` and `/pt-br/`.
+The localized copy to fix it **already existed and was already good**: every locale file has
+carried a `siteDescription` in its own language since the site was built, and exactly one page
+(`/fr/blog/`) ever used it. The six homepages imported the hardcoded English constant instead.
+
+This bears directly on **item 1**. The checkback asks whether `subo.gg` receives French
+impressions at all; until today the French homepage told Google, in English, that it was an
+English page about a survey bot. That is not a substitute for the migration explanation, but it
+is a second thing that was wrong, and it was free to fix.
+
+**Why titles are the right lever, and safe.** `check-lexicon.mjs` matches **H1 only**, and says
+so in a comment: *"`<title>` carries the brand descriptor … the H1 is the page's own claim about
+its subject; the title is mostly furniture."* So the title layer is the one place vocabulary can
+be added without touching a working H1 — which is exactly the trap A6 fell into. `npm run check`
+is green with the **same 25 known violations as before**: nothing new, nothing suppressed.
+
+**Shipped:**
+
+| URL | Before | After |
+|---|---|---|
+| `/` | `Subo \| Survey Bot` | `Subo, the Survey Bot \| Discord Surveys, Polls & Forms` |
+| `/fr/` | *(English)* | `Subo, le bot de sondage Discord \| Questionnaires et formulaires` |
+| `/de/` | *(English)* | `Subo, der Discord-Umfrage-Bot \| Umfragen für deine Community` |
+| `/es/` | *(English)* | `Subo, el bot de encuestas para Discord \| Encuestas y sondeos` |
+| `/it/` | *(English)* | `Subo, il bot per sondaggi su Discord \| Sondaggi e votazioni` |
+| `/pt-br/` | *(English)* | `Subo, o bot de pesquisas do Discord \| Enquetes e pesquisas` |
+| `/blog/` | *(homepage's)* | `Subo Blog: Discord Surveys, Polls & Community Research` |
+| `/features/` | `Subo Features: Build, Collect, Analyze, Engage` | `Subo Features: Discord Surveys, Polls, Forms & Analytics` |
+| `/tutorials/` | `Subo Tutorials` | `Subo Tutorials: Set Up Discord Surveys, Polls & Forms` |
+| `/privacy/` `/terms/` `/cookies/` `/success/` | *(homepage's)* | their own |
+
+Duplicate `<title>` count across `dist/`: **11 → 1** (the two Stripe redirect stubs, which are
+meant to match).
+
+**The EN homepage title was a deliberate call, not a drive-by.** Branded terms are the only
+thing the migration has recovered (#1.0 for *subo the survey bot*), so the risk of touching it
+is real. The chosen form **strengthens** the branded match rather than trading it away: the old
+title did **not** contain the phrase *"Subo the Survey Bot"* literally; the new one does, and
+adds the category vocabulary on top. Category-first (`Discord Survey, Poll & Form App | Subo`)
+was considered and rejected for dropping the branded phrase mid-migration.
+
+**Rules this establishes:**
+- **Locale pages use their own locale's copy.** `homeTitle` is now a key in all six translation
+  files, next to the `siteDescription` that was already there. A new locale needs both.
+- **`Convo` stays out of every `<title>`** (T4: it is a product word, never a ranking word).
+  Each locale title was built **only** from door words already declared in `lexicon.json` and
+  wording already shipped in that locale's own `siteDescription`, so this pass introduced **no
+  new terminology in any language** — deliberately, because ES is still inverted against Discord
+  (`t2b.es`) and DE is entangled with A18. Those stay A7/A18's to settle, not a title pass's.
+
+**Also fixed in passing:** three em dashes in `en.json`, two of them inside a `<title>` and a
+`<meta description>` (`/custom-survey-bot/`, `/pricing/`) — the exact strings search results and
+LLM citations quote, against the house rule in `CLAUDE.md`. Plus the em dash in the `de`, `it`
+and `pt-br` `siteDescription`, now that those strings actually render.
+**⚠️ Not fixed, still open:** `it.json` and `pt-br.json` carry **16 and 18 more em dashes**.
+Those are a translation sweep, not a title pass.
+
+**What remains of item 6 after this:** the **form landing page** question (the GEO block's
+corrected finding: competitors answer *"Google Forms for Discord"* with a product page, we
+answer it with blog posts) and the standalone **`/draft`** page. The poll half is reassigned to
+item 2.
 
 ### Keyword intel from the 6-month Search Console history (2026-07-29)
 

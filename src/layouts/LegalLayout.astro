@@ -4,11 +4,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import translations from '../content/translations/en.json';
+
+// Per-page title/description. These three pages shared the homepage's <title>
+// verbatim, which made four URLs look like one page to a crawler.
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={title} description={description} />
 	</head>
 	<body>
         <Header translations={translations.header} />

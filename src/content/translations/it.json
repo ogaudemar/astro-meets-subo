@@ -1,6 +1,7 @@
 {
   "siteTitle": "Subo",
-  "siteDescription": "Sondaggi che sembrano conversazioni, non compiti a casa. Lancia votazioni, sondaggi conversazionali e premia la partecipazione — su Discord e sul web.",
+  "homeTitle": "Subo, il bot per sondaggi su Discord | Sondaggi e votazioni",
+  "siteDescription": "Sondaggi che sembrano conversazioni, non compiti a casa. Lancia votazioni, sondaggi conversazionali e premia la partecipazione, su Discord e sul web.",
 
   "redirectPage": {
     "redirecting": "Reindirizzamento a",

@@ -1,6 +1,7 @@
 {
   "siteTitle": "Subo",
-  "siteDescription": "Umfragen, die sich wie Gespräche anfühlen, nicht wie Hausaufgaben. Starte Umfragen, Convos und belohne Teilnahme — in Discord und im Web.",
+  "homeTitle": "Subo, der Discord-Umfrage-Bot | Umfragen für deine Community",
+  "siteDescription": "Umfragen, die sich wie Gespräche anfühlen, nicht wie Hausaufgaben. Starte Umfragen, Convos und belohne Teilnahme, in Discord und im Web.",
   "redirectPage": {
     "redirecting": "Weiterleitung zu",
     "auto": "Du wirst gleich automatisch weitergeleitet.",
