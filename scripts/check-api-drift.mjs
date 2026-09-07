@@ -130,7 +130,14 @@ const surface = JSON.parse(readFileSync(join(SITE_ROOT, 'src', 'data', 'api-surf
 const llmsTxt = readFileSync(join(SITE_ROOT, 'public', 'llms.txt'), 'utf8');
 const apiPage = readFileSync(join(SITE_ROOT, 'src', 'pages', 'api.astro'), 'utf8');
 
-const scriptPy = readApp('schemas', 'script.py');
+// Block-type vocabulary moved out of `schemas/script.py` and in with the rules that
+// police it (`surveyLib/domain/scriptValidation.py`); the schema module now just
+// re-exports it under the old private name. Read it where it is DEFINED, or the
+// parser sees an import line and reports the API as unparseable.
+const scriptValidationPy = readFileSync(
+  join(APP_REPO, 'surveyLib', 'domain', 'scriptValidation.py'),
+  'utf8'
+);
 const projectPy = readApp('schemas', 'project.py');
 const projectCreatePy = readApp('routes', 'projects.py');
 const responsesPy = readApp('routes', 'responses.py');
@@ -169,7 +176,7 @@ const SURFACE_FILE = 'src/data/api-surface.json';
 compareSets(
   'Block types',
   surface.blockTypes.map((b) => b.type),
-  dictKeys(scriptPy, '_BLOCK_TYPE_TO_QT'),
+  dictKeys(scriptValidationPy, 'BLOCK_TYPE_TO_QT'),
   { file: SURFACE_FILE }
 );
 

@@ -1,6 +1,6 @@
 ---
 title: "Comment créer un questionnaire sur Discord (enquête à plusieurs questions)"
-description: "Créer un questionnaire Discord de A à Z avec Subo : la commande /survey pas à pas, les types de questions, les réponses privées ou anonymes, et l'export des résultats."
+description: "Créer un questionnaire Discord de A à Z avec Subo : la commande /enquete (ou /survey) pas à pas, les types de questions, les réponses privées ou anonymes, et l'export des résultats."
 pubDate: "Aug 26 2026"
 updatedDate: "Sep 4 2026"
 tags: ["tutoriel", "discord", "questionnaires", "enquête", "how-to"]
@@ -10,7 +10,7 @@ translationOf: "how-to-create-a-survey-with-subo-the-survey-bot-877951089"
 heroImage: "/images/blog/survey-tuto/kittens-invite.png"
 faq:
   - q: "Comment créer un questionnaire sur Discord ?"
-    a: "Ajoute <a href=\"/invite/\">Subo</a> à ton serveur et tape <code>/survey</code>. Un fil privé s'ouvre, et tu construis ton questionnaire en répondant aux questions de Subo : le nom, puis chaque question avec son type. Tu peux aussi partir d'un modèle avec <code>/template</code>, laisser l'IA le rédiger avec <code>/draft</code>, ou le construire visuellement dans l'<a href=\"https://app.subo.gg\">app web</a>."
+    a: "Ajoute <a href=\"/invite/\">Subo</a> à ton serveur et tape <code>/enquete</code> (ou <code>/survey</code>, selon la langue de ton client Discord). Un fil privé s'ouvre, et tu construis ton questionnaire en répondant aux questions de Subo : le nom, puis chaque question avec son type. Tu peux aussi partir d'un modèle avec <code>/template</code>, laisser l'IA le rédiger avec <code>/draft</code>, ou le construire visuellement dans l'<a href=\"https://app.subo.gg\">app web</a>."
   - q: "Quelle différence entre un sondage et un questionnaire sur Discord ?"
     a: "Un sondage, c'est une question unique et un décompte public dans le salon : tout le monde voit le résultat en direct. Un questionnaire (ou une enquête) enchaîne plusieurs questions, une par une, et garde les réponses de chaque participant séparément, pour que tu puisses les analyser et les exporter. Subo fait les deux. Pour la question unique, voir <a href=\"/fr/blog/comment-creer-un-sondage-sur-discord/\">comment faire un sondage sur Discord</a>."
   - q: "Où les membres répondent-ils au questionnaire ?"
@@ -35,7 +35,7 @@ Ce guide montre l'autre méthode : un questionnaire qui se déroule **dans** Dis
 - Tu cherches un **vote à une seule question** avec décompte public ? C'est l'autre article : [comment faire un sondage sur Discord](/fr/blog/comment-creer-un-sondage-sur-discord/).
 - Tu veux une **enquête à plusieurs questions**, avec des réponses individuelles à analyser ? Continue ici.
 
-> **Deux endroits pour construire, choisis selon la complexité.** Ce guide construit le questionnaire directement dans Discord avec `/survey`, ce qui va très bien pour une enquête simple. Pour plus élaboré (logique de saut, notation et quiz, blocs d'action conversationnels, gestion d'équipe, analyses poussées), l'**[app web Subo](https://app.subo.gg)** est la bonne porte d'entrée, et tout ce qui suit y a son équivalent visuel. Subo est freemium : gratuit pour la plupart des usages, avec des forfaits Premium pour les gros besoins (voir [tarifs](/fr/pricing/)).
+> **Deux endroits pour construire, choisis selon la complexité.** Ce guide construit le questionnaire directement dans Discord avec `/enquete`, ce qui va très bien pour une enquête simple. Pour plus élaboré (logique de saut, notation et quiz, blocs d'action conversationnels, gestion d'équipe, analyses poussées), l'**[app web Subo](https://app.subo.gg)** est la bonne porte d'entrée, et tout ce qui suit y a son équivalent visuel. Subo est freemium : gratuit pour la plupart des usages, avec des forfaits Premium pour les gros besoins (voir [tarifs](/fr/pricing/)).
 
 ## Pourquoi le questionnaire tient dans Discord
 
@@ -43,11 +43,13 @@ Le réflexe habituel est de rédiger l'enquête ailleurs et de coller le lien. �
 
 Avec Subo, le questionnaire arrive là où tes membres sont déjà. L'invitation s'affiche dans le salon, chacun reçoit son questionnaire en DM d'un clic, et répond en tapant sur des boutons. Les réponses restent privées, la conversation ne pollue pas le salon, et personne n'a eu à faire confiance à un domaine inconnu.
 
-## Créer un questionnaire avec la commande `/survey`
+## Créer un questionnaire avec la commande `/enquete`
+
+> **`/enquete` ou `/survey` ?** Le nom de la commande suit la langue de ton client Discord, pas la tienne. Un client en français affiche `/enquete`, un client en anglais `/survey`. Les deux lancent exactement la même chose, et le nom anglais fonctionne toujours. Les captures ci-dessous viennent d'un client en anglais.
 
 1. [Ajoute Subo à ton serveur Discord](/invite/) et accorde-lui les permissions recommandées.
 
-2. Tape `/survey` dans le salon où tu veux publier l'enquête (tu pourras la déplacer plus tard).
+2. Tape `/enquete` (ou `/survey`) dans le salon où tu veux publier l'enquête (tu pourras la déplacer plus tard).
 
 ![La commande /survey pour créer un questionnaire Discord](/images/blog/survey-tuto/survey-1-ljbkw.png)
 
@@ -132,4 +134,4 @@ Un questionnaire bien construit et jamais exploité fait plus de mal qu'aucun qu
 
 Pour le reste, garde les questions courtes et sans double sens, et n'en pose pas plus que ce que tu comptes vraiment lire.
 
-Prêt à lancer ? [Ajoute Subo à ton serveur](/invite/) et tape `/survey`. Les possibilités complètes sont détaillées sur la page [questionnaires conversationnels](/fr/survey-convos/), et les usages côté recherche sur [comprendre ta communauté](/fr/use-cases/research/).
+Prêt à lancer ? [Ajoute Subo à ton serveur](/invite/) et tape `/enquete` (ou `/survey`). Les possibilités complètes sont détaillées sur la page [Convos](/fr/survey-convos/), et les usages côté recherche sur [comprendre ta communauté](/fr/use-cases/research/).

@@ -1706,6 +1706,17 @@ agent path deliberately.
       **Known limit:** the guard verifies names and numbers, never whether the prose is
       still true. A field that keeps its name and changes its meaning gets through all
       three layers unless a human says so — which is why layer 3 asks for it explicitly.
+      - ⚠️ **Second known limit, found 2026-09-06: the guard fails LOUD when a definition
+        moves, and that failure is indistinguishable from real drift.** `check:api` was red
+        with *"Block types: could not parse the app repo source"* — not drift, a relocation.
+        `BLOCK_TYPE_TO_QT` moved from `web2/public_api/schemas/script.py` into
+        `surveyLib/domain/scriptValidation.py` (in with the validator that polices it), and
+        `schemas/script.py` now only re-exports it, so the parser was reading an import line.
+        **Fixed by reading the definition where it lives**, the way `webhookDispatch.py`
+        already was. The block types themselves had not changed — all 11 still match. The
+        lesson is the same one ITEM 4, ITEM 7 and A6 taught: **a guard reports a pattern;
+        whether the pattern is the failure it names is a human read.** A red `check:api` may
+        mean the app moved a file, and re-pointing the parser is then the whole fix.
 - [ ] **MCP server = the agent-era "directory" play.** The app's master roadmap has a
       standing **Subo MCP server** (agent-orchestration track). When it ships, list it
       in the emerging **MCP registries/directories** and give it a spoke landing page —
@@ -2264,9 +2275,52 @@ What is left here is the copy a crawler can actually read, plus the guard:
       `vote`, no `quiz`, no `pronostic`, so it was blind to ~490 of the 815 vote impressions we
       just built content for, and to both of the clusters T10 says we need in order to detect a
       research-ward skew. A scheduled routine quotes it verbatim.
-- [ ] **A4. Fix the two French posts to name both commands** per T6, and retire the four
-      "conversationnel" phrasings in `fr.json` per T3. Cheap, and the posts are currently telling
-      French readers to type commands their client may not offer.
+- [x] **A4. ✅ SHIPPED 2026-09-06 — both halves. `fr.deny` is deleted from `knownViolations`;
+      25 known violations remain, down from 28.** The item said "the four 'conversationnel'
+      phrasings"; the guard counted **13 strings**, and the blog markdown the guard cannot read
+      held two more.
+      - **T3 half, 13 `fr.json` strings.** The nav label and the footer link went to **"Convos"**
+        per T11 (they were *Enquêtes conversationnelles* on all 60 pages — the exact sitewide
+        anchor-text liability T11 exists to name, and English fixed in A1c). The
+        `/fr/survey-convos/` headings and body took **Convo**, feminine, matching the bridge
+        sentence and `siteDescription`'s existing "des Convos".
+      - ⚠️ **The two meta descriptions did NOT take Convo.** `useCasesResearch.pageDescription`
+        and `featuresPage.pageDescription` are the **ranking layer** (T4), so
+        *sondages conversationnels* became **door words** — *questionnaires qui ressemblent à une
+        conversation* and *sondages et questionnaires en mode conversation* — not the product
+        noun. Retiring a phrasing is not the same as replacing it with Convo everywhere; the
+        layer decides.
+      - **T6 half.** Both posts named `/survey` and `/poll` only. They now lead on `/enquete` and
+        `/sondage`, name the English form alongside at the description, FAQ, first body mention,
+        step and CTA, and each carries a short note box explaining that **the command name follows
+        the Discord client's language, not the reader's**, and that the screenshots are from an
+        English client. Two `fr.json` strings had the same defect (`surveyConvos.howSteps[0]`,
+        the XP card's `/poll`) and were fixed with them.
+      - ⚠️ **`/draft` and `/template` were left in English on purpose.** Nothing in either repo
+        records a French name for them, and T9's evidence standard forbids inventing one. **Get
+        them from a French-client screenshot or a `!test user_messages` export**, then finish the
+        pass — the note boxes currently cover only the two commands we can prove.
+      - **Two retired phrasings the denylist structurally could not see** were fixed in the same
+        pass: *sondages conversationnels* twice in the poll how-to and *questionnaires
+        conversationnels* as anchor text in the questionnaire how-to. **`check:lexicon` reads the
+        locale JSON only; blog markdown is outside it.** That is a real gap in the guard, not an
+        oversight in this pass — see A23.
+
+- [ ] **A23. Make the denylist check read blog markdown, not just the locale JSON.** A4 found a
+      fifth and sixth retired phrasing (*sondages conversationnels*, *questionnaires
+      conversationnels*) living in `src/content/blog/fr/`, where `check:lexicon` has never looked.
+      The posts are the highest-value crawlable surface in the locale, so the one place the rule
+      is unenforced is the place it matters most. Scope: run each locale's `deny` rules over
+      `src/content/blog/<locale>/*.md` as well, body and frontmatter. **Expect a baseline** — do
+      not assume the two A4 found are the only ones, and check EN before deleting `en.deny`'s
+      claim to be paid off.
+
+- [ ] **A24. `de.json` and `es.json` nav still say "Survey Convos".** T11's corollary is explicit
+      that `X and Convos` is not a compromise, and A1c deleted the doublet from English while A4
+      deleted it from French. German and Spanish still render it on all their pages. One string
+      each (`header.product[1].text`, `footer.sections[0].links[0].text`) — but **German's is
+      entangled with A18**, which is scoping the whole `Umfrage`/survey question in `de.json`, so
+      do it there rather than as a drive-by. Spanish is standalone and cheap.
 - [ ] **A6. Apply T4's layer discipline to the existing FR pages** on their next edit. Not a
       dedicated pass; too cheap to justify one and too easy to forget without a rule.
       - ⚠️ **A6 was ALSO named as the fix for `t5.en.form` / `t5.fr.formulaire`

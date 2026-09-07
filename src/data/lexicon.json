@@ -312,11 +312,18 @@
       "that clears it. Removing an entry that is still violated turns the build red, which is the",
       "point: you cannot quietly re-accept one."
     ],
-    "fr.deny": {
-      "reason": "13 strings in fr.json still carry the retired 'conversationnel(le)' phrasings. Was 14; A16 cleared siteDescription in passing. The five A16 collocation rules below fire zero times and are regression guards, not open violations.",
-      "clearedBy": "A4"
-    },
     "$cleared": [
+      "fr.deny — PAID OFF 2026-09-06 by A4, entry deleted so the guard bites. The 13 fr.json",
+      "strings carrying the retired 'conversationnel(le)' phrasings are gone; the nav label and",
+      "footer link went to \"Convos\" per T11, the /fr/survey-convos/ headings to Convo, and the two",
+      "meta descriptions (useCasesResearch, featuresPage) to door words rather than to Convo,",
+      "because a description is the ranking layer (T4). The five A16 collocation rules still fire",
+      "zero times and are now enforced rather than baselined.",
+      "⚠️ Two retired phrasings the deny list could NOT see were also fixed in the same pass:",
+      "'sondages conversationnels' twice in /fr/blog/comment-creer-un-sondage-sur-discord/ and",
+      "'questionnaires conversationnels' as anchor text in the questionnaire post. The denylist",
+      "check reads the locale JSON only — blog markdown is outside it.",
+      "",
       "t2b.de — PAID OFF 2026-08-30 by A2c-DE, 207 cells uploaded. German's poll word is now",
       "Umfrage on both surfaces, matching Discord. It was the oldest T2b failure on the list and",
       "the only one that needed a paired migration to move at all: Umfrage was DE's survey word,",
