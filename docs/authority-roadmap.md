@@ -19,7 +19,7 @@ the number it measures.** Work that cannot answer that is product quality, and b
 |---|---|---|---|
 | 1 | **Run the 2026-09-08 Search Console checkback** | The one measurement that says whether subo.gg receives French impressions at all. Every content decision since 2026-08-25 is spending against an unverified assumption. Block carries the exact regex; **do not reconstruct it.** | P2 |
 | 2 | **Send the roundup outreach** | Editorial backlinks, kit built 2026-08-03, explicitly **not** migration-gated, warm lead already live in CommunityOne. Sitting untouched for a month. | P5 |
-| 3 | **Claim the four ecosystem links** | Cloudflare Workers, Astro showcase, Stripe, Discord. Free, topically relevant, qualify on merit. Never attempted. | P3 |
+| ~~3~~ | ~~**Claim the four ecosystem links**~~ ❌ **CLOSED 2026-09-07** | Checked one URL at a time: Cloudflare's "Built with Workers" **404s**, Astro's showcase is **`nofollow ugc`** in a 2,374-comment thread, Stripe's Technology track is **invitation-only** and we are a merchant not a partner, and **Discord was already done in P1**. Three of the item's four claims were false and nobody had opened the URLs. P3 is closed, not deferred. | P3 |
 | ~~4~~ | ~~**Fix the `api.subo.ai` duplicate content**~~ ✅ **DONE 2026-09-05** | The canonical header had in fact shipped app-side on 2026-08-07 and this file never noticed. Verifying it live surfaced a *different* live defect: it, and twelve URLs in our own JSON-LD, named the slashless form, which 307s. All fixed and now guarded. See the ITEM 4 note in P2. | P2 / migration block |
 | 5 | **Run the GEO citation test** | Untestable while robots blocked; the block opened 2026-08-05 and a month of recrawl has run. Ask an LLM "best Discord survey bot" and record the answer. | robots.txt block |
 | 6 | **Finish the no-"bot" / form / app vocabulary wave** ⚠️ **scoped down 2026-09-05** | The only keyword expansion justified by this file's own circularity principle. Half shipped, remaining actions enumerated, then dropped. **The `t5.*.form` half is withdrawn** — the flag did not survive scrutiny and the H1s stand; see A6. What remains is genuine "app"/"form" vocabulary in *other* pages' titles and H2s, and the standalone `/draft` page. | P2 |
@@ -32,6 +32,12 @@ work. Its internal "critical path" is critical to that migration only.
 **Standing constraint on all content work:** ROI is migration-gated to ~Q4 (branded terms
 recovered, non-branded have not). That is an argument for spending this window on items 2-5,
 which are not migration-gated, rather than on more pages.
+
+⚠️ **With item 3 closed, this list is down to three, and only one of them earns links.**
+Item 1 (the checkback) and item 5 (the GEO citation test) are **measurements**; item 6 is
+copy on pages we already own. **Item 2 — the roundup outreach — is now the only unstarted
+item on this roadmap that can produce an external editorial link**, and it has been sitting
+built and unsent since 2026-08-03. If a session has to pick one thing, it is that.
 
 ## Guiding principles
 
@@ -2606,18 +2612,48 @@ in `fr.json` mirror an English `questionnaire` exactly, and it is a declared doo
 
 ---
 
-## P3 — Free ecosystem / "built-with" links  (the legit "Cloudstack")
+## P3 — Free ecosystem / "built-with" links  ❌ **CLOSED 2026-09-07 — the premise did not survive verification**
 
-The honest version of SearchAtlas's cloud-vendor links — real editorial mentions
-you *qualify for* because Subo actually uses these tools. Free.
+The idea was the honest version of SearchAtlas's cloud-vendor links: real editorial
+mentions you *qualify for* because Subo actually uses these tools. **The four named
+surfaces were checked one at a time on 2026-09-07 and three of them do not exist as
+described. The fourth passes no equity.** This section is closed, not deferred.
 
-- [ ] **Cloudflare** — Workers showcase / built-with / case-study opportunities (Subo runs on Workers)
-- [ ] **Astro** — "Built with Astro" showcase (site is Astro)
-- [ ] **Stripe** — partner/directory listing if eligible
-- [ ] **Discord** — any developer showcase / community spotlight opportunities
-- [ ] Any other tool in the stack with a customers/showcase page
+| # | Surface | Verified status |
+|---|---|---|
+| 1 | **Cloudflare** — "Built with Workers" | ❌ **DEAD.** `workers.cloudflare.com/built-with` **301s to `cloudflare.com/built-with`, which is a 404.** `developers.cloudflare.com/developer-spotlight/` is also **404**, and its tutorial URLs redirect to a generic Resources page. The showcase and the Spotlight program are both retired. |
+| 2 | **Astro** — showcase | ⚠️ **Live but worthless as a link.** `astro.build/showcase/submit` redirects to GitHub discussion `withastro/roadmap#521` — **2,374+ comments**, no criteria, no form. And the gallery entries themselves are **`rel="noopener nofollow ugc"`** (verified in the page source), so even being curated in passes **zero equity**. Referral value from Astro-showcase browsers to a Discord survey bot is negligible. |
+| 3 | **Stripe** — partner directory | ❌ **INELIGIBLE.** The **Technology track is invitation-only**, and the other tracks (Services, SaaS platforms, Apps, Payment methods) are for partners who build *on* Stripe for third parties. Subo uses `stripe.Subscription` for **its own billing** — that makes it a merchant, not a partner. Nothing to apply to. |
+| 4 | **Discord** — developer showcase | ✅ **ALREADY DONE, under P1.** The App Directory listing is live and maintained (P1 audit 2026-07). There is no separate Discord "developer showcase" surface — the App Directory *is* it. **This was double-counted:** the same link appeared as a done item in P1 and an untouched item in P3. |
 
-**Success metric:** 2–3 genuine ecosystem backlinks from tools we already use.
+**What this cost, and the lesson.** Shortlist item 3 read *"Free, topically relevant,
+qualify on merit. Never attempted."* Three of those four claims were false, and the item
+sat near the top of the critical path on the strength of them. **Nobody had opened the
+URLs.** Same shape as ITEM 4, ITEM 7 and A6: **verify the premise before planning against
+it** — and here the check was five `curl` calls.
+
+**The deeper error is category, not staleness.** These are *our vendors'* showcases, and
+the roadmap's own first guiding principle says relevance beats raw DR: **a link from a
+Cloudflare or Astro gallery reaches web developers picking a framework, not community
+managers picking a survey bot.** Even a live, followable Astro link would have been a weak
+one. The genuinely relevant ecosystem for this product is Discord-adjacent, and **P1
+already owns that surface and already finished it.**
+
+**Do not reopen this section** on the argument that one of the URLs came back. If a vendor
+showcase returns, it is worth a few minutes only when it is (a) followable and (b) read by
+people who run Discord communities. None of the four met (b) even when they were alive.
+
+- [ ] **Optional, 2 minutes, no expectations:** post the site to
+      `withastro/roadmap#521`. Draft copy is in
+      [directory-listing-kit.md](directory-listing-kit.md) § Astro showcase. It is
+      `nofollow ugc` in a 2,374-comment thread, so treat it as community participation,
+      **not** as a link. It needs the user's GitHub account; there is nothing to automate.
+
+**Success metric — retired.** The old one ("2–3 genuine ecosystem backlinks from tools we
+already use") assumed such links were available. **Zero are.** The editorial backlinks this
+roadmap actually needs come from **P5** (roundup outreach, kit built 2026-08-03, still
+unsent), which is now the only unstarted link-earning item that passes the WHERE TO START
+test.
 
 ---
 

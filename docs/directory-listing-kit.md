@@ -139,3 +139,31 @@ Most directories ask for the same fields. Map them from the tables above:
 
 **Always double-check** the listing shows **Subo** (not 0xSurvey/SurveyBot) and
 links to **subo.gg** (not subo.ai) before saving.
+
+---
+
+## Astro showcase (P3, optional — read the caveat first)
+
+⚠️ **This is community participation, not a link.** Gallery entries carry
+`rel="noopener nofollow ugc"` (verified in the page source, 2026-09-07), and the
+submission is a comment in a thread with 2,374+ others. It passes no equity and
+reaches web developers, not community managers. P3 is closed for exactly this
+reason — see the roadmap. Kept here only so it costs two minutes if you want it.
+
+**Where:** `https://github.com/withastro/roadmap/discussions/521` (this is where
+`astro.build/showcase/submit` redirects). Needs a GitHub account, so it is the
+user's to post; nothing here can be automated.
+
+**Draft comment:**
+
+> **[Subo](https://subo.gg)** — the marketing site for a Discord survey and poll app
+> used by 15,000+ communities.
+>
+> Astro 5 with the `@astrojs/cloudflare` adapter, deployed to Cloudflare Workers.
+> Pure `.astro` components, no UI framework. 138 pages across four languages
+> (EN/FR/ES/DE) from a single content collection, with hreflang clusters and the
+> template gallery generated at build time from JSON.
+
+**Do not** paste the directory headline/description copy above into this — that copy
+is written for people choosing a Discord bot, and this audience is choosing a
+framework. The stack is the interesting part here.
