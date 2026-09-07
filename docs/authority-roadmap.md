@@ -2296,10 +2296,23 @@ What is left here is the copy a crawler can actually read, plus the guard:
         the Discord client's language, not the reader's**, and that the screenshots are from an
         English client. Two `fr.json` strings had the same defect (`surveyConvos.howSteps[0]`,
         the XP card's `/poll`) and were fixed with them.
-      - ⚠️ **`/draft` and `/template` were left in English on purpose.** Nothing in either repo
-        records a French name for them, and T9's evidence standard forbids inventing one. **Get
-        them from a French-client screenshot or a `!test user_messages` export**, then finish the
-        pass — the note boxes currently cover only the two commands we can prove.
+      - ⚠️ **CORRECTED 2026-09-06 (user). The French commands are `/brouillon` and `/modele`,
+        and they were already live.** The first pass left `/draft` and `/template` in English on
+        the grounds that no artifact in either repo records a French name — the absence was real,
+        the conclusion was not. **Nothing in this repo knows the localized command names**, which
+        is exactly how `/sondage` and `/enquete` came to be user-supplied in T6, and the right
+        move was to ask rather than to publish English names on a French page. Recorded here so
+        the next pass does not re-derive it: **FR = `/sondage`, `/enquete`, `/brouillon`,
+        `/modele`.**
+      - ⚠️ **SCOPE, on the record (user, 2026-09-06): the T6 half of A4 should not have been
+        on this roadmap.** T6 itself says slash command names are **not a search surface**. Put
+        against the 2026-09-05 test — name the URL it changes, the link it earns, or the number it
+        measures — the command-naming half names none of them. It is an accuracy fix and product
+        quality, the same category the per-cell app-string migration was moved out for.
+        **The T3 half passes the test** (sitewide nav anchor text, two meta descriptions, the
+        `/fr/survey-convos/` headings) and belonged here. **A4 was one item holding two kinds of
+        work, and the authority half is what justified it.** Do not file another item that mixes
+        them: if it does not change a crawlable URL, it goes to the app repo.
       - **Two retired phrasings the denylist structurally could not see** were fixed in the same
         pass: *sondages conversationnels* twice in the poll how-to and *questionnaires
         conversationnels* as anchor text in the questionnaire how-to. **`check:lexicon` reads the

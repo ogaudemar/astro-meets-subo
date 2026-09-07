@@ -515,7 +515,7 @@
         "✓"
       ],
       [
-        "Crédits IA<br><small>Nécessaires pour générer des brouillons de sondage avec /draft et résumer les réponses ouvertes</small>",
+        "Crédits IA<br><small>Nécessaires pour générer des brouillons de sondage avec /brouillon et résumer les réponses ouvertes</small>",
         "10k essai unique",
         "✓<br>500k / mois",
         "✓<br>1 million / mois",
@@ -610,7 +610,7 @@
     {
       "number": "1",
       "title": "Tu crées ton enquête",
-      "desc": "Crée ton questionnaire avec la commande /enquete (ou /survey), ou utilise /draft pour laisser l'IA de Subo en générer un selon tes objectifs. Tu peux aussi tout gérer depuis l'appli web Subo."
+      "desc": "Crée ton questionnaire avec la commande /enquete (ou /survey), ou utilise /brouillon pour laisser l'IA de Subo en générer un selon tes objectifs. Tu peux aussi tout gérer depuis l'appli web Subo."
     },
     {
       "number": "2",
@@ -1145,7 +1145,7 @@
       "sub": "D'une simple commande slash à un questionnaire entièrement branché. Subo s'adapte à toi.",
       "cards": [
         { "emoji": "💬", "title": "Format conversationnel", "desc": "Les questions apparaissent une à la fois, comme un chat, pas un mur de formulaire. Meilleur taux de complétion, moins de friction." },
-        { "emoji": "🤖", "title": "Rédaction assistée par IA", "desc": "Utilise <code>/draft</code> pour décrire ton objectif en langage naturel. Subo génère instantanément un sondage complet avec plusieurs questions." },
+        { "emoji": "🤖", "title": "Rédaction assistée par IA", "desc": "Utilise <code>/brouillon</code> pour décrire ton objectif en langage naturel. Subo génère instantanément un sondage complet avec plusieurs questions." },
         { "emoji": "🖥️", "title": "Interface d'administration web", "desc": "Crée, prévisualise et gère tes sondages depuis le tableau de bord web Subo, sans commandes Discord." },
         { "emoji": "🌿", "title": "Logique de saut et branchement", "desc": "Dirige les répondants vers différentes questions selon leurs réponses précédentes, et déclenche des récompenses selon leur choix. Une réponse sur une échelle est un nombre, donc une condition peut la comparer : relance tous ceux qui ont répondu 6 ou moins à une question NPS." },
         { "emoji": "✅", "title": "8 types de questions", "desc": "Texte libre, numérique, choix unique (oui/non inclus), choix multiple, évaluation, échelle d’opinion, NPS et classement : tous les scénarios de feedback couverts. <a href=\"/blog/discord-rating-scale-nps-ranking-questions/\">Voir les types évaluation, échelle et classement (en anglais) →</a>" },

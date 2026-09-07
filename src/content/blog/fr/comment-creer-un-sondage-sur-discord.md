@@ -19,7 +19,7 @@ faq:
   - q: "Comment faire un sondage anonyme sur Discord ?"
     a: "Les sondages natifs ne peuvent pas être anonymes. Il te faut un bot : avec Subo, ajoute l'option <code>privacy</code> à la commande <code>/sondage</code> et choisis Anonyme. Personne ne peut voir qui a voté quoi, toi non plus."
   - q: "Comment lancer un sondage avec Subo ?"
-    a: "Trois façons. <code>/sondage</code> pour le construire directement dans Discord, <code>/template</code> pour partir d'un modèle prêt à l'emploi, ou <code>/draft</code> pour laisser l'IA de Subo l'écrire. Tu peux aussi créer et gérer tes sondages visuellement dans l'<a href=\"https://app.subo.gg\">app web</a>."
+    a: "Trois façons. <code>/sondage</code> pour le construire directement dans Discord, <code>/modele</code> pour partir d'un modèle prêt à l'emploi, ou <code>/brouillon</code> pour laisser l'IA de Subo l'écrire. Tu peux aussi créer et gérer tes sondages visuellement dans l'<a href=\"https://app.subo.gg\">app web</a>."
   - q: "Quel bot utiliser pour faire un vote sur Discord ?"
     a: "Subo couvre les cas que le vote natif ne sait pas traiter : bulletin anonyme, vote réservé à un rôle, un seul choix par personne, vote modifiable ou verrouillé, résultats masqués jusqu'à la clôture, récompenses en XP ou en rôle. Une seule commande, <code>/sondage</code>, avec 23 options pour régler le vote avant de le publier."
   - q: "Quel est le meilleur bot de sondage pour Discord ?"
@@ -63,8 +63,8 @@ C'est pratique, c'est gratuit, et c'est tout ce qu'il faut tant que tu veux just
 Une fois [Subo ajouté à ton serveur](/invite/) :
 
 - **`/sondage`** (ou `/poll`) : construis-le directement dans Discord (le pas à pas juste en dessous).
-- **`/template`** : pars d'un modèle prêt à l'emploi et adapte-le. Les modèles marchent dans le bot Discord, et se retouchent encore plus facilement dans l'[app web](https://app.subo.gg).
-- **`/draft`** : laisse l'IA de Subo l'écrire. Pour un sondage, demande-lui une question fermée unique : Subo rédige la question et les options, prêtes à éditer.
+- **`/modele`** : pars d'un modèle prêt à l'emploi et adapte-le. Les modèles marchent dans le bot Discord, et se retouchent encore plus facilement dans l'[app web](https://app.subo.gg).
+- **`/brouillon`** : laisse l'IA de Subo l'écrire. Pour un sondage, demande-lui une question fermée unique : Subo rédige la question et les options, prêtes à éditer.
 
 ### La commande `/sondage` pas à pas
 

@@ -10,7 +10,7 @@ translationOf: "how-to-create-a-survey-with-subo-the-survey-bot-877951089"
 heroImage: "/images/blog/survey-tuto/kittens-invite.png"
 faq:
   - q: "Comment créer un questionnaire sur Discord ?"
-    a: "Ajoute <a href=\"/invite/\">Subo</a> à ton serveur et tape <code>/enquete</code> (ou <code>/survey</code>, selon la langue de ton client Discord). Un fil privé s'ouvre, et tu construis ton questionnaire en répondant aux questions de Subo : le nom, puis chaque question avec son type. Tu peux aussi partir d'un modèle avec <code>/template</code>, laisser l'IA le rédiger avec <code>/draft</code>, ou le construire visuellement dans l'<a href=\"https://app.subo.gg\">app web</a>."
+    a: "Ajoute <a href=\"/invite/\">Subo</a> à ton serveur et tape <code>/enquete</code> (ou <code>/survey</code>, selon la langue de ton client Discord). Un fil privé s'ouvre, et tu construis ton questionnaire en répondant aux questions de Subo : le nom, puis chaque question avec son type. Tu peux aussi partir d'un modèle avec <code>/modele</code>, laisser l'IA le rédiger avec <code>/brouillon</code>, ou le construire visuellement dans l'<a href=\"https://app.subo.gg\">app web</a>."
   - q: "Quelle différence entre un sondage et un questionnaire sur Discord ?"
     a: "Un sondage, c'est une question unique et un décompte public dans le salon : tout le monde voit le résultat en direct. Un questionnaire (ou une enquête) enchaîne plusieurs questions, une par une, et garde les réponses de chaque participant séparément, pour que tu puisses les analyser et les exporter. Subo fait les deux. Pour la question unique, voir <a href=\"/fr/blog/comment-creer-un-sondage-sur-discord/\">comment faire un sondage sur Discord</a>."
   - q: "Où les membres répondent-ils au questionnaire ?"
@@ -122,8 +122,8 @@ Quand tout te convient, `Start` publie l'enquête immédiatement, ou ⏰ `Edit S
 
 Repartir de zéro à chaque enquête n'a aucun intérêt :
 
-- **Un modèle prêt à l'emploi** avec la commande `/template`, à adapter. Voir la [bibliothèque de modèles](/templates/) (en anglais), ou les [recettes](/recipes/) (en anglais) pour comprendre comment un questionnaire s'assemble bloc par bloc.
-- **L'IA** : `/draft` rédige un questionnaire complet à partir de ton objectif, que tu retouches ensuite.
+- **Un modèle prêt à l'emploi** avec la commande `/modele`, à adapter. Voir la [bibliothèque de modèles](/templates/) (en anglais), ou les [recettes](/recipes/) (en anglais) pour comprendre comment un questionnaire s'assemble bloc par bloc.
+- **L'IA** : `/brouillon` rédige un questionnaire complet à partir de ton objectif, que tu retouches ensuite.
 - **Le clonage** d'une enquête existante, y compris d'un serveur à l'autre.
 - **L'app web** pour tout ce qui dépasse : notation et quiz, logique de saut, blocs d'action, accès équipe, analyses.
 - **L'[API publique](/api/)** (en anglais) pour créer et publier des questionnaires par programme, ou laisser un agent IA le faire.
