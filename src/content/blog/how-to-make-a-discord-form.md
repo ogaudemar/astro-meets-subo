@@ -35,7 +35,7 @@ When Subo turns a survey into a conversation, it isn't a person typing back to y
 
 That distinction is the whole point. A form shows all its questions at once and dares you to finish. A structured conversation asks one thing, waits, acknowledges the answer, and moves to the next. If an answer makes a later question irrelevant, skip logic drops it. The member is answering the same questionnaire either way. The experience is closer to a chat with a helpful mod than to filling out a tax document.
 
-You can read the longer version of this argument on the [survey convos page](/survey-convos/), including a side-by-side of what forms and structured conversations each do.
+You can read the longer version of this argument on the [Convos page](/survey-convos/), including a side-by-side of what forms and structured conversations each do.
 
 ## Why the format gets more answers
 
@@ -80,7 +80,7 @@ It's one mode or the other, not both at once. If you build a survey in Discord a
 
 ## The short version
 
-If you're about to paste a Google Form link into your server, try the structured-conversation version first. Same questions, asked in the place your community already is, with better completion and answers you can actually act on. Start on the [survey convos page](/survey-convos/), or add Subo to your server and run `/survey`.
+If you're about to paste a Google Form link into your server, try the structured-conversation version first. Same questions, asked in the place your community already is, with better completion and answers you can actually act on. Start on the [Discord forms page](/forms/), or add Subo to your server and run `/survey`.
 
 For the two form-shaped jobs people ask about most, there are worked builds: a [moderator application](/recipes/volunteer-moderator-funnel/) that hands out a trial or waitlist role from one gating question, and a [playtester signup](/recipes/playtester-selection/) that splits applicants into a cohort and a waitlist. The [bug report](/templates/bug-report-form/) and [suggestion box](/templates/suggestion-box/) templates are the clone-and-go versions.
 

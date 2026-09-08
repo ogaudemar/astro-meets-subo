@@ -22,7 +22,7 @@ the number it measures.** Work that cannot answer that is product quality, and b
 | ~~3~~ | ~~**Claim the four ecosystem links**~~ ❌ **CLOSED 2026-09-07** | Checked one URL at a time: Cloudflare's "Built with Workers" **404s**, Astro's showcase is **`nofollow ugc`** in a 2,374-comment thread, Stripe's Technology track is **invitation-only** and we are a merchant not a partner, and **Discord was already done in P1**. Three of the item's four claims were false and nobody had opened the URLs. P3 is closed, not deferred. | P3 |
 | ~~4~~ | ~~**Fix the `api.subo.ai` duplicate content**~~ ✅ **DONE 2026-09-05** | The canonical header had in fact shipped app-side on 2026-08-07 and this file never noticed. Verifying it live surfaced a *different* live defect: it, and twelve URLs in our own JSON-LD, named the slashless form, which 307s. All fixed and now guarded. See the ITEM 4 note in P2. | P2 / migration block |
 | ~~5~~ | ~~**Run the GEO citation test**~~ ✅ **DONE 2026-09-07** | The recrawl provably happened: Common Crawl went **0 captures (Jun, Jul) → 166 (Aug), 98 fetched, 21 French** the first crawl after the unblock. Citations are split: **#1 and named first for "best Discord survey bot"** on `subo.gg`, but **absent from the poll and form clusters**, and the French answer still cites **`subo.ai`**. Full table in the block. | robots.txt block |
-| 6 | **Finish the no-"bot" / form / app vocabulary wave** ⚠️ **scoped down 2026-09-05** | The only keyword expansion justified by this file's own circularity principle. Half shipped, remaining actions enumerated, then dropped. **The `t5.*.form` half is withdrawn** — the flag did not survive scrutiny and the H1s stand; see A6. **Title layer DONE 2026-09-07** — it turned out 11 URLs shared one English `<title>`, including all six locale homepages; fixed, and the poll half reassigned to item 2 (it is a ranking problem, not a vocabulary one). What remains is the **form landing page** and the standalone `/draft` page. | P2 |
+| 6 | **Finish the no-"bot" / form / app vocabulary wave** ⚠️ **scoped down 2026-09-05** | The only keyword expansion justified by this file's own circularity principle. Half shipped, remaining actions enumerated, then dropped. **The `t5.*.form` half is withdrawn** — the flag did not survive scrutiny and the H1s stand; see A6. **Title layer DONE 2026-09-07** — 11 URLs shared one English `<title>`, including all six locale homepages; fixed, and the poll half reassigned to item 2 (it is a ranking problem, not a vocabulary one). **Form landing page DONE 2026-09-07** — we had two form pages, not zero, and every form-worded anchor on the site pointed at a blog post; `/forms/` built, both competitors demoted, nav door added, `t5.en.form` paid off. What remains is the standalone `/draft` page. | P2 |
 | ~~7~~ | ~~**Two known factual errors on indexed pages**~~ ✅ **DONE 2026-09-05** | The survey how-to said 5 question types and `/survey-convos` had no outbound content link. Both fixed; the wizard question is settled against the code. See the ITEM 7 note in P2. | P2 |
 
 **Not on this list, on purpose:** the per-cell app-string migration. It moved to
@@ -362,7 +362,120 @@ Those are a translation sweep, not a title pass.
 **What remains of item 6 after this:** the **form landing page** question (the GEO block's
 corrected finding: competitors answer *"Google Forms for Discord"* with a product page, we
 answer it with blog posts) and the standalone **`/draft`** page. The poll half is reassigned to
-item 2.
+item 2. ⚠️ **The form half is now DONE too** — see the next block; the premise quoted here
+turned out to be half wrong.
+
+### ✅ ITEM 6, FORM LANDING PAGE — shipped 2026-09-07 (`/forms/`)
+
+The GEO block above framed this as *"competitors answer 'Google Forms for Discord' with a
+product page, we answer it with blog posts."* Checking that before acting on it found the
+premise was half wrong, and the half that was wrong is the more useful half.
+
+**We had two form landing pages, not zero, and both were crawled.**
+
+| Page | `<title>` | H1 |
+|---|---|---|
+| `/survey-convos/` | Discord Survey & **Form App**, Reinvented as a Conversation | The Discord **form** that feels like a conversation |
+| `/use-cases/get-things-done/` | Discord Applications, Sign-ups & Requests, **Without the Form** | EVERYTHING YOU USED TO TRAP IN A **FORM** |
+
+Common Crawl `CC-MAIN-2026-34` has `/survey-convos/`, `/fr/survey-convos/`,
+`/use-cases/get-things-done/` and `/fr/use-cases/get-things-done/` all fetched. **Not a crawl
+problem, and not a "we have no page" problem.**
+
+**The actual defect was the internal link graph.** Every internal anchor on the site whose
+*text* contained "form" pointed at a blog post or a template:
+
+```
+"how to run a form or survey in Discord"    → /blog/how-to-make-a-discord-form/
+"how to run a form in Discord"              → /blog/how-to-make-a-discord-form/
+"Discord form guide"                        → /blog/how-to-make-a-discord-form/
+"comparison with Google Forms and Typeform" → /blog/subo-vs-google-forms-...
+"Bug Report Form"                           → /templates/bug-report-form/
+```
+
+Zero pointed at either landing page, because the nav calls them **"Convos"** and
+**"Organize"** — the T11 rename took the last door word out of sitewide anchor text and the
+corollary that was supposed to follow it (*"a missing door in the nav is fixed by adding a nav
+item"*) was never applied. So the site's own link graph told a crawler the blog post was the
+form page. The AI answers were reading that back to us correctly.
+
+**Decision (user, 2026-09-07): build `/forms/`.** The competing option was to keep
+`/survey-convos/` and just fix the anchors. Two things decided it. `/polls/` is already the
+door URL for "poll" and there was no counterpart for "form"; and **T11 lists URL slugs in the
+door-word column**, which `survey-convos` fails twice over (it carries a door word the how-to
+owns, plus a product word on a not-yet-arrived surface).
+
+**Shipped:**
+
+- **`/forms/`** (`src/pages/forms.astro` + `formsPage` in `en.json`), built on the `/polls/`
+  shape so it stays in idiom: hero, sticky section pills, three card sections (what you can
+  build / question types / after submission), a **crawlable comparison table** against a form
+  link in a channel, a **visible FAQ**, and the outro. English-only, no hreflang alternates,
+  same call as `/api/` and `/tutorials/`.
+- **`FAQPage` + `WebPage` JSON-LD**, rendered from the same array as the visible Q&A. This is
+  the page's actual point: six questions taken from the queries the GEO test failed on
+  (*can you make a form in Discord*, *is there a Google Forms alternative for Discord*, *can
+  people without a Discord account fill it in*, *is it free*, *can it be anonymous*, *how do I
+  get the responses out*). Every fact in them is from `api-surface.json` or the price table,
+  not from memory.
+- **Both competitors demoted, in the same change** — this is what makes it a T5 fix rather
+  than a third page competing for the same word:
+
+  | Page | H1 before | H1 after |
+  |---|---|---|
+  | `/survey-convos/` | The Discord **form** that feels like a conversation | The Discord **questionnaire** that feels like a conversation |
+  | `/use-cases/get-things-done/` | EVERYTHING YOU USED TO TRAP IN A **FORM** | APPLICATIONS, SIGN-UPS AND REQUESTS, WITHOUT THE PAPERWORK |
+
+  Titles moved with them (`Discord Questionnaire App, Reinvented as a Conversation` and
+  `Discord Applications, Sign-ups, RSVPs & Ticket Intake`), and both pages now **link to
+  `/forms/` with form-worded anchor text**, which is T5's prescribed remedy pointing the right
+  way for the first time.
+- **A nav door.** `Forms → /forms/` added to the header Product dropdown and the footer
+  Product column, EN only. That is ~139 pages of sitewide anchor text carrying the door word
+  to the page that owns it, and it is the T11 corollary finally being applied.
+- **Blog anchors repointed.** The two closing CTAs that sent form intent to `/survey-convos/`
+  now send it to `/forms/`. Both said *"survey convos page"*, a phrase `en.deny` retired in
+  August that the guard cannot see because it reads locale JSON only, not blog markdown.
+- **`llms.txt`** gained a `/forms/` entry next to the homepage.
+
+**Why `questionnaire`, and why that is not the A6 mistake.** A6 was rejected for trading a
+concrete noun for a vaguer one to satisfy a checker. This does the opposite: `/survey-convos/`
+gets a **new, more specific door** rather than a hedge. *questionnaire* passes T9 (it is in the
+no-"bot" cluster from 2026-07-29, one of the phrases admins use before they think "bot"), it is
+the one understand-pillar door Discord did not take (T2b), and it gives French's eventual fix a
+precedent. It is now a declared door in `lexicon.json` owning `/survey-convos/`.
+
+**`t5.en.form` is PAID OFF and deleted from `knownViolations`.** The guard now enforces it.
+Note what actually cleared it: the 2026-09-05 downgrade gated this on the **2026-09-08**
+checkback and said not to rewrite a working H1 before then. That gate was about
+*cannibalization* — is the overlap costing us traffic — and it is still the right gate for that
+question. What arrived first was different evidence (the GEO test), which reframed the entry:
+it was never two pages fighting over a word, it was two pages sharing a word **neither of them
+wanted**. Once there is a page that wants it, the demotions are additions, not concessions.
+
+**⚠️ The French mirror `t5.fr.formulaire` did NOT follow, on purpose.** There is no
+`/fr/forms/`, and moving `/fr/survey-convos/` off *formulaire* with nowhere to send the reader
+is exactly the T10 corpus-balance failure the entry already warned about. Its `clearedBy` is
+updated: the FR fix is now **a page (`/fr/forms/`), not a translation**, and it is the same
+shape as this one. French already has three research-flavored doors and zero form doors, so
+this is the highest-value French action on the board.
+
+`npm run check` green: build, `check:api`, `check:hreflang` (54 hreflang pages / 139 built),
+`check:canonical` (345 absolute URLs), `check:lexicon`, `tsc`, wrangler dry-run. The reported
+violation count is **unchanged at 24** and nothing new appeared: `t5.en.form` had already
+stopped firing the moment the demotions landed, so deleting the entry removed a baseline, not
+a message. `knownViolations` is down one entry, from 12 to 11.
+
+**⚠️ Two pre-existing defects found in `llms.txt` and deliberately not fixed here** (they are
+their own change, not a form-page change): every `subo.gg` URL in it is **slashless**
+(`https://subo.gg/api`, `/pricing`, `/blog`, `/templates`, all the recipes), so the file we
+publish *for LLM consumption* hands crawlers ~30 URLs that 307. `check:canonical` does not read
+it. And it carries **19 em dashes** against the house rule.
+
+**What remains of item 6 after this:** the standalone **`/draft`** page (AI survey generator),
+which is the last enumerated action. The form row of the GEO citation table is now the
+scoreboard for this change: re-run *"google forms alternative for Discord collect responses
+without leaving the server"* after the next crawl.
 
 ### Keyword intel from the 6-month Search Console history (2026-07-29)
 

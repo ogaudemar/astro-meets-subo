@@ -19,6 +19,7 @@
     { "text": "Features", "href": "/features/" },
     { "text": "Convos", "href": "/survey-convos/" },
     { "text": "Polls", "href": "/polls/" },
+    { "text": "Forms", "href": "/forms/" },
     { "text": "Templates", "href": "/templates/" },
     { "text": "Custom Bot", "href": "/custom-survey-bot/" }
   ],
@@ -55,6 +56,7 @@
         { "text": "Convos", "href": "/survey-convos/" },
         { "text": "Custom Bot", "href": "/custom-survey-bot/" },
         { "text": "Polls", "href": "/polls/" },
+        { "text": "Forms", "href": "/forms/" },
         { "text": "Templates", "href": "/templates/" },
         { "text": "Recipes", "href": "/recipes/" },
         { "text": "Pricing", "href": "/pricing/" },
@@ -583,14 +585,14 @@
     }
 ,
 "surveyConvos": {
-  "pageTitle": "Discord Survey & Form App, Reinvented as a Conversation | Subo",
-  "pageDescription": "Subo is the Discord survey and form app that replaces cold forms with a friendly conversation. A better way to run questionnaires, applications, and feedback forms in your server or on the web, with higher completion and richer answers than a Google Form.",
-  "heroTitle": "The Discord form that feels like a <strong class=\"accent\">conversation</strong>",
+  "pageTitle": "Discord Questionnaire App, Reinvented as a Conversation | Subo",
+  "pageDescription": "Subo runs your questionnaire as a friendly one-on-one conversation instead of a wall of fields. One question at a time, in your Discord server or on the web, with higher completion and richer answers.",
+  "heroTitle": "The Discord questionnaire that feels like a <strong class=\"accent\">conversation</strong>",
   "heroSubtitle": "Not a form. Not just a poll. A friendly one-on-one chat where your members actually want to respond.",
   "heroCta": "Add to Discord, Free",
   "whatTitle": "WHAT IS A CONVO?",
   "whatBody": [
-    "A Convo is a private message conversation between your community member and Subo, the bot, right inside your Discord server or on the web. If you've been looking for a Discord form, a questionnaire, or a Google Forms alternative for your server, this is it, minus the cold form.",
+    "A Convo is a private message conversation between your community member and Subo, the bot, right inside your Discord server or on the web. If what you came looking for was a <a href=\"/forms/\">Discord form</a>, this is the same thing minus the wall of fields.",
     "Instead of sending members to a cold, generic form, Subo invites them to a chat. Questions appear one at a time, in a friendly message format. It feels like talking to someone, not filling out paperwork.",
     "The result? <strong>Higher completion rates</strong>, richer answers, and members who actually enjoy the experience.",
     "New to collecting data in your server? Read the practical walkthrough: <a href=\"/blog/how-to-make-a-discord-form/\">how to run a form or survey in Discord</a>."
@@ -759,10 +761,10 @@
 },
 
 "useCasesGetThingsDone": {
-  "pageTitle": "Discord Applications, Sign-ups & Requests, Without the Form | Subo",
+  "pageTitle": "Discord Applications, Sign-ups, RSVPs & Ticket Intake | Subo",
   "pageDescription": "Run applications, registrations, RSVPs, orders, and ticket intake inside Discord as a friendly conversation. Skip logic, role targeting, scheduling, and auto-roles on completion.",
   "eyebrow": "ORGANIZE",
-  "heroTitle": "EVERYTHING YOU USED TO TRAP IN A FORM",
+  "heroTitle": "APPLICATIONS, SIGN-UPS AND REQUESTS, WITHOUT THE PAPERWORK",
   "heroSubtitle": "Applications, sign-ups, orders and requests, as a friendly conversation instead of a wall of fields.",
   "heroCta": "Add to Discord",
   "sections": [
@@ -772,7 +774,7 @@
       "sub": "A long form scares people off. Subo asks one step at a time, right where your members already are.",
       "cards": [
         { "emoji": "💬", "title": "One step at a time", "desc": "Questions arrive like a chat, so a 20-field application feels like a quick exchange. <a href=\"/survey-convos/\">See Convos →</a>" },
-        { "emoji": "📨", "title": "No link-out", "desc": "It runs inside Discord, or on the web when you need it. No redirect to a form nobody trusts." },
+        { "emoji": "📨", "title": "No link-out", "desc": "It runs inside Discord, or on the web when you need it. No redirect to a <a href=\"/forms/\">form</a> nobody trusts." },
         { "emoji": "🔀", "title": "Branch on answers", "desc": "Skip logic routes each person to the questions that actually apply to them. Shorter, smarter intake." },
         { "emoji": "🕵️", "title": "Right level of privacy", "desc": "Keep submissions identified for follow-up, or anonymous when that fits the request." }
       ],
@@ -1101,6 +1103,202 @@
     "blogLink3": {
       "text": "See how Subo stacks up against the best Discord poll bots →",
       "href": "/blog/best-discord-poll-bots/"
+    }
+  }
+},
+
+"formsPage": {
+  "pageTitle": "Discord Forms: The Google Forms Alternative Built for Servers | Subo",
+  "pageDescription": "Build a Discord form for applications, sign-ups, bug reports and feedback. Subo asks your questions one at a time inside the server, so members never leave Discord to answer. Free tier, web mode for non-members, CSV and Google Sheets export.",
+  "hero": {
+    "title": "The Discord form your members <strong class=\"accent\">actually finish</strong>",
+    "subtitle": "The same structured questions as a Google Form. Asked one at a time, inside your server, by an app your members already trust.",
+    "cta": "Add to Discord"
+  },
+  "nav": [
+    { "label": "WHAT YOU CAN BUILD", "anchor": "build" },
+    { "label": "VS GOOGLE FORMS", "anchor": "vs-google-forms" },
+    { "label": "QUESTION TYPES", "anchor": "questions" },
+    { "label": "AFTER SUBMISSION", "anchor": "after" },
+    { "label": "FAQ", "anchor": "faq" }
+  ],
+  "sections": [
+    {
+      "id": "build",
+      "label": "WHAT YOU CAN BUILD",
+      "title": "Every form a community actually needs",
+      "sub": "Most \"I need a form in Discord\" moments fall into a handful of jobs. All of them run as a conversation.",
+      "cards": [
+        {
+          "emoji": "🎖️",
+          "title": "Mod and staff applications",
+          "desc": "Experience, timezone, availability, and a scenario or two. An action block drops applicants into a role the moment they finish, so review starts on its own. <a href=\"/templates/\">Start from a template →</a>"
+        },
+        {
+          "emoji": "🎟️",
+          "title": "Sign-ups and registrations",
+          "desc": "Events, playtests, giveaways, tournaments. Collect what you need, gate entry behind a role, and export the list when the round closes."
+        },
+        {
+          "emoji": "🐛",
+          "title": "Bug reports and intake",
+          "desc": "A member picks a category, describes the issue, and it lands as structured data instead of a thread nobody can search. <a href=\"/templates/bug-report-form/\">See the bug report form →</a>"
+        },
+        {
+          "emoji": "📣",
+          "title": "Feedback and community pulse",
+          "desc": "Post-event feedback, a monthly check-in, a read on a proposed rule change. Open text answers come back as an AI summary rather than a hundred replies to scroll."
+        },
+        {
+          "emoji": "🧾",
+          "title": "Orders, claims and requests",
+          "desc": "Drops, commissions, role requests. Scheduled open and close dates mean a request window shuts itself on the deadline."
+        },
+        {
+          "emoji": "👋",
+          "title": "Onboarding and verification",
+          "desc": "Ask the questions that decide access, then grant the role automatically when someone answers them."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "label": "QUESTION TYPES",
+      "title": "The fields you would have built, and a few you could not",
+      "sub": "Eleven block types, mixed in any order. Nine of them ask something; two of them do something.",
+      "cards": [
+        {
+          "emoji": "✅",
+          "title": "Choice and text",
+          "desc": "Single choice (including yes/no), multiple choice, free text and numeric. Free text answers are what the AI summaries read."
+        },
+        {
+          "emoji": "⭐",
+          "title": "Rating, scale and NPS",
+          "desc": "Rate on 2 to 10 points with stars, numbers or your own emoji set. Opinion scales for Likert items. A locked 0 to 10 NPS question."
+        },
+        {
+          "emoji": "🥇",
+          "title": "Ranking",
+          "desc": "Make people put options in order instead of approving everything. Ask for a full ranking or just a top few. <a href=\"/blog/discord-ranking-questions-rank-what-you-build-next/\">See ranking questions →</a>"
+        },
+        {
+          "emoji": "🔀",
+          "title": "Skip logic",
+          "desc": "Branch on an answer so each person only sees the questions that apply to them. A 20-field application becomes a short exchange."
+        },
+        {
+          "emoji": "🧩",
+          "title": "Content blocks",
+          "desc": "Say something without asking anything: a welcome, rules to acknowledge, a confirmation at the end."
+        },
+        {
+          "emoji": "⚡",
+          "title": "Action blocks",
+          "desc": "Grant XP, a role or an achievement mid-conversation, so finishing is worth something instead of a favor to you."
+        }
+      ]
+    },
+    {
+      "id": "after",
+      "label": "AFTER SUBMISSION",
+      "title": "Collecting is the easy half",
+      "sub": "A form hands you a spreadsheet and stops. Subo can route, reward and act on what comes in.",
+      "cards": [
+        {
+          "emoji": "🕵️",
+          "title": "Three privacy modes",
+          "desc": "Transparent, semi-private (admins only), or fully anonymous, where nobody including you can tie an answer to a member. <a href=\"/blog/complete-guide-anonymous-surveys-discord/\">Read the anonymity guide →</a>"
+        },
+        {
+          "emoji": "🎯",
+          "title": "Choose who can submit",
+          "desc": "Restrict to specific roles, open it to the whole server, or publish a web link anyone can use without a Discord account."
+        },
+        {
+          "emoji": "📅",
+          "title": "Open and close on a schedule",
+          "desc": "Applications open Friday and shut Sunday night, without you remembering to do it."
+        },
+        {
+          "emoji": "🤖",
+          "title": "AI summaries of open text",
+          "desc": "Read a digest of what people wrote instead of every individual answer."
+        },
+        {
+          "emoji": "📤",
+          "title": "Export and webhooks",
+          "desc": "CSV or Google Sheets when you want the raw data. Webhooks and a REST API when you want it to reach your own tools. <a href=\"/api/\">See the API →</a>"
+        },
+        {
+          "emoji": "🆓",
+          "title": "Free to start",
+          "desc": "The free tier covers 250 respondents per project, with skip logic and the XP system included."
+        }
+      ]
+    }
+  ],
+  "compare": {
+    "id": "vs-google-forms",
+    "label": "VS GOOGLE FORMS",
+    "title": "Why a link to a form loses people",
+    "sub": "A Google Form or a Typeform is a page on another site. Every step between your channel and that page is somewhere to give up.",
+    "headers": ["", "A form link in a channel", "Subo in your server"],
+    "rows": [
+      ["Where it happens", "A new tab on another site", "A DM or private thread in Discord"],
+      ["What people see first", "Every question at once", "One question, then the next"],
+      ["Who is answering", "A name field they can type anything into", "Their Discord identity and roles, already verified"],
+      ["Irrelevant questions", "Everyone reads all of them", "Skip logic drops them"],
+      ["Reward for finishing", "A thank-you page", "XP, a role or an achievement"],
+      ["Anonymous option", "Anonymous to you and to itself", "Anonymous by design, still one response per member"],
+      ["People without Discord", "Anyone with the link", "Web mode: one link, no account needed"]
+    ],
+    "footnote": "Web mode and Discord mode are exclusive: a project runs one way or the other, and you clone it to switch."
+  },
+  "faqTitle": "Discord forms, answered",
+  "faq": [
+    {
+      "q": "Can you make a form in Discord?",
+      "a": "Yes. You add an app that collects structured answers inside the server, so members never leave Discord to fill anything in. With Subo you run /survey and the questions are asked one at a time in the chat, and the answers come back as structured data you can export or analyze."
+    },
+    {
+      "q": "Is there a Google Forms alternative for Discord?",
+      "a": "You can paste a Google Form link into a channel, but it sends people out of Discord to a separate page, which is where most of the drop-off happens. The closer fit is an app that asks the same questions inside the server as a structured conversation, then hands you the same exportable results. Subo does that, and adds what a form cannot do in a community: verified identity, role targeting, skip logic and rewards for finishing."
+    },
+    {
+      "q": "Can people without a Discord account fill in the form?",
+      "a": "Yes, if you build it in web mode. A project runs either in Discord mode, where members answer inside your server, or in web mode, where it lives at a link you can open to anyone with no Discord account needed. It is one mode or the other, so clone the project if you later want a public web version."
+    },
+    {
+      "q": "Is a Discord form bot free?",
+      "a": "Subo has a free tier that covers 250 respondents per project and includes skip logic and the XP system. Paid tiers raise the respondent limit and add AI credits, more customization and new-response notifications."
+    },
+    {
+      "q": "Can a Discord form be anonymous?",
+      "a": "Yes. Anonymous is one of three privacy modes, and in that mode nobody, including server admins, can tie an answer to a member. The other two are transparent, where answers are attributed openly, and semi-private, where admins can see individual answers but other members cannot."
+    },
+    {
+      "q": "How do I get the responses out?",
+      "a": "Results live in the Subo web admin, with export to CSV or Google Sheets. Open text answers can be summarized by AI. If you want responses to reach your own tools automatically, there are webhooks and a REST API."
+    }
+  ],
+  "outro": {
+    "title": "The longer version",
+    "body": [
+      "A form is built for a website. Your community lives in Discord. That mismatch is not a design problem you can style your way out of, it is why the link you posted got twelve responses.",
+      "Subo asks the same questions in the place people already are, one at a time, in a format that reads like a chat with a helpful mod rather than paperwork. Inside the product, that structured conversation has a name: a Convo."
+    ],
+    "blogLink": {
+      "text": "How to run a form or survey in Discord, step by step →",
+      "href": "/blog/how-to-make-a-discord-form/"
+    },
+    "blogLink2": {
+      "text": "Subo vs Google Forms and Typeform for Discord communities →",
+      "href": "/blog/subo-vs-google-forms-typeform-discord-communities/"
+    },
+    "blogLink3": {
+      "text": "What a Convo is, and how it differs from a form →",
+      "href": "/survey-convos/"
     }
   }
 },

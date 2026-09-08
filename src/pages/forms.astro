@@ -1,0 +1,435 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import translations from '../content/translations/en.json';
+
+const t = translations.formsPage;
+
+// English-only for now, so no hreflang alternates: the FR/ES/DE `formulaire` /
+// `formulario` / `Formular` doors are a separate seeding decision (T10), and
+// declaring alternates that don't exist is worse than declaring none.
+//
+// FAQPage is the point of this page as much as the copy is: the GEO citation
+// test on 2026-09-07 found we were absent from every "Google Forms for Discord"
+// answer while competitors answered it with a product page. The visible Q&A and
+// the schema below have to stay in sync, so both render from the same array.
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: t.pageTitle,
+    description: t.pageDescription,
+    url: 'https://subo.gg/forms/',
+    inLanguage: 'en',
+    isPartOf: { '@id': 'https://subo.gg/#website' },
+    about: {
+      '@type': 'SoftwareApplication',
+      name: 'Subo',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Discord, Web',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: t.faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={t.pageTitle} description={t.pageDescription} jsonLd={jsonLd} />
+	</head>
+	<body>
+		<Header translations={translations.header} />
+		<main id="main-content">
+
+			<!-- Hero -->
+			<section class="form-hero">
+				<div class="container text-center">
+					<h1 class="form-hero__title" set:html={t.hero.title} />
+					<p class="form-hero__subtitle">{t.hero.subtitle}</p>
+					<a href="/invite/" class="button button--accent-bg">{t.hero.cta}</a>
+				</div>
+			</section>
+
+			<!-- Section nav pills -->
+			<nav class="form-nav" aria-label="Form sections">
+				<div class="form-nav__inner">
+					{t.nav.map((pill) => (
+						<a href={`#${pill.anchor}`} class="form-nav__pill mono">{pill.label}</a>
+					))}
+				</div>
+			</nav>
+
+			<!-- What you can build -->
+			{(() => { const section = t.sections[0]; return (
+				<section class="form-section form-section--secondary" id={section.id}>
+					<div class="container">
+						<div class="form-section__header">
+							<span class="form-label form-label--accent mono">{section.label}</span>
+							<h2 class="form-section__title">{section.title}</h2>
+							<p class="form-section__sub">{section.sub}</p>
+						</div>
+						<div class="form-cards">
+							{section.cards.map((card) => (
+								<div class="form-card">
+									<span class="form-card__emoji">{card.emoji}</span>
+									<h3 class="form-card__title">{card.title}</h3>
+									<p class="form-card__desc" set:html={card.desc} />
+								</div>
+							))}
+						</div>
+					</div>
+				</section>
+			); })()}
+
+			<!-- Comparison table. A crawlable table, not an image: it is the part of
+			     this page an answer engine can quote line by line. -->
+			<section class="form-section form-section--dark" id={t.compare.id}>
+				<div class="container">
+					<div class="form-section__header">
+						<span class="form-label form-label--primary mono">{t.compare.label}</span>
+						<h2 class="form-section__title">{t.compare.title}</h2>
+						<p class="form-section__sub">{t.compare.sub}</p>
+					</div>
+					<div class="form-table-scroll">
+						<table class="form-table">
+							<thead>
+								<tr>
+									{t.compare.headers.map((h, i) => (
+										i === 0 ? <th scope="col"><span class="visually-hidden">Aspect</span></th> : <th scope="col">{h}</th>
+									))}
+								</tr>
+							</thead>
+							<tbody>
+								{t.compare.rows.map((row) => (
+									<tr>
+										<th scope="row">{row[0]}</th>
+										<td class="form-table__them">{row[1]}</td>
+										<td class="form-table__us">{row[2]}</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
+					<p class="form-table__note">{t.compare.footnote}</p>
+				</div>
+			</section>
+
+			<!-- Question types + after submission -->
+			{t.sections.slice(1).map((section, i) => (
+				<section class={`form-section ${i % 2 === 0 ? 'form-section--secondary' : 'form-section--dark'}`} id={section.id}>
+					<div class="container">
+						<div class="form-section__header">
+							<span class={`form-label ${i % 2 === 0 ? 'form-label--accent' : 'form-label--primary'} mono`}>{section.label}</span>
+							<h2 class="form-section__title">{section.title}</h2>
+							<p class="form-section__sub">{section.sub}</p>
+						</div>
+						<div class="form-cards">
+							{section.cards.map((card) => (
+								<div class="form-card">
+									<span class="form-card__emoji">{card.emoji}</span>
+									<h3 class="form-card__title">{card.title}</h3>
+									<p class="form-card__desc" set:html={card.desc} />
+								</div>
+							))}
+						</div>
+					</div>
+				</section>
+			))}
+
+			<!-- FAQ. Rendered visibly on purpose: Google requires FAQ markup to
+			     match on-page content, and for GEO the visible Q&A is what gets
+			     quoted. Same array as the JSON-LD above. -->
+			<section class="form-section form-section--secondary" id="faq">
+				<div class="container form-narrow">
+					<h2 class="form-section__title text-center">{t.faqTitle}</h2>
+					<dl class="form-faq">
+						{t.faq.map((f) => (
+							<div class="form-faq__item">
+								<dt>{f.q}</dt>
+								<dd>{f.a}</dd>
+							</div>
+						))}
+					</dl>
+				</div>
+			</section>
+
+			<!-- Outro -->
+			<section class="form-section form-section--dark">
+				<div class="container form-narrow">
+					<h2 class="form-section__title text-center">{t.outro.title}</h2>
+					{t.outro.body.map((para) => (
+						<p>{para}</p>
+					))}
+					<p class="form-blog-link"><a href={t.outro.blogLink.href}>{t.outro.blogLink.text}</a></p>
+					<p class="form-blog-link"><a href={t.outro.blogLink2.href}>{t.outro.blogLink2.text}</a></p>
+					<p class="form-blog-link"><a href={t.outro.blogLink3.href}>{t.outro.blogLink3.text}</a></p>
+				</div>
+			</section>
+
+			<CTA translations={translations} />
+		</main>
+		<Footer translations={translations.footer} />
+	</body>
+</html>
+
+<style>
+/* Hero */
+.form-hero {
+	padding: 140px 0 80px;
+	background:
+		radial-gradient(70% 55% at 50% 0%, var(--bg-glow-pink), transparent 70%),
+		var(--bg-base);
+}
+.form-hero__title {
+	font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+	letter-spacing: -0.02em;
+	font-size: clamp(1.8rem, 4.5vw, 3rem);
+	font-weight: 800;
+	line-height: 1.1;
+	margin-bottom: 1.25rem;
+}
+.form-hero__subtitle {
+	font-size: 1.15rem;
+	color: var(--grey-light);
+	max-width: 620px;
+	margin: 0 auto 2rem;
+	line-height: 1.6;
+}
+
+/* Section nav */
+.form-nav {
+	position: sticky;
+	top: 57px;
+	z-index: 100;
+	background: rgba(19, 13, 28, 0.92);
+	backdrop-filter: blur(8px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.form-nav__inner {
+	display: flex;
+	justify-content: center;
+	gap: 0.25rem;
+	padding: 0.6rem 1rem;
+	flex-wrap: wrap;
+}
+.form-nav__pill {
+	display: inline-block;
+	padding: 0.35rem 1rem;
+	border-radius: 999px;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	color: var(--grey-light);
+	text-decoration: none;
+	border: 1px solid transparent;
+	transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.form-nav__pill:hover {
+	color: var(--accent);
+	border-color: var(--accent);
+	background: rgba(255, 255, 255, 0.04);
+}
+
+/* Sections */
+.form-section {
+	padding: 4rem 0;
+}
+.form-section--secondary,
+.form-section--dark {
+	background: transparent;
+}
+.form-section__header {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+.form-section__title {
+	font-size: clamp(1.5rem, 3vw, 2.25rem);
+	font-weight: 800;
+	margin: 0.75rem 0 0.75rem;
+	line-height: 1.2;
+}
+.form-section__sub {
+	color: var(--grey-light);
+	font-size: 1.05rem;
+	max-width: 580px;
+	margin: 0 auto;
+	line-height: 1.65;
+}
+
+/* Section label pill */
+.form-label {
+	display: inline-block;
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	padding: 0.25rem 0.85rem;
+	border-radius: 999px;
+}
+.form-label--accent {
+	color: var(--accent);
+	background: rgba(var(--accent-rgb, 99, 207, 138), 0.12);
+	border: 1px solid rgba(var(--accent-rgb, 99, 207, 138), 0.25);
+}
+.form-label--primary {
+	color: var(--primary-light);
+	background: rgba(var(--primary-rgb), 0.12);
+	border: 1px solid rgba(var(--primary-rgb), 0.25);
+}
+
+/* Cards grid */
+.form-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1.25rem;
+}
+.form-card {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 12px;
+	padding: 1.75rem;
+}
+.form-card__emoji {
+	font-size: 1.75rem;
+	display: block;
+	margin-bottom: 0.75rem;
+}
+.form-card__title {
+	font-size: 1rem;
+	font-weight: 700;
+	margin: 0 0 0.5rem;
+}
+.form-card__desc {
+	font-size: 0.9rem;
+	color: var(--grey-light);
+	line-height: 1.65;
+	margin: 0;
+}
+.form-card__desc code {
+	font-family: monospace;
+	background: rgba(255, 255, 255, 0.08);
+	padding: 0.1em 0.35em;
+	border-radius: 4px;
+	font-size: 0.85em;
+}
+
+/* Comparison table */
+.form-table-scroll {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.form-table {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 560px;
+	font-size: 0.92rem;
+}
+.form-table th,
+.form-table td {
+	text-align: left;
+	padding: 0.9rem 1rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	vertical-align: top;
+	line-height: 1.55;
+}
+.form-table thead th {
+	font-size: 0.72rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--grey-light);
+	font-weight: 700;
+}
+.form-table tbody th {
+	font-weight: 700;
+	color: #fff;
+	width: 22%;
+}
+.form-table__them {
+	color: var(--grey-light);
+}
+.form-table__us {
+	color: var(--accent);
+}
+.form-table__note {
+	margin: 1.25rem 0 0;
+	font-size: 0.85rem;
+	color: var(--grey-light);
+	text-align: center;
+}
+
+/* FAQ */
+.form-faq {
+	margin: 2rem 0 0;
+}
+.form-faq__item {
+	padding: 1.1rem 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.form-faq dt {
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 0.5rem;
+}
+.form-faq dd {
+	margin: 0;
+	color: var(--grey-light);
+	line-height: 1.7;
+}
+
+/* Narrative block */
+.form-narrow {
+	max-width: 680px;
+}
+.form-narrow p {
+	color: var(--grey-light);
+	font-size: 1.05rem;
+	line-height: 1.7;
+	margin: 0 0 1rem;
+}
+.form-blog-link {
+	text-align: center;
+	margin-top: 1.5rem !important;
+}
+.form-blog-link a {
+	color: var(--accent);
+	text-decoration: none;
+	font-weight: 600;
+}
+.form-blog-link a:hover {
+	text-decoration: underline;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+	.form-nav__pill {
+		font-size: 0.7rem;
+		padding: 0.3rem 0.75rem;
+	}
+	.form-cards {
+		grid-template-columns: 1fr;
+	}
+}
+</style>

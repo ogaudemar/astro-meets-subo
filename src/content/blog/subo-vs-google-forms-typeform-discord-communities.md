@@ -125,4 +125,4 @@ These three are not interchangeable, and the two form builders are not equivalen
 
 Plenty of communities end up running two of these, which is a sensible outcome rather than a failure to commit. Typeform for the public form on the website, Subo for everything asked of members.
 
-If you are about to paste a form link into your server, it is worth trying the in-Discord version first. Start on the <a href="/survey-convos/">survey convos page</a>, read <a href="/blog/how-to-make-a-discord-form/">how to run a form in Discord</a>, or <a href="/invite/">add Subo</a> and run `/survey`.
+If you are about to paste a form link into your server, it is worth trying the in-Discord version first. Start on the <a href="/forms/">Discord forms page</a>, read <a href="/blog/how-to-make-a-discord-form/">how to run a form in Discord</a>, or <a href="/invite/">add Subo</a> and run `/survey`.

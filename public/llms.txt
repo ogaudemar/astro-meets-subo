@@ -19,6 +19,7 @@ AI agents can use this API to:
 - [OpenAPI Spec](https://api.subo.ai/v1/openapi.json): Raw OpenAPI 3.1.0 JSON spec — machine-readable
 - [Get an API Key](https://app.subo.gg/app/account): Generate keys in the Community account tab, under API Access
 - [Subo Homepage](https://subo.gg/): Product overview and feature list
+- [Discord Forms](https://subo.gg/forms/): How Subo replaces a Google Form or Typeform link in a Discord server: applications, sign-ups, bug reports and feedback asked one question at a time, with skip logic, three privacy modes, role targeting, and a web mode for people without a Discord account.
 - [Pricing](https://subo.gg/pricing): Plans (FREE, PREMIUM, VIP, CUSTOM) and rate limits per tier
 - [Blog](https://subo.gg/blog): News and updates
 

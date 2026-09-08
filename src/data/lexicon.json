@@ -163,8 +163,9 @@
       "bridge": "You came for a survey. In Subo that is a Convo: one question at a time, in a chat instead of a form.",
       "doors": [
         { "word": "poll",          "pillar": "decide",     "resolvesTo": "poll",  "owns": "/polls/",                      "evidence": "search: 'discord poll bot' 1003 imp @ 9.96" },
-        { "word": "survey",        "pillar": "understand", "resolvesTo": "convo", "owns": "/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/", "evidence": "search: 'survey bot' cluster; also the brand descriptor (Subo, the Survey Bot)", "$note": "NOT /survey-convos/: that page's H1 leads on 'form', not 'survey'. See t5 findings." },
-        { "word": "form",          "pillar": "organize",   "resolvesTo": "convo", "owns": "/use-cases/get-things-done/", "evidence": "search: 'how to make a discord form'" },
+        { "word": "survey",        "pillar": "understand", "resolvesTo": "convo", "owns": "/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/", "evidence": "search: 'survey bot' cluster; also the brand descriptor (Subo, the Survey Bot)", "$note": "NOT /survey-convos/: that page leads its H1 on 'questionnaire', which it now owns. See t5 findings." },
+        { "word": "questionnaire", "pillar": "understand", "resolvesTo": "convo", "owns": "/survey-convos/",             "evidence": "search: the no-'bot' cluster (2026-07-29) lists 'discord questionnaire' among the phrases admins use before they think 'bot'", "$note": "Added 2026-09-07 when /survey-convos/ handed 'form' to /forms/. The page needed a door of its own rather than a vaguer H1 (the A6 trap); 'questionnaire' is the one understand-pillar door Discord did not take." },
+        { "word": "form",          "pillar": "organize",   "resolvesTo": "convo", "owns": "/forms/",                     "evidence": "search: 'how to make a discord form'; GEO citation test 2026-09-07 found zero Subo in AI answers for 'google forms alternative for Discord', where Formcord and Formeer answer with a product page", "$note": "Moved off /use-cases/get-things-done/ on 2026-09-07. That page framed 'form' as the thing being escaped, which is the opposite of what the query wants, and /survey-convos/ led on it too. Both were demoted in the same change and /forms/ was built to hold the word." },
         { "word": "quiz",          "pillar": "engage",     "resolvesTo": "poll",  "owns": null,                          "evidence": "not yet targeted" }
       ],
       "deny": [
@@ -313,6 +314,17 @@
       "point: you cannot quietly re-accept one."
     ],
     "$cleared": [
+      "t5.en.form — PAID OFF 2026-09-07, entry deleted so the guard bites. The 2026-09-05",
+      "downgrade gated this on the 2026-09-08 Search Console checkback, and said not to rewrite a",
+      "working H1 before then. What arrived first was the GEO citation test (2026-09-07): zero Subo",
+      "in AI answers for the form cluster, while Formcord and Formeer answer the same query with a",
+      "product page. That reframed the entry — it was never a cannibalization problem to be edited",
+      "away, it was two pages sharing a word neither of them wanted. /forms/ was built to hold it,",
+      "/survey-convos/ moved to the new questionnaire door and /use-cases/get-things-done/ back onto",
+      "applications, sign-ups and requests. Nothing was made vaguer, which was the A6 objection.",
+      "⚠️ The FR mirror t5.fr.formulaire did NOT follow: there is no /fr/forms/, and moving",
+      "/fr/survey-convos off formulaire with nowhere to send the reader makes T10 worse. It stays.",
+      "",
       "fr.deny — PAID OFF 2026-09-06 by A4, entry deleted so the guard bites. The 13 fr.json",
       "strings carrying the retired 'conversationnel(le)' phrasings are gone; the nav label and",
       "footer link went to \"Convos\" per T11, the /fr/survey-convos/ headings to Convo, and the two",
@@ -344,13 +356,9 @@
     "t2b.ru": { "reason": "'голосование' vs Discord 'опрос'.", "clearedBy": "A2c" },
     "t2b.tr": { "reason": "'oylama' vs Discord 'anket'. Held under T9.", "clearedBy": "A2c, gated" },
 
-    "t5.en.form": {
-      "reason": "DOWNGRADED 2026-09-05 from REAL to a considered judgment, after the A6 rewrite was drafted and rejected. The facts are unchanged: /survey-convos/ H1 is 'The Discord form that feels like a conversation' and /use-cases/get-things-done/ is 'EVERYTHING YOU USED TO TRAP IN A FORM'. What changed is that nobody had checked whether the flag describes a live cost. Four things say it mostly does not. (1) T5's own prescribed remedy is ALREADY IN PLACE: the rule is that non-owners link to the owner rather than compete, and /survey-convos/ already links to /use-cases/get-things-done/. (2) The asset actually targeting the query is neither page — it is /blog/how-to-make-a-discord-form/ ('How to Run a Form or Survey in Discord'), which is blog class and cannot fail this check. The two landing pages are supporting cast. (3) The guard cannot read intent, and a human has already overridden it on the same grounds three times (t5.en.survey, t5.de.Umfrage, t5.fr.sondage). (4) There is NO evidence either page draws 'form' impressions, and non-branded ROI is migration-gated to ~Q4 by the roadmap's own standing constraint. ⚠️ The honest case AGAINST this downgrade, recorded so it is not lost: unlike the three exempted entries (developer vs. white-label, genuinely different audiences), these two pages target the SAME reader and use 'form' the same rhetorical way, as the cold thing being replaced. That is a closer call than the others. It is arguable, not settled.",
-      "clearedBy": "nothing until there is data — re-evaluate against the 2026-09-08 Search Console checkback. If both pages draw the same 'form' queries, it is real and /survey-convos/ moves; if neither draws any, the entry is noise. Do NOT rewrite a working H1 to satisfy the guard before that: the drafted fix traded a concrete noun for a vaguer one to please a checker, not a reader."
-    },
     "t5.fr.formulaire": {
       "reason": "DOWNGRADED 2026-09-05, following t5.en.form, of which this is still the exact mirror: /fr/survey-convos/ 'Le formulaire Discord qui ressemble à une conversation' vs /fr/use-cases/get-things-done/ 'TOUT CE QUE TU METTAIS DANS UN FORMULAIRE'. Read t5.en.form for the full reasoning; it applies unchanged here. ⚠️ One thing does NOT mirror, and it is the strongest remaining argument that the FR half is real: T2 rules outright that /fr/survey-convos must not take a door word as its H1 noun. That is a standing ruling about French, not an inference from the guard, and it survives the downgrade. The reason it does not force the edit today is that the French form asset does not exist — there is no FR translation of how-to-make-a-discord-form — so moving /fr/survey-convos off 'formulaire' would leave French with a door word and no page behind it, which T10 (corpus balance) makes worse, not better.",
-      "clearedBy": "translate how-to-make-a-discord-form into French, THEN apply T2 and move /fr/survey-convos off 'formulaire'. Until that post exists the edit has nowhere to send the reader."
+      "clearedBy": "build /fr/forms/ (and/or translate how-to-make-a-discord-form into French), THEN apply T2 and move /fr/survey-convos off 'formulaire'. ⚠️ UPDATED 2026-09-07: the EN mirror t5.en.form is PAID OFF and deleted — /forms/ was built to hold the word and both EN competitors were demoted in the same change. French did not follow for the reason this entry already gave: there is nowhere to send the reader. The FR fix is now a page (/fr/forms/), not a translation, and it is the same shape as the EN one."
     },
     "t5.en.survey": {
       "reason": "LOW RISK. /api/ 'Run Discord surveys from code' and /custom-survey-bot/ '___, YOUR SURVEY BOT' target genuinely different intents (developer, white-label). The guard cannot tell intent apart; a human has.",
