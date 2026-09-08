@@ -22,7 +22,7 @@ the number it measures.** Work that cannot answer that is product quality, and b
 | ~~3~~ | ~~**Claim the four ecosystem links**~~ ❌ **CLOSED 2026-09-07** | Checked one URL at a time: Cloudflare's "Built with Workers" **404s**, Astro's showcase is **`nofollow ugc`** in a 2,374-comment thread, Stripe's Technology track is **invitation-only** and we are a merchant not a partner, and **Discord was already done in P1**. Three of the item's four claims were false and nobody had opened the URLs. P3 is closed, not deferred. | P3 |
 | ~~4~~ | ~~**Fix the `api.subo.ai` duplicate content**~~ ✅ **DONE 2026-09-05** | The canonical header had in fact shipped app-side on 2026-08-07 and this file never noticed. Verifying it live surfaced a *different* live defect: it, and twelve URLs in our own JSON-LD, named the slashless form, which 307s. All fixed and now guarded. See the ITEM 4 note in P2. | P2 / migration block |
 | ~~5~~ | ~~**Run the GEO citation test**~~ ✅ **DONE 2026-09-07** | The recrawl provably happened: Common Crawl went **0 captures (Jun, Jul) → 166 (Aug), 98 fetched, 21 French** the first crawl after the unblock. Citations are split: **#1 and named first for "best Discord survey bot"** on `subo.gg`, but **absent from the poll and form clusters**, and the French answer still cites **`subo.ai`**. Full table in the block. | robots.txt block |
-| 6 | **Finish the no-"bot" / form / app vocabulary wave** ⚠️ **scoped down 2026-09-05** | The only keyword expansion justified by this file's own circularity principle. Half shipped, remaining actions enumerated, then dropped. **The `t5.*.form` half is withdrawn** — the flag did not survive scrutiny and the H1s stand; see A6. **Title layer DONE 2026-09-07** — 11 URLs shared one English `<title>`, including all six locale homepages; fixed, and the poll half reassigned to item 2 (it is a ranking problem, not a vocabulary one). **Form landing page DONE 2026-09-07** — we had two form pages, not zero, and every form-worded anchor on the site pointed at a blog post; `/forms/` built, both competitors demoted, nav door added, `t5.en.form` paid off. What remains is the standalone `/draft` page. | P2 |
+| 6 | **Finish the no-"bot" / form / app vocabulary wave** ⚠️ **scoped down 2026-09-05** | The only keyword expansion justified by this file's own circularity principle. Half shipped, remaining actions enumerated, then dropped. **The `t5.*.form` half is withdrawn** — the flag did not survive scrutiny and the H1s stand; see A6. **Title layer DONE 2026-09-07** — 11 URLs shared one English `<title>`, including all six locale homepages; fixed, and the poll half reassigned to item 2 (it is a ranking problem, not a vocabulary one). **Form landing page DONE 2026-09-07** — we had two form pages, not zero, and every form-worded anchor on the site pointed at a blog post; `/forms/` built, both competitors demoted, nav door added, `t5.en.form` paid off. **DONE 2026-09-07** — the last action, a standalone `/draft` page, was checked before it was built and the premise failed: the GEO test that justified `/forms/` **passes** for AI-generator queries (we are cited first). The real defect underneath was that AI generation is a three-surface feature (Discord, web app, API) and the site documented one; fixed in copy plus a `FAQPage`. The page is gated on a GEO re-test, and its slug would be `/ai-survey-generator/`, not `/draft/`. | P2 |
 | ~~7~~ | ~~**Two known factual errors on indexed pages**~~ ✅ **DONE 2026-09-05** | The survey how-to said 5 question types and `/survey-convos` had no outbound content link. Both fixed; the wizard question is settled against the code. See the ITEM 7 note in P2. | P2 |
 
 **Not on this list, on purpose:** the per-cell app-string migration. It moved to
@@ -361,7 +361,8 @@ Those are a translation sweep, not a title pass.
 
 **What remains of item 6 after this:** the **form landing page** question (the GEO block's
 corrected finding: competitors answer *"Google Forms for Discord"* with a product page, we
-answer it with blog posts) and the standalone **`/draft`** page. The poll half is reassigned to
+answer it with blog posts) and the standalone **`/draft`** page (also closed 2026-09-07, without
+a page: the AI-generator GEO test passes). The poll half is reassigned to
 item 2. ⚠️ **The form half is now DONE too** — see the next block; the premise quoted here
 turned out to be half wrong.
 
@@ -473,9 +474,86 @@ publish *for LLM consumption* hands crawlers ~30 URLs that 307. `check:canonical
 it. And it carries **19 em dashes** against the house rule.
 
 **What remains of item 6 after this:** the standalone **`/draft`** page (AI survey generator),
-which is the last enumerated action. The form row of the GEO citation table is now the
+which is the last enumerated action. ⚠️ **Resolved 2026-09-07, and not by building it** — see
+the next block: the premise failed the same check this one passed. The form row of the GEO citation table is now the
 scoreboard for this change: re-run *"google forms alternative for Discord collect responses
 without leaving the server"* after the next crawl.
+
+### ✅ ITEM 6, AI SURVEY GENERATOR — shipped 2026-09-07 (no page; the premise did not survive)
+
+The last enumerated item 6 action was *"a standalone `/draft` page (AI survey generator),"*
+carried in this file since 2026-07 on the strength of one observation: `/draft` is only ever
+covered inside other posts. Running the same premise check that `/forms/` got found the
+observation is true and the conclusion is wrong.
+
+**The GEO test that justified `/forms/` passes here.** Search-grounded answers, run 2026-09-07:
+
+| Query | Subo cited? | What the answer said |
+|---|---|---|
+| *AI survey generator for Discord generate survey questions bot* | **Yes, named first** | Described `/draft` correctly, cited `subo.gg/`, `/survey-convos/` and the survey how-to |
+| *use AI to write survey questions for my Discord community what tool* | **Yes, led with it** | Quoted `/draft` verbatim from our pages; the only competitor named was Opinion Stage, on links |
+
+That is the exact inverse of the form finding. There the competitors answered with a product
+page and we answered with blog posts and **lost**. Here we answer with blog posts and **win**.
+Building a fourth landing page to fix a query we already lead would have added a page competing
+for *survey* vocabulary against `/survey-convos/` and the survey how-to, which is the T5 problem
+`/forms/` had just finished cleaning up.
+
+**But the check found a real defect underneath, and it is bigger than the page would have been.
+AI generation is a three-surface feature and the site documented one surface.**
+
+| Surface | Evidence in the app repo | Said on the site before today |
+|---|---|---|
+| Discord `/draft` | `setupCommands.py:1678` `AIWizard` | Yes, everywhere |
+| Web app *Generate with AI* | `NewProjectDialog.tsx` → `POST /admin/server/ai/draft/{serverId}` | **Nothing. Not one string.** |
+| Public API `intent` | `POST /projects` with `intent`, `/projects/generate` | Yes, on `/api/` only |
+
+So every marketing string on the site tied AI drafting to a Discord slash command, on a product
+whose web app has offered the same thing from its new-project dialog. A reader who does not use
+slash commands was told the feature does not exist for them.
+
+**Shipped instead of the page:**
+
+- **`en.json`, four strings.** The `/features/` card is now titled **"AI survey generator"**
+  (was "AI-assisted drafting") and names all three surfaces; `/about/`'s card is "AI drafting
+  and analysis" (it was titled *analysis* while its body described drafting); the
+  `/survey-convos/` how-it-works step says the web app generates too; the `/pricing/` AI-credits
+  row no longer implies credits are spent only by `/draft`.
+- **The one substantive write-up was filed under the wrong intent and now claims it.**
+  `/blog/ai-powered-survey-summaries-subo/` gave `/draft` two paragraphs under an H2 reading
+  *"The `/draft` Command"*, inside a post titled and described for summarization. The H2 is now
+  **"The AI Survey Generator: How `/draft` Writes Your Questions"**, the section states what the
+  generator actually returns (a name plus questions in the four core types, five by default,
+  capped by the tier's per-survey limit, in a language you can name), that **nothing publishes
+  until you approve it**, and lists the three surfaces. `description` and `tags` extended,
+  `updatedDate` → Sep 7 2026. Facts taken from `new_survey_prompt.txt` and `AIWizard`, not memory.
+- **A `FAQPage` on it, five questions.** Markdown posts have supported a frontmatter `faq:`
+  block emitting `FAQPage` JSON-LD since the how-to work; this post never had one. The questions
+  are the phrasings the GEO tests were run in (*can AI write a survey for my Discord server*,
+  *do I have to keep the questions the AI writes*, *what does it cost*). Verified in `dist/`:
+  `FAQPage` present, each question rendered visibly and in the schema.
+- **Anchor text, the `/forms/` lesson applied.** No internal anchor on the site read *"AI survey
+  generator"* before today. Two now do: the `/features/` card and the survey how-to's build-flow
+  bullet, both pointing at the post.
+
+**What did NOT change, deliberately.** The post keeps its title. It ranks for summarization
+intent, and retitling a ranking page mid-migration to chase a query we already win is the trade
+the EN homepage title decision refused for better reasons. No new door word entered
+`lexicon.json`: *AI survey generator* is a modifier on *survey*, whose door is already declared,
+and inventing a door for a word no page owns is how `knownViolations` grows.
+
+**The page is not cancelled, it is gated on evidence.** Build `/ai-survey-generator/` (that
+slug, **not `/draft/`** — T11 puts door words in slugs and `draft` is a command name, still
+literally `wizard` in `defaultMessages.py`) if and when a re-run of the two queries above shows
+us displaced, or if web-app-first admins become a segment we onboard directly. Re-run after the
+next Common Crawl, alongside the `/forms/` scoreboard query.
+
+`npm run check` green: `check:api`, build, `check:hreflang` (54/139), `check:canonical` (345
+URLs), `check:lexicon`, `tsc`, wrangler dry-run. **24 known violations, unchanged** — nothing
+added, nothing suppressed.
+
+**Item 6 is now DONE.** Title layer, form landing page, and the vocabulary wave's last action
+are all closed; the poll half lives with item 2.
 
 ### Keyword intel from the 6-month Search Console history (2026-07-29)
 
@@ -1537,6 +1615,8 @@ groundwork converts into citations and organic traffic. One page per intent.
 > **Remaining in Thread 2 after (h), (j) and (l):**
 > - **(a) Form/no-"bot" follow-ons** — more "app"/"form" vocabulary in existing titles/H2s,
 >   standalone `/draft` page. Migration-gated to ~Q4. (FR `/survey-convos` now done, see (l).)
+>   **✅ CLOSED 2026-09-07:** titles shipped, `/forms/` shipped, `/draft` page closed unbuilt.
+>   What is left of this thread is `/fr/forms/`, not a `/draft` page.
 > - **(e) Localize `/api`?** — probably not. Developer docs in EN is the norm and the
 >   samples don't translate. Noted so it isn't re-litigated.
 > - **✅ DONE (k) prose audit of `/api`, `llms.txt`, `/recipes`, `/templates` (2026-08-11).**
@@ -1614,7 +1694,9 @@ groundwork converts into citations and organic traffic. One page per intent.
 >    trial; then 500k/mo, 1M/mo, 1M/mo by tier). The article links to /pricing and
 >    keeps its own copy qualitative, so there's a single source of truth and no
 >    table to duplicate/maintain in the post.
-> 2. **Standalone `/draft` page?** Currently only covered inside other posts.
+> 2. ~~**Standalone `/draft` page?** Currently only covered inside other posts.~~ **Answered
+>    2026-09-07: no page.** The AI-generator GEO test passes; the post that covers it now owns
+>    the intent in an H2 and a `FAQPage`, and the three-surface copy gap was fixed instead.
 >
 > **Poll cluster progress — COMPLETE + LIVE on `main` (2026-07-30 → 07-31):**
 > - ✅ **"Best Discord poll bots"** page shipped (commit `91bae44`).
@@ -1685,10 +1767,13 @@ groundwork converts into citations and organic traffic. One page per intent.
 >   **Application/contact-form template links DEFERRED** (no such templates exist + P7
 >   freeze) — logged in the master roadmap Stage 3, just after the scale-family/rating
 >   bullet, to build + interlink once the new block types ship.
-> - [ ] **Next form/no-bot moves (optional, when idle):** FR counterpart of the
+> - [x] **Next form/no-bot moves — ALL CLOSED 2026-09-07.** FR counterpart of the
 >   `/survey-convos` retune (`sondage discord` is a real market); weave "app"/"form"
 >   vocabulary into other existing pages' titles/H2s; a dedicated `/draft` (AI generator)
->   page still doesn't exist. Or move to a different P2 cluster.
+>   page still doesn't exist. **Superseded:** the title layer and `/forms/` shipped, and the
+>   `/draft` page was closed without being built (the GEO test passes; the three-surface copy
+>   gap was the real defect). The FR `/survey-convos` counterpart survives as `/fr/forms/`.
+>   See the three ITEM 6 blocks near the top of this file.
 > - **New angles added 2026-07-29 (see P2 bullets + subsections):**
 >   - **"Discord survey/form without 'bot'"** cluster — untapped intent + the Discord
 >     "app" rebrand vocabulary.
@@ -1742,6 +1827,8 @@ groundwork converts into citations and organic traffic. One page per intent.
       `how-to-make-a-discord-form` blog post; action (b) partially done via the
       `/survey-convos` retune. **Remaining:** more "app"/"form" vocabulary across *other*
       existing pages' titles/H2s, FR `/survey-convos`, standalone `/draft` page.
+      **✅ ALL CLOSED 2026-09-07** (title layer, `/forms/`, and the `/draft` page ruled
+      unnecessary); the surviving descendant is `/fr/forms/`.
       Original rationale (keep for context): **untapped intent, and
       absent from our keyword history precisely because we've only ever framed as a
       'bot'** (see the circularity principle). Many admins who want to collect data from

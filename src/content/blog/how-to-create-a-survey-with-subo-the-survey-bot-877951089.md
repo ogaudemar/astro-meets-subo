@@ -118,7 +118,7 @@ Customize the many default options that come from your settings (you can edit th
 Want to make it even easier next time? Instead of starting from scratch:
 
 - Start from a ready-made **[template](/templates/)** with the `/template` command and tweak it to fit. See the [template library](/blog/subo-template-library-launch/), or the [recipes](/recipes/) if you would rather see how a survey is built block by block.
-- Let Subo's AI **draft** a questionnaire for you based on your objectives with the `/draft` command.
+- Let Subo's [AI survey generator](/blog/ai-powered-survey-summaries-subo/) **draft** a questionnaire for you based on your objectives with the `/draft` command.
 - **[Clone](/blog/clone-surveys-across-servers/)** an existing survey, even across servers, and modify it.
 - Build and edit visually in the **[web app](https://app.subo.gg)** when you need [scoring and quizzes](/blog/scoring-piping-quizzes/), [conversational Action Blocks](/blog/action-blocks-release/), or team access. Read [why we built it](/blog/subo-web-app-launch/).
 

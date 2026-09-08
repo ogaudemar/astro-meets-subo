@@ -518,7 +518,7 @@
         "✓"
         ],
         [
-        "AI credits<br><small>Credits are needed to generate survey drafts with /draft and to summarize open-ended responses</small>",
+        "AI credits<br><small>Credits are needed to generate survey drafts (in Discord with /draft, in the web app, or through the API) and to summarize open-ended responses</small>",
         "10k one-off trial",
         "✓<br>500k / mo",
         "✓<br>1 million / mo",
@@ -612,7 +612,7 @@
     {
       "number": "1",
       "title": "You build the survey",
-      "desc": "Create a survey using the /survey command, or use /draft to let Subo's AI generate one based on your objectives. You can also build and manage surveys from the Subo web app."
+      "desc": "Create a survey using the /survey command, or use /draft to let Subo's AI generate one based on your objectives. The web app does both too: build from scratch, or pick Generate with AI and describe what you want to learn."
     },
     {
       "number": "2",
@@ -687,8 +687,8 @@
     },
     {
       "emoji": "🤖",
-      "title": "AI-powered analysis",
-      "desc": "Subo uses AI to draft survey questions for you and to summarize open-ended responses. What used to take hours now takes seconds."
+      "title": "AI drafting and analysis",
+      "desc": "Subo writes survey questions from a plain-English goal, in Discord, in the web app or through the API, and summarizes open-ended responses when the answers come back. What used to take hours now takes seconds."
     },
     {
       "emoji": "🏆",
@@ -1325,7 +1325,7 @@
       "sub": "From a quick slash command to a fully branched questionnaire. Subo meets you where you are.",
       "cards": [
         { "emoji": "💬", "title": "Conversational format", "desc": "Questions appear one at a time, like a chat, not a form wall. Higher completion, less friction." },
-        { "emoji": "🤖", "title": "AI-assisted drafting", "desc": "Use <code>/draft</code> to describe your goal in plain English. Subo generates a full multi-question survey instantly." },
+        { "emoji": "🤖", "title": "AI survey generator", "desc": "Describe your goal in plain English and Subo writes the questions. Type <code>/draft</code> in Discord, pick <em>Generate with AI</em> in the web app, or pass an <code>intent</code> to the API. You get a full multi-question draft you can edit before anyone sees it. <a href=\"/blog/ai-powered-survey-summaries-subo/\">See how the AI survey generator works →</a>" },
         { "emoji": "🖥️", "title": "Web admin builder", "desc": "Design, preview, and manage surveys from the Subo web dashboard, no Discord commands needed." },
         { "emoji": "🌿", "title": "Skip logic & branching", "desc": "Route respondents to different questions based on earlier answers, and trigger rewards from what they picked. Scale answers are numbers, so a condition can compare them: follow up with anyone who answered 6 or below on an NPS question." },
         { "emoji": "✅", "title": "8 question types", "desc": "Open Text, Numeric, Single Choice (yes/no included), Multiple Choice, Rating, Opinion Scale, NPS, and Ranking, covering every feedback scenario. <a href=\"/blog/discord-rating-scale-nps-ranking-questions/\">See the rating, scale and ranking types →</a>" },

@@ -1,10 +1,21 @@
 ---
 title: "AI-Powered Survey Summaries: How Subo Reads 1,000 Responses in Seconds"
-description: "Open-ended survey responses are the most valuable and the most time-consuming to analyze. Subo's Text Analysis turns mountains of qualitative data into clear insights instantly."
+description: "Subo's AI reads open-ended survey responses and summarizes them in seconds, and it writes the questions too: describe your goal and the AI survey generator drafts the whole thing."
 pubDate: "Feb 13 2026"
-updatedDate: "Jul 28 2026"
+updatedDate: "Sep 7 2026"
 author: "Subo Team"
-tags: ["ai", "survey analysis", "features", "open-ended responses", "text analysis"]
+tags: ["ai", "ai survey generator", "survey analysis", "features", "open-ended responses", "text analysis"]
+faq:
+  - q: "Can AI write a survey for my Discord server?"
+    a: "Yes. Subo generates a complete survey from a plain-English description of what you want to learn. Type <code>/draft</code> in Discord, pick <em>Generate with AI</em> when you start a new project in the <a href=\"https://app.subo.gg\">web app</a>, or pass an <code>intent</code> field to the <a href=\"/api/\">API</a>."
+  - q: "Do I have to keep the questions the AI writes?"
+    a: "No. The generated survey opens in the editor before anything is published. Rewrite prompts, reorder or delete questions, add the one the AI missed, and set the privacy mode and rewards. Members only ever see the version you approve."
+  - q: "How many questions does the AI survey generator write?"
+    a: "Five by default. Ask for more or fewer when you run it, up to your plan's per-survey question limit. It uses the four core question types: single choice, multiple choice, open text and numeric."
+  - q: "Can it write the questions in another language?"
+    a: "Yes. Name a language when you run it, or leave it out and Subo uses your server's configured language."
+  - q: "What does AI question generation cost?"
+    a: "It draws on the same AI credits as Text Analysis. The Free plan includes a one-off trial allowance and every paid plan includes a monthly one that resets each billing period. See <a href=\"/pricing/\">pricing</a> for the allowance on each plan."
 draft: false
 ---
 
@@ -60,11 +71,21 @@ Regular pulse surveys with one open-ended question ("How's the vibe in the serve
 
 Text Analysis and the `/draft` command both run on Subo's AI credits. All new accounts in the Free plan come with enough credits to run analysis for a few surveys. If your server is big, you may need to upgrade to a paid plan to get more credits. Paid plans include a monthly allowance of AI credits that resets each billing period, with higher tiers getting a larger allowance. The credit cost scales with how much text is being analyzed, and the allowances are sized so most servers won't come close to running out. See [pricing](/pricing/) for the current allowance on each plan.
 
-## The `/draft` Command: AI-Powered Survey Creation
+## The AI Survey Generator: How `/draft` Writes Your Questions
 
-While we're on the topic of AI, Subo's `/draft` command is the other side of the same coin. It uses the same AI credits, but instead of summarizing responses, it generates survey questions for you.
+While we're on the topic of AI, Subo's survey generator is the other side of the same coin. It runs on the same AI credits, but instead of summarizing responses it writes the questions.
 
-Tell Subo what you're trying to find out, for example "I want to understand what keeps my members engaged and what's causing them to leave," and `/draft` generates a full set of suggested questions. You can edit, remove, or add to them, but the starting point is already built. It's especially useful when you're drawing a blank on how to structure a survey, or want to cover every angle on a topic without spending 30 minutes writing questions. See the [survey how-to](/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/) for where `/draft` fits in the build flow.
+Tell Subo what you're trying to find out, for example "I want to understand what keeps my members engaged and what's causing them to leave," and it comes back with a complete survey: a name, and a set of questions using the four core types (single choice, multiple choice, open text, and numeric). You say how many questions you want, up to your plan's per-survey limit, and you can ask for the questions in a specific language. The default is five.
+
+Nothing is published yet at that point. The draft lands in an edit flow where you rewrite prompts, cut the questions that missed, add the one the AI didn't think of, and set privacy and rewards before a single member sees it. That's the part that makes it useful: the blank page is gone, and you still have the final say on every question.
+
+**Three places to run it:**
+
+- **In Discord**, type `/draft` and describe your objective.
+- **In the [web app](https://app.subo.gg/)**, start a new project and pick *Generate with AI* instead of starting from scratch.
+- **Through the [API](/api/)**, pass an `intent` field when creating a project and the response comes back with the generated script. One call, working survey. Useful if you want an agent to run your community research.
+
+It earns its place when you're drawing a blank on how to structure a survey, or when you want every angle on a topic covered without spending half an hour writing questions. See the [survey how-to](/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/) for where it fits in the build flow.
 
 ## Limitations to Know About
 
