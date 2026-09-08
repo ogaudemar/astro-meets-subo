@@ -1,26 +1,30 @@
 ---
-title: "How to Create a Discord Poll (Native or with a Bot like Subo)"
-description: "How to create a poll in Discord: the quick native way, and the more powerful way with a survey bot like Subo (anonymous voting, roles, scoring, scheduling, API)."
+title: "How to Make a Poll or a Vote on Discord (Native or with Subo)"
+description: "How to make a poll or run a vote on Discord: the quick native way with no bot, and the fuller way with a survey bot like Subo (anonymous voting, roles, scoring, scheduling, API)."
 pubDate: "May 07 2023"
-updatedDate: "Jul 24 2026"
-tags: ["tutorial", "discord", "polls", "how-to"]
+updatedDate: "Sep 08 2026"
+tags: ["tutorial", "discord", "polls", "vote", "how-to"]
 author: "Subo Team"
 heroImage: "/images/blog/poll-tuto/poll-tuto-hero.webp"
 faq:
   - q: "How do you create a poll in Discord?"
     a: "In the message box of any channel, open the <strong>+</strong> menu or the poll icon and choose <strong>Create Poll</strong>. Type your question, add up to 10 answers, pick a duration between 1 hour and 1 week, and send. Members vote by clicking an answer and the tally updates live. No bot needed."
+  - q: "How do you make a vote on Discord?"
+    a: "Discord calls it a poll, and it is the same feature. In any channel, open the <strong>+</strong> menu or the poll icon, choose <strong>Create Poll</strong>, type your question, add up to 10 answers and pick a duration between 1 hour and 1 week. Members vote by clicking an answer. If you need a secret ballot, a role restriction, or a result you can export, run the vote with a bot instead."
   - q: "Can you create a Discord poll without a bot?"
     a: "Yes. Discord has polls built in, and for a quick casual vote they are the right tool. The limits are that results are always public, anyone in the channel can vote, there is no anonymity or role restriction, no reward for participating, and you cannot export the data."
   - q: "How many options can a Discord poll have?"
     a: "Discord's native polls allow up to 10 answers, each with an optional emoji. Subo polls allow up to 24 options, and effectively no character limit per option in emoji mode."
   - q: "How do you make an anonymous poll in Discord?"
     a: "Native polls cannot be made anonymous. You need a bot: with Subo, add the <code>privacy</code> option to the <code>/poll</code> command and choose Anonymous, so no one can see who voted for what, including you."
+  - q: "What bot should you use for votes on Discord?"
+    a: "Any poll bot will run a basic vote, so choose on the rules you need rather than on the vote itself: whether the ballot can be anonymous, whether you can limit voting to a role, whether voters can change their answer, and whether you can export the result. Subo's <code>/poll</code> command covers all four, and the same project can also carry a multi-question survey or a scored quiz."
   - q: "How do you start a poll with Subo?"
     a: "Three ways. Run <code>/poll</code> to build one in Discord, <code>/template</code> to start from a ready-made poll template, or <code>/draft</code> to have Subo's AI write it for you. You can also build and manage polls visually in the <a href=\"https://app.subo.gg\">web app</a>."
 draft: false
 ---
 
-Polls are one of the fastest ways to get feedback from your community and make decisions everyone feels part of. This guide covers the two ways to run a poll in Discord:
+Polls are one of the fastest ways to get feedback from your community and make decisions everyone feels part of. This guide covers the two ways to run one in Discord, whether you call it a poll or a vote:
 
 - **Discord's built-in poll**: free, instant, good enough for a quick vote.
 - **A survey bot like [Subo](/invite/)**: when you need more flexibility or more features (e.g. images, more than 10 options, anonymous voting, required roles, rewards, scoring for a quiz or prediction, scheduling, or results you can export...)
@@ -29,7 +33,15 @@ Polls are one of the fastest ways to get feedback from your community and make d
 
 Just weighing Subo against Discord's native polls? We compare them head-to-head in [Discord native polls vs Subo](/blog/discord-native-polls-vs-subo-the-survey-bot-comparison/). This article is the how-to.
 
-## Option 1: Discord's native poll
+## Poll or vote: on Discord they are the same thing
+
+Plenty of people search for how to make a *vote* on Discord and land on results about *polls*. That is not a mismatch. Discord's own interface calls the feature a **poll**; most servers call it a vote. One question, a list of answers, one click per member.
+
+The interesting question is what rules the vote runs under. Discord's native poll deliberately has very few: anyone who can see the channel can vote, everyone can see who voted for what, and the result is a tally you read in the channel. For "pizza or sushi on Friday", that is exactly the right trade.
+
+It stops being the right trade once the vote carries weight. Picking a raid time, electing a moderator, settling what to build next: now you want to say who is allowed to vote, whether the ballot is secret, and whether the result is recorded somewhere you can use later. That is what the `/poll` command in Option 2 adds.
+
+## Option 1: a Discord poll without a bot (the native vote)
 
 Discord now has polls built in, no bot required:
 
@@ -41,7 +53,7 @@ Discord now has polls built in, no bot required:
 
 Native polls are convenient for a quick, casual vote. Their limits: results are always public, anyone in the channel can vote, there's no anonymity or role-restriction, there is no reward (XP, role, etc) for those who participate and you can't export or combine the data. When those matter, use a bot.
 
-## Option 2: Polls with Subo
+## Option 2: polls and votes with a bot (Subo)
 
 [Subo the Survey Bot](/invite/) turns a poll into something you can actually run a community on: anonymous or transparent, role-gated, rewarded, scored, scheduled, and exportable alongside your survey data.
 
