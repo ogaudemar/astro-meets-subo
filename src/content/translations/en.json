@@ -17,7 +17,7 @@
   ],
   "product": [
     { "text": "Features", "href": "/features/" },
-    { "text": "Convos", "href": "/survey-convos/" },
+    { "text": "Surveys", "href": "/survey-convos/" },
     { "text": "Polls", "href": "/polls/" },
     { "text": "Forms", "href": "/forms/" },
     { "text": "Templates", "href": "/templates/" },
@@ -53,7 +53,7 @@
       "title": "Product",
       "links": [
         { "text": "Features", "href": "/features/" },
-        { "text": "Convos", "href": "/survey-convos/" },
+        { "text": "Surveys", "href": "/survey-convos/" },
         { "text": "Custom Bot", "href": "/custom-survey-bot/" },
         { "text": "Polls", "href": "/polls/" },
         { "text": "Forms", "href": "/forms/" },
