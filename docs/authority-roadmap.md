@@ -17,8 +17,9 @@ the number it measures.** Work that cannot answer that is product quality, and b
 
 | # | Do this | Why it is first | Where |
 |---|---|---|---|
-| 1 | **Run the 2026-09-08 Search Console checkback** ⚠️ **user-only, steps A–D** | The one measurement that says whether subo.gg receives French impressions at all. Every content decision since 2026-08-25 is spending against an unverified assumption. Block carries the exact regex; **do not reconstruct it.** **Pre-flight done 2026-09-07** — every non-Search-Console precondition verified live, so a null result can't be blamed on our plumbing. | P2 |
-| 2 | **Send the roundup outreach** | Editorial backlinks, kit built 2026-08-03, explicitly **not** migration-gated, warm lead already live in CommunityOne. Sitting untouched for a month. | P5 |
+| 1 | ~~**Run the 2026-09-08 Search Console checkback**~~ ✅ **RUN 2026-09-08 — but step A is half-done, and the missing half is now the #1 item** | **Result: no French recovery has begun.** `subo.gg` returned **55 impressions, 0 clicks, 12 queries, every one English**, all on the homepage; **France = 1 impression in 16 months**; *sondage*, *questionnaire*, *formulaire*, *enquête*, *quiz* and *pronostic* returned **zero**. The `vote` term added on 08-26 caught the **English upvote/downvote-bot** cluster instead of French vote queries — a methodological miss the block never considered. **Decision rule 4 was refuted**: the purpose-built FR post is crawled, healthy and **not indexed either**, so this is not a thin-page verdict. B and C both point one way — Google still treats **`subo.ai`** as the primary entity (both FR pages discovered via `subo.ai`; `/pricing/` canonical overridden despite a verified-correct declaration). **No plumbing defect exists; do not re-architect** (decision rule 2 says so). **⚠️ The `subo.ai` half of step A was not run, and it is the only thing separating "still processing" from "genuinely gone."** Full block below. | P2 |
+| ~~1b~~ | ~~**Run the `subo.ai` comparison export**~~ ✅ **RUN 2026-09-08 — answer: DECISION RULE 2, still processing** | `subo.ai` holds **13,899 impressions / 73 clicks** over 16 months, of which **French is 9,627 (69%) and 61 clicks (84%)** — but **0 French in the last 28 days**, same as `subo.gg`. The user's French-only re-run found the cliff: **traffic stops after 2026-06-10**, and this file's own migration block says **"the domain moved ~2026-06."** Same event. English non-branded did the identical thing at the identical time (*survey bot* 6.4→51.6), which this file already called the textbook signature of a migration Google is still processing. **French fell further only because the whole French corpus was non-branded**, with no branded half to recover first. **Rule 3 nearly fired on a technicality and would have been wrong** — the demand is intact and is still being served, to `subo.ai`. **The binding constraint is that `subo.gg`'s FR pages are not indexed**, which links fix, not words. Full block below. | P2 |
+| 2 | **Send the roundup outreach** 🔄 **IN PROGRESS — a multi-week thread, not a task. Verification and ordering DONE 2026-09-08; sending runs on the user's cadence** | Editorial backlinks, kit built 2026-08-03, explicitly **not** migration-gated, warm lead already live in CommunityOne. **A verification pass on 2026-09-08 opened every URL** — the P3 discipline — **and a third of the list did not survive**: CopyKitten's domain is dead, BotGhost's listicle is 2024 vintage and no longer ranks, Rally recommends no competitor and is a vendor funnel, and CommunityOne's blurb was never thin (the *category* is the defect, and the section we wanted them to move us to does not exist — template C rewritten). **Three targets added** (NitroLoot, Quickchat AI, EarthWeb) **and VibeBot promoted.** The kit now carries a fixed **SEND ORDER** of six messages with channel and template chosen. Expect this row to stay open for weeks: outreach is send, wait, follow up. | P5 |
 | ~~3~~ | ~~**Claim the four ecosystem links**~~ ❌ **CLOSED 2026-09-07** | Checked one URL at a time: Cloudflare's "Built with Workers" **404s**, Astro's showcase is **`nofollow ugc`** in a 2,374-comment thread, Stripe's Technology track is **invitation-only** and we are a merchant not a partner, and **Discord was already done in P1**. Three of the item's four claims were false and nobody had opened the URLs. P3 is closed, not deferred. | P3 |
 | ~~4~~ | ~~**Fix the `api.subo.ai` duplicate content**~~ ✅ **DONE 2026-09-05** | The canonical header had in fact shipped app-side on 2026-08-07 and this file never noticed. Verifying it live surfaced a *different* live defect: it, and twelve URLs in our own JSON-LD, named the slashless form, which 307s. All fixed and now guarded. See the ITEM 4 note in P2. | P2 / migration block |
 | ~~5~~ | ~~**Run the GEO citation test**~~ ✅ **DONE 2026-09-07** | The recrawl provably happened: Common Crawl went **0 captures (Jun, Jul) → 166 (Aug), 98 fetched, 21 French** the first crawl after the unblock. Citations are split: **#1 and named first for "best Discord survey bot"** on `subo.gg`, but **absent from the poll and form clusters**, and the French answer still cites **`subo.ai`**. Full table in the block. | robots.txt block |
@@ -33,13 +34,66 @@ work. Its internal "critical path" is critical to that migration only.
 recovered, non-branded have not). That is an argument for spending this window on items 2-5,
 which are not migration-gated, rather than on more pages.
 
-⚠️ **With items 3, 5 and now 6 closed, this list is down to two, and only one of them is
-work a session can do.** Item 1 (the checkback) is a **measurement the user must run** in the
-Search Console UI, and it came due **2026-09-08**. **Item 2 — the roundup outreach — is the only
-unstarted item on this roadmap that can produce an external editorial link**, and it has been
-sitting built and unsent since 2026-08-03. **The next session picks item 2 unless the user says
-otherwise.** Everything else on the shortlist is either measured by the user or finished.
+⚠️ **Item 2 is IN PROGRESS, not blocking.** Outreach is a **slow, long-running process**
+measured in weeks of sending, waiting, and following up, not a task that completes in a
+sitting. Its research, verification and sequencing finished on 2026-09-08; the sending runs on
+the user's own cadence from here and **should be expected to stay open for a while**.
 
+⚠️ **Items 1 and 1b were both run on 2026-09-08 and together they settle the French question.
+Read their blocks before planning any French work.** Headline: `subo.gg` shows **no French
+recovery at all** (France = 1 impression in 16 months) and its FR pages are **crawled and not
+indexed** — but `subo.ai` still holds **9,627 French impressions** over 16 months, **0 in the
+last 28 days**, with the cliff at **2026-06-10**, the month this file records the domain moving.
+**That is decision rule 2: the migration is still processing.** The demand is intact, the
+rankings were lost in the move, and English non-branded terms did the same thing at the same
+time. **Do not re-architect** — every technical precondition we control was verified green on
+09-07 and again on 09-08, including single-hop 301s on every `subo.ai` variant.
+
+⚠️ **French content is HELD, with a stated resume condition.** `/fr/forms/` keeps its T5
+argument in full; what changed is that a new French page would inherit the same non-indexed
+state, so it cannot be measured yet. **It resumes when any `/fr/` URL on `subo.gg` leaves
+"Crawled - currently not indexed."** That is the one thing to watch, and it moves on a
+**monthly** cadence, not a weekly one.
+
+⭐ **The evidence now points at links, not pages, and that is a change of priority.** Internal
+linking, hreflang, canonicals and the sitemap are all correct and have been for weeks; what
+`subo.gg` lacks is external authority pointing at it, which is exactly what indexation needs.
+**P5 item 2 (the outreach, in progress) and P1 are now the best-evidenced work on this
+roadmap** — better evidenced than any content item. A session with time should push there, or
+take the [next-crawl scoreboard](#-the-next-crawl-scoreboard--three-changes-are-now-waiting-on-one-measurement)
+when a new Common Crawl index lands. **Do not invent a new shortlist item** to fill the gap;
+the entry test at the top of this section still applies.
+
+**One unclaimed English lead is sitting in the 1b block:** ~11,000 annualized impressions on
+the *"how to vote in discord"* cluster at **average position 6.3 with ~0.1% CTR**. It carries
+two real caveats (probable featured snippet above us; impressions credited to `subo.ai`), so it
+was scoped as **one diagnostic pass, not a content program**. ✅ **The pass ran 2026-09-08.**
+Result: the head terms are **not winnable** (GeeksforGeeks, IFTTT, Zapier and Discord’s own FAQ
+own them, and Subo is in none of the top 8), but the long tail we already rank for converts at
+**0.15%** for a nameable reason — **the post never uses the searcher’s noun.** All 55 queries say
+*vote*; the title, description, every H2 and all five FAQ questions say *poll*. **The French twin
+post got exactly this fix on 2026-08-26 and the English one never did.** One edit, spec in the
+diagnostic block. Also confirmed there: the ranking URL is **`www.subo.ai`**, not `subo.gg`.
+**None of that is a reason for a session to stall, and it is not a reason to re-architect.**
+Every technical precondition we control was verified green on 09-07 and again on 09-08. With
+items 3, 5 and 6 closed, the open threads are user measurements and a multi-week send, so a
+session opening this file should pick up the standing work that does not depend on them —
+the [next-crawl scoreboard](#-the-next-crawl-scoreboard--three-changes-are-now-waiting-on-one-measurement)
+whenever a new Common Crawl index lands, or English-side work, which the evidence still
+supports. **Do not invent a new shortlist item** to fill the gap; the entry test at the top of
+this section still applies.
+
+⚠️ **French content is HELD, not cancelled.** `/fr/forms/` was this file's "highest-value French
+action on the board" as of 09-08 and the T5 argument for it is untouched — but writing another
+French page cannot overturn an indexing verdict, and item 1 just produced one. It resumes when
+1b says which side of the migration we are on.
+**⚠️ Three items in a row have closed by opening URLs rather than executing lists.** P3 died
+that way on 2026-09-07 (three of four claims false), item 6 closed that way on 2026-09-08
+(three of its last four actions re-scoped or cancelled), and the **P5 target list lost a third
+of its entries the same way on 2026-09-08** — including one dead domain that still ranks in
+search results. **The pattern is now established enough to be a rule: before acting on any
+list in this file that is more than a month old, re-open its URLs.** Stale research in a
+confident document is the most expensive failure mode this roadmap has.
 **⚠️ Read this before opening a new vocabulary thread.** Item 6 closed by *checking premises
 rather than executing a list*: three of its last four actions were re-scoped or cancelled once
 someone opened the URLs (the poll half was a ranking problem, the `/draft` page was a query we
@@ -54,6 +108,13 @@ test **after the next Common Crawl** (the last was `CC-MAIN-2026-34`, Aug 7-20; 
 `index.commoncrawl.org` for the next index before running these, because a re-test on a stale
 index measures nothing). Run all three in one sitting, and record the answers in the table in
 the GEO block rather than in a new one.
+
+⚠️ **Checked 2026-09-08: still no new index.** `collinfo.json` returns `CC-MAIN-2026-34`
+(August) as the newest collection, so **the scoreboard is not runnable yet** and a run today
+would measure the crawl that predates all three changes. `/forms/` shipped 09-07 and
+`/survey-convos/` 09-08; nothing has fetched them. Re-check with
+`curl -s https://index.commoncrawl.org/collinfo.json` before the next attempt — one command,
+and it is the difference between a verdict and a number that means nothing.
 
 | Shipped | Query to re-run | What a pass looks like |
 |---|---|---|
@@ -490,7 +551,13 @@ wanted**. Once there is a page that wants it, the demotions are additions, not c
 is exactly the T10 corpus-balance failure the entry already warned about. Its `clearedBy` is
 updated: the FR fix is now **a page (`/fr/forms/`), not a translation**, and it is the same
 shape as this one. French already has three research-flavored doors and zero form doors, so
-this is the highest-value French action on the board.
+this is the highest-value French action on the board. ⚠️ **HELD 2026-09-08 by the checkback
+result:** `subo.gg` shows no French recovery and the purpose-built FR post is crawled-not-indexed,
+so a new French page cannot be measured this quarter. The T5 argument is untouched and the page
+stays queued; **item 1b answered that on 2026-09-08: the migration is still processing** (the French
+cliff is 2026-06-10, the month the domain moved). So the hold is not "French is dead" — it is
+that `subo.gg`'s FR pages are **not indexed**, and a new French page would inherit exactly that.
+**Resume condition: any `/fr/` URL on `subo.gg` leaving "Crawled - currently not indexed."**
 
 `npm run check` green: build, `check:api`, `check:hreflang` (54 hreflang pages / 139 built),
 `check:canonical` (345 absolute URLs), `check:lexicon`, `tsc`, wrangler dry-run. The reported
@@ -671,6 +738,45 @@ leads on *formulaire* and still waits on `/fr/forms/`.
 bot* and *Discord survey app for my server* after the next crawl. The prior is different, though.
 We already lead *best Discord survey bot* on `subo.gg/`; what this change tests is whether a
 landing page beats the homepage at holding it.
+
+### ✅ THE ANCHOR LAYER — EN nav and footer say "Surveys", not "Convos" (2026-09-08)
+
+The T5 realignment gave `/survey-convos/` the word *survey* in its H1 and its title, and
+`t5.en.survey` was paid off on the strength of that. **What nobody checked was the anchor
+text pointing at it.** Header and footer both labeled the link **"Convos"**, so all 139 built
+pages told Google that the page we had just aimed at the head term of our own category was
+about an invented word with no search demand. Same defect item 6 fixed for `/forms/` — every
+form-worded anchor pointing at a blog post — one layer further out.
+
+**Changed:** `en.json` `header.product[1].text` and `footer.sections[0].links[1].text`,
+`Convos` → `Surveys`. Two strings, ~139 internal anchors.
+
+**Why "Surveys" and not "Survey Convos".** The doublet is not a compromise available to us:
+**A1c deleted it from English and A4 from French**, and **A24 is still open precisely to
+remove it from `de.json` and `es.json`**. Restoring it in EN would reverse two shipped
+decisions and contradict an open action. The live choice was only ever *Convos* or *Surveys*.
+
+**Why the nav is the right place for a door word.** T4 keeps Convo out of titles and H1s
+because we will not rank for an invented category; the nav is the same kind of surface one
+step out, and it is the most repeated anchor text on the site. The header now reads
+**Features / Surveys / Polls / Forms** — three door words in a row, each pointing at its
+declared T5 owner, where before exactly one entry was not a door. Convo keeps every place it
+earns: the page body, the differentiation layer, the product itself.
+
+**⚠️ FR, DE and ES deliberately NOT changed, and not by oversight.**
+- **FR:** `/fr/survey-convos/` still leads its H1 on *formulaire* and is waiting on
+  `/fr/forms/` (see `t5.fr.formulaire`). Relabeling its nav entry before that page exists
+  moves the pieces in the wrong order — the same mistake the FR mirror avoided when
+  `t5.en.form` was paid off.
+- **DE / ES:** their nav still says the old doublet **"Survey Convos"**, which is **A24**,
+  still open. German is entangled with A18. Do not fix the label here as a drive-by; A24 is
+  where it belongs.
+
+**Scoreboard:** this rides the existing `/survey-convos/` row of the
+[next-crawl scoreboard](#-the-next-crawl-scoreboard--three-changes-are-now-waiting-on-one-measurement)
+— *best Discord survey bot* and *Discord survey app for my server*. It does not get its own
+measurement. If the landing page starts being cited where the homepage was, the anchor layer
+is part of why, and the change is too small to attribute on its own.
 
 ### Keyword intel from the 6-month Search Console history (2026-07-29)
 
@@ -1071,6 +1177,344 @@ groundwork converts into citations and organic traffic. One page per intent.
 >
 > ---
 >
+> ### ✅ CHECKBACK RESULT — run by the user 2026-09-08. The French recovery has not started, and the hoped-for reading was refuted.
+>
+> Steps A-D run in the Search Console UI. **Read the pre-committed decision rules above before
+> this block**; the point of writing them on 2026-08-25 was to stop exactly the rationalization
+> that a result this thin invites.
+>
+> **A. The French query export on `subo.gg`: 55 impressions, 0 clicks, and not one French query.**
+>
+> | | Result |
+> |---|---|
+> | Queries returned | **12**, every one English |
+> | Impressions | **55** total, **0 clicks**, CTR 0% |
+> | Positions | **41.4 to 92.5** — page 5 to page 10 |
+> | Pages receiving them | **`https://subo.gg/` only.** Not one `/fr/` URL |
+> | France | **1 impression**, position 19 |
+> | *sondage*, *questionnaire*, *formulaire*, *enquête*, *quiz*, *pronostic* | **zero hits, all six** |
+>
+> The twelve queries are *vote bot discord*, *vote bot*, *discord vote bot*, *vote discord bot*,
+> *upvote bots*, *polldaddy vote bot*, *upvote bot*, *votebot*, *downvote bot*, *reaction bot
+> vote*, *everyone votes discord bot*, *reddit vote bot*.
+>
+> **⚠️ METHODOLOGICAL FINDING: the 2026-08-26 regex amendment backfired, and the block never
+> considered how.** `vote` was added to catch the ~815 French impressions on *faire un vote sur
+> discord*. **`vote` is also an English word**, and what it actually caught was the
+> upvote/downvote **vote-manipulation** cluster — people looking for bots that rig polls and
+> farm Reddit karma. That is not adjacent intent, it is a different product category, and it
+> accounts for **12 of 12 rows and all 55 impressions**. The amendment note said `vote` "matters
+> most"; it turns out `vote` is the one term in the pattern that cannot be read without a
+> language or country filter.
+> **Fix for the next run: set Country = France (or add `discord` as a required term).** Do not
+> delete `vote` from the regex — on `subo.ai` it is still the biggest French cluster, and the
+> comparison run needs the identical pattern.
+>
+> **The one number that matters, and it is unambiguous: France = 1 impression in 16 months.**
+> On 2026-08-25 `subo.gg` returned nothing; on 2026-09-08 it returns nothing French. **No
+> recovery has begun.**
+>
+> **⚠️ STEP A IS HALF-RUN.** The block says *"Repeat on subo.ai to see whether the old domain is
+> still holding the impressions"*, and **that export has not been run**. It is the only thing
+> that separates decision rule 2 (*still processing — expected, do not re-architect*) from rule
+> 3 (*genuinely gone — the only outcome that justifies re-opening the technical investigation*).
+> **Until it is run, no one is entitled to say which of those two we are in.** One export,
+> same regex, same 16 months, `subo.ai` property. **This is the highest-value unrun measurement
+> on the roadmap.**
+>
+> **B. Both URLs crawled, both healthy, both refused. The hoped-for split did NOT happen.**
+>
+> | | `/fr/polls/` | `/fr/blog/comment-creer-un-sondage-sur-discord/` |
+> |---|---|---|
+> | Status | Crawled - currently not indexed | Crawled - currently not indexed |
+> | Last crawl | **Sep 7, 2026** (Googlebot smartphone) | Aug 27, 2026 |
+> | Page fetch | Successful | Successful |
+> | Crawl allowed / Indexing allowed | Yes / Yes | Yes / Yes |
+> | User-declared canonical | `https://subo.gg/fr/polls/` | self |
+> | Google-selected canonical | Inspected URL | Inspected URL |
+> | Referring sitemaps | **None detected** | **None detected** |
+> | Referring page | **`https://subo.ai/polls/`** | **`https://www.subo.ai/blog/how-to-create-a-discord-poll-…`** |
+>
+> **This refutes decision rule 4.** That rule read: *"`/fr/polls/` still not indexed but the new
+> blog post IS → confirms this was a page-value verdict, and content is the right lever."*
+> **The purpose-built post is not indexed either.** It was crawled on Aug 27, fetched cleanly,
+> is indexing-allowed and self-canonical, and Google declined it anyway. Whatever is holding
+> `/fr/polls/` back is not thin-page value, because the page written specifically to fix that
+> gets the same verdict. **Do not spend another French post arguing with this result.**
+>
+> **⚠️ The two rows that actually explain the picture are the last two.** Both pages were
+> discovered through **`subo.ai`** — the old domain — and neither is credited to a sitemap.
+> Checked live 2026-09-08: **both URLs are present in `sitemap-0.xml`** (125 `<loc>`, 15 under
+> `/fr/`), so "no referring sitemaps" is Google's own reconciliation, not a missing entry.
+> Read together with C below, the consistent explanation is that **Google still treats
+> `subo.ai` as the primary entity and `subo.gg` as a secondary copy of it.** That is the
+> migration being unfinished, which this file has forecast as ~Q4 since July.
+>
+> **C. 147 not indexed (was 54), and `/pricing/` is NOT an hreflang problem.**
+>
+> | Bucket | Count |
+> |---|---|
+> | Discovered - currently not indexed | **80** ← new category, none before |
+> | Crawled - currently not indexed | **58** (was 54) |
+> | Duplicate, Google chose different canonical than user | **1** (`/pricing/`, unchanged) |
+>
+> **⚠️ The block predicted the hreflang fix would resolve `/pricing/`. It did not, and the
+> prediction was aimed at the wrong mechanism.** Verified live 2026-09-08: `/pricing/` serves
+> `<link rel="canonical" href="https://subo.gg/pricing/">` plus a complete, self-referencing
+> hreflang cluster (x-default, en, fr, es, de, pt-BR, it). Our declaration is correct and always
+> was. "Google chose a different canonical" means Google is **overriding** it — and during a
+> domain migration the overwhelmingly likely choice is `subo.ai/pricing/`. **This is the same
+> finding as B, on a third surface. Nothing to fix in the repo.**
+>
+> **80 "Discovered - currently not indexed" is the number to watch**, not the 58. These are URLs
+> Google knows about and has not bothered to fetch, and 147 exceeds our 125 sitemap URLs — so a
+> large share are `subo.ai`-era URLs and the slashless forms already documented in the GEO block
+> (67 of them showed up as 307s in Common Crawl). Crawl budget is going to redirects.
+>
+> **D. Sitemap read, success, 119 pages.** Against **125** live on 2026-09-08. The gap is a
+> read-time snapshot, not a defect: the sitemap was submitted Aug 25 and pages have shipped
+> since (`/forms/` on 09-07 among them). Compare against 78 pages at the Jul 30 read — **the
+> resubmission worked**, and this row is the one unambiguously healthy result in the whole
+> checkback.
+>
+> #### What this changes, and what it explicitly does not
+>
+> - **The French content plan is paused, not cancelled.** The 2026-08-26 note said not to open
+>   new French topics until this export landed. It has landed, and it says French pages on
+>   `subo.gg` are crawled and not indexed. **Writing more French posts cannot fix an indexing
+>   verdict**, so `/fr/forms/` — which this file called the highest-value French action on the
+>   board — is **held until the `subo.ai` export distinguishes "processing" from "gone."**
+>   The T5 argument for it is untouched and it stays queued; what changed is that it can no
+>   longer claim to be measurable this quarter.
+> - **Do not re-architect.** Decision rule 2 says so explicitly, and B and C are both consistent
+>   with a migration mid-flight. Every technical precondition we control was verified green on
+>   2026-09-07 and again today: robots, sitemap, canonicals, hreflang, trailing slashes, single-hop
+>   301s. **There is no plumbing defect to find here, and looking for one is the failure mode
+>   this rule exists to prevent.**
+> - **The English side is unaffected by all of this** and remains where the evidence says to
+>   spend: we are cited **first** for *best Discord survey bot* in AI answers, and the GEO
+>   scoreboard is waiting on a crawl, not on a decision.
+> - **⚠️ Nothing above is evidence that the redirects are broken.** `subo.ai/fr/` → 301 →
+>   `subo.gg/fr/` was verified single-hop on 2026-09-07. Google discovering us *through*
+>   `subo.ai` is the redirect working as intended; the lag is in which domain it credits.
+
+> ### ✅ ITEM 1b — the `subo.ai` comparison export, run 2026-09-08. **Decision rule 2: still processing. Do not re-architect.**
+>
+> The measurement the checkback was missing. It settles the question the `subo.gg` export could
+> not, and it settles it against the alarming reading.
+>
+> **The numbers, same regex, same 16 months.**
+>
+> | Property / window | Queries | Impressions | Clicks | French impressions |
+> |---|---|---|---|---|
+> | `subo.ai`, 16 months | 208 | **13,899** | **73** | **9,627 (69%)**, 61 clicks (**84% of all clicks**) |
+> | `subo.ai`, last 28 days | 61 | 884 | 1 | **0** |
+> | `subo.gg`, 16 months | 12 | 55 | 0 | **0** |
+>
+> French was **69% of impressions and 84% of clicks**. The commercial head terms were genuinely
+> good: *bot sondage discord* **678 impressions, 32 clicks, position 4.62**; *bot discord
+> sondage* **353 / 19 clicks / position 3.99**. The how-to cluster was enormous and barely
+> converted: *comment faire un sondage sur discord* 1,580 at 7.41, *faire un sondage sur
+> discord* 1,474 at 6.98, *faire un sondage discord* 1,064 at 7.00.
+>
+> **⚠️ THE CLIFF IS THE MIGRATION. Two independent records agree and nobody had put them
+> side by side.**
+>
+> - The user re-ran step A with a **French-only** pattern (dropping *questionnaire*, *quiz* and
+>   *vote*, which exist in both languages). Result: **`subo.ai` French traffic stops after
+>   2026-06-10.** Since then, France-filtered queries on **both** domains are **entirely
+>   English**.
+> - This file's own migration block, written 2026-07-29, opens with **"The domain moved
+>   ~2026-06."**
+>
+> Same month. And the block already documented the identical event happening to English:
+> *survey bot* 6.4 → 51.6, *discord poll bot* 9.96 → 53.1, *best discord poll bot* 8.33 → 43,
+> which it called **"the textbook signature of a correct migration Google is still processing —
+> not a broken one."**
+>
+> **So French did not vanish mysteriously. French did exactly what English non-branded did, at
+> the same time, for the same reason.** The difference is one of degree and it has a plain
+> cause: **the entire French corpus was non-branded how-to content**, with no branded half to
+> recover first, so where English fell to position ~40-55, French fell out of the index
+> altogether. **This is decision rule 2, not rule 3.** The impressions are not "genuinely gone";
+> the rankings were lost in a move that Google has not finished processing.
+>
+> **⚠️ Rule 3 nearly fired on a technicality, and it would have been wrong.** Read literally —
+> "nothing on either domain" — today's data matches rule 3, whose remedy is *re-open the
+> technical investigation*. Read for what it was **for** (has the demand disappeared, or did we
+> lose it), it is rule 2. The demand is intact: the queries still carry the volume, and they are
+> still being served — to **`subo.ai`**. **A rule written in advance is still a rule that has to
+> be read in context**, and the honest tell was that a "gone forever" reading cannot explain why
+> the old domain is still collecting 884 impressions a month.
+>
+> **What is actually binding: the French pages on `subo.gg` are not indexed.** You cannot rank
+> what is not in the index, and both inspected FR URLs came back *Crawled - currently not
+> indexed* with clean fetches, correct canonicals and indexing allowed. That is the whole
+> constraint. It is not content quality (the purpose-built post gets the same verdict), and it
+> is not plumbing — re-verified live 2026-09-08, **every `subo.ai` variant 301s single-hop to
+> `subo.gg`**, including `www.`, bare `http://`, `/fr/`, and **`robots.txt` itself**, which
+> means `subo.ai` inherits our fully open robots policy.
+>
+> **⚠️ Do NOT reach for the robots.txt explanation.** The tempting story — subo.gg was
+> robots-blocked from June, so the redirect target could not be indexed — **is false and this
+> file already said so.** The 2026-08-04 block is explicit: *"Google Search is unaffected.
+> `search=yes`, Googlebot not blocked."* Only the AI crawlers were blocked. Checked and
+> discarded 2026-09-08; recorded here so it is not re-derived a third time.
+>
+> **`subo.ai` index state (user, 2026-09-08): 21 indexed, 68 not indexed** — 42 *page with
+> redirect* (the migration working as intended), 21 *crawled - currently not indexed*, 2 *not
+> found* (`/blog/markdown-style-guide/`, `/blog/third-post/` — Astro template leftovers, long
+> dead, harmless), 3 *blocked by robots.txt* (`/invite`, `/portal`, `www./invite` — tracked
+> outbound redirects, historical, and we would not want them indexed anyway). **Nothing in that
+> list is a defect to fix.**
+>
+> #### The finding nobody was looking for: a live English cluster at position 6 with no clicks
+>
+> Buried in the 28-day `subo.ai` export, and **entirely unblocked by the French question**:
+>
+> | | |
+> |---|---|
+> | English *"vote … discord"* queries, last 28 days | **55 queries, 861 impressions, 1 click** |
+> | Average position (top 10 by impressions) | **6.3** |
+> | Annualized | **~11,000 impressions** at page-1 positions |
+>
+> *how to make a vote on discord* (123 impressions, 5.52), *vote bot discord* (111, 8.23),
+> *discord vote poll* (60, 4.85), and fifty more. **We are on page one and converting ~0.1%**,
+> where position 6 would normally return 2-4%.
+>
+> **Two honest caveats before anyone spends a week on this.** First, these are *informational*
+> queries about Discord's **native** vote feature, and Google very likely answers them with a
+> featured snippet or Discord's own docs above us — a low CTR at position 6 may be structural,
+> not fixable by a better title. Second, **the impressions are credited to `subo.ai`**, so
+> whatever ranks is the old domain, and this is the same migration story from a third angle.
+> **Worth one diagnostic pass, not a content program:** look at what actually ranks for
+> *how to make a vote on discord*, check whether the SERP has a snippet we could win, and check
+> whether the ranking URL is `subo.ai/blog/how-to-create-a-discord-poll-with-or-without-a-bot/`.
+> If the answer is "snippet owned by Discord", record that and drop it.
+>
+> #### What this changes
+>
+> - **`/fr/forms/` stays held, but for a stated reason with an expiry.** Not "French is dead" —
+>   French is un-indexed, and a new French page inherits that. It resumes when any `/fr/` URL on
+>   `subo.gg` gets indexed, which is the thing to watch. **The T5 argument for the page is
+>   untouched and still correct.**
+> - **The lever for indexation is links, not words.** Internal linking, hreflang, sitemap and
+>   canonicals are all correct and have been for weeks; what `subo.gg` lacks is external
+>   authority pointing at it. That is **P5 (item 2, in progress) and P1**, and it is now the
+>   best-evidenced argument on this roadmap for spending the window there rather than on more
+>   pages. The outreach thread just became the load-bearing one.
+> - **Do not sunset `subo.ai`.** It is still serving 884 impressions a month and holds the only
+>   rankings we have. The existing "do not sunset" ruling now has a number behind it.
+> - **Recheck cadence: monthly, not weekly.** The next meaningful French measurement is whether
+>   any `/fr/` URL leaves *Crawled - currently not indexed*. Nothing we ship changes that inside
+>   a fortnight.
+
+> #### ✅ DIAGNOSTIC PASS on the English "vote" cluster — run 2026-09-08. **One edit, not a program, and the fix already exists in French.**
+>
+> Scoped in the 1b block as *"one diagnostic pass, not a content program"*, with two caveats to
+> test before spending anything. Both were tested. One held, one turned out to be the finding.
+>
+> **1. The ranking pages are all on the OLD domain — and mostly on its `www.` variant.**
+>
+> | Page (last 28 days) | Impressions | Clicks | Position |
+> |---|---|---|---|
+> | `www.subo.ai/blog/how-to-create-a-discord-poll-with-or-without-a-bot/` | **666** | 1 | **6.08** |
+> | `subo.ai/polls/` | 196 | 0 | 8.58 |
+> | `www.subo.ai/blog/discord-native-polls-vs-subo-the-survey-bot-comparison/` | 43 | 0 | 8.19 |
+> | `subo.ai/survey-convos/` | 1 | 0 | 67 |
+> | **any `subo.gg` page** | **0** | — | — |
+>
+> Google is serving a **redirecting URL on a hostname we no longer use** to ~900 searchers a
+> month, and `subo.gg` gets none of it. This is item 1b's conclusion arriving from a fourth
+> direction, now with a page-level number attached.
+>
+> **2. Caveat one HELD: the head terms are structurally hard.** Searched *how to make a vote on
+> discord*, *vote bot discord* and *discord vote poll*. The visible results are **GeeksforGeeks,
+> IFTTT, Zapier, groovyPost, remote.tools and Discord's own Polls FAQ** — high-DR generalist
+> how-to publishers plus the platform itself. **Subo appears in none of the top 8, on any of the
+> three.** So our 666 impressions are not head-term impressions; they live in the long tail
+> (*how to do a vote in discord*, *how to make votes in discord*, *discord vote command*, and
+> ~50 more). **Do not write a page aimed at the head of this cluster. It is not winnable and
+> that was the right caveat to check first.**
+>
+> **3. Caveat two DID NOT hold, and this is the actionable part: the page never uses the
+> searcher's noun.** All 55 queries use **vote as a noun**. The post uses **poll**:
+>
+> | Where | What it says | Contains "vote"? |
+> |---|---|---|
+> | `<title>` | "How to Create a Discord **Poll** (Native or with a Bot like Subo)" | **No** |
+> | description | "How to create a **poll** in Discord…" | only "voting", as a feature |
+> | all three H2s | "Discord's native poll", "Polls with Subo", "Which should you use?" | **No** |
+> | all five FAQ questions | every one says "poll" | **No, none** |
+> | body | 80 × "poll" vs 25 × "vote" | yes, but **as a verb** ("members vote by clicking") |
+>
+> A searcher scanning a results page for *how to make a vote on discord* sees a title about
+> **polls** and does not recognize it as their answer. **This is T2b's exact problem — Discord's
+> word is `poll`, the searcher's word is `vote`** — and it is the reason the cluster converts at
+> **0.15%** where position 6 normally returns 2-4%.
+>
+> **⚠️ The fix is already designed, already shipped, and already in French.** On 2026-08-26
+> `fr/comment-creer-un-sondage-sur-discord.md` got precisely this treatment against precisely
+> this problem: **title carrying both words**, a dedicated section **"Sondage ou vote : sur
+> Discord, c'est le même outil"**, Option 1 renamed to name the native vote, and **two
+> vote-worded FAQ entries**. The English post — which carries a **larger and currently-live**
+> impression cluster — never got the equivalent. **Port the French treatment; do not invent a
+> new one.**
+>
+> **4. Geography: this is a real global cluster, US-led.** United States **411 impressions at
+> position 5.58**, then UK 51, Canada 46, Indonesia 42, Poland 34, Germany 27, France 27,
+> Australia 26, Vietnam 17. The "it's just non-English markets typing an English word" reading
+> is **wrong** — the US is the single largest slice and sits at the best position.
+>
+> **5. Checked and CLEARED, recorded so it is not re-found and mis-diagnosed: `www.subo.gg`
+> serves 200 instead of redirecting to the apex.** Both hostnames are live. **It is not a
+> defect**: every page on `www.subo.gg` self-declares the apex canonical
+> (`<link rel="canonical" href="https://subo.gg/…">`), the sitemap lists apex only, and robots
+> is the same open file. Google consolidates on the canonical. A `www` → apex redirect rule at
+> Cloudflare would be tidier and costs nothing, but **it explains none of the French problem and
+> none of the CTR problem, and it is not worth a session.**
+>
+> #### ✅ SHIPPED 2026-09-08 — the French treatment, ported
+>
+> `how-to-create-a-discord-poll-with-or-without-a-bot.md`, edited to mirror
+> `fr/comment-creer-un-sondage-sur-discord.md` rather than to invent an English version:
+>
+> | Layer | Before | After |
+> |---|---|---|
+> | `<title>` | "How to Create a Discord **Poll** (Native or with a Bot like Subo)" | "How to Make a **Poll or a Vote** on Discord (Native or with Subo)" |
+> | description | "How to create a poll in Discord…" | "How to make a poll or **run a vote** on Discord… the quick native way **with no bot**…" |
+> | new H2, before Option 1 | — | **"Poll or vote: on Discord they are the same thing"** |
+> | Option 1 H2 | "Discord's native poll" | "a Discord poll **without a bot** (the **native vote**)" |
+> | Option 2 H2 | "Polls with Subo" | "polls **and votes** with a bot (Subo)" |
+> | FAQ | 5 entries, **none** saying vote | **7**, two new: *"How do you make a vote on Discord?"*, *"What bot should you use for votes on Discord?"* |
+> | intro | "the two ways to run a poll in Discord" | "the two ways to run one in Discord, **whether you call it a poll or a vote**" |
+> | tags / `updatedDate` | — / Jul 24 | `vote` added / **Sep 08 2026** |
+>
+> **Both new FAQ entries land in the rendered `FAQPage` schema** (verified in `dist/`), which is
+> the surface that answers *"how to make a vote on discord"* for AI and for the People-also-ask
+> box. That is the half most likely to pay, and it cost two entries.
+>
+> House style checked per the `blog-writing` skill: **zero em dashes, zero en dashes, zero
+> British spellings, no banned AI tells.** `npm run check` green (build, api, hreflang 54/139,
+> canonical 345 URLs, lexicon, tsc, wrangler dry-run).
+>
+> **No new facts were introduced about Discord's native polls.** Every claim in the new section
+> (public results, anyone in the channel can vote, visible voters, no export) already existed in
+> the post's Option 1 paragraph and FAQ. The edit is a **vocabulary** change, not a factual one,
+> which is also why it needs no re-verification against the app repo.
+>
+> #### Verdict and the honest limit on it
+>
+> **Worth one edit to one already-ranking page**, cheap, English, unblocked, and copying a
+> treatment that was reasoned through once already. Annualized the cluster is ~11,000
+> impressions; moving 0.15% to a still-modest 1% would be ~110 clicks a year against ~13 today.
+>
+> **⚠️ Attribute nothing afterwards.** Two variables move together here: the vocabulary fix, and
+> the migration eventually handing these impressions from `www.subo.ai` to `subo.gg`. **The
+> second will change the number on its own**, and there is no clean way to separate them. Make
+> the edit because the page should say the searcher's word regardless — not as an experiment
+> that can be read.
+
 > #### ✅ Pre-flight run 2026-09-07 — everything Search Console does *not* gate
 >
 > Steps A–D need the Search Console UI and are the user's to run. Everything checkable from
@@ -2831,14 +3275,48 @@ What is left here is the copy a crawler can actually read, plus the guard:
         locale JSON only; blog markdown is outside it.** That is a real gap in the guard, not an
         oversight in this pass — see A23.
 
-- [ ] **A23. Make the denylist check read blog markdown, not just the locale JSON.** A4 found a
-      fifth and sixth retired phrasing (*sondages conversationnels*, *questionnaires
-      conversationnels*) living in `src/content/blog/fr/`, where `check:lexicon` has never looked.
-      The posts are the highest-value crawlable surface in the locale, so the one place the rule
-      is unenforced is the place it matters most. Scope: run each locale's `deny` rules over
-      `src/content/blog/<locale>/*.md` as well, body and frontmatter. **Expect a baseline** — do
-      not assume the two A4 found are the only ones, and check EN before deleting `en.deny`'s
-      claim to be paid off.
+- [x] **A23. The denylist now reads blog markdown. ✅ DONE 2026-09-08 — and the phrases it was
+      written for were already gone.** Scope as opened: run each locale's `deny` rules over
+      `src/content/blog/<locale>/` as well as the locale JSON, because the posts are the
+      highest-value crawlable surface per locale and were the one place the rule went
+      unenforced.
+      - **⚠️ A4's two named phrases were not there.** *sondages conversationnels* and
+        *questionnaires conversationnels* return **zero hits** in `src/content/blog/fr/` as of
+        2026-09-08. The only `conversationnel` left in the French blog is *"blocs d'action
+        conversationnels"*, which is the action-blocks feature and correct. Either they were
+        fixed and unrecorded, or A4 mis-attributed them. **The guard is still worth having** —
+        it found six other things — but the item's stated premise did not survive, which is
+        now the third time in three items. Do not cite A4's two phrases again without grepping.
+      - **What it actually found: six real violations, and two were invisible.** Lowercase
+        `convo` (T3 says capitalized, always) in `convos-in-your-dms.md`,
+        `subo-web-app-launch.md` ×3, and **twice inside image alt text** in
+        `how-to-create-a-survey-…`. **Alt text is indexed copy and nothing had ever checked
+        it.** All six fixed 2026-09-08.
+      - **Design: what counts as copy.** The check reads prose, headings, frontmatter
+        `title`/`description`, and **image alt text**; it skips what a crawler reads as an
+        identifier — fenced and inline code, link and image *targets*, bare URLs, and the
+        frontmatter keys holding slugs, tags and paths. Without that split, every
+        `/survey-convos/` href and every `/images/blog/DM-convos/` path is a false positive,
+        and the check would have been switched off inside a week.
+      - **`actFiles` = `actPaths` for prose.** Same per-file, deliberate shape as the German
+        `Abstimmung` exception, and it reports stale entries the same way. One is in use:
+        `comment-creer-un-sondage-sur-discord.md` carries the H2 *"Sondage ou vote : sur
+        Discord, c'est le même outil"*, which exists to tell a French reader that the word
+        they searched and the word Discord shows name one thing. That is **T2b's own argument
+        written for a reader**, not the instrument doublet the rule bans.
+      - **✅ The one open decision was taken by the user, 2026-09-08: capitalize.**
+        `dawn-of-convos.md`, the manifesto that coined the word, wrote lowercase *convo*
+        seven times (*"We call it a convo"*, *"The future belongs to convos"*). The lowercase
+        was the rhetorical device of the coinage, but the post is crawled and cited, and a
+        lowercase coinage teaches Google and every LLM that Convo is a common noun — the exact
+        dilution T3 exists to prevent. **All seven capitalized; the manifesto still reads.**
+        The `tags:` entry was left alone: it is taxonomy, not prose, and the guard skips it.
+        **`en.blog.deny` was therefore never left in `knownViolations`** — it was added and
+        cleared the same day, so the object is unchanged at 10 entries and the blog check
+        enforces from a clean baseline. **The guard bites for real: there is no blog
+        exemption anywhere.**
+      - `npm run check` green. Both vendored copies of `lexicon.json` updated in the same
+        change, per the repo rule.
 
 - [ ] **A24. `de.json` and `es.json` nav still say "Survey Convos".** T11's corollary is explicit
       that `X and Convos` is not a compromise, and A1c deleted the doublet from English while A4
@@ -3180,7 +3658,8 @@ test.
 ## P5 — Editorial guest posts & digital PR-lite  (free, replaces paid PR)
 
 - [~] **Get Subo into third-party "best Discord bots" / "must-have bots" roundups —
-      IN PROGRESS (kit built 2026-08-03).** Subo is a **4-year-old, established niche
+      IN PROGRESS (kit built 2026-08-03, target list re-verified and re-ordered 2026-09-08).**
+      Subo is a **4-year-old, established niche
       utility** — it belongs in listicles like communityone.io's best-Discord-bots
       roundups (and "best Discord poll/survey bots", "must-have bots for your server",
       category roundups). These already rank for the high-intent discovery queries our own
@@ -3189,15 +3668,48 @@ test.
       from the P2 "Best Discord poll bots" page — that's *our* asset; this is getting into
       *theirs*.
       - **[roundup-outreach-kit.md](roundup-outreach-kit.md)** built: tiered target list
-        (research 2026-08-03), pitch templates A/B/C, ready-to-paste Subo entry.
-      - **Subo is ALREADY in CommunityOne** (added 2026-07-09) — but under "Fun bots" with
-        a thin blurb. Warm lead = reclassify to polls/surveys/engagement + get into their
-        leveling/AI sub-roundups (template C). P5 is validated by this alone.
-      - **Sending is the user's step.** Tier 1 first (CommunityOne → Stickers.gg →
-        Space-node → BotGhost), then Tier 2 (Beebom, Rumie). Track in the kit; feed live
-        placements' `$referring_domain` into the P0 funnel breakdown.
-      - **Skipping** competitor vendor blogs (EasyPoll/PeakBot/PollBotPlus/Formeer/Votex)
-        and AI content farms (Skywork, npprteam) — no value / won't feature a rival.
+        (research 2026-08-03), pitch templates, ready-to-paste Subo entry.
+      - **⚠️ VERIFICATION PASS 2026-09-08 — a third of the target list was wrong.** Every
+        URL was opened one at a time, the discipline that closed P3. Results: **CopyKitten's
+        domain no longer resolves** (DNS `ENOTFOUND`, though it still appears in search
+        results); **BotGhost's listicle is 2024-11-12 and no longer ranks** for *best discord
+        poll bots 2026*, resolving the kit's own "confirm it still ranks" flag negative;
+        **Rally recommends no competing poll bot at all** and is a vendor funnel, so it moved
+        to Skip; and **CommunityOne's blurb was never thin** — it is accurate and already says
+        "polls & feedback, privacy-first surveys, AI summaries." The real CommunityOne defect
+        is **structural**: its only headings are overall / moderation / music / fun, so the
+        old pitch asked an editor to *create a section*. Template C was rewritten to ask for
+        the comparison table instead. **Stickers.gg and Space-node verified accurate as
+        written** (Space-node's article is live but returns the hosting homepage to automated
+        fetching — do not read that as a dead post).
+      - **Three targets added, one promoted (2026-09-08).** **NitroLoot** (updated
+        2026-04-01, 11 categories, no poll/survey slot, Discord contact in-article) is now
+        slot 1. **Quickchat AI** (updated 2026-07-28, real byline) gets its own AI-led
+        template. **EarthWeb** (*24 Best Discord Bots 2026*, high-DR independent) 403s to
+        automated fetch and **needs a human to open it**. **VibeBot promoted** out of
+        "deprioritize": it is a real 12-bot roundup that features competitors, with no
+        poll/survey slot.
+      - **Subo is ALREADY in CommunityOne** (added 2026-07-09) — as a **bonus entry under
+        "Fun bots."** Warm lead, but **send it last**: it is the only message with a live
+        listing to lose.
+      - **Sending is the user's step, and the kit now names the order.** A **[SEND
+        ORDER](roundup-outreach-kit.md#-send-order--the-six-messages-in-the-order-to-send-them-set-2026-09-08)**
+        section fixes the six messages, channels and templates in sequence — NitroLoot →
+        Stickers.gg → Space-node → VibeBot → Quickchat → CommunityOne — because "pick a target
+        from the list" is not an instruction anyone acts on, which is part of why this sat
+        unsent for five weeks. **Send one at a time and log before sending the next**: if the
+        first two draw no reply, the pitch is the problem and firing the rest wastes them.
+        Feed live placements' `$referring_domain` into the P0 funnel breakdown.
+      - **Skipping** competitor vendor blogs (EasyPoll/PeakBot/PollBotPlus/Formeer/Votex, and
+        now Rally) and AI content farms (Skywork, npprteam) — no value / won't feature a rival.
+- [ ] **🎯 Free P1 lead found during the 09-08 pass — Slashdot's survey category.**
+      `slashdot.org/software/survey/for-discord/` is a *"Survey Software for Discord"*
+      category on a high-authority domain carrying exactly five products — Jotform,
+      SurveySparrow, forms.app, NativeForms and **Formeer, a direct competitor** — and
+      **Subo is not one of them**. There is a free self-serve *"Add Your Software"*
+      submission. This is **P1 (directories), not P5**: no pitch, no author, no reply
+      needed. Cheapest link on this page as of 2026-09-08; belongs in
+      [directory-listing-kit.md](directory-listing-kit.md).
 - [ ] Direct outreach to **Discord/community-management blogs** — offer a genuinely
       useful guest post (dofollow, in-content). Skip the exchange markup.
 - [ ] **HARO / Connectively** (and similar journalist-request services) — answer
