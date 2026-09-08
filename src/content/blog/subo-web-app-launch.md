@@ -94,7 +94,7 @@ Describe your topic ("post-event feedback for our weekly game night", or "member
 
 ### Share / Invite
 
-The Invite tab gives you control over how a survey is shared, on Discord or on the web. For Discord invitations, customize the embed: channel where it's posted, required roles, color, image/thumbnail. Choose the call-to-action message. Choose whether respondents answer inside Discord or on a web interface. For web convos, pick a theme and interviewer. 
+The Invite tab gives you control over how a survey is shared, on Discord or on the web. For Discord invitations, customize the embed: channel where it's posted, required roles, color, image/thumbnail. Choose the call-to-action message. Choose whether respondents answer inside Discord or on a web interface. For web Convos, pick a theme and interviewer. 
 
 ![Screenshot of results summary page in Subo Web App](/images/blog/web-app-launch/subo-web-invite.webp)
 
@@ -105,11 +105,11 @@ The web experience option is not totally new (respondents click a button in Disc
 
 And with the Open Web option, you can now use Subo not just for your Discord work but for your other projects, posting the invitation link across all your communication channels.
 
-Web convos do not have the same constraints as Discord native surveys (e.g. number of options, option character length, length of answers) and down the road we will be able to support more question/content types in them.
+Web Convos do not have the same constraints as Discord native surveys (e.g. number of options, option character length, length of answers) and down the road we will be able to support more question/content types in them.
 
 They are still tightly connected with your community: XP, roles, custom emojis. With Premium, web surveys also carry the branding of your community and allow you to select the interviewer.
 
-![Screenshot of a web convo with the emoji picker showing custom emojis](/images/blog/web-app-launch/web-convos-light.webp)
+![Screenshot of a web Convo with the emoji picker showing custom emojis](/images/blog/web-app-launch/web-convos-light.webp)
 
 
 

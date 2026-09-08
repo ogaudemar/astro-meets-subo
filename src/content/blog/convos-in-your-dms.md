@@ -27,7 +27,7 @@ Nothing about how a member starts has changed. They still see the invitation in 
 
 ## Why we ran Convos in threads at all
 
-DMs were always the better room for a Convo. They are quiet, they are one-to-one, and nobody else on the team can read them. When we started Subo, our first version used DMs. But we quickly faced a problem: a member with DMs turned off simply could not be reached, and an invitation that dead-ends on a permission setting is worse than a slightly public one. Our first users had issues with DMs because some members could not answer - and some servers even active asked their users to turn off their DMs. To replace DMs, we built convos in private temporary channels, and then migrated to private threads when Discord made them available to all servers.
+DMs were always the better room for a Convo. They are quiet, they are one-to-one, and nobody else on the team can read them. When we started Subo, our first version used DMs. But we quickly faced a problem: a member with DMs turned off simply could not be reached, and an invitation that dead-ends on a permission setting is worse than a slightly public one. Our first users had issues with DMs because some members could not answer - and some servers even active asked their users to turn off their DMs. To replace DMs, we built Convos in private temporary channels, and then migrated to private threads when Discord made them available to all servers.
 
 So threads it was, and they worked. The cost was that every Convo left a room behind in your server, and that a "private" thread is readable by anyone with the Manage Threads permission and shows up in the Discord audit log. Private to the channel, not private to you and your staff.
 

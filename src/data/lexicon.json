@@ -199,7 +199,9 @@
         { "phrase": "enquêtes conversationnelles", "use": "Convo", "why": "T3. Retired phrasing." },
       { "phrase": "sondages et votes", "use": "sondages et Convos", "why": "A16. The poll IS the `sondage` (fr.instruments.poll); fr.json had it inverted, calling the poll a `vote` and the survey a `sondage`. `vote` is a DOOR word (815 imp, resolvesTo poll) and correct French for the ACT, so it cannot be denied outright the way German's `Abstimmung` was — 26 act uses are correct and an actPaths list of 26 guarding 0 violations would be a baseline in disguise. These are the exact collocations the inversion produced, so they guard the regression path without touching the act. ⚠️ Brittle to rephrasing by design: a new inverted phrasing will not be caught." },
       { "phrase": "sondages, votes", "use": "Convos, sondages", "why": "A16. See the first collocation rule." },
-      { "phrase": "sondage ou vote", "use": "projet", "why": "A16. See the first collocation rule." },
+      { "phrase": "sondage ou vote", "use": "projet", "why": "A16. See the first collocation rule.",
+        "$actFiles": "A23. actFiles is actPaths for prose. comment-creer-un-sondage-sur-discord.md carries the H2 « Sondage ou vote : sur Discord, c'est le même outil », which exists to tell a French reader that the word they searched (vote) and the word Discord shows (sondage) name one thing. That is T2b's own argument written for a reader, not the instrument doublet this rule bans. Denying it would delete the explanation the door word depends on.",
+        "actFiles": ["comment-creer-un-sondage-sur-discord.md"] },
       { "phrase": "des votes, des sondages", "use": "des sondages, des Convos", "why": "A16. See the first collocation rule." },
       { "phrase": "juste un vote", "use": "juste un sondage", "why": "A16. See the first collocation rule." }
       ]

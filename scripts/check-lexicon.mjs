@@ -224,6 +224,94 @@ for (const [loc, row] of localeRows) {
   }
 }
 
+// ── 2b. T3 — denylisted phrases absent from the locale's BLOG markdown ───────
+// A23. The deny rules above read the locale JSON only, so the one surface where
+// the rule matters most was the one place it was never enforced: blog posts are
+// the highest-value crawlable text we own per locale, and two retired French
+// phrasings survived there precisely because nothing looked (A4).
+//
+// Markdown is not JSON, so the JSON exception vocabulary does not carry over.
+// What is checked is what a crawler reads as COPY: prose, headings, frontmatter
+// title/description, and image ALT text. What is skipped is what it reads as an
+// identifier: code, link and image TARGETS, bare URLs, and the frontmatter keys
+// that hold slugs, tags and paths. Alt text deliberately stays in — it is indexed,
+// and two lowercase "convo"s were hiding there when this check was written.
+
+const BLOG = join(SITE_ROOT, 'src/content/blog');
+
+// Frontmatter keys whose values are identifiers or taxonomy, not prose.
+const SLUG_KEYS =
+  /^\s*(slug|permalink|canonical|image|heroImage|ogImage|tags|category|categories|author|pubDate|updatedDate)\s*:.*$/gim;
+
+/** Strip everything a reader never reads as words. */
+function markdownCopy(raw) {
+  let s = raw;
+  const fm = s.match(/^---\r?\n[\s\S]*?\r?\n---/);
+  if (fm) s = fm[0].replace(SLUG_KEYS, '') + s.slice(fm[0].length);
+  return s
+    .replace(/```[\s\S]*?```/g, ' ') // fenced code
+    .replace(/`[^`\n]*`/g, ' ') // inline code
+    .replace(/\]\([^)]*\)/g, '] ') // link/image targets — alt text survives
+    .replace(/https?:\/\/\S+/g, ' '); // bare URLs
+}
+
+/** en lives at the root of blog/; every other locale in blog/<code>/. */
+function blogFilesFor(loc) {
+  const dir = loc === 'en' ? BLOG : join(BLOG, loc.toLowerCase());
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir, { withFileTypes: true })
+    .filter((e) => e.isFile() && /\.mdx?$/.test(e.name))
+    .map((e) => e.name);
+}
+
+for (const [loc, row] of localeRows) {
+  const files = blogFilesFor(loc);
+  if (!files.length) {
+    if ((row.deny ?? []).some((r) => r.scope !== 'app')) {
+      notes.push(`no blog posts for "${loc}" — its denylist has no blog surface to guard yet.`);
+    }
+    continue;
+  }
+  const dir = loc === 'en' ? BLOG : join(BLOG, loc.toLowerCase());
+
+  for (const rule of row.deny ?? []) {
+    if (rule.scope === 'app') continue;
+
+    // actFiles is actPaths for prose: posts where the phrase is legitimately the
+    // ACT or an explainer ABOUT the words, not the instrument. The French post
+    // heading "Sondage ou vote : sur Discord, c'est le même outil" exists to tell
+    // a reader the two words name one thing — denying it would delete the
+    // explanation T2b depends on. Per-file and deliberate, never per-locale.
+    const allowed = new Set(rule.actFiles ?? []);
+    const needle = rule.caseSensitive ? rule.phrase : rule.phrase.toLocaleLowerCase();
+    const re = rule.caseSensitive ? new RegExp(`\\b${escapeRe(needle)}s?\\b`) : null;
+    const carries = (name) => {
+      const copy = markdownCopy(readFileSync(join(dir, name), 'utf8'));
+      return re ? re.test(copy) : copy.toLocaleLowerCase().includes(needle);
+    };
+
+    const hits = files.filter((name) => !allowed.has(name) && carries(name));
+
+    // A stale actFiles entry is an allowance that outlived the string it excused.
+    const stale = [...allowed].filter((name) => !files.includes(name) || !carries(name));
+    if (stale.length) {
+      notes.push(
+        `${loc} blog: ${stale.length} stale actFiles for "${rule.phrase}" — the post no longer ` +
+          `contains it (or is gone), so drop the exception: ${stale.join(', ')}`,
+      );
+    }
+
+    if (hits.length) {
+      report(
+        `${loc}.blog.deny`,
+        `src/content/blog${loc === 'en' ? '' : '/' + loc.toLowerCase()}/: "${rule.phrase}" appears in ` +
+          `${hits.length} post(s) — use "${rule.use}" instead. ${rule.why} ` +
+          `First: ${hits.slice(0, 3).join(', ')}${hits.length > 3 ? ', …' : ''}`,
+      );
+    }
+  }
+}
+
 // ── dist/-dependent checks ───────────────────────────────────────────────────
 
 if (!existsSync(DIST)) {

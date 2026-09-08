@@ -1,6 +1,6 @@
 ---
 title: "The Dawn of Convos"
-description: "Why surveys are broken, and how convos represent the future of listening."
+description: "Why surveys are broken, and how Convos represent the future of listening."
 pubDate: "Sep 11 2025"
 author: "surveyChump"
 heroImage: "/images/yt-thumb-dk.png"
@@ -44,9 +44,9 @@ To keep calling this a “survey” would be like calling the automobile a *“f
 
 ## The Birth of Convos  
 
-At **Subo**, we’ve stopped trying to fix the survey. Instead, we’re building something new. We call it a **convo**.  
+At **Subo**, we’ve stopped trying to fix the survey. Instead, we’re building something new. We call it a **Convo**.  
 
-Why *convo*?  
+Why *Convo*?  
 - Because it’s short, fresh, and free from the baggage of “survey.”  
 - Because it feels like what it is: a conversation.  
 - Because conversations are how humans naturally share, listen, and connect.  
@@ -59,7 +59,7 @@ Convos aren’t just a rebrand. They are guided by principles that surveys never
 
 - **Agents with voice.** Convos are hosted by agents with personality, tone, and presence.  
 - **Two-way by design.** Agents don’t just ask. They listen, respond, clarify, and even answer questions.  
-- **Adaptive, not linear.** Scripts are guidelines, not shackles. A convo adapts based on context and energy.  
+- **Adaptive, not linear.** Scripts are guidelines, not shackles. A Convo adapts based on context and energy.  
 - **Memory across time.** Convos remember what people share, creating continuity and depth.  
 - **Personalized.** A teenager and a retiree should never receive the same tone.  
 - **Respectful of time.** Convos are short by default, with the ability to pause and resume.  
@@ -78,12 +78,12 @@ This isn’t just about improving response rates or reducing drop-offs. It’s a
 
 The survey had its time. It helped us listen at scale when no better alternative existed. But today, clinging to surveys is clinging to a broken framework.  
 
-The future belongs to convos.  
+The future belongs to Convos.  
 
 At **Subo**, we’re not simply asking questions.  
 We’re starting conversations.
 
-The convo idea is no longer only a manifesto. See [how a convo actually runs](/survey-convos/) in a Discord server today, or [how to run a form or survey in Discord](/blog/how-to-make-a-discord-form/) without pasting a form link into a channel.  
+The Convo idea is no longer only a manifesto. See [how a Convo actually runs](/survey-convos/) in a Discord server today, or [how to run a form or survey in Discord](/blog/how-to-make-a-discord-form/) without pasting a form link into a channel.  
 
 ---
 

@@ -82,7 +82,7 @@ Example: ⚪ _Margarita;_ 🍍 _Hawaiian;_ 🔴 _Pepperoni;_ 🍄 _Regina_
 ![Pas the image link of the image you want to add to the question](/images/blog/survey-tuto/survey10-zb8cl.png)
 
 9. Add more questions if needed, by repeating steps 5 to 8 for each new question. Add as many questions as your survey needs (see [pricing](/pricing/) for what each plan includes).
-![Repeat the process for as many questions as you want in the convo](/images/blog/survey-tuto/survey11-oiqb0.png)
+![Repeat the process for as many questions as you want in the Convo](/images/blog/survey-tuto/survey11-oiqb0.png)
 
 If you only have 1 question to ask, Subo will ask you to choose between poll and survey mode:
 
@@ -102,7 +102,7 @@ In particular:
 - check the full questionnaire: questions, answers, question types, images, maximum selections.
 - check that your survey is posted in the channel that you want, is restricted to the right role, with the right time limit, etc. These options come from your server's default settings and can be edited.
 - test the survey with the `Test` button
-![All convo settings](/images/blog/survey-tuto/survey13-2oldc.png)
+![All Convo settings](/images/blog/survey-tuto/survey13-2oldc.png)
 
 If you are happy with your questionnaire and options, hit `Start` to open the survey immediately or ⏰ `Edit Start Mode` to schedule it to launch later.
 
