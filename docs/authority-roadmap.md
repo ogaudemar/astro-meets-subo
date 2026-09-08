@@ -22,7 +22,7 @@ the number it measures.** Work that cannot answer that is product quality, and b
 | ~~3~~ | ~~**Claim the four ecosystem links**~~ ❌ **CLOSED 2026-09-07** | Checked one URL at a time: Cloudflare's "Built with Workers" **404s**, Astro's showcase is **`nofollow ugc`** in a 2,374-comment thread, Stripe's Technology track is **invitation-only** and we are a merchant not a partner, and **Discord was already done in P1**. Three of the item's four claims were false and nobody had opened the URLs. P3 is closed, not deferred. | P3 |
 | ~~4~~ | ~~**Fix the `api.subo.ai` duplicate content**~~ ✅ **DONE 2026-09-05** | The canonical header had in fact shipped app-side on 2026-08-07 and this file never noticed. Verifying it live surfaced a *different* live defect: it, and twelve URLs in our own JSON-LD, named the slashless form, which 307s. All fixed and now guarded. See the ITEM 4 note in P2. | P2 / migration block |
 | ~~5~~ | ~~**Run the GEO citation test**~~ ✅ **DONE 2026-09-07** | The recrawl provably happened: Common Crawl went **0 captures (Jun, Jul) → 166 (Aug), 98 fetched, 21 French** the first crawl after the unblock. Citations are split: **#1 and named first for "best Discord survey bot"** on `subo.gg`, but **absent from the poll and form clusters**, and the French answer still cites **`subo.ai`**. Full table in the block. | robots.txt block |
-| 6 | **Finish the no-"bot" / form / app vocabulary wave** ⚠️ **scoped down 2026-09-05** | The only keyword expansion justified by this file's own circularity principle. Half shipped, remaining actions enumerated, then dropped. **The `t5.*.form` half is withdrawn** — the flag did not survive scrutiny and the H1s stand; see A6. **Title layer DONE 2026-09-07** — 11 URLs shared one English `<title>`, including all six locale homepages; fixed, and the poll half reassigned to item 2 (it is a ranking problem, not a vocabulary one). **Form landing page DONE 2026-09-07** — we had two form pages, not zero, and every form-worded anchor on the site pointed at a blog post; `/forms/` built, both competitors demoted, nav door added, `t5.en.form` paid off. **DONE 2026-09-07** — the last action, a standalone `/draft` page, was checked before it was built and the premise failed: the GEO test that justified `/forms/` **passes** for AI-generator queries (we are cited first). The real defect underneath was that AI generation is a three-surface feature (Discord, web app, API) and the site documented one; fixed in copy plus a `FAQPage`. The page is gated on a GEO re-test, and its slug would be `/ai-survey-generator/`, not `/draft/`. | P2 |
+| ~~6~~ | ~~**Finish the no-"bot" / form / app vocabulary wave**~~ ✅ **DONE 2026-09-08** | The only keyword expansion justified by this file's own circularity principle. Half shipped, remaining actions enumerated, then dropped. **The `t5.*.form` half is withdrawn** — the flag did not survive scrutiny and the H1s stand; see A6. **Title layer DONE 2026-09-07** — 11 URLs shared one English `<title>`, including all six locale homepages; fixed, and the poll half reassigned to item 2 (it is a ranking problem, not a vocabulary one). **Form landing page DONE 2026-09-07** — we had two form pages, not zero, and every form-worded anchor on the site pointed at a blog post; `/forms/` built, both competitors demoted, nav door added, `t5.en.form` paid off. **DONE 2026-09-07** — the last action, a standalone `/draft` page, was checked before it was built and the premise failed: the GEO test that justified `/forms/` **passes** for AI-generator queries (we are cited first). The real defect underneath was that AI generation is a three-surface feature (Discord, web app, API) and the site documented one; fixed in copy plus a `FAQPage`. The page is gated on a GEO re-test, and its slug would be `/ai-survey-generator/`, not `/draft/`. **T5 realignment 2026-09-08, closing the item** — the form work had left "survey" owned by a *blog post* with no landing page leading on the head term of our own category; `/survey-convos/` took it back, `/forms/` gained the form-to-Convo bridge it was missing, and `t5.en.survey` was paid off (knownViolations 11 → 10). | P2 |
 | ~~7~~ | ~~**Two known factual errors on indexed pages**~~ ✅ **DONE 2026-09-05** | The survey how-to said 5 question types and `/survey-convos` had no outbound content link. Both fixed; the wizard question is settled against the code. See the ITEM 7 note in P2. | P2 |
 
 **Not on this list, on purpose:** the per-cell app-string migration. It moved to
@@ -33,11 +33,38 @@ work. Its internal "critical path" is critical to that migration only.
 recovered, non-branded have not). That is an argument for spending this window on items 2-5,
 which are not migration-gated, rather than on more pages.
 
-⚠️ **With items 3 and 5 closed, this list is down to three, and only one of them earns
-links.** Item 1 (the checkback) is a **measurement** the user must run in the Search Console
-UI; item 6 is copy on pages we already own. **Item 2 — the roundup outreach — is now the only
+⚠️ **With items 3, 5 and now 6 closed, this list is down to two, and only one of them is
+work a session can do.** Item 1 (the checkback) is a **measurement the user must run** in the
+Search Console UI, and it came due **2026-09-08**. **Item 2 — the roundup outreach — is the only
 unstarted item on this roadmap that can produce an external editorial link**, and it has been
-sitting built and unsent since 2026-08-03. If a session has to pick one thing, it is that.
+sitting built and unsent since 2026-08-03. **The next session picks item 2 unless the user says
+otherwise.** Everything else on the shortlist is either measured by the user or finished.
+
+**⚠️ Read this before opening a new vocabulary thread.** Item 6 closed by *checking premises
+rather than executing a list*: three of its last four actions were re-scoped or cancelled once
+someone opened the URLs (the poll half was a ranking problem, the `/draft` page was a query we
+already win, and the form gap was a link-graph defect rather than a missing page). The enumerated
+actions in the item 6 history blocks below are **spent**, not a backlog to resume from. A new
+page needs new evidence.
+
+### ▶ THE NEXT-CRAWL SCOREBOARD — three changes are now waiting on one measurement
+
+Item 6 shipped three changes whose only honest verdict comes from re-running the GEO citation
+test **after the next Common Crawl** (the last was `CC-MAIN-2026-34`, Aug 7-20; check
+`index.commoncrawl.org` for the next index before running these, because a re-test on a stale
+index measures nothing). Run all three in one sitting, and record the answers in the table in
+the GEO block rather than in a new one.
+
+| Shipped | Query to re-run | What a pass looks like |
+|---|---|---|
+| `/forms/` (09-07) | *google forms alternative for Discord collect responses without leaving the server* | Subo cited at all. It returned **zero Subo** on 09-07 while Formcord and Formeer answered with product pages. |
+| `/survey-convos/` takes "survey" (09-08) | *best Discord survey bot* + *Discord survey app for my server* | `subo.gg/survey-convos/` cited, not only `subo.gg/`. We already lead the first query on the homepage; the question is whether the landing page holds it. |
+| AI generator copy (09-08) | *AI survey generator for Discord* | Still cited first, and the answer mentions the **web app or the API**, not only `/draft`. On 09-07 every answer described the Discord command alone, which is what the copy said. |
+
+**Decision rule for the third row:** if we lose that query, `/ai-survey-generator/` gets built.
+If we keep it, the page stays unbuilt and the entry stays closed. That is what "gated on
+evidence" means here, written down so a later session does not reopen it on a hunch.
+
 
 **What item 5 handed to item 6 (2026-09-07):** AI answers name EasyPoll, PollBotPlus, Appy and
 FormBot for *poll* and *form* queries and do not name Subo, while naming Subo **first** for
