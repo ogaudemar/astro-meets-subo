@@ -585,24 +585,24 @@
     }
 ,
 "surveyConvos": {
-  "pageTitle": "Discord Questionnaire App, Reinvented as a Conversation | Subo",
-  "pageDescription": "Subo runs your questionnaire as a friendly one-on-one conversation instead of a wall of fields. One question at a time, in your Discord server or on the web, with higher completion and richer answers.",
-  "heroTitle": "The Discord questionnaire that feels like a <strong class=\"accent\">conversation</strong>",
-  "heroSubtitle": "Not a form. Not just a poll. A friendly one-on-one chat where your members actually want to respond.",
+  "pageTitle": "Discord Survey App, Reinvented as a Conversation | Subo",
+  "pageDescription": "Subo runs your Discord survey as a friendly one-on-one conversation instead of a wall of fields. One question at a time, in your server or on the web, with higher completion and richer answers. Free tier, anonymous mode, skip logic and CSV export.",
+  "heroTitle": "The Discord survey that feels like a <strong class=\"accent\">conversation</strong>",
+  "heroSubtitle": "A friendly one-on-one chat where your members actually want to answer, asked one question at a time instead of dumped on them as a page of fields.",
   "heroCta": "Add to Discord, Free",
   "whatTitle": "WHAT IS A CONVO?",
   "whatBody": [
-    "A Convo is a private message conversation between your community member and Subo, the bot, right inside your Discord server or on the web. If what you came looking for was a <a href=\"/forms/\">Discord form</a>, this is the same thing minus the wall of fields.",
-    "Instead of sending members to a cold, generic form, Subo invites them to a chat. Questions appear one at a time, in a friendly message format. It feels like talking to someone, not filling out paperwork.",
+    "You came for a survey. In Subo that survey is a <strong>Convo</strong>: a private message conversation between your member and Subo, the bot, right inside your Discord server or on the web. Same questions, same structured data at the end, asked one at a time instead of presented as a wall of fields.",
+    "Instead of sending members to a cold, generic survey page, Subo invites them to a chat. Questions appear one at a time, in a friendly message format. It feels like talking to someone, not filling out paperwork.",
     "The result? <strong>Higher completion rates</strong>, richer answers, and members who actually enjoy the experience.",
-    "New to collecting data in your server? Read the practical walkthrough: <a href=\"/blog/how-to-make-a-discord-form/\">how to run a form or survey in Discord</a>."
+    "Collecting applications, sign-ups, orders or bug reports rather than opinions? That job has its own page: <a href=\"/forms/\">the Discord form, built as a Convo</a>."
   ],
-  "formsVsConvosTitle": "TRADITIONAL FORMS vs. CONVOS",
-  "formsColumn": "Traditional Forms",
+  "formsVsConvosTitle": "THE OLD SURVEY PAGE vs. A CONVO",
+  "formsColumn": "A traditional survey page",
   "convosColumn": "Convos with Subo",
   "formsVsConvosItems": [
     { "forms": "Cold, impersonal interface", "convos": "Warm, chat-style experience" },
-    { "forms": "Long pages that feel overwhelming", "convos": "One question at a time" },
+    { "forms": "Every question visible at once, which is where people quit", "convos": "One question at a time" },
     { "forms": "No way to add context or instructions between questions", "convos": "Content blocks add intros, warnings, GIFs, or pauses anywhere in the flow" },
     { "forms": "Members navigate away", "convos": "Members stay in Discord or use the web link" },
     { "forms": "Low completion rates", "convos": "Higher engagement and completion" }
@@ -923,7 +923,7 @@
   "pageTitle": "Custom Discord Survey Bot: Your Brand, Your Bot | Subo",
   "pageDescription": "Get everything you love about Subo with your own branding: a fully white-labeled Discord survey bot with your name, avatar, and colors for your community or clients.",
   "hero": {
-    "title": "___, YOUR SURVEY BOT",
+    "title": "___, YOUR OWN DISCORD BOT",
     "subtitle": "Everything you like about Subo, but with your own branding",
     "ctaPrimary": { "text": "Create Your Own Survey Bot", "href": "/pricing/" },
     "ctaSecondary": { "text": "Contact Us", "href": "/support/" },
@@ -1113,7 +1113,8 @@
   "hero": {
     "title": "The Discord form your members <strong class=\"accent\">actually finish</strong>",
     "subtitle": "The same structured questions as a Google Form. Asked one at a time, inside your server, by an app your members already trust.",
-    "cta": "Add to Discord"
+    "cta": "Add to Discord",
+    "bridge": "You came for a form. In Subo that form is a <strong>Convo</strong>: the same questions, asked one at a time in a chat instead of a page of fields."
   },
   "nav": [
     { "label": "WHAT YOU CAN BUILD", "anchor": "build" },
@@ -1127,7 +1128,7 @@
       "id": "build",
       "label": "WHAT YOU CAN BUILD",
       "title": "Every form a community actually needs",
-      "sub": "Most \"I need a form in Discord\" moments fall into a handful of jobs. All of them run as a conversation.",
+      "sub": "Most \"I need a form in Discord\" moments fall into a handful of jobs. Each one runs as a Convo: your questions, asked in sequence, in the server.",
       "cards": [
         {
           "emoji": "🎖️",
@@ -1165,7 +1166,7 @@
       "id": "questions",
       "label": "QUESTION TYPES",
       "title": "The fields you would have built, and a few you could not",
-      "sub": "Eleven block types, mixed in any order. Nine of them ask something; two of them do something.",
+      "sub": "Eleven block types, mixed in any order, are what a Convo is built from. Nine of them ask something; two of them do something.",
       "cards": [
         {
           "emoji": "✅",
@@ -1261,6 +1262,10 @@
       "q": "Can you make a form in Discord?",
       "a": "Yes. You add an app that collects structured answers inside the server, so members never leave Discord to fill anything in. With Subo you run /survey and the questions are asked one at a time in the chat, and the answers come back as structured data you can export or analyze."
     },
+      {
+        "q": "What is a Convo, and how is it different from a form?",
+        "a": "A Convo is what Subo calls the form once it is running: the same structured questions, asked one at a time in a chat rather than presented as a page of fields. You still get a fixed script, required answers and clean structured data. What changes is the experience for the person answering, and the completion rate that follows from it."
+      },
     {
       "q": "Is there a Google Forms alternative for Discord?",
       "a": "You can paste a Google Form link into a channel, but it sends people out of Discord to a separate page, which is where most of the drop-off happens. The closer fit is an app that asks the same questions inside the server as a structured conversation, then hands you the same exportable results. Subo does that, and adds what a form cannot do in a community: verified identity, role targeting, skip logic and rewards for finishing."
@@ -1375,7 +1380,7 @@
       "cards": [
         { "emoji": "📊", "title": "Live results dashboard", "desc": "See aggregated responses as they come in: charts for closed questions, response lists for open text." },
         { "emoji": "📉", "title": "Scores, averages and distributions", "desc": "Rating, Opinion Scale and NPS answers are stored as the number your member picked, so a question comes back as an average with the distribution behind it. Ranking reports average rank and how often each item was picked first." },
-        { "emoji": "✨", "title": "AI-powered open text summaries", "desc": "Subo reads every open-text response and generates a concise synthesis. Get the gist of 500 answers in seconds." },
+        { "emoji": "✨", "title": "AI-powered open text summaries", "desc": "Subo reads every open-text response and generates a concise synthesis. Get the gist of 500 answers in seconds. <a href=\"/blog/ai-powered-survey-summaries-subo/\">See how AI summaries read open-ended answers →</a>" },
         { "emoji": "📥", "title": "CSV export", "desc": "Download all responses for deeper analysis in Excel, Google Sheets, or your own tooling." },
         { "emoji": "🔀", "title": "Skip logic means better data", "desc": "Every respondent only sees relevant questions. No \"N/A\" noise polluting your results." },
         { "emoji": "🔗", "title": "Share findings", "desc": "Post a results summary directly back into Discord to close the feedback loop with your community." }

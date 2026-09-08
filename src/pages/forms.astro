@@ -58,6 +58,11 @@ const jsonLd = [
 					<h1 class="form-hero__title" set:html={t.hero.title} />
 					<p class="form-hero__subtitle">{t.hero.subtitle}</p>
 					<a href="/invite/" class="button button--accent-bg">{t.hero.cta}</a>
+					<!-- The bridge: door word (form) to product noun (Convo), above the
+					     fold. T4 keeps Convo out of the title and H1 because it is not a
+					     word anyone searches; it belongs the moment the reader has
+					     arrived, which is here. Shape mirrors lexicon.json's `bridge`. -->
+					<p class="form-hero__bridge" set:html={t.hero.bridge} />
 				</div>
 			</section>
 
@@ -205,6 +210,19 @@ const jsonLd = [
 	max-width: 620px;
 	margin: 0 auto 2rem;
 	line-height: 1.6;
+}
+.form-hero__bridge {
+	max-width: 620px;
+	margin: 2.25rem auto 0;
+	padding-top: 1.5rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	font-size: 0.98rem;
+	line-height: 1.65;
+	color: var(--grey-light);
+}
+.form-hero__bridge :global(strong) {
+	color: var(--accent);
+	font-weight: 700;
 }
 
 /* Section nav */

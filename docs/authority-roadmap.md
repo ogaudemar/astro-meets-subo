@@ -444,7 +444,11 @@ concrete noun for a vaguer one to satisfy a checker. This does the opposite: `/s
 gets a **new, more specific door** rather than a hedge. *questionnaire* passes T9 (it is in the
 no-"bot" cluster from 2026-07-29, one of the phrases admins use before they think "bot"), it is
 the one understand-pillar door Discord did not take (T2b), and it gives French's eventual fix a
-precedent. It is now a declared door in `lexicon.json` owning `/survey-convos/`.
+precedent. It is now a declared door in `lexicon.json` owning `/survey-convos/`. **⚠️ Superseded
+2026-09-08:** that page took *survey* back one day later and *questionnaire* is now held at
+`owns: null`. The reasoning above still stands, it just describes a one-day arrangement; the
+word it saved `/survey-convos/` from leading on vaguely is now on `/api/`. See the T5
+realignment block below.
 
 **`t5.en.form` is PAID OFF and deleted from `knownViolations`.** The guard now enforces it.
 Note what actually cleared it: the 2026-09-05 downgrade gated this on the **2026-09-08**
@@ -554,6 +558,92 @@ added, nothing suppressed.
 
 **Item 6 is now DONE.** Title layer, form landing page, and the vocabulary wave's last action
 are all closed; the poll half lives with item 2.
+
+### ✅ T5 REALIGNMENT — `/survey-convos/` takes "survey" back, `t5.en.survey` paid off (2026-09-08)
+
+Two user observations, one day after `/forms/` shipped, and the second one was the load-bearing
+one.
+
+**1. `/forms/` said "Convo" once, in its last paragraph.** The page was written to win *form*
+intent and did not do the other half of the job: naming the product the reader has arrived at.
+T4 and T11 are explicit that the door word holds the surfaces before arrival and the product
+noun holds everything after, and the lexicon carries a `bridge` sentence per locale precisely so
+this gets written once rather than improvised. `/forms/` was using the door and skipping the
+bridge.
+
+**2. `/survey-convos/` was not doing its own job.** It was built as the survey landing page, was
+retuned onto *form* on 2026-08-01, and on 2026-09-07 was moved to *questionnaire* so `/forms/`
+could have the form word. Net effect: the page originally built for our head term led its H1 on
+the smallest word in the cluster, while still carrying a FORMS vs CONVOS table that competed
+with the page we had just built.
+
+**The finding underneath: "survey" was owned by a blog post.** `/blog/how-to-create-a-survey…/`
+held the door, and **no landing page led its H1 on the head term of our own category.** That is
+the `/forms/` defect exactly one class up. It was invisible yesterday because the form audit
+asked "which page owns *form*" and never asked the same question about the word next to it.
+
+**Shipped:**
+
+| | Before | After |
+|---|---|---|
+| `/survey-convos/` title | Discord **Questionnaire** App, Reinvented as a Conversation | Discord **Survey** App, Reinvented as a Conversation |
+| `/survey-convos/` H1 | The Discord **questionnaire** that feels like a conversation | The Discord **survey** that feels like a conversation |
+| `/survey-convos/` H2 | TRADITIONAL **FORMS** vs. CONVOS | THE OLD **SURVEY PAGE** vs. A CONVO |
+| `/api/` H1 | Run Discord **surveys** from code | Run Discord **questionnaires** from code |
+| `/custom-survey-bot/` H1 | \_\_\_, YOUR **SURVEY** BOT | \_\_\_, YOUR OWN **DISCORD BOT** |
+| lexicon `survey` owns | `/blog/how-to-create-a-survey…/` | `/survey-convos/` |
+| lexicon `questionnaire` owns | `/survey-convos/` | `null` (held, not retired) |
+
+- **Both pages now open with the bridge.** `/forms/`: *"You came for a form. In Subo that form is
+  a Convo: the same questions, asked one at a time in a chat instead of a page of fields,"*
+  rendered under the hero, above the fold, plus a **new FAQ entry** (*"What is a Convo, and how
+  is it different from a form?"*) which puts the terminology inside the `FAQPage` schema, the
+  part an answer engine quotes. `/survey-convos/` opens its body with the same shape on its own
+  door: *"You came for a survey. In Subo that survey is a Convo."*
+- **The form hand-off now points the right way.** `/survey-convos/` used to say *"if what you
+  came looking for was a Discord form, this is the same thing"* — a claim on the word. It now
+  sends that reader to `/forms/` with form-worded anchor text, and its comparison table argues
+  against a *survey page* rather than against forms.
+- **The how-to links to the owner.** It never linked `/survey-convos/` at all, which is the same
+  broken link graph the `/forms/` block found. It does now.
+- **Also fixed in passing:** the `/survey-convos/` hero subtitle opened *"Not a form. Not just a
+  poll,"* the exact "not just X" shape house style bans, and defined the page by what it is not.
+  And `/features/` linked the AI-generator card to the AI post but left the **AI summaries** card
+  unlinked; both halves of that post now have a door.
+
+**`t5.en.survey` is PAID OFF and deleted from `knownViolations` (11 entries → 10, reported
+violations 24 → 23).** Moving the door took the count to **3** landing pages, worse than the 2 it
+had been baselined at, so it had to be settled rather than re-baselined. Three options were put
+up: leave it with a note (the guard measures words where T5 means queries), teach the guard about
+qualified phrases, or reword the two H1s. **Decision (user, 2026-09-08): reword.** The A6
+objection was stated first and overruled on a specific ground: neither page loses its qualified
+intent, because *Discord survey API* and *Custom Discord Survey Bot* still lead both `<title>`
+tags, which is where a SERP reads them. `/api/` taking *questionnaire* is the tidy part: the word
+`/survey-convos/` vacated an hour earlier lands on the page that needed a non-competing noun.
+
+**Why `questionnaire` is held at `owns: null` rather than deleted.** A word owned by a page that
+leads on something else is a declaration the guard would have to be lied to about (check 3a fails
+it, correctly). Held keeps the evidence, the T9 reasoning and the ES/FR precedent it set, and
+leaves the obvious door open for a future page. It still appears in `/survey-convos/`'s meta
+description and body.
+
+**⚠️ FR and DE deliberately untouched, and the reason is not the usual one.** `t5.fr.sondage` and
+`t5.de.Umfrage` have the same shape (`/fr/custom-survey-bot/`, `/de/custom-survey-bot/`), and the
+same reword would clear both entries — but the *other* page in each count is `/fr/polls/` and
+`/de/polls/` leading their H1s on the survey word, which is the **T2b tangle**, not a false
+positive. The check only fires at two pages, so rewording the white-label page alone would drop
+each count below the threshold and **silence a real finding**. Recorded in both `clearedBy`
+fields. The FR side of `/survey-convos/` is a further step behind: `/fr/survey-convos/` still
+leads on *formulaire* and still waits on `/fr/forms/`.
+
+`lexicon.json` re-vendored to `subo/.claude/skills/subo-localization/lexicon.json`, byte-identical.
+`npm run check` green: `check:api`, build, `check:hreflang` (54/139), `check:canonical` (345 URLs),
+`check:lexicon`, `tsc`, wrangler dry-run.
+
+**The scoreboard for this one** is the same GEO shape as `/forms/`: re-run *best Discord survey
+bot* and *Discord survey app for my server* after the next crawl. The prior is different, though.
+We already lead *best Discord survey bot* on `subo.gg/`; what this change tests is whether a
+landing page beats the homepage at holding it.
 
 ### Keyword intel from the 6-month Search Console history (2026-07-29)
 

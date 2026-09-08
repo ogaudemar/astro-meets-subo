@@ -26,7 +26,7 @@ Whether you're running a Discord server to connect with your followers, fans, cu
 
 One of the most effective ways to gather that feedback is a survey.
 
-Subo the Survey Bot lets you create one-question polls and multi-question surveys natively in your Discord server. You can build from scratch with the `/survey` command, let AI draft one for you with `/draft`, or start from a ready-made [template](/templates/).
+Subo the Survey Bot lets you create one-question polls and multi-question surveys natively in your Discord server. You can build from scratch with the `/survey` command, let AI draft one for you with `/draft`, or start from a ready-made [template](/templates/). For what the finished thing looks like to the person answering, see the [Discord survey page](/survey-convos/): questions arrive one at a time, as a chat.
 
 > **Two ways to build, pick by complexity.** This guide walks through creating a survey right inside Discord with `/survey`, which is perfect for simple, quick surveys. For anything more elaborate, like [skip logic](/pricing/), [scoring and quizzes](/blog/scoring-piping-quizzes/), [conversational Action Blocks](/blog/action-blocks-release/), team management, or richer analytics, build visually in the **[Subo web app](https://app.subo.gg)**, which is the recommended way for bigger projects. Everything below has a visual equivalent there. Subo follows a freemium model: free for most users, with Premium tiers for power-users (see [pricing](/pricing/)).
 

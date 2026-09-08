@@ -163,8 +163,8 @@
       "bridge": "You came for a survey. In Subo that is a Convo: one question at a time, in a chat instead of a form.",
       "doors": [
         { "word": "poll",          "pillar": "decide",     "resolvesTo": "poll",  "owns": "/polls/",                      "evidence": "search: 'discord poll bot' 1003 imp @ 9.96" },
-        { "word": "survey",        "pillar": "understand", "resolvesTo": "convo", "owns": "/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/", "evidence": "search: 'survey bot' cluster; also the brand descriptor (Subo, the Survey Bot)", "$note": "NOT /survey-convos/: that page leads its H1 on 'questionnaire', which it now owns. See t5 findings." },
-        { "word": "questionnaire", "pillar": "understand", "resolvesTo": "convo", "owns": "/survey-convos/",             "evidence": "search: the no-'bot' cluster (2026-07-29) lists 'discord questionnaire' among the phrases admins use before they think 'bot'", "$note": "Added 2026-09-07 when /survey-convos/ handed 'form' to /forms/. The page needed a door of its own rather than a vaguer H1 (the A6 trap); 'questionnaire' is the one understand-pillar door Discord did not take." },
+        { "word": "survey",        "pillar": "understand", "resolvesTo": "convo", "owns": "/survey-convos/",              "evidence": "search: 'survey bot' cluster; also the brand descriptor (Subo, the Survey Bot)", "$note": "Moved off the how-to on 2026-09-08. The head term of our own category was owned by a BLOG POST while no landing page led its H1 on it: the same defect /forms/ found for 'form', one class up. /survey-convos/ was built for this word, was repointed at 'form' in August and 'questionnaire' on 2026-09-07, and goes back to its own job now that /forms/ holds the form intent. The how-to keeps the informational query and is linked from the page; blog H1s are informational to the guard by design." },
+        { "word": "questionnaire", "pillar": "understand", "resolvesTo": "convo", "owns": null,                          "evidence": "search: the no-'bot' cluster (2026-07-29) lists 'discord questionnaire' among the phrases admins use before they think 'bot'", "$note": "Owned /survey-convos/ for one day (2026-09-07 to 09-08), between that page handing 'form' to /forms/ and taking 'survey' back. Held rather than retired: it stays in the page's meta description and body, it is still the one understand-pillar door Discord did not take, and it is the obvious door for a future page. An unowned word is a vacancy; a word owned by a page that leads on something else is a declaration the guard would have to be lied to about." },
         { "word": "form",          "pillar": "organize",   "resolvesTo": "convo", "owns": "/forms/",                     "evidence": "search: 'how to make a discord form'; GEO citation test 2026-09-07 found zero Subo in AI answers for 'google forms alternative for Discord', where Formcord and Formeer answer with a product page", "$note": "Moved off /use-cases/get-things-done/ on 2026-09-07. That page framed 'form' as the thing being escaped, which is the opposite of what the query wants, and /survey-convos/ led on it too. Both were demoted in the same change and /forms/ was built to hold the word." },
         { "word": "quiz",          "pillar": "engage",     "resolvesTo": "poll",  "owns": null,                          "evidence": "not yet targeted" }
       ],
@@ -314,6 +314,21 @@
       "point: you cannot quietly re-accept one."
     ],
     "$cleared": [
+      "t5.en.survey — PAID OFF 2026-09-08, entry deleted so the guard bites. Prompted by the",
+      "opposite question to the one this entry was written for: not \"do these two pages compete\"",
+      "but \"why does the head term of our own category have no landing page at all?\" It was owned",
+      "by a BLOG POST while /survey-convos/, the page built for it, had been repointed at 'form'",
+      "in August and 'questionnaire' on 2026-09-07. That is the /forms/ defect one class up. The",
+      "door moved to /survey-convos/, which took the count to 3, and both long-standing competitors",
+      "were then reworded: /api/ leads on 'questionnaires' (the door 'survey' just vacated) and",
+      "/custom-survey-bot/ on 'YOUR OWN DISCORD BOT'. Neither page lost its qualified intent:",
+      "'Discord survey API' and 'Custom Discord Survey Bot' still lead both <title> tags, which is",
+      "where a SERP reads them. The user made this call after being shown the A6 objection.",
+      "⚠️ The FR and DE mirrors did NOT follow. /fr/custom-survey-bot/ and /de/custom-survey-bot/",
+      "could be reworded the same way, but the second page in each of those counts is /fr/polls/",
+      "and /de/polls/ leading on the survey word, which is the T2b tangle and the half that",
+      "matters. Rewording the white-label page alone would drop each count below 2 and silence it.",
+      "",
       "t5.en.form — PAID OFF 2026-09-07, entry deleted so the guard bites. The 2026-09-05",
       "downgrade gated this on the 2026-09-08 Search Console checkback, and said not to rewrite a",
       "working H1 before then. What arrived first was the GEO citation test (2026-09-07): zero Subo",
@@ -360,17 +375,13 @@
       "reason": "DOWNGRADED 2026-09-05, following t5.en.form, of which this is still the exact mirror: /fr/survey-convos/ 'Le formulaire Discord qui ressemble à une conversation' vs /fr/use-cases/get-things-done/ 'TOUT CE QUE TU METTAIS DANS UN FORMULAIRE'. Read t5.en.form for the full reasoning; it applies unchanged here. ⚠️ One thing does NOT mirror, and it is the strongest remaining argument that the FR half is real: T2 rules outright that /fr/survey-convos must not take a door word as its H1 noun. That is a standing ruling about French, not an inference from the guard, and it survives the downgrade. The reason it does not force the edit today is that the French form asset does not exist — there is no FR translation of how-to-make-a-discord-form — so moving /fr/survey-convos off 'formulaire' would leave French with a door word and no page behind it, which T10 (corpus balance) makes worse, not better.",
       "clearedBy": "build /fr/forms/ (and/or translate how-to-make-a-discord-form into French), THEN apply T2 and move /fr/survey-convos off 'formulaire'. ⚠️ UPDATED 2026-09-07: the EN mirror t5.en.form is PAID OFF and deleted — /forms/ was built to hold the word and both EN competitors were demoted in the same change. French did not follow for the reason this entry already gave: there is nowhere to send the reader. The FR fix is now a page (/fr/forms/), not a translation, and it is the same shape as the EN one."
     },
-    "t5.en.survey": {
-      "reason": "LOW RISK. /api/ 'Run Discord surveys from code' and /custom-survey-bot/ '___, YOUR SURVEY BOT' target genuinely different intents (developer, white-label). The guard cannot tell intent apart; a human has.",
-      "clearedBy": "nothing — re-evaluate if either page is rewritten"
-    },
     "t5.de.Umfrage": {
-      "reason": "LOW RISK, the third instance of the same shape as t5.en.survey and t5.fr.sondage: /de/custom-survey-bot/ ('___, DEIN UMFRAGE-BOT', white-label) vs /de/polls/ ('Der Discord Umfrage-Bot, der bewertet, benotet und belohnt', commercial). Different intents; the guard cannot tell intent apart, a human has. That this pattern now recurs in three locales says the white-label page is a systematic T5 false positive, not three coincidences.",
+      "reason": "LOW RISK, the same shape as t5.fr.sondage (t5.en.survey was the third and was PAID OFF 2026-09-08 by rewording both EN competitors when /survey-convos/ took the word back): /de/custom-survey-bot/ ('___, DEIN UMFRAGE-BOT', white-label) vs /de/polls/ ('Der Discord Umfrage-Bot, der bewertet, benotet und belohnt', commercial). Different intents; the guard cannot tell intent apart, a human has. That this pattern now recurs in three locales says the white-label page is a systematic T5 false positive, not three coincidences.",
       "clearedBy": "nothing — re-evaluate if either page is rewritten"
     },
     "t5.fr.sondage": {
-      "reason": "LOW RISK, mirrors t5.en.survey: /fr/custom-survey-bot/ (white-label) vs /fr/polls/ (commercial poll page).",
-      "clearedBy": "nothing — re-evaluate if either page is rewritten"
+      "reason": "LOW RISK, mirrored the now-deleted t5.en.survey: /fr/custom-survey-bot/ (white-label) vs /fr/polls/ (commercial poll page).",
+      "clearedBy": "the EN mirror was paid off 2026-09-08 by rewording both competing H1s (/api/ to 'questionnaires', /custom-survey-bot/ to 'YOUR OWN DISCORD BOT'). FR can follow the same way, but /fr/polls/ leading on 'sondage' is the T2b tangle underneath and is the half that actually matters; do not reword /fr/custom-survey-bot/ alone and call it cleared."
     },
     "t4./blog/dawn-of-convos/": {
       "reason": "DELIBERATE. This is the Convo launch announcement, the one page whose subject IS the product noun. T4 bans Convo from title/H1 because we will not rank for an invented category; naming it here is the point, not a ranking bet.",
