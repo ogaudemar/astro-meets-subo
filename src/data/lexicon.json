@@ -187,8 +187,8 @@
         { "word": "sondage",       "pillar": "decide",     "resolvesTo": "poll",  "owns": "/fr/blog/comment-creer-un-sondage-sur-discord/",       "evidence": "search: 7363 imp how-to + 5763 head" },
         { "word": "vote",          "pillar": "decide",     "resolvesTo": "poll",  "owns": "/fr/blog/comment-creer-un-sondage-sur-discord/",       "evidence": "search: ~815 imp; folded into the sondage post 2026-08-26, not its own URL" },
         { "word": "questionnaire", "pillar": "understand", "resolvesTo": "convo", "owns": "/fr/blog/comment-creer-un-questionnaire-sur-discord/", "evidence": "search: 314 imp @ 2.55% CTR" },
-        { "word": "enquête",       "pillar": "understand", "resolvesTo": "convo", "owns": null,                                                   "evidence": "search: in the 314 imp cluster; also the live /enquete command name" },
-        { "word": "formulaire",    "pillar": "organize",   "resolvesTo": "convo", "owns": "/fr/use-cases/get-things-done/",                       "evidence": "search: 24 imp @ 20.8. Seeded for corpus balance per T10, not volume." },
+        { "word": "enquête",       "pillar": "understand", "resolvesTo": "convo", "owns": "/fr/survey-convos/",                                   "evidence": "search: in the 314 imp cluster; also the live /enquete command name. Owns /fr/survey-convos/ since 2026-09-14 (user), the FR mirror of EN survey taking that page back on 09-08. T2b rules out sondage and T2 rules out questionnaire as that H1 noun. T6's 'investigation into a member' reading was weighed and accepted." },
+        { "word": "formulaire",    "pillar": "organize",   "resolvesTo": "convo", "owns": "/fr/forms/",                                           "evidence": "search: 24 imp @ 20.8. Seeded for corpus balance per T10, not volume. Owner moved from /fr/use-cases/get-things-done/ to /fr/forms/ on 2026-09-14, paying off t5.fr.formulaire." },
         { "word": "quiz",          "pillar": "engage",     "resolvesTo": "poll",  "owns": null,                                                   "evidence": "T10 corpus balance; not yet measured" },
         { "word": "pronostics",    "pillar": "engage",     "resolvesTo": "poll",  "owns": null,                                                   "evidence": "T10 corpus balance; not yet measured" }
       ],
@@ -342,6 +342,14 @@
       "⚠️ The FR mirror t5.fr.formulaire did NOT follow: there is no /fr/forms/, and moving",
       "/fr/survey-convos off formulaire with nowhere to send the reader makes T10 worse. It stays.",
       "",
+      "t5.fr.formulaire — PAID OFF 2026-09-14, entry deleted so the guard bites. /fr/forms/ was",
+      "built as the French twin of /forms/ and now owns formulaire. Both competitors moved in the",
+      "same change: /fr/survey-convos/ to 'L'enquête Discord qui ressemble à une conversation'",
+      "(enquête now declared as owned by it, the FR mirror of EN survey on 09-08; T2b rules out",
+      "sondage, T2 rules out questionnaire) and /fr/use-cases/get-things-done/ to 'CANDIDATURES,",
+      "INSCRIPTIONS ET DEMANDES, SANS LA PAPERASSE'. Built ahead of indexation on purpose (user):",
+      "FR pages on subo.gg are still crawled-not-indexed, and the page should exist when that lifts.",
+      "",
       "fr.deny — PAID OFF 2026-09-06 by A4, entry deleted so the guard bites. The 13 fr.json",
       "strings carrying the retired 'conversationnel(le)' phrasings are gone; the nav label and",
       "footer link went to \"Convos\" per T11, the /fr/survey-convos/ headings to Convo, and the two",
@@ -373,10 +381,6 @@
     "t2b.ru": { "reason": "'голосование' vs Discord 'опрос'.", "clearedBy": "A2c" },
     "t2b.tr": { "reason": "'oylama' vs Discord 'anket'. Held under T9.", "clearedBy": "A2c, gated" },
 
-    "t5.fr.formulaire": {
-      "reason": "DOWNGRADED 2026-09-05, following t5.en.form, of which this is still the exact mirror: /fr/survey-convos/ 'Le formulaire Discord qui ressemble à une conversation' vs /fr/use-cases/get-things-done/ 'TOUT CE QUE TU METTAIS DANS UN FORMULAIRE'. Read t5.en.form for the full reasoning; it applies unchanged here. ⚠️ One thing does NOT mirror, and it is the strongest remaining argument that the FR half is real: T2 rules outright that /fr/survey-convos must not take a door word as its H1 noun. That is a standing ruling about French, not an inference from the guard, and it survives the downgrade. The reason it does not force the edit today is that the French form asset does not exist — there is no FR translation of how-to-make-a-discord-form — so moving /fr/survey-convos off 'formulaire' would leave French with a door word and no page behind it, which T10 (corpus balance) makes worse, not better.",
-      "clearedBy": "build /fr/forms/ (and/or translate how-to-make-a-discord-form into French), THEN apply T2 and move /fr/survey-convos off 'formulaire'. ⚠️ UPDATED 2026-09-07: the EN mirror t5.en.form is PAID OFF and deleted — /forms/ was built to hold the word and both EN competitors were demoted in the same change. French did not follow for the reason this entry already gave: there is nowhere to send the reader. The FR fix is now a page (/fr/forms/), not a translation, and it is the same shape as the EN one."
-    },
     "t5.de.Umfrage": {
       "reason": "LOW RISK, the same shape as t5.fr.sondage (t5.en.survey was the third and was PAID OFF 2026-09-08 by rewording both EN competitors when /survey-convos/ took the word back): /de/custom-survey-bot/ ('___, DEIN UMFRAGE-BOT', white-label) vs /de/polls/ ('Der Discord Umfrage-Bot, der bewertet, benotet und belohnt', commercial). Different intents; the guard cannot tell intent apart, a human has. That this pattern now recurs in three locales says the white-label page is a systematic T5 false positive, not three coincidences.",
       "clearedBy": "nothing — re-evaluate if either page is rewritten"

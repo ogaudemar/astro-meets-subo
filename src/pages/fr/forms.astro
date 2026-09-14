@@ -1,15 +1,17 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import CTA from '../components/CTA.astro';
-import Footer from '../components/Footer.astro';
-import translations from '../content/translations/en.json';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import translations from '../../content/translations/fr.json';
 
 const t = translations.formsPage;
 
-// hreflang: EN + FR only. /fr/forms/ owns the French `formulaire` door; ES/DE
-// `formulario` / `Formular` are separate seeding decisions (T10), and declaring
-// alternates that don't exist is worse than declaring none.
+// French twin of /forms/, and the owner of the `formulaire` door (lexicon fr.doors).
+// Built 2026-09-14 while FR pages on subo.gg are still crawled-not-indexed: the
+// page is written ahead of indexation on purpose, so it is live when the
+// migration settles. /fr/survey-convos/ and /fr/use-cases/get-things-done/ were
+// moved off `formulaire` in the same change (T5), and both link here.
 //
 // FAQPage is the point of this page as much as the copy is: the GEO citation
 // test on 2026-09-07 found we were absent from every "Google Forms for Discord"
@@ -21,8 +23,8 @@ const jsonLd = [
     '@type': 'WebPage',
     name: t.pageTitle,
     description: t.pageDescription,
-    url: 'https://subo.gg/forms/',
-    inLanguage: 'en',
+    url: 'https://subo.gg/fr/forms/',
+    inLanguage: 'fr',
     isPartOf: { '@id': 'https://subo.gg/#website' },
     about: {
       '@type': 'SoftwareApplication',
@@ -44,7 +46,7 @@ const jsonLd = [
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<BaseHead title={t.pageTitle} description={t.pageDescription} jsonLd={jsonLd} alternates={[
 			{lang: 'x-default', href: 'https://subo.gg/forms/'},

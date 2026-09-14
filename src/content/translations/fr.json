@@ -17,8 +17,9 @@
     ],
     "product": [
       { "text": "Fonctionnalités", "href": "/fr/features/" },
-      { "text": "Convos", "href": "/fr/survey-convos/" },
+      { "text": "Enquêtes", "href": "/fr/survey-convos/" },
       { "text": "Sondages", "href": "/fr/polls/" },
+      { "text": "Formulaires", "href": "/fr/forms/" },
       { "text": "Bot Personnalisé", "href": "/fr/custom-survey-bot/" }
     ],
     "useCasesLabel": "Cas d'usage",
@@ -48,8 +49,9 @@
         "title": "Produit",
         "links": [
           { "text": "Fonctionnalités", "href": "/fr/features/" },
-          { "text": "Convos", "href": "/fr/survey-convos/" },
+          { "text": "Enquêtes", "href": "/fr/survey-convos/" },
           { "text": "Sondages", "href": "/fr/polls/" },
+          { "text": "Formulaires", "href": "/fr/forms/" },
           { "text": "Bot perso", "href": "/fr/custom-survey-bot/" },
           { "text": "Tarifs", "href": "/fr/pricing/" },
           { "text": "Ajoute à Discord", "href": "/invite/", "external": true }
@@ -584,24 +586,24 @@
 
 
 "surveyConvos": {
-  "pageTitle": "Formulaire et sondage Discord, réinventés en conversation | Subo",
-  "pageDescription": "Subo est l'appli de sondage et de formulaire Discord qui remplace le formulaire froid par une vraie conversation. Une meilleure façon de faire passer questionnaires, candidatures et formulaires de retour dans ton serveur ou sur le web, avec plus de réponses complètes qu'un Google Forms.",
-  "heroTitle": "Le formulaire Discord qui ressemble à une <strong class=\"accent\">conversation</strong>",
-  "heroSubtitle": "Pas un formulaire. Pas juste un sondage. Une discussion conviviale où tes membres ont vraiment envie de répondre.",
+  "pageTitle": "Appli d'enquête Discord, réinventée en conversation | Subo",
+  "pageDescription": "Subo fait passer ton enquête Discord sous forme de conversation conviviale en tête-à-tête plutôt qu'en mur de champs. Une question à la fois, dans ton serveur ou sur le web, pour plus de questionnaires complétés et des réponses plus riches. Offre gratuite, mode anonyme, logique de saut et export CSV.",
+  "heroTitle": "L'enquête Discord qui ressemble à une <strong class=\"accent\">conversation</strong>",
+  "heroSubtitle": "Une discussion conviviale en tête-à-tête où tes membres ont vraiment envie de répondre, une question à la fois au lieu d'une page entière de champs.",
   "heroCta": "Ajoute à Discord, gratuit",
   "whatTitle": "C'EST QUOI UNE CONVO ?",
   "whatBody": [
-    "Une Convo, c'est une conversation privée entre un membre de ta communauté et Subo, le bot, directement dans ton serveur Discord ou sur le web. Si tu cherchais un formulaire Discord, un questionnaire ou une alternative à Google Forms pour ton serveur, c'est ça, sans le côté formulaire froid.",
-    "Au lieu d'envoyer tes membres remplir un formulaire froid, Subo les invite à chatter. Les questions arrivent une par une, sous forme de messages. C'est comme parler à quelqu'un, pas remplir de la paperasse.",
+    "Tu viens chercher une enquête. Chez Subo, cette enquête est une <strong>Convo</strong> : une conversation privée entre un membre de ta communauté et Subo, le bot, directement dans ton serveur Discord ou sur le web. Les mêmes questions, les mêmes données structurées à la fin, posées une par une au lieu d'un mur de champs.",
+    "Au lieu d'envoyer tes membres sur une page d'enquête froide et générique, Subo les invite à chatter. Les questions arrivent une par une, sous forme de messages. C'est comme parler à quelqu'un, pas remplir de la paperasse.",
     "Résultat : <strong>de meilleurs taux de complétion</strong>, des réponses plus riches et des membres qui apprécient vraiment l'expérience.",
-    "Tu débutes avec la collecte de réponses dans ton serveur ? Le guide pratique : <a href=\"/blog/how-to-make-a-discord-form/\">comment faire un formulaire ou un sondage dans Discord</a> (en anglais)."
+    "Tu collectes des candidatures, des inscriptions, des commandes ou des rapports de bug plutôt que des avis ? Ce besoin a sa propre page : <a href=\"/fr/forms/\">le formulaire Discord, construit en Convo</a>."
   ],
-  "formsVsConvosTitle": "FORMULAIRES CLASSIQUES vs. CONVOS",
-  "formsColumn": "Formulaires classiques",
+  "formsVsConvosTitle": "L'ANCIENNE PAGE D'ENQUÊTE vs. UNE CONVO",
+  "formsColumn": "Une page d'enquête classique",
   "convosColumn": "Convos avec Subo",
   "formsVsConvosItems": [
     { "forms": "Interface froide et impersonnelle", "convos": "Expérience chaleureuse en mode chat" },
-    { "forms": "Pages longues qui découragent", "convos": "Une question à la fois" },
+    { "forms": "Toutes les questions visibles d'un coup, et c'est là que les gens abandonnent", "convos": "Une question à la fois" },
     { "forms": "Impossible d'ajouter du contexte ou des instructions entre les questions", "convos": "Les blocs de contenu ajoutent des intros, avertissements, GIFs ou pauses n'importe où dans le flux" },
     { "forms": "Les membres quittent la page", "convos": "Ils restent sur Discord ou utilisent le lien web" },
     { "forms": "Faibles taux de complétion", "convos": "Plus d'engagement et de complétion" }
@@ -775,10 +777,10 @@
 },
 
 "useCasesGetThingsDone": {
-  "pageTitle": "Applications, inscriptions et demandes sur Discord, sans formulaire | Subo",
+  "pageTitle": "Candidatures, inscriptions, RSVP et tickets sur Discord | Subo",
   "pageDescription": "Lance des candidatures, inscriptions, RSVPs, commandes et prises en charge sur Discord sous forme de conversation conviviale. Logique de saut, ciblage par rôles, planification et attribution automatique de rôles.",
   "eyebrow": "AVANCER",
-  "heroTitle": "TOUT CE QUE TU METTAIS DANS UN FORMULAIRE",
+  "heroTitle": "CANDIDATURES, INSCRIPTIONS ET DEMANDES, SANS LA PAPERASSE",
   "heroSubtitle": "Candidatures, inscriptions, commandes et demandes, en conversation conviviale plutôt qu'en mur de champs.",
   "heroCta": "Ajouter à Discord",
   "sections": [
@@ -1237,6 +1239,116 @@
       }
     }
   ]
+},
+
+"formsPage": {
+  "pageTitle": "Formulaire Discord : l'alternative à Google Forms pensée pour les serveurs | Subo",
+  "pageDescription": "Crée un formulaire Discord pour tes candidatures, inscriptions, rapports de bug et retours. Subo pose tes questions une par une dans le serveur, sans que tes membres quittent Discord. Offre gratuite, mode web pour les non-membres, export CSV et Google Sheets.",
+  "hero": {
+    "title": "Le formulaire Discord que tes membres <strong class=\"accent\">remplissent jusqu'au bout</strong>",
+    "subtitle": "Les mêmes questions structurées qu'un Google Forms. Posées une par une, dans ton serveur, par une appli en qui tes membres ont déjà confiance.",
+    "cta": "Ajoute à Discord",
+    "bridge": "Tu viens chercher un formulaire. Chez Subo, ce formulaire est une <strong>Convo</strong> : les mêmes questions, posées une par une dans un chat plutôt que sur une page de champs."
+  },
+  "navAriaLabel": "Sections de la page",
+  "nav": [
+    { "label": "CE QUE TU PEUX CRÉER", "anchor": "build" },
+    { "label": "VS GOOGLE FORMS", "anchor": "vs-google-forms" },
+    { "label": "TYPES DE QUESTIONS", "anchor": "questions" },
+    { "label": "APRÈS L'ENVOI", "anchor": "after" },
+    { "label": "FAQ", "anchor": "faq" }
+  ],
+  "sections": [
+    {
+      "id": "build",
+      "label": "CE QUE TU PEUX CRÉER",
+      "title": "Tous les formulaires dont une communauté a vraiment besoin",
+      "sub": "La plupart des « il me faut un formulaire sur Discord » reviennent à une poignée de besoins. Chacun tourne en Convo : tes questions, posées dans l'ordre, dans le serveur.",
+      "cards": [
+        { "emoji": "🎖️", "title": "Candidatures modo et staff", "desc": "Expérience, fuseau horaire, disponibilités, et un ou deux cas pratiques. Un bloc d'action attribue un rôle au candidat dès qu'il a terminé, pour que l'examen des dossiers démarre tout seul. <a href=\"/templates/\">Partir d'un modèle (en anglais) →</a>" },
+        { "emoji": "🎟️", "title": "Inscriptions et participations", "desc": "Événements, playtests, giveaways, tournois. Collecte ce dont tu as besoin, réserve l'accès à un rôle et exporte la liste à la clôture." },
+        { "emoji": "🐛", "title": "Rapports de bug et prises en charge", "desc": "Un membre choisit une catégorie, décrit le problème, et tout arrive en données structurées plutôt que dans un fil où personne ne retrouve rien. <a href=\"/templates/bug-report-form/\">Voir le formulaire de rapport de bug (en anglais) →</a>" },
+        { "emoji": "📣", "title": "Retours et pouls de la communauté", "desc": "Retours après un événement, point mensuel, avis sur un changement de règle. Les réponses ouvertes reviennent sous forme de résumé IA, pas de cent réponses à faire défiler." },
+        { "emoji": "🧾", "title": "Commandes, réclamations et demandes", "desc": "Drops, commissions, demandes de rôle. Avec des dates d'ouverture et de fermeture programmées, une fenêtre de demandes se ferme toute seule à l'échéance." },
+        { "emoji": "👋", "title": "Accueil et vérification", "desc": "Pose les questions qui décident de l'accès, puis attribue le rôle automatiquement quand quelqu'un y répond." }
+      ]
+    },
+    {
+      "id": "questions",
+      "label": "TYPES DE QUESTIONS",
+      "title": "Les champs que tu aurais créés, et quelques-uns qu'un formulaire n'a pas",
+      "sub": "Onze types de blocs, à combiner dans n'importe quel ordre : c'est ce qui compose une Convo. Neuf posent une question, deux font quelque chose.",
+      "cards": [
+        { "emoji": "✅", "title": "Choix et texte", "desc": "Choix unique (oui/non inclus), choix multiple, texte libre et numérique. Les réponses en texte libre sont celles que lisent les résumés IA." },
+        { "emoji": "⭐", "title": "Évaluation, échelle et NPS", "desc": "Note de 2 à 10 points, en étoiles, en chiffres ou avec tes propres emojis. Des échelles d'opinion pour les items de Likert. Une question NPS verrouillée de 0 à 10." },
+        { "emoji": "🥇", "title": "Classement", "desc": "Oblige à mettre les options dans l'ordre au lieu de tout approuver. Demande un classement complet ou juste un top. <a href=\"/blog/discord-ranking-questions-rank-what-you-build-next/\">Voir les questions de classement (en anglais) →</a>" },
+        { "emoji": "🔀", "title": "Logique de saut", "desc": "Fais bifurquer selon une réponse, pour que chacun ne voie que les questions qui le concernent. Une candidature de 20 champs devient un échange court." },
+        { "emoji": "🧩", "title": "Blocs de contenu", "desc": "Dis quelque chose sans rien demander : un mot d'accueil, des règles à accepter, une confirmation à la fin." },
+        { "emoji": "⚡", "title": "Blocs d'action", "desc": "Attribue de l'XP, un rôle ou un succès en cours de conversation, pour que terminer rapporte quelque chose au lieu d'être un service rendu." }
+      ]
+    },
+    {
+      "id": "after",
+      "label": "APRÈS L'ENVOI",
+      "title": "Collecter, c'est la partie facile",
+      "sub": "Un formulaire te donne un tableur et s'arrête là. Subo peut orienter, récompenser et agir sur ce qui arrive.",
+      "cards": [
+        { "emoji": "🕵️", "title": "Trois modes de confidentialité", "desc": "Transparent, semi-privé (visible des admins seulement) ou totalement anonyme, où personne, toi compris, ne peut relier une réponse à un membre. <a href=\"/blog/complete-guide-anonymous-surveys-discord/\">Lire le guide de l'anonymat (en anglais) →</a>" },
+        { "emoji": "🎯", "title": "Choisir qui peut répondre", "desc": "Réserve à certains rôles, ouvre à tout le serveur, ou publie un lien web utilisable sans compte Discord." },
+        { "emoji": "📅", "title": "Ouverture et fermeture programmées", "desc": "Les candidatures ouvrent vendredi et ferment dimanche soir, sans que tu aies à y penser." },
+        { "emoji": "🤖", "title": "Résumés IA des réponses ouvertes", "desc": "Lis une synthèse de ce que les gens ont écrit au lieu de chaque réponse une par une." },
+        { "emoji": "📤", "title": "Export et webhooks", "desc": "CSV ou Google Sheets quand tu veux les données brutes. Des webhooks et une API REST quand tu veux qu'elles arrivent dans tes propres outils. <a href=\"/api/\">Voir l'API (en anglais) →</a>" },
+        { "emoji": "🆓", "title": "Gratuit pour commencer", "desc": "L'offre gratuite couvre 250 répondants par projet, logique de saut et système d'XP inclus." }
+      ]
+    }
+  ],
+  "compare": {
+    "id": "vs-google-forms",
+    "label": "VS GOOGLE FORMS",
+    "title": "Pourquoi un lien vers un formulaire fait fuir",
+    "sub": "Un Google Forms ou un Typeform, c'est une page sur un autre site. Chaque étape entre ton salon et cette page est une occasion d'abandonner.",
+    "rowHeaderLabel": "Critère",
+    "headers": ["", "Un lien de formulaire dans un salon", "Subo dans ton serveur"],
+    "rows": [
+      ["Où ça se passe", "Un nouvel onglet sur un autre site", "Un DM ou un fil privé dans Discord"],
+      ["Ce qu'on voit en premier", "Toutes les questions d'un coup", "Une question, puis la suivante"],
+      ["Qui répond", "Un champ « nom » où on peut taper n'importe quoi", "Son identité Discord et ses rôles, déjà vérifiés"],
+      ["Questions sans rapport", "Tout le monde les lit toutes", "La logique de saut les retire"],
+      ["Récompense à la fin", "Une page de remerciement", "De l'XP, un rôle ou un succès"],
+      ["Option anonyme", "Anonyme pour toi et pour l'outil lui-même", "Anonyme par conception, toujours une réponse par membre"],
+      ["Personnes sans Discord", "N'importe qui avec le lien", "Mode web : un lien, aucun compte requis"]
+    ],
+    "footnote": "Le mode web et le mode Discord s'excluent : un projet tourne d'une façon ou de l'autre, et tu le dupliques pour changer."
+  },
+  "faqTitle": "Formulaires Discord : les réponses",
+  "faq": [
+    { "q": "Peut-on faire un formulaire sur Discord ?", "a": "Oui. Tu ajoutes une appli qui collecte des réponses structurées dans le serveur, pour que tes membres n'aient jamais à quitter Discord. Avec Subo, tu lances /enquete (ou /survey), les questions sont posées une par une dans le chat, et les réponses reviennent en données structurées que tu peux exporter ou analyser." },
+    { "q": "C'est quoi une Convo, et en quoi c'est différent d'un formulaire ?", "a": "Une Convo, c'est le nom que Subo donne au formulaire une fois lancé : les mêmes questions structurées, posées une par une dans un chat plutôt que présentées sur une page de champs. Tu gardes un script fixe, des réponses obligatoires et des données propres. Ce qui change, c'est l'expérience de la personne qui répond, et le taux de complétion qui en découle." },
+    { "q": "Existe-t-il une alternative à Google Forms pour Discord ?", "a": "Tu peux coller un lien Google Forms dans un salon, mais il envoie les gens hors de Discord vers une page séparée, et c'est là que la plupart abandonnent. Le plus adapté, c'est une appli qui pose les mêmes questions dans le serveur sous forme de conversation structurée, puis te rend les mêmes résultats exportables. Subo fait ça, et ajoute ce qu'un formulaire ne sait pas faire dans une communauté : identité vérifiée, ciblage par rôle, logique de saut et récompenses pour ceux qui terminent." },
+    { "q": "Des personnes sans compte Discord peuvent-elles remplir le formulaire ?", "a": "Oui, si tu le crées en mode web. Un projet tourne soit en mode Discord, où les membres répondent dans ton serveur, soit en mode web, où il vit à un lien ouvert à tous, sans compte Discord. C'est l'un ou l'autre : duplique le projet si tu veux plus tard une version web publique." },
+    { "q": "Un bot de formulaire Discord, c'est gratuit ?", "a": "Subo a une offre gratuite qui couvre 250 répondants par projet, avec la logique de saut et le système d'XP. Les offres payantes relèvent la limite de répondants et ajoutent des crédits IA, plus de personnalisation et des notifications de nouvelles réponses." },
+    { "q": "Un formulaire Discord peut-il être anonyme ?", "a": "Oui. L'anonymat est l'un des trois modes de confidentialité, et dans ce mode personne, admins du serveur compris, ne peut relier une réponse à un membre. Les deux autres sont le mode transparent, où les réponses sont attribuées ouvertement, et le mode semi-privé, où les admins voient les réponses individuelles mais pas les autres membres." },
+    { "q": "Comment récupérer les réponses ?", "a": "Les résultats sont dans l'admin web Subo, avec export CSV ou Google Sheets. Les réponses ouvertes peuvent être résumées par l'IA. Pour que les réponses arrivent automatiquement dans tes propres outils, il y a des webhooks et une API REST." }
+  ],
+  "outro": {
+    "title": "La version longue",
+    "body": [
+      "Un formulaire est fait pour un site web. Ta communauté vit sur Discord. Ce décalage ne se règle pas avec un plus joli design : c'est la raison pour laquelle ton lien a récolté douze réponses.",
+      "Subo pose les mêmes questions là où les gens sont déjà, une par une, dans un format qui ressemble à un échange avec un modo sympa plutôt qu'à de la paperasse. Dans le produit, cette conversation structurée a un nom : une Convo."
+    ],
+    "blogLink": {
+      "text": "Comment créer un questionnaire sur Discord, le guide pas à pas →",
+      "href": "/fr/blog/comment-creer-un-questionnaire-sur-discord/"
+    },
+    "blogLink2": {
+      "text": "Subo face à Google Forms et Typeform pour les communautés Discord (en anglais) →",
+      "href": "/blog/subo-vs-google-forms-typeform-discord-communities/"
+    },
+    "blogLink3": {
+      "text": "L'enquête Discord en Convo, comment ça marche →",
+      "href": "/fr/survey-convos/"
+    }
+  }
 }
 
 }

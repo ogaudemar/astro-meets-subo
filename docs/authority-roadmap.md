@@ -49,11 +49,19 @@ rankings were lost in the move, and English non-branded terms did the same thing
 time. **Do not re-architect** — every technical precondition we control was verified green on
 09-07 and again on 09-08, including single-hop 301s on every `subo.ai` variant.
 
-⚠️ **French content is HELD, with a stated resume condition.** `/fr/forms/` keeps its T5
-argument in full; what changed is that a new French page would inherit the same non-indexed
-state, so it cannot be measured yet. **It resumes when any `/fr/` URL on `subo.gg` leaves
-"Crawled - currently not indexed."** That is the one thing to watch, and it moves on a
-**monthly** cadence, not a weekly one.
+✅ **French content RESUMED 2026-09-14 (user decision), and `/fr/forms/` is shipped.** The hold
+below was lifted on a stated argument: indexation will come when the migration settles, and
+content written during the wait is ready then rather than weeks late, while a page left stale
+helps nothing. The hold's premise still stands (new FR pages **cannot be measured** until a
+`/fr/` URL leaves "Crawled - currently not indexed", checked **monthly**); what changed is that
+unmeasurable is no longer treated as a reason not to build. See the
+[/fr/forms/ block](#-frforms--shipped-2026-09-14-ahead-of-indexation).
+
+~~⚠️ **French content is HELD, with a stated resume condition.**~~ *Superseded 2026-09-14, above.*
+`/fr/forms/` keeps its T5 argument in full; what changed is that a new French page would inherit
+the same non-indexed state, so it cannot be measured yet. It resumes when any `/fr/` URL on
+`subo.gg` leaves "Crawled - currently not indexed." That is the one thing to watch, and it moves
+on a **monthly** cadence, not a weekly one.
 
 ⭐ **The evidence now points at links, not pages, and that is a change of priority.** Internal
 linking, hreflang, canonicals and the sitemap are all correct and have been for weeks; what
@@ -83,10 +91,8 @@ whenever a new Common Crawl index lands, or English-side work, which the evidenc
 supports. **Do not invent a new shortlist item** to fill the gap; the entry test at the top of
 this section still applies.
 
-⚠️ **French content is HELD, not cancelled.** `/fr/forms/` was this file's "highest-value French
-action on the board" as of 09-08 and the T5 argument for it is untouched — but writing another
-French page cannot overturn an indexing verdict, and item 1 just produced one. It resumes when
-1b says which side of the migration we are on.
+~~⚠️ **French content is HELD, not cancelled.**~~ *Superseded 2026-09-14: French content resumed
+and `/fr/forms/` shipped; see the note at the top of this section.*
 **⚠️ Three items in a row have closed by opening URLs rather than executing lists.** P3 died
 that way on 2026-09-07 (three of four claims false), item 6 closed that way on 2026-09-08
 (three of its last four actions re-scoped or cancelled), and the **P5 target list lost a third
@@ -777,6 +783,56 @@ earns: the page body, the differentiation layer, the product itself.
 — *best Discord survey bot* and *Discord survey app for my server*. It does not get its own
 measurement. If the landing page starts being cited where the homepage was, the anchor layer
 is part of why, and the change is too small to attribute on its own.
+
+### ✅ /FR/FORMS/ — shipped 2026-09-14, ahead of indexation
+
+**Why now, when the 09-08 checkback said hold.** The user's call, on an argument the hold never
+answered: Google *will* credit `subo.gg` once the migration settles, and French content written
+during the wait is live when that happens instead of weeks behind it. The hold was right that a
+new French page **cannot be measured** yet; it was wrong to treat that as a reason not to build a
+page whose case (T5, T10) never depended on measurement. **Nothing here is evidence the
+indexation problem moved.** The monthly check is unchanged.
+
+**Shipped, as one change because the guard requires it.** Adding a third French landing page on
+*formulaire* would have taken `t5.fr.formulaire` from 2 to 3 and failed the build, the same
+arithmetic that forced the EN rewording on 09-08. So the page and both demotions land together:
+
+| | Before | After |
+|---|---|---|
+| `/fr/forms/` (new) | — | H1 *Le formulaire Discord que tes membres remplissent jusqu'au bout*; title *Formulaire Discord : l'alternative à Google Forms pensée pour les serveurs* |
+| `/fr/survey-convos/` H1 | Le **formulaire** Discord qui ressemble à une conversation | L'**enquête** Discord qui ressemble à une conversation |
+| `/fr/survey-convos/` title | **Formulaire** et sondage Discord, réinventés en conversation | Appli d'**enquête** Discord, réinventée en conversation |
+| `/fr/use-cases/get-things-done/` H1 | TOUT CE QUE TU METTAIS DANS UN **FORMULAIRE** | CANDIDATURES, INSCRIPTIONS ET DEMANDES, SANS LA PAPERASSE |
+| FR nav + footer | Fonctionnalités / **Convos** / Sondages | Fonctionnalités / **Enquêtes** / Sondages / **Formulaires** |
+| lexicon `formulaire` owns | `/fr/use-cases/get-things-done/` | `/fr/forms/` |
+| lexicon `enquête` owns | `null` | `/fr/survey-convos/` |
+
+- **Why `enquête` (user, 2026-09-14).** It is the FR mirror of EN `/survey-convos/` taking
+  *survey* back on 09-08, and the only door left: **T2b** rules out *sondage* (Discord's poll
+  word) and **T2** rules out *questionnaire* as this page's H1 noun. It is also the live
+  `/enquete` command. T6's warning (in moderation it can read as *an investigation into a
+  member*) was weighed and accepted.
+- **The page is a translation of `/forms/`, not a new argument:** same sections, same
+  crawlable comparison table, same seven-question `FAQPage` rendered from the visible Q&A,
+  and the lexicon's bridge shape under the hero (*« Tu viens chercher un formulaire. Chez
+  Subo, ce formulaire est une Convo »*). Commands named both ways per T6 (`/enquete (ou
+  /survey)`). Links to English-only pages are marked *(en anglais)*.
+- **The link graph, which is the part item 6 taught us matters.** `/fr/survey-convos/` now
+  sends form intent to `/fr/forms/` with form-worded anchor text (it used to claim the word
+  itself and link an English how-to), and both FR blog posts that talk about forms link the
+  new page. `/forms/` and `/fr/forms/` are now a reciprocal hreflang pair.
+- **Also fixed in passing on `/fr/survey-convos/`:** the hero subtitle *« Pas un formulaire.
+  Pas juste un sondage. »* is the "not just X" shape house style bans, and EN had already
+  dropped it. And the GTD title said *Applications*, an anglicism for *candidatures*.
+
+**`t5.fr.formulaire` PAID OFF**, entry deleted (known violations 23 → 22, nothing new fires).
+`lexicon.json` re-vendored to `subo/`, byte-identical. `npm run check` green: build,
+`check:hreflang` (56 / 140), `check:canonical` (347 URLs), `check:lexicon`, `tsc`, wrangler
+dry-run.
+
+**Scoreboard:** none of its own until French indexes. When a `/fr/` URL leaves
+crawled-not-indexed, the first French query to check is *formulaire discord* /
+*alternative google forms discord*, against `/fr/forms/`.
 
 ### Keyword intel from the 6-month Search Console history (2026-07-29)
 

@@ -1116,6 +1116,7 @@
     "cta": "Add to Discord",
     "bridge": "You came for a form. In Subo that form is a <strong>Convo</strong>: the same questions, asked one at a time in a chat instead of a page of fields."
   },
+  "navAriaLabel": "Form sections",
   "nav": [
     { "label": "WHAT YOU CAN BUILD", "anchor": "build" },
     { "label": "VS GOOGLE FORMS", "anchor": "vs-google-forms" },
@@ -1244,6 +1245,7 @@
     "label": "VS GOOGLE FORMS",
     "title": "Why a link to a form loses people",
     "sub": "A Google Form or a Typeform is a page on another site. Every step between your channel and that page is somewhere to give up.",
+    "rowHeaderLabel": "Aspect",
     "headers": ["", "A form link in a channel", "Subo in your server"],
     "rows": [
       ["Where it happens", "A new tab on another site", "A DM or private thread in Discord"],

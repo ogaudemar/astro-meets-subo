@@ -43,6 +43,8 @@ Le réflexe habituel est de rédiger l'enquête ailleurs et de coller le lien. �
 
 Avec Subo, le questionnaire arrive là où tes membres sont déjà. L'invitation s'affiche dans le salon, chacun reçoit son questionnaire en DM d'un clic, et répond en tapant sur des boutons. Les réponses restent privées, la conversation ne pollue pas le salon, et personne n'a eu à faire confiance à un domaine inconnu.
 
+Si c'est plutôt un formulaire que tu cherches (candidature, inscription, rapport de bug), il a sa propre page : [le formulaire Discord, construit en Convo](/fr/forms/).
+
 ## Créer un questionnaire avec la commande `/enquete`
 
 > **`/enquete` ou `/survey` ?** Le nom de la commande suit la langue de ton client Discord, pas la tienne. Un client en français affiche `/enquete`, un client en anglais `/survey`. Les deux lancent exactement la même chose, et le nom anglais fonctionne toujours. Les captures ci-dessous viennent d'un client en anglais.
