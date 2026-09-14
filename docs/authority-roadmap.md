@@ -3702,6 +3702,10 @@ test.
         Feed live placements' `$referring_domain` into the P0 funnel breakdown.
       - **Skipping** competitor vendor blogs (EasyPoll/PeakBot/PollBotPlus/Formeer/Votex, and
         now Rally) and AI content farms (Skywork, npprteam) — no value / won't feature a rival.
+- [~] **Slashdot: submission requested 2026-09-14, awaiting their approval.** ⚠️ **Correction:
+      it is NOT self-serve** as the note below claims; Slashdot confirmed the request and asked
+      us to wait. **Outreach sent 2026-09-14:** EarthWeb, Stickers.gg, Space-node.net (all to
+      generic inboxes); status in the kit.
 - [ ] **🎯 Free P1 lead found during the 09-08 pass — Slashdot's survey category.**
       `slashdot.org/software/survey/for-discord/` is a *"Survey Software for Discord"*
       category on a high-authority domain carrying exactly five products — Jotform,
