@@ -5,7 +5,7 @@ export const trackedRedirects = {
     description: 'Discord Support Server'
   },
   invite: {
-    url: 'https://discord.com/api/oauth2/authorize?client_id=946888973035380806&permissions=398090292240&scope=bot%20applications.commands',
+    url: 'https://app.subo.gg/invite',
     name: 'discord_bot_invite',
     description: 'Discord Bot Invite'
   },
