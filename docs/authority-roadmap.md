@@ -834,6 +834,36 @@ dry-run.
 crawled-not-indexed, the first French query to check is *formulaire discord* /
 *alternative google forms discord*, against `/fr/forms/`.
 
+#### Follow-up the same day: both form pages had a blind spot (user review, 2026-09-14)
+
+**`/forms/` and `/fr/forms/` argued almost entirely from one benefit, not sending respondents
+out of Discord to a web page, and skipped the one a form link cannot copy: Discord already
+knows who is answering.** The comparison post
+(`/blog/subo-vs-google-forms-typeform-discord-communities/`) already made that case; the landing
+pages it should have fed did not.
+
+**Shipped on both pages:** a new *Who is answering* / *Qui répond* section after the comparison
+table (membership proven by Discord and one response per member, role-locked forms, username +
+roles + join date collected without asking, shorter forms with fewer drop-offs, verified even
+when anonymous, the web-mode verification gate); hero subtitles that name it; three comparison
+rows replacing the vague *Who is answering* row; two new `FAQPage` entries (*only members can
+fill it in*, *no username to type*); and the redundant *Choose who can submit* card became
+*results back into the server*. `/fr/survey-convos/`'s table now reads *ENQUÊTE CLASSIQUE vs.
+CONVO* (user wording).
+
+**Claims checked, one deliberately left out.** Username, Member Since and Roles are verified in
+the app (response details sidebar and respondent summary); the rest was already published in
+the comparison post. **CSV export columns were NOT verified, so neither page claims them.** The
+identity data is scoped to Transparent and Semi-Private modes on the page, because Anonymous
+discards it.
+
+**Why it matters for the scoreboard.** The GEO test that justified `/forms/` found competitors
+answering *Google Forms for Discord* with product pages. Verified membership is the one argument
+none of them can make about a form link, so it is the line most worth an answer engine quoting.
+It rides the existing `/forms/` row of the
+[next-crawl scoreboard](#-the-next-crawl-scoreboard--three-changes-are-now-waiting-on-one-measurement);
+if Subo is cited, check whether the answer mentions membership or roles.
+
 ### Keyword intel from the 6-month Search Console history (2026-07-29)
 
 Pulled subo.ai (history) + subo.gg (post-switch) Queries/Pages + GA4 organic landing
