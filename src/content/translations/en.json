@@ -1112,7 +1112,7 @@
   "pageDescription": "Build a Discord form for applications, sign-ups, bug reports and feedback. Subo asks your questions one at a time inside the server, so members never leave Discord to answer. Free tier, web mode for non-members, CSV and Google Sheets export.",
   "hero": {
     "title": "The Discord form your members <strong class=\"accent\">actually finish</strong>",
-    "subtitle": "The same structured questions as a Google Form. Asked one at a time, inside your server, by an app your members already trust.",
+    "subtitle": "The same structured questions as a Google Form, asked one at a time inside your server. And Subo already knows who is answering: verified members, their roles and when they joined, without a single username field.",
     "cta": "Add to Discord",
     "bridge": "You came for a form. In Subo that form is a <strong>Convo</strong>: the same questions, asked one at a time in a chat instead of a page of fields."
   },
@@ -1120,6 +1120,7 @@
   "nav": [
     { "label": "WHAT YOU CAN BUILD", "anchor": "build" },
     { "label": "VS GOOGLE FORMS", "anchor": "vs-google-forms" },
+    { "label": "WHO IS ANSWERING", "anchor": "identity" },
     { "label": "QUESTION TYPES", "anchor": "questions" },
     { "label": "AFTER SUBMISSION", "anchor": "after" },
     { "label": "FAQ", "anchor": "faq" }
@@ -1161,6 +1162,20 @@
           "title": "Onboarding and verification",
           "desc": "Ask the questions that decide access, then grant the role automatically when someone answers them."
         }
+      ]
+    },
+    {
+      "id": "identity",
+      "label": "WHO IS ANSWERING",
+      "title": "Discord already knows who is answering",
+      "sub": "A form link is open to whoever holds it, so it has to ask people who they are. Subo never has to: every respondent arrives authenticated by Discord, and the identity questions that cause the most typos and drop-off disappear from the form.",
+      "cards": [
+        { "emoji": "🛡️", "title": "Only real members", "desc": "Every response comes from someone actually in your server, authenticated by Discord when they open the form. A link found in a screenshot gets nobody in, and each member can answer only once. <a href=\"/blog/subo-vs-google-forms-typeform-discord-communities/\">Why a form link cannot prove membership →</a>" },
+        { "emoji": "🔐", "title": "Locked to the roles you choose", "desc": "An application only Verified members can open, a staff form only for Moderators, a playtest sign-up only for supporters. Without the role, there is no way in." },
+        { "emoji": "🪪", "title": "Username, roles and join date, collected for you", "desc": "No \"what's your Discord username?\" field for people to forget, skip or mistype. In Transparent and Semi-Private modes, each response comes with the member's username, their roles and the date they joined your server." },
+        { "emoji": "✂️", "title": "Shorter forms, fewer drop-offs", "desc": "Every identity question you delete is one less place to quit, one less typo, and one less evening matching names against your member list." },
+        { "emoji": "🕶️", "title": "Verified even when anonymous", "desc": "In Anonymous mode Subo still checks that each respondent is a distinct, real member, then discards the link to their answers. Results you can vouch for, and nobody can see who said what." },
+        { "emoji": "🌐", "title": "Verification on the web too", "desc": "A web-mode form can sit behind a gate before the first question: Discord server membership, owning a game on Steam, following a Twitch channel or subscribing on YouTube." }
       ]
     },
     {
@@ -1214,8 +1229,8 @@
         },
         {
           "emoji": "🎯",
-          "title": "Choose who can submit",
-          "desc": "Restrict to specific roles, open it to the whole server, or publish a web link anyone can use without a Discord account."
+          "title": "Results back into the server",
+          "desc": "Post the totals to a channel so members see what the community decided. Because every answer came from a verified member, nobody asks whether it got brigaded."
         },
         {
           "emoji": "📅",
@@ -1244,13 +1259,15 @@
     "id": "vs-google-forms",
     "label": "VS GOOGLE FORMS",
     "title": "Why a link to a form loses people",
-    "sub": "A Google Form or a Typeform is a page on another site. Every step between your channel and that page is somewhere to give up.",
+    "sub": "A Google Form or a Typeform is a page on another site that has no idea who is filling it in. Every step between your channel and that page is somewhere to give up, and every answer that comes back is self-reported.",
     "rowHeaderLabel": "Aspect",
     "headers": ["", "A form link in a channel", "Subo in your server"],
     "rows": [
       ["Where it happens", "A new tab on another site", "A DM or private thread in Discord"],
       ["What people see first", "Every question at once", "One question, then the next"],
-      ["Who is answering", "A name field they can type anything into", "Their Discord identity and roles, already verified"],
+      ["Who can answer", "Anyone holding the link", "Verified members of your server, one response each"],
+      ["Restricting access", "Not by Discord role", "Only the roles you choose"],
+      ["Username and roles", "A field they type in, typos included", "Collected automatically, with their join date"],
       ["Irrelevant questions", "Everyone reads all of them", "Skip logic drops them"],
       ["Reward for finishing", "A thank-you page", "XP, a role or an achievement"],
       ["Anonymous option", "Anonymous to you and to itself", "Anonymous by design, still one response per member"],
@@ -1271,6 +1288,14 @@
     {
       "q": "Is there a Google Forms alternative for Discord?",
       "a": "You can paste a Google Form link into a channel, but it sends people out of Discord to a separate page, which is where most of the drop-off happens. The closer fit is an app that asks the same questions inside the server as a structured conversation, then hands you the same exportable results. Subo does that, and adds what a form cannot do in a community: verified identity, role targeting, skip logic and rewards for finishing."
+    },
+    {
+      "q": "How do I make sure only members of my server fill in a form?",
+      "a": "Run it in Discord mode. Members are authenticated by Discord when they open the form, so every response provably comes from someone in your server, and each member can answer only once. You can also restrict the form to one or more roles, so an application or a staff form only opens for the people who hold them. A web-mode form can sit behind a verification gate instead: Discord server membership, a game on Steam, a Twitch follow or a YouTube subscription."
+    },
+    {
+      "q": "Do respondents have to type their Discord username?",
+      "a": "No. Subo already knows who is answering, so there is no username field to forget or mistype. In Transparent and Semi-Private modes, each response comes with the member's username, their roles and the date they joined your server, shown in the response details. In Anonymous mode that link is discarded on purpose."
     },
     {
       "q": "Can people without a Discord account fill in the form?",

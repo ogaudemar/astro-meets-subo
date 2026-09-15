@@ -598,8 +598,8 @@
     "Résultat : <strong>de meilleurs taux de complétion</strong>, des réponses plus riches et des membres qui apprécient vraiment l'expérience.",
     "Tu collectes des candidatures, des inscriptions, des commandes ou des rapports de bug plutôt que des avis ? Ce besoin a sa propre page : <a href=\"/fr/forms/\">le formulaire Discord, construit en Convo</a>."
   ],
-  "formsVsConvosTitle": "L'ANCIENNE PAGE D'ENQUÊTE vs. UNE CONVO",
-  "formsColumn": "Une page d'enquête classique",
+  "formsVsConvosTitle": "ENQUÊTE CLASSIQUE vs. CONVO",
+  "formsColumn": "Enquêtes classiques",
   "convosColumn": "Convos avec Subo",
   "formsVsConvosItems": [
     { "forms": "Interface froide et impersonnelle", "convos": "Expérience chaleureuse en mode chat" },
@@ -1246,7 +1246,7 @@
   "pageDescription": "Crée un formulaire Discord pour tes candidatures, inscriptions, rapports de bug et retours. Subo pose tes questions une par une dans le serveur, sans que tes membres quittent Discord. Offre gratuite, mode web pour les non-membres, export CSV et Google Sheets.",
   "hero": {
     "title": "Le formulaire Discord que tes membres <strong class=\"accent\">remplissent jusqu'au bout</strong>",
-    "subtitle": "Les mêmes questions structurées qu'un Google Forms. Posées une par une, dans ton serveur, par une appli en qui tes membres ont déjà confiance.",
+    "subtitle": "Les mêmes questions structurées qu'un Google Forms, posées une par une dans ton serveur. Et Subo sait déjà qui répond : des membres vérifiés, leurs rôles et leur date d'arrivée, sans un seul champ « pseudo ».",
     "cta": "Ajoute à Discord",
     "bridge": "Tu viens chercher un formulaire. Chez Subo, ce formulaire est une <strong>Convo</strong> : les mêmes questions, posées une par une dans un chat plutôt que sur une page de champs."
   },
@@ -1254,6 +1254,7 @@
   "nav": [
     { "label": "CE QUE TU PEUX CRÉER", "anchor": "build" },
     { "label": "VS GOOGLE FORMS", "anchor": "vs-google-forms" },
+    { "label": "QUI RÉPOND", "anchor": "identity" },
     { "label": "TYPES DE QUESTIONS", "anchor": "questions" },
     { "label": "APRÈS L'ENVOI", "anchor": "after" },
     { "label": "FAQ", "anchor": "faq" }
@@ -1271,6 +1272,20 @@
         { "emoji": "📣", "title": "Retours et pouls de la communauté", "desc": "Retours après un événement, point mensuel, avis sur un changement de règle. Les réponses ouvertes reviennent sous forme de résumé IA, pas de cent réponses à faire défiler." },
         { "emoji": "🧾", "title": "Commandes, réclamations et demandes", "desc": "Drops, commissions, demandes de rôle. Avec des dates d'ouverture et de fermeture programmées, une fenêtre de demandes se ferme toute seule à l'échéance." },
         { "emoji": "👋", "title": "Accueil et vérification", "desc": "Pose les questions qui décident de l'accès, puis attribue le rôle automatiquement quand quelqu'un y répond." }
+      ]
+    },
+    {
+      "id": "identity",
+      "label": "QUI RÉPOND",
+      "title": "Discord sait déjà qui répond",
+      "sub": "Un lien de formulaire est ouvert à quiconque le possède, alors il doit demander aux gens qui ils sont. Subo n'a jamais à le faire : chaque répondant arrive authentifié par Discord, et les questions d'identité, celles qui causent le plus de fautes de frappe et d'abandons, disparaissent du formulaire.",
+      "cards": [
+        { "emoji": "🛡️", "title": "Uniquement de vrais membres", "desc": "Chaque réponse vient de quelqu'un qui est vraiment dans ton serveur, authentifié par Discord à l'ouverture du formulaire. Un lien trouvé sur une capture d'écran ne fait entrer personne, et chaque membre ne peut répondre qu'une fois. <a href=\"/blog/subo-vs-google-forms-typeform-discord-communities/\">Pourquoi un lien de formulaire ne prouve pas l'appartenance (en anglais) →</a>" },
+        { "emoji": "🔐", "title": "Réservé aux rôles que tu choisis", "desc": "Une candidature que seuls les membres Vérifiés peuvent ouvrir, un formulaire staff réservé aux modos, une inscription de playtest pour les soutiens. Sans le rôle, impossible d'y accéder." },
+        { "emoji": "🪪", "title": "Pseudo, rôles et date d'arrivée, collectés pour toi", "desc": "Plus de champ « ton pseudo Discord ? » que les gens oublient, sautent ou remplissent de travers. En modes transparent et semi-privé, chaque réponse arrive avec le pseudo du membre, ses rôles et la date à laquelle il a rejoint ton serveur." },
+        { "emoji": "✂️", "title": "Des formulaires plus courts, moins d'abandons", "desc": "Chaque question d'identité supprimée, c'est une occasion d'abandonner en moins, une faute de frappe en moins, et une soirée de moins à rapprocher des pseudos de ta liste de membres." },
+        { "emoji": "🕶️", "title": "Vérifié, même en anonyme", "desc": "En mode anonyme, Subo vérifie quand même que chaque répondant est un membre réel et distinct, puis efface le lien avec ses réponses. Des résultats fiables, sans que personne puisse voir qui a dit quoi." },
+        { "emoji": "🌐", "title": "La vérification marche aussi sur le web", "desc": "Un formulaire en mode web peut être protégé avant la première question : appartenance au serveur Discord, possession d'un jeu sur Steam, suivi d'une chaîne Twitch ou abonnement à une chaîne YouTube." }
       ]
     },
     {
@@ -1294,7 +1309,7 @@
       "sub": "Un formulaire te donne un tableur et s'arrête là. Subo peut orienter, récompenser et agir sur ce qui arrive.",
       "cards": [
         { "emoji": "🕵️", "title": "Trois modes de confidentialité", "desc": "Transparent, semi-privé (visible des admins seulement) ou totalement anonyme, où personne, toi compris, ne peut relier une réponse à un membre. <a href=\"/blog/complete-guide-anonymous-surveys-discord/\">Lire le guide de l'anonymat (en anglais) →</a>" },
-        { "emoji": "🎯", "title": "Choisir qui peut répondre", "desc": "Réserve à certains rôles, ouvre à tout le serveur, ou publie un lien web utilisable sans compte Discord." },
+        { "emoji": "🎯", "title": "Les résultats reviennent sur le serveur", "desc": "Publie les totaux dans un salon pour que les membres voient ce que la communauté a décidé. Comme chaque réponse vient d'un membre vérifié, personne ne soupçonne un raid." },
         { "emoji": "📅", "title": "Ouverture et fermeture programmées", "desc": "Les candidatures ouvrent vendredi et ferment dimanche soir, sans que tu aies à y penser." },
         { "emoji": "🤖", "title": "Résumés IA des réponses ouvertes", "desc": "Lis une synthèse de ce que les gens ont écrit au lieu de chaque réponse une par une." },
         { "emoji": "📤", "title": "Export et webhooks", "desc": "CSV ou Google Sheets quand tu veux les données brutes. Des webhooks et une API REST quand tu veux qu'elles arrivent dans tes propres outils. <a href=\"/api/\">Voir l'API (en anglais) →</a>" },
@@ -1306,13 +1321,15 @@
     "id": "vs-google-forms",
     "label": "VS GOOGLE FORMS",
     "title": "Pourquoi un lien vers un formulaire fait fuir",
-    "sub": "Un Google Forms ou un Typeform, c'est une page sur un autre site. Chaque étape entre ton salon et cette page est une occasion d'abandonner.",
+    "sub": "Un Google Forms ou un Typeform, c'est une page sur un autre site qui ne sait pas qui la remplit. Chaque étape entre ton salon et cette page est une occasion d'abandonner, et chaque réponse qui revient est purement déclarative.",
     "rowHeaderLabel": "Critère",
     "headers": ["", "Un lien de formulaire dans un salon", "Subo dans ton serveur"],
     "rows": [
       ["Où ça se passe", "Un nouvel onglet sur un autre site", "Un DM ou un fil privé dans Discord"],
       ["Ce qu'on voit en premier", "Toutes les questions d'un coup", "Une question, puis la suivante"],
-      ["Qui répond", "Un champ « nom » où on peut taper n'importe quoi", "Son identité Discord et ses rôles, déjà vérifiés"],
+      ["Qui peut répondre", "Quiconque a le lien", "Les membres vérifiés de ton serveur, une réponse chacun"],
+      ["Restreindre l'accès", "Pas par rôle Discord", "Uniquement les rôles que tu choisis"],
+      ["Pseudo et rôles", "Un champ à remplir, fautes de frappe comprises", "Collectés automatiquement, avec la date d'arrivée"],
       ["Questions sans rapport", "Tout le monde les lit toutes", "La logique de saut les retire"],
       ["Récompense à la fin", "Une page de remerciement", "De l'XP, un rôle ou un succès"],
       ["Option anonyme", "Anonyme pour toi et pour l'outil lui-même", "Anonyme par conception, toujours une réponse par membre"],
@@ -1325,6 +1342,8 @@
     { "q": "Peut-on faire un formulaire sur Discord ?", "a": "Oui. Tu ajoutes une appli qui collecte des réponses structurées dans le serveur, pour que tes membres n'aient jamais à quitter Discord. Avec Subo, tu lances /enquete (ou /survey), les questions sont posées une par une dans le chat, et les réponses reviennent en données structurées que tu peux exporter ou analyser." },
     { "q": "C'est quoi une Convo, et en quoi c'est différent d'un formulaire ?", "a": "Une Convo, c'est le nom que Subo donne au formulaire une fois lancé : les mêmes questions structurées, posées une par une dans un chat plutôt que présentées sur une page de champs. Tu gardes un script fixe, des réponses obligatoires et des données propres. Ce qui change, c'est l'expérience de la personne qui répond, et le taux de complétion qui en découle." },
     { "q": "Existe-t-il une alternative à Google Forms pour Discord ?", "a": "Tu peux coller un lien Google Forms dans un salon, mais il envoie les gens hors de Discord vers une page séparée, et c'est là que la plupart abandonnent. Le plus adapté, c'est une appli qui pose les mêmes questions dans le serveur sous forme de conversation structurée, puis te rend les mêmes résultats exportables. Subo fait ça, et ajoute ce qu'un formulaire ne sait pas faire dans une communauté : identité vérifiée, ciblage par rôle, logique de saut et récompenses pour ceux qui terminent." },
+    { "q": "Comment m'assurer que seuls les membres de mon serveur remplissent un formulaire ?", "a": "Lance-le en mode Discord. Les membres sont authentifiés par Discord à l'ouverture du formulaire, donc chaque réponse vient de façon prouvée de quelqu'un de ton serveur, et chaque membre ne peut répondre qu'une fois. Tu peux aussi réserver le formulaire à un ou plusieurs rôles, pour qu'une candidature ou un formulaire staff ne s'ouvre qu'à ceux qui les ont. Un formulaire en mode web peut plutôt être protégé par une vérification : appartenance au serveur Discord, jeu sur Steam, suivi Twitch ou abonnement YouTube." },
+    { "q": "Les répondants doivent-ils taper leur pseudo Discord ?", "a": "Non. Subo sait déjà qui répond, donc il n'y a aucun champ pseudo à oublier ou à mal orthographier. En modes transparent et semi-privé, chaque réponse arrive avec le pseudo du membre, ses rôles et la date à laquelle il a rejoint ton serveur, visibles dans le détail des réponses. En mode anonyme, ce lien est volontairement effacé." },
     { "q": "Des personnes sans compte Discord peuvent-elles remplir le formulaire ?", "a": "Oui, si tu le crées en mode web. Un projet tourne soit en mode Discord, où les membres répondent dans ton serveur, soit en mode web, où il vit à un lien ouvert à tous, sans compte Discord. C'est l'un ou l'autre : duplique le projet si tu veux plus tard une version web publique." },
     { "q": "Un bot de formulaire Discord, c'est gratuit ?", "a": "Subo a une offre gratuite qui couvre 250 répondants par projet, avec la logique de saut et le système d'XP. Les offres payantes relèvent la limite de répondants et ajoutent des crédits IA, plus de personnalisation et des notifications de nouvelles réponses." },
     { "q": "Un formulaire Discord peut-il être anonyme ?", "a": "Oui. L'anonymat est l'un des trois modes de confidentialité, et dans ce mode personne, admins du serveur compris, ne peut relier une réponse à un membre. Les deux autres sont le mode transparent, où les réponses sont attribuées ouvertement, et le mode semi-privé, où les admins voient les réponses individuelles mais pas les autres membres." },
