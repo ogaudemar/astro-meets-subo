@@ -21,7 +21,7 @@ the number it measures.** Work that cannot answer that is product quality, and b
 | ~~1b~~ | ~~**Run the `subo.ai` comparison export**~~ ✅ **RUN 2026-09-08 — answer: DECISION RULE 2, still processing** | `subo.ai` holds **13,899 impressions / 73 clicks** over 16 months, of which **French is 9,627 (69%) and 61 clicks (84%)** — but **0 French in the last 28 days**, same as `subo.gg`. The user's French-only re-run found the cliff: **traffic stops after 2026-06-10**, and this file's own migration block says **"the domain moved ~2026-06."** Same event. English non-branded did the identical thing at the identical time (*survey bot* 6.4→51.6), which this file already called the textbook signature of a migration Google is still processing. **French fell further only because the whole French corpus was non-branded**, with no branded half to recover first. **Rule 3 nearly fired on a technicality and would have been wrong** — the demand is intact and is still being served, to `subo.ai`. **The binding constraint is that `subo.gg`'s FR pages are not indexed**, which links fix, not words. Full block below. | P2 |
 | 2 | **Send the roundup outreach** 🔄 **IN PROGRESS — a multi-week thread, not a task. Verification and ordering DONE 2026-09-08; sending runs on the user's cadence** | Editorial backlinks, kit built 2026-08-03, explicitly **not** migration-gated, warm lead already live in CommunityOne. **A verification pass on 2026-09-08 opened every URL** — the P3 discipline — **and a third of the list did not survive**: CopyKitten's domain is dead, BotGhost's listicle is 2024 vintage and no longer ranks, Rally recommends no competitor and is a vendor funnel, and CommunityOne's blurb was never thin (the *category* is the defect, and the section we wanted them to move us to does not exist — template C rewritten). **Three targets added** (NitroLoot, Quickchat AI, EarthWeb) **and VibeBot promoted.** The kit now carries a fixed **SEND ORDER** of six messages with channel and template chosen. Expect this row to stay open for weeks: outreach is send, wait, follow up. | P5 |
 | ~~3~~ | ~~**Claim the four ecosystem links**~~ ❌ **CLOSED 2026-09-07** | Checked one URL at a time: Cloudflare's "Built with Workers" **404s**, Astro's showcase is **`nofollow ugc`** in a 2,374-comment thread, Stripe's Technology track is **invitation-only** and we are a merchant not a partner, and **Discord was already done in P1**. Three of the item's four claims were false and nobody had opened the URLs. P3 is closed, not deferred. | P3 |
-| ~~4~~ | ~~**Fix the `api.subo.ai` duplicate content**~~ ✅ **DONE 2026-09-05** | The canonical header had in fact shipped app-side on 2026-08-07 and this file never noticed. Verifying it live surfaced a *different* live defect: it, and twelve URLs in our own JSON-LD, named the slashless form, which 307s. All fixed and now guarded. See the ITEM 4 note in P2. | P2 / migration block |
+| ~~4~~ | ~~**Fix the `api.subo.ai` duplicate content**~~ ✅ **DONE 2026-09-05** | The canonical header had in fact shipped app-side on 2026-08-07 and this file never noticed. Verifying it live surfaced a *different* live defect: it, and twelve URLs in our own JSON-LD, named the slashless form, which 307s. All fixed and now guarded. See the ITEM 4 note in P2. **⚠️ Amended 2026-09-16: that covered `/v1/recipes` only.** The page actually linked from the homepage — `api.subo.ai/docs` — still answered 200 with no canonical, and `api.subo.ai/robots.txt` 302'd to `/app`, i.e. no robots file at all. Both fixed 2026-09-16 (app repo, awaiting deploy); the host is **staying on subo.ai** and the reasoning is in the migration block. | P2 / migration block |
 | ~~5~~ | ~~**Run the GEO citation test**~~ ✅ **DONE 2026-09-07** | The recrawl provably happened: Common Crawl went **0 captures (Jun, Jul) → 166 (Aug), 98 fetched, 21 French** the first crawl after the unblock. Citations are split: **#1 and named first for "best Discord survey bot"** on `subo.gg`, but **absent from the poll and form clusters**, and the French answer still cites **`subo.ai`**. Full table in the block. | robots.txt block |
 | ~~6~~ | ~~**Finish the no-"bot" / form / app vocabulary wave**~~ ✅ **DONE 2026-09-08** | The only keyword expansion justified by this file's own circularity principle. Half shipped, remaining actions enumerated, then dropped. **The `t5.*.form` half is withdrawn** — the flag did not survive scrutiny and the H1s stand; see A6. **Title layer DONE 2026-09-07** — 11 URLs shared one English `<title>`, including all six locale homepages; fixed, and the poll half reassigned to item 2 (it is a ranking problem, not a vocabulary one). **Form landing page DONE 2026-09-07** — we had two form pages, not zero, and every form-worded anchor on the site pointed at a blog post; `/forms/` built, both competitors demoted, nav door added, `t5.en.form` paid off. **DONE 2026-09-07** — the last action, a standalone `/draft` page, was checked before it was built and the premise failed: the GEO test that justified `/forms/` **passes** for AI-generator queries (we are cited first). The real defect underneath was that AI generation is a three-surface feature (Discord, web app, API) and the site documented one; fixed in copy plus a `FAQPage`. The page is gated on a GEO re-test, and its slug would be `/ai-survey-generator/`, not `/draft/`. **T5 realignment 2026-09-08, closing the item** — the form work had left "survey" owned by a *blog post* with no landing page leading on the head term of our own category; `/survey-convos/` took it back, `/forms/` gained the form-to-Convo bridge it was missing, and `t5.en.survey` was paid off (knownViolations 11 → 10). | P2 |
 | ~~7~~ | ~~**Two known factual errors on indexed pages**~~ ✅ **DONE 2026-09-05** | The survey how-to said 5 question types and `/survey-convos` had no outbound content link. Both fixed; the wizard question is settled against the code. See the ITEM 7 note in P2. | P2 |
@@ -122,6 +122,12 @@ would measure the crawl that predates all three changes. `/forms/` shipped 09-07
 `curl -s https://index.commoncrawl.org/collinfo.json` before the next attempt — one command,
 and it is the difference between a verdict and a number that means nothing.
 
+⚠️ **Re-checked 2026-09-16: still `CC-MAIN-2026-34` (Aug 7-20).** Five weeks on from the
+August index and nothing newer has been published, so the scoreboard is **still not runnable**
+and `/fr/forms/` (09-14) now sits behind the same wall as the three rows below. Indexes have been
+landing roughly monthly, so the next realistic check is **October**. Do not re-run the queries
+against the August index to feel productive; it predates every change being measured.
+
 | Shipped | Query to re-run | What a pass looks like |
 |---|---|---|
 | `/forms/` (09-07) | *google forms alternative for Discord collect responses without leaving the server* | Subo cited at all. It returned **zero Subo** on 09-07 while Formcord and Formeer answered with product pages. |
@@ -209,13 +215,66 @@ domain, and this **gates all content ROI for ~2–3 months**:
 - [x] **Change of Address filed in Search Console — CONFIRMED DONE (2026-07-29).**
 - [x] **Keep subo.ai verified + redirects live — CONFIRMED (2026-07-29).** Staying up
       for the foreseeable future. Do NOT sunset until non-branded rankings have moved.
-- [ ] **Consolidate the API docs onto subo.gg (loose end).** `api.subo.ai/docs` is
-      still live on the **old registrable domain** and does **not** 301 (it serves the
-      real Scalar docs), so any links/authority it earns accrue to subo.ai and it splits
-      the brand entity across two domains (against the P1 entity-consistency logic).
-      Migrate to **api.subo.gg** with its own 301 map + update `llms.txt`, `CLAUDE.md`,
-      `DeveloperAPI.astro`, and any references. Low traffic = low urgency, but it's the
-      last piece of "one entity = subo.gg." Feeds the **API/agent GEO** subsection in P2.
+- [x] **Consolidate the API docs onto subo.gg — DONE 2026-09-16, but NOT by moving the
+      host.** The problem was real and this block had it right: `api.subo.ai/docs` answered
+      **200 with no canonical and no robots directive**, a live, linked, indexable `subo.ai`
+      surface that the apex 301 cannot touch. It is linked from the homepage
+      (`DeveloperAPI.astro`) and from `subo.gg/llms.txt`, so it was being fed, not merely
+      surviving.
+      **The proposed fix — migrate to `api.subo.gg` — was rejected.** `api.subo.ai` is the
+      documented production API base URL: it is in `openapi_spec.py`'s server list, in every
+      curl sample, in the Bruno/Postman collection, on the Account page, and in every
+      integration a customer has already written. Moving it breaks all of them and buys a
+      deprecation window in exchange for a canonical signal we can send for free. **`subo.ai`
+      stays load-bearing as the API host, permanently, and that is fine** — a subdomain of the
+      old registrable domain serving the API is not an entity split as long as every crawlable
+      thing on it points home.
+      Shipped in the app repo (`web2/public_api/docs.py`), three parts that only work together:
+      1. `/docs` now carries `<link rel="canonical" href="https://subo.gg/api/">`. Canonical,
+         **not** `noindex`: noindex drops the URL and passes nothing, a canonical consolidates
+         the links already pointing at it. Note the target — **`subo.gg/api/`, not
+         `subo.gg/docs`**, which does not exist; `/api/` is the crawlable, server-rendered
+         rendering of the same API, and the Scalar page is a JS shell with nothing in its body.
+      2. `/llms.txt` now carries `Link: <https://subo.gg/llms.txt>; rel="canonical"`, the same
+         header mechanism `/v1/recipes` has used since 2026-08-07. The body already said as
+         much in prose; an assistant that cites a URL without reading the prose now cites the
+         right one.
+      3. **`api.subo.ai/robots.txt` is a real robots file for the first time.** It previously
+         **302'd to `/app`** — it fell through app.py's catch-all — which a crawler reads as
+         "no robots.txt, crawl everything." `Disallow: /` plus explicit `Allow` for the four
+         documentation paths. **⚠️ This corrects an assumption recorded in the robots.txt block
+         below**, which says "`subo.ai/robots.txt` 301s to `subo.gg/robots.txt`, so the second
+         zone needs no separate setting." True of the apex zone; **`api.subo.ai` is a different
+         host served by the Quart app, not by Cloudflare's redirect**, and it was never covered.
+      **Do not "tidy" this by disallowing `/docs`** — a URL a crawler cannot fetch is a
+      canonical it never reads, strictly worse than the state before. The same warning is in
+      `docs.py` and in `web2/public_api/CLAUDE.md`.
+      **Not done, and not needed:** Change of Address was already filed **2026-07-29** (see the
+      checked item above). It would not have helped here anyway — CoA is for a site that is
+      fully moving, and `api.subo.ai` is explicitly staying.
+      **Site half — stop feeding the old domain (same day).** The canonical fixes how the URL
+      is *indexed*; it does nothing about the fact that we were the ones linking to it. Four
+      follow links on subo.gg pointed straight at `api.subo.ai/docs`, one of them from the
+      homepage. All four now land on `/api/`, which links onward to Scalar in one hop:
+      | Surface | Was | Now |
+      |---|---|---|
+      | `DeveloperAPI.astro` (homepage) | two CTAs: `/api/` **and** `api.subo.ai/docs` | one CTA → `/api/`. Label is `ctaGuide ?? ctaDocs` — `ctaGuide` only exists in **en/es**, so de/fr/it/pt-br keep their existing "View API Docs" wording and need **no new translation**. |
+      | `en.json` footer, Resources | `API Quickstart` → `/api/` **and** `API Reference` → `api.subo.ai/docs` | the `API Reference` row is **removed**; Quickstart already covered it. Only `en.json` had it. |
+      | `TemplatePage.astro` "Build it with the API" | `api.subo.ai/docs`, `target="_blank"` | `/api/`, same tab (internal). This was on **every** template page. |
+      | `templates.json` `docs` field (agent feed) | `https://api.subo.ai/docs` | `https://subo.gg/api/` |
+      `npm run check` passes; `dist/index.html`, `dist/templates/*/` and `dist/templates.json`
+      are clean of `api.subo.ai`.
+      **Deliberately left pointing at `api.subo.ai`:** `src/pages/api.astro` (`REFERENCE_URL`,
+      `OPENAPI_URL`) and `public/llms.txt` — that page and that file exist *to* hand off to the
+      API host, and `api-surface.json`'s `baseUrl` is the literal API base URL. Also **17 deep
+      links across the 10 recipe pages** (`api.subo.ai/docs#tag/Script/operation/replaceScript`
+      and friends): they target specific Scalar operations and `/api/` has no equivalent anchor,
+      so swapping them would degrade the page to make a metric look better. The canonical on
+      `/docs` covers them.
+      **Still pending:** the app repo change is **edit-only from this session**; it ships when
+      the user next deploys the web app. The subo-site half ships on the next site deploy.
+      Verify live with `curl -sI https://api.subo.ai/robots.txt` (expect `200`, `text/plain`)
+      and `curl -s https://api.subo.ai/docs | grep canonical`.
 - [x] **App user-facing messages scrubbed subo.ai → subo.gg (2026-08-01).** The bot's
       in-Discord/DM messages were still emitting old-domain links. Runtime precedence is
       **DB row wins, code default is fallback** (`getMessageByEnum`: `user_messages` row

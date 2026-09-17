@@ -1,7 +1,15 @@
 ---
 const { translations } = Astro.props;
-// ctaGuide points at the on-domain /api quickstart. Rendered conditionally so
-// locales that haven't picked up the key yet simply show the original two CTAs.
+// One API CTA, and it stays on subo.gg. This used to render two — a quickstart
+// button to /api/ plus a "View API Docs" button straight to api.subo.ai/docs —
+// which made the homepage, the highest-authority page on the site, a follow link
+// feeding the old registrable domain. api.subo.ai is staying put as the API host
+// (every existing integration is pinned to it), so the fix is to stop pointing at
+// it from here: /api/ is the same material, crawlable, and links onward to the
+// Scalar reference in one hop.
+// ctaGuide is the better label but only exists in en/es so far; ctaDocs is the
+// fallback every locale has. Both land in the same place, so a locale missing
+// ctaGuide loses nothing but the wording.
 const { title, subtitle, features, ctaDocs, ctaKey, ctaGuide } = translations;
 ---
 
@@ -46,10 +54,7 @@ const { title, subtitle, features, ctaDocs, ctaKey, ctaGuide } = translations;
       ))}
     </div>
     <div class="developer-api__ctas">
-      {ctaGuide && (
-        <a href="/api/" class="button button--accent-bg">{ctaGuide}</a>
-      )}
-      <a href="https://api.subo.ai/docs" class={ctaGuide ? 'button button--primary-border' : 'button button--accent-bg'} target="_blank" rel="noopener noreferrer">{ctaDocs}</a>
+      <a href="/api/" class="button button--accent-bg">{ctaGuide ?? ctaDocs}</a>
       <a href="https://app.subo.gg/app/account" class="button button--primary-border" target="_blank" rel="noopener noreferrer">{ctaKey}</a>
     </div>
   </div>

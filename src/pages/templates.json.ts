@@ -31,7 +31,7 @@ export async function GET() {
         name: 'Subo template catalog',
         description:
           'Ready-made, cloneable Subo survey/poll/quiz templates. Clone via the web app link, or build programmatically via the Subo Public API.',
-        docs: 'https://api.subo.ai/docs',
+        docs: 'https://subo.gg/api/',
         count: templates.length,
         templates,
       },
