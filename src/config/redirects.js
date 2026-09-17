@@ -19,6 +19,11 @@ export const trackedRedirects = {
     name: 'permissions',
     description: 'Notion Permissions'
   },
+  'custom-bot-setup': {
+    url: 'https://suboai.notion.site/Custom-Bot-make-your-own-Survey-Bot-742f26396f364c12b12b18d5fcc3ceaf',
+    name: 'custom_bot',
+    description: 'Custom Bot Setup Guide'
+  },
   xp: {
     url: 'https://suboai.notion.site/XP-system-XP-and-roles-for-participants-acb28a7acb6c476cbfaafd0ad6c3149d',
     name: 'understanding_xp',
