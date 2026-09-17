@@ -14,7 +14,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 
 				<h1 class="title-text heading">Privacy Policy</h1>
 
-			<div class="subtitle-text title-box__text content_box"><p>&nbsp;Last updated: <em>February 24, 2026.</em>&nbsp;</p>
+			<div class="subtitle-text title-box__text content_box"><p>&nbsp;Last updated: <em>September 16, 2026.</em>&nbsp;</p>
 </div>
 
 		</div>
@@ -58,6 +58,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 							<div class="content-text"><p>We are the controller and responsible for your data. Here is the Personal Data we collect:</p>
 <ul>
 <li><strong>Profile Data</strong>: by accessing and using the Service, we will receive from Discord your Discord ID, username, and the name and identifier of the Discord server you come from. This information will be associated with a unique identifier that we generate for you. You may also be asked to provide Personal Data such as your email address, age, gender, language or location.</li>
+<li><strong>Account and login data</strong>: when a server owner or admin signs in to the Subo web app with Discord, or installs Subo from it, Discord shares your email address, whether Discord has verified that address, and the language preference set on your Discord account. The address is kept on your Discord identity record. It becomes the address we write to only if Discord has verified it and you have not already set a contact address yourself: one you enter on your account page is a deliberate choice and always takes precedence. We also store the access tokens Discord issues at sign-in, encrypted, so the web app can re-check which servers you administer without asking you to sign in again. Your language preference is used to show Subo to you in your own language. Members who only answer surveys are not asked for an email address at sign-in.</li>
 <li><strong>Survey data</strong>: when you create a questionnaire on our platform, we collect the content of the questionnaire and its attributes. We also collect metadata such as the date and time of creation.</li>
 <li><strong>Respondent Data</strong>: when you participate and answer questions from our surveys, we will also collect your answers such as personal opinions on the topic of the research (products and services, brands and companies), declared behaviors, demographic information (including marital status, family details, occupation, education, media usage, income bracket, home ownership). In some cases, you may be asked to voluntarily provide Personal Data which may be considered "sensitive", including racial and ethnic origin, political and religious beliefs, sexual orientation and health or disability status. You may refuse to answer these or any other questions or discontinue participation at any time.</li>
 <li><strong>Web Survey Data</strong>: if you respond to a survey through the web interface rather than Discord, we may collect additional technical data including your IP address, browser type, device type, and session identifiers for access control, fraud prevention, and service operation.</li>
@@ -99,9 +100,10 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <li>Verify your identity and prevent fraudulent activity: we may use a combination of questions, location data, IP address and digital fingerprinting techniques to identify participants we do not want to access certain surveys.</li>
 <li>Manage your account (if you contact us, we can associate your user identifier to your account details to better support you).</li>
 <li>Communicate with you regarding your participation in the program.</li>
+<li>Notifications and service messages: we write to creators about their own account and communities. Messages about your account itself, such as a project that failed to open, an export that is ready, or a subscription that needs attention, are transactional and are always sent. Product updates, tips and occasional check-ins, and invitations to help with Subo's own research, are optional: you can turn either category off at any time on your account page at <a href="https://app.subo.gg/app/account" target="_blank">app.subo.gg/app/account</a>. These messages reach you on whichever surface we can use, which may be Discord, email, or the notifications area of the web app.</li>
 <li>Establish a leaderboard ranking different users for the servers you belong to. XP tracking requires persistent participation history; monthly leaderboard scores reset but the underlying history is retained. Role reward eligibility requires storing qualifying actions permanently.</li>
 <li>Recurring and scheduled surveys: automated delivery on creator-configured schedules. Participation remains voluntary. Response data is handled identically to single-instance surveys.</li>
-<li>Creator Network: as part of our own market research, we may contact Subo survey creators (server owners) to invite them to participate in surveys conducted by Subo/ClearSwell. This uses contact information (Discord username, server association) already held as part of your creator account. You may opt out at any time by contacting hello@subo.ai.</li>
+<li>Creator Network: as part of our own market research, we may contact Subo survey creators (server owners) to invite them to participate in surveys conducted by Subo/ClearSwell. This uses contact information (Discord username, server association) already held as part of your creator account. You may opt out at any time on your account page at <a href="https://app.subo.gg/app/account" target="_blank">app.subo.gg/app/account</a>, or by contacting hello@subo.ai.</li>
 <li>Service providers: we may work with trusted service providers to help us run our business, for example cloud data storage, survey/data collection technology, validation and anti-fraud services.</li>
 <li>OpenAI API: we use the OpenAI API to (1) analyze and summarize open-ended text responses, (2) generate survey drafts via the <code>/draft</code> command, and (3) process Full Anonymous survey responses where no identity data is included. The OpenAI API will not use the data to train or improve its models, but will retain the data for abuse and misuse monitoring purposes for a maximum of 30 days. You can learn more about <a href="https://openai.com/policies/api-data-usage-policies" target="_blank">how the OpenAI API uses your data in its privacy policy</a>.</li>
 <li>Payment processing (Stripe): subscription payments are processed by Stripe, Inc. Subo does not store full payment card details. We receive subscription status (tier, renewal date, server association) from Stripe. <a href="https://stripe.com/privacy" target="_blank">Stripe's privacy policy</a> applies to payment data.</li>
@@ -128,6 +130,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <tr><td>XP and participation history</td><td>Retained until profile deletion; monthly leaderboard scores reset but underlying history persists</td></tr>
 <tr><td>User profile</td><td>Until deletion via /profile or email request; Full Anonymous responses cannot be attributed and are not deleted individually</td></tr>
 <tr><td>Creator account data</td><td>Duration of subscription + up to 90 days post-closure</td></tr>
+<tr><td>Account login data (email address, language preference, encrypted Discord access tokens)</td><td>Retained while the account exists; tokens are replaced at each sign-in and deleted with the account</td></tr>
 <tr><td>OpenAI API data</td><td>Maximum 30 days (abuse monitoring only; no model training)</td></tr>
 <tr><td>Stripe billing data</td><td>Per Stripe's policy and applicable financial law</td></tr>
 <tr><td>Google Analytics data</td><td>Per GA4 data retention settings (configurable in GA4 Admin &gt; Data Settings)</td></tr>
@@ -174,8 +177,8 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <table>
 <thead><tr><th>Legal basis</th><th>Data and purposes covered</th></tr></thead>
 <tbody>
-<tr><td>Contract performance</td><td>Profile data, survey responses: core service delivery</td></tr>
-<tr><td>Legitimate interests</td><td>XP/leaderboard data, usage analytics, Creator Network outreach</td></tr>
+<tr><td>Contract performance</td><td>Profile data, account login data, survey responses: core service delivery and transactional messages about your own account</td></tr>
+<tr><td>Legitimate interests</td><td>XP/leaderboard data, usage analytics, Creator Network outreach, optional product and research messages to creators (opt out at any time)</td></tr>
 <tr><td>Consent</td><td>Sensitive personal information voluntarily provided in survey responses; can be withdrawn at any time</td></tr>
 <tr><td>Legal obligation</td><td>Financial records and compliance obligations</td></tr>
 </tbody>
