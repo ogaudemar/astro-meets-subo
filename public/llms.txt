@@ -12,6 +12,20 @@ AI agents can use this API to:
 - Retrieve responses and trigger AI analysis
 - React to real-time events via webhooks (project opened/closed, response submitted, analysis completed)
 
+## Use Subo from an agent (MCP)
+
+Subo runs an MCP (Model Context Protocol) server over the same API, so an AI app can act on a community directly instead of calling REST endpoints.
+
+- Endpoint: `https://api.subo.ai/mcp` (streamable HTTP)
+- Auth header: `Authorization: Bearer sbo_live_…`, using an API key of type "Bot or agent" created by a community Admin on the Account page under API Access (https://app.subo.gg/app/account). The key's access level (admin or creator) caps what the agent can do; a creator-level key works over MCP too. The confirmation panel shows a ready-to-paste config.
+- Claude Code: `claude mcp add --transport http --scope user subo https://api.subo.ai/mcp --header "Authorization: Bearer sbo_live_…"` (run in a terminal, then restart Claude Code)
+- One key = one community. No operation takes a community id; the key's community is implied. The key acts with its owner's current access and loses it within about ten minutes of the owner losing it.
+- 43 operations, each labeled with one of four tiers. Read-only and normal changes need no special care. **Outward** operations reach real people (opening or closing a project, granting XP or accomplishments, firing a test webhook); **Destructive** operations delete data or invalidate a secret. Confirm both with the human before calling them.
+- Prompts (workflows the server ships, shown as slash commands in Claude Code, e.g. `/subo:weekly_review`): `weekly_review` (optional `days`, default 14) reviews recent projects, responses and analysis and proposes the next project, read-only until approved; `build_from_goal` (`goal`) clones or drafts a script, validates it, and stops before `open_project`. Claude Code passes only the first whitespace-separated word as a prompt argument, so a multi-word `goal` arrives truncated there.
+- Resources: `subo://guide/authoring` (read before writing a script: block types, scales, piping, scoring), `subo://recipes` and `subo://recipes/{slug}`, `subo://openapi`, `subo://community`.
+- Deliberately not available through MCP: creating, rotating or deleting API keys; changing a member's access level; connecting a new verified-audience source (it requires a human browser sign-in).
+- Setup guide: https://subo.gg/blog/connect-discord-community-to-ai-agent/
+
 ## Docs
 
 - [API Quickstart & Recipes](https://subo.gg/api): Static, crawlable quickstart plus end-to-end recipes (AI script generation, opening a project, pulling responses, AI analysis, webhook signature verification) with copy-paste curl. Start here.
@@ -48,7 +62,7 @@ Key resources:
 - **Members** — View all community members and manage their XP, access levels and accomplishments
 - **Webhooks** — Real-time event subscriptions (project lifecycle, response submitted, analysis completed)
 - **AI Generation** — Auto-generate a full survey script from a plain-text intent description
-- **API Keys** — Create and revoke scoped keys
+- **API Keys** — Create and revoke scoped keys (REST only; not exposed through MCP)
 
 ## Most Useful Endpoints for AI Agents
 

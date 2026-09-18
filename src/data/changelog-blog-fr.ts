@@ -77,4 +77,9 @@ export const blogFr: Record<string, BlogFrRow> = {
 		summary:
 			"Une Convo se déroule désormais par défaut dans un message privé Discord, avec un fil privé puis un lien web en solutions de repli automatiques. Sur un projet anonyme, c'est le DM ou le web, jamais un fil privé : un fil est lisible par toute personne ayant la permission Gérer les fils. Disponible sur tous les plans, même le gratuit.",
 	},
+	"subo-mcp-server": {
+		title: "Gère ta communauté Discord en le demandant à ton assistant IA",
+		summary:
+			"Le serveur MCP de Subo connecte Subo à Claude Code et à d'autres applis d'IA. Décris le projet que tu veux : ton assistant le construit, le vérifie, le lance, et te demande avant toute action qui touche tes membres. Configuration en anglais pour l'instant.",
+	},
 };

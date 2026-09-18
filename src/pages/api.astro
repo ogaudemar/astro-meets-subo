@@ -39,6 +39,8 @@ const {
 const KEY_URL = 'https://app.subo.gg/app/account';
 const REFERENCE_URL = 'https://api.subo.ai/docs';
 const OPENAPI_URL = 'https://api.subo.ai/v1/openapi.json';
+const MCP_URL = 'https://api.subo.ai/mcp';
+const MCP_GUIDE = '/blog/connect-discord-community-to-ai-agent/';
 
 const pageTitle = 'Subo API Quickstart and Recipes';
 const pageDescription =
@@ -76,6 +78,10 @@ const faqs = [
   {
     q: 'How do I get survey responses out of Subo?',
     a: 'Either poll GET /communities/{communityId}/projects/{projectId}/responses, which is paginated, or subscribe a webhook to the response.submitted event and receive each submission as it happens. Webhooks are the recommended path for pipelines.',
+  },
+  {
+    q: 'Does Subo have an MCP server?',
+    a: 'Yes, at https://api.subo.ai/mcp. Authenticate with Authorization: Bearer and an API key of type Bot or agent. It exposes 43 operations over the same API, bound to the key’s one community, and labels each one read-only, normal change, Outward (reaches real people) or Destructive (deletes), so an AI app knows which to confirm with you first. It cannot manage API keys, change access levels or connect a verified-audience source.',
   },
   {
     q: 'How do I verify a Subo webhook signature?',
@@ -122,6 +128,7 @@ const toc = [
   { href: '#analysis', label: 'Summarize with AI' },
   { href: '#webhooks', label: 'Webhooks' },
   { href: '#templates', label: 'Clone a template' },
+  { href: '#mcp', label: 'Use it from an AI agent (MCP)' },
   { href: '#reference', label: 'Reference tables' },
   { href: '#faq', label: 'FAQ' },
 ];
@@ -745,6 +752,62 @@ curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/templates/$TEMPLATE_ID/clone
             <p>
               A machine-readable list of every public template, with slugs and clone
               links, lives at <a href="/templates.json">/templates.json</a>.
+            </p>
+          </section>
+
+          <!-- ── MCP ────────────────────────────────────────────────────── -->
+          <section id="mcp" class="api-section">
+            <h2 class="mono">Use Subo from an AI agent (MCP)</h2>
+            <p>
+              Everything on this page is also reachable through the Subo MCP server.
+              MCP (Model Context Protocol) is the open standard AI apps use to connect to
+              outside tools, so an AI assistant such as Claude Code can build, launch and
+              read projects in your community without you writing a request.
+            </p>
+            <pre><code>{`Endpoint:  ${MCP_URL}
+Header:    Authorization: Bearer sbo_live_xxxxxxxxxxxxxxxxxxxxxxxx`}</code></pre>
+            <p>
+              An Admin creates the key on the <a href={KEY_URL} target="_blank" rel="noopener noreferrer">Account page</a>
+              under <strong>API Access</strong>, choosing <strong>Bot or agent</strong>. The
+              confirmation panel shows the connection config with the key already in it. For
+              Claude Code, run this in a terminal (not inside Claude Code), then restart it:
+            </p>
+            <pre><code>{`claude mcp add --transport http --scope user subo ${MCP_URL} --header "Authorization: Bearer $SUBO_API_KEY"`}</code></pre>
+            <p>
+              The connection is bound to the key&rsquo;s one community, so no operation takes a
+              community id. Its 43 operations each carry one of four labels your AI app can read:
+            </p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Label</th><th>Meaning</th></tr></thead>
+                <tbody>
+                  <tr><td>Read-only</td><td>Reads data, changes nothing.</td></tr>
+                  <tr><td>Normal change</td><td>Creates or edits something nobody sees yet, such as a draft project or its script.</td></tr>
+                  <tr><td><strong>Outward</strong></td><td>Reaches real people: opening or closing a project, granting XP or accomplishments, firing a test webhook.</td></tr>
+                  <tr><td><strong>Destructive</strong></td><td>Deletes data or invalidates a secret.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              The server also ships two prompts, which Claude Code shows as slash commands:
+              <code>weekly_review</code> reviews recent projects and their responses and
+              proposes the next one without changing anything, and
+              <code>build_from_goal</code> turns a goal into a validated project and stops
+              before opening it. Claude Code passes only the first word typed after a command,
+              so <code>build_from_goal</code> works best from an app that asks for its
+              <code>goal</code> as a field. Its resources include the script authoring guide
+              (<code>subo://guide/authoring</code>), the <a href="/recipes/">recipes</a> and the
+              OpenAPI spec, so an agent can read them before it writes.
+            </p>
+            <p>
+              Three things are deliberately left out: creating, rotating or deleting API keys,
+              changing a member&rsquo;s access level, and connecting a new verified-audience
+              source, which needs a person to sign in. Requests share the key&rsquo;s
+              <a href="#reference">rate limit</a> with any other API use.
+            </p>
+            <p>
+              Step-by-step setup, scopes and key hygiene:
+              <a href={MCP_GUIDE}>How to connect your Discord community to an AI agent</a>.
             </p>
           </section>
 
