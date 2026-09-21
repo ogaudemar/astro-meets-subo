@@ -3,13 +3,14 @@ title: "How to connect your Discord community to an AI agent with the Subo MCP s
 description: "Set up the Subo MCP server in Claude Code or another AI app: create an agent key, run one command in a terminal, restart, and check for 43 operations. Includes the safety labels and key hygiene."
 pubDate: "Sep 18 2026"
 author: "Subo Team"
+heroImage: "/images/blog/subo-mcp-server/grok-bot-connection.png"
 tags: ["tutorial", "api", "mcp", "ai-agents"]
 draft: false
 faq:
   - q: "What is the Subo MCP server address?"
     a: "<code>https://api.subo.ai/mcp</code>. Your AI app authenticates with the header <code>Authorization: Bearer sbo_live_…</code>, using an API key of type Bot or agent created on the Account page of the Subo web app."
   - q: "Which AI apps can connect to Subo?"
-    a: "Any app that supports the Model Context Protocol and lets you add a remote (HTTP) server with a custom header. The Account page gives you a one-line command for Claude Code and a JSON block for other apps."
+    a: "Any app that supports the Model Context Protocol and lets you add a remote (HTTP) server with a custom header. We have connected Subo from Claude Code and from Grok Bot. The Account page gives you a one-line command for Claude Code and a JSON block for other apps."
   - q: "I added the connection but my AI app does not see Subo. What went wrong?"
     a: "Usually one of three things. The command was pasted into an AI chat instead of a terminal. The connection was added with Claude Code's default local scope from a different folder than the one you are working in. Or the app was not restarted: a connection added while a session is running never appears in that session."
   - q: "Can the agent delete my projects or message my members without asking?"
@@ -29,7 +30,7 @@ Setup takes about five minutes. Most of the problems we have seen came from thre
 What you need:
 
 - **Admin** access to a Subo community, and the [web app](https://app.subo.gg/) open and signed in. Only Admins see **API Access** on the Account page, so only Admins can create the key.
-- an AI app that supports MCP. This guide uses **Claude Code**, because the Account page gives you a ready-made command for it. Other apps get a JSON block, covered in step 2.
+- an AI app that supports MCP. This guide uses **Claude Code**, because the Account page gives you a ready-made command for it. Other apps get a JSON block, covered in step 2. We have connected Subo from Claude Code and from Grok Bot; any app that can add a remote server with a custom header should work the same way.
 
 ---
 
@@ -78,7 +79,11 @@ That is the command the Account page gives you, with `--scope user` added. The n
 }
 ```
 
-Where that file lives, and whether the outer key is called `mcpServers`, depends on the app, so check its documentation for "remote MCP server". What your app needs to support is a remote (HTTP) server with a custom header.
+Where that file lives, and whether the outer key is called `mcpServers`, depends on the app, so check its documentation for "remote MCP server". What your app needs to support is a remote (HTTP) server with a custom header. Some apps skip the file and ask for the key in a settings field instead, which is how Grok Bot does it:
+
+![Grok Bot with the Subo agent key saved, reporting a successful read-only check of the connected community](/images/blog/subo-mcp-server/grok-bot-connection.png)
+
+A good first move in any app is the one above: ask it to read something harmless and report back, before you let it change anything.
 
 ---
 

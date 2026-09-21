@@ -21,7 +21,7 @@ faq:
 
 Tell your AI assistant what you want to ask your community, and it builds the project in Subo, checks the script, and launches it for you. You never open the dashboard.
 
-That is what the **Subo MCP server** does, live from today. MCP stands for Model Context Protocol, the open standard AI apps use to connect to outside tools. If your AI app supports it (Claude Code does, and so do a growing number of others), it can now run your Subo community with you.
+That is what the **Subo MCP server** does, live from today. MCP stands for Model Context Protocol, the open standard AI apps use to connect to outside tools. If your AI app supports it, it can now run your Subo community with you. We have connected Subo from Claude Code and from Grok Bot, and any app that can reach a remote MCP server with a custom header works the same way.
 
 ---
 
