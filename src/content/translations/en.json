@@ -1481,5 +1481,52 @@
   "ctaDocs": "View API Docs",
   "ctaKey": "Get API Key",
   "ctaGuide": "API Quickstart"
-}
+},
+
+  "whatsNew": {
+    "pageTitle": "What's New in Subo",
+    "pageDescription": "Everything Subo has shipped since March 2026, oldest first, with a link to every announcement.",
+    "heroTitle": "WHAT'S NEW",
+    "heroSubtitle": "Subo ships often and announces quietly. Here is what landed, in the order it happened.",
+    "jumpLabel": "Jump to",
+    "readMore": "Read the announcement",
+    "leadLabel": "Start here",
+    "changelogLink": "See every release in the changelog",
+
+    "eras": {
+      "everything": {
+        "navLabel": "Before March 2026",
+        "title": "Before March 2026",
+        "body": "Subo has been asking Discord communities questions since 2022, and most of those years were announced only in the Support server. The full archive is in the changelog."
+      },
+      "since-march": {
+        "navLabel": "Since March 2026",
+        "title": "Since March 2026",
+        "range": "March to June 2026",
+        "body": "This is where Subo stopped being only a Discord bot. Start with the web app: everything after it is something you would use through it."
+      },
+      "since-june": {
+        "navLabel": "Since June 2026",
+        "title": "Since June 2026",
+        "range": "June 2026 onward",
+        "body": "If you read one of these, read the scale family: ratings, Likert, NPS and ranking, asked right in the chat and stored as numbers."
+      }
+    },
+
+    "entries": {
+      "subo-web-app-launch": "There is a website now, and your community is already in it: build projects, read results and manage members from a browser.",
+      "content-blocks-new-way-to-design-survey-flows": "Say something in a script without asking a question: welcome screens, consent gates, section breaks and score reveals.",
+      "public-api-launch": "Your projects, responses and members are reachable over HTTP at api.subo.ai.",
+      "action-blocks-release": "A script can hand out a role, XP or a reward in the middle of a Convo, then carry on.",
+      "scoring-piping-quizzes": "Scoring, answer piping and calculated fields make quizzes, personality surveys and prediction contests native.",
+      "polls-grading-invite-customization": "Polls grade and reward like surveys, with custom answer buttons, emoji and thumbnails on the invitation.",
+      "clone-surveys-across-servers": "Right-click a Subo poll or survey in another server, pick Clone, and it lands in yours ready to edit.",
+      "subo-template-library-launch": "A free library of ready-to-run surveys, polls and quizzes, cloned into your community in one click.",
+      "xp-history": "Every XP change now carries a reason, visible to the member on the web and in Discord.",
+      "personalize-discord-survey-messages": "Type @, [ or : in any message field to drop in a role mention, a variable or an emoji.",
+      "discord-rating-scale-nps-ranking-questions": "Star and emoji ratings, agreement and satisfaction scales, the standard NPS question, and ranking without dragging.",
+      "convos-in-your-dms": "A Convo runs in a member's DMs by default, with a private thread and a web link as automatic fallbacks.",
+      "subo-mcp-server": "Connect Subo to Claude Code or another AI app, describe the project you want, and watch it get built."
+    }
+  }
 }
