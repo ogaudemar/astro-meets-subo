@@ -399,7 +399,7 @@
         {
         "name": "CUSTOM",
         "description": "Your own bot, avatar and description with VIP features!",
-        "price": "$99.99/year",
+        "price": "$199.99/year",
         "image": "/images/custom-bot.png"
         }
     ],
@@ -670,6 +670,7 @@
     "So we built Subo. Bootstrapped, self-funded, and fiercely independent, entirely focused on making feedback feel like a conversation rather than a chore. Discord was the perfect place to start: a platform where communities were already talking, and where the tools for listening were badly missing.",
     "Since launch, Subo has grown to serve over <strong>15,000 Discord servers</strong>, from gaming guilds to creator communities, DAOs, sports clubs, brand communities, and educational groups. We're a small team, and we intend to stay that way."
   ],
+  "founderNote": "One of our co-founders has spent a career at the intersection of communities and research: Ciao, one of Europe's first online communities and a pioneer of online research; then online community at entertainment research agency OTX; then heading respondent sourcing and panels at Ipsos globally. <a href=\"https://www.linkedin.com/in/ogaudemar/\" target=\"_blank\" rel=\"noopener noreferrer\">More on LinkedIn</a>.",
   "statsTitle": "BY THE NUMBERS",
   "stats": [
     { "number": "15,000+", "label": "Discord servers" },
@@ -746,6 +747,69 @@
     "Upgrade, cancel or manage subscriptions via Stripe Billing Portal"
   ],
   "stripeCardButton": "Upgrade with Stripe",
+  "consumerNote": "Need an invoice or vendor approval? See <a href=\"#for-brands\">Business</a> below. Custom Bot is included there.",
+  "business": {
+    "eyebrow": "FOR BRANDS & AGENCIES",
+    "title": "Make your community your best source of answers",
+    "subtitle": "Subo under your own name and avatar, billing your finance team can process, and research help whenever you want it.",
+    "note": "Built for community, Live Ops, and insights teams running branded Discord servers. Hobby and creator servers: stick with Free to VIP above.",
+    "includesLabel": "WHAT YOU GET",
+    "plans": [
+      {
+        "id": "business",
+        "name": "BUSINESS",
+        "badge": "Most teams start here",
+        "description": "One brand community. Invoice-ready. Custom Bot included.",
+        "price": "$79/month",
+        "priceSub": "$790/year",
+        "features": [
+          "Custom Bot and white-label included: your name, avatar and bio",
+          "Stripe invoice or PO, monthly or annual (not Discord in-app purchase)",
+          "Eligible for supplier, security and vendor onboarding",
+          "A named commercial contact at Subo",
+          "Everything VIP can do, on the communities covered by your agreement",
+          "API and webhooks for your data stack and agents, MCP-friendly"
+        ],
+        "cta": "Book a call",
+        "secondaryCtaLabel": "Prefer email?",
+        "secondaryCtaText": "hello@subo.ai",
+        "footnote": "Vendor questionnaires and procurement portals are available on Business and above."
+      },
+      {
+        "id": "agency",
+        "name": "AGENCY",
+        "description": "Multi-community orgs and Discord agencies: one relationship, one invoice.",
+        "price": "$199/month",
+        "priceSub": "$1,990/year",
+        "features": [
+          "Everything in Business",
+          "Multi-community coverage under one org: up to 10 communities, more on request",
+          "White-label friendly for client work",
+          "A single commercial contact and billing entity"
+        ],
+        "cta": "Book a call"
+      },
+      {
+        "id": "enterprise",
+        "name": "ENTERPRISE",
+        "description": "When legal and security need a real agreement.",
+        "price": "Custom",
+        "features": [
+          "Custom MSA, order form and annual contract value",
+          "Security and privacy paperwork as required, DPA included",
+          "Roadmap discussion for SSO and advanced compliance when the deal needs it",
+          "Onboarding suited to large brand or multi-workspace setups"
+        ],
+        "cta": "Contact sales"
+      }
+    ],
+    "services": {
+      "title": "Research programs",
+      "body": "Need help designing community research, recruitment and engagement, incentives, or a 90-day listening program? Launch sprints and retainers are available to Business customers, on the same call.",
+      "cta": "Book a call",
+      "teamNote": "Subo is <a href=\"/about/\">built by experts</a> in research and communities, from recruitment and engagement to the respondent experience."
+    }
+  },
   "faqSectionTitle": "Frequently Asked Questions",
   "faqs": [
     {
@@ -755,6 +819,10 @@
     {
       "question": "How do I change or cancel a subscription?",
       "answer": "You can manage your subscription at any time in the Subo web app's server settings. If you subscribed through Discord, you can manage all your Discord subscriptions in Discord (User settings > Subscriptions)."
+    },
+    {
+      "question": "Can I pay by invoice or purchase order instead of Discord?",
+      "answer": "Yes, on Business and above. Those plans are billed directly through Stripe, monthly or annual, with an invoice or PO your finance team can process. They are also the plans eligible for supplier, security and vendor onboarding, which the self-serve Discord tiers are not. Book a call to get set up."
     }
   ]
 },
@@ -995,7 +1063,7 @@
       },
       {
         "question": "How much does the Custom Survey Bot cost?",
-        "answer": "The Custom Survey Bot costs $99.99 per year."
+        "answer": "The Custom Survey Bot costs $199.99 per year."
       },
       {
         "question": "Are there monthly subscriptions available for the Custom Survey Bot?",
@@ -1014,7 +1082,7 @@
   "ctaSection": {
     "title": "CREATE YOUR OWN SURVEY BOT",
     "description": "Join the ranks of servers with their own custom-branded survey bots. Get all the power of Subo with your unique identity.",
-    "ctaPrimary": { "text": "Get Started - $99.99/year", "href": "/pricing/" },
+    "ctaPrimary": { "text": "Get Started - $199.99/year", "href": "/pricing/" },
     "ctaSecondary": { "text": "Contact Support", "href": "/support/" }
   }
 },

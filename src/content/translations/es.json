@@ -506,19 +506,19 @@
       {
         "name": "PREMIUM",
         "description": "¡Para usuarios avanzados y servidores medianos!",
-        "price": "$2.99/mes<br>$29.99/año",
+        "price": "2,99 $/mes<br>29,99 $/año",
         "image": "/images/subo-premium-100.png"
       },
       {
         "name": "VIP",
         "description": "¡Para servidores grandes y patrocinadores generosos!",
-        "price": "$4.99/mes<br>$49.99/año",
+        "price": "4,99 $/mes<br>49,99 $/año",
         "image": "/images/subo-vip-100.png"
       },
       {
         "name": "PERSONALIZADO",
         "description": "Tu propio bot, avatar y descripción con funciones VIP",
-        "price": "$99.99/año",
+        "price": "199,99 $/año",
         "image": "/images/custom-bot.png"
       }
     ],
@@ -912,6 +912,13 @@
       "Mejora, cancela o gestiona la suscripción desde el portal de Stripe"
     ],
     "stripeCardButton": "Mejorar con Stripe",
+    "business": {
+      "eyebrow": "PARA MARCAS Y AGENCIAS",
+      "title": "Subo para comunidades de marca",
+      "subtitle": "Bot propio y marca blanca, factura o pedido de compra en lugar de la compra integrada en Discord, y ayuda con los estudios. Estos planes se ofrecen y se gestionan en inglés.",
+      "moreText": "Ver los planes Business (en inglés)",
+      "moreHref": "/pricing/#for-brands"
+    },
     "faqSectionTitle": "Preguntas frecuentes",
     "faqs": [
       {
@@ -1397,7 +1404,7 @@
         },
         {
           "question": "¿Cuánto cuesta el bot de encuestas personalizado?",
-          "answer": "El bot de encuestas personalizado cuesta 99,99 $ al año."
+          "answer": "El bot de encuestas personalizado cuesta 199,99 $ al año."
         },
         {
           "question": "¿Hay suscripciones mensuales para el bot de encuestas personalizado?",
@@ -1417,7 +1424,7 @@
       "title": "CREA TU PROPIO BOT DE ENCUESTAS",
       "description": "Únete a los servidores que ya tienen su propio bot de encuestas con marca propia. Toda la potencia de Subo con tu identidad.",
       "ctaPrimary": {
-        "text": "Empezar: 99,99 $/año",
+        "text": "Empezar: 199,99 $/año",
         "href": "/es/pricing/"
       },
       "ctaSecondary": {

@@ -5,6 +5,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, DISCORD_STORE_URL } from '../../consts';
 
 
 import PriceTable from '../../components/PriceTable.astro';
+import BusinessPlans from '../../components/BusinessPlans.astro';
 
 import translations from '../../content/translations/fr.json';
 
@@ -46,12 +47,13 @@ const { pricingPage } = translations;
     <section class="pricing-section">
         <div class="container">
         <PriceTable translations={translations} />
+        {pricingPage.consumerNote && (
+          <p class="consumer-note" set:html={pricingPage.consumerNote}></p>
+        )}
         </div>
     </section>
 
-
-
-
+    <BusinessPlans business={pricingPage.business} />
 
     <section class="faq-section">
         <div class="container">
@@ -116,6 +118,18 @@ const { pricingPage } = translations;
   .pricing-section {
     padding: 60px 0;
     background: transparent;
+  }
+
+  .consumer-note {
+    margin: 0 auto;
+    max-width: 640px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--grey-light);
+    line-height: 1.55;
+  }
+  .consumer-note :global(a) {
+    color: var(--accent);
   }
 
   .channels-section {

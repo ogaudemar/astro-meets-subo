@@ -36,6 +36,7 @@ const t = translations.about;
 				<div class="container container--small">
 					<h2 class="mono">{t.storyTitle}</h2>
 					{t.storyBody.map((p: string) => <p set:html={p} />)}
+					{t.founderNote && <p class="founder-note" set:html={t.founderNote} />}
 				</div>
 			</section>
 
@@ -124,6 +125,16 @@ const t = translations.about;
 }
 .about-story p:last-child {
 	margin-bottom: 0;
+}
+/* The one founder line on the site: set apart from the story, quieter than it. */
+.about-story .founder-note {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	font-size: 0.92rem;
+}
+.about-story .founder-note a {
+	color: var(--accent);
 }
 
 /* Stats */

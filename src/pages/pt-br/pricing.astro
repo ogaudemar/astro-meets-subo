@@ -5,6 +5,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, DISCORD_STORE_URL } from '../../consts';
 
 
 import PriceTable from '../../components/PriceTable.astro';
+import BusinessPlans from '../../components/BusinessPlans.astro';
 
 import translations from '../../content/translations/pt-br.json';
 
@@ -49,8 +50,7 @@ const { pricingPage } = translations;
         </div>
     </section>
 
-
-
+    <BusinessPlans business={pricingPage.business} />
 
     <section class="faq-section">
         <div class="container">

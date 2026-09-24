@@ -388,19 +388,19 @@
       {
         "name": "PREMIUM",
         "description": "Pour les utilisateurs avancés et serveurs moyens !",
-        "price": "$2.99/mois<br>$29.99/an",
+        "price": "2,99 $/mois<br>29,99 $/an",
         "image": "/images/subo-premium-100.png"
       },
       {
         "name": "VIP",
         "description": "Pour les gros serveurs et les soutiens généreux !",
-        "price": "$4.99/mois<br>$49.99/an",
+        "price": "4,99 $/mois<br>49,99 $/an",
         "image": "/images/subo-vip-100.png"
       },
       {
         "name": "PERSO",
         "description": "Ton propre bot, avatar et description avec les options VIP !",
-        "price": "$99.99/an",
+        "price": "199,99 $/an",
         "image": "/images/custom-bot.png"
       }
     ],
@@ -672,6 +672,7 @@
     "Alors on a construit Subo. Bootstrappé, autofinancé et indépendant, entièrement focalisé sur faire ressentir le feedback comme une conversation plutôt qu'une corvée. Discord était l'endroit parfait pour commencer : une plateforme où les communautés étaient déjà en train de parler, et où les outils pour écouter manquaient cruellement.",
     "Depuis son lancement, Subo est utilisé par plus de <strong>15 000 serveurs Discord</strong>, des guildes gaming aux communautés de créateurs, DAOs, clubs sportifs, communautés de marques et groupes éducatifs. On est une petite équipe, et on a bien l'intention de le rester."
   ],
+  "founderNote": "L’un de nos cofondateurs a passé sa carrière à la croisée des communautés et des études : Ciao, l’une des premières communautés en ligne en Europe et pionnière des études en ligne ; puis la communauté en ligne chez OTX, agence d’études spécialisée dans le divertissement ; puis la direction mondiale du sourcing de répondants et des panels chez Ipsos. <a href=\"https://www.linkedin.com/in/ogaudemar/\" target=\"_blank\" rel=\"noopener noreferrer\">Plus d’infos sur LinkedIn</a>.",
   "statsTitle": "EN CHIFFRES",
   "stats": [
     { "number": "15 000+", "label": "Serveurs Discord" },
@@ -731,6 +732,69 @@
     "Gère ton abonnement via le portail Stripe"
   ],
   "stripeCardButton": "Upgrade avec Stripe",
+  "consumerNote": "Besoin d’une facture ou d’un référencement fournisseur ? Voir <a href=\"#for-brands\">Business</a> ci-dessous. Le bot perso y est inclus.",
+  "business": {
+    "eyebrow": "POUR LES MARQUES ET LES AGENCES",
+    "title": "Faites de votre communauté votre meilleure source de réponses",
+    "subtitle": "Subo à votre nom et à votre image, une facturation que votre service financier peut traiter, et de l’aide sur vos études quand vous en avez besoin.",
+    "note": "Pensé pour les équipes communauté, Live Ops et insights qui animent un serveur Discord de marque. Serveurs perso et communautés de créateurs : restez sur les offres Gratuit à VIP ci-dessus.",
+    "includesLabel": "CE QUE VOUS OBTENEZ",
+    "plans": [
+      {
+        "id": "business",
+        "name": "BUSINESS",
+        "badge": "Le point de départ habituel",
+        "description": "Une communauté de marque. Facturation en règle. Bot perso inclus.",
+        "price": "79 $/mois",
+        "priceSub": "790 $/an",
+        "features": [
+          "Bot perso et marque blanche inclus : votre nom, votre avatar, votre bio",
+          "Facture Stripe ou bon de commande, au mois ou à l’année (pas d’achat intégré Discord)",
+          "Éligible aux processus de référencement fournisseur et de sécurité",
+          "Un contact commercial dédié chez Subo",
+          "Tout ce que permet VIP, sur les communautés couvertes par votre contrat",
+          "API et webhooks pour votre stack data et vos agents, compatibles MCP"
+        ],
+        "cta": "Réservez un appel",
+        "secondaryCtaLabel": "Vous préférez l’e-mail ?",
+        "secondaryCtaText": "hello@subo.ai",
+        "footnote": "Les questionnaires fournisseurs et les portails d’achats sont pris en charge à partir de Business."
+      },
+      {
+        "id": "agency",
+        "name": "AGENCE",
+        "description": "Organisations multi-communautés et agences Discord : une seule relation, une seule facture.",
+        "price": "199 $/mois",
+        "priceSub": "1 990 $/an",
+        "features": [
+          "Tout ce que contient Business",
+          "Couverture multi-communautés sous une seule organisation : jusqu’à 10 communautés, plus sur demande",
+          "Marque blanche adaptée au travail pour vos clients",
+          "Un seul contact commercial et une seule entité de facturation"
+        ],
+        "cta": "Réservez un appel"
+      },
+      {
+        "id": "enterprise",
+        "name": "ENTREPRISE",
+        "description": "Quand le juridique et la sécurité ont besoin d’un vrai contrat.",
+        "price": "Sur mesure",
+        "features": [
+          "Contrat-cadre et bon de commande sur mesure, engagement annuel",
+          "Documents sécurité et confidentialité selon vos exigences, DPA inclus",
+          "Discussion roadmap SSO et conformité avancée quand le projet le demande",
+          "Onboarding adapté aux grandes marques et aux organisations multi-espaces"
+        ],
+        "cta": "Contacter l’équipe commerciale"
+      }
+    ],
+    "services": {
+      "title": "Programmes d’études",
+      "body": "Besoin d’aide pour concevoir vos études communauté, le recrutement et l’engagement, les incitations ou un programme d’écoute sur 90 jours ? Des sprints de lancement et des accompagnements au forfait sont disponibles pour les clients Business, lors du même appel.",
+      "cta": "Réservez un appel",
+      "teamNote": "Subo est <a href=\"/fr/about/\">conçu par des experts</a> de la recherche et des communautés, du recrutement et de l’engagement jusqu’à l’expérience du répondant."
+    }
+  },
   "faqSectionTitle": "Questions fréquentes",
   "faqs": [
     {
@@ -740,6 +804,10 @@
     {
       "question": "Comment changer ou annuler un abonnement ?",
       "answer": "Tu peux gérer ton abonnement à tout moment dans les paramètres serveur de l’app web Subo. Si tu t’es abonné via Discord, tu peux gérer tous tes abonnements Discord dans Discord (Paramètres utilisateur > Abonnements)."
+    },
+    {
+      "question": "Puis-je payer sur facture ou bon de commande plutôt que via Discord ?",
+      "answer": "Oui, à partir de l’offre Business. Ces offres sont facturées directement via Stripe, au mois ou à l’année, avec une facture ou un bon de commande que votre service financier peut traiter. Ce sont aussi les seules offres éligibles aux processus de référencement fournisseur et de sécurité, contrairement aux offres en libre-service sur Discord. Réservez un appel pour la mise en place."
     }
   ]
 },
@@ -1011,7 +1079,7 @@
       },
       {
         "question": "Combien coûte le bot de sondage personnalisé ?",
-        "answer": "Le bot de sondage personnalisé coûte 99,99 $ par an."
+        "answer": "Le bot de sondage personnalisé coûte 199,99 $ par an."
       },
       {
         "question": "Des abonnements mensuels sont-ils disponibles pour le bot de sondage personnalisé ?",
@@ -1030,7 +1098,7 @@
   "ctaSection": {
     "title": "CRÉE TON PROPRE BOT DE SONDAGE",
     "description": "Rejoins les serveurs qui ont leur propre bot de sondage aux couleurs de leur marque. Toute la puissance de Subo avec ton identité unique.",
-    "ctaPrimary": { "text": "Commencer : 99,99 $/an", "href": "/fr/pricing/" },
+    "ctaPrimary": { "text": "Commencer : 199,99 $/an", "href": "/fr/pricing/" },
     "ctaSecondary": { "text": "Contacter le support", "href": "/support/" }
   }
 },

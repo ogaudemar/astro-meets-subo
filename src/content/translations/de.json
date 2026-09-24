@@ -499,27 +499,27 @@
     ],
     "tiers": [
       {
-        "name": "FREE",
+        "name": "KOSTENLOS",
         "description": "Für kleinere Server",
-        "price": "Free",
+        "price": "Kostenlos",
         "image": "/images/subo-neon2-100.png"
       },
       {
         "name": "PREMIUM",
         "description": "Für Power-User und mittelgroße Server!",
-        "price": "$2.99/month<br>$29.99/year",
+        "price": "2,99 $/Monat<br>29,99 $/Jahr",
         "image": "/images/subo-premium-100.png"
       },
       {
         "name": "VIP",
         "description": "Für größere Server und großzügige Unterstützer!",
-        "price": "$4.99/month<br>$49.99/year",
+        "price": "4,99 $/Monat<br>49,99 $/Jahr",
         "image": "/images/subo-vip-100.png"
       },
       {
         "name": "CUSTOM",
         "description": "Dein eigener Bot, Avatar und Beschreibung mit VIP-Funktionen!",
-        "price": "$99.99/year",
+        "price": "199,99 $/Jahr",
         "image": "/images/custom-bot.png"
       }
     ],
@@ -913,6 +913,13 @@
       "Abonnement über das Stripe-Abrechnungsportal upgraden, kündigen oder verwalten"
     ],
     "stripeCardButton": "Mit Stripe upgraden",
+    "business": {
+      "eyebrow": "FÜR MARKEN & AGENTUREN",
+      "title": "Subo für Marken-Communitys",
+      "subtitle": "Eigener Bot und White-Label, Rechnung oder Bestellnummer statt Discord-Kauf, dazu Unterstützung bei Studien. Diese Tarife werden auf Englisch angeboten und betreut.",
+      "moreText": "Business-Tarife ansehen (auf Englisch)",
+      "moreHref": "/pricing/#for-brands"
+    },
     "faqSectionTitle": "Häufig gestellte Fragen",
     "faqs": [
       {
@@ -1331,7 +1338,7 @@
         },
         {
           "question": "Was kostet der eigene Umfrage-Bot?",
-          "answer": "Der eigene Umfrage-Bot kostet 99,99 $ pro Jahr."
+          "answer": "Der eigene Umfrage-Bot kostet 199,99 $ pro Jahr."
         },
         {
           "question": "Gibt es den eigenen Umfrage-Bot auch im Monatsabo?",
@@ -1351,7 +1358,7 @@
       "title": "ERSTELLE DEINEN EIGENEN UMFRAGE-BOT",
       "description": "Reih dich ein bei den Servern mit ihrem eigenen Umfrage-Bot im eigenen Branding. Die volle Kraft von Subo, mit deiner Identität.",
       "ctaPrimary": {
-        "text": "Loslegen: 99,99 $/Jahr",
+        "text": "Loslegen: 199,99 $/Jahr",
         "href": "/de/pricing/"
       },
       "ctaSecondary": {

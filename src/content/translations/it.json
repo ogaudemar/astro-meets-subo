@@ -388,7 +388,7 @@
         {
         "name": "CUSTOM",
         "description": "Il tuo bot con avatar e descrizione personalizzati e funzionalità VIP!",
-        "price": "$99,99/anno",
+        "price": "$199,99/anno",
         "image": "/images/custom-bot.png"
         }
     ],
@@ -712,6 +712,13 @@
     "Aggiorna, cancella o gestisci gli abbonamenti tramite il Portale di Fatturazione Stripe"
   ],
   "stripeCardButton": "Aggiorna con Stripe",
+  "business": {
+    "eyebrow": "PER BRAND E AGENZIE",
+    "title": "Subo per le community di brand",
+    "subtitle": "Bot personalizzato e white-label, fattura o ordine d’acquisto invece dell’acquisto su Discord, più supporto sulle ricerche. Questi piani sono offerti e gestiti in inglese.",
+    "moreText": "Vedi i piani Business (in inglese)",
+    "moreHref": "/pricing/#for-brands"
+  },
   "faqSectionTitle": "Domande Frequenti",
   "faqs": [
     {
