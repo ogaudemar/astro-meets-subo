@@ -400,7 +400,7 @@
       {
         "name": "PERSO",
         "description": "Ton propre bot, avatar et description avec les options VIP !",
-        "price": "199,99 $/an",
+        "price": "199 $/an",
         "image": "/images/custom-bot.png"
       }
     ],
@@ -1079,7 +1079,7 @@
       },
       {
         "question": "Combien coûte le bot de sondage personnalisé ?",
-        "answer": "Le bot de sondage personnalisé coûte 199,99 $ par an."
+        "answer": "Le bot de sondage personnalisé coûte 199 $ par an."
       },
       {
         "question": "Des abonnements mensuels sont-ils disponibles pour le bot de sondage personnalisé ?",
@@ -1098,7 +1098,7 @@
   "ctaSection": {
     "title": "CRÉE TON PROPRE BOT DE SONDAGE",
     "description": "Rejoins les serveurs qui ont leur propre bot de sondage aux couleurs de leur marque. Toute la puissance de Subo avec ton identité unique.",
-    "ctaPrimary": { "text": "Commencer : 199,99 $/an", "href": "/fr/pricing/" },
+    "ctaPrimary": { "text": "Commencer : 199 $/an", "href": "/fr/pricing/" },
     "ctaSecondary": { "text": "Contacter le support", "href": "/support/" }
   }
 },

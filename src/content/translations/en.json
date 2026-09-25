@@ -399,7 +399,7 @@
         {
         "name": "CUSTOM",
         "description": "Your own bot, avatar and description with VIP features!",
-        "price": "$199.99/year",
+        "price": "$199/year",
         "image": "/images/custom-bot.png"
         }
     ],
@@ -1063,7 +1063,7 @@
       },
       {
         "question": "How much does the Custom Survey Bot cost?",
-        "answer": "The Custom Survey Bot costs $199.99 per year."
+        "answer": "The Custom Survey Bot costs $199 per year."
       },
       {
         "question": "Are there monthly subscriptions available for the Custom Survey Bot?",
@@ -1082,7 +1082,7 @@
   "ctaSection": {
     "title": "CREATE YOUR OWN SURVEY BOT",
     "description": "Join the ranks of servers with their own custom-branded survey bots. Get all the power of Subo with your unique identity.",
-    "ctaPrimary": { "text": "Get Started - $199.99/year", "href": "/pricing/" },
+    "ctaPrimary": { "text": "Get Started - $199/year", "href": "/pricing/" },
     "ctaSecondary": { "text": "Contact Support", "href": "/support/" }
   }
 },

@@ -518,7 +518,7 @@
       {
         "name": "PERSONALIZADO",
         "description": "Tu propio bot, avatar y descripción con funciones VIP",
-        "price": "199,99 $/año",
+        "price": "199 $/año",
         "image": "/images/custom-bot.png"
       }
     ],
@@ -1404,7 +1404,7 @@
         },
         {
           "question": "¿Cuánto cuesta el bot de encuestas personalizado?",
-          "answer": "El bot de encuestas personalizado cuesta 199,99 $ al año."
+          "answer": "El bot de encuestas personalizado cuesta 199 $ al año."
         },
         {
           "question": "¿Hay suscripciones mensuales para el bot de encuestas personalizado?",
@@ -1424,7 +1424,7 @@
       "title": "CREA TU PROPIO BOT DE ENCUESTAS",
       "description": "Únete a los servidores que ya tienen su propio bot de encuestas con marca propia. Toda la potencia de Subo con tu identidad.",
       "ctaPrimary": {
-        "text": "Empezar: 199,99 $/año",
+        "text": "Empezar: 199 $/año",
         "href": "/es/pricing/"
       },
       "ctaSecondary": {

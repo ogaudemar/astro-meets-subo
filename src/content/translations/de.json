@@ -519,7 +519,7 @@
       {
         "name": "CUSTOM",
         "description": "Dein eigener Bot, Avatar und Beschreibung mit VIP-Funktionen!",
-        "price": "199,99 $/Jahr",
+        "price": "199 $/Jahr",
         "image": "/images/custom-bot.png"
       }
     ],
@@ -1338,7 +1338,7 @@
         },
         {
           "question": "Was kostet der eigene Umfrage-Bot?",
-          "answer": "Der eigene Umfrage-Bot kostet 199,99 $ pro Jahr."
+          "answer": "Der eigene Umfrage-Bot kostet 199 $ pro Jahr."
         },
         {
           "question": "Gibt es den eigenen Umfrage-Bot auch im Monatsabo?",
@@ -1358,7 +1358,7 @@
       "title": "ERSTELLE DEINEN EIGENEN UMFRAGE-BOT",
       "description": "Reih dich ein bei den Servern mit ihrem eigenen Umfrage-Bot im eigenen Branding. Die volle Kraft von Subo, mit deiner Identität.",
       "ctaPrimary": {
-        "text": "Loslegen: 199,99 $/Jahr",
+        "text": "Loslegen: 199 $/Jahr",
         "href": "/de/pricing/"
       },
       "ctaSecondary": {

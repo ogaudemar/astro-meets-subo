@@ -388,7 +388,7 @@
         {
         "name": "PERSONALIZADO",
         "description": "Seu próprio bot, avatar e descrição com recursos VIP!",
-        "price": "$199,99/ano",
+        "price": "$199/ano",
         "image": "/images/custom-bot.png"
         }
     ],
