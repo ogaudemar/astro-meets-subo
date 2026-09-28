@@ -3152,8 +3152,35 @@ string that must also cover a quiz or an application form. Concretely: the quest
 is fine as a door, but **`/fr/survey-convos` must not take *questionnaire* as its H1 noun** (DE
 and ES already went to *Formular* / *formularios*, which was the same instinct).
 
-**T2b. A locale's poll word IS Discord's poll word. No exceptions.** Fighting the platform's
-vocabulary is unwinnable: Discord's UI sets every user's mental model. Trivially verifiable,
+**T2b. A locale's poll word IS Discord's poll word.** Fighting the platform's
+vocabulary is unwinnable: Discord's UI sets every user's mental model.
+⚠️ **Amended 2026-09-28 (user): "no exceptions" is relaxed, and Spanish is the one exception.**
+A check of how other platforms translate *poll* (below) found Discord's word is the majority, not
+the rule: Meta says *Abstimmung* (DE) and *votación* (ES) across Facebook, Messenger and WhatsApp
+(ES WhatsApp: *encuesta*), and X says *question* in French. The user's argument, as a Spanish
+speaker: platforms with only a one-question feature lose nothing by calling it *encuesta*, but
+Subo has both a poll and a multi-question survey and needs two words. Spanish therefore keeps
+**`votación` = poll, `encuesta` = survey, `cuestionario` = quiz**, which is what the app already
+says (so A2c is not needed for ES). The cost, a Spanish poll searcher landing on the survey page,
+is handled in copy on both pages. German and French stay on Discord's word; German also gains
+*Abstimmung* as a second door on `/de/polls/`, the twin of French *vote*.
+
+| Platform (checked 2026-09-28) | FR | DE | ES |
+|---|---|---|---|
+| Discord | sondage | Umfrage | encuesta |
+| X | **question** | Umfrage | encuesta |
+| Facebook Groups | sondage | **Abstimmung** | **votación** |
+| Messenger | sondage | **Abstimmung** | **votación** |
+| WhatsApp | sondage | **Abstimmung** | encuesta |
+| Telegram | sondage | Umfrage | encuesta (quiz mode: *Cuestionario*) |
+| Reddit | sondage | Umfrage | encuesta |
+
+Sources: each platform's localized help center (Telegram: its translation platform's applied
+strings for `Poll`, `NewPoll`, `AnonymousPoll`, `QuizPoll`).
+
+**Parked (user, 2026-09-28): Spanish *entrevista*.** It suits the conversational format, but better
+fits the planned gen-AI mode where the script works as a discussion guide rather than a fixed
+sequence of questions. Revisit when that ships, not for today's Convo. Trivially verifiable,
 and it settles a debate that has now recurred three times. **The user reached this
 independently for French** (switching to `/sondage` was aligning with Discord) and it was right.
 
@@ -3463,7 +3490,9 @@ What is left here is the copy a crawler can actually read, plus the guard:
       - `npm run check` green. Both vendored copies of `lexicon.json` updated in the same
         change, per the repo rule.
 
-- [ ] **A24. `de.json` and `es.json` nav still say "Survey Convos".** T11's corollary is explicit
+- [x] **A24. ✅ DONE 2026-09-28** in the DE + ES parity pass (language backlog). Both navs now
+      carry the three door words, each pointing at its owner, and a *Survey Convo* deny rule
+      guards both files. Original scope, kept for the record: **`de.json` and `es.json` nav still say "Survey Convos".** T11's corollary is explicit
       that `X and Convos` is not a compromise, and A1c deleted the doublet from English while A4
       deleted it from French. German and Spanish still render it on all their pages. One string
       each (`header.product[1].text`, `footer.sections[0].links[0].text`) — but **German's is
@@ -3548,7 +3577,10 @@ What is left here is the copy a crawler can actually read, plus the guard:
         break the guard that reads the document.**
 
 - [ ] **A7b. Door words, the bridge sentence and the deny list, per locale — STILL GATED on
-      per-locale search evidence.** This is the half T9 governs: a door word carries the page that
+      per-locale search evidence.** ⚠️ **DE and ES went ahead on 2026-09-28 by user decision**,
+      seeded under T10 rather than evidenced under T9 (see the DE + ES parity block). Their
+      rows carry that in each door's `evidence` field, so a later Search Console export can
+      confirm or overturn them rather than having to rediscover why they exist. This is the half T9 governs: a door word carries the page that
       owns it and the query volume behind it, and inventing either is what T9 forbids. Runs as
       Step 0 of the LOCALE-PARITY PLAYBOOK, not standalone, one locale at a time as its Search
       Console export lands. **IT after ES/NL/RU** on the original ordering.
@@ -3605,7 +3637,13 @@ What is left here is the copy a crawler can actually read, plus the guard:
         answer is `Convo`, and `fr.deny` already wants the retired conversational-survey phrasings
         gone (3 open entries in `knownViolations`). **Consider doing both in one edit.**
 
-- [ ] **A18. The German site still says `Umfrage` for the survey — 73 strings.** ⚠️ **A14 filed this
+- [x] **A18. ✅ DONE 2026-09-28, site half**, in the DE + ES parity pass (language backlog).
+      Survey-sense *Umfrage* went to **Convo** in body copy and **Fragebogen** in the ranking
+      layer; *Umfrage* now means the poll across `de.json`. Every remaining *Umfrage* is a poll,
+      except *Umfrageplattformen* in the founding story, which names the real-world industry.
+      It did not wait for A15: the app repo's own rule is that a locale's survey *noun* never
+      did, only sentence-level refresh. Original scope, kept for the record:
+      **The German site still says `Umfrage` for the survey — 73 strings.** ⚠️ **A14 filed this
       as "the site half of A11-DE" and that was wrong.** Of the 73 `de.json` strings carrying
       `Umfrage` whose English never says *poll*, **zero say *project*** and **65 say *survey***.
       This is **the survey vacate**, the site counterpart of what A2c-DE did to the app — not the
@@ -4765,9 +4803,9 @@ to justify — especially since the highest-ROI channels for a Discord bot
       - [x] **DE `/survey-convos` pre-retune copy — FIXED.** Title was "Discord
             Umfrage-Gespräche" and never said *Formular*. Now mirrors the FR form-intent
             retune, including the `/blog/how-to-make-a-discord-form` link.
-      - [ ] **German changelog — the last page.** Needs `src/data/legacy-releases.ts`
-            widened from its bilingual `titleFr`/`summaryFr` schema, plus a new
-            `src/data/changelog-blog-de.ts`. Takes German 10 → 11 and full FR parity.
+      - [x] **German changelog — DONE 2026-09-28**, with `/de/forms/`, in the DE + ES parity
+            pass below. `legacy-releases.ts` gained `titleDe`/`summaryDe` (and the ES pair);
+            `src/data/changelog-blog-de.ts` is new. German is at 12 pages.
       - [ ] **No native review, and the user has accepted that.** Correction to the earlier
             note here: `de.json` did **not** come from a volunteer. The volunteer reviewed
             the German *inside the app*; the marketing site was 100% LLM, and even the app
@@ -4820,6 +4858,83 @@ to justify — especially since the highest-ROI channels for a Discord bot
         market; Spain's Stripe $0 is currently **unfalsifiable** because ES had no localized
         commercial page to convert on. This slice is the cheapest way to *get* that
         verification. Watch `/es/*` in the P0 funnel breakdown before spending further.
+
+- [x] **DE + ES to full French parity — DONE 2026-09-28 (user: "bring them to French parity").**
+      Both locales went **10 → 12 pages**: `/forms/` and `/changelog/` each. French is at 13 plus
+      its blog. **Two exceptions, both deliberate:** the **pricing page** stays different, because
+      we can't sell to businesses in any language except English and French (user ruling: the
+      B2B shelf renders only as the pointer `BusinessPlans.astro` already supports), and the
+      **blog** was skipped (user): the three FR posts were each written against French search
+      data, and German and Spanish have no door-word evidence to write theirs against.
+      - **Door words first, per Step 0 of the playbook, and they were user calls.** A new forms
+        page on *Formular* / *formulario* could not coexist with `/de/survey-convos/` and
+        `/es/survey-convos/`, which both led on the same word (T5, and the guard fails the build
+        on it). France had solved this with *enquête*; German and Spanish needed their own word:
+        - **DE:** `Fragebogen` → `/de/survey-convos/`, `Formular` → `/de/forms/`. T2's
+          generalized questionnaire noun. Both measured zero before German pages existed, so
+          both are **seeded for corpus balance (T10)**, the same argument that seeded French
+          *formulaire* at 24 impressions. The T9 hold on the German survey door is lifted.
+        - **ES, FINAL (user ruling, later the same day, superseding the first pass):**
+          `votación` → `/es/polls/`, `encuesta` → `/es/survey-convos/`, `formulario` →
+          `/es/forms/`, `cuestionario` = quiz (no page), `sondeo` kept as a second poll door in
+          `/es/polls/` body copy. Spanish is **the one T2b exception** (see the T2b amendment and
+          its platform table). The ES row went from `instruments-only` to `active`; `t2b.es` is
+          now a permanent, recorded exemption, and **A2c is not needed for Spanish**, because the
+          app already says *votación* / *encuesta*.
+        - ~~First pass (same morning): `encuesta` → `/es/polls/` on Discord's word, `cuestionario`
+          → the survey page.~~ Reversed after the platform check. Kept here because the reasoning
+          that sank it is the useful part: Discord's word was the majority, not a consensus, and
+          the one platform with the most deliberate localization (Meta) said *votación*.
+      - **⚠️ The Spanish half was a full sweep, not an H1 change, done twice.** `es.json` had
+        called the poll *sondeo* in 52 strings (a word neither Discord nor the app uses) and the
+        survey *encuesta* in 88. The final state: poll → *votación*, survey → *encuesta* in the
+        ranking layer and *Convo* in the body, quiz → *cuestionario*, *sondeo* only on
+        `/es/polls/`. The pairs forced every move to be made together (A14's lesson). The
+        reversal was ~86 strings plus the ES changelog data, machine-mapped and then reviewed
+        line by line; review caught 11 gender-agreement slips (*cuestionario* is masculine,
+        *encuesta* feminine) the mapping could not see. Two verb uses (*"Encuesta al
+        segmento…"*) were reworded to *Pregunta* so they don't read as the noun.
+      - **The ambiguity is handled in copy, both directions.** `/es/polls/` opens with a bridge
+        under the hero: *"Votación, sondeo o encuesta: en Discord es la misma herramienta"*, then
+        *"En Subo, «encuesta» tiene dos formas"* with one link per type (votación → this page,
+        multi-question → `/es/survey-convos/`). `/es/survey-convos/` sends one-question seekers to
+        `/es/polls/`. German got the same slot: *"Umfrage oder Abstimmung: In Discord ist es
+        dasselbe Werkzeug"*, with *Abstimmung* as a second door (44 impressions, Meta's word)
+        allowed only on `/de/polls/` by the existing deny rule's `actPaths`. The bridge renders
+        from an optional `pollsPage.hero.bridge` key, so EN and FR are unaffected.
+      - **`check:lexicon` learned plurals:** a door may carry `plural`, because *votación* →
+        *votaciones* drops the accent and the guard's English-style *s* could never match the H1.
+      - **A18, the German survey vacate, shipped with it** (see A18 below): *Umfrage* now means
+        the poll everywhere on the German site, which is what made `t5.de.Umfrage` payable.
+      - **Both survey pages rewritten to the current EN/FR shape**, not patched. They were
+        pre-realignment copy: *Survey Convo* doublets, *"Kein Formular. Keine einfache Umfrage."*
+        (the banned "not just X" shape), a claim on the form word, and no bridge. Now: door-word
+        H1, the lexicon's bridge sentence opening the body, a hand-off to the forms page with
+        form-worded anchor text, and a comparison table against *a classic questionnaire*
+        rather than against forms.
+      - **Both forms pages are translations of `/forms/`**, including the 09-14 *who is
+        answering* section and the nine-question `FAQPage`. Links to English-only pages are
+        marked *(auf Englisch)* / *(en inglés)*. **Command names checked against the live
+        export, not guessed** (the A4 lesson): only the poll command is localized (DE `/umfrage`,
+        ES `/votación`); `/survey` and `/draft` are English in both, and the web app's
+        *Generate with AI* is *Mit KI generieren* / *Generar con IA*.
+      - **Also moved in the same change:** both GTD H1s off the form word (FR's precedent),
+        both white-label H1s to *DEIN EIGENER DISCORD-BOT* / *TU PROPIO BOT DE DISCORD* (EN's),
+        nav and footer to *Fragebögen / Umfragen / Formulare* and *Encuestas / Votaciones /
+        Formularios* (A24, closed), the stray keys (`about.founderNote`, `blogLinkLocal`,
+        `developerApi.ctaGuide`), stale copy that EN had since updated (AI generator, MCP), and
+        every em and en dash in `de.json` (DE 0, ES 0).
+      - **Lexicon:** 14 → 23 door words; deny rules for *Survey Convo* (DE, ES), *sondeo* (ES,
+        allowed on `/es/polls/` only) and *encuestas conversacionales* (ES); **`t5.de.Umfrage` paid off**, so known violations went
+        from 22 to 21. Re-vendored to `subo/`, byte-identical.
+      - **Verified in `dist/`:** `npm run check` green (hreflang 61 clusters, canonical 363
+        URLs, lexicon, tsc, wrangler dry-run); 24 DE/ES pages, 0 broken internal links; all four
+        new URLs in the sitemap; `/forms/` and `/changelog/` reciprocal across EN/FR/ES/DE;
+        use-case template links still 11/9/7 in all three locales.
+      - **No measurement of its own yet.** DE/ES pages have not been checked for indexation;
+        they sit behind the same migration as French. **The copy is LLM-only** (no native
+        review), which the playbook already accepts; a native read of `/de/forms/` and
+        `/es/survey-convos/` is the highest-value cheap audit if one becomes available.
 
 ### ▶ THE LOCALE-PARITY PLAYBOOK — read this before starting IT, PT-BR, or any new locale
 
@@ -4883,8 +4998,19 @@ accordingly, and do not let the cheap half create the illusion the locale is don
   `dist/` matches FR/DE (11/9/7 on the three use-case pages).
 - **Em dashes accumulate in the locale files.** House style bans them and the locales were
   never swept: FR 0, DE 3, EN 3, **ES was 17 before this pass, IT is 18, PT-BR is 20.**
+  *(DE and ES both at 0 since 2026-09-28; IT and PT-BR unchanged.)*
   Clear them by rewriting the sentence, not by substituting a comma everywhere — several ES
   cases wanted a colon or a full stop instead.
+
+**The parity set, as of 2026-09-28:** FR's 13 pages minus the blog, which is a separate
+content decision per locale. That is 12 pages: home, pricing, about, features, polls,
+survey-convos, forms, custom-survey-bot, changelog and the three use cases. **Pricing is
+the one page that is never at parity:** outside EN and FR the B2B shelf renders as a
+pointer to the English section, because we can't sell to businesses in other languages
+(user ruling). **Adding `/forms/` to a locale moves two other pages** (its survey page and
+its GTD page both lead on the form word until it exists), so settle the locale's survey word
+before writing the forms copy. That word is the decision the German and Spanish passes had to
+put to the user.
 
 **Two standing constraints on the copy itself:**
 - **Write in-language, don't translate flat.** This is the roadmap's oldest localization
@@ -4895,8 +5021,18 @@ accordingly, and do not let the cheap half create the illusion the locale is don
   accepted that. So the copy gets written deliberately rather than rendered mechanically, and
   a native read stays the highest-value cheap audit if one ever becomes available.
 
-**Known gap, unrelated to any single locale: `pt-br` has no hreflang entry anywhere on the
-site**, despite `/pt-br/` and `/pt-br/pricing` being live and in the sitemap. Every page's
-alternates list runs `x-default, en, fr, es, de, it` and stops. Fix it when PT-BR gets its
-routes, or sooner — it is one line per file and those two pages are currently orphaned from
-the language graph.
+~~**Known gap, unrelated to any single locale: `pt-br` has no hreflang entry anywhere on the
+site.**~~ **✅ Checked 2026-09-28: not a gap any more.** `/pt-br/` and `/pt-br/pricing/` are the
+only PT-BR pages, and all 12 language versions of home and pricing already declare `pt-BR`
+reciprocally (`check:hreflang` enforces it). Pages with no PT-BR twin correctly omit it. Whoever
+fixed it did not update this note, and a later session nearly re-fixed it from a file count
+instead of reading the clusters.
+
+**French twin of `/whats-new/` — ✅ shipped 2026-09-28 (user: for future French campaigns).**
+`/fr/whats-new/` keeps the same era anchors (`#since-march`, `#since-june`, a contract with the
+app-side campaign runbook), so a French recontact message only swaps the path. Rows take a
+French post's title and link when one exists (`translationOf`), otherwise the `blogFr` title with
+the `whatsNew.entries` blurb, and English links are labelled *Lire l'annonce (en anglais)*. EN
+and FR are a reciprocal hreflang pair. `blogFr` also gained the missing *content blocks* row,
+which `/fr/changelog/` had been showing in English. FR's only remaining key gap against
+`en.json` is `developerApi.ctaGuide`.

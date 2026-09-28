@@ -389,7 +389,7 @@ if (!existsSync(DIST)) {
         );
         continue;
       }
-      const re = new RegExp(`\\b${escapeRe(door.word)}s?\\b`, 'i');
+      const re = doorRe(door);
       if (!page.h1s.some((h) => re.test(h))) {
         problems.push(
           `[t5.own.${loc}.${door.word}] ${loc}: ${door.owns} is the declared owner of "${door.word}", ` +
@@ -413,7 +413,7 @@ if (!existsSync(DIST)) {
 
   for (const [loc, row] of localeRows) {
     for (const door of row.doors ?? []) {
-      const re = new RegExp(`\\b${escapeRe(door.word)}s?\\b`, 'i');
+      const re = doorRe(door);
       const byClass = new Map();
 
       for (const [p, { h1s }] of built) {
@@ -460,6 +460,13 @@ if (!existsSync(DIST)) {
       );
     }
   }
+}
+
+// A door word matches itself plus an English-style "s" plural, and an explicit `plural` when the
+// language forms it differently (Spanish votación -> votaciones drops the accent).
+function doorRe(door) {
+  const forms = [door.word, ...(door.plural ? [door.plural] : [])].map(escapeRe);
+  return new RegExp(`\\b(?:${forms.join('|')})s?\\b`, 'i');
 }
 
 function escapeRe(s) {

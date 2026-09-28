@@ -29,6 +29,11 @@ const t = translations.pollsPage;
 					<h1 class="poll-hero__title" set:html={t.hero.title} />
 					<p class="poll-hero__subtitle">{t.hero.subtitle}</p>
 					<a href="/invite/" class="button button--accent-bg">{t.hero.cta}</a>
+					<!-- The bridge: the second search word for the same tool (DE Abstimmung, ES
+					     sondeo and encuesta), said once in body copy so the H1 keeps its single
+					     door word (T5). The FR equivalent is the "Sondage ou vote" H2 in the
+					     sondage how-to. Only locales that need one set hero.bridge. -->
+					{t.hero.bridge && <div class="poll-hero__bridge" set:html={t.hero.bridge} />}
 				</div>
 			</section>
 
@@ -113,6 +118,32 @@ const t = translations.pollsPage;
 	max-width: 620px;
 	margin: 0 auto 2rem;
 	line-height: 1.6;
+}
+
+.poll-hero__bridge {
+	max-width: 620px;
+	margin: 2.25rem auto 0;
+	padding-top: 1.5rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	font-size: 0.98rem;
+	line-height: 1.65;
+	color: var(--grey-light);
+}
+.poll-hero__bridge :global(p) {
+	margin: 0 0 0.75rem;
+}
+.poll-hero__bridge :global(strong) {
+	color: var(--accent);
+	font-weight: 700;
+}
+.poll-hero__bridge :global(ul) {
+	text-align: left;
+	margin: 0.5rem auto 0;
+	padding-left: 1.25rem;
+	max-width: 520px;
+}
+.poll-hero__bridge :global(a) {
+	color: var(--accent);
 }
 
 /* Section nav */

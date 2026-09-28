@@ -31,6 +31,11 @@ export const blogFr: Record<string, BlogFrRow> = {
 		summary:
 			"Crée des bots, automatise tes workflows et connecte Subo au reste de ta stack. L'API Subo est en ligne sur api.subo.ai.",
 	},
+	"content-blocks-new-way-to-design-survey-flows": {
+		title: "Blocs de contenu : une nouvelle façon de construire le déroulé d'une enquête",
+		summary:
+			"Les blocs de contenu te permettent de dire quelque chose dans une Convo sans poser de question : écrans d'accueil, consentements, changements de section, GIF et révélations de score qui appellent la personne par son nom.",
+	},
 	"action-blocks-release": {
 		title: "Des enquêtes qui ressemblent à des conversations, maintenant avec les Action Blocks",
 		summary:

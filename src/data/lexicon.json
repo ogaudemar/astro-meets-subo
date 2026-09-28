@@ -12,7 +12,7 @@
     "here as T1..T10 are defined there. Do not restate the reasoning in this file; it will drift."
   ],
   "version": 1,
-  "updated": "2026-09-05",
+  "updated": "2026-09-28",
 
   "framework": {
     "$about": [
@@ -215,14 +215,22 @@
         "there were no German pages until recently, so that is absence of evidence, not evidence of",
         "absence. The umfrage-vs-meinungsumfrage finding is safe because it is comparative.",
         "Germany's largest cluster is ENGLISH: anonymous* drew 167 imp across 15 queries, more than the",
-        "whole umfrage cluster. German pages cannot be judged on German queries alone."
+        "whole umfrage cluster. German pages cannot be judged on German queries alone.",
+        "HOLD LIFTED 2026-09-28 (user), for DE parity with FR: Fragebogen owns /de/survey-convos/ and",
+        "Formular owns the new /de/forms/. Both are seeded for corpus balance (T10), the same argument",
+        "that seeded French formulaire at 24 imp; neither has search evidence yet. The bridge moved",
+        "off 'Chat-Umfrage' in the same change, because A18 (same day) took Umfrage off the survey."
       ],
       "instruments": { "poll": "Umfrage", "convo": "Convo" },
-      "bridge": "Eine Convo ist eine Chat-Umfrage: eine Frage nach der anderen, im Gespräch statt im Formular.",
+      "bridge": "Du bist wegen eines Fragebogens hier. Bei Subo ist dieser Fragebogen eine Convo: eine Frage nach der anderen, im Gespräch statt im Formular.",
       "doors": [
-        { "word": "Umfrage", "pillar": "decide", "resolvesTo": "poll", "owns": "/de/polls/", "evidence": "search: umfrage* 150 imp / 11 queries @ position 1.0; also Discord's German poll word (T2b)" }
+        { "word": "Umfrage",    "pillar": "decide",     "resolvesTo": "poll",  "owns": "/de/polls/",        "evidence": "search: umfrage* 150 imp / 11 queries @ position 1.0; also Discord's German poll word (T2b)" },
+        { "word": "Fragebogen", "pillar": "understand", "resolvesTo": "convo", "owns": "/de/survey-convos/", "evidence": "T2's generalized questionnaire noun (the one Discord did not take). Measured zero before German pages existed; seeded 2026-09-28 per T10 (user), not volume." },
+        { "word": "Formular",   "pillar": "organize",   "resolvesTo": "convo", "owns": "/de/forms/",         "evidence": "Measured zero before German pages existed; seeded 2026-09-28 per T10 (user) when /de/forms/ was built as the twin of /forms/ and /fr/forms/. /de/survey-convos/ and /de/use-cases/get-things-done/ moved off it in the same change." },
+        { "word": "Abstimmung", "pillar": "decide",     "resolvesTo": "poll",  "owns": null,                 "evidence": "search: 44 imp (vs 150 for umfrage, A14); also Meta's German poll word on Facebook, Messenger and WhatsApp (platform check 2026-09-28). A SECOND door onto the poll, folded into /de/polls/ body copy (meta description + the hero bridge 'Umfrage oder Abstimmung'), not its own URL: the German twin of French vote. owns stays null because the H1 keeps Umfrage (T5), and the deny rule below still bans it as a general instrument word." }
       ],
       "deny": [
+        { "phrase": "Survey Convo",    "use": "Convo",    "why": "T3 + A24. The doublet A1c deleted from English and A4 from French; de.json carried it in 11 strings, nav included, until 2026-09-28." },
         { "phrase": "Meinungsumfrage", "use": "Umfrage",  "why": "T2b. Neither Discord's word nor a searched one: zero impressions in sixteen months. The app still says it in 62 cells (A2c-DE); the site never did, so this rule guards a clean surface." },
         { "phrase": "Blitzumfrage",    "use": "Umfrage",  "why": "T9 + A2c-DE finding 5. Zero evidence, and it would be a fourth German word for a thing Discord already calls Umfrage. Convo already does the job of distinguishing the poll from the survey." },
         {
@@ -236,8 +244,11 @@
             "useCasesGetThingsDone.examples[5].text",
             "useCasesEngagement.sections[0].title",
             "pollsPage.sections[0].title",
-            "pollsPage.sections[0].sub"
-          ]
+            "pollsPage.sections[0].sub",
+            "pollsPage.pageDescription",
+            "pollsPage.hero.bridge"
+          ],
+          "$actPathsNote": "The last two are not the act: they are the Abstimmung DOOR, deliberately on the owner page (2026-09-28, user). Listed here so the rule keeps failing everywhere else."
         }
       ]
     },
@@ -255,10 +266,37 @@
     },
 
     "es": {
-      "status": "instruments-only",
-      "$note": "A7a, 2026-09-04. Records what the locale SAYS; it moves nothing. `doors` is omitted because no Spanish search evidence exists yet (T9) — that half is A7b. instruments.poll is the app's live word, not T2b's target, which is why t2b.es fires into the baseline.",
+      "status": "active",
+      "$note": [
+        "A7a (2026-09-04) recorded the instruments only. Activated 2026-09-28 for ES parity with FR.",
+        "⚠️ SPANISH IS THE ONE T2b EXCEPTION (user ruling, 2026-09-28, after a first pass the same day",
+        "had moved the poll onto Discord's encuesta). Spanish keeps votación = poll, encuesta = survey,",
+        "cuestionario = quiz, which is also what the Subo app already says, so A2c is not needed for es.",
+        "The reasoning, from the user (a Spanish speaker): platforms that say encuesta for a poll have no",
+        "multi-question product, so for them a one-question survey and a poll are the same thing; Subo",
+        "has both and needs two words. Meta, the platform with the most deliberate localization, says",
+        "votación on Facebook and Messenger (platform check, 2026-09-28). The cost is accepted: Discord's",
+        "own Spanish UI says Encuesta for its native poll, so a poll searcher can land on the survey page.",
+        "Mitigated in copy both ways: /es/polls/ opens with the bridge 'Votación, sondeo o encuesta: en",
+        "Discord es la misma herramienta' and a two-way pointer, and /es/survey-convos/ sends one-question",
+        "seekers to /es/polls/. t2b.es is therefore a permanent, recorded exemption, not debt.",
+        "Parked idea (user): 'entrevista' fits the conversational format, but better suits the planned",
+        "gen-AI format where the script is a discussion guide rather than a fixed sequence of questions."
+      ],
       "instruments": { "poll": "votación", "convo": "Convo" },
-      "deny": []
+      "bridge": "Viniste a buscar una encuesta. En Subo esa encuesta es una Convo: una pregunta a la vez, en una conversación y no en un formulario.",
+      "doors": [
+        { "word": "votación",     "plural": "votaciones", "pillar": "decide",     "resolvesTo": "poll",  "owns": "/es/polls/",        "evidence": "The Subo app's live poll word (command and web UI) and Meta's on Facebook and Messenger. T2b exception, user ruling 2026-09-28. No search export yet." },
+        { "word": "sondeo",       "pillar": "decide",     "resolvesTo": "poll",  "owns": null,                 "evidence": "Kept on /es/polls/ body copy (meta description + hero bridge) so a 'sondeo' search lands there (user, 2026-09-28). Not an H1 word; the deny rule below keeps it off every other string." },
+        { "word": "encuesta",     "pillar": "understand", "resolvesTo": "convo", "owns": "/es/survey-convos/", "evidence": "The Subo app's live survey word. Ambiguous (Discord, X, Reddit, Telegram and WhatsApp use it for the poll), which /es/polls/ and /es/survey-convos/ each explain. No search export yet." },
+        { "word": "cuestionario", "pillar": "engage",     "resolvesTo": "poll",  "owns": null,                 "evidence": "Quiz. Telegram's Spanish string for its quiz mode (QuizPoll = Cuestionario). Used across es.json for Subo's quizzes; no quiz page yet (user, 2026-09-28)." },
+        { "word": "formulario",   "pillar": "organize",   "resolvesTo": "convo", "owns": "/es/forms/",         "evidence": "Seeded 2026-09-28 per T10 (user) when /es/forms/ was built as the twin of /forms/ and /fr/forms/. /es/survey-convos/ and /es/use-cases/get-things-done/ moved off it in the same change." }
+      ],
+      "deny": [
+        { "phrase": "sondeo", "use": "votación", "why": "A third word for the poll, in 52 es.json strings until 2026-09-28. Allowed only on /es/polls/ as a search door (user).", "actPaths": ["pollsPage.pageDescription", "pollsPage.hero.bridge"] },
+        { "phrase": "Survey Convo",               "use": "Convo",    "why": "T3 + A24. The doublet A1c deleted from English and A4 from French; es.json carried it in 11 strings, nav included, until 2026-09-28." },
+        { "phrase": "encuestas conversacionales", "use": "Convos",   "why": "T3. Retired phrasing, the Spanish twin of the French 'sondages conversationnels'. In a description (ranking layer) use a door word instead: 'cuestionarios en forma de conversación'." }
+      ]
     },
 
     "it": {
@@ -316,6 +354,14 @@
       "point: you cannot quietly re-accept one."
     ],
     "$cleared": [
+      "t5.de.Umfrage — PAID OFF 2026-09-28, entry deleted so the guard bites. /de/custom-survey-bot/",
+      "took the EN rewording ('___, DEIN EIGENER DISCORD-BOT'), leaving /de/polls/ the only German",
+      "landing page on Umfrage. The warning below (rewording the white-label page alone would",
+      "silence the T2b tangle) no longer applied to German: t2b.de was paid off app-side on",
+      "2026-08-30, and A18 took Umfrage off the survey across de.json the same day as this change, so",
+      "/de/polls/ leading on Umfrage is the declared owner holding Discord's word, not a tangle. FR's",
+      "t5.fr.sondage keeps the warning; French was not touched.",
+      "",
       "t5.en.survey — PAID OFF 2026-09-08, entry deleted so the guard bites. Prompted by the",
       "opposite question to the one this entry was written for: not \"do these two pages compete\"",
       "but \"why does the head term of our own category have no landing page at all?\" It was owned",
@@ -374,17 +420,13 @@
       "The app half of A1c is unaffected: those deny rules are scope:'app', checked against",
       "user_messages, which this repo cannot read. Status lives in subo/docs/terminology-english-inventory.md."
     ],
-    "t2b.es": { "reason": "'votación' vs Discord 'encuesta'. Spanish sends poll searchers to the survey page.", "clearedBy": "A2c" },
+    "t2b.es": { "reason": "DELIBERATE. 'votación' vs Discord 'encuesta'. Spanish is the one T2b exception (user ruling 2026-09-28): Subo needs two words where single-question platforms need one, and Meta says votación. Poll searchers who land on the survey page are sent to /es/polls/ in copy. Reasoning in locales.es.$note.", "clearedBy": "nothing — permanent exemption" },
     "t2b.it": { "reason": "'poll' (untranslated) vs Discord 'sondaggio'.", "clearedBy": "A2c" },
     "t2b.nl": { "reason": "'opiniepeiling'/'poll' vs Discord 'peiling'; the two surfaces also disagree with each other.", "clearedBy": "A2b (ii)" },
     "t2b.pl": { "reason": "'głosowanie' vs Discord 'ankieta'. Held under T9.", "clearedBy": "A2c, gated" },
     "t2b.ru": { "reason": "'голосование' vs Discord 'опрос'.", "clearedBy": "A2c" },
     "t2b.tr": { "reason": "'oylama' vs Discord 'anket'. Held under T9.", "clearedBy": "A2c, gated" },
 
-    "t5.de.Umfrage": {
-      "reason": "LOW RISK, the same shape as t5.fr.sondage (t5.en.survey was the third and was PAID OFF 2026-09-08 by rewording both EN competitors when /survey-convos/ took the word back): /de/custom-survey-bot/ ('___, DEIN UMFRAGE-BOT', white-label) vs /de/polls/ ('Der Discord Umfrage-Bot, der bewertet, benotet und belohnt', commercial). Different intents; the guard cannot tell intent apart, a human has. That this pattern now recurs in three locales says the white-label page is a systematic T5 false positive, not three coincidences.",
-      "clearedBy": "nothing — re-evaluate if either page is rewritten"
-    },
     "t5.fr.sondage": {
       "reason": "LOW RISK, mirrored the now-deleted t5.en.survey: /fr/custom-survey-bot/ (white-label) vs /fr/polls/ (commercial poll page).",
       "clearedBy": "the EN mirror was paid off 2026-09-08 by rewording both competing H1s (/api/ to 'questionnaires', /custom-survey-bot/ to 'YOUR OWN DISCORD BOT'). FR can follow the same way, but /fr/polls/ leading on 'sondage' is the T2b tangle underneath and is the half that actually matters; do not reword /fr/custom-survey-bot/ alone and call it cleared."

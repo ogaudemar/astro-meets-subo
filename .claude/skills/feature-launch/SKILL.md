@@ -149,11 +149,12 @@ you added or changed in step 5, list the sibling files (`fr/es/de/it/pt-br.json`
 localized page routes like `src/pages/fr/…`) that need matching copy. Flag them for the
 user's localization workflow — do not machine-translate inline here.
 
-Also flag the **French changelog row**: `/fr/changelog` shows a translated title + summary
-for each announcement post via `src/data/changelog-blog-fr.ts`, keyed by the post slug. Until
-an entry is added there, that row falls back to the English post title/description, so the
-French page silently mixes languages. Note that a `blogFr` entry for the new post's slug is
-needed (it's optional, but the fallback is the only reason it won't break the build).
+Also flag the **localized changelog rows**: `/fr/changelog`, `/de/changelog` and
+`/es/changelog` show a translated title + summary for each announcement post via
+`src/data/changelog-blog-{fr,de,es}.ts`, keyed by the post slug. Until an entry is added to
+each, that row falls back to the English post title/description, so the localized page
+silently mixes languages. Note that a `blogFr` / `blogDe` / `blogEs` entry for the new post's
+slug is needed (optional, but the fallback is the only reason it won't break the build).
 
 ### 8. Build and report
 

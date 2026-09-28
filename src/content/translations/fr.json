@@ -1436,6 +1436,50 @@
       "href": "/fr/survey-convos/"
     }
   }
-}
-
+},
+  "whatsNew": {
+    "pageTitle": "Les nouveautés de Subo",
+    "pageDescription": "Tout ce que Subo a lancé depuis mars 2026, du plus ancien au plus récent, avec un lien vers chaque annonce.",
+    "heroTitle": "NOUVEAUTÉS",
+    "heroSubtitle": "Subo livre souvent et l'annonce discrètement. Voici ce qui est arrivé, dans l'ordre.",
+    "jumpLabel": "Aller à",
+    "readMore": "Lire l'annonce",
+    "leadLabel": "Commence ici",
+    "changelogLink": "Voir toutes les versions dans le changelog",
+    "eras": {
+      "everything": {
+        "navLabel": "Avant mars 2026",
+        "title": "Avant mars 2026",
+        "body": "Subo pose des questions aux communautés Discord depuis 2022, et la plupart de ces années n'ont été annoncées que sur le serveur de support. Toute l'archive est dans le changelog."
+      },
+      "since-march": {
+        "navLabel": "Depuis mars 2026",
+        "title": "Depuis mars 2026",
+        "range": "De mars à juin 2026",
+        "body": "C'est là que Subo a cessé d'être seulement un bot Discord. Commence par l'appli web : tout ce qui suit s'utilise à travers elle."
+      },
+      "since-june": {
+        "navLabel": "Depuis juin 2026",
+        "title": "Depuis juin 2026",
+        "range": "Depuis juin 2026",
+        "body": "Si tu n'en lis qu'une, lis celle sur la famille des échelles : évaluations, Likert, NPS et classement, posés directement dans le chat et enregistrés comme des nombres."
+      }
+    },
+    "entries": {
+      "subo-web-app-launch": "Il y a maintenant un site, et ta communauté y est déjà : crée des projets, lis les résultats et gère les membres depuis un navigateur.",
+      "content-blocks-new-way-to-design-survey-flows": "Dis quelque chose dans un script sans poser de question : écrans d'accueil, consentements, changements de section et révélations de score.",
+      "public-api-launch": "Tes projets, tes réponses et tes membres sont accessibles en HTTP sur api.subo.ai.",
+      "action-blocks-release": "Un script peut attribuer un rôle, de l'XP ou une récompense au milieu d'une Convo, puis continuer.",
+      "scoring-piping-quizzes": "Le scoring, le piping des réponses et les champs calculés rendent natifs les quiz, les tests de personnalité et les concours de pronostics.",
+      "polls-grading-invite-customization": "Les sondages notent et récompensent comme les enquêtes, avec des boutons de réponse, des emojis et des vignettes personnalisés sur l'invitation.",
+      "clone-surveys-across-servers": "Clic droit sur un sondage ou une enquête Subo dans un autre serveur, choisis Cloner, et la copie arrive dans le tien, prête à modifier.",
+      "subo-template-library-launch": "Une bibliothèque gratuite d'enquêtes, de sondages et de quiz prêts à l'emploi, clonés dans ta communauté en un clic.",
+      "xp-history": "Chaque changement d'XP porte désormais une raison, visible par le membre sur le web et dans Discord.",
+      "personalize-discord-survey-messages": "Tape @, [ ou : dans n'importe quel champ de message pour insérer une mention de rôle, une variable ou un emoji.",
+      "discord-rating-scale-nps-ranking-questions": "Évaluations en étoiles ou en emojis, échelles d'accord et de satisfaction, la question NPS standard, et le classement sans glisser-déposer.",
+      "convos-in-your-dms": "Une Convo se déroule par défaut dans les DM du membre, avec un fil privé et un lien web en solutions de repli automatiques.",
+      "subo-mcp-server": "Connecte Subo à Claude Code ou à une autre appli d'IA, décris le projet que tu veux, et regarde-le se construire."
+    },
+    "readMoreEnglish": "Lire l'annonce (en anglais)"
+  }
 }

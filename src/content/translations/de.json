@@ -1,7 +1,7 @@
 {
   "siteTitle": "Subo",
-  "homeTitle": "Subo, der Discord-Umfrage-Bot | Umfragen für deine Community",
-  "siteDescription": "Umfragen, die sich wie Gespräche anfühlen, nicht wie Hausaufgaben. Starte Umfragen, Convos und belohne Teilnahme, in Discord und im Web.",
+  "homeTitle": "Subo, der Discord-Umfrage-Bot | Fragebögen und Formulare für deine Community",
+  "siteDescription": "Fragebögen, die sich wie Gespräche anfühlen, nicht wie Hausaufgaben. Starte Umfragen und Convos und belohne Teilnahme, in Discord und im Web.",
   "redirectPage": {
     "redirecting": "Weiterleitung zu",
     "auto": "Du wirst gleich automatisch weitergeleitet.",
@@ -28,12 +28,16 @@
         "href": "/de/features/"
       },
       {
-        "text": "Survey Convos",
+        "text": "Fragebögen",
         "href": "/de/survey-convos/"
       },
       {
         "text": "Umfragen",
         "href": "/de/polls/"
+      },
+      {
+        "text": "Formulare",
+        "href": "/de/forms/"
       },
       {
         "text": "Eigener Bot",
@@ -87,16 +91,24 @@
         "title": "Produkt",
         "links": [
           {
-            "text": "Survey Convos",
-            "href": "/de/survey-convos/"
+            "text": "Funktionen",
+            "href": "/de/features/"
           },
           {
-            "text": "Custom Bot",
-            "href": "/de/custom-survey-bot/"
+            "text": "Fragebögen",
+            "href": "/de/survey-convos/"
           },
           {
             "text": "Umfragen",
             "href": "/de/polls/"
+          },
+          {
+            "text": "Formulare",
+            "href": "/de/forms/"
+          },
+          {
+            "text": "Eigener Bot",
+            "href": "/de/custom-survey-bot/"
           },
           {
             "text": "Preise",
@@ -223,7 +235,7 @@
       "CREW",
       "ABONNENTEN"
     ],
-    "subtitle": "mit Umfragen, die sich wie Gespräche anfühlen, nicht wie Hausaufgaben.",
+    "subtitle": "mit Fragebögen, die sich wie Gespräche anfühlen, nicht wie Hausaufgaben.",
     "cta": "Zu Discord hinzufügen",
     "ctaNote": "Kostenlos starten. Upgrades verfügbar.",
     "demo": {
@@ -370,25 +382,25 @@
       "social": ""
     },
     {
-      "text": "Diese App ist perfekt. Und der Support ist ebenfalls erstklassig. Sehr zu empfehlen, wenn ihr Umfragen, Convos oder Abstimmungen durchführt.",
+      "text": "Diese App ist perfekt. Und der Support ist ebenfalls erstklassig. Sehr zu empfehlen, egal ob ihr Umfragen, Fragebögen oder Abstimmungen durchführt.",
       "author": ".dutty",
       "role": "",
       "social": ""
     },
     {
-      "text": "Das ist aktuell die beste Umfragelösung auf Discord. Die Einrichtung ist intuitiv und hat mir nie Probleme bereitet. Als ich einen Server mit über tausend Teilnehmern verwaltet habe und etwas für anonyme Abstimmungen mit anonymen Ergebnissen brauchte, war das der perfekte Bot – andere konnten das nicht. Er berücksichtigt Integrations-Rollen (was große Bots wie carl & MEE6 nicht können), erlaubt Rollenbeschränkungen und sogar Mehrfachauswahl-Umfragen. Und der Support ist top und sehr aufmerksam gegenüber den Nutzern.",
+      "text": "Das ist aktuell die beste Umfragelösung auf Discord. Die Einrichtung ist intuitiv und hat mir nie Probleme bereitet. Als ich einen Server mit über tausend Teilnehmern verwaltet habe und etwas für anonyme Abstimmungen mit anonymen Ergebnissen brauchte, war das der perfekte Bot, wo andere versagt haben. Er berücksichtigt Integrations-Rollen (was große Bots wie carl & MEE6 nicht können), erlaubt Rollenbeschränkungen und sogar Umfragen mit Mehrfachauswahl. Und der Support ist top und sehr aufmerksam gegenüber den Nutzern.",
       "author": "DJTiki 🌴",
       "role": "",
       "social": ""
     },
     {
-      "text": "Deine App hat wirklich alle Punkte erfüllt und ich bin beeindruckt von den Konfigurationsoptionen – die umfangreichste, die ich bisher gefunden habe!",
+      "text": "Deine App hat wirklich alle Punkte erfüllt und ich bin beeindruckt von den Konfigurationsoptionen: die umfangreichste, die ich bisher gefunden habe!",
       "author": "schmoopy101",
       "role": "",
       "social": ""
     },
     {
-      "text": "Ich baue Server für Freunde, die sie für Arbeit, Events oder gemeinnützige Projekte brauchen. Dieser Bot ist unglaublich gut gemacht! Ich nutze ihn in vielen Servern! Er ist so einfach zu bedienen – perfekt für Leute, die Bots oder Discord nicht gewohnt sind. Ich habe ihn vor ein paar Wochen entdeckt und alle anderen Umfrage-Bots gelöscht und durch diesen ersetzt.",
+      "text": "Ich baue Server für Freunde, die sie für Arbeit, Events oder gemeinnützige Projekte brauchen. Dieser Bot ist unglaublich gut gemacht! Ich nutze ihn in vielen Servern! Er ist so einfach zu bedienen, perfekt für Leute, die Bots oder Discord nicht gewohnt sind. Ich habe ihn vor ein paar Wochen entdeckt und alle anderen Umfrage-Bots gelöscht und durch diesen ersetzt.",
       "author": "risingblossom92",
       "role": "𝑰𝑫𝑺 〘 Irαm Deı Sumus 〙",
       "social": ""
@@ -400,7 +412,7 @@
       "social": ""
     },
     {
-      "text": "Subo macht seit meinem Premium-Abonnement richtig Spaß. Wiederkehrende Polls laufen nach meinem Zeitplan und die Entwickler arbeiten aktiv am Projekt. Sie antworten schnell auf Tickets und haben mir bei einem Bug geholfen, der durch die Länge meiner Umfragen entstanden war. Subo ist eine tolle Alternative zu Google Forms oder Microsoft Forms für alle, die Umfragen direkt integrieren und KI-Analysen für offene Antworten nutzen möchten.",
+      "text": "Subo macht seit meinem Premium-Abonnement richtig Spaß. Wiederkehrende Umfragen laufen nach meinem Zeitplan und die Entwickler arbeiten aktiv am Projekt. Sie antworten schnell auf Tickets und haben mir bei einem Bug geholfen, der durch die Länge meiner Umfragen entstanden war. Subo ist eine tolle Alternative zu Google Forms oder Microsoft Forms für alle, die Umfragen und Fragebögen direkt integrieren und KI-Analysen für offene Antworten nutzen möchten.",
       "author": "ryangrg422",
       "role": "Anime Club",
       "social": ""
@@ -468,7 +480,7 @@
     "comparisonTitle": "Alle Funktionen vergleichen",
     "categoryTitles": {
       "limits": "Plangrenzen",
-      "builder": "Umfrage-Builder",
+      "builder": "Fragebogen-Builder",
       "responses": "Antworten & KI",
       "branding": "Branding & Anpassung",
       "engagement": "Engagement & Belohnungen",
@@ -616,7 +628,7 @@
         "✓"
       ],
       [
-        "Aktionsblock-Styling<br><small>Benutzerdefinierte Bilder und Farben für Belohnungsblöcke mitten in der Umfrage</small>",
+        "Aktionsblock-Styling<br><small>Benutzerdefinierte Bilder und Farben für Belohnungsblöcke mitten in der Convo</small>",
         "✗",
         "✓",
         "✓",
@@ -637,7 +649,7 @@
         "✓"
       ],
       [
-        "KI-Credits<br><small>Credits werden benötigt, um Umfrageentwürfe mit /draft zu erstellen und offene Antworten zusammenzufassen</small>",
+        "KI-Credits<br><small>Credits werden benötigt, um Entwürfe zu erstellen (in Discord mit /draft, in der Web-App oder über die API) und offene Antworten zusammenzufassen</small>",
         "10k einmaliger Test",
         "✓<br>500k / Monat",
         "✓<br>1 Million / Monat",
@@ -703,49 +715,49 @@
     ]
   },
   "surveyConvos": {
-    "pageTitle": "Discord Formular und Umfrage, neu gedacht als Gespräch | Subo",
-    "pageDescription": "Subo ist die Discord-App für Umfragen und Formulare, die das kalte Formular durch ein echtes Gespräch ersetzt. Der bessere Weg für Fragebögen, Bewerbungen und Feedback-Formulare in deinem Server oder im Web, mit mehr vollständigen Antworten als bei Google Forms.",
-    "heroTitle": "Das Discord-Formular, das sich wie ein <strong class=\"accent\">Gespräch</strong> anfühlt",
-    "heroSubtitle": "Kein Formular. Keine einfache Umfrage. Ein freundlicher Einzelchat, bei dem deine Mitglieder wirklich antworten möchten.",
+    "pageTitle": "Discord-Fragebogen-App, neu gedacht als Gespräch | Subo",
+    "pageDescription": "Subo stellt deinen Discord-Fragebogen als freundliches Gespräch unter vier Augen statt als Wand aus Feldern. Eine Frage nach der anderen, in deinem Server oder im Web, mit mehr vollständigen und ausführlicheren Antworten. Kostenloser Plan, anonymer Modus, Skip-Logik und CSV-Export.",
+    "heroTitle": "Der Discord-Fragebogen, der sich wie ein <strong class=\"accent\">Gespräch</strong> anfühlt",
+    "heroSubtitle": "Ein freundlicher Chat unter vier Augen, in dem deine Mitglieder wirklich antworten wollen, eine Frage nach der anderen statt einer ganzen Seite voller Felder.",
     "heroCta": "Zu Discord hinzufügen, Kostenlos",
-    "whatTitle": "WAS IST EIN SURVEY CONVO?",
+    "whatTitle": "WAS IST EINE CONVO?",
     "whatBody": [
-      "Ein Survey Convo ist ein privates Gespräch zwischen einem Mitglied deiner Community und Subo, dem Bot, direkt in deinem Discord-Server oder im Web. Wenn du ein Discord-Formular, einen Fragebogen oder eine Alternative zu Google Forms für deinen Server gesucht hast: Das ist es, nur ohne das kalte Formular-Gefühl.",
-      "Anstatt Mitglieder zu einem kalten, generischen Formular zu schicken, lädt Subo sie zu einem Chat ein. Fragen erscheinen einzeln nacheinander in einem freundlichen Nachrichtenformat. Es fühlt sich an, als würde man mit jemandem sprechen, nicht als würde man Papierkram ausfüllen.",
-      "Das Ergebnis? <strong>Höhere Abschlussraten</strong>, reichhaltigere Antworten und Mitglieder, denen das Erlebnis wirklich gefällt.",
-      "Du fängst gerade erst an, Antworten in deinem Server zu sammeln? Die praktische Anleitung: <a href=\"/blog/how-to-make-a-discord-form/\">wie du ein Formular oder eine Umfrage in Discord erstellst</a> (auf Englisch)."
+      "Du bist wegen eines Fragebogens hier. Bei Subo ist dieser Fragebogen eine <strong>Convo</strong>: ein privates Gespräch zwischen einem Mitglied deiner Community und Subo, dem Bot, direkt in deinem Discord-Server oder im Web. Dieselben Fragen und am Ende dieselben strukturierten Daten, nur eine nach der anderen statt als Wand aus Feldern.",
+      "Anstatt Mitglieder auf eine kalte, generische Fragebogenseite zu schicken, lädt Subo sie zu einem Chat ein. Die Fragen kommen einzeln, als Nachrichten. Es fühlt sich an, als würdest du mit jemandem reden, nicht als würdest du Papierkram ausfüllen.",
+      "Das Ergebnis: <strong>höhere Abschlussraten</strong>, ausführlichere Antworten und Mitglieder, denen das Ganze wirklich Spaß macht.",
+      "Du sammelst Bewerbungen, Anmeldungen, Bestellungen oder Bug-Reports statt Meinungen? Dafür gibt es eine eigene Seite: <a href=\"/de/forms/\">das Discord-Formular, gebaut als Convo</a>."
     ],
-    "formsVsConvosTitle": "KLASSISCHE FORMULARE vs. SURVEY CONVOS",
-    "formsColumn": "Klassische Formulare",
-    "convosColumn": "Survey Convos mit Subo",
+    "formsVsConvosTitle": "DER KLASSISCHE FRAGEBOGEN vs. EINE CONVO",
+    "formsColumn": "Ein klassischer Fragebogen",
+    "convosColumn": "Convos mit Subo",
     "formsVsConvosItems": [
       {
         "forms": "Kaltes, unpersönliches Interface",
         "convos": "Warmes Chat-Erlebnis"
       },
       {
-        "forms": "Lange Seiten, die überwältigend wirken",
-        "convos": "Eine Frage auf einmal"
+        "forms": "Alle Fragen auf einmal sichtbar, und genau da steigen Leute aus",
+        "convos": "Eine Frage nach der anderen"
       },
       {
-        "forms": "Kein Kontext oder Anweisungen zwischen den Fragen möglich",
+        "forms": "Kein Kontext und keine Anweisungen zwischen den Fragen möglich",
         "convos": "Inhaltsblöcke fügen Intros, Hinweise, GIFs oder Pausen an beliebiger Stelle ein"
       },
       {
-        "forms": "Mitglieder navigieren weg",
+        "forms": "Mitglieder verlassen die Seite",
         "convos": "Mitglieder bleiben in Discord oder nutzen den Weblink"
       },
       {
         "forms": "Niedrige Abschlussraten",
-        "convos": "Höheres Engagement und höhere Abschlussraten"
+        "convos": "Mehr Beteiligung und mehr Abschlüsse"
       }
     ],
     "howTitle": "WIE ES FUNKTIONIERT",
     "howSteps": [
       {
         "number": "1",
-        "title": "Du erstellst die Umfrage",
-        "desc": "Erstelle eine Umfrage mit dem /survey-Befehl oder verwende /draft, damit Subos KI eine auf Basis deiner Ziele generiert. Du kannst Umfragen auch über die Subo-Web-App erstellen und verwalten."
+        "title": "Du erstellst den Fragebogen",
+        "desc": "Erstelle eine Convo mit dem Befehl /survey, oder lass sie mit /draft von Subos KI nach deinen Zielen generieren. Die Web-App kann beides: von Grund auf bauen, oder Mit KI generieren wählen und beschreiben, was du herausfinden willst."
       },
       {
         "number": "2",
@@ -818,31 +830,36 @@
       }
     ],
     "webTitle": "IN DISCORD UND IM WEB",
-    "webDesc": "Survey Convos funktionieren nativ in Discord, aber Subo unterstützt auch eine webbasierte Umfrageerfahrung. Admins wählen, ob eine Umfrage in Discord oder im Web läuft und ob sie für jeden offen oder auf Community-Mitglieder beschränkt ist. In jedem Fall verwaltest du Umfragen, siehst Ergebnisse und analysierst Daten über die Subo-Web-Admin-Oberfläche.",
-    "benefitsTitle": "WARUM SURVEY CONVOS BESSER FUNKTIONIEREN",
+    "webDesc": "Convos laufen nativ in Discord, aber Subo bietet auch ein Web-Erlebnis. Admins wählen, ob eine Convo in Discord oder im Web beantwortet wird und ob sie für alle offen oder auf Community-Mitglieder beschränkt ist. In beiden Fällen verwaltest du deine Projekte, siehst Ergebnisse und analysierst Daten über die Subo-Web-Admin-Oberfläche.",
+    "benefitsTitle": "WARUM CONVOS BESSER FUNKTIONIEREN",
     "benefitsList": [
       "👋 Begrüßt Mitglieder mit Namen und belohnt sie unterwegs, nicht erst am Ziel",
-      "📱 Funktioniert auf Mobilgeräten ohne Aufwand",
+      "📱 Funktioniert auf dem Handy ohne Reibung",
       "🤫 Optionaler anonymer Modus für ehrliches, ungefiltertes Feedback",
       "⭐ Bewertungen, Skalen und Rankings mit einem Tap beantwortet und als Zahlen ausgewertet",
-      "🔀 Skip-Logik, irrelevante Fragen überspringen und Belohnungen je nach Antwort auslösen",
-      "📢 Inhaltsblöcke, füge Intro, wichtigen Kontext, GIF oder eine Pause mitten in der Umfrage ein, ohne eine Frage zu stellen",
-      "⏱️ Geplante und wiederkehrende Umfragen laufen automatisch",
-      "🏆 XP, Rollen und Erfolge fördern höhere Beteiligung",
+      "🔀 Skip-Logik: irrelevante Fragen überspringen und Belohnungen je nach Antwort auslösen",
+      "📢 Inhaltsblöcke: ein Intro, wichtigen Kontext, ein GIF oder eine Pause mitten in der Convo einfügen, ohne eine Frage zu stellen",
+      "⏱️ Geplante und wiederkehrende Convos laufen automatisch",
+      "🏆 XP, Rollen und Erfolge sorgen für mehr Beteiligung",
       "🤖 KI-Zusammenfassungen offener Antworten"
-    ]
+    ],
+    "blogLinkLocal": {
+      "text": "So erstellst du einen Fragebogen in Discord, Schritt für Schritt (auf Englisch) →",
+      "href": "/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/"
+    }
   },
   "about": {
     "pageTitle": "Über Subo | Der Discord Umfrage-Bot",
-    "pageDescription": "Erfahre mehr über Subo, den Discord-Umfrage-Bot, dem über 15.000+ Communities für Feedback und Mitgliederbindung vertrauen.",
+    "pageDescription": "Erfahre mehr über Subo, den Discord-Bot für Umfragen und Fragebögen, dem über 15.000 Communities für Feedback und Mitgliederbindung vertrauen.",
     "heroTitle": "ÜBER SUBO",
     "heroSubtitle": "SU-BO. Survey Bot. Gebaut für Communities, die echte Antworten wollen.",
     "storyTitle": "WARUM SUBO EXISTIERT",
     "storyBody": [
       "Subo wurde 2021 von einem kleinen Team von Profis 🤓 gegründet, das jahrzehntelange Erfahrung mit dem Aufbau von Umfrageplattformen hat, die von Millionen globaler Nutzer und den weltweit führenden Marken und Forschern eingesetzt werden. Wir haben aus erster Hand gesehen, wie Survey-Tools entwickelt werden: optimiert für Unternehmensvertriebszyklen, nicht für die Menschen, die sie tatsächlich nutzen. Das Erlebnis war durchgehend schlecht, und wir wollten das ändern.",
-      "Also haben wir Subo gebaut. Bootstrapped, eigenfinanziert und absolut unabhängig – vollständig darauf fokussiert, Feedback wie ein Gespräch statt wie eine lästige Pflicht anfühlen zu lassen. Discord war der perfekte Startpunkt: eine Plattform, auf der Communities bereits miteinander kommunizieren und wo Tools zum Zuhören dringend fehlten.",
-      "Seit dem Launch ist Subo gewachsen und bedient nun über <strong>15.000 Discord-Server</strong> – von Gaming-Gilden über Creator-Communities, DAOs, Sportclubs, Marken-Communities bis hin zu Bildungsgruppen. Wir sind ein kleines Team und beabsichtigen, das auch zu bleiben."
+      "Also haben wir Subo gebaut. Bootstrapped, eigenfinanziert und entschieden unabhängig, und ganz darauf fokussiert, dass sich Feedback wie ein Gespräch anfühlt statt wie eine lästige Pflicht. Discord war der perfekte Startpunkt: eine Plattform, auf der Communities bereits miteinander redeten und wo Tools zum Zuhören dringend fehlten.",
+      "Seit dem Launch ist Subo gewachsen und bedient heute über <strong>15.000 Discord-Server</strong>, von Gaming-Gilden über Creator-Communities, DAOs, Sportclubs und Marken-Communities bis hin zu Bildungsgruppen. Wir sind ein kleines Team und wollen das auch bleiben."
     ],
+    "founderNote": "Einer unserer Mitgründer hat seine ganze Laufbahn an der Schnittstelle von Communities und Marktforschung verbracht: Ciao, eine der ersten Online-Communities Europas und ein Pionier der Online-Forschung; danach Online-Communities bei OTX, einer auf Entertainment spezialisierten Forschungsagentur; und schließlich die weltweite Leitung von Befragten-Rekrutierung und Panels bei Ipsos. <a href=\"https://www.linkedin.com/in/ogaudemar/\" target=\"_blank\" rel=\"noopener noreferrer\">Mehr auf LinkedIn</a>.",
     "statsTitle": "IN ZAHLEN",
     "stats": [
       {
@@ -867,22 +884,22 @@
       {
         "emoji": "💬",
         "title": "Konversationell von Grund auf",
-        "desc": "Fragen kommen als private Nachrichten – einzeln, im Chat-Format. Inhaltsblöcke erlauben dir, Intros, Kontext oder Pausen an beliebiger Stelle einzufügen. Keine Formularseite. Ein echtes Gespräch."
+        "desc": "Fragen kommen als private Nachrichten, eine nach der anderen, im Chat-Format. Mit Inhaltsblöcken fügst du Intros, Kontext oder Pausen an beliebiger Stelle ein. Keine Formularseite. Ein echtes Gespräch."
       },
       {
         "emoji": "🤖",
         "title": "KI-gestützte Analyse",
-        "desc": "Subo nutzt KI, um Umfragefragen für dich zu erstellen und offene Antworten zusammenzufassen. Was früher Stunden dauerte, dauert jetzt Sekunden."
+        "desc": "Subo schreibt die Fragen aus einem Ziel, das du in normaler Sprache beschreibst, in Discord, in der Web-App oder über die API, und fasst offene Antworten zusammen, sobald sie eintreffen. Was früher Stunden dauerte, dauert jetzt Sekunden."
       },
       {
         "emoji": "🏆",
         "title": "Gamification eingebaut",
-        "desc": "Mitglieder verdienen XP, leveln auf und schalten Rollen, XP oder Erfolge je nach Antwort frei — nicht nur dafür, dass sie zu Ende kommen."
+        "desc": "Mitglieder verdienen XP, steigen im Level auf und schalten Rollen, XP oder Erfolge je nach Antwort frei, nicht nur dafür, dass sie bis zum Ende kommen."
       },
       {
         "emoji": "🌐",
         "title": "Discord UND das Web",
-        "desc": "Umfragen funktionieren in Discord und im Web. Auch Mitglieder ohne Discord können teilnehmen. Du verwaltest alles über die Subo-Web-Admin-Oberfläche."
+        "desc": "Convos funktionieren in Discord und im Web. Auch Mitglieder ohne Discord können teilnehmen. Du verwaltest alles über die Subo-Web-Admin-Oberfläche."
       },
       {
         "emoji": "🔐",
@@ -892,11 +909,20 @@
       {
         "emoji": "🎯",
         "title": "Erweitertes Targeting",
-        "desc": "Sende Umfragen an bestimmte Rollen, Kanäle oder Einzelpersonen. Verwende Skip-Logik, um Fragen basierend auf vorherigen Antworten zu verzweigen. Für Präzision entwickelt."
+        "desc": "Sende Convos an bestimmte Rollen, Kanäle oder Einzelpersonen. Verwende Skip-Logik, um Fragen basierend auf vorherigen Antworten zu verzweigen. Für Präzision entwickelt."
       }
     ],
     "missionTitle": "UNSERE MISSION",
-    "missionBody": "Wir glauben, dass jede Community das Recht hat, gehört zu werden – und dass die Tools zum Zuhören genauso engagierend sein sollten wie die Communities selbst. Zu oft verbringt ein Admin Stunden damit, eine Umfrage zu erstellen, schickt sie ab und bekommt eine Handvoll Antworten. Nicht, weil den Mitgliedern nichts daran liegt — sondern weil sich eine Wand voller Formularfelder wie Hausaufgaben anfühlt. Subo schließt die Lücke zwischen dem, wie sich eine Umfrage schon immer angefühlt hat, und dem, wie sich ein echtes Gespräch anfühlt."
+    "missionBody": "Wir glauben, dass jede Community es verdient, gehört zu werden, und dass die Tools zum Zuhören genauso mitreißend sein sollten wie die Communities selbst. Zu oft verbringt ein Admin Stunden mit einem Fragebogen, schickt ihn ab und bekommt eine Handvoll Antworten. Nicht, weil den Mitgliedern nichts daran liegt, sondern weil sich eine Wand voller Formularfelder wie Hausaufgaben anfühlt. Subo schließt die Lücke zwischen dem, wie sich ein Fragebogen schon immer angefühlt hat, und dem, wie sich ein echtes Gespräch anfühlt."
+  },
+  "changelog": {
+    "pageTitle": "Changelog | Neu bei Subo",
+    "pageDescription": "Jedes Subo-Release, das neueste zuerst: neue Funktionen, Verbesserungen und Launches des Discord-Bots für Umfragen und Fragebögen.",
+    "heroTitle": "CHANGELOG",
+    "heroSubtitle": "Alles, was wir veröffentlicht haben, das Neueste zuerst.",
+    "readMore": "Zur Ankündigung",
+    "legacyNote": "Angekündigt auf dem Support-Server",
+    "empty": "Noch keine Releases veröffentlicht. Schau bald wieder vorbei."
   },
   "pricingPage": {
     "pageTitle": "Pläne & Preise | Subo",
@@ -904,7 +930,7 @@
     "heroTitleAccent": "LEVEL UP ",
     "heroTitle": "MIT KOSTENPFLICHTIGEN PLÄNEN",
     "heroSubtitle": "Kostenlos starten. <br/> Upgrade durchführen, um mehr Funktionen freizuschalten und die zukünftige Entwicklung zu unterstützen.",
-    "heroDescription": "Egal ob du eine kleine Gruppe oder eine große, aktive Community leitest – Subo hat den richtigen Plan für dich.<br>",
+    "heroDescription": "Egal ob du eine kleine Gruppe oder eine große, aktive Community leitest: Subo hat den richtigen Plan für dich.<br>",
     "stripeCardTitle": "STRIPE",
     "stripeCardFeatures": [
       "Alle Tarife (inkl. Custom Bots), monatlich oder jährlich, 1 Server oder mehr",
@@ -932,43 +958,11 @@
       }
     ]
   },
-  "developerApi": {
-    "title": "ENTWICKELN UND AUTOMATISIEREN.",
-    "subtitle": "Automatisiere Umfragen, leite Antworten an deinen Daten-Stack weiter oder lass KI-Agenten deine Community-Forschung durchführen. Alles über eine einfache REST-API.",
-    "features": [
-      {
-        "title": "AUTOMATISIEREN & ERFASSEN",
-        "content": [
-          "Erstelle Convos und Umfragen programmatisch",
-          "Generiere automatisch Umfrage-Skripte aus einer Klartextbeschreibung mithilfe von KI",
-          "Öffne, schließe, klone und plane Projekte über die API"
-        ]
-      },
-      {
-        "title": "BELOHNEN & ANALYSIEREN",
-        "content": [
-          "Rufe Antworten der Teilnehmer in Echtzeit ab",
-          "Verwalte Mitglieder-XP, Zugangsstufen, Erfolge und Community-Einstellungen",
-          "Erhalte aggregierte Statistiken, Verteilungen und KI-generierte Zusammenfassungen"
-        ]
-      },
-      {
-        "title": "INTEGRIEREN & ERWEITERN",
-        "content": [
-          "Abonniere Webhook-Events für Echtzeit-Datenpipelines",
-          "Leite Antworten an deinen Daten-Stack, CRM oder Analyse-Tools weiter",
-          "Lass KI-Agenten Umfragen durchführen und Ergebnisse autonom abrufen"
-        ]
-      }
-    ],
-    "ctaDocs": "API-Dokumentation anzeigen",
-    "ctaKey": "API-Schlüssel erhalten"
-  },
   "useCasesGetThingsDone": {
-    "pageTitle": "Bewerbungen, Anmeldungen und Anfragen auf Discord, ohne Formular | Subo",
+    "pageTitle": "Bewerbungen, Anmeldungen, Zusagen und Tickets auf Discord | Subo",
     "pageDescription": "Wickle Bewerbungen, Anmeldungen, Zusagen, Bestellungen und Ticket-Anfragen direkt in Discord als freundliches Gespräch ab. Mit Skip-Logik, Rollen-Targeting, Planung und automatischen Rollen zum Abschluss.",
     "eyebrow": "ORGANISIEREN",
-    "heroTitle": "ALLES, WAS FRÜHER IN EINEM FORMULAR FESTSTECKTE",
+    "heroTitle": "BEWERBUNGEN, ANMELDUNGEN UND ANFRAGEN, OHNE PAPIERKRAM",
     "heroSubtitle": "Bewerbungen, Anmeldungen, Bestellungen und Anfragen, als freundliches Gespräch statt als Wand voller Felder.",
     "heroCta": "Zu Discord hinzufügen",
     "sections": [
@@ -980,12 +974,12 @@
           {
             "emoji": "💬",
             "title": "Ein Schritt nach dem anderen",
-            "desc": "Fragen kommen wie im Chat, so fühlt sich eine Bewerbung mit 20 Feldern wie ein kurzer Austausch an. <a href=\"/de/survey-convos/\">Survey Convos ansehen →</a>"
+            "desc": "Fragen kommen wie im Chat, so fühlt sich eine Bewerbung mit 20 Feldern wie ein kurzer Austausch an. <a href=\"/de/survey-convos/\">Convos ansehen →</a>"
           },
           {
             "emoji": "📨",
             "title": "Kein Absprung nach außen",
-            "desc": "Es läuft in Discord, oder im Web, wenn du es brauchst. Keine Weiterleitung zu einem Formular, dem niemand traut."
+            "desc": "Es läuft in Discord, oder im Web, wenn du es brauchst. Keine Weiterleitung zu einem <a href=\"/de/forms/\">Formular</a>, dem niemand traut."
           },
           {
             "emoji": "🔀",
@@ -1039,17 +1033,46 @@
     "examplesLabel": "IN DIE PRAXIS BRINGEN",
     "examplesTitle": "Was Communities mit Subo abwickeln",
     "examples": [
-      { "text": "🧱 Playtester und Beta-Nutzer anmelden", "template": "playtester-beta-recruitment" },
-      { "text": "📝 Neue Mitglieder mit interaktiven Checklisten einführen", "template": "onboarding-certification" },
-      { "text": "💡 Vorschläge und Feature-Wünsche entgegennehmen", "template": "feature-prioritization" },
-      { "text": "🚀 Fragen, welche Funktionen oder Belohnungen als Nächstes kommen sollen", "template": "feature-prioritization" },
-      { "text": "🥇 Eine Shortlist von Wünschen nach Priorität ordnen lassen", "template": "rank-your-favorites" },
-      { "text": "🪙 Eine Abstimmung über einen Vorschlag durchführen", "template": "governance-proposal-vote" },
-      { "text": "📅 Einen Termin finden, an dem alle können", "template": "scheduling-availability-poll" },
-      { "text": "🎤 Mitglieder befragen, die sich auf eine Staff-Rolle bewerben" },
-      { "text": "🎟️ Zusagen, Teilnehmerdaten und Fragen sammeln" },
-      { "text": "🧾 Bestellungen, Drops oder Ansprüche bearbeiten" },
-      { "text": "🎫 Eine schlanke Ticket- oder Support-Erfassung betreiben" }
+      {
+        "text": "🧱 Playtester und Beta-Nutzer anmelden",
+        "template": "playtester-beta-recruitment"
+      },
+      {
+        "text": "📝 Neue Mitglieder mit interaktiven Checklisten einführen",
+        "template": "onboarding-certification"
+      },
+      {
+        "text": "💡 Vorschläge und Feature-Wünsche entgegennehmen",
+        "template": "feature-prioritization"
+      },
+      {
+        "text": "🚀 Fragen, welche Funktionen oder Belohnungen als Nächstes kommen sollen",
+        "template": "feature-prioritization"
+      },
+      {
+        "text": "🥇 Eine Shortlist von Wünschen nach Priorität ordnen lassen",
+        "template": "rank-your-favorites"
+      },
+      {
+        "text": "🪙 Eine Abstimmung über einen Vorschlag durchführen",
+        "template": "governance-proposal-vote"
+      },
+      {
+        "text": "📅 Einen Termin finden, an dem alle können",
+        "template": "scheduling-availability-poll"
+      },
+      {
+        "text": "🎤 Mitglieder befragen, die sich auf eine Staff-Rolle bewerben"
+      },
+      {
+        "text": "🎟️ Zusagen, Teilnehmerdaten und Fragen sammeln"
+      },
+      {
+        "text": "🧾 Bestellungen, Drops oder Ansprüche bearbeiten"
+      },
+      {
+        "text": "🎫 Eine schlanke Ticket- oder Support-Erfassung betreiben"
+      }
     ]
   },
   "useCasesEngagement": {
@@ -1127,25 +1150,56 @@
     "examplesLabel": "IDEEN ZUM KLAUEN",
     "examplesTitle": "Wie Communities mit Subo spielen",
     "examples": [
-      { "text": "🧠 Automatisch bewertete Quiz und Wissenstests starten", "template": "lore-trivia-quiz" },
-      { "text": "🔮 Tippspiele zu den nächsten Spielen veranstalten", "template": "event-prediction-contest" },
-      { "text": "🧩 Schnelle Umfragen während Turnieren oder Matches", "template": "match-prediction-poll" },
-      { "text": "🍕 Über den besten Pizzabelag abstimmen", "template": "this-or-that-poll" },
-      { "text": "🏀 MVPs und Highlight-Momente wählen", "template": "pick-favorite-poll" },
-      { "text": "🥇 Die besten Maps, Charaktere oder Tracks in eine Rangfolge bringen", "template": "rank-your-favorites" },
-      { "text": "🍿 Abstimmen, was bei der nächsten Watch-Party läuft", "template": "pick-favorite-poll" },
-      { "text": "🦖 Dem Community-Dinosaurier einen Namen geben", "template": "pick-favorite-poll" },
-      { "text": "🌈 Fragen, wie die Stimmung heute so ist", "template": "this-or-that-quick-poll" },
-      { "text": "🐸 Meme-Turnier: krönt den ultimativen Meme-Lord" },
-      { "text": "🧙‍♂️ Mitglieder in Hogwarts-Häuser einteilen" }
+      {
+        "text": "🧠 Automatisch bewertete Quiz und Wissenstests starten",
+        "template": "lore-trivia-quiz"
+      },
+      {
+        "text": "🔮 Tippspiele zu den nächsten Spielen veranstalten",
+        "template": "event-prediction-contest"
+      },
+      {
+        "text": "🧩 Schnelle Umfragen während Turnieren oder Matches",
+        "template": "match-prediction-poll"
+      },
+      {
+        "text": "🍕 Über den besten Pizzabelag abstimmen",
+        "template": "this-or-that-poll"
+      },
+      {
+        "text": "🏀 MVPs und Highlight-Momente wählen",
+        "template": "pick-favorite-poll"
+      },
+      {
+        "text": "🥇 Die besten Maps, Charaktere oder Tracks in eine Rangfolge bringen",
+        "template": "rank-your-favorites"
+      },
+      {
+        "text": "🍿 Abstimmen, was bei der nächsten Watch-Party läuft",
+        "template": "pick-favorite-poll"
+      },
+      {
+        "text": "🦖 Dem Community-Dinosaurier einen Namen geben",
+        "template": "pick-favorite-poll"
+      },
+      {
+        "text": "🌈 Fragen, wie die Stimmung heute so ist",
+        "template": "this-or-that-quick-poll"
+      },
+      {
+        "text": "🐸 Meme-Turnier: krönt den ultimativen Meme-Lord"
+      },
+      {
+        "text": "🧙‍♂️ Mitglieder in Hogwarts-Häuser einteilen"
+      }
     ]
   },
   "useCasesResearch": {
-    "pageTitle": "Community-Umfragen auf Discord: ehrliche Antworten bekommen | Subo",
-    "pageDescription": "Erfahre, wer deine Discord-Mitglieder sind und was sie wollen. Subo führt Umfragen im Gesprächsformat durch, mit Vertraulichkeitsstufen, Rollen-Targeting, Live-Diagrammen und KI-Zusammenfassungen offener Antworten.",
+    "pageTitle": "Community-Research auf Discord: Fragebögen mit ehrlichen Antworten | Subo",
+    "pageDescription": "Erfahre, wer deine Discord-Mitglieder sind und was sie wollen. Subo stellt deine Fragebögen als Gespräch, mit Vertraulichkeitsstufen, Rollen-Targeting, Live-Diagrammen und KI-Zusammenfassungen offener Antworten.",
     "eyebrow": "ENTDECKEN",
     "heroTitle": "ERFAHRE, WER DEINE COMMUNITY WIRKLICH IST",
-    "heroSubtitle": "Finde heraus, wer deine Mitglieder sind, was sie wollen und wie es ihnen geht, mit Umfragen, die Menschen wirklich zu Ende bringen.",
+    "heroSubtitle": "Finde heraus, wer deine Mitglieder sind, was sie wollen und wie es ihnen geht, mit Fragebögen, die Menschen wirklich zu Ende bringen.",
     "heroCta": "Zu Discord hinzufügen",
     "sections": [
       {
@@ -1156,12 +1210,12 @@
           {
             "emoji": "💬",
             "title": "Gespräche statt Formulare",
-            "desc": "Eine Frage nach der anderen, wie im Chat. Mehr Abschlüsse und durchdachtere Antworten. <a href=\"/de/survey-convos/\">Survey Convos ansehen →</a>"
+            "desc": "Eine Frage nach der anderen, wie im Chat. Mehr Abschlüsse und durchdachtere Antworten. <a href=\"/de/survey-convos/\">Convos ansehen →</a>"
           },
           {
             "emoji": "🕵️",
             "title": "Drei Vertraulichkeitsstufen",
-            "desc": "Transparent, halb-privat oder anonym. Lege pro Umfrage fest, wie viel Vertrauen nötig ist, und erhalte offenes Feedback auch zu heiklen Themen."
+            "desc": "Transparent, halb-privat oder anonym. Lege pro Convo fest, wie viel Vertrauen nötig ist, und erhalte offenes Feedback auch zu heiklen Themen."
           },
           {
             "emoji": "🎯",
@@ -1220,27 +1274,66 @@
     "examplesLabel": "WAS WIRST DU HERAUSFINDEN?",
     "examplesTitle": "Fragen, die Communities mit Subo stellen",
     "examples": [
-      { "text": "💡 Feedback zu einer neuen Idee, einem Produkt oder dem Preis", "template": "product-market-fit" },
-      { "text": "🧑‍🤝‍🧑 Verstehen, wer deine Mitglieder wirklich sind", "template": "player-onboarding-profiler" },
-      { "text": "🔥 Herausfinden, was deine Community begeistert", "template": "content-preference" },
-      { "text": "📈 Zufriedenheit in regelmäßigen Abständen messen", "template": "nps-reason-followup" },
-      { "text": "⭐ Ein Release, eine Session oder ein Event bewerten lassen", "template": "csat-satisfaction" },
-      { "text": "💖 Einen Stimmungs- oder Kultur-Check durchführen", "template": "community-health-engagement" },
-      { "text": "💡 Vorschläge und Feature-Wünsche sammeln", "template": "suggestion-box" },
-      { "text": "🗺️ Abstimmen lassen, was als Nächstes kommt, und warum", "template": "feature-roadmap-vote" },
-      { "text": "🎮 Feedback aus Playtests und Betas einsammeln", "template": "playtest-beta-feedback" },
-      { "text": "🚪 Ein Austrittsgespräch führen, wenn Mitglieder gehen", "template": "churn-cancellation" },
-      { "text": "🎯 Erfahren, welche Themen sich Mitglieder als Nächstes wünschen", "template": "content-preference" },
-      { "text": "🗣️ Feedback zu einem vergangenen Event einholen" },
-      { "text": "🌟 Bewertungen und Erfahrungsberichte sammeln" },
-      { "text": "🌍 Sehen, wie Mitglieder auf dich aufmerksam wurden" }
+      {
+        "text": "💡 Feedback zu einer neuen Idee, einem Produkt oder dem Preis",
+        "template": "product-market-fit"
+      },
+      {
+        "text": "🧑‍🤝‍🧑 Verstehen, wer deine Mitglieder wirklich sind",
+        "template": "player-onboarding-profiler"
+      },
+      {
+        "text": "🔥 Herausfinden, was deine Community begeistert",
+        "template": "content-preference"
+      },
+      {
+        "text": "📈 Zufriedenheit in regelmäßigen Abständen messen",
+        "template": "nps-reason-followup"
+      },
+      {
+        "text": "⭐ Ein Release, eine Session oder ein Event bewerten lassen",
+        "template": "csat-satisfaction"
+      },
+      {
+        "text": "💖 Einen Stimmungs- oder Kultur-Check durchführen",
+        "template": "community-health-engagement"
+      },
+      {
+        "text": "💡 Vorschläge und Feature-Wünsche sammeln",
+        "template": "suggestion-box"
+      },
+      {
+        "text": "🗺️ Abstimmen lassen, was als Nächstes kommt, und warum",
+        "template": "feature-roadmap-vote"
+      },
+      {
+        "text": "🎮 Feedback aus Playtests und Betas einsammeln",
+        "template": "playtest-beta-feedback"
+      },
+      {
+        "text": "🚪 Ein Austrittsgespräch führen, wenn Mitglieder gehen",
+        "template": "churn-cancellation"
+      },
+      {
+        "text": "🎯 Erfahren, welche Themen sich Mitglieder als Nächstes wünschen",
+        "template": "content-preference"
+      },
+      {
+        "text": "🗣️ Feedback zu einem vergangenen Event einholen"
+      },
+      {
+        "text": "🌟 Bewertungen und Erfahrungsberichte sammeln"
+      },
+      {
+        "text": "🌍 Sehen, wie Mitglieder auf dich aufmerksam wurden"
+      }
     ]
   },
   "customSurveyBot": {
     "pageTitle": "Eigener Discord Umfrage-Bot: dein Name, dein Bot | Subo",
     "pageDescription": "Alles, was du an Subo magst, mit deinem eigenen Branding: ein vollständig white-gelabelter Discord Umfrage-Bot mit deinem Namen, deinem Avatar und deinen Farben, für deine Community oder deine Kunden.",
     "hero": {
-      "title": "___, DEIN UMFRAGE-BOT",
+      "title": "___, DEIN EIGENER DISCORD-BOT",
       "subtitle": "Alles, was du an Subo magst, aber mit deinem eigenen Branding",
       "ctaPrimary": {
         "text": "Erstelle deinen eigenen Umfrage-Bot",
@@ -1369,11 +1462,12 @@
   },
   "pollsPage": {
     "pageTitle": "Discord Umfrage-Bot: Quiz, Tippspiele & Punktevergabe | Subo",
-    "pageDescription": "Subo ist der Discord Umfrage-Bot, der aus Umfragen automatisch bewertete Quiz und Tippspiele macht. Vergib Punkte pro Option, markiere richtige Antworten, belohne mit XP und Rollen und gestalte jede Einladung selbst.",
+    "pageDescription": "Subo ist der Discord Umfrage-Bot (für Umfragen und Abstimmungen), der aus Umfragen automatisch bewertete Quiz und Tippspiele macht. Vergib Punkte pro Option, markiere richtige Antworten, belohne mit XP und Rollen und gestalte jede Einladung selbst.",
     "hero": {
       "title": "Der Discord Umfrage-Bot, der <strong class=\"accent\">bewertet, benotet und belohnt</strong>",
       "subtitle": "Discord hat eigene Umfragen, aber die zählen nur Stimmen. Subo ist der Umfrage-Bot, der Quiz-Abende und Tippspiele durchführt und deine Mitglieder danach automatisch belohnt.",
-      "cta": "Kostenlos zu Discord hinzufügen"
+      "cta": "Kostenlos zu Discord hinzufügen",
+      "bridge": "<p><strong>Umfrage oder Abstimmung: In Discord ist es dasselbe Werkzeug.</strong> Discord nennt seine eingebaute Funktion „Umfrage“, viele sagen „Abstimmung“. Gemeint ist dasselbe: eine geschlossene Frage, die deine Community mit einem Klick beantwortet.</p><p>Du suchst eher einen Fragebogen mit mehreren Fragen? <a href=\"/de/survey-convos/\">Der Discord-Fragebogen als Convo</a>.</p>"
     },
     "nav": [
       {
@@ -1464,7 +1558,7 @@
           {
             "emoji": "🎯",
             "title": "Oder belohne nach Leistung",
-            "desc": "Du willst weiter gehen? Vergib dynamische XP auf Basis der Punktzahl oder der richtigen Antwort, direkt aus dem Dashboard, dem Bearbeiten-Menü oder dem <code>/poll</code>-Befehl."
+            "desc": "Du willst weiter gehen? Vergib dynamische XP auf Basis der Punktzahl oder der richtigen Antwort, direkt aus dem Dashboard, dem Bearbeiten-Menü oder mit dem Befehl <code>/umfrage</code> (oder <code>/poll</code>)."
           },
           {
             "emoji": "🎭",
@@ -1515,7 +1609,7 @@
     "outro": {
       "title": "🧠 Bau dir über die Zeit ein klareres Bild",
       "body": [
-        "Wenn du mehr über deine Community erfahren willst, ist eine Strategie ein Survey Convo mit mehreren Fragen. Eine andere: regelmäßig kurze Umfragen starten.",
+        "Wenn du mehr über deine Community erfahren willst, ist eine Strategie eine Convo mit mehreren Fragen. Eine andere: regelmäßig kurze Umfragen starten.",
         "Bei Subo ist jede Antwort mit dem Mitglied verknüpft, das sie gegeben hat (außer im anonymen Modus). So kannst du über die Zeit Zusammenhänge erkennen: sehen, wie sich Meinungen entwickeln, nachfassen und individuelle Vorlieben verstehen, nicht nur die Gesamtzahl.",
         "Discords eigene Umfragen können das nicht."
       ],
@@ -1533,12 +1627,321 @@
       }
     }
   },
+  "formsPage": {
+    "pageTitle": "Discord-Formular: die Google-Forms-Alternative für Server | Subo",
+    "pageDescription": "Erstelle ein Discord-Formular für Bewerbungen, Anmeldungen, Bug-Reports und Feedback. Subo stellt deine Fragen einzeln direkt im Server, sodass deine Mitglieder Discord zum Antworten nie verlassen. Kostenloser Plan, Web-Modus für Nicht-Mitglieder, Export als CSV und nach Google Sheets.",
+    "hero": {
+      "title": "Das Discord-Formular, das deine Mitglieder <strong class=\"accent\">wirklich ausfüllen</strong>",
+      "subtitle": "Dieselben strukturierten Fragen wie in Google Forms, einzeln gestellt, direkt in deinem Server. Und Subo weiß schon, wer antwortet: verifizierte Mitglieder, ihre Rollen und wann sie beigetreten sind, ganz ohne Feld für den Benutzernamen.",
+      "cta": "Zu Discord hinzufügen",
+      "bridge": "Du bist wegen eines Formulars hier. Bei Subo ist dieses Formular eine <strong>Convo</strong>: dieselben Fragen, einzeln gestellt in einem Chat statt auf einer Seite voller Felder."
+    },
+    "navAriaLabel": "Abschnitte der Seite",
+    "nav": [
+      {
+        "label": "WAS DU BAUEN KANNST",
+        "anchor": "build"
+      },
+      {
+        "label": "VS GOOGLE FORMS",
+        "anchor": "vs-google-forms"
+      },
+      {
+        "label": "WER ANTWORTET",
+        "anchor": "identity"
+      },
+      {
+        "label": "FRAGETYPEN",
+        "anchor": "questions"
+      },
+      {
+        "label": "NACH DEM ABSENDEN",
+        "anchor": "after"
+      },
+      {
+        "label": "FAQ",
+        "anchor": "faq"
+      }
+    ],
+    "sections": [
+      {
+        "id": "build",
+        "label": "WAS DU BAUEN KANNST",
+        "title": "Jedes Formular, das eine Community wirklich braucht",
+        "sub": "Fast jedes „Ich brauche ein Formular in Discord“ läuft auf eine Handvoll Aufgaben hinaus. Jede davon läuft als Convo: deine Fragen, der Reihe nach, im Server.",
+        "cards": [
+          {
+            "emoji": "🎖️",
+            "title": "Mod- und Staff-Bewerbungen",
+            "desc": "Erfahrung, Zeitzone, Verfügbarkeit und ein, zwei Szenariofragen. Ein Aktionsblock vergibt dem Bewerber eine Rolle, sobald er fertig ist, damit die Prüfung von selbst anläuft. <a href=\"/templates/\">Mit einer Vorlage starten (auf Englisch) →</a>"
+          },
+          {
+            "emoji": "🎟️",
+            "title": "Anmeldungen und Zusagen",
+            "desc": "Events, Playtests, Giveaways, Turniere. Sammle, was du brauchst, beschränke den Zugang auf eine Rolle und exportiere die Liste, wenn die Anmeldung schließt."
+          },
+          {
+            "emoji": "🐛",
+            "title": "Bug-Reports und Support-Anfragen",
+            "desc": "Ein Mitglied wählt eine Kategorie, beschreibt das Problem, und alles kommt als strukturierte Daten an statt in einem Thread, in dem niemand etwas wiederfindet. <a href=\"/templates/bug-report-form/\">Das Bug-Report-Formular ansehen (auf Englisch) →</a>"
+          },
+          {
+            "emoji": "📣",
+            "title": "Feedback und Stimmungsbild",
+            "desc": "Rückmeldungen nach einem Event, ein monatlicher Check-in, Reaktionen auf eine Regeländerung. Offene Antworten kommen als KI-Zusammenfassung zurück, nicht als hundert Antworten zum Durchscrollen."
+          },
+          {
+            "emoji": "🧾",
+            "title": "Bestellungen, Ansprüche und Anfragen",
+            "desc": "Drops, Auftragsarbeiten, Rollenanfragen. Mit geplanten Start- und Enddaten schließt sich ein Anfragefenster pünktlich von selbst."
+          },
+          {
+            "emoji": "👋",
+            "title": "Onboarding und Verifizierung",
+            "desc": "Stell die Fragen, die über den Zugang entscheiden, und vergib die Rolle automatisch, wenn jemand sie beantwortet."
+          }
+        ]
+      },
+      {
+        "id": "identity",
+        "label": "WER ANTWORTET",
+        "title": "Discord weiß schon, wer antwortet",
+        "sub": "Ein Formular-Link steht jedem offen, der ihn hat, also muss er die Leute fragen, wer sie sind. Subo muss das nie: Jede Person kommt von Discord authentifiziert an, und die Identitätsfragen, die die meisten Tippfehler und Abbrüche verursachen, verschwinden aus dem Formular.",
+        "cards": [
+          {
+            "emoji": "🛡️",
+            "title": "Nur echte Mitglieder",
+            "desc": "Jede Antwort stammt von jemandem, der wirklich in deinem Server ist, von Discord beim Öffnen des Formulars authentifiziert. Ein Link aus einem Screenshot lässt niemanden hinein, und jedes Mitglied kann nur einmal antworten. <a href=\"/blog/subo-vs-google-forms-typeform-discord-communities/\">Warum ein Formular-Link keine Mitgliedschaft beweist (auf Englisch) →</a>"
+          },
+          {
+            "emoji": "🔐",
+            "title": "Nur für die Rollen, die du wählst",
+            "desc": "Eine Bewerbung, die nur verifizierte Mitglieder öffnen können, ein Staff-Formular nur für Mods, eine Playtest-Anmeldung für Unterstützer. Ohne die Rolle gibt es keinen Zugang."
+          },
+          {
+            "emoji": "🪪",
+            "title": "Benutzername, Rollen und Beitrittsdatum, für dich erfasst",
+            "desc": "Schluss mit dem Feld „Wie lautet dein Discord-Name?“, das Leute vergessen, überspringen oder falsch ausfüllen. Im transparenten und im halb-privaten Modus kommt jede Antwort mit dem Benutzernamen des Mitglieds, seinen Rollen und dem Datum, an dem es deinem Server beigetreten ist."
+          },
+          {
+            "emoji": "✂️",
+            "title": "Kürzere Formulare, weniger Abbrüche",
+            "desc": "Jede gestrichene Identitätsfrage ist eine Gelegenheit weniger zum Abbrechen, ein Tippfehler weniger und ein Abend weniger, an dem du Benutzernamen mit deiner Mitgliederliste abgleichst."
+          },
+          {
+            "emoji": "🕶️",
+            "title": "Verifiziert, auch anonym",
+            "desc": "Im anonymen Modus prüft Subo trotzdem, dass jede Person ein echtes, eigenes Mitglied ist, und löscht dann die Verbindung zu ihren Antworten. Verlässliche Ergebnisse, ohne dass jemand sehen kann, wer was gesagt hat."
+          },
+          {
+            "emoji": "🌐",
+            "title": "Die Verifizierung funktioniert auch im Web",
+            "desc": "Ein Formular im Web-Modus lässt sich vor der ersten Frage absichern: Mitgliedschaft im Discord-Server, Besitz eines Spiels auf Steam, Folgen eines Twitch-Kanals oder Abo eines YouTube-Kanals."
+          }
+        ]
+      },
+      {
+        "id": "questions",
+        "label": "FRAGETYPEN",
+        "title": "Die Felder, die du gebaut hättest, und ein paar, die ein Formular nicht hat",
+        "sub": "Elf Blocktypen, in beliebiger Reihenfolge kombinierbar: Daraus besteht eine Convo. Neun stellen eine Frage, zwei tun etwas.",
+        "cards": [
+          {
+            "emoji": "✅",
+            "title": "Auswahl und Text",
+            "desc": "Einzelauswahl (inklusive Ja/Nein), Mehrfachauswahl, offener Text und Zahleneingabe. Offene Textantworten sind die, die die KI-Zusammenfassungen lesen."
+          },
+          {
+            "emoji": "⭐",
+            "title": "Bewertung, Skala und NPS",
+            "desc": "Bewertungen von 2 bis 10 Punkten, mit Sternen, Zahlen oder deinen eigenen Emojis. Meinungsskalen für Likert-Items. Eine feste NPS-Frage von 0 bis 10."
+          },
+          {
+            "emoji": "🥇",
+            "title": "Ranking",
+            "desc": "Zwingt dazu, Optionen in eine Reihenfolge zu bringen, statt allem zuzustimmen. Frag nach dem kompletten Ranking oder nur nach den Top-Plätzen. <a href=\"/blog/discord-ranking-questions-rank-what-you-build-next/\">Ranking-Fragen ansehen (auf Englisch) →</a>"
+          },
+          {
+            "emoji": "🔀",
+            "title": "Skip-Logik",
+            "desc": "Verzweige nach einer Antwort, damit jede Person nur die Fragen sieht, die sie betreffen. Aus einer Bewerbung mit 20 Feldern wird ein kurzer Austausch."
+          },
+          {
+            "emoji": "🧩",
+            "title": "Inhaltsblöcke",
+            "desc": "Sag etwas, ohne etwas zu fragen: eine Begrüßung, Regeln zum Bestätigen, eine Bestätigung am Ende."
+          },
+          {
+            "emoji": "⚡",
+            "title": "Aktionsblöcke",
+            "desc": "Vergib XP, eine Rolle oder einen Erfolg mitten im Gespräch, damit sich das Beenden lohnt, statt ein Gefallen zu sein."
+          }
+        ]
+      },
+      {
+        "id": "after",
+        "label": "NACH DEM ABSENDEN",
+        "title": "Sammeln ist der leichte Teil",
+        "sub": "Ein Formular gibt dir eine Tabelle und hört dort auf. Subo kann weiterleiten, belohnen und auf das reagieren, was ankommt.",
+        "cards": [
+          {
+            "emoji": "🕵️",
+            "title": "Drei Vertraulichkeitsmodi",
+            "desc": "Transparent, halb-privat (nur für Admins sichtbar) oder vollständig anonym, sodass niemand, auch du nicht, eine Antwort einem Mitglied zuordnen kann. <a href=\"/blog/complete-guide-anonymous-surveys-discord/\">Den Leitfaden zur Anonymität lesen (auf Englisch) →</a>"
+          },
+          {
+            "emoji": "🎯",
+            "title": "Ergebnisse zurück in den Server",
+            "desc": "Poste die Summen in einem Kanal, damit die Mitglieder sehen, wie die Community entschieden hat. Weil jede Antwort von einem verifizierten Mitglied stammt, vermutet niemand einen Raid."
+          },
+          {
+            "emoji": "📅",
+            "title": "Geplantes Öffnen und Schließen",
+            "desc": "Bewerbungen öffnen am Freitag und schließen am Sonntagabend, ohne dass du daran denken musst."
+          },
+          {
+            "emoji": "🤖",
+            "title": "KI-Zusammenfassungen offener Antworten",
+            "desc": "Lies eine Synthese dessen, was die Leute geschrieben haben, statt jede Antwort einzeln."
+          },
+          {
+            "emoji": "📤",
+            "title": "Export und Webhooks",
+            "desc": "CSV oder Google Sheets, wenn du die Rohdaten willst. Webhooks und eine REST-API, wenn sie direkt in deinen eigenen Tools landen sollen. <a href=\"/api/\">Die API ansehen (auf Englisch) →</a>"
+          },
+          {
+            "emoji": "🆓",
+            "title": "Kostenlos zum Start",
+            "desc": "Der kostenlose Plan deckt 250 Befragte pro Projekt ab, inklusive Skip-Logik und XP-System."
+          }
+        ]
+      }
+    ],
+    "compare": {
+      "id": "vs-google-forms",
+      "label": "VS GOOGLE FORMS",
+      "title": "Warum ein Link zu einem Formular Leute verliert",
+      "sub": "Ein Google-Formular oder ein Typeform ist eine Seite auf einer anderen Website, die nicht weiß, wer sie ausfüllt. Jeder Schritt zwischen deinem Kanal und dieser Seite ist eine Gelegenheit zum Abbrechen, und jede Antwort, die zurückkommt, ist reine Selbstauskunft.",
+      "rowHeaderLabel": "Kriterium",
+      "headers": [
+        "",
+        "Ein Formular-Link in einem Kanal",
+        "Subo in deinem Server"
+      ],
+      "rows": [
+        [
+          "Wo es passiert",
+          "Ein neuer Tab auf einer anderen Website",
+          "Eine DM oder ein privater Thread in Discord"
+        ],
+        [
+          "Was man zuerst sieht",
+          "Alle Fragen auf einmal",
+          "Eine Frage, dann die nächste"
+        ],
+        [
+          "Wer antworten kann",
+          "Jeder mit dem Link",
+          "Verifizierte Mitglieder deines Servers, eine Antwort pro Person"
+        ],
+        [
+          "Zugang beschränken",
+          "Nicht nach Discord-Rolle",
+          "Nur die Rollen, die du wählst"
+        ],
+        [
+          "Benutzername und Rollen",
+          "Ein Feld zum Ausfüllen, Tippfehler inklusive",
+          "Automatisch erfasst, mit Beitrittsdatum"
+        ],
+        [
+          "Unpassende Fragen",
+          "Alle lesen alle Fragen",
+          "Skip-Logik blendet sie aus"
+        ],
+        [
+          "Belohnung am Ende",
+          "Eine Dankeseite",
+          "XP, eine Rolle oder ein Erfolg"
+        ],
+        [
+          "Anonyme Option",
+          "Anonym für dich und für das Tool selbst",
+          "Anonym per Design, trotzdem eine Antwort pro Mitglied"
+        ],
+        [
+          "Leute ohne Discord",
+          "Jeder mit dem Link",
+          "Web-Modus: ein Link, kein Konto nötig"
+        ]
+      ],
+      "footnote": "Web-Modus und Discord-Modus schließen sich aus: Ein Projekt läuft auf die eine oder die andere Art, und zum Wechseln duplizierst du es."
+    },
+    "faqTitle": "Discord-Formulare: die Antworten",
+    "faq": [
+      {
+        "q": "Kann man in Discord ein Formular erstellen?",
+        "a": "Ja. Du fügst eine App hinzu, die strukturierte Antworten direkt im Server sammelt, damit deine Mitglieder Discord zum Ausfüllen nie verlassen. Mit Subo führst du /survey aus, die Fragen werden einzeln im Chat gestellt, und die Antworten kommen als strukturierte Daten zurück, die du exportieren oder auswerten kannst."
+      },
+      {
+        "q": "Was ist eine Convo, und was unterscheidet sie von einem Formular?",
+        "a": "Eine Convo ist der Name, den Subo einem Formular gibt, sobald es läuft: dieselben strukturierten Fragen, einzeln in einem Chat gestellt statt auf einer Seite voller Felder. Du behältst ein festes Skript, Pflichtantworten und saubere Daten. Was sich ändert, ist das Erlebnis der antwortenden Person, und damit die Abschlussrate."
+      },
+      {
+        "q": "Gibt es eine Alternative zu Google Forms für Discord?",
+        "a": "Du kannst einen Google-Forms-Link in einen Kanal posten, aber er schickt die Leute aus Discord hinaus auf eine separate Seite, und dort brechen die meisten ab. Am besten passt eine App, die dieselben Fragen im Server als strukturiertes Gespräch stellt und dir dieselben exportierbaren Ergebnisse liefert. Subo macht genau das und ergänzt, was ein Formular in einer Community nicht kann: verifizierte Identität, Rollen-Targeting, Skip-Logik und Belohnungen für alle, die fertig werden."
+      },
+      {
+        "q": "Wie stelle ich sicher, dass nur Mitglieder meines Servers ein Formular ausfüllen?",
+        "a": "Starte es im Discord-Modus. Mitglieder werden beim Öffnen des Formulars von Discord authentifiziert, sodass jede Antwort nachweislich von jemandem aus deinem Server stammt, und jedes Mitglied kann nur einmal antworten. Du kannst das Formular auch auf eine oder mehrere Rollen beschränken, damit sich eine Bewerbung oder ein Staff-Formular nur für die öffnet, die sie haben. Ein Formular im Web-Modus lässt sich stattdessen mit einer Verifizierung absichern: Mitgliedschaft im Discord-Server, ein Spiel auf Steam, Twitch-Follow oder YouTube-Abo."
+      },
+      {
+        "q": "Müssen Befragte ihren Discord-Namen eintippen?",
+        "a": "Nein. Subo weiß schon, wer antwortet, also gibt es kein Namensfeld, das man vergessen oder falsch schreiben kann. Im transparenten und im halb-privaten Modus kommt jede Antwort mit dem Benutzernamen des Mitglieds, seinen Rollen und seinem Beitrittsdatum an, sichtbar in den Antwortdetails. Im anonymen Modus wird diese Verbindung absichtlich gelöscht."
+      },
+      {
+        "q": "Können Leute ohne Discord-Konto das Formular ausfüllen?",
+        "a": "Ja, wenn du es im Web-Modus erstellst. Ein Projekt läuft entweder im Discord-Modus, in dem Mitglieder direkt in deinem Server antworten, oder im Web-Modus, in dem es unter einem Link lebt, den jeder ohne Discord-Konto öffnen kann. Es ist das eine oder das andere: Dupliziere das Projekt, wenn du später eine öffentliche Web-Version willst."
+      },
+      {
+        "q": "Ist ein Discord-Formular-Bot kostenlos?",
+        "a": "Subo hat einen kostenlosen Plan, der 250 Befragte pro Projekt abdeckt, inklusive Skip-Logik und XP-System. Bezahlte Pläne heben das Limit an Befragten an und bringen KI-Credits, mehr Anpassung und Benachrichtigungen bei neuen Antworten."
+      },
+      {
+        "q": "Kann ein Discord-Formular anonym sein?",
+        "a": "Ja. Anonymität ist einer von drei Vertraulichkeitsmodi, und in diesem Modus kann niemand, auch nicht die Server-Admins, eine Antwort einem Mitglied zuordnen. Die beiden anderen sind der transparente Modus, in dem Antworten offen zugeordnet werden, und der halb-private Modus, in dem Admins einzelne Antworten sehen, andere Mitglieder aber nicht."
+      },
+      {
+        "q": "Wie bekomme ich die Antworten?",
+        "a": "Die Ergebnisse liegen in der Subo-Web-Admin-Oberfläche, mit Export als CSV oder nach Google Sheets. Offene Antworten lassen sich per KI zusammenfassen. Damit die Antworten automatisch in deinen eigenen Tools landen, gibt es Webhooks und eine REST-API."
+      }
+    ],
+    "outro": {
+      "title": "Die ausführliche Version",
+      "body": [
+        "Ein Formular ist für eine Website gemacht. Deine Community lebt in Discord. Diese Lücke lässt sich nicht wegdesignen: Sie ist der Grund, warum dein geposteter Link zwölf Antworten bekommen hat.",
+        "Subo stellt dieselben Fragen dort, wo die Leute schon sind, eine nach der anderen, in einem Format, das sich eher wie ein Chat mit einem hilfsbereiten Mod anfühlt als wie Papierkram. Im Produkt hat dieses strukturierte Gespräch einen Namen: eine Convo."
+      ],
+      "blogLink": {
+        "text": "So erstellst du ein Formular oder einen Fragebogen in Discord, Schritt für Schritt (auf Englisch) →",
+        "href": "/blog/how-to-make-a-discord-form/"
+      },
+      "blogLink2": {
+        "text": "Subo im Vergleich zu Google Forms und Typeform für Discord-Communities (auf Englisch) →",
+        "href": "/blog/subo-vs-google-forms-typeform-discord-communities/"
+      },
+      "blogLink3": {
+        "text": "Der Discord-Fragebogen als Convo: so funktioniert es →",
+        "href": "/de/survey-convos/"
+      }
+    }
+  },
   "featuresPage": {
     "pageTitle": "Subo Funktionen: Erstellen, Sammeln, Auswerten, Begeistern",
-    "pageDescription": "Alles, was Subo für deine Discord-Community kann: Umfragen im Gesprächsformat, KI-Entwürfe, Rollen-Targeting, XP-Belohnungen und mehr.",
+    "pageDescription": "Alles, was Subo für deine Discord-Community kann: Fragebögen im Gesprächsformat, KI-Entwürfe, Rollen-Targeting, XP-Belohnungen und mehr.",
     "hero": {
       "title": "ALLES, WAS DU BRAUCHST, UM DEINE COMMUNITY ZU VERSTEHEN",
-      "subtitle": "Subo bringt professionelle Umfragen nach Discord, gebaut für die Art, wie Communities wirklich funktionieren.",
+      "subtitle": "Subo bringt professionelle Fragebögen nach Discord, gebaut für die Art, wie Communities wirklich funktionieren.",
       "cta": "Zu Discord hinzufügen"
     },
     "nav": [
@@ -1563,7 +1966,7 @@
       {
         "id": "build",
         "label": "ERSTELLEN",
-        "title": "Umfragen, die sich wie Gespräche anfühlen",
+        "title": "Fragebögen, die sich wie Gespräche anfühlen",
         "sub": "Vom schnellen Slash-Befehl bis zum voll verzweigten Fragebogen. Subo holt dich da ab, wo du gerade bist.",
         "cards": [
           {
@@ -1574,12 +1977,12 @@
           {
             "emoji": "🤖",
             "title": "Entwürfe mit KI",
-            "desc": "Beschreibe dein Ziel mit <code>/draft</code> in normaler Sprache. Subo erzeugt sofort eine komplette Umfrage mit mehreren Fragen."
+            "desc": "Beschreibe dein Ziel in normaler Sprache und Subo schreibt die Fragen. Tippe <code>/draft</code> in Discord, wähle <em>Mit KI generieren</em> in der Web-App oder übergib der API einen <code>intent</code>. Du bekommst einen kompletten Entwurf mit mehreren Fragen, den du bearbeiten kannst, bevor ihn jemand sieht. <a href=\"/blog/ai-powered-survey-summaries-subo/\">So funktioniert der KI-Fragebogen-Generator (auf Englisch) →</a>"
           },
           {
             "emoji": "🖥️",
             "title": "Builder in der Web-App",
-            "desc": "Gestalte, teste und verwalte Umfragen im Subo-Web-Dashboard, ganz ohne Discord-Befehle."
+            "desc": "Gestalte, teste und verwalte deine Convos im Subo-Web-Dashboard, ganz ohne Discord-Befehle."
           },
           {
             "emoji": "🌿",
@@ -1594,22 +1997,22 @@
           {
             "emoji": "📢",
             "title": "Inhaltsblöcke",
-            "desc": "Füge an beliebiger Stelle eine Nachricht ein, ohne eine Frage zu stellen: ein Willkommens-Intro, ein GIF, einen Hinweis zum Bestätigen oder eine Pause mitten in der Umfrage. Befragte machen nach einem Timer oder per Klick weiter."
+            "desc": "Füge an beliebiger Stelle eine Nachricht ein, ohne eine Frage zu stellen: ein Willkommens-Intro, ein GIF, einen Hinweis zum Bestätigen oder eine Pause mitten in der Convo. Befragte machen nach einem Timer oder per Klick weiter."
           },
           {
             "emoji": "😄",
             "title": "Eigene Discord-Emojis",
-            "desc": "Nutze die Custom-Emojis deines Servers in Fragen, Antwortoptionen, Bewertungsskalen und Rückmeldungen, auch wenn Befragte die Umfrage im Web ausfüllen."
+            "desc": "Nutze die Custom-Emojis deines Servers in Fragen, Antwortoptionen, Bewertungsskalen und Rückmeldungen, auch wenn Befragte die Convo im Web beantworten."
           }
         ],
         "screenshot": {
           "src": "/images/blog/web-app-launch/subo-web-app-launch.webp",
-          "alt": "Die Subo-Web-Admin-Oberfläche mit einer Umfrage aus mehreren Fragen, bei der Skip-Logik zwischen den Fragen eingerichtet ist.",
-          "caption": "Die Subo-Web-Admin-Oberfläche mit einer Umfrage aus mehreren Fragen, bei der Skip-Logik zwischen den Fragen eingerichtet ist.",
+          "alt": "Die Subo-Web-Admin-Oberfläche mit einer Convo aus mehreren Fragen, bei der Skip-Logik zwischen den Fragen eingerichtet ist.",
+          "caption": "Die Subo-Web-Admin-Oberfläche mit einer Convo aus mehreren Fragen, bei der Skip-Logik zwischen den Fragen eingerichtet ist.",
           "wide": false
         },
         "blogLink": {
-          "text": "So erstellst du deine erste Umfrage (auf Englisch) →",
+          "text": "So erstellst du deinen ersten Fragebogen (auf Englisch) →",
           "href": "/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/"
         }
       },
@@ -1617,12 +2020,12 @@
         "id": "collect",
         "label": "SAMMELN",
         "title": "Triff deine Mitglieder da, wo sie ohnehin sind",
-        "sub": "Subo liefert Umfragen direkt in Discord aus. Keine externen Formulare, keine Reibung, keine Abbrüche.",
+        "sub": "Subo bringt Convos direkt in Discord. Keine externen Formulare, keine Reibung, keine Abbrüche.",
         "cards": [
           {
             "emoji": "📨",
             "title": "Auslieferung nativ in Discord",
-            "desc": "Subo postet eine Umfrage-Einladung direkt in deinen Discord-Kanal. Mitglieder klicken und antworten privat, ganz ohne DMs."
+            "desc": "Subo postet eine Einladung direkt in deinen Discord-Kanal. Mitglieder klicken und antworten privat, ganz ohne DMs."
           },
           {
             "emoji": "🌐",
@@ -1637,23 +2040,23 @@
           {
             "emoji": "🕵️",
             "title": "Drei Vertraulichkeitsstufen",
-            "desc": "Transparent, halb-privat oder anonym: Du legst pro Umfrage fest, wie viel Vertrauen nötig ist."
+            "desc": "Transparent, halb-privat oder anonym: Du legst pro Convo fest, wie viel Vertrauen nötig ist."
           },
           {
             "emoji": "🔒",
             "title": "Nur für die Community oder offen",
-            "desc": "Beschränke die Umfrage auf deine Server-Mitglieder, oder öffne sie für alle mit dem Link."
+            "desc": "Beschränke die Convo auf deine Server-Mitglieder, oder öffne sie für alle mit dem Link."
           },
           {
             "emoji": "📅",
             "title": "Geplanter Start und Schluss",
-            "desc": "Lege Startdatum und Frist fest, und Subo öffnet und schließt die Umfrage automatisch."
+            "desc": "Lege Startdatum und Frist fest, und Subo öffnet und schließt die Convo automatisch."
           }
         ],
         "screenshot": {
           "src": "/images/blog/web-app-launch/discord-post.webp",
-          "alt": "Eine Subo-Umfrage-Einladung in einem Discord-Kanal. Mitglieder klicken auf Umfrage starten und antworten privat, in Discord oder im Web.",
-          "caption": "Eine Subo-Umfrage-Einladung in einem Discord-Kanal. Mitglieder klicken auf \"Umfrage starten\" und antworten privat, in Discord oder im Web.",
+          "alt": "Eine Subo-Einladung zu einer Convo in einem Discord-Kanal. Mitglieder klicken auf die Antwort-Schaltfläche und antworten privat, in Discord oder im Web.",
+          "caption": "Eine Subo-Einladung zu einer Convo in einem Discord-Kanal. Mitglieder klicken auf die Antwort-Schaltfläche und antworten privat, in Discord oder im Web.",
           "wide": true
         },
         "blogLink": {
@@ -1705,7 +2108,7 @@
           "wide": false
         },
         "blogLink": {
-          "text": "Klügere Umfragen mit Skip-Logik bauen (auf Englisch) →",
+          "text": "Klügere Fragebögen mit Skip-Logik bauen (auf Englisch) →",
           "href": "/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo/"
         }
       },
@@ -1728,12 +2131,12 @@
           {
             "emoji": "🎭",
             "title": "Rollen-Belohnungen",
-            "desc": "Vergib oder entziehe Discord-Rollen automatisch, je nach Abschluss einer Umfrage oder erreichter XP-Schwelle."
+            "desc": "Vergib oder entziehe Discord-Rollen automatisch, je nach Abschluss einer Convo oder erreichter XP-Schwelle."
           },
           {
             "emoji": "⚡",
             "title": "Aktionsblöcke",
-            "desc": "Platziere XP-, Rollen- oder Erfolgs-Belohnungen an beliebiger Stelle im Ablauf, mitten in der Umfrage und abhängig von den Antworten. Onboarding-Rollen für Neuzugänge, XP für richtige Quiz-Antworten, Beta-Zugang für die passenden Kandidaten."
+            "desc": "Platziere XP-, Rollen- oder Erfolgs-Belohnungen an beliebiger Stelle im Ablauf, mitten in der Convo und abhängig von den Antworten. Onboarding-Rollen für Neuzugänge, XP für richtige Quiz-Antworten, Beta-Zugang für die passenden Kandidaten."
           },
           {
             "emoji": "🏷️",
@@ -1758,5 +2161,38 @@
         }
       }
     ]
+  },
+  "developerApi": {
+    "title": "ENTWICKELN UND AUTOMATISIEREN.",
+    "subtitle": "Automatisiere Fragebögen, leite Antworten an deinen Daten-Stack weiter oder lass KI-Agenten deine Community-Forschung durchführen. Alles über eine einfache REST-API.",
+    "features": [
+      {
+        "title": "AUTOMATISIEREN & ERFASSEN",
+        "content": [
+          "Erstelle Convos und Umfragen programmatisch",
+          "Generiere automatisch Convo-Skripte aus einer Klartextbeschreibung mithilfe von KI",
+          "Öffne, schließe, klone und plane Projekte über die API"
+        ]
+      },
+      {
+        "title": "BELOHNEN & ANALYSIEREN",
+        "content": [
+          "Rufe Antworten der Teilnehmer in Echtzeit ab",
+          "Verwalte Mitglieder-XP, Zugangsstufen, Erfolge und Community-Einstellungen",
+          "Erhalte aggregierte Statistiken, Verteilungen und KI-generierte Zusammenfassungen"
+        ]
+      },
+      {
+        "title": "INTEGRIEREN & ERWEITERN",
+        "content": [
+          "Abonniere Webhook-Events für Echtzeit-Datenpipelines",
+          "Leite Antworten an deinen Daten-Stack, CRM oder Analyse-Tools weiter",
+          "Verbinde deinen KI-Assistenten über den Subo MCP-Server"
+        ]
+      }
+    ],
+    "ctaDocs": "API-Dokumentation anzeigen",
+    "ctaKey": "API-Schlüssel erhalten",
+    "ctaGuide": "API-Schnellstart"
   }
 }
