@@ -4,6 +4,50 @@ Living plan to build authority and high-value backlinks for **subo.gg** without
 the SearchAtlas model (~$3.5k/yr platform + per-link/per-PR fees). Ordered
 **highest ROI first**. Everything here is free or near-free.
 
+## ▶ RESUME HERE — state as of 2026-09-28 (read this first, then the shortlist below)
+
+**Last session (2026-09-28) shipped and deployed** (`subo-site` main `9b9eb99`, `subo` master
+`19cd7649`; deploys = push to main via Cloudflare Workers Builds):
+- **DE + ES at French parity**, 12 pages each (`/forms/` and `/changelog/` added). Pricing stays
+  EN/FR-only for businesses (user ruling); blog skipped per locale. Details in the language backlog
+  near the end: *"DE + ES to full French parity"*.
+- **Door words, now in `lexicon.json` (23 doors):** DE *Umfrage* → `/de/polls/` (+ *Abstimmung*
+  as a second door in its body), *Fragebogen* → `/de/survey-convos/`, *Formular* → `/de/forms/`.
+  ES *votación* → `/es/polls/` (+ *sondeo* in its body), *encuesta* → `/es/survey-convos/`,
+  *formulario* → `/es/forms/`, *cuestionario* = quiz (no page).
+- **T2b amended: Spanish is the one exception** (user ruling; platform comparison table under
+  T2b). A2c is not needed for ES. A18 and A24 closed; `t5.de.Umfrage` paid off (21 known
+  violations remain, all deliberate or app-side).
+- **`/fr/whats-new/`** shipped with the same era anchors as `/whats-new/`, ready for French
+  recontact campaigns.
+
+**Open threads, in the order to pick them up:**
+1. **The next-crawl scoreboard is PARTLY runnable now.** `CC-MAIN-2026-39` (Sep 4-17) exists and
+   captured `/survey-convos/` on 09-16, so its row can be run. **Before the AI-generator row,
+   confirm `/features/` and `/` were captured in that index** (`index.commoncrawl.org`
+   CDX query). `/forms/` and `/fr/forms/` were NOT captured: wait for the October index. The
+   queries are run in AI answer engines by the user unless they hand it over.
+2. **Monthly FR indexation check, due ~2026-10-08 (user, Search Console):** has any `/fr/` URL
+   left "Crawled - currently not indexed"? Add `/de/*` and `/es/*` to the same check; they sit
+   behind the same migration and have never been measured.
+3. **P5 outreach** (shortlist item 2) keeps running on the user's cadence. The evidence still
+   says links, not pages, are what indexation needs.
+4. **Spanish is proofread by the user; German is not** (no reviewer). A native read of
+   `/de/forms/` and `/de/survey-convos/` is the cheapest quality win if one appears.
+5. **Re-test the ES and DE door words** against the first Spanish/German Search Console export
+   (T9): *encuesta* vs *votación* for the Spanish poll, *Fragebogen* and *Formular* (seeded with
+   zero evidence under T10), and whether *cuestionario* reads as quiz or survey to searchers.
+
+**Deliberately not next:** IT / PT-BR parity (Stripe shows no revenue case; see the language
+backlog), a DE/ES blog (needs per-locale search evidence first), and *entrevista* (parked for the
+gen-AI discussion-guide format, see the T2b amendment).
+
+**Traps the last session hit, so the next one doesn't:** `fr.json` and `de.json` are not
+`JSON.stringify` round-trip clean, so insert new blocks as text, or a one-key edit becomes a
+2,600-line diff. Spanish word swaps change grammatical gender (*cuestionario* m. / *encuesta* f.):
+review every string a mapping script touches. The PT-BR hreflang "gap" was already fixed; check
+the hreflang clusters, not file counts.
+
 ## ▶ WHERE TO START — refocused 2026-09-05
 
 The file is long and most of it is a log. **This is the current shortlist**, and it exists
@@ -127,6 +171,12 @@ August index and nothing newer has been published, so the scoreboard is **still 
 and `/fr/forms/` (09-14) now sits behind the same wall as the three rows below. Indexes have been
 landing roughly monthly, so the next realistic check is **October**. Do not re-run the queries
 against the August index to feel productive; it predates every change being measured.
+
+✅ **Re-checked 2026-09-25: `CC-MAIN-2026-39` (Sep 4-17) is published.** It captured
+`/survey-convos/` (2026-09-16, status 200), so **the `/survey-convos/` row is runnable now**.
+`/forms/` and `/fr/forms/` returned **no captures**, so their rows still wait for the October
+index. The AI-generator row depends on `/features/` and `/` copy from 09-08: check those two URLs
+in the new index before running it.
 
 | Shipped | Query to re-run | What a pass looks like |
 |---|---|---|
