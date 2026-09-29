@@ -726,8 +726,8 @@
       "El resultado: <strong>tasas de finalización más altas</strong>, respuestas más ricas y miembros que de verdad disfrutan la experiencia.",
       "¿Recoges candidaturas, inscripciones, pedidos o reportes de bugs en lugar de opiniones? Eso tiene su propia página: <a href=\"/es/forms/\">el formulario de Discord, construido como una Convo</a>. ¿Y si buscabas una encuesta de una sola pregunta, como las encuestas nativas de Discord? Eso es una votación: <a href=\"/es/polls/\">el bot de votaciones para Discord</a>."
     ],
-    "formsVsConvosTitle": "LA ENCUESTA DE SIEMPRE vs. UNA CONVO",
-    "formsColumn": "Una encuesta tradicional",
+    "formsVsConvosTitle": "ENCUESTA DE SIEMPRE vs. CONVO",
+    "formsColumn": "Encuesta tradicional",
     "convosColumn": "Convos con Subo",
     "formsVsConvosItems": [
       {
