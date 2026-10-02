@@ -38,7 +38,7 @@ the SearchAtlas model (~$3.5k/yr platform + per-link/per-PR fees). Ordered
    (T9): *encuesta* vs *votación* for the Spanish poll, *Fragebogen* and *Formular* (seeded with
    zero evidence under T10), and whether *cuestionario* reads as quiz or survey to searchers.
 
-6. **MCP directories (opened 2026-10-01).** Live in the official MCP Registry as `gg.subo/subo`.
+6. **MCP directories (opened 2026-10-01).** Live in the official MCP Registry as `gg.subo/survey-bot`.
    Next, all cheap: the GEO baseline queries, then the awesome-mcp-servers PR. The directories
    with real reach (Claude's, ChatGPT's) wait on the app's OAuth front door. Full state:
    *"MCP server = the agent-era directory play"* under the API discoverability section.
@@ -2876,12 +2876,13 @@ agent path deliberately.
 - [~] **MCP server = the agent-era "directory" play.** P1's "bot directories" logic, applied
       to the agent ecosystem. The server shipped 2026-09-18 (`https://api.subo.ai/mcp`,
       announced in `/blog/subo-mcp-server/`, tutorial `/blog/connect-discord-community-to-ai-agent/`).
-      - [x] **Official MCP Registry — LIVE 2026-10-02 as `gg.subo/subo` v1.0.0.** The root
+      - [x] **Official MCP Registry — LIVE 2026-10-02 as `gg.subo/survey-bot` v1.0.0** (first
+        published the same day as `gg.subo/subo`, then renamed; see the search finding below). The root
         registry that clients and aggregators read from. Namespace proved by a DNS TXT record on
         the subo.gg apex (`v=MCPv1; k=ed25519; …`), so the listing is tied to the domain, not a
         person's GitHub account. `websiteUrl` = the tutorial, so every directory that copies the
         entry links to one URL. Auth is declared as a required secret `Authorization: Bearer
-        {api_key}` header. Verify: `curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=gg.subo/subo"`.
+        {api_key}` header. Verify: `curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=gg.subo"`.
         **Published versions are immutable:** to change anything, bump `version` and publish
         again. Leave the TXT record in place; the signing key lives outside every repo, at
         `~/.subo-mcp-registry/key.pem` on the operator's machine.
@@ -2961,7 +2962,14 @@ agent path deliberately.
           `gg.subo/discord-surveys-polls` would match "discord", "survey", "poll" and "subo".
           **Not free to change:** names are permanent, and the registry rejects a second name
           using the same remote URL (`validateNoDuplicateRemoteURLs`), so a rename means
-          deleting `gg.subo/subo` first, and Glama's page would move. Undecided.
+          deleting `gg.subo/subo` first, and Glama's page would move.
+          ✅ **RENAMED 2026-10-02 to `gg.subo/survey-bot`** (user ruling): a hard `discord` in a
+          permanent name would tie Subo to one platform, against BDX, while "Survey Bot" is the
+          brand line and platform-neutral. It matches "survey", "bot" and "subo"; not "poll",
+          which the baseline shows is native-poll territory anyway. The duplicate-URL check skips
+          deleted entries, so the swap was: mark `gg.subo/subo` deleted, publish the new name.
+          Done a few hours after the first publish, before anything else had copied the name. The
+          **description** is per version, so "Discord" can leave it whenever BDX platforms ship.
       - [~] **Secondary aggregators** (`https://mcp.directory/`, `https://mcpservers.com/`, ~2,200
         to 2,300 servers each, no public traffic numbers): only if it is a five-minute form,
         and many pick up registry entries on their own. Same long-tail rule as P1.
