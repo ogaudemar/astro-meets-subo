@@ -38,6 +38,11 @@ the SearchAtlas model (~$3.5k/yr platform + per-link/per-PR fees). Ordered
    (T9): *encuesta* vs *votación* for the Spanish poll, *Fragebogen* and *Formular* (seeded with
    zero evidence under T10), and whether *cuestionario* reads as quiz or survey to searchers.
 
+6. **MCP directories (opened 2026-10-01).** Live in the official MCP Registry as `gg.subo/subo`.
+   Next, all cheap: the GEO baseline queries, then the awesome-mcp-servers PR. The directories
+   with real reach (Claude's, ChatGPT's) wait on the app's OAuth front door. Full state:
+   *"MCP server = the agent-era directory play"* under the API discoverability section.
+
 **Deliberately not next:** IT / PT-BR parity (Stripe shows no revenue case; see the language
 backlog), a DE/ES blog (needs per-locale search evidence first), and *entrevista* (parked for the
 gen-AI discussion-guide format, see the T2b amendment).
@@ -2868,10 +2873,47 @@ agent path deliberately.
         lesson is the same one ITEM 4, ITEM 7 and A6 taught: **a guard reports a pattern;
         whether the pattern is the failure it names is a human read.** A red `check:api` may
         mean the app moved a file, and re-pointing the parser is then the whole fix.
-- [ ] **MCP server = the agent-era "directory" play.** The app's master roadmap has a
-      standing **Subo MCP server** (agent-orchestration track). When it ships, list it
-      in the emerging **MCP registries/directories** and give it a spoke landing page —
-      P1's "bot directories" logic, applied to the agent ecosystem.
+- [~] **MCP server = the agent-era "directory" play.** P1's "bot directories" logic, applied
+      to the agent ecosystem. The server shipped 2026-09-18 (`https://api.subo.ai/mcp`,
+      announced in `/blog/subo-mcp-server/`, tutorial `/blog/connect-discord-community-to-ai-agent/`).
+      - [x] **Official MCP Registry — LIVE 2026-10-02 as `gg.subo/subo` v1.0.0.** The root
+        registry that clients and aggregators read from. Namespace proved by a DNS TXT record on
+        the subo.gg apex (`v=MCPv1; k=ed25519; …`), so the listing is tied to the domain, not a
+        person's GitHub account. `websiteUrl` = the tutorial, so every directory that copies the
+        entry links to one URL. Auth is declared as a required secret `Authorization: Bearer
+        {api_key}` header. Verify: `curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=gg.subo/subo"`.
+        **Published versions are immutable:** to change anything, bump `version` and publish
+        again. Leave the TXT record in place; the signing key lives outside every repo, at
+        `~/.subo-mcp-registry/key.pem` on the operator's machine.
+      - [x] **Public listing repo — `https://github.com/subo-gg/subo-mcp` (2026-10-01).** README +
+        `server.json` only, no app code. Local copy at `Code/subo-mcp/`. It exists because
+        GitHub-backed lists link to a repo, and the registry's `repository` field points at it.
+      - [ ] **awesome-mcp-servers PR** (`https://github.com/punkpeye/awesome-mcp-servers`), one
+        line in the Communication section with the ☁️ tag. The list syncs with Glama, which
+        scores servers by inspecting their tools, and Glama gets a 401 from us (see the
+        `tools/list` bullet below). Submit anyway; the line and the link are the value.
+      - [ ] **GEO baseline before the listings get crawled.** Ask the answer engines *"Is there an
+        MCP server for Discord surveys?"* and *"How do I let Claude Code run polls in my Discord
+        server?"*; record whether Subo is cited. Aim for the survey/poll niche: plain "Discord
+        MCP server" is crowded with generic message-sending bots.
+      - [~] **Secondary aggregators** (`https://mcp.directory/`, `https://mcpservers.com/`, ~2,200
+        to 2,300 servers each, no public traffic numbers): only if it is a five-minute form,
+        and many pick up registry entries on their own. Same long-tail rule as P1.
+      - [ ] ⛔ **GATED ON OAUTH — the directories with real reach.** Claude's Connectors
+        Directory (`https://claude.com/docs/connectors/building/submission`) requires OAuth 2.0
+        with a user-consent flow for tools that act on an account, and ChatGPT apps likewise
+        expect OAuth. Our server is API-key-only (401 + `WWW-Authenticate: Bearer`, no
+        `/.well-known/oauth-protected-resource`), and claude.ai custom connectors have no
+        custom-header field, so **today "Claude" in practice means Claude Code**. The build is
+        app-repo work: **MCP v1.1, OAuth front door**, in the app's master roadmap and
+        `subo-mcp-server-v1.md` (decision 10). When it ships: publish registry v1.1.0 with the
+        header made optional, then submit to Claude's directory.
+      - [ ] **Separate small app-side decision: answer `tools/list` without a key.** Directories
+        that inspect servers automatically (Glama, Smithery) see a 401 and show Subo as
+        uninspectable. Not OAuth, and much smaller.
+      - **Deliberately not doing:** a dedicated `/mcp/` page (the tutorial is the spoke, and
+        `/api#mcp` + `llms.txt` cover agents), or moving the endpoint off `api.subo.ai`
+        (the registry and every directory now carry that URL).
 - [~] **Migrate API docs onto subo.gg — RESOLVED as "don't, not this way" (2026-08-04).**
       Analysed on the user's question of whether `subo.gg/api` makes the domain move moot.
       **It largely does, and the move was framed wrong.**
