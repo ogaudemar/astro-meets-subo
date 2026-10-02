@@ -2892,10 +2892,43 @@ agent path deliberately.
         line in the Communication section with the ☁️ tag. The list syncs with Glama, which
         scores servers by inspecting their tools, and Glama gets a 401 from us (see the
         `tools/list` bullet below). Submit anyway; the line and the link are the value.
-      - [ ] **GEO baseline before the listings get crawled.** Ask the answer engines *"Is there an
-        MCP server for Discord surveys?"* and *"How do I let Claude Code run polls in my Discord
-        server?"*; record whether Subo is cited. Aim for the survey/poll niche: plain "Discord
-        MCP server" is crowded with generic message-sending bots.
+      - [x] **GEO baseline — RUN 2026-10-02, about a day after the repo and registry went live.**
+        Same method as the 2026-09-07 test (search-grounded LLM answers). **It is not a clean
+        "before":** the GitHub repo was already indexed and the registry entry already copied
+        into Glama, so this is the day-one reading.
+
+        | Query | Subo cited? | Where | URL cited |
+        |---|---|---|---|
+        | *Is there an MCP server for Discord surveys?* | **No** | answer says none exists | (LimeSurvey MCP, generic Discord MCPs) |
+        | *How do I let Claude Code run polls in my Discord server?* | **Yes** | option 2 of 3 | `github.com/subo-gg/subo-mcp` |
+        | *Discord poll MCP server* | **No** | — | (generic Discord MCPs; HardHeadHackerHead/discord-mcp named for polls) |
+        | *MCP server to create surveys and polls for a Discord community from an AI agent* | **Yes** | **#1, "recommended", "most specialized"** | the repo, `subo.gg/`, the poll blog post |
+        | *Discord MCP server* (head term) | **No** | — | (five community servers; "none has emerged as the standard") |
+        | *Subo MCP server* (brand) | **Yes** | #1 | the repo, `glama.ai/mcp/connectors/gg.subo/subo` |
+
+        **How to read it:**
+        - **The repo is doing the citing, not subo.gg.** In every MCP answer that named us, the
+          source was `github.com/subo-gg/subo-mcp`, quoted almost word for word from its README.
+          Neither blog post (`/blog/subo-mcp-server/`, the tutorial) was cited for any MCP query.
+          So the README is now a GEO surface: edit it with the same care as a landing page.
+        - **We win the long, specific query and lose the short ones.** The full "surveys and polls
+          ... from an AI agent" phrasing puts us first; *"Discord poll MCP server"* and the
+          *"Discord surveys"* question don't find us yet. That's ranking and links, the same
+          finding as the poll head term on 2026-09-07. Re-run after the awesome-list PR and the
+          next crawl.
+        - **Two editorial targets with no Subo in them**, both ranking for these queries:
+          Enterpret's *"The 5 Best MCP Servers for Discord Community Feedback in 2026"*
+          (`https://www.enterpret.com/guides/the-5-best-mcp-servers-for-discord-community-feedback`,
+          2026-07-13, a vendor listicle that ranks their own product first) and ChatForest's
+          *Discord MCP servers* review (`https://chatforest.com/reviews/discord-mcp-servers/`,
+          refreshed 2026-08-14, reviews community servers and added two "new entrants").
+          ChatForest is the better P5 pitch: it adds servers, and we'd be the only
+          survey/poll-specific one.
+        - **⚠️ Glama shows Subo as "Unhealthy"** (`https://glama.ai/mcp/connectors/gg.subo/subo`,
+          unclaimed, 0 stars) because its health check gets our 401. Glama lets the owner **claim
+          the listing and set up a test profile with credentials**, which should fix this without
+          any app change. Use a key on a throwaway test community, never a real one.
+        - Next reading: after the awesome-mcp-servers PR merges and Common Crawl's next index.
       - [~] **Secondary aggregators** (`https://mcp.directory/`, `https://mcpservers.com/`, ~2,200
         to 2,300 servers each, no public traffic numbers): only if it is a five-minute form,
         and many pick up registry entries on their own. Same long-tail rule as P1.
