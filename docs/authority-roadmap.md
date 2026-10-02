@@ -2929,6 +2929,39 @@ agent path deliberately.
           the listing and set up a test profile with credentials**, which should fix this without
           any app change. Use a key on a throwaway test community, never a real one.
         - Next reading: after the awesome-mcp-servers PR merges and Common Crawl's next index.
+
+        **Same day, cross-engine (run by the user, 2026-10-02, signed out / private / temporary
+        modes with web search on).** Two of the six questions:
+
+        | Engine | *Is there an MCP server for Discord surveys?* | *Discord poll MCP server* |
+        |---|---|---|
+        | Claude web search (my run above) | No | No |
+        | ChatGPT, temporary chat | **Yes, 3rd of 4, and the one it recommends** for multi-question surveys | No (cites cappyeo, ExilProductions, QuadsLab, and the registry's `?q=discord` search) |
+        | Perplexity, private | No | No (cites the Enterpret listicle) |
+        | Google AI Mode, signed in | **Yes, #1 of 3** | (not run) |
+        | Google AI Mode, private | **Yes, the only dedicated option**, cited via the blog | No |
+        | Grok, private | No (names poll-capable Discord MCPs and cyanheads/survey-mcp-server) | No |
+        | Claude.ai, incognito | No (answered from its connector directory, no web results) | No (wrote a poll server from scratch) |
+
+        **What the cross-engine run adds:**
+        - **Google and ChatGPT already find us for "Discord surveys"; Perplexity, Grok and Claude
+          don't.** Google's private-mode answer described Subo with copy from the scale-family
+          blog post (Likert scales, rankings, DMs), so subo.gg content does work on Google even
+          though the Claude-search run only cited the repo.
+        - **Personalization is real, and this run shows it.** The signed-in Google answer said
+          Subo connects to "Claude Code, Meta Muse, or Grok Bot". Nothing on subo.gg or in the
+          README mentions Muse; the private-mode answer didn't either. Only signed-out runs count.
+        - **The poll question goes to native-poll wrappers** (`create_poll` / `end_poll` tools), in
+          every engine. We don't compete there by design: it's the same "a poll is not a survey"
+          line as the site. Don't chase it.
+        - **⚠️ The registry's search only matches server names.** ChatGPT cited
+          `registry.modelcontextprotocol.io/?q=discord`, and that search (a substring match on
+          `server_name`, confirmed in the registry source) returns 79 entries for "discord" and
+          none of them is `gg.subo/subo`; the same goes for "survey". A name like
+          `gg.subo/discord-surveys-polls` would match "discord", "survey", "poll" and "subo".
+          **Not free to change:** names are permanent, and the registry rejects a second name
+          using the same remote URL (`validateNoDuplicateRemoteURLs`), so a rename means
+          deleting `gg.subo/subo` first, and Glama's page would move. Undecided.
       - [~] **Secondary aggregators** (`https://mcp.directory/`, `https://mcpservers.com/`, ~2,200
         to 2,300 servers each, no public traffic numbers): only if it is a five-minute form,
         and many pick up registry entries on their own. Same long-tail rule as P1.
