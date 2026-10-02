@@ -2889,10 +2889,40 @@ agent path deliberately.
       - [x] **Public listing repo — `https://github.com/subo-gg/subo-mcp` (2026-10-01).** README +
         `server.json` only, no app code. Local copy at `Code/subo-mcp/`. It exists because
         GitHub-backed lists link to a repo, and the registry's `repository` field points at it.
-      - [ ] **awesome-mcp-servers PR** (`https://github.com/punkpeye/awesome-mcp-servers`), one
-        line in the Communication section with the ☁️ tag. The list syncs with Glama, which
-        scores servers by inspecting their tools, and Glama gets a 401 from us (see the
-        `tools/list` bullet below). Submit anyway; the line and the link are the value.
+      - [ ] **awesome-remote-mcp-servers PR — BLOCKED ON GLAMA (2026-10-02).** Not the big
+        awesome-mcp-servers list (~96k stars): its CONTRIBUTING scopes it to installable servers
+        and sends remote-only ones to `https://github.com/punkpeye/awesome-remote-mcp-servers`
+        (~650 stars, same maintainer, synced with Glama). Its rules: link the name to the
+        homepage or docs, not a repo; endpoint in backticks; a **required Glama connector badge**
+        that CI checks resolves; an auth marker; one sentence ≤ 120 chars; alphabetical (Subo goes
+        between *Sending* and *SwarmMemo* in Communication); **the PR author must star the repo**.
+        ⚠️ CI probes `initialize` and labels any 401 whose `WWW-Authenticate` mentions `Bearer` as
+        🔐 OAuth, so our true 🔑 marker will be flagged as a mismatch: the PR description explains
+        it up front. Blocked because `glama.ai/mcp/connectors/gg.subo/survey-bot` 404'd on
+        2026-10-02 (Glama hadn't synced the rename). Order: Glama syncs → claim it and add a test
+        key → open the PR. A one-time routine checks Glama on **2026-10-05 08:00 PT**
+        (`https://claude.ai/code/routines/trig_01ACNSGm89PiVoY5iT2DfYTZ`).
+
+        **The entry, ready to paste:**
+        ```markdown
+        - [Subo](https://subo.gg/blog/connect-discord-community-to-ai-agent/) `https://api.subo.ai/mcp`
+          [![Subo MCP connector](https://glama.ai/mcp/connectors/gg.subo/survey-bot/badges/score.svg)](https://glama.ai/mcp/connectors/gg.subo/survey-bot)
+          🔑 - Build, launch and analyze surveys, polls, forms and quizzes in a Discord community, and reward members with XP.
+        ```
+        **PR title:** `Add Subo`. **PR description:**
+        ```markdown
+        Adds Subo to Communication.
+
+        Subo runs conversational surveys, polls, forms and quizzes inside Discord communities and on the web. Its hosted MCP server lets an AI app build a project, check its script, launch it, read responses and AI analysis, and manage members' XP, in one community.
+
+        - Endpoint: `https://api.subo.ai/mcp` (Streamable HTTP)
+        - Auth: 🔑 a Subo API key, sent as `Authorization: Bearer sbo_live_…`. Public sign-up; any community Admin can create a key.
+        - Docs: https://subo.gg/blog/connect-discord-community-to-ai-agent/
+        - Official MCP Registry: `gg.subo/survey-bot`
+        - Glama connector: https://glama.ai/mcp/connectors/gg.subo/survey-bot
+
+        **About the auth check:** the endpoint answers `initialize` with `401` and `WWW-Authenticate: Bearer error="invalid_token"`, which the check may read as OAuth. It's a static API key in a Bearer header, with no OAuth metadata, so 🔑 is the accurate marker. Happy to change it if you'd rather we mark it differently.
+        ```
       - [x] **GEO baseline — RUN 2026-10-02, about a day after the repo and registry went live.**
         Same method as the 2026-09-07 test (search-grounded LLM answers). **It is not a clean
         "before":** the GitHub repo was already indexed and the registry entry already copied
