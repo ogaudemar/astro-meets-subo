@@ -4,54 +4,69 @@ Living plan to build authority and high-value backlinks for **subo.gg** without
 the SearchAtlas model (~$3.5k/yr platform + per-link/per-PR fees). Ordered
 **highest ROI first**. Everything here is free or near-free.
 
-## ▶ RESUME HERE — state as of 2026-09-28 (read this first, then the shortlist below)
+## ▶ RESUME HERE — state as of 2026-10-05 (read this first, then the shortlist below)
 
-**Last session (2026-09-28) shipped and deployed** (`subo-site` main `9b9eb99`, `subo` master
-`19cd7649`; deploys = push to main via Cloudflare Workers Builds):
-- **DE + ES at French parity**, 12 pages each (`/forms/` and `/changelog/` added). Pricing stays
-  EN/FR-only for businesses (user ruling); blog skipped per locale. Details in the language backlog
-  near the end: *"DE + ES to full French parity"*.
-- **Door words, now in `lexicon.json` (23 doors):** DE *Umfrage* → `/de/polls/` (+ *Abstimmung*
-  as a second door in its body), *Fragebogen* → `/de/survey-convos/`, *Formular* → `/de/forms/`.
-  ES *votación* → `/es/polls/` (+ *sondeo* in its body), *encuesta* → `/es/survey-convos/`,
-  *formulario* → `/es/forms/`, *cuestionario* = quiz (no page).
-- **T2b amended: Spanish is the one exception** (user ruling; platform comparison table under
-  T2b). A2c is not needed for ES. A18 and A24 closed; `t5.de.Umfrage` paid off (21 known
-  violations remain, all deliberate or app-side).
-- **`/fr/whats-new/`** shipped with the same era anchors as `/whats-new/`, ready for French
-  recontact campaigns.
+**Last session (2026-10-01 → 10-05) opened the MCP directory play.** No site pages changed;
+everything below is listings, docs and measurement. Full record: *"MCP server = the agent-era
+directory play"* under **Make the Public API discoverable to AI agents**.
+- **Official MCP Registry: `gg.subo/survey-bot` v1.0.0, live.** First published as
+  `gg.subo/subo`, renamed the same day because the registry's search matches **names only**
+  (user ruling: no platform in a permanent name, see BDX; "Survey Bot" is the brand line). The
+  namespace is proved by a DNS TXT record on the subo.gg apex: **leave it in place.** Versions are
+  immutable; to change anything, bump `version` and publish again. Signing key at
+  `~/.subo-mcp-registry/key.pem`, publisher at `~/mcp-publisher.exe`, both on the user's machine;
+  commands run in **Git Bash**.
+- **Public listing repo: `https://github.com/subo-gg/subo-mcp`** (new GitHub org `subo-gg`),
+  holding only `README.md` + `server.json`. Local source of truth: `Code/subo-mcp/`, outside both
+  repos. The user uploads through the GitHub web UI, not git. **The README is a GEO surface:**
+  answer engines quote it nearly word for word.
+- **Glama: claimed and healthy** (`https://glama.ai/mcp/connectors/gg.subo/survey-bot`), with a
+  test profile using a key from a disposable test community.
+- **PR #1210 open on awesome-remote-mcp-servers**
+  (`https://github.com/punkpeye/awesome-remote-mcp-servers/pull/1210`). CI passed; its bot
+  flagged 🔑 vs 🔐, which was predicted and is explained in the PR. Not the big
+  awesome-mcp-servers list: that one only takes installable servers.
+- **GEO baseline run, two passes** (Claude search, then the user across ChatGPT, Perplexity,
+  Google AI Mode, Grok and Claude.ai, signed out). Google and ChatGPT find Subo for "Discord
+  surveys"; Perplexity, Grok and Claude don't; the poll question goes to native-poll wrappers
+  everywhere, by design.
+- **OAuth is now an app-side item:** "MCP server v1.1, the OAuth front door" in the app's master
+  roadmap (`~/.claude/plans/master-roadmap-2026-h2.md`, Stage 4) and the checklist in
+  `~/.claude/plans/subo-mcp-server-v1.md`. It gates Claude's Connectors Directory and ChatGPT
+  apps. Unscheduled: the user places it.
 
 **Open threads, in the order to pick them up:**
-1. **The next-crawl scoreboard is PARTLY runnable now.** `CC-MAIN-2026-39` (Sep 4-17) exists and
-   captured `/survey-convos/` on 09-16, so its row can be run. **Before the AI-generator row,
-   confirm `/features/` and `/` were captured in that index** (`index.commoncrawl.org`
-   CDX query). `/forms/` and `/fr/forms/` were NOT captured: wait for the October index. The
-   queries are run in AI answer engines by the user unless they hand it over.
-2. **Monthly FR indexation check, due ~2026-10-08 (user, Search Console):** has any `/fr/` URL
-   left "Crawled - currently not indexed"? Add `/de/*` and `/es/*` to the same check; they sit
-   behind the same migration and have never been measured.
-3. **P5 outreach** (shortlist item 2) keeps running on the user's cadence. The evidence still
-   says links, not pages, are what indexation needs.
-4. **Spanish is proofread by the user; German is not** (no reviewer). A native read of
-   `/de/forms/` and `/de/survey-convos/` is the cheapest quality win if one appears.
-5. **Re-test the ES and DE door words** against the first Spanish/German Search Console export
-   (T9): *encuesta* vs *votación* for the Spanish poll, *Fragebogen* and *Formular* (seeded with
-   zero evidence under T10), and whether *cuestionario* reads as quiz or survey to searchers.
+1. **ChatForest pitch (user, in progress):** `https://chatforest.com/reviews/discord-mcp-servers/`
+   reviews Discord MCP servers and adds new entrants; Subo would be the only survey/poll one.
+   Help draft it if asked; it's P5 outreach.
+2. **Watch PR #1210.** If the maintainer asks to change 🔑 to 🔐, don't: the endpoint uses a
+   static API key, not OAuth. Draft a reply instead. On merge, mark the item done.
+3. **Monthly FR indexation check, due ~2026-10-08 (user, Search Console):** has any `/fr/` URL
+   left "Crawled - currently not indexed"? Add `/de/*` and `/es/*` to the same check.
+4. **The next-crawl scoreboard is PARTLY runnable.** `CC-MAIN-2026-39` (Sep 4-17) captured
+   `/survey-convos/` on 09-16, so its row can be run. Before the AI-generator row, confirm `/features/`
+   and `/` were captured in that index. `/forms/` and `/fr/forms/` wait for the October index.
+5. **Re-run the MCP GEO baseline** after PR #1210 merges and the October crawl, same six questions,
+   signed out (method and questions in the MCP item).
+6. **P5 outreach** keeps running on the user's cadence. Links, not pages, are what indexation needs.
+7. **Carried over from 2026-09-28:** a native German read of `/de/forms/` and `/de/survey-convos/`
+   if a reviewer appears; re-test the ES and DE door words against the first Spanish/German Search
+   Console export (T9).
 
-6. **MCP directories (opened 2026-10-01).** Live in the official MCP Registry as `gg.subo/survey-bot`.
-   Next, all cheap: the GEO baseline queries, then the awesome-mcp-servers PR. The directories
-   with real reach (Claude's, ChatGPT's) wait on the app's OAuth front door. Full state:
-   *"MCP server = the agent-era directory play"* under the API discoverability section.
+**Deliberately not next:** a `/mcp/` page (the tutorial is the spoke page), moving the MCP endpoint
+off `api.subo.ai` (every listing carries it), the secondary MCP aggregators beyond a five-minute
+form, IT / PT-BR parity, a DE/ES blog, and *entrevista*.
 
-**Deliberately not next:** IT / PT-BR parity (Stripe shows no revenue case; see the language
-backlog), a DE/ES blog (needs per-locale search evidence first), and *entrevista* (parked for the
-gen-AI discussion-guide format, see the T2b amendment).
-
-**Traps the last session hit, so the next one doesn't:** `fr.json` and `de.json` are not
-`JSON.stringify` round-trip clean, so insert new blocks as text, or a one-key edit becomes a
-2,600-line diff. Spanish word swaps change grammatical gender (*cuestionario* m. / *encuesta* f.):
-review every string a mapping script touches. The PT-BR hreflang "gap" was already fixed; check
-the hreflang clusters, not file counts.
+**Traps, so the next session doesn't hit them:**
+- **The user's terminal doesn't make markdown links clickable:** write URLs out in full.
+- **Cloud routines couldn't reach glama.ai** (the 2026-10-05 reminder failed with no response), and
+  they read the repo as pushed, not as committed locally. Don't use one to probe third-party sites,
+  and push before one fires.
+- **Answer-engine baselines only count signed out.** Signed-in Google invented a "Meta Muse" mention
+  from the user's own history.
+- **This repo is public on GitHub**, roadmap included.
+- From 2026-09-28: `fr.json` and `de.json` are not `JSON.stringify` round-trip clean (insert blocks
+  as text); Spanish word swaps change grammatical gender, so review every string a script touches.
 
 ## ▶ WHERE TO START — refocused 2026-09-05
 
