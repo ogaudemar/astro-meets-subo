@@ -2889,7 +2889,14 @@ agent path deliberately.
       - [x] **Public listing repo — `https://github.com/subo-gg/subo-mcp` (2026-10-01).** README +
         `server.json` only, no app code. Local copy at `Code/subo-mcp/`. It exists because
         GitHub-backed lists link to a repo, and the registry's `repository` field points at it.
-      - [ ] **awesome-remote-mcp-servers PR — BLOCKED ON GLAMA (2026-10-02).** Not the big
+      - [~] **awesome-remote-mcp-servers PR — OPEN 2026-10-05, awaiting review:
+        `https://github.com/punkpeye/awesome-remote-mcp-servers/pull/1210`.** Glama synced the
+        rename by 2026-10-05; the listing is **claimed and healthy** (test profile uses a key from
+        a disposable test community). CI passed with labels `endpoint-ok` + `has-connector`, and
+        its bot flagged 🔑 vs 🔐 exactly as predicted below; the PR description explains it, so
+        the marker stays 🔑 unless the maintainer asks. The reminder routine's run failed (its
+        sandbox couldn't reach glama.ai): cloud routines are not a reliable way to probe
+        third-party sites. History of the item: was blocked on Glama (2026-10-02). Not the big
         awesome-mcp-servers list (~96k stars): its CONTRIBUTING scopes it to installable servers
         and sends remote-only ones to `https://github.com/punkpeye/awesome-remote-mcp-servers`
         (~650 stars, same maintainer, synced with Glama). Its rules: link the name to the
