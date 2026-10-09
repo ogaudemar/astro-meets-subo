@@ -14,7 +14,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 
 				<h1 class="title-text heading">Privacy Policy</h1>
 
-			<div class="subtitle-text title-box__text content_box"><p>&nbsp;Last updated: <em>September 16, 2026.</em>&nbsp;</p>
+			<div class="subtitle-text title-box__text content_box"><p>&nbsp;Last updated: <em>October 8, 2026.</em>&nbsp;</p>
 </div>
 
 		</div>
@@ -78,7 +78,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <ul>
 <li><strong>Transparent</strong>: individual votes and responses are shared with the survey creator and made visible to the community (other server members). Both the creator and other participants can see who answered what.</li>
 <li><strong>Semi-private</strong>: individual votes and responses are shared with the survey creator only, and are not made public to the community.</li>
-<li><strong>Anonymous (Full Anonymous)</strong>: no identity link is created or retained at any point: Subo cannot attribute the response to any specific user. Because no identity link exists, anonymous responses cannot be deleted via <code>/profile</code> or by individual request. Anonymous responses may still be sent to OpenAI for text summarization; no identity information is included in those requests.</li>
+<li><strong>Anonymous (Full Anonymous)</strong>: no identity link is created or retained at any point: Subo cannot attribute the response to any specific user. Because no identity link exists, anonymous responses cannot be deleted via <code>/profile</code> or by individual request. Anonymous responses may still be sent to an AI provider for Text Analysis (see "AI Features and AI Providers" below); no identity information is included in those requests.</li>
 </ul>
 <p>Participants should contact the server admin if uncertain about how a specific survey handles their data, as the anonymity mode is determined by the creator.</p>
 </div>
@@ -105,12 +105,38 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <li>Recurring and scheduled surveys: automated delivery on creator-configured schedules. Participation remains voluntary. Response data is handled identically to single-instance surveys.</li>
 <li>Creator Network: as part of our own market research, we may contact Subo survey creators (server owners) to invite them to participate in surveys conducted by Subo/ClearSwell. This uses contact information (Discord username, server association) already held as part of your creator account. You may opt out at any time on your account page at <a href="https://app.subo.gg/app/account" target="_blank">app.subo.gg/app/account</a>, or by contacting hello@subo.ai.</li>
 <li>Service providers: we may work with trusted service providers to help us run our business, for example cloud data storage, survey/data collection technology, validation and anti-fraud services.</li>
-<li>OpenAI API: we use the OpenAI API to (1) analyze and summarize open-ended text responses, (2) generate survey drafts via the <code>/draft</code> command, and (3) process Full Anonymous survey responses where no identity data is included. The OpenAI API will not use the data to train or improve its models, but will retain the data for abuse and misuse monitoring purposes for a maximum of 30 days. You can learn more about <a href="https://openai.com/policies/api-data-usage-policies" target="_blank">how the OpenAI API uses your data in its privacy policy</a>.</li>
+<li>AI features: some features use AI models from OpenAI, Anthropic and Google, which we reach through OpenRouter. See "AI Features and AI Providers" below for what each feature sends, and how long each provider keeps it.</li>
 <li>Payment processing (Stripe): subscription payments are processed by Stripe, Inc. Subo does not store full payment card details. We receive subscription status (tier, renewal date, server association) from Stripe. <a href="https://stripe.com/privacy" target="_blank">Stripe's privacy policy</a> applies to payment data.</li>
 <li>We may also provide links to third-party bots, websites and apps, which are independent from Subo and have their own separate privacy policies. We are not responsible for the privacy practices or content of such third-party websites or apps. We recommend that you carefully read the privacy policies of each site or app.</li>
 <li>In rare instances, we may be required by law to share Personal Data with public authorities, or we may share data to defend our rights, including with legal advisors.</li>
 <li>If our business gets acquired, merges, or in case of bankruptcy, your data will be considered an asset and may be transferred to the acquirer. In this case, we will require the other party to agree in writing to respect this Privacy Policy.</li>
 </ul>
+</div>
+						</div>
+					</div>
+
+
+					<div class="text-08__item">
+						<h3 class="def-18_72 title-text--inner text--08__heading">AI Features and AI Providers
+							<div class="text--08__icon">
+							</div>
+						</h3>
+						<div class="content_box">
+							<div class="content-text"><p>Some Subo features use large language models ("AI"). We send these requests through <strong>OpenRouter</strong> (OpenRouter, Inc., United States), a service that passes each request to the provider running the model. The model providers we currently use are <strong>OpenAI</strong>, <strong>Anthropic</strong> and <strong>Google</strong>. A model may also be served by a cloud company that hosts it for its developer or for OpenRouter, such as Microsoft Azure, Amazon Web Services or Google Cloud. We use these providers only through their business APIs, under terms in which they do not use the data we send to train their models.</p>
+<p><strong>What each feature sends:</strong></p>
+<ul>
+<li><strong>Text Analysis (AI summaries of open-ended answers)</strong>: the question and the open-text answers to it. Before anything is sent, Subo removes the personal data it can detect (such as email addresses, phone numbers, IP addresses, bank, card and crypto wallet numbers, Discord handles, and the names of respondents) and replaces each respondent with a random code, so no usernames or Discord IDs are sent. A question that asks for personal data is not summarized unless the creator turns it on, and when many of a question's answers consist mostly of personal data, none of its answers are sent. Creators can turn Text Analysis off for their whole community, for a project, or for a single question. This applies in every anonymity mode, including Full Anonymous.</li>
+<li><strong>AI drafting</strong> (the <code>/draft</code> command, "Draft with AI" in the web app, and project generation through the Subo API and its MCP connection): what the creator asks for, their answers to Subo's follow-up questions, any facts they provide, and the name and language of their community. No survey responses are sent.</li>
+<li><strong>AI check</strong> (a review of a project's questions for personal data, privacy settings and question types, run by the creator or when a project opens): the project's questions and answer options, and its privacy and delivery settings. No survey responses are sent.</li>
+</ul>
+<p><strong>What the providers keep:</strong></p>
+<ul>
+<li><strong>OpenRouter</strong> does not store the content of our requests or the AI's replies. It keeps request metadata, such as the model used, the number of tokens and the time taken. <a href="https://openrouter.ai/privacy" target="_blank">OpenRouter's privacy policy</a>.</li>
+<li><strong>OpenAI</strong> does not use API data to train its models, and keeps it for up to 30 days for abuse and misuse monitoring. <a href="https://openai.com/policies/api-data-usage-policies" target="_blank">How the OpenAI API uses data</a>.</li>
+<li><strong>Anthropic</strong> does not use API data to train its models by default, and deletes it within 30 days, except where a request is flagged for a usage policy violation. <a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data" target="_blank">How long Anthropic keeps API data</a>.</li>
+<li><strong>Google</strong> does not use paid Gemini API prompts or responses to improve its products, and keeps them for up to 55 days, solely to detect and prevent abuse. <a href="https://ai.google.dev/gemini-api/terms" target="_blank">Gemini API terms</a>.</li>
+</ul>
+<p><strong>What Subo keeps:</strong> AI summaries are stored with the project's results. A drafting session (the request, Subo's questions and the creator's answers) is kept for 7 days when no project was created (30 days on paid plans), or for 90 days when it produced a project (18 months on paid plans). AI check results are stored with the project and deleted with it. For every AI request we also record the model, the provider, the number of tokens and the cost.</p>
 </div>
 						</div>
 					</div>
@@ -131,7 +157,10 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <tr><td>User profile</td><td>Until deletion via /profile or email request; Full Anonymous responses cannot be attributed and are not deleted individually</td></tr>
 <tr><td>Creator account data</td><td>Duration of subscription + up to 90 days post-closure</td></tr>
 <tr><td>Account login data (email address, language preference, encrypted Discord access tokens)</td><td>Retained while the account exists; tokens are replaced at each sign-in and deleted with the account</td></tr>
-<tr><td>OpenAI API data</td><td>Maximum 30 days (abuse monitoring only; no model training)</td></tr>
+<tr><td>AI requests at OpenRouter</td><td>Content not stored; request metadata (model, tokens, timing) kept per OpenRouter's policy</td></tr>
+<tr><td>AI requests at the model providers</td><td>OpenAI: up to 30 days; Anthropic: deleted within 30 days (longer only for requests flagged for policy violations); Google: up to 55 days. Abuse monitoring only; no model training</td></tr>
+<tr><td>AI drafting sessions</td><td>7 days if no project was created (30 days on paid plans); 90 days if a project was created (18 months on paid plans)</td></tr>
+<tr><td>AI summaries and AI check results</td><td>Stored with the project and deleted with it</td></tr>
 <tr><td>Stripe billing data</td><td>Per Stripe's policy and applicable financial law</td></tr>
 <tr><td>Google Analytics data</td><td>Per GA4 data retention settings (configurable in GA4 Admin &gt; Data Settings)</td></tr>
 </tbody>
@@ -183,7 +212,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <tr><td>Legal obligation</td><td>Financial records and compliance obligations</td></tr>
 </tbody>
 </table>
-<p><strong>International data transfers:</strong> Data is stored in the United States. Transfers from the EEA/UK rely on Standard Contractual Clauses (SCCs) with our sub-processors (OpenAI, Stripe, Google), and/or the EU-US Data Privacy Framework where applicable. Contact hello@subo.ai for details.</p>
+<p><strong>International data transfers:</strong> Data is stored in the United States. Transfers from the EEA/UK rely on Standard Contractual Clauses (SCCs) with our sub-processors (OpenRouter, OpenAI, Anthropic, Google, Stripe), and/or the EU-US Data Privacy Framework where applicable. Contact hello@subo.ai for details.</p>
 <p>Our service lets you directly access, rectify, delete your Personal Data or export it in a commonly used format. Please use the <code>/help</code> command for more information about the different data control commands available through our service. If you are unable to perform these actions yourself, or for other requests related to exercising your rights, please contact us at hello@subo.ai.</p>
 </div>
 						</div>
