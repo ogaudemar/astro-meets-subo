@@ -72,3 +72,15 @@ A platform user (Discord account) linked to a community, with an access level
 - Replaces: **user** (when community-scoped), **panelist**, **respondent** (a respondent is
   anyone who answers; a member is enrolled in the community).
 - Public API: `member` / `memberId`; look up by `platform_id` (Discord snowflake).
+
+## Audit / Drafting (name the utility, not the AI)
+**Audit** is the review of a project's script for personal data, privacy mode and block types,
+run from the Script tab and when the project opens. **Drafting** is Subo writing a project from
+the admin's request (`/draft`, "Let Subo draft it" in the web app, API `generate`, MCP).
+- Name a feature by what it does. **Never put "AI" in a feature name, label or button**
+  ("AI check", "AI drafting", "Generate with AI", "Check with AI"). Some users distrust AI, so
+  it is not automatically a selling point, and the utility is what sells (operator, 2026-10-08).
+- Where the reader needs to know a model is involved (the privacy policy's AI section, a data
+  notice), say so plainly there: that is disclosure, not positioning.
+- Existing strings that still say AI ("AI credits", "AI Summary", "What gets sent to the AI?")
+  are not decided yet: ask before changing them.
