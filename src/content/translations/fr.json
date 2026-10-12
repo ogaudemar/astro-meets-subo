@@ -613,7 +613,7 @@
     {
       "number": "1",
       "title": "Tu crées ton enquête",
-      "desc": "Crée ton questionnaire avec la commande /enquete (ou /survey), ou utilise /brouillon pour laisser l'IA de Subo en générer un selon tes objectifs. Tu peux aussi tout gérer depuis l'appli web Subo."
+      "desc": "Crée ton questionnaire avec la commande /enquete (ou /survey), ou utilise /brouillon pour laisser l'IA de Subo en générer un selon tes objectifs. L'appli web fait les deux aussi : pars de zéro, ou laisse Subo rédiger le projet à partir de ce que tu veux apprendre."
     },
     {
       "number": "2",
@@ -1216,7 +1216,8 @@
       "sub": "D'une simple commande slash à un questionnaire entièrement branché. Subo s'adapte à toi.",
       "cards": [
         { "emoji": "💬", "title": "Format conversationnel", "desc": "Les questions apparaissent une à la fois, comme un chat, pas un mur de formulaire. Meilleur taux de complétion, moins de friction." },
-        { "emoji": "🤖", "title": "Rédaction assistée par IA", "desc": "Utilise <code>/brouillon</code> pour décrire ton objectif en langage naturel. Subo génère instantanément un sondage complet avec plusieurs questions." },
+        { "emoji": "🤖", "title": "Rédaction assistée par IA", "desc": "Décris ton objectif en langage naturel et Subo rédige le projet : avec <code>/brouillon</code> dans Discord, avec <em>Laisser Subo le rédiger</em> dans l'appli web, ou en passant un objectif à l'API. Tu vois d'abord un plan, tu choisis un brouillon Rapide ou Réflexion, et tu obtiens un script complet dans n'importe quelle langue, vérifié avant que tu le modifies. <a href=\"/blog/ai-powered-survey-summaries-subo/\">Voir comment fonctionne la rédaction (en anglais) →</a>" },
+        { "emoji": "🔎", "title": "Audit", "desc": "Avant qu'un projet s'ouvre, Subo relit son script pour repérer les risques (une question qui demande un mot de passe, un mode de confidentialité qui ne correspond pas aux questions, le mauvais type de bloc) et suggère des améliorations. Il ne lit que tes questions, jamais les réponses, et il est gratuit sur tous les plans. <a href=\"/blog/survey-audit-better-drafts-summaries/\">Voir ce que vérifie l'Audit (en anglais) →</a>" },
         { "emoji": "🖥️", "title": "Interface d'administration web", "desc": "Crée, prévisualise et gère tes sondages depuis le tableau de bord web Subo, sans commandes Discord." },
         { "emoji": "🌿", "title": "Logique de saut et branchement", "desc": "Dirige les répondants vers différentes questions selon leurs réponses précédentes, et déclenche des récompenses selon leur choix. Une réponse sur une échelle est un nombre, donc une condition peut la comparer : relance tous ceux qui ont répondu 6 ou moins à une question NPS." },
         { "emoji": "✅", "title": "8 types de questions", "desc": "Texte libre, numérique, choix unique (oui/non inclus), choix multiple, évaluation, échelle d’opinion, NPS et classement : tous les scénarios de feedback couverts. <a href=\"/blog/discord-rating-scale-nps-ranking-questions/\">Voir les types évaluation, échelle et classement (en anglais) →</a>" },
@@ -1266,7 +1267,7 @@
       "cards": [
         { "emoji": "📊", "title": "Tableau de bord des résultats en direct", "desc": "Vois les réponses agrégées au fil de leur arrivée : graphiques pour les questions fermées, listes de réponses pour le texte libre." },
         { "emoji": "📉", "title": "Scores, moyennes et distributions", "desc": "Les réponses aux questions évaluation, échelle d'opinion et NPS sont stockées comme le nombre choisi par ton membre : la question revient donc sous forme de moyenne, avec la distribution derrière. Le classement donne le rang moyen et le nombre de fois où chaque option est arrivée première." },
-        { "emoji": "✨", "title": "Résumés IA des réponses ouvertes", "desc": "Subo lit chaque réponse ouverte et génère une synthèse concise. L'essentiel de 500 réponses en quelques secondes." },
+        { "emoji": "✨", "title": "Résumés IA des réponses ouvertes", "desc": "Subo lit chaque réponse ouverte et génère une synthèse concise, avec le nombre exact de réponses par thème. Les membres sont envoyés au modèle sous forme de codes, jamais par leur nom. L'essentiel de 500 réponses en quelques secondes." },
         { "emoji": "📥", "title": "Export CSV", "desc": "Télécharge toutes les réponses pour une analyse approfondie dans Excel, Google Sheets ou tes propres outils." },
         { "emoji": "🔀", "title": "Logique de saut pour de meilleures données", "desc": "Chaque répondant ne voit que les questions pertinentes. Pas de bruit \"N/A\" qui pollue tes résultats." },
         { "emoji": "🔗", "title": "Partage les résultats", "desc": "Publie un résumé des résultats directement sur Discord pour boucler la boucle de feedback avec ta communauté." }
@@ -1478,7 +1479,8 @@
       "personalize-discord-survey-messages": "Tape @, [ ou : dans n'importe quel champ de message pour insérer une mention de rôle, une variable ou un emoji.",
       "discord-rating-scale-nps-ranking-questions": "Évaluations en étoiles ou en emojis, échelles d'accord et de satisfaction, la question NPS standard, et le classement sans glisser-déposer.",
       "convos-in-your-dms": "Une Convo se déroule par défaut dans les DM du membre, avec un fil privé et un lien web en solutions de repli automatiques.",
-      "subo-mcp-server": "Connecte Subo à Claude Code ou à une autre appli d'IA, décris le projet que tu veux, et regarde-le se construire."
+      "subo-mcp-server": "Connecte Subo à Claude Code ou à une autre appli d'IA, décris le projet que tu veux, et regarde-le se construire.",
+      "survey-audit-better-drafts-summaries": "Subo vérifie ton script avant l'ouverture d'un projet, rédige à partir d'un plan avec deux modèles au choix, et résume les réponses sans envoyer de noms."
     },
     "readMoreEnglish": "Lire l'annonce (en anglais)"
   }

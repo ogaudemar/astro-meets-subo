@@ -87,4 +87,9 @@ export const blogFr: Record<string, BlogFrRow> = {
 		summary:
 			"Le serveur MCP de Subo connecte Subo à Claude Code et à d'autres applis d'IA. Décris le projet que tu veux : ton assistant le construit, le vérifie, le lance, et te demande avant toute action qui touche tes membres. Configuration en anglais pour l'instant.",
 	},
+	"survey-audit-better-drafts-summaries": {
+		title: "Subo vérifie maintenant tes questions avant que ta communauté les voie",
+		summary:
+			"Le nouvel Audit relit ton script pour repérer les risques et les points faibles avant l'ouverture d'un projet, gratuitement sur tous les plans. La rédaction de projets et les résumés de réponses ouvertes ont aussi été reconstruits pour mieux fonctionner.",
+	},
 };
