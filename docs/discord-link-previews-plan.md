@@ -144,7 +144,7 @@ Decide in this session:
 ## Open questions (not blocking Session 1)
 
 - **The default OG image says "subo.ai"**, the old domain, and has a white strip along the
-  bottom (`public/images/subo-og.png`, 1200×630). It is the card image on every page
+  bottom (`public/images/subo-og-2026-10.png`, 1200×630; rename on every change, Discord caches images by URL). It is the card image on every page
   without its own. Worth a refresh via the `mascot-illustration` skill.
 - **`theme-color` also tints the mobile browser toolbar** (Chrome on Android, Safari) in
   bright green. If that is unwanted, the alternative is to drop the tag and set the color

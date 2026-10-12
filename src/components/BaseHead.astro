@@ -23,7 +23,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // defaults render on no page today. They fall back to consts.ts rather than
 // carrying their own copy: a duplicate that nothing serves is a duplicate
 // nobody notices going stale (it still said "survey convos" in 2026-08).
-const DEFAULT_OG_IMAGE = '/images/subo-og.png';
+// Discord's media proxy caches a card image by its URL, for far longer than the
+// page preview. A new default image needs a new filename, or Discord keeps
+// showing the old one. subo-og.png stays for links that still point at it.
+const DEFAULT_OG_IMAGE = '/images/subo-og-2026-10.png';
 const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = DEFAULT_OG_IMAGE, publishedDate, alternates = [], jsonLd } = Astro.props;
 const imageAlt = Astro.props.imageAlt ?? (image === DEFAULT_OG_IMAGE ? DEFAULT_OG_IMAGE_ALT : undefined);
 const imageSize = await ogImageSize(image);

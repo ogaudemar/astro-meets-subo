@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = "Subo, the Survey Bot | Discord Surveys, Polls & Forms";
-// Alt text for the default social preview image (public/images/subo-og.png).
+// Alt text for the default social preview image (public/images/subo-og-2026-10.png).
 // Pages that pass their own image pass their own alt, or none.
 export const DEFAULT_OG_IMAGE_ALT = "Subo, the survey bot: the Subo wordmark beside the green robot mascot";
 // Brand accent (--accent in global.css). Used as theme-color, which Discord

@@ -69,6 +69,10 @@ other four.
   a throwaway query string (`?v=2`), but **post the clean URL**: the query string is a
   different URL to analytics and to the canonical. If the page changed in the last half hour,
   wait that out before posting the clean URL.
+- **A changed image needs a new filename.** `?v=2` refetches the page, not its image:
+  Discord's media proxy caches the image by its own URL, much longer than the preview.
+  Replacing `subo-og.png` in place kept showing the old card (2026-10-12); the default
+  image is now dated (`subo-og-2026-10.png`) and gets a new name on every change.
 - **Discord markdown:** `#`/`##` headings, `**bold**`, `` `code` ``, `•` or `-` bullets.
   No tables, no nested lists.
 - **Emoji:** one per heading at most, as a visual anchor. The server's own custom emoji
