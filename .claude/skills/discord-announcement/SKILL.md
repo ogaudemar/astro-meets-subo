@@ -54,6 +54,21 @@ other four.
 - **Embeds:** a bare URL renders a preview card; `<https://…>` suppresses it. Two bare
   links in one message is a wall of cards. Let the **better-looking hero** embed and wrap
   the other, or split into two messages if both deserve a card.
+- **What a subo.gg card shows** comes from the page's own tags, set once in `BaseHead.astro`:
+  "Subo" as the site name, the brand-green accent bar, the title, the description, and the
+  hero image large. Write the message around that card, not on top of it:
+  - **Titles cut at 70 bytes** on the card (accented letters count double). A long blog
+    title loses its tail in the card, which is one more reason not to restate it.
+  - **Some pages carry their own Discord card** with link buttons (a `discord:component-embed`
+    payload, rolling out per `docs/discord-link-previews-plan.md`). If the card already has a
+    "Read" or "Use this template" button, the message needs no "read it here" line. The link
+    itself is the call to action.
+- **Check the card before posting** when the page is new or just changed: paste the URL into
+  https://discord.com/developers/embeds. Discord caches a preview for about 30 minutes, so a
+  card fetched before the last deploy can be stale. To force a fresh fetch while testing, add
+  a throwaway query string (`?v=2`), but **post the clean URL**: the query string is a
+  different URL to analytics and to the canonical. If the page changed in the last half hour,
+  wait that out before posting the clean URL.
 - **Discord markdown:** `#`/`##` headings, `**bold**`, `` `code` ``, `•` or `-` bullets.
   No tables, no nested lists.
 - **Emoji:** one per heading at most, as a visual anchor. The server's own custom emoji
