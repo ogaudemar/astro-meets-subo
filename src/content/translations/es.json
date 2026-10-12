@@ -756,7 +756,7 @@
       {
         "number": "1",
         "title": "Creas la encuesta",
-        "desc": "Crea una Convo con el comando /survey, o usa /draft para que la IA de Subo la genere según tus objetivos. La app web hace las dos cosas: empieza desde cero, o elige Generar con IA y describe lo que quieres saber."
+        "desc": "Crea una Convo con el comando /survey, o usa /draft para que la IA de Subo la genere según tus objetivos. La app web hace las dos cosas: empieza desde cero, o elige Que Subo lo redacte y describe lo que quieres saber."
       },
       {
         "number": "2",
@@ -1976,7 +1976,12 @@
           {
             "emoji": "🤖",
             "title": "Redacción asistida por IA",
-            "desc": "Describe tu objetivo en lenguaje natural y Subo redacta las preguntas. Escribe <code>/draft</code> en Discord, elige <em>Generar con IA</em> en la app web o pasa un <code>intent</code> a la API. Obtienes un borrador completo de varias preguntas que puedes editar antes de que nadie lo vea. <a href=\"/blog/ai-powered-survey-summaries-subo/\">Descubre cómo funciona el generador de encuestas con IA (en inglés) →</a>"
+            "desc": "Describe tu objetivo en lenguaje natural y Subo redacta el proyecto. Escribe <code>/draft</code> en Discord, elige <em>Que Subo lo redacte</em> en la app web o pasa tu objetivo a la API. Primero ves un plan, eliges un borrador Rápido o A fondo y obtienes un guion completo en cualquier idioma, revisado antes de que lo edites. <a href=\"/blog/ai-powered-survey-summaries-subo/\">Descubre cómo funciona el generador de encuestas con IA (en inglés) →</a>"
+          },
+          {
+            "emoji": "🔎",
+            "title": "Auditoría",
+            "desc": "Antes de que se abra un proyecto, Subo revisa su guion en busca de riesgos (una pregunta que pide una contraseña, un modo de privacidad que no encaja con las preguntas, el tipo de bloque equivocado) y sugiere mejoras. Solo lee tus preguntas, nunca las respuestas, y es gratis en todos los planes. <a href=\"/blog/survey-audit-better-drafts-summaries/\">Mira qué revisa la Auditoría (en inglés) →</a>"
           },
           {
             "emoji": "🖥️",
@@ -2082,7 +2087,7 @@
           {
             "emoji": "✨",
             "title": "Resúmenes de texto abierto con IA",
-            "desc": "Subo lee todas las respuestas abiertas y genera una síntesis breve. La esencia de 500 respuestas en segundos."
+            "desc": "Subo lee todas las respuestas abiertas y genera una síntesis breve, con el recuento exacto por tema. Los miembros se envían al modelo como códigos, nunca por su nombre. La esencia de 500 respuestas en segundos."
           },
           {
             "emoji": "📥",

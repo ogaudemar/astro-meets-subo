@@ -757,7 +757,7 @@
       {
         "number": "1",
         "title": "Du erstellst den Fragebogen",
-        "desc": "Erstelle eine Convo mit dem Befehl /survey, oder lass sie mit /draft von Subos KI nach deinen Zielen generieren. Die Web-App kann beides: von Grund auf bauen, oder Mit KI generieren wählen und beschreiben, was du herausfinden willst."
+        "desc": "Erstelle eine Convo mit dem Befehl /survey, oder lass sie mit /draft von Subos KI nach deinen Zielen generieren. Die Web-App kann beides: von Grund auf bauen, oder Von Subo entwerfen lassen wählen und beschreiben, was du herausfinden willst."
       },
       {
         "number": "2",
@@ -1977,7 +1977,12 @@
           {
             "emoji": "🤖",
             "title": "Entwürfe mit KI",
-            "desc": "Beschreibe dein Ziel in normaler Sprache und Subo schreibt die Fragen. Tippe <code>/draft</code> in Discord, wähle <em>Mit KI generieren</em> in der Web-App oder übergib der API einen <code>intent</code>. Du bekommst einen kompletten Entwurf mit mehreren Fragen, den du bearbeiten kannst, bevor ihn jemand sieht. <a href=\"/blog/ai-powered-survey-summaries-subo/\">So funktioniert der KI-Fragebogen-Generator (auf Englisch) →</a>"
+            "desc": "Beschreibe dein Ziel in normaler Sprache und Subo schreibt das Projekt. Tippe <code>/draft</code> in Discord, wähle <em>Von Subo entwerfen lassen</em> in der Web-App oder übergib der API dein Ziel. Du siehst zuerst einen Plan, wählst einen Entwurf Schnell oder Gründlich und bekommst ein komplettes Script in jeder Sprache, geprüft, bevor du es bearbeitest. <a href=\"/blog/ai-powered-survey-summaries-subo/\">So funktioniert der KI-Fragebogen-Generator (auf Englisch) →</a>"
+          },
+          {
+            "emoji": "🔎",
+            "title": "Audit",
+            "desc": "Bevor ein Projekt startet, prüft Subo sein Script auf Risiken (eine Frage nach einem Passwort, ein Datenschutzmodus, der nicht zu den Fragen passt, der falsche Blocktyp) und schlägt Verbesserungen vor. Es liest nur deine Fragen, nie die Antworten, und ist auf allen Plänen kostenlos. <a href=\"/blog/survey-audit-better-drafts-summaries/\">Was das Audit prüft (auf Englisch) →</a>"
           },
           {
             "emoji": "🖥️",
@@ -2083,7 +2088,7 @@
           {
             "emoji": "✨",
             "title": "KI-Zusammenfassungen offener Antworten",
-            "desc": "Subo liest jede offene Antwort und schreibt eine kompakte Synthese. Der Kern aus 500 Antworten in Sekunden."
+            "desc": "Subo liest jede offene Antwort und schreibt eine kompakte Synthese, mit exakten Zahlen pro Thema. Mitglieder werden dem Modell als Codes übermittelt, nie mit Namen. Der Kern aus 500 Antworten in Sekunden."
           },
           {
             "emoji": "📥",

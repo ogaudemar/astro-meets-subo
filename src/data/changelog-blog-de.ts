@@ -84,4 +84,9 @@ export const blogDe: Record<string, BlogDeRow> = {
 		summary:
 			"Der MCP-Server von Subo verbindet Subo mit Claude Code und anderen KI-Apps. Beschreib das Projekt, das du willst: Dein Assistent baut es, prüft es, startet es und fragt dich vor jeder Aktion, die deine Mitglieder erreicht. Die Einrichtung ist vorerst auf Englisch.",
 	},
+	"survey-audit-better-drafts-summaries": {
+		title: "Subo prüft jetzt deine Fragen, bevor deine Community sie sieht",
+		summary:
+			"Das neue Audit prüft dein Script auf Risiken und Schwachstellen, bevor ein Projekt startet, kostenlos auf allen Plänen. Entwürfe und die Zusammenfassungen offener Antworten wurden außerdem neu gebaut und funktionieren jetzt besser.",
+	},
 };

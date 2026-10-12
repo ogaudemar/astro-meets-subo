@@ -84,4 +84,9 @@ export const blogEs: Record<string, BlogEsRow> = {
 		summary:
 			"El servidor MCP de Subo conecta Subo con Claude Code y otras apps de IA. Describe el proyecto que quieres: tu asistente lo construye, lo revisa, lo lanza y te pregunta antes de cualquier acción que llegue a tus miembros. De momento, la configuración está en inglés.",
 	},
+	"survey-audit-better-drafts-summaries": {
+		title: "Subo ahora revisa tus preguntas antes de que tu comunidad las vea",
+		summary:
+			"La nueva Auditoría revisa tu guion en busca de riesgos y puntos débiles antes de que se abra un proyecto, gratis en todos los planes. La redacción de proyectos y los resúmenes de respuestas abiertas también se reconstruyeron para funcionar mejor.",
+	},
 };
