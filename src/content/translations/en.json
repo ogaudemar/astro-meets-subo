@@ -611,7 +611,7 @@
     {
       "number": "1",
       "title": "You build the survey",
-      "desc": "Create a survey using the /survey command, or use /draft to let Subo's AI generate one based on your objectives. The web app does both too: build from scratch, or pick Generate with AI and describe what you want to learn."
+      "desc": "Create a survey using the /survey command, or use /draft to let Subo's AI generate one based on your objectives. The web app does both too: build from scratch, or pick Let Subo draft it and describe what you want to learn."
     },
     {
       "number": "2",
@@ -1424,7 +1424,8 @@
       "sub": "From a quick slash command to a fully branched questionnaire. Subo meets you where you are.",
       "cards": [
         { "emoji": "💬", "title": "Conversational format", "desc": "Questions appear one at a time, like a chat, not a form wall. Higher completion, less friction." },
-        { "emoji": "🤖", "title": "AI survey generator", "desc": "Describe your goal in plain English and Subo writes the questions. Type <code>/draft</code> in Discord, pick <em>Generate with AI</em> in the web app, or pass an <code>intent</code> to the API. You get a full multi-question draft you can edit before anyone sees it. <a href=\"/blog/ai-powered-survey-summaries-subo/\">See how the AI survey generator works →</a>" },
+        { "emoji": "🤖", "title": "AI survey generator", "desc": "Describe your goal in plain English and Subo writes the project. Type <code>/draft</code> in Discord, pick <em>Let Subo draft it</em> in the web app, or pass an <code>intent</code> to the API. You see a plan first, choose a Quick or Deep draft, and get a full script in any language, checked before you edit it. <a href=\"/blog/ai-powered-survey-summaries-subo/\">See how the AI survey generator works →</a>" },
+        { "emoji": "🔎", "title": "Audit", "desc": "Before a project opens, Subo checks its script for risks (a question that asks for a password, a privacy mode that doesn't match the questions, the wrong block type) and suggests improvements. It reads only your questions, never responses, and it's free on every plan. <a href=\"/blog/survey-audit-better-drafts-summaries/\">See what the Audit checks →</a>" },
         { "emoji": "🖥️", "title": "Web admin builder", "desc": "Design, preview, and manage surveys from the Subo web dashboard, no Discord commands needed." },
         { "emoji": "🌿", "title": "Skip logic & branching", "desc": "Route respondents to different questions based on earlier answers, and trigger rewards from what they picked. Scale answers are numbers, so a condition can compare them: follow up with anyone who answered 6 or below on an NPS question." },
         { "emoji": "✅", "title": "8 question types", "desc": "Open Text, Numeric, Single Choice (yes/no included), Multiple Choice, Rating, Opinion Scale, NPS, and Ranking, covering every feedback scenario. <a href=\"/blog/discord-rating-scale-nps-ranking-questions/\">See the rating, scale and ranking types →</a>" },
@@ -1474,7 +1475,7 @@
       "cards": [
         { "emoji": "📊", "title": "Live results dashboard", "desc": "See aggregated responses as they come in: charts for closed questions, response lists for open text." },
         { "emoji": "📉", "title": "Scores, averages and distributions", "desc": "Rating, Opinion Scale and NPS answers are stored as the number your member picked, so a question comes back as an average with the distribution behind it. Ranking reports average rank and how often each item was picked first." },
-        { "emoji": "✨", "title": "AI-powered open text summaries", "desc": "Subo reads every open-text response and generates a concise synthesis. Get the gist of 500 answers in seconds. <a href=\"/blog/ai-powered-survey-summaries-subo/\">See how AI summaries read open-ended answers →</a>" },
+        { "emoji": "✨", "title": "AI-powered open text summaries", "desc": "Subo reads every open-text response and generates a concise synthesis, with exact counts per theme. Members are sent to the model as codes, never by name. Get the gist of 500 answers in seconds. <a href=\"/blog/ai-powered-survey-summaries-subo/\">See how AI summaries read open-ended answers →</a>" },
         { "emoji": "📥", "title": "CSV export", "desc": "Download all responses for deeper analysis in Excel, Google Sheets, or your own tooling." },
         { "emoji": "🔀", "title": "Skip logic means better data", "desc": "Every respondent only sees relevant questions. No \"N/A\" noise polluting your results." },
         { "emoji": "🔗", "title": "Share findings", "desc": "Post a results summary directly back into Discord to close the feedback loop with your community." }
@@ -1594,7 +1595,8 @@
       "personalize-discord-survey-messages": "Type @, [ or : in any message field to drop in a role mention, a variable or an emoji.",
       "discord-rating-scale-nps-ranking-questions": "Star and emoji ratings, agreement and satisfaction scales, the standard NPS question, and ranking without dragging.",
       "convos-in-your-dms": "A Convo runs in a member's DMs by default, with a private thread and a web link as automatic fallbacks.",
-      "subo-mcp-server": "Connect Subo to Claude Code or another AI app, describe the project you want, and watch it get built."
+      "subo-mcp-server": "Connect Subo to Claude Code or another AI app, describe the project you want, and watch it get built.",
+      "survey-audit-better-drafts-summaries": "Subo checks your script for risks before a project opens, drafts from a plan on two models, and summarizes answers without sending names."
     }
   }
 }

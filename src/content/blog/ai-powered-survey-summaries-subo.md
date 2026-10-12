@@ -2,18 +2,18 @@
 title: "AI-Powered Survey Summaries: How Subo Reads 1,000 Responses in Seconds"
 description: "Subo's AI reads open-ended survey responses and summarizes them in seconds, and it writes the questions too: describe your goal and the AI survey generator drafts the whole thing."
 pubDate: "Feb 13 2026"
-updatedDate: "Sep 7 2026"
+updatedDate: "Oct 12 2026"
 author: "Subo Team"
 tags: ["ai", "ai survey generator", "survey analysis", "features", "open-ended responses", "text analysis"]
 faq:
   - q: "Can AI write a survey for my Discord server?"
-    a: "Yes. Subo generates a complete survey from a plain-English description of what you want to learn. Type <code>/draft</code> in Discord, pick <em>Generate with AI</em> when you start a new project in the <a href=\"https://app.subo.gg\">web app</a>, or pass an <code>intent</code> field to the <a href=\"/api/\">API</a>."
+    a: "Yes. Subo generates a complete survey from a plain-English description of what you want to learn. Type <code>/draft</code> in Discord, pick <em>Let Subo draft it</em> when you start a new project in the <a href=\"https://app.subo.gg\">web app</a>, or pass an <code>intent</code> field to the <a href=\"/api/\">API</a>."
   - q: "Do I have to keep the questions the AI writes?"
     a: "No. The generated survey opens in the editor before anything is published. Rewrite prompts, reorder or delete questions, add the one the AI missed, and set the privacy mode and rewards. Members only ever see the version you approve."
   - q: "How many questions does the AI survey generator write?"
-    a: "Five by default. Ask for more or fewer when you run it, up to your plan's per-survey question limit. It uses the four core question types: single choice, multiple choice, open text and numeric."
+    a: "As many as the goal needs, unless you set a number, up to your plan's per-project question limit. Drafts use every block type, from single choice and open text to ratings, opinion scales, NPS and rankings, plus skip logic and scoring for quizzes and prediction contests."
   - q: "Can it write the questions in another language?"
-    a: "Yes. Name a language when you run it, or leave it out and Subo uses your server's configured language."
+    a: "Yes, in any language, not only the ones Subo's interface is translated into. Ask for it in your request (\"a poll in Tagalog\") or pick it on the plan. If you say nothing, Subo uses your server's language."
   - q: "What does AI question generation cost?"
     a: "It draws on the same AI credits as Text Analysis. The Free plan includes a one-off trial allowance and every paid plan includes a monthly one that resets each billing period. See <a href=\"/pricing/\">pricing</a> for the allowance on each plan."
 draft: false
@@ -27,9 +27,9 @@ Subo's **Text Analysis** feature is designed to fix that.
 
 ## How It Works
 
-Text Analysis is a server-level setting. Turn it on once, and from then on Subo automatically summarizes the open-ended (free-text) responses in your reports. There's no per-question button to hunt for and no exporting.
+Text Analysis is a server-level setting. Turn it on once, and from then on Subo automatically summarizes the open-ended (free-text) responses in your reports, with no exporting. In the web app, each project and each open-text question can override that default.
 
-1. **Turn it on in `/settings`.** Set the Text Analysis option to `Yes` (and check you have AI credits available). You can turn it off any time, for example when an open question is collecting personal information in a form (names, emails) that you'd rather not send for analysis.
+1. **Turn it on in `/settings`.** Set the Text Analysis option to `Yes` (and check you have AI credits available). That is your community's default. A project can override it on its Details tab, and a single open-text question on the Script tab. Questions that ask for personal information, like an email or a full name, are off by default, and personal data found in answers is removed before anything is sent.
 2. **Run your survey as usual.** Once it's on, every summary report includes an AI summary of your open-text responses: the main themes, common requests, and notable outliers.
 3. **Find the summary everywhere your results appear:** in summary reports you request manually, in reports auto-posted to a channel via `Auto-Post Results`, and in the `Summary` tab of the exported Excel Full Report. It's also available in the results dashboard of the [Subo web app](https://app.subo.gg).
 
@@ -47,7 +47,7 @@ Subo's Text Analysis is different in a few ways:
 
 **It's reliable for large datasets.** Copy-pasting hundreds or thousands of responses into a general AI tool has practical limits. Subo handles this through its backend integration, so the data flows directly without you managing size limits.
 
-**It's transparent about data handling.** Text Analysis is powered by OpenAI (of ChatGPT fame). Open-text answers are sent to the OpenAI API to produce the summary. Per OpenAI's policy, that data is not used to train their models and is retained only for abuse monitoring (up to 30 days, unless the law requires otherwise). For the full picture, see [Subo's Privacy Policy](/privacy/).
+**It's transparent about data handling.** Text Analysis uses AI models from OpenAI, Anthropic and Google, which we reach through OpenRouter, under business terms in which the providers do not use the data we send to train their models. Respondents are sent as codes like `R-7K3QXA`, never by name, and emails, phone numbers and similar data are removed from answers first. The **What gets sent to the AI?** link on the Results tab shows you exactly what goes out. What each provider keeps, and for how long, is in [Subo's Privacy Policy](/privacy/).
 
 ## When to Use AI Summaries
 
@@ -75,14 +75,14 @@ Text Analysis and the `/draft` command both run on Subo's AI credits. All new ac
 
 While we're on the topic of AI, Subo's survey generator is the other side of the same coin. It runs on the same AI credits, but instead of summarizing responses it writes the questions.
 
-Tell Subo what you're trying to find out, for example "I want to understand what keeps my members engaged and what's causing them to leave," and it comes back with a complete survey: a name, and a set of questions using the four core types (single choice, multiple choice, open text, and numeric). You say how many questions you want, up to your plan's per-survey limit, and you can ask for the questions in a specific language. The default is five.
+Tell Subo what you're trying to find out, for example "I want to understand what keeps my members engaged and what's causing them to leave," and it first shows you a plan: an outline, up to three questions it needs answered, and the language it will write in. Then it drafts a complete project with whichever block types the goal needs, from single choice and open text to ratings, opinion scales, NPS and rankings, plus skip logic and scoring for quizzes and prediction contests. Set a number of questions, up to your plan's per-project limit, or let it choose. It writes in any language, and you pick a **Quick** or a **Deep** draft, each with its credit estimate shown first. How we rebuilt it is in [Subo now checks your questions before your community sees them](/blog/survey-audit-better-drafts-summaries/).
 
-Nothing is published yet at that point. The draft lands in an edit flow where you rewrite prompts, cut the questions that missed, add the one the AI didn't think of, and set privacy and rewards before a single member sees it. That's the part that makes it useful: the blank page is gone, and you still have the final say on every question.
+Nothing is published yet at that point. The draft opens on the Script tab with a **Check before publishing** panel listing what Subo wants you to verify, and you rewrite prompts, cut the questions that missed, add the one the AI didn't think of, and set privacy and rewards before a single member sees it. That's the part that makes it useful: the blank page is gone, and you still have the final say on every question.
 
 **Three places to run it:**
 
 - **In Discord**, type `/draft` and describe your objective.
-- **In the [web app](https://app.subo.gg/)**, start a new project and pick *Generate with AI* instead of starting from scratch.
+- **In the [web app](https://app.subo.gg/)**, start a new project and pick *Let Subo draft it* instead of starting from scratch.
 - **Through the [API](/api/)**, pass an `intent` field when creating a project and the response comes back with the generated script. One call, working survey. Useful if you want an agent to run your community research.
 
 It earns its place when you're drawing a blank on how to structure a survey, or when you want every angle on a topic covered without spending half an hour writing questions. See the [survey how-to](/blog/how-to-create-a-survey-with-subo-the-survey-bot-877951089/) for where it fits in the build flow.

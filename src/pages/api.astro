@@ -236,7 +236,8 @@ const toc = [
     "name": "Post-event feedback",
     "type": "convo",
     "intent": "Measure how members felt about the weekend tournament and collect suggestions for the next one",
-    "max_blocks": 6,
+    "question_count": 6,
+    "quality": "quick",
     "privacy_mode": "anonymous"
   }'`}</code></pre>
             <p>
@@ -245,7 +246,21 @@ const toc = [
             </p>
             <ul>
               <li><code>type</code> is <code>convo</code> for a multi-question survey or <code>poll</code> for a single question.</li>
-              <li><code>max_blocks</code> defaults to 5 and is capped at 20.</li>
+              <li>
+                <code>quality</code> is <code>quick</code> or <code>deep</code>. Leave it out and
+                a paid community gets a Deep draft, which typically costs ~24,000-48,000 credits
+                against ~700 for Quick. Set it explicitly in automation.
+              </li>
+              <li>
+                <code>question_count</code> is optional: leave it out and the model picks what the
+                goal needs, capped at 20 and at your plan's limit. <code>max_blocks</code> is still
+                accepted as a deprecated alias.
+              </li>
+              <li>
+                <code>facts</code> takes plain text the draft should use as written: dates,
+                line-ups, results, odds. Models do not know recent events and there is no web
+                search.
+              </li>
               <li>
                 <code>intent</code>, an explicit <code>script</code> and
                 <code>source_project_id</code> are mutually exclusive. Send exactly one.
@@ -255,8 +270,21 @@ const toc = [
                 <code>402 payment_required</code> rather than a partial survey.
               </li>
               <li>
-                The script is generated in the community's configured language, not the
-                language of your intent string.
+                <code>language</code> takes any language name or code. Leave it out and Subo
+                uses a language the intent names ("a poll in Tagalog"), then the community's.
+                <code>admin_language</code> sets the language of the draft's notes; when omitted
+                it is inferred from the intent and the response's <code>notices</code> says so.
+              </li>
+              <li>
+                The response's <code>draft</code> object carries <code>author_notes</code> (what
+                to check before opening), the <code>dropped</code> and <code>flagged</code>
+                blocks, the <code>model</code> and <code>credits_used</code>.
+              </li>
+              <li>
+                Want the plan step the dashboard shows (outline, up to three questions, facts
+                needed)? <code>POST /communities/{'{communityId}'}/projects/generate/plan</code>
+                returns it; send its <code>plan</code>, your <code>answers</code> and its
+                <code>session_id</code> with the create call.
               </li>
             </ul>
             <p>
