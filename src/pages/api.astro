@@ -81,7 +81,7 @@ const faqs = [
   },
   {
     q: 'Does Subo have an MCP server?',
-    a: 'Yes, at https://api.subo.ai/mcp. Authenticate with Authorization: Bearer and an API key of type Bot or agent. It exposes 43 operations over the same API, bound to the key’s one community, and labels each one read-only, normal change, Outward (reaches real people) or Destructive (deletes), so an AI app knows which to confirm with you first. It cannot manage API keys, change access levels or connect a verified-audience source.',
+    a: 'Yes, at https://api.subo.ai/mcp. AI apps that support MCP sign-in, such as claude.ai and Claude Code, connect with OAuth: a community Admin signs in with Discord, picks the community and an access level, and approves, with no key to copy. Other apps send Authorization: Bearer with an API key of type Bot or agent. It exposes 44 operations over the same API, bound to one community, and labels each one read-only, normal change, Outward (reaches real people) or Destructive (deletes), so an AI app knows which to confirm with you first. It cannot manage API keys, change access levels or connect a verified-audience source.',
   },
   {
     q: 'How do I verify a Subo webhook signature?',
@@ -793,17 +793,25 @@ curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/templates/$TEMPLATE_ID/clone
               read projects in your community without you writing a request.
             </p>
             <pre><code>{`Endpoint:  ${MCP_URL}
-Header:    Authorization: Bearer sbo_live_xxxxxxxxxxxxxxxxxxxxxxxx`}</code></pre>
+Auth:      OAuth 2.1 (sign in), or
+           Authorization: Bearer sbo_live_xxxxxxxxxxxxxxxxxxxxxxxx`}</code></pre>
             <p>
-              An Admin creates the key on the <a href={KEY_URL} target="_blank" rel="noopener noreferrer">Account page</a>
+              <strong>Sign in with OAuth</strong> (no key): in claude.ai or Claude Desktop, add a
+              custom connector with the endpoint above; in Claude Code, run this in a terminal,
+              restart, then type <code>/mcp</code> to authenticate. A community Admin signs in to
+              Subo with Discord, picks the community and an access level, and approves.
+            </p>
+            <pre><code>{`claude mcp add --transport http --scope user subo ${MCP_URL}`}</code></pre>
+            <p>
+              <strong>Or use an API key</strong>, for apps that send a header. An Admin creates
+              the key on the <a href={KEY_URL} target="_blank" rel="noopener noreferrer">Account page</a>
               under <strong>API Access</strong>, choosing <strong>Bot or agent</strong>. The
-              confirmation panel shows the connection config with the key already in it. For
-              Claude Code, run this in a terminal (not inside Claude Code), then restart it:
+              confirmation panel shows the connection config with the key already in it:
             </p>
             <pre><code>{`claude mcp add --transport http --scope user subo ${MCP_URL} --header "Authorization: Bearer $SUBO_API_KEY"`}</code></pre>
             <p>
-              The connection is bound to the key&rsquo;s one community, so no operation takes a
-              community id. Its 43 operations each carry one of four labels your AI app can read:
+              Each connection is bound to one community, so no operation takes a
+              community id. Its 44 operations each carry one of four labels your AI app can read:
             </p>
             <div class="table-wrap">
               <table>

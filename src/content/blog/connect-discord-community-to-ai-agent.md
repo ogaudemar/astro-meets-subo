@@ -1,45 +1,82 @@
 ---
 title: "How to connect your Discord community to an AI agent with the Subo MCP server"
-description: "Set up the Subo MCP server in Claude Code or another AI app: create an agent key, run one command in a terminal, restart, and check for 43 operations. Includes the safety labels and key hygiene."
+description: "Connect the Subo MCP server to Claude, Claude Code or another AI app: sign in with Discord and pick a community, with no key to copy. Or use an API key. Includes the safety labels."
 pubDate: "Sep 18 2026"
+updatedDate: "Oct 14 2026"
 author: "Subo Team"
 heroImage: "/images/blog/subo-mcp-server/grok-bot-connection.png"
 tags: ["tutorial", "api", "mcp", "ai-agents"]
 draft: false
 faq:
   - q: "What is the Subo MCP server address?"
-    a: "<code>https://api.subo.ai/mcp</code>. Your AI app authenticates with the header <code>Authorization: Bearer sbo_live_…</code>, using an API key of type Bot or agent created on the Account page of the Subo web app."
+    a: "<code>https://api.subo.ai/mcp</code>. Most AI apps sign in with OAuth: you approve the connection on Subo and there is no key to copy. Apps that cannot sign in send the header <code>Authorization: Bearer sbo_live_…</code> instead, using an API key of type Bot or agent from the Account page of the Subo web app."
   - q: "Which AI apps can connect to Subo?"
-    a: "Any app that supports the Model Context Protocol and lets you add a remote (HTTP) server with a custom header. We have connected Subo from Claude Code and from Grok Bot. The Account page gives you a one-line command for Claude Code and a JSON block for other apps."
+    a: "Any app that supports the Model Context Protocol and either signs in with OAuth (claude.ai, Claude Desktop and Claude Code do) or lets you add a remote (HTTP) server with a custom header. We have connected Subo from claude.ai, Claude Code and Grok Bot."
+  - q: "How do I connect Subo to claude.ai?"
+    a: "Open Settings, then Connectors, then Add custom connector, and enter <code>https://api.subo.ai/mcp</code>. Click Connect, sign in to Subo with Discord, choose the community and the access level, and approve. No API key is involved."
   - q: "I added the connection but my AI app does not see Subo. What went wrong?"
-    a: "Usually one of three things. The command was pasted into an AI chat instead of a terminal. The connection was added with Claude Code's default local scope from a different folder than the one you are working in. Or the app was not restarted: a connection added while a session is running never appears in that session."
+    a: "Usually one of four things. The Claude Code command was pasted into an AI chat instead of a terminal. The connection was added with Claude Code's default local scope from a different folder than the one you are working in. The app was not restarted: a connection added while a session is running never appears in that session. Or the sign-in was never finished: in Claude Code, type /mcp, choose subo and authenticate."
+  - q: "The sign-in page says only an Admin can connect an app. Why?"
+    a: "Connecting an AI app is an Admin decision in Subo, the same rule as creating an API key. The sign-in only lists communities where you are an Admin. Ask an Admin of your community to connect it, or to make you an Admin."
   - q: "Can the agent delete my projects or message my members without asking?"
     a: "Every operation is labeled, and deleting or reaching members carries a Destructive or Outward label your AI app can read. In its default and accept-edits modes, Claude Code asks before each of those calls and shows you the label. In auto mode, it goes ahead with an action you asked for by name. Do not add Outward or Destructive operations to your app's always-allow list."
   - q: "What is /subo:weekly_review?"
     a: "A ready-made command that comes with the Subo connection. It reviews your recent projects and their responses and recommends what to run next, without changing anything. It looks back 14 days unless you give it a number, such as <code>/subo:weekly_review 30</code>."
   - q: "Can one connection manage several communities?"
-    a: "No. One key belongs to one community. If you run several, create an agent key in each and add one connection per community, with a different name for each."
+    a: "No. One connection reaches one community: the one you choose when you sign in, or the one an API key was created in. If you run several, add Subo once per community, with a different name for each."
   - q: "Does it cost anything?"
-    a: "No. If you are an Admin of the community and your plan lets you create an API key, you can connect an agent. Requests count against the same per-minute API rate limit as any other use of that key, which ordinary agent use stays far below."
+    a: "No. Connecting takes the Admin role in the community, and nothing else to buy or enable. Requests count against the same per-minute API rate limit as any other use of the community's API, which ordinary agent use stays far below."
 ---
 
 The Subo MCP server lets an AI assistant run your Subo community for you: build a project from a sentence, check its script, launch it, read the responses and the analysis. MCP stands for Model Context Protocol, the open standard AI apps use to connect to outside tools. If your AI app supports MCP, it can connect to Subo.
 
-Setup takes about five minutes. Most of the problems we have seen came from three small things (where you run the command, which folder you run it from, and whether you restart the app afterwards), so this guide spends more time on those than on the command itself.
+There are two ways to connect, and most people want the first:
 
-What you need:
+- **Sign in with OAuth** (step 1). Your AI app sends you to Subo, you pick a community and approve, and you are done. No key to create, copy or protect. This works in claude.ai, Claude Desktop and Claude Code, and in any other app that supports MCP sign-in.
+- **Use an API key** (step 2). For apps that cannot sign in but can send a custom header, such as Grok Bot.
 
-- **Admin** access to a Subo community, and the [web app](https://app.subo.gg/) open and signed in. Only Admins see **API Access** on the Account page, so only Admins can create the key.
-- an AI app that supports MCP. This guide uses **Claude Code**, because the Account page gives you a ready-made command for it. Other apps get a JSON block, covered in step 2. We have connected Subo from Claude Code and from Grok Bot; any app that can add a remote server with a custom header should work the same way.
+What you need either way:
+
+- **Admin** access to a Subo community. Connecting an AI app is an Admin decision, the same rule as creating an API key.
+- an AI app that supports MCP.
 
 ---
 
-## 1. Create an agent key on the Account page
+## 1. Sign in with OAuth
 
-Open the [Account page](https://app.subo.gg/app/account) in the Subo web app, go to **API Access**, and create a key. Under "This key represents", choose **Bot or agent**, give it a name you will recognize later (such as "Claude Code on my laptop"), and pick its access level. This is how much the key can do, not a role for you: you create the key as an Admin either way.
+**In claude.ai or Claude Desktop:** open **Settings**, then **Connectors**, then **Add custom connector**. Give it a name (such as "Subo") and enter:
 
-- **Admin**: everything you can do yourself, including community settings and deleting responses.
-- **Creator**: create and edit projects only, with no community settings and no deleting responses. A good choice for a first agent, because there is less it can reach.
+```
+https://api.subo.ai/mcp
+```
+
+Click **Connect**.
+
+**In Claude Code:** open a terminal (Terminal on macOS, PowerShell or Windows Terminal on Windows), not a chat, and run:
+
+```bash
+claude mcp add --transport http --scope user subo https://api.subo.ai/mcp
+```
+
+Restart Claude Code (step 4 explains why), type `/mcp`, choose `subo` and authenticate.
+
+Either way, your browser opens Subo. If you are not signed in, sign in with Discord. The page that follows is headed **"Connect … to Subo"**, with your AI app's name in it:
+
+- **Community**: pick the one the agent will work in. Only communities where you are an Admin are listed.
+- **Access level**: how much the connection can do. **Admin** is everything you can do yourself, including community settings and deleting responses. **Creator** is creating and editing projects only, with no community settings and no deleting responses. Creator is a good choice for a first agent, because there is less it can reach.
+- The page also says where you go back to after you answer. When that is your own computer (Claude Code), it warns you to approve only if you started the connection yourself just now.
+
+Click **Approve**. You land back in your AI app, connected. Skip to step 5 to check it.
+
+The connection now appears on the [Account page](https://app.subo.gg/app/account) of the Subo web app, under **API Access**, with the note *"Connected through OAuth. Renews itself; revoke it to disconnect the app."* It renews itself in the background, and asks you to sign in again only if it goes unused for 90 days.
+
+---
+
+## 2. Or connect with an API key
+
+Use this when your AI app has no sign-in option for MCP servers but can send a custom header.
+
+Open the [Account page](https://app.subo.gg/app/account) in the Subo web app, go to **API Access**, and create a key. Under "This key represents", choose **Bot or agent**, give it a name you will recognize later (such as "Grok Bot"), and pick its access level, Admin or Creator, as described in step 1.
 
 ![The Create API key dialog with Bot or agent selected, Admin access, an agent name and a description](/images/blog/subo-mcp-server/create-api-key.png)
 
@@ -49,21 +86,7 @@ Create the key. The confirmation panel shows the key once, and below it a sectio
 
 Copy it now. The key is only ever shown once. If you come back later, every agent key in the list has an **Agent connection (MCP)** section with the same config, but with `YOUR_KEY` in place of the key. If you no longer have the key, regenerate it and the panel comes back with the new one filled in.
 
----
-
-## 2. Run the command in a terminal, not in a chat
-
-This is the step that trips people up. The Claude Code command is a **terminal** command. Paste it into a chat with your AI assistant and nothing gets installed; worse, your key is now sitting in a conversation.
-
-Open a terminal (Terminal on macOS, PowerShell or Windows Terminal on Windows) and run:
-
-```bash
-claude mcp add --transport http --scope user subo https://api.subo.ai/mcp --header "Authorization: Bearer sbo_live_xxxxxxxxxxxxxxxx"
-```
-
-That is the command the Account page gives you, with `--scope user` added. The next step explains why.
-
-**Using a different AI app?** Copy the JSON block from the panel instead and add it to your app's MCP configuration file:
+Add the JSON block to your app's MCP configuration file:
 
 ```json
 {
@@ -79,23 +102,25 @@ That is the command the Account page gives you, with `--scope user` added. The n
 }
 ```
 
-Where that file lives, and whether the outer key is called `mcpServers`, depends on the app, so check its documentation for "remote MCP server". What your app needs to support is a remote (HTTP) server with a custom header. Some apps skip the file and ask for the key in a settings field instead, which is how Grok Bot does it:
+Where that file lives, and whether the outer key is called `mcpServers`, depends on the app, so check its documentation for "remote MCP server". Some apps skip the file and ask for the key in a settings field instead, which is how Grok Bot does it:
 
 ![Grok Bot with the Subo agent key saved, reporting a successful read-only check of the connected community](/images/blog/subo-mcp-server/grok-bot-connection.png)
 
-A good first move in any app is the one above: ask it to read something harmless and report back, before you let it change anything.
+The Claude Code command from the panel works too, if you would rather use a key than sign in. Run it in a terminal, never in a chat: pasted into a chat, it installs nothing and leaves your key sitting in a conversation.
+
+A good first move in any app is the one in the screenshot: ask it to read something harmless and report back, before you let it change anything.
 
 ---
 
-## 3. Pick the right scope
+## 3. In Claude Code, pick the right scope
 
-Claude Code can remember a connection in three places, and the default is the one most likely to look broken.
+Claude Code can remember a connection in three places, and the default is the one most likely to look broken. The commands above already include `--scope user`.
 
 | Scope | Where Subo is available | Use it when |
 |---|---|---|
 | `local` (the default) | Only in the folder you ran the command from | You want Subo in one project folder only |
 | `user` | In every folder, every session | Almost always. This is the one to use |
-| `project` | Anyone who opens this folder, through a `.mcp.json` file in it | **Never, for Subo.** That file is often committed to git, and it would carry your key |
+| `project` | Anyone who opens this folder, through a `.mcp.json` file in it | **Never with a key.** That file is often committed to git, and it would carry your key |
 
 If you ran the command without `--scope` from your home folder and then started Claude Code somewhere else, the connection exists but is invisible from where you are. It looks exactly like a failure. Run `claude mcp list` from the folder you work in: if `subo` is missing there, add it again with `--scope user`.
 
@@ -103,21 +128,20 @@ If you ran the command without `--scope` from your home folder and then started 
 
 ## 4. Restart your AI app
 
-A connection added while a session is running never appears in that session. Quit Claude Code completely (or whichever app you use) and start it again. That is why the Account page says so right under the command.
+A connection added while a session is running never appears in that session. Quit Claude Code completely (or whichever app you use) and start it again. claude.ai picks up a new connector without a restart.
 
 ---
 
 ## 5. Check that it worked
 
-In Claude Code, type `/mcp`. You should see:
+In claude.ai, ask: "List my Subo projects." In Claude Code, type `/mcp`. You should see Subo connected, with its operations:
 
-```
-subo · connected · 43 tools
-```
+![Claude Code's /mcp screen showing the Subo connection as connected with its tools](/images/blog/subo-mcp-server/claude-code-mcp-connected.png)
 
-![Claude Code's /mcp screen showing the Subo connection as connected with 43 tools](/images/blog/subo-mcp-server/claude-code-mcp-connected.png)
+The count is the number of operations Subo offers your agent: 44 today, and it grows as we add to the API, so it may be higher than in the screenshot. If Subo shows as failed instead:
 
-43 is the number of operations Subo offers your agent. If Subo shows as failed instead, the most likely cause is the key: a typo, a leftover `YOUR_KEY`, or a key that has since been revoked. Copy the config again from the Account page (regenerate the key if you no longer have it) and re-add the connection.
+- **Signed in with OAuth:** the sign-in may not have finished. Type `/mcp`, choose `subo` and authenticate again. If the Subo page said you are not an Admin of any community, see the FAQ below.
+- **With a key:** the most likely cause is the key itself: a typo, a leftover `YOUR_KEY`, or a key that has since been revoked. Copy the config again from the Account page (regenerate the key if you no longer have it) and re-add the connection.
 
 Then try the ready-made review command that comes with the connection. Type `/subo` in Claude Code and the connection's two commands appear in the list:
 
@@ -137,7 +161,7 @@ The agent looks for a [template](/templates/) to start from, writes the script, 
 
 ## 6. Learn the four labels
 
-Every one of the 43 operations carries a label your AI app can read, so it knows which ones to ask you about first.
+Every operation carries a label your AI app can read, so it knows which ones to ask you about first.
 
 | Label | What it means | Examples |
 |---|---|---|
@@ -167,20 +191,21 @@ Three things the agent cannot do at all, whatever you ask:
 
 ---
 
-## 7. Look after the key
+## 7. Look after the connection
 
-The key is what makes the connection work, so treat it like a password.
-
-- **It is stored in plain text** in your AI app's configuration file (for Claude Code, `~/.claude.json`). It is not sent to the AI model in normal use. It **is** exposed if you paste it into a chat, a document or a screenshot.
-- **One key, one community.** The connection can only ever reach the community the key was created in. If you manage several communities, create an agent key in each and add each connection under its own name, such as `subo-gaming` and `subo-book-club`.
-- **It has your access, never more.** The key acts with exactly the permissions you have right now. If your access in the community is reduced or removed, the key follows within about ten minutes.
-- **You can revoke it any time** from the same Account page, and create a new one when you want the connection back.
+- **One connection, one community.** It can only ever reach the community you picked when you signed in, or the one the key was created in. If you manage several communities, add Subo once per community under its own name, such as `subo-gaming` and `subo-book-club`.
+- **It has your access, never more.** The connection acts with the access level you chose, and never more than you have right now. If your access in the community is reduced or removed, the connection follows within about ten minutes.
+- **You can revoke it any time** from the Account page, under API Access. That works the same for a sign-in and for a key.
+- **With OAuth, there is no key for you to handle.**
+- **With a key, treat it like a password.** It is stored in plain text in your AI app's configuration file (for Claude Code, `~/.claude.json`). It is not sent to the AI model in normal use. It **is** exposed if you paste it into a chat, a document or a screenshot.
 
 To remove the connection from Claude Code:
 
 ```bash
 claude mcp remove subo --scope user
 ```
+
+In claude.ai, remove it from Settings, then Connectors.
 
 ---
 
@@ -193,4 +218,4 @@ claude mcp remove subo --scope user
 
 For the ideas behind a good project, the [survey design recipes](/recipes/) are written so an agent can follow them directly. If you would rather call the API yourself, the [API quickstart](/api/) covers the same features in code.
 
-The connection panel on the Account page is in English only for now; the rest of the Account page is translated. Questions, or something the agent did that you did not expect? Tell us in the [Support Server](/support/).
+The sign-in page and the connection panel on the Account page are in English only for now; the rest of the web app is translated. Questions, or something the agent did that you did not expect? Tell us in the [Support Server](/support/).

@@ -167,3 +167,81 @@ user's to post; nothing here can be automated.
 **Do not** paste the directory headline/description copy above into this — that copy
 is written for people choosing a Discord bot, and this audience is choosing a
 framework. The stack is the interesting part here.
+
+---
+
+## Claude Connectors Directory (MCP connector, drafted 2026-10-14)
+
+Different audience from everything above: people inside Claude choosing a connector, not
+Discord owners choosing a bot. Submitted at `https://claude.ai/directory/manage` → **Submit new**
+→ **MCP connector**. Field limits are from
+`https://claude.com/docs/connectors/building/submission`. Listing copy is ours alone: Anthropic
+can't edit it, so get it right before submitting.
+
+**Connection:** `https://api.subo.ai/mcp`, one URL for everyone.
+
+**Server name** (≤ 100): `Subo`
+
+**One-liner** (≤ 200; this one is 157):
+> Run surveys, polls, forms and quizzes in your Discord community from Claude: build them from a sentence, launch them, and read the responses and AI analysis.
+
+**Description** (≤ 2,000):
+> Subo runs conversational surveys, polls, forms and quizzes inside Discord communities and on the web. This connector lets Claude do the work with you: describe what you want to ask your members, and Claude builds the project, checks its script, and launches it when you say so. When the answers come in, ask Claude what people said.
+>
+> Things to ask:
+> - "Draft a short survey asking members how last week's game night went, with one open question at the end. Don't open it yet."
+> - "Clone the prediction contest template and set it up for Sunday's final."
+> - "Summarize the open-text answers from our last feedback project."
+> - "Who earned the most XP this month?"
+>
+> What Claude can do: create, edit, clone, validate, open, close and delete projects; write a project's script block by block; read responses and Subo's AI analysis; manage members' XP and accomplishments; browse and clone templates; manage webhooks; and read and change community settings.
+>
+> Every operation is labeled read-only, normal change, Outward (it reaches real people, such as opening a project or granting XP) or Destructive (it deletes something). Claude asks before Outward and Destructive operations. Subo also refuses to delete a project that is still open.
+>
+> What it can't do, by design: create or delete API keys, change who has access to your community, or connect a new verified-audience source.
+>
+> Connecting takes the Admin role in a Subo community. You sign in to Subo with Discord, choose one community and an access level (Admin, or the narrower Creator), and approve. One connection reaches one community, and you can revoke it at any time from the Account page of the Subo web app.
+
+**Categories** (1-5; pick the closest from the portal's list, in this order of preference):
+Productivity, Communication, Data & Analytics, Marketing, Research.
+
+**Documentation URL:** `https://subo.gg/blog/connect-discord-community-to-ai-agent/`
+**Privacy policy URL:** `https://subo.gg/privacy/`
+**Support contact:** `hello@subo.ai` (and the Support Server, `https://subo.gg/support/`, if a URL field exists)
+**Icon:** `Pictures/Assets/Subo/Logo/2026 refresh/subo-512.png` (the mascot head, 512×512,
+transparent). If the preview shows it on a dark background and the pink outline disappears,
+ask before swapping in another file.
+**URL slug:** `subo`. **Permanent once published.** Not `subo-discord`: same BDX reasoning as
+the registry name.
+
+**Use cases:**
+1. Build and launch a survey, poll, form or quiz in a Discord community from a plain-language request.
+2. Read responses and AI summaries of open-text answers, and decide what to ask next.
+3. Run community engagement: clone templates (quizzes, prediction contests), grant XP and accomplishments.
+4. Wire results into other tools with webhooks.
+
+**What users need before connecting:** Subo added to their Discord server (free:
+`https://subo.gg/invite/`), the Admin role in that community, and a Discord account to sign in
+with. No paid plan is needed to connect; AI drafting and AI analysis spend the community's credits.
+
+**Reads or writes:** both.
+
+**Company:** ClearSwell LLC, `https://subo.gg/`. Primary contact: the operator's email.
+
+**Authentication:** OAuth. We support both **client ID metadata documents** (preferred by
+Claude; our metadata advertises `client_id_metadata_document_supported: true` and `none`) and
+**dynamic client registration**. Pick "OAuth with dynamic client registration / client ID
+metadata documents". Not Anthropic-held credentials.
+
+**Data handling:** our own API (Subo's Public API, served in-process). No personal health data,
+no sponsored content.
+
+**Test & launch: reviewer instructions** (fill the bracketed parts):
+> 1. In Claude, add a custom connector with the URL `https://api.subo.ai/mcp` and click Connect.
+> 2. On the Subo page that opens, click to sign in with Discord and use the test account: email `[…]`, password `[…]`. If Discord asks to verify a new login location, the mailbox for that address is `[…]` with password `[…]`.
+> 3. On "Connect … to Subo", choose the community `[test community name]`, access level **Admin**, and click **Approve**.
+> 4. Try: "List my Subo projects", "Summarize the responses to [project name]", "Draft a short poll about [topic] and validate it, but don't open it", "Show the XP leaderboard".
+> 5. The community contains only test accounts, so Outward operations (opening a project, granting XP) reach nobody real and are safe to run.
+
+**Compliance:** seven acknowledgments in the portal; read each one, they are policy statements,
+not copy.

@@ -1,7 +1,8 @@
 ---
 title: "Run your Discord community by asking your AI assistant"
-description: "The Subo MCP server connects Subo to Claude Code and other AI apps. Describe the project you want; your AI assistant builds it, checks it, launches it, and asks before anything that reaches your members."
+description: "The Subo MCP server connects Subo to Claude, Claude Code and other AI apps. Describe the project you want; your AI assistant builds it, checks it, launches it, and asks before anything that reaches your members."
 pubDate: "Sep 18 2026"
+updatedDate: "Oct 14 2026"
 author: "Subo Team"
 heroImage: "/images/blog/subo-mcp-server/subo-mcp-hero.webp"
 tags: ["announcement", "api", "mcp", "ai-agents"]
@@ -10,11 +11,11 @@ faq:
   - q: "What is the Subo MCP server?"
     a: "A way to connect Subo to an AI assistant. MCP (Model Context Protocol) is the open standard AI apps use to connect to outside tools. Once connected, your assistant can create, edit, launch and close projects, read responses and analysis, manage members' XP, and more, in one Subo community."
   - q: "How do I connect it?"
-    a: "Create an API key of type Bot or agent on the Account page of the Subo web app. The connection config appears with the key already in it. Run the Claude Code command in a terminal, or paste the JSON block into another AI app's configuration, then restart the app. The full walkthrough is in <a href=\"/blog/connect-discord-community-to-ai-agent/\">our setup guide</a>."
+    a: "Add <code>https://api.subo.ai/mcp</code> to your AI app (in claude.ai: Settings, Connectors, Add custom connector), sign in to Subo with Discord, pick the community and the access level, and approve. No key to copy. Apps that cannot sign in can use an API key of type Bot or agent from the Account page instead. The full walkthrough is in <a href=\"/blog/connect-discord-community-to-ai-agent/\">our setup guide</a>."
   - q: "Which plans include it?"
-    a: "Every plan that can create an API key. There is nothing extra to buy or enable. Creating the key takes Admin access to the community."
+    a: "There is nothing extra to buy or enable. Connecting takes Admin access to the community."
   - q: "Is Subo AI-powered now?"
-    a: "No more than it was yesterday. The AI assistant is yours: you choose it, you pay for it, and it talks to Subo through your API key. Subo does not run your assistant."
+    a: "No more than it was yesterday. The AI assistant is yours: you choose it, you pay for it, and it talks to Subo through a connection you approved. Subo does not run your assistant."
   - q: "What can't the agent do?"
     a: "It cannot create, rotate or delete API keys, change who has access to your community, or connect a new verified-audience source. Those stay with a person, on purpose."
 ---
@@ -22,6 +23,8 @@ faq:
 Tell your AI assistant what you want to ask your community, and it builds the project in Subo, checks the script, and launches it for you. You never open the dashboard.
 
 That is what the **Subo MCP server** does, live from today. MCP stands for Model Context Protocol, the open standard AI apps use to connect to outside tools. If your AI app supports it, it can now run your Subo community with you. We have connected Subo from Claude Code and from Grok Bot, and any app that can reach a remote MCP server with a custom header works the same way.
+
+> **Update, October 14, 2026:** you can now connect by signing in, with no API key. Add `https://api.subo.ai/mcp` in claude.ai, Claude Desktop or Claude Code, sign in to Subo with Discord, pick a community and approve. API keys still work for apps that send a header. The connection now offers 44 operations. The [setup guide](/blog/connect-discord-community-to-ai-agent/) covers both ways.
 
 ---
 
