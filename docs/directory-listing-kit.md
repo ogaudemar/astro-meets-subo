@@ -238,8 +238,8 @@ no sponsored content.
 
 **Test & launch: reviewer instructions** (fill the bracketed parts):
 > 1. In Claude, add a custom connector with the URL `https://api.subo.ai/mcp` and click Connect.
-> 2. On the Subo page that opens, click to sign in with Discord and use the test account: email `[…]`, password `[…]`. If Discord asks to verify a new login location, the mailbox for that address is `[…]` with password `[…]`.
-> 3. On "Connect … to Subo", choose the community `[test community name]`, access level **Admin**, and click **Approve**.
+> 2. On the Subo page that opens, click to sign in with Discord and use the test account `connect_the_connectors`: email `[…]`, password `[…]`. If Discord asks to verify a new login location, the mailbox for that address is `[…]` with password `[…]`.
+> 3. On "Connect … to Subo", choose the community `Muse_Connector_Test`, access level **Admin**, and click **Approve**.
 > 4. Try: "List my Subo projects", "Summarize the responses to [project name]", "Draft a short poll about [topic] and validate it, but don't open it", "Show the XP leaderboard".
 > 5. The community contains only test accounts, so Outward operations (opening a project, granting XP) reach nobody real and are safe to run.
 

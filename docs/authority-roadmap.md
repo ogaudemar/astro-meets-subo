@@ -4,7 +4,7 @@ Living plan to build authority and high-value backlinks for **subo.gg** without
 the SearchAtlas model (~$3.5k/yr platform + per-link/per-PR fees). Ordered
 **highest ROI first**. Everything here is free or near-free.
 
-## ▶ RESUME HERE — state as of 2026-10-05 (read this first, then the shortlist below)
+## ▶ RESUME HERE — state as of 2026-10-14 (read this first, then the shortlist below)
 
 **Last session (2026-10-01 → 10-05) opened the MCP directory play.** No site pages changed;
 everything below is listings, docs and measurement. Full record: *"MCP server = the agent-era
@@ -30,26 +30,30 @@ directory play"* under **Make the Public API discoverable to AI agents**.
   Google AI Mode, Grok and Claude.ai, signed out). Google and ChatGPT find Subo for "Discord
   surveys"; Perplexity, Grok and Claude don't; the poll question goes to native-poll wrappers
   everywhere, by design.
-- **OAuth is now an app-side item:** "MCP server v1.1, the OAuth front door" in the app's master
-  roadmap (`~/.claude/plans/master-roadmap-2026-h2.md`, Stage 4) and the checklist in
-  `~/.claude/plans/subo-mcp-server-v1.md`. It gates Claude's Connectors Directory and ChatGPT
-  apps. Unscheduled: the user places it.
+- **⭐ UPDATE 2026-10-14: OAuth is live on Prod** (app-side v1.1, `subo-mcp-server-v1.md`), so
+  the big directories are open. Site updated for it (`257d9ff`); Claude listing copy in
+  `docs/directory-listing-kit.md`; Meta Muse application switched to OAuth; shared test account
+  `connect_the_connectors` / server `Muse_Connector_Test`. See the MCP item.
 
 **Open threads, in the order to pick them up:**
-1. **ChatForest pitch (user, in progress):** `https://chatforest.com/reviews/discord-mcp-servers/`
+1. **MCP directories now that OAuth is live** (in order): push `257d9ff` if not yet pushed;
+   registry v1.1.0 + README upload; **submit to Claude's Connectors Directory**; watch the Meta
+   Muse application (and the 30-day DCR pruning risk); then ChatGPT.
+2. **ChatForest pitch (user, in progress):** `https://chatforest.com/reviews/discord-mcp-servers/`
    reviews Discord MCP servers and adds new entrants; Subo would be the only survey/poll one.
    Help draft it if asked; it's P5 outreach.
-2. **Watch PR #1210.** If the maintainer asks to change 🔑 to 🔐, don't: the endpoint uses a
-   static API key, not OAuth. Draft a reply instead. On merge, mark the item done.
-3. **Monthly FR indexation check, due ~2026-10-08 (user, Search Console):** has any `/fr/` URL
+3. **Watch PR #1210.** Marker switched to 🔐 on 2026-10-14 (accurate now that OAuth is live), and
+   a merge conflict with the new SofortFax entry was resolved in the browser. On merge, mark the
+   item done.
+4. **Monthly FR indexation check, due ~2026-10-08 (user, Search Console):** has any `/fr/` URL
    left "Crawled - currently not indexed"? Add `/de/*` and `/es/*` to the same check.
-4. **The next-crawl scoreboard is PARTLY runnable.** `CC-MAIN-2026-39` (Sep 4-17) captured
+5. **The next-crawl scoreboard is PARTLY runnable.** `CC-MAIN-2026-39` (Sep 4-17) captured
    `/survey-convos/` on 09-16, so its row can be run. Before the AI-generator row, confirm `/features/`
    and `/` were captured in that index. `/forms/` and `/fr/forms/` wait for the October index.
-5. **Re-run the MCP GEO baseline** after PR #1210 merges and the October crawl, same six questions,
+6. **Re-run the MCP GEO baseline** after PR #1210 merges and the October crawl, same six questions,
    signed out (method and questions in the MCP item).
-6. **P5 outreach** keeps running on the user's cadence. Links, not pages, are what indexation needs.
-7. **Carried over from 2026-09-28:** a native German read of `/de/forms/` and `/de/survey-convos/`
+7. **P5 outreach** keeps running on the user's cadence. Links, not pages, are what indexation needs.
+8. **Carried over from 2026-09-28:** a native German read of `/de/forms/` and `/de/survey-convos/`
    if a reviewer appears; re-test the ES and DE door words against the first Spanish/German Search
    Console export (T9).
 
@@ -3025,15 +3029,36 @@ agent path deliberately.
       - [~] **Secondary aggregators** (`https://mcp.directory/`, `https://mcpservers.com/`, ~2,200
         to 2,300 servers each, no public traffic numbers): only if it is a five-minute form,
         and many pick up registry entries on their own. Same long-tail rule as P1.
-      - [ ] ⛔ **GATED ON OAUTH — the directories with real reach.** Claude's Connectors
-        Directory (`https://claude.com/docs/connectors/building/submission`) requires OAuth 2.0
-        with a user-consent flow for tools that act on an account, and ChatGPT apps likewise
-        expect OAuth. Our server is API-key-only (401 + `WWW-Authenticate: Bearer`, no
-        `/.well-known/oauth-protected-resource`), and claude.ai custom connectors have no
-        custom-header field, so **today "Claude" in practice means Claude Code**. The build is
-        app-repo work: **MCP v1.1, OAuth front door**, in the app's master roadmap and
-        `subo-mcp-server-v1.md` (decision 10). When it ships: publish registry v1.1.0 with the
-        header made optional, then submit to Claude's directory.
+      - [~] **OAuth shipped on Prod 2026-10-14 — the directories with real reach are open.**
+        `https://api.subo.ai/mcp` now answers 401 with `resource_metadata`, the authorization
+        server is `https://app.subo.gg` (PKCE S256, CIMD + DCR, scopes `mcp` and
+        `offline_access`, rotating refresh tokens), and claude.ai connected end to end. Static
+        API keys still work. App-side record: `subo-mcp-server-v1.md`, "v1.1 build plan".
+        **Shared reviewer/test account for every directory:** Discord account
+        `connect_the_connectors`, Admin of the test server `Muse_Connector_Test` (populated, only
+        test accounts in it). Credentials live with the operator and go only into each portal's
+        reviewer field, never into a repo or a chat.
+        - [x] Site updated for OAuth (2026-10-14, `257d9ff`): the setup guide leads with sign-in,
+          the announcement post has a dated update note, `llms.txt` and `/api/` cover both ways,
+          44 operations. **The Claude submission needs this pushed**: the guide is the
+          documentation URL.
+        - [ ] **Registry v1.1.0** (header optional) and the README on `subo-gg/subo-mcp`: files
+          ready in `Code/subo-mcp/`, the user publishes and uploads.
+        - [ ] **Claude Connectors Directory.** Listing copy, auth choice and reviewer instructions
+          are in `docs/directory-listing-kit.md`, section *Claude Connectors Directory*. Icon:
+          `subo-512.png` from the 2026 logo refresh. Slug `subo` (permanent). Submissions are
+          scanned and listed as a **Community** connector by default.
+        - [~] **Meta Muse Platform Connector program.** Applied earlier under API-key auth, never
+          reviewed; switched the application to OAuth on 2026-10-14: DCR on, no client
+          ID/secret, PKCE on, scopes `mcp` + `offline_access`, test user
+          `connect_the_connectors`. ⚠️ **Risk:** our server prunes DCR clients with no grant after
+          30 days. If Meta registers when the form is saved and reviews later, its client ID is
+          gone and the reviewer's sign-in fails. Ask the app side to exempt never-used clients or
+          lengthen the window, or sign in once through Meta's test flow if it has one.
+        - [ ] **ChatGPT.** After Claude. OpenAI is folding MCP apps into a Plugins Directory shared
+          with Codex; third-party guides mention domain verification, test cases and a demo
+          recording, and say custom API keys are not supported (OAuth now covers that). Re-read
+          OpenAI's own docs before starting.
       - [ ] **Separate small app-side decision: answer `tools/list` without a key.** Directories
         that inspect servers automatically (Glama, Smithery) see a 401 and show Subo as
         uninspectable. Not OAuth, and much smaller.
