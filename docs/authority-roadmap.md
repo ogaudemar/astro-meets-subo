@@ -6,56 +6,60 @@ the SearchAtlas model (~$3.5k/yr platform + per-link/per-PR fees). Ordered
 
 ## ▶ RESUME HERE — state as of 2026-10-14 (read this first, then the shortlist below)
 
-**Last session (2026-10-01 → 10-05) opened the MCP directory play.** No site pages changed;
-everything below is listings, docs and measurement. Full record: *"MCP server = the agent-era
-directory play"* under **Make the Public API discoverable to AI agents**.
-- **Official MCP Registry: `gg.subo/survey-bot` v1.0.0, live.** First published as
-  `gg.subo/subo`, renamed the same day because the registry's search matches **names only**
-  (user ruling: no platform in a permanent name, see BDX; "Survey Bot" is the brand line). The
-  namespace is proved by a DNS TXT record on the subo.gg apex: **leave it in place.** Versions are
-  immutable; to change anything, bump `version` and publish again. Signing key at
-  `~/.subo-mcp-registry/key.pem`, publisher at `~/mcp-publisher.exe`, both on the user's machine;
-  commands run in **Git Bash**.
-- **Public listing repo: `https://github.com/subo-gg/subo-mcp`** (new GitHub org `subo-gg`),
-  holding only `README.md` + `server.json`. Local source of truth: `Code/subo-mcp/`, outside both
-  repos. The user uploads through the GitHub web UI, not git. **The README is a GEO surface:**
-  answer engines quote it nearly word for word.
-- **Glama: claimed and healthy** (`https://glama.ai/mcp/connectors/gg.subo/survey-bot`), with a
-  test profile using a key from a disposable test community.
-- **PR #1210 open on awesome-remote-mcp-servers**
-  (`https://github.com/punkpeye/awesome-remote-mcp-servers/pull/1210`). CI passed; its bot
-  flagged 🔑 vs 🔐, which was predicted and is explained in the PR. Not the big
-  awesome-mcp-servers list: that one only takes installable servers.
-- **GEO baseline run, two passes** (Claude search, then the user across ChatGPT, Perplexity,
-  Google AI Mode, Grok and Claude.ai, signed out). Google and ChatGPT find Subo for "Discord
-  surveys"; Perplexity, Grok and Claude don't; the poll question goes to native-poll wrappers
-  everywhere, by design.
-- **⭐ UPDATE 2026-10-14: OAuth is live on Prod** (app-side v1.1, `subo-mcp-server-v1.md`), so
-  the big directories are open. Site updated for it (`257d9ff`); Claude listing copy in
-  `docs/directory-listing-kit.md`; Meta Muse application switched to OAuth; shared test account
-  `connect_the_connectors` / server `Muse_Connector_Test`. See the MCP item.
+**The last two sessions (2026-10-01 → 10-14) ran the MCP directory play.** Full record, with every
+setting and rationale: *"MCP server = the agent-era directory play"* under **Make the Public API
+discoverable to AI agents**. Where things stand:
+
+| Surface | State |
+|---|---|
+| **OAuth on the MCP server** (app-side v1.1) | ✅ Live on Prod 2026-10-14. 401 with `resource_metadata`; authorization server `https://app.subo.gg` (PKCE S256, CIMD + DCR, scopes `mcp` + `offline_access`, rotating refresh). Static API keys still work. Admins only. App record: `~/.claude/plans/subo-mcp-server-v1.md`, "v1.1 build plan" |
+| **Official MCP Registry** | ✅ `gg.subo/survey-bot` **v1.1.0** latest (header optional). DNS TXT on the subo.gg apex proves the namespace: leave it. Key `~/.subo-mcp-registry/key.pem`, publisher `~/mcp-publisher.exe`, run in **Git Bash** |
+| **Listing repo** `https://github.com/subo-gg/subo-mcp` | ✅ README + `server.json` match `Code/subo-mcp/` (source of truth, outside both repos; the user uploads through the GitHub web UI). The README is a GEO surface: answer engines quote it |
+| **Site** | ✅ `257d9ff`, pushed 2026-10-14: setup guide leads with OAuth sign-in, announcement has a dated update note, `llms.txt` and `/api/` cover both ways, 44 operations |
+| **Glama** `https://glama.ai/mcp/connectors/gg.subo/survey-bot` | ✅ Claimed, healthy (test key from a disposable community) |
+| **PR #1210**, awesome-remote-mcp-servers | 🟡 Open, no conflicts, CI clean. Marker now 🔐 (accurate since OAuth). Waiting on the maintainer |
+| **Claude Connectors Directory** | ⬜ **Next.** Copy, auth choice and reviewer instructions ready in `docs/directory-listing-kit.md` → *Claude Connectors Directory*. Icon `subo-512.png` (2026 logo refresh folder). Slug `subo`, permanent |
+| **Meta Muse Platform Connector program** | 🟡 Application switched to OAuth (DCR on, PKCE on, no client ID/secret, scopes `mcp` + `offline_access`). Not yet reviewed. ⚠️ 30-day DCR pruning risk, see thread 2 |
+| **ChatGPT** | ⬜ After Claude. Requirements not yet read first-hand (OpenAI is moving MCP apps into a Plugins Directory) |
+
+**Shared reviewer/test identity for every directory:** Discord account `connect_the_connectors`,
+Admin of the test server `Muse_Connector_Test` (populated, only test accounts). **Never ask for or
+store its credentials:** the user types them into each portal's reviewer field. (Suggested, not
+done: rename the server to something neutral like "Subo Connector Test", since Claude's
+reviewers will see it; update the kit if renamed.)
 
 **Open threads, in the order to pick them up:**
-1. **MCP directories now that OAuth is live** (in order): push `257d9ff` if not yet pushed;
-   registry v1.1.0 + README upload; **submit to Claude's Connectors Directory**; watch the Meta
-   Muse application (and the 30-day DCR pruning risk); then ChatGPT.
-2. **ChatForest pitch (user, in progress):** `https://chatforest.com/reviews/discord-mcp-servers/`
-   reviews Discord MCP servers and adds new entrants; Subo would be the only survey/poll one.
-   Help draft it if asked; it's P5 outreach.
-3. **Watch PR #1210.** Marker switched to 🔐 on 2026-10-14 (accurate now that OAuth is live), and
-   a merge conflict with the new SofortFax entry was resolved in the browser. On merge, mark the
-   item done.
-4. **Monthly FR indexation check, due ~2026-10-08 (user, Search Console):** has any `/fr/` URL
+1. **Submit to Claude's Connectors Directory** (user, at `https://claude.ai/directory/manage` →
+   Submit new → MCP connector, any paid Claude plan). Walk them through it field by field from the
+   kit. Scanned submissions are listed as a **Community** connector by default.
+2. **App-side items to hand over** (edit-only from here; the user or the app session ships them):
+   - `web2/public_api/mcp_server/server.py:28`: the instructions every agent reads say "the
+     community your API key was issued for"; with OAuth nobody issued one. Suggest "the
+     community this connection was approved for".
+   - `web2/public_api/docs.py:224` (the `llms.txt` stub on api.subo.ai) and
+     `web2/public_api/openapi_spec.py:80`: both say MCP uses "the same key"; add OAuth 2.1.
+   - Account page panel `Web_ApiKeys_Mcp_Desc` offers only the key; one line saying claude.ai
+     and Claude Code can sign in without one (new string → `pending.csv`).
+   - **DCR pruning vs Meta:** clients with no grant are pruned after 30 days. If Meta registered
+     when the form was saved and reviews later, its client is gone and the reviewer's sign-in
+     fails. Exempt never-used clients or lengthen the window.
+   - The OAuth release brief in `subo/docs/releases/` (slice 4 lists it; the site side is done).
+3. **Watch PR #1210** and the **Meta Muse** application. On merge or approval, mark them done.
+4. **ChatGPT**: read OpenAI's own docs first, then plan.
+5. **ChatForest pitch (user):** `https://chatforest.com/reviews/discord-mcp-servers/`; Subo would
+   be the only survey/poll server there. Help draft it if asked (P5 outreach).
+6. **Re-run the MCP GEO baseline** after PR #1210 merges and the October crawl: same six
+   questions, signed out (method in the MCP item). New since the baseline: claude.ai can now
+   connect, so *"How do I connect Subo to Claude?"* is worth adding.
+7. **Monthly FR indexation check** (user, Search Console; was due ~2026-10-08): has any `/fr/` URL
    left "Crawled - currently not indexed"? Add `/de/*` and `/es/*` to the same check.
-5. **The next-crawl scoreboard is PARTLY runnable.** `CC-MAIN-2026-39` (Sep 4-17) captured
-   `/survey-convos/` on 09-16, so its row can be run. Before the AI-generator row, confirm `/features/`
-   and `/` were captured in that index. `/forms/` and `/fr/forms/` wait for the October index.
-6. **Re-run the MCP GEO baseline** after PR #1210 merges and the October crawl, same six questions,
-   signed out (method and questions in the MCP item).
-7. **P5 outreach** keeps running on the user's cadence. Links, not pages, are what indexation needs.
-8. **Carried over from 2026-09-28:** a native German read of `/de/forms/` and `/de/survey-convos/`
-   if a reviewer appears; re-test the ES and DE door words against the first Spanish/German Search
-   Console export (T9).
+8. **The next-crawl scoreboard is PARTLY runnable.** `CC-MAIN-2026-39` (Sep 4-17) captured
+   `/survey-convos/` on 09-16. Before the AI-generator row, confirm `/features/` and `/` were
+   captured. `/forms/` and `/fr/forms/` wait for the October index.
+9. **P5 outreach** on the user's cadence. Links, not pages, are what indexation needs.
+10. **Carried over from 2026-09-28:** a native German read of `/de/forms/` and `/de/survey-convos/`
+    if a reviewer appears; re-test the ES and DE door words against the first Spanish/German
+    Search Console export (T9).
 
 **Deliberately not next:** a `/mcp/` page (the tutorial is the spoke page), moving the MCP endpoint
 off `api.subo.ai` (every listing carries it), the secondary MCP aggregators beyond a five-minute
@@ -63,12 +67,18 @@ form, IT / PT-BR parity, a DE/ES blog, and *entrevista*.
 
 **Traps, so the next session doesn't hit them:**
 - **The user's terminal doesn't make markdown links clickable:** write URLs out in full.
-- **Cloud routines couldn't reach glama.ai** (the 2026-10-05 reminder failed with no response), and
-  they read the repo as pushed, not as committed locally. Don't use one to probe third-party sites,
-  and push before one fires.
+- **The user is new to GitHub PRs and command lines:** give click-by-click steps, say which app
+  (Git Bash vs PowerShell), and put any text with exact spacing in a Notepad file rather than the
+  terminal.
+- **Registry versions are immutable** and names are permanent: validate (`mcp-publisher
+  validate`) and get the user's sign-off before every publish.
+- **Cloud routines couldn't reach glama.ai** (the 2026-10-05 reminder failed), and they read the
+  repo as pushed. Don't use one to probe third-party sites; push before one fires.
 - **Answer-engine baselines only count signed out.** Signed-in Google invented a "Meta Muse" mention
   from the user's own history.
 - **This repo is public on GitHub**, roadmap included.
+- **Someone else has uncommitted work here** (`docs/i18n.md`, `docs/PRICING-PAGE-CLAUDE-CODE-BRIEF.md`
+  on 2026-10-14): commit only your own files.
 - From 2026-09-28: `fr.json` and `de.json` are not `JSON.stringify` round-trip clean (insert blocks
   as text); Spanish word swaps change grammatical gender, so review every string a script touches.
 
@@ -3040,10 +3050,9 @@ agent path deliberately.
         reviewer field, never into a repo or a chat.
         - [x] Site updated for OAuth (2026-10-14, `257d9ff`): the setup guide leads with sign-in,
           the announcement post has a dated update note, `llms.txt` and `/api/` cover both ways,
-          44 operations. **The Claude submission needs this pushed**: the guide is the
-          documentation URL.
-        - [ ] **Registry v1.1.0** (header optional) and the README on `subo-gg/subo-mcp`: files
-          ready in `Code/subo-mcp/`, the user publishes and uploads.
+          44 operations. Pushed 2026-10-14 (`f3eb784..e48af94`).
+        - [x] **Registry v1.1.0** (header optional) published, and the README on `subo-gg/subo-mcp`
+          updated for OAuth (2026-10-14).
         - [ ] **Claude Connectors Directory.** Listing copy, auth choice and reviewer instructions
           are in `docs/directory-listing-kit.md`, section *Claude Connectors Directory*. Icon:
           `subo-512.png` from the 2026 logo refresh. Slug `subo` (permanent). Submissions are
