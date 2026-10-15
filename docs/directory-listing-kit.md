@@ -192,7 +192,7 @@ can't edit it, so get it right before submitting.
 > - "Draft a short survey asking members how last week's game night went, with one open question at the end. Don't open it yet."
 > - "Clone the prediction contest template and set it up for Sunday's final."
 > - "Summarize the open-text answers from our last feedback project."
-> - "Who earned the most XP this month?"
+> - "Who's on top of the XP leaderboard?"
 >
 > What Claude can do: create, edit, clone, validate, open, close and delete projects; write a project's script block by block; read responses and Subo's AI analysis; manage members' XP and accomplishments; browse and clone templates; manage webhooks; and read and change community settings.
 >
@@ -239,8 +239,8 @@ no sponsored content.
 **Test & launch: reviewer instructions** (fill the bracketed parts):
 > 1. In Claude, add a custom connector with the URL `https://api.subo.ai/mcp` and click Connect.
 > 2. On the Subo page that opens, click to sign in with Discord and use the test account `connect_the_connectors`: email `[…]`, password `[…]`. If Discord asks to verify a new login location, the mailbox for that address is `[…]` with password `[…]`.
-> 3. On "Connect … to Subo", choose the community `Muse_Connector_Test`, access level **Admin**, and click **Approve**.
-> 4. Try: "List my Subo projects", "Summarize the responses to [project name]", "Draft a short poll about [topic] and validate it, but don't open it", "Show the XP leaderboard".
+> 3. On "Connect … to Subo", choose the community `Connecting`, access level **Admin**, and click **Approve**.
+> 4. Try: "List my Subo projects", "Summarize the responses to [project name]", "Draft a short poll about [topic] and validate it, but don't open it", "Who's on top of the XP leaderboard?".
 > 5. The community contains only test accounts, so Outward operations (opening a project, granting XP) reach nobody real and are safe to run.
 
 **Compliance:** seven acknowledgments in the portal; read each one, they are policy statements,

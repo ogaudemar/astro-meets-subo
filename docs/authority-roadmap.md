@@ -23,10 +23,10 @@ discoverable to AI agents**. Where things stand:
 | **ChatGPT** | ⬜ After Claude. Requirements not yet read first-hand (OpenAI is moving MCP apps into a Plugins Directory) |
 
 **Shared reviewer/test identity for every directory:** Discord account `connect_the_connectors`,
-Admin of the test server `Muse_Connector_Test` (populated, only test accounts). **Never ask for or
-store its credentials:** the user types them into each portal's reviewer field. (Suggested, not
-done: rename the server to something neutral like "Subo Connector Test", since Claude's
-reviewers will see it; update the kit if renamed.)
+with **one test server per directory**: `Muse_Connector_Test` for Meta, and `Connecting`
+(server ID 1560099628417024200) for Claude (user decision 2026-10-14, so Claude's reviewers never
+see another platform's name). **Never ask for or store its credentials:** the user types them
+into each portal's reviewer field.
 
 **Open threads, in the order to pick them up:**
 1. **Submit to Claude's Connectors Directory** (user, at `https://claude.ai/directory/manage` →
