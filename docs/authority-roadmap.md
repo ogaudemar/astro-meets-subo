@@ -33,17 +33,16 @@ reviewers will see it; update the kit if renamed.)
    Submit new → MCP connector, any paid Claude plan). Walk them through it field by field from the
    kit. Scanned submissions are listed as a **Community** connector by default.
 2. **App-side items to hand over** (edit-only from here; the user or the app session ships them):
-   - `web2/public_api/mcp_server/server.py:28`: the instructions every agent reads say "the
-     community your API key was issued for"; with OAuth nobody issued one. Suggest "the
-     community this connection was approved for".
-   - `web2/public_api/docs.py:224` (the `llms.txt` stub on api.subo.ai) and
-     `web2/public_api/openapi_spec.py:80`: both say MCP uses "the same key"; add OAuth 2.1.
+   - ✅ **Done 2026-10-14, app `8d081da7` (committed on master, not pushed or deployed):** the
+     agent instructions in `mcp_server/server.py`, the `llms.txt` stub in `docs.py` and the
+     OpenAPI intro in `openapi_spec.py` now name OAuth sign-in next to the key. Deploy before
+     Anthropic's review if possible: reviewers' clients read the instructions.
+   - ✅ **Done:** the OAuth release brief, `subo/docs/releases/2026-10-14-mcp-sign-in.md` (`c7bf3de9`).
    - Account page panel `Web_ApiKeys_Mcp_Desc` offers only the key; one line saying claude.ai
      and Claude Code can sign in without one (new string → `pending.csv`).
    - **DCR pruning vs Meta:** clients with no grant are pruned after 30 days. If Meta registered
      when the form was saved and reviews later, its client is gone and the reviewer's sign-in
      fails. Exempt never-used clients or lengthen the window.
-   - The OAuth release brief in `subo/docs/releases/` (slice 4 lists it; the site side is done).
 3. **Watch PR #1210** and the **Meta Muse** application. On merge or approval, mark them done.
 4. **ChatGPT**: read OpenAI's own docs first, then plan.
 5. **ChatForest pitch (user):** `https://chatforest.com/reviews/discord-mcp-servers/`; Subo would
