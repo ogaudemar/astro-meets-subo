@@ -514,6 +514,14 @@ const toc = [
               Discord audience to specific roles. To close early, call
               <code>POST .../projects/&#123;projectId&#125;/close</code>.
             </p>
+            <p>
+              Colors are 6-digit hex <strong>without</strong> the <code>#</code>:
+              <code>"e1287e"</code>, not <code>"#E1287E"</code>. That covers the invite
+              embed's <code>border_color</code> and <code>border_color_closed</code>, and the
+              community's <code>closing_embed_color</code> and
+              <code>xp_closing_embed_color</code>. A leading <code>#</code> is accepted and
+              removed, and anything else is a <code>400</code> that names the field.
+            </p>
 
             <h3>Choosing where the Convo happens</h3>
             <p>
@@ -679,6 +687,14 @@ const toc = [
               returns <code>402 payment_required</code> on an empty balance. Rather than
               polling for completion, subscribe to <code>analysis.completed</code>.
             </p>
+            <p>
+              The result carries two counts that are easy to mix up.
+              <code>total_sessions</code> is the number of respondents, the same number
+              <code>GET .../responses</code> reports as <code>pagination.total</code>: use it
+              for "how many people answered." <code>total_responses</code> counts individual
+              answers across all blocks, so one person who answered six blocks counts six.
+              That second number is the one your plan's response limit counts.
+            </p>
           </section>
 
           <!-- ── Webhooks ───────────────────────────────────────────────── -->
@@ -721,6 +737,14 @@ function verifySuboWebhook(rawBody, header, secret) {
 }`}</code></pre>
             <p>Things worth knowing before you rely on this in production:</p>
             <ul>
+              <li>
+                The <code>url</code> must start with <code>https://</code> and resolve only to
+                public addresses. Localhost, private networks and link-local addresses are
+                refused when you save the webhook, and checked again before every delivery,
+                so a hostname re-pointed at a private address later stops receiving. Redirects
+                are not followed. To test against your own machine, put a public HTTPS tunnel
+                in front of it.
+              </li>
               <li>
                 Hash the <strong>raw request body</strong>. Re-serializing the JSON changes
                 the bytes and every signature check will fail.

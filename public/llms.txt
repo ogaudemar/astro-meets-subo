@@ -107,6 +107,10 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
      `["dm","web"]`, any other project to `["dm","thread","web"]`. Send `null` to
      clear an override; `[]` returns a 400, as does a repeated surface.
    - Close early with `POST .../projects/{projectId}/close`
+   - Colors are 6-digit hex WITHOUT `#` (`e1287e`): `delivery.invitation.border_color`
+     and `border_color_closed`, and the community's `closing_embed_color` and
+     `xp_closing_embed_color`. A leading `#` is accepted and removed; anything else is
+     a 400 naming the field.
 
 4. **List or Get Responses**
    - `GET /communities/{communityId}/projects/{projectId}/responses` (paginated; `per_page` max 100)
@@ -130,12 +134,18 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
 5. **Trigger AI Analysis**
    - `POST /communities/{communityId}/projects/{projectId}/analysis` (async; `{"force": true}` re-runs)
    - `GET` the same path for summaries plus aggregated stats and distributions
+   - `total_sessions` = respondents (same as `pagination.total` on list responses); use it
+     for "how many people answered". `total_responses` = individual answers across all
+     blocks (one person answering 6 blocks counts 6); it is what the plan's response limit counts
    - Summaries are on/off per community, per project (`settings.text_analysis`) and per `open_text` block (`text_analysis`); a block that asks for personal data is off unless turned on explicitly
    - Respondents are sent to the model as codes (e.g. `R-7K3QXA`), never by name, and emails, phone numbers and similar data are removed first
    - `summary_status` can be `failed` (request again) or `skipped` (not enough credits; `text_analysis.credits_short_by` says how many)
 
 6. **Webhooks** (Highly recommended for agents)
    - `POST /communities/{communityId}/webhooks` with `{url, name, events[]}`
+   - `url` must be `https://` and resolve only to public addresses: loopback, private and
+     link-local are refused on save and re-checked before every delivery; redirects are
+     not followed
    - Events: `project.created`, `project.updated`, `project.opened`, `project.closed`,
      `project.status_changed`, `project.deleted`, `response.submitted`, `analysis.completed`
    - `signing_secret` is returned once. Deliveries carry `X-Subo-Event`, `X-Subo-Delivery`
