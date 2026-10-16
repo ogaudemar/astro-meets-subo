@@ -6,9 +6,10 @@ the SearchAtlas model (~$3.5k/yr platform + per-link/per-PR fees). Ordered
 
 ## ▶ RESUME HERE — state as of 2026-10-15 (read this first, then the shortlist below)
 
-**The last two sessions (2026-10-01 → 10-14) ran the MCP directory play.** Full record, with every
-setting and rationale: *"MCP server = the agent-era directory play"* under **Make the Public API
-discoverable to AI agents**. Where things stand:
+**Sessions 2026-10-01 → 10-15 ran the MCP directory play; Claude's directory was submitted
+2026-10-15. The next session starts ChatGPT (thread 1 below, written to start cold).** Full
+record, with every setting and rationale: *"MCP server = the agent-era directory play"* under
+**Make the Public API discoverable to AI agents**. Where things stand:
 
 | Surface | State |
 |---|---|
@@ -19,8 +20,8 @@ discoverable to AI agents**. Where things stand:
 | **Glama** `https://glama.ai/mcp/connectors/gg.subo/survey-bot` | ✅ Claimed, healthy (test key from a disposable community) |
 | **PR #1210**, awesome-remote-mcp-servers | 🟡 Open, no conflicts, CI clean. Marker now 🔐 (accurate since OAuth). Waiting on the maintainer |
 | **Claude Connectors Directory** | 🟡 **Submitted 2026-10-15, in review.** Copy as submitted in `docs/directory-listing-kit.md` → *Claude Connectors Directory*. Icon hosted at `https://subo.gg/images/logo/subo-512.png`. Slug `subo`, permanent. Status: `https://claude.ai/directory/manage`; replies go to the contact email |
-| **Meta Muse Platform Connector program** | 🟡 Application switched to OAuth (DCR on, PKCE on, no client ID/secret, scopes `mcp` + `offline_access`). Not yet reviewed. ⚠️ 30-day DCR pruning risk, see thread 2 |
-| **ChatGPT** | ⬜ After Claude. Requirements not yet read first-hand (OpenAI is moving MCP apps into a Plugins Directory) |
+| **Meta Muse Platform Connector program** | 🟡 Application switched to OAuth (DCR on, PKCE on, no client ID/secret, scopes `mcp` + `offline_access`). Not yet reviewed. ⚠️ 30-day DCR pruning risk, see thread 3 |
+| **ChatGPT** | ⬜ **Next session.** Requirements not yet read first-hand (OpenAI is moving MCP apps into a Plugins Directory). Start brief: thread 1 |
 
 **Shared reviewer/test identity for every directory:** Discord account `connect_the_connectors`,
 with **one test server per directory**: `Muse_Connector_Test` for Meta, and `Connecting`
@@ -29,11 +30,47 @@ see another platform's name). **Never ask for or store its credentials:** the us
 into each portal's reviewer field.
 
 **Open threads, in the order to pick them up:**
-1. **Claude Connectors Directory: submitted 2026-10-15, in review.** Watch the portal
+1. **ChatGPT: START HERE (user decision 2026-10-15).** Goal: Subo listed in ChatGPT's
+   directory the way it now sits in Claude's. Work in this order:
+   - **a. Read OpenAI's own docs first-hand; no third-party guides.** Start at
+     `https://developers.openai.com/apps-sdk` (and its submission / app-review pages), and search
+     OpenAI's site for the Plugins Directory if MCP apps have moved there. Write what you learn
+     into a new *ChatGPT* section of `docs/directory-listing-kit.md`, field by field with limits,
+     the way the Claude section was built.
+   - **b. Answer these before planning anything** (each is a guess until OpenAI's docs say so):
+     1. Is a plain MCP server (tools only, no UI widgets) accepted, or does the listing need an
+        Apps SDK component? Subo has no UI resources today, and building one is app-side work.
+     2. Which OAuth flow does ChatGPT's client use: DCR, CIMD, or a static client ID entered in a
+        form? We support DCR and CIMD (`client_id_metadata_document_supported: true`). Does it
+        need anything in the metadata we don't publish? (Live metadata:
+        `https://api.subo.ai/.well-known/oauth-protected-resource/mcp` and
+        `https://app.subo.gg/.well-known/oauth-authorization-server`.) If it registers via DCR
+        and reviews weeks later, the 30-day DCR pruning in thread 3 bites it too.
+     3. Domain verification: what file or DNS record, on which host (`api.subo.ai` serves the MCP
+        endpoint and is app-side; `subo.gg` is this repo)?
+     4. Tool requirements: annotations (we have `title` + read-only/destructive hints, labeled
+        Outward/Destructive in descriptions), and whether `search`/`fetch` tools are still
+        expected for any surface.
+     5. Reviewer assets: test cases, a demo recording (the user records it; offer a shot list),
+        screenshots, privacy policy, support contact, who can submit (plan, org verification).
+   - **c. Test it before submitting:** the user adds `https://api.subo.ai/mcp` in ChatGPT's
+     developer mode (or whatever the docs call it), signs in with OAuth, and runs every tool.
+     Note anything that fails as an app-side item.
+   - **d. Reviewer identity (ask the user):** the rule is one test server per directory, named
+     so reviewers never see another platform (`Connecting` is Claude's). ChatGPT needs its own
+     server under `connect_the_connectors`, populated with a project that has open-text
+     responses, a template clone and some XP, so the reviewer's prompts return something. The
+     user creates it; never handle the account's credentials.
+   - **e. Reuse, don't rewrite:** the Claude section of the kit has the description, three-row
+     use cases, reviewer steps and the hosted icon (`https://subo.gg/images/logo/subo-512.png`).
+     Adapt them to OpenAI's fields and limits; same no-em-dash and US-spelling rules.
+   - **Expected app-side spill:** domain verification on `api.subo.ai`, possibly OAuth metadata
+     tweaks, and the favicon (thread 3). Hand them over as items, don't ship them from here.
+2. **Claude Connectors Directory: submitted 2026-10-15, in review.** Watch the portal
    (`https://claude.ai/directory/manage`) and the contact email; answer reviewer feedback there.
    Keep the `Connecting` server's test data in place until the listing is live. On publication,
    mark it done and add *"How do I connect Subo to Claude?"* to the GEO baseline (thread 6).
-2. **App-side items to hand over** (edit-only from here; the user or the app session ships them):
+3. **App-side items to hand over** (edit-only from here; the user or the app session ships them):
    - **`api.subo.ai` has no favicon** (found 2026-10-15): `/favicon.ico` falls through to the
      `/app` redirect and returns HTML, so Google's favicon service shows a grey globe. Claude shows
      the server URL's favicon in chats, so connected users see a globe, not the mascot (the
@@ -49,8 +86,7 @@ into each portal's reviewer field.
    - **DCR pruning vs Meta:** clients with no grant are pruned after 30 days. If Meta registered
      when the form was saved and reviews later, its client is gone and the reviewer's sign-in
      fails. Exempt never-used clients or lengthen the window.
-3. **Watch PR #1210** and the **Meta Muse** application. On merge or approval, mark them done.
-4. **ChatGPT**: read OpenAI's own docs first, then plan.
+4. **Watch PR #1210** and the **Meta Muse** application. On merge or approval, mark them done.
 5. **ChatForest pitch (user):** `https://chatforest.com/reviews/discord-mcp-servers/`; Subo would
    be the only survey/poll server there. Help draft it if asked (P5 outreach).
 6. **Re-run the MCP GEO baseline** after PR #1210 merges and the October crawl: same six
@@ -3070,7 +3106,8 @@ agent path deliberately.
           30 days. If Meta registers when the form is saved and reviews later, its client ID is
           gone and the reviewer's sign-in fails. Ask the app side to exempt never-used clients or
           lengthen the window, or sign in once through Meta's test flow if it has one.
-        - [ ] **ChatGPT.** After Claude. OpenAI is folding MCP apps into a Plugins Directory shared
+        - [ ] **ChatGPT.** Next, from 2026-10-15; start brief in the RESUME block, thread 1.
+          OpenAI is folding MCP apps into a Plugins Directory shared
           with Codex; third-party guides mention domain verification, test cases and a demo
           recording, and say custom API keys are not supported (OAuth now covers that). Re-read
           OpenAI's own docs before starting.
