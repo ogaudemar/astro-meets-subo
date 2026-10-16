@@ -4,7 +4,7 @@ Living plan to build authority and high-value backlinks for **subo.gg** without
 the SearchAtlas model (~$3.5k/yr platform + per-link/per-PR fees). Ordered
 **highest ROI first**. Everything here is free or near-free.
 
-## ▶ RESUME HERE — state as of 2026-10-14 (read this first, then the shortlist below)
+## ▶ RESUME HERE — state as of 2026-10-15 (read this first, then the shortlist below)
 
 **The last two sessions (2026-10-01 → 10-14) ran the MCP directory play.** Full record, with every
 setting and rationale: *"MCP server = the agent-era directory play"* under **Make the Public API
@@ -18,7 +18,7 @@ discoverable to AI agents**. Where things stand:
 | **Site** | ✅ `257d9ff`, pushed 2026-10-14: setup guide leads with OAuth sign-in, announcement has a dated update note, `llms.txt` and `/api/` cover both ways, 44 operations |
 | **Glama** `https://glama.ai/mcp/connectors/gg.subo/survey-bot` | ✅ Claimed, healthy (test key from a disposable community) |
 | **PR #1210**, awesome-remote-mcp-servers | 🟡 Open, no conflicts, CI clean. Marker now 🔐 (accurate since OAuth). Waiting on the maintainer |
-| **Claude Connectors Directory** | ⬜ **Next.** Copy, auth choice and reviewer instructions ready in `docs/directory-listing-kit.md` → *Claude Connectors Directory*. Icon `subo-512.png` (2026 logo refresh folder). Slug `subo`, permanent |
+| **Claude Connectors Directory** | 🟡 **Submitted 2026-10-15, in review.** Copy as submitted in `docs/directory-listing-kit.md` → *Claude Connectors Directory*. Icon hosted at `https://subo.gg/images/logo/subo-512.png`. Slug `subo`, permanent. Status: `https://claude.ai/directory/manage`; replies go to the contact email |
 | **Meta Muse Platform Connector program** | 🟡 Application switched to OAuth (DCR on, PKCE on, no client ID/secret, scopes `mcp` + `offline_access`). Not yet reviewed. ⚠️ 30-day DCR pruning risk, see thread 2 |
 | **ChatGPT** | ⬜ After Claude. Requirements not yet read first-hand (OpenAI is moving MCP apps into a Plugins Directory) |
 
@@ -29,10 +29,16 @@ see another platform's name). **Never ask for or store its credentials:** the us
 into each portal's reviewer field.
 
 **Open threads, in the order to pick them up:**
-1. **Submit to Claude's Connectors Directory** (user, at `https://claude.ai/directory/manage` →
-   Submit new → MCP connector, any paid Claude plan). Walk them through it field by field from the
-   kit. Scanned submissions are listed as a **Community** connector by default.
+1. **Claude Connectors Directory: submitted 2026-10-15, in review.** Watch the portal
+   (`https://claude.ai/directory/manage`) and the contact email; answer reviewer feedback there.
+   Keep the `Connecting` server's test data in place until the listing is live. On publication,
+   mark it done and add *"How do I connect Subo to Claude?"* to the GEO baseline (thread 6).
 2. **App-side items to hand over** (edit-only from here; the user or the app session ships them):
+   - **`api.subo.ai` has no favicon** (found 2026-10-15): `/favicon.ico` falls through to the
+     `/app` redirect and returns HTML, so Google's favicon service shows a grey globe. Claude shows
+     the server URL's favicon in chats, so connected users see a globe, not the mascot (the
+     directory listing is covered by the custom icon). Serve the mascot at `/favicon.ico` on the
+     API host; check the favicon line in `web2/public_api/docs.py` (~line 183) too.
    - ✅ **Done 2026-10-14, app `8d081da7` (committed on master, not pushed or deployed):** the
      agent instructions in `mcp_server/server.py`, the `llms.txt` stub in `docs.py` and the
      OpenAPI intro in `openapi_spec.py` now name OAuth sign-in next to the key. Deploy before
@@ -3052,10 +3058,11 @@ agent path deliberately.
           44 operations. Pushed 2026-10-14 (`f3eb784..e48af94`).
         - [x] **Registry v1.1.0** (header optional) published, and the README on `subo-gg/subo-mcp`
           updated for OAuth (2026-10-14).
-        - [ ] **Claude Connectors Directory.** Listing copy, auth choice and reviewer instructions
-          are in `docs/directory-listing-kit.md`, section *Claude Connectors Directory*. Icon:
-          `subo-512.png` from the 2026 logo refresh. Slug `subo` (permanent). Submissions are
-          scanned and listed as a **Community** connector by default.
+        - [~] **Claude Connectors Directory: submitted 2026-10-15, in review.** Copy as submitted
+          is in `docs/directory-listing-kit.md`, section *Claude Connectors Directory*. Icon as a
+          hosted URL (the portal takes no upload): `https://subo.gg/images/logo/subo-512.png`
+          (`95b6bcc`). Slug `subo` (permanent). Anthropic replies to the contact email; status
+          at `https://claude.ai/directory/manage`. Default outcome is a **Community** listing.
         - [~] **Meta Muse Platform Connector program.** Applied earlier under API-key auth, never
           reviewed; switched the application to OAuth on 2026-10-14: DCR on, no client
           ID/secret, PKCE on, scopes `mcp` + `offline_access`, test user

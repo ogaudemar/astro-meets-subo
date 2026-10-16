@@ -170,7 +170,7 @@ framework. The stack is the interesting part here.
 
 ---
 
-## Claude Connectors Directory (MCP connector, drafted 2026-10-14)
+## Claude Connectors Directory (MCP connector, drafted 2026-10-14, submitted 2026-10-15)
 
 Different audience from everything above: people inside Claude choosing a connector, not
 Discord owners choosing a bot. Submitted at `https://claude.ai/directory/manage` → **Submit new**
@@ -208,17 +208,23 @@ Productivity, Communication, Data & Analytics, Marketing, Research.
 **Documentation URL:** `https://subo.gg/blog/connect-discord-community-to-ai-agent/`
 **Privacy policy URL:** `https://subo.gg/privacy/`
 **Support contact:** `hello@subo.ai` (and the Support Server, `https://subo.gg/support/`, if a URL field exists)
-**Icon:** `Pictures/Assets/Subo/Logo/2026 refresh/subo-512.png` (the mascot head, 512×512,
-transparent). If the preview shows it on a dark background and the pink outline disappears,
-ask before swapping in another file.
+**Icon:** a hosted URL, not an upload: `https://subo.gg/images/logo/subo-512.png` (the mascot
+head, 512×512, transparent; source `Pictures/Assets/Subo/Logo/2026 refresh/subo-512.png`). The
+portal says Claude otherwise shows the server URL's favicon, and `api.subo.ai` has none (grey
+globe), hence the custom icon.
 **URL slug:** `subo`. **Permanent once published.** Not `subo-discord`: same BDX reasoning as
 the registry name.
 
-**Use cases:**
-1. Build and launch a survey, poll, form or quiz in a Discord community from a plain-language request.
-2. Read responses and AI summaries of open-text answers, and decide what to ask next.
-3. Run community engagement: clone templates (quizzes, prediction contests), grant XP and accomplishments.
-4. Wire results into other tools with webhooks.
+**Use cases** (the portal takes exactly three rows of use case + example prompt; as submitted
+2026-10-15):
+
+| Use case | Example prompt |
+|---|---|
+| Build and launch a survey, poll, form or quiz in a Discord community from a plain-language request. | Draft a short survey asking members how last week's game night went, with one open question at the end. Check it, but don't open it yet. |
+| Read the responses and Subo's AI summary of open-text answers, and decide what to ask next. | Summarize the open-text answers from our last feedback project and tell me what people liked least. |
+| Run community engagement: clone ready-made quizzes and prediction contests, and reward members with XP and accomplishments. | Clone the prediction contest template for Sunday's final, then show me who's on top of the XP leaderboard. |
+
+Webhooks were dropped from the rows; the description covers them.
 
 **What users need before connecting:** Subo added to their Discord server (free:
 `https://subo.gg/invite/`), the Admin role in that community, and a Discord account to sign in
