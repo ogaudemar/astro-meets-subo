@@ -522,6 +522,16 @@ const toc = [
               <code>xp_closing_embed_color</code>. A leading <code>#</code> is accepted and
               removed, and anything else is a <code>400</code> that names the field.
             </p>
+            <p>
+              The community's <code>rewards.xp_achievement_announcement</code> sets where
+              achievement and role notices go, through
+              <code>PUT /communities/&#123;communityId&#125;</code>. It is a string:
+              <code>""</code> turns notices off, <code>"-1"</code> sends a DM (falling back to
+              the member's private thread with Subo when their DMs are closed),
+              <code>"-2"</code> posts in that private thread, and a Discord channel id posts
+              in that public channel with a mention of the member. Any other value is a
+              <code>400</code>.
+            </p>
 
             <h3>Choosing where the Convo happens</h3>
             <p>

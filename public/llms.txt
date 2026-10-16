@@ -111,6 +111,11 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
      and `border_color_closed`, and the community's `closing_embed_color` and
      `xp_closing_embed_color`. A leading `#` is accepted and removed; anything else is
      a 400 naming the field.
+   - Achievement and role notices: `rewards.xp_achievement_announcement` on
+     `PUT /communities/{communityId}` is a string. `""` turns notices off, `"-1"` is a
+     DM (falling back to the member's private thread with Subo when their DMs are
+     closed), `"-2"` is that private thread, and a Discord channel id posts in that
+     public channel with a mention of the member. Any other value is a 400.
 
 4. **List or Get Responses**
    - `GET /communities/{communityId}/projects/{projectId}/responses` (paginated; `per_page` max 100)
