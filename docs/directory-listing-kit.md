@@ -251,3 +251,161 @@ no sponsored content.
 
 **Compliance:** seven acknowledgments in the portal; read each one, they are policy statements,
 not copy.
+
+## ChatGPT Plugins Directory (MCP plugin, drafted 2026-10-15, not yet submitted)
+
+Same audience as the Claude section, inside ChatGPT (and Codex, which shares the directory).
+OpenAI renamed apps to **plugins**: a plugin is a ZIP package holding a manifest, an MCP
+connection, optional skills and assets. Read first-hand on 2026-10-15 from
+`https://developers.openai.com/plugins/deploy/submission`, `.../deploy/app-review`,
+`.../plugin-guidelines` and `.../build/auth` (append `.md` to any page for its raw text).
+Portal: `https://platform.openai.com/plugins` → **Upload new or existing plugin** → **With MCP**.
+
+**How it differs from Claude's portal:**
+- **Listing copy ships inside the ZIP**, not typed into a form: `plugin.json` →
+  `extensions.com.openai.interface`. Changing copy later means a new ZIP and a new review.
+  Tool changes don't: after publication OpenAI rescans the server daily and holds any tool
+  whose new metadata fails its automated checks (the old definition stays live).
+- **The MCP origin is permanent.** `https://api.subo.ai` can never change for this plugin
+  (a new origin is a new plugin). That's already true of every other listing, so nothing changes.
+- **Domain verification:** serve the portal's challenge token as plain text (just the token,
+  no JSON) at `https://api.subo.ai/.well-known/openai-apps-challenge`, or on the parent
+  `https://subo.ai/`. Not `subo.gg`: it has to be the MCP host or a parent of it. App-side.
+  Today both URLs redirect (302/301), so nothing is served there yet.
+- **Reviewer sign-in must work with no email or SMS codes**, and a sign-in that fails is the
+  most common reason OpenAI lists for rejection. The Claude instructions fall back on the
+  mailbox if Discord asks to verify a new login location. OpenAI rejects that. See the open
+  question in the roadmap.
+- **5 positive and 3 negative test cases plus a video walkthrough URL** are required.
+- **Publisher identity is verified:** individual verification to publish under a person's
+  name, business verification for `ClearSwell LLC`. The directory shows that identity's name.
+  Publishing under an unverified name is rejected. The project can't use EU data residency.
+- **Discovery is by name search or a direct link only.** OpenAI picks plugins for the
+  directory's main pages; developers can't ask for it.
+- **No screenshots** (the directory no longer shows them, and the docs say not to provide them
+  without UI). Starter prompts replace them.
+- **Copy rules:** no pricing, plans, free trials or promotions in the subtitle or description;
+  no "MCP" or "Plugin" after the name; no comparisons with other products.
+
+**Answers to the questions thread 1 posed:**
+1. **Tools-only MCP is accepted.** The docs call UI optional throughout, and screenshots only
+   apply when there is UI.
+2. **OAuth: ChatGPT supports CIMD, DCR and a provided client;** we choose with
+   `auth.client.mode` in `mcp.json`. **Use `cimd`.** ChatGPT's live client document
+   (`https://chatgpt.com/oauth/client.json`) prefers `private_key_jwt` but also lists `none`.
+   Our metadata accepts `none` and not `private_key_jwt`, so `none` is the only method in
+   common and that's what ChatGPT uses. Our CIMD code always treats a client as public anyway
+   (`oauth.py`, `fetch_client_metadata`). Using CIMD also keeps the 30-day DCR pruning
+   (roadmap thread 3) out of this review. Our metadata has everything ChatGPT needs. One optional
+   addition: we don't advertise `authorization_response_iss_parameter_supported` (RFC 9207),
+   so ChatGPT uses a per-connection redirect URI
+   (`https://chatgpt.com/connector/oauth/{callback_id}`) and client document. Our CIMD code
+   accepts any public HTTPS document, so that works. Not needed for submission.
+3. **Domain verification:** above. App-side, and the token only exists once the draft is
+   uploaded, so the app needs a way to serve it without a release (a config value or file).
+4. **Tools:** `readOnlyHint`, `destructiveHint` and `openWorldHint` must be **explicit
+   booleans on every tool**. No `search`/`fetch` requirement. Each operation as its own tool
+   (we comply: 44 tools). Results must not carry extra personal data or internal IDs beyond
+   what the request needs. Two app-side gaps in `mcp_server/registry.py` `_ANNOTATIONS`:
+   - Read tools omit `destructive_hint`; set it to `False` explicitly.
+   - **Outward tools are `destructive_hint=False`.** OpenAI counts irreversible sends and
+     cancellations as destructive, and says being able to undo something doesn't make it
+     non-destructive. `open_project` posts invites and DMs, `close_project` cancels, XP and
+     accomplishment grants can announce. Set Outward to `destructive_hint=True`.
+     `test_webhook` sends to an arbitrary URL, so it gets `open_world_hint=True`
+     (`create_webhook` / `update_webhook` arguably too). The Outward/Destructive labels in
+     the descriptions stay as they are.
+   A wrong annotation fails the automated scan; you can appeal, but fixing it is faster.
+5. **Reviewer assets:** test account + sign-in steps (entered in the portal's **Review
+   details**, never in the ZIP), 5 + 3 test cases, a video URL, release notes, and four HTTPS
+   URLs: website, support, privacy, terms. Organization owners can submit; anyone else needs
+   **Apps Management Write**. Testing first means adding the server as a custom MCP server in
+   ChatGPT; account and workspace policies decide who can.
+
+**Package layout** (portable "Agent Plugins" format; the source of truth should live next to
+the registry files in `Code/subo-mcp/chatgpt-plugin/`):
+
+```
+plugin.json
+mcp.json
+assets/logo.png          ← subo-512.png (square, ≥48 px, ≤5 MiB)
+assets/composer-icon.png ← same file
+```
+
+**`mcp.json`:**
+```json
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "subo": {
+      "type": "streamable-http",
+      "url": "https://api.subo.ai/mcp",
+      "extensions": { "com.openai": { "auth": { "type": "oauth", "client": { "mode": "cimd" } } } }
+    }
+  }
+}
+```
+
+**Listing fields** (`extensions.com.openai.interface`, limits as of 2026-10-15):
+
+**`name`** (package id, ≤ 64, lowercase-hyphen): `subo`
+**`displayName`** (≤ 30): `Subo`
+**`shortDescription`** (≤ 30; this one is 29): `Surveys and polls for Discord`
+**`developerName`** (≤ 80): set from the verified identity; put the same name here.
+**`category`:** `Productivity` (pick from the dashboard's list; Communication if offered).
+**`websiteURL`:** `https://subo.gg/` · **`supportURL`:** `https://subo.gg/support/` ·
+**`privacyPolicyURL`:** `https://subo.gg/privacy/` · **`termsOfServiceURL`:** `https://subo.gg/terms/`
+**`brandColor`:** `#e1287e` (site `--primary`, about 5.5:1 against white) ·
+**`brandColorDark`:** `#f34f85` (`--primary-light`, about 4.8:1 against #212121)
+
+**`longDescription`** (≤ 4,000; the Claude description with "Claude" → "ChatGPT"):
+> Subo runs conversational surveys, polls, forms and quizzes inside Discord communities and on the web. This plugin lets ChatGPT do the work with you: describe what you want to ask your members, and ChatGPT builds the project, checks its script, and launches it when you say so. When the answers come in, ask ChatGPT what people said.
+>
+> What ChatGPT can do: create, edit, clone, validate, open, close and delete projects; write a project's script block by block; read responses and Subo's AI analysis; manage members' XP and accomplishments; browse and clone templates; manage webhooks; and read and change community settings.
+>
+> Every operation is labeled read-only, normal change, Outward (it reaches real people, such as opening a project or granting XP) or Destructive (it deletes something). ChatGPT asks before Outward and Destructive operations. Subo also refuses to delete a project that is still open.
+>
+> What it can't do, by design: create or delete API keys, change who has access to your community, or connect a new verified-audience source.
+>
+> Connecting takes the Admin role in a Subo community. You sign in to Subo with Discord, choose one community and an access level (Admin, or the narrower Creator), and approve. One connection reaches one community, and you can revoke it at any time from the Account page of the Subo web app.
+
+The "Things to ask" list from the Claude version moved to `defaultPrompt`.
+
+**`defaultPrompt`** (≤ 3, ≤ 128 each):
+1. `Draft a short survey asking members how last week's game night went. Check it, but don't open it yet.` (101)
+2. `Summarize the open-text answers from our last feedback project.` (63)
+3. `Clone the prediction contest template for Sunday's final.` (56)
+
+**`capabilities`** (≤ 20, ≤ 120 each): `Build surveys, polls, forms and quizzes`,
+`Launch and close projects`, `Read responses and AI analysis`, `Manage member XP and accomplishments`,
+`Clone templates`, `Manage webhooks`.
+
+**Test cases** (`extensions.com.openai.review.test_cases`; exactly 5 + 3 for the first review).
+They assume the ChatGPT test community holds a project named **Server feedback** with
+open-text answers and a finished analysis, plus a few members with XP:
+
+| # | Prompt | `tools_triggered` | `expected_behavior` |
+|---|---|---|---|
+| P1 | List my Subo projects and tell me which ones are open. | list_projects | Lists the test community's projects with each one's status. |
+| P2 | Draft a short survey asking members how last week's game night went, with one open question at the end. Check it, but don't open it yet. | create_project, add_block, validate_script | Creates a draft project with the questions, validation passes, and the project stays closed. |
+| P3 | Summarize the open-text answers from the Server feedback project and tell me what people liked least. | list_projects, get_analysis | Summarizes the themes from Subo's analysis of that project, without inventing answers. |
+| P4 | Clone the prediction contest template and set it up for Sunday's final. | list_templates, clone_template | Creates a new draft project from the prediction contest template; nothing is opened. |
+| P5 | Who are the top three members by XP? | list_members | Names the three members with the most XP in the test community, with their totals. |
+
+| # | Prompt | Why it shouldn't act / expected fallback |
+|---|---|---|
+| N1 | Create a new API key for my community. | Key management isn't exposed by design. Explains that keys are made on the Account page of the Subo web app. |
+| N2 | Make the member Alex an admin of our Subo community. | Access levels can't be changed through the plugin. Says so; no tool changes anyone's access. |
+| N3 | Show me the responses to a survey in another Discord server. | One connection reaches one community. Says it can only see the connected community. |
+
+Run every case with the test account before submitting, and record the video from those
+runs. Shot list: connect and sign in (no codes), then P1 to P5 in order, then one of N1-N3.
+
+**`publication.release_notes`:** `Initial release: build, launch and analyze Subo surveys, polls, forms and quizzes in a Discord community.`
+**`publication.countries`:** omit (no restriction) unless the user decides otherwise.
+**Translations** (optional; `fr-FR` subtitle ≤ 30): stored but not yet shown by the directory,
+so skip for v1.
+
+**Reviewer details** (portal only; fill the brackets): sign-in steps as in the Claude section,
+with the ChatGPT community name, but **no fallback mailbox step**: the sign-in has to work with
+no verification code at all.

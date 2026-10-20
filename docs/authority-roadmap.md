@@ -21,7 +21,7 @@ record, with every setting and rationale: *"MCP server = the agent-era directory
 | **PR #1210**, awesome-remote-mcp-servers | 🟡 Open, no conflicts, CI clean. Marker now 🔐 (accurate since OAuth). Waiting on the maintainer |
 | **Claude Connectors Directory** | 🟡 **Submitted 2026-10-15, in review.** Copy as submitted in `docs/directory-listing-kit.md` → *Claude Connectors Directory*. Icon hosted at `https://subo.gg/images/logo/subo-512.png`. Slug `subo`, permanent. Status: `https://claude.ai/directory/manage`; replies go to the contact email |
 | **Meta Muse Platform Connector program** | 🟡 Application switched to OAuth (DCR on, PKCE on, no client ID/secret, scopes `mcp` + `offline_access`). Not yet reviewed. ⚠️ 30-day DCR pruning risk, see thread 3 |
-| **ChatGPT** | ⬜ **Next session.** Requirements not yet read first-hand (OpenAI is moving MCP apps into a Plugins Directory). Start brief: thread 1 |
+| **ChatGPT Plugins Directory** | 🟡 **Requirements read 2026-10-15; listing drafted** in `docs/directory-listing-kit.md` → *ChatGPT Plugins Directory*. Tools-only MCP accepted, OAuth via CIMD. Blocked on two app-side items and three user decisions: thread 1 |
 
 **Shared reviewer/test identity for every directory:** Discord account `connect_the_connectors`,
 with **one test server per directory**: `Muse_Connector_Test` for Meta, and `Connecting`
@@ -31,7 +31,30 @@ into each portal's reviewer field.
 
 **Open threads, in the order to pick them up:**
 1. **ChatGPT: START HERE (user decision 2026-10-15).** Goal: Subo listed in ChatGPT's
-   directory the way it now sits in Claude's. Work in this order:
+   directory the way it now sits in Claude's.
+   **Status 2026-10-15:** steps a and b are done. OpenAI's docs were read first-hand, and the
+   answers, package layout, listing copy and 5 + 3 test cases are in the kit's *ChatGPT
+   Plugins Directory* section. What's left, in order:
+   - **User decisions:** (i) **reviewer sign-in**: OpenAI rejects any sign-in that needs an
+     email or SMS code, and Discord can ask a new login location to verify by email. Options:
+     sign the test account in once from a clean network to see whether Discord asks; or an
+     app-side reviewer login that skips Discord. (ii) **Publisher identity**: individual or
+     business (`ClearSwell LLC`) verification on the OpenAI Platform org, which decides the
+     name the directory shows. (iii) **The ChatGPT test server's name** under
+     `connect_the_connectors`, seeded with a **Server feedback** project (open-text answers
+     plus a finished analysis), a few members with XP, and the prediction contest template
+     available.
+   - **App-side (hand over, don't ship from here):** fix the annotations in
+     `mcp_server/registry.py`: an explicit `destructive_hint=False` on read tools,
+     `destructive_hint=True` on Outward tools, and `open_world_hint=True` on `test_webhook`.
+     Also serve the domain-verification token at
+     `https://api.subo.ai/.well-known/openai-apps-challenge`, settable without a release.
+     Changing the annotations also changes what Claude's reviewers see; harmless, since it
+     only makes Claude more cautious.
+   - **Then:** the user tests in ChatGPT (step c), we build the ZIP in
+     `Code/subo-mcp/chatgpt-plugin/`, the user records the video from the test-case runs,
+     uploads, verifies the domain, connects and scans, and submits.
+   Original brief, kept for the record:
    - **a. Read OpenAI's own docs first-hand; no third-party guides.** Start at
      `https://developers.openai.com/apps-sdk` (and its submission / app-review pages), and search
      OpenAI's site for the Plugins Directory if MCP apps have moved there. Write what you learn
@@ -3106,7 +3129,8 @@ agent path deliberately.
           30 days. If Meta registers when the form is saved and reviews later, its client ID is
           gone and the reviewer's sign-in fails. Ask the app side to exempt never-used clients or
           lengthen the window, or sign in once through Meta's test flow if it has one.
-        - [ ] **ChatGPT.** Next, from 2026-10-15; start brief in the RESUME block, thread 1.
+        - [ ] **ChatGPT.** Requirements read and listing drafted 2026-10-15 (kit, *ChatGPT
+          Plugins Directory*); next steps in the RESUME block, thread 1.
           OpenAI is folding MCP apps into a Plugins Directory shared
           with Codex; third-party guides mention domain verification, test cases and a demo
           recording, and say custom API keys are not supported (OAuth now covers that). Re-read
