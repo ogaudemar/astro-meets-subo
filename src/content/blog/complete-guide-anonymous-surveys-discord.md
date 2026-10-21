@@ -4,6 +4,7 @@ description: "Anonymous surveys get you honest feedback. Here's how Subo's three
 pubDate: "Feb 14 2026"
 updatedDate: "Sep 2 2026"
 author: "Subo Team"
+heroImage: "/images/blog/anonymous-surveys/anonymous-voting-booth.webp"
 tags: ["anonymous surveys", "discord", "community management", "feedback", "privacy"]
 faq:
   - q: "Are Discord polls anonymous?"

@@ -4,6 +4,7 @@ description: "Subo's AI reads open-ended survey responses and summarizes them in
 pubDate: "Feb 13 2026"
 updatedDate: "Oct 12 2026"
 author: "Subo Team"
+heroImage: "/images/blog/ai-summaries/Espresso-Shot.webp"
 tags: ["ai", "ai survey generator", "survey analysis", "features", "open-ended responses", "text analysis"]
 faq:
   - q: "Can AI write a survey for my Discord server?"
