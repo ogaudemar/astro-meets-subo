@@ -3,7 +3,7 @@ title: "The Subo Template Library Is Here: Ready-to-Run Surveys, Polls, and Quiz
 description: "You shouldn't need to be a professional researcher to build a great survey. Clone a proven poll, survey, or quiz in one click and make it yours. A growing library of free templates for Discord communities."
 pubDate: "Jul 5 2026"
 author: "Subo Team"
-heroImage: "/images/blog/template-library/subo-template-librarian.jpg"
+heroImage: "/images/blog/template-library/subo-template-librarian.webp"
 tags: ["announcement", "templates", "surveys", "polls", "product"]
 draft: false
 ---

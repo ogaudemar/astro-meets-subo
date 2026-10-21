@@ -41,4 +41,4 @@ member blob.
   [../recurring-metaphors.md](../recurring-metaphors.md).
 
 ## Final asset
-`public/images/blog/template-library/subo-template-librarian.jpg` 
+`public/images/blog/template-library/subo-template-librarian.webp` 

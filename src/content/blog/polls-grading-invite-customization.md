@@ -3,7 +3,7 @@ title: "Polls, upgraded: scoring, conditional rewards, and a custom invitation w
 description: "Polls now grade, score, and reward like full surveys, plus custom answer buttons, emoji, thumbnails, and open/closed border colors on every invitation embed."
 pubDate: "June 9 2026"
 author: "Subo Team"
-heroImage: "/images/blog/invitation-design/Invitation-design-workshop.jpg"
+heroImage: "/images/blog/invitation-design/Invitation-design-workshop.webp"
 tags: ["announcement", "features", "polls", "quiz", "scoring", "grading", "customization"]
 draft: false
 ---

@@ -22,4 +22,4 @@ card that floats beside him, one edge actively being painted.
   room."
 
 ## Final asset
-`public/images/blog/invitation-design/Invitation-design-workshop.jpg`
+`public/images/blog/invitation-design/Invitation-design-workshop.webp`
