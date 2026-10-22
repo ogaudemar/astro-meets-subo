@@ -12,8 +12,10 @@ Prevent them in the prompt.
 | **Model invents names** (e.g. a "Gonzalez family" on a card) | Never allow names unless requested. Specify any wanted name in the brief; remove stray ones in edit. |
 | **Wrong color language** | Each product category has a dedicated hue; purple only where intended. |
 | **Stray extra text** | The model now renders *specified* text reliably; write intentional copy into the brief. Only remove text the brief didn't ask for. |
-| **Half-finished / mismatched eyes** | Enforce the canon (square-in-square left, checkbox right) unless requested; repair. |
+| **Half-finished / mismatched eyes** | Both eyes square-in-square, or the right one a checkmark when winking; nothing in between. Repair. |
 | **Missing mouth** | Canon violation; add it back. |
+| **Expression not what the brief asked for** (e.g. a requested grin came back as the resting straight line on the voting booths, espresso bar and masquerade door, 2026-10) | Only a problem when the scene needs that emotion. State the expression as its own line outside the character paragraph ("Subo: open eyes, wide proud grin"). The straight line is his resting face, not an error. |
+| **2D logo in the scene starts emoting** (a grin or open eyes on an emblem, badge or mug) | The flat logo is always straight mouth + checkmark wink. Say so in the brief; repair in edit. |
 
 ## Prompt-side prevention (bake into the NEGATIVE line)
 - No text beyond what the brief specifies (no invented names or extra copy).

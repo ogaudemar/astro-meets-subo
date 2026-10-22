@@ -102,9 +102,10 @@ fair game.
 - **The head bar charts came back pink/magenta/purple/cyan** instead of the canonical
   purple / grey / aqua. The grey bar is the one the model keeps refusing; consider naming
   it twice in the prompt ("the middle bar is neutral grey, not pink").
-- **Both eyes are square-in-square.** That is the canon *wide-eyed* variant, but Subo is
-  grinning and presenting here, so the right eye should have been the checkbox motif. The
-  prompt did restate it; the model overrode it. Worth stating as its own line rather than
-  inside the character paragraph.
+- ~~Both eyes are square-in-square.~~ Not a drift after all: open eyes are the 3D
+  default, and the wink is an occasional signature (canon clarified 2026-10-21, see
+  [subo-character-sheet.md](../subo-character-sheet.md)). The prompt had asked for the
+  wink, so name the expression explicitly if you want it.
 
-Neither is worth a re-render on its own. Fix both if the image is ever regenerated.
+The bar colors aren't worth a re-render on their own. Fix them if the image is ever
+regenerated.

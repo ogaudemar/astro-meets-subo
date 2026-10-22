@@ -47,3 +47,8 @@ on a workbench, gesturing into it, presenting toward camera.
 
 ## Final asset
 `public/images/blog/native-polls/subo-poll-toolkit.webp`
+
+The render added a glowing 2D Subo logo on the suitcase front. That's the reference case
+for the logo rule: a flat logo in a scene is drawn strictly as the logo, straight-line
+mouth and checkmark wink, however the 3D Subo beside it is feeling (see
+[subo-character-sheet.md](../subo-character-sheet.md)).

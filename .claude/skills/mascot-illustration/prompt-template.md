@@ -43,7 +43,9 @@ NEGATIVE
 ## Reminders while filling it in
 - Read [subo-character-sheet.md](subo-character-sheet.md) first; the model does
   not know Subo's canon, so restate the key traits (bar-chart head, square-in-
-  square left eye, checkbox right eye, lime body, pink outline) in the prompt.
+  square eyes, lime body, pink outline) in the prompt, and **name his expression**
+  for this scene (open eyes or a wink; resting straight mouth, grin, worried...).
+  Don't default to grin-and-wink; pick what the story earns.
 - **One metaphor only.**
 - **Bake in intentional text.** The model renders specified copy reliably now, so
   write any story-serving text (sign wording, statement line items, a poll

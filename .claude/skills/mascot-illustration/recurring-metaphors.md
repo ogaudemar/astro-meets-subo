@@ -20,6 +20,8 @@ visual metaphor. Use exactly one metaphor per image.**
 | Monitoring / live results | Control room | Operator |
 | XP history / auditable point record | Bank passbook & statement (warm teller's counter) | Friendly bank teller / records clerk |
 | Rating / scale / NPS / ranking questions (the scale family) | Scoring bench (judging table, score cards, a 1-2-3 rostrum) | Cheerful score-keeper who hands the paddle over |
+| Privacy modes (Transparent / Semi-Private / Anonymous) | Three voting booths: glass, half curtain, full curtain | Polling-hall host who holds the curtain and pointedly looks away |
+| AI Text Analysis (open-text summaries) | Espresso bar: a hopper of responses pulled into one tiny shot | Barista who slides the cup across the counter |
 
 When a **new** feature needs an image, first ask: *what everyday place or role
 makes this feature obvious in one glance?* Add the new pairing to this table so
@@ -102,6 +104,26 @@ is the scale-family hue**, used on the score numerals and the board glow (amber 
 Distinct from the game-show stage (no neon, no buzzers, no contestant podiums, no quiz
 scoreboard) and from the poll desk (no studio, no broadcast, no option bars with labels).
 **No dials, needles or gauges**: Subo has no slider, and a gauge would promise one.
+
+### Voting booths (privacy modes / anonymous surveys)
+See [examples/voting-booths.md](examples/voting-booths.md). A warm, cozy polling hall
+(polished wood, soft rounded booths, pink/cyan accents). **Three booths in a row map to
+the three privacy modes:** clear glass (Transparent), a half curtain (Semi-Private), a full
+velvet curtain (Anonymous). Above each, an **icon sign, no words**: open eye, half-closed
+eye, closed eye. Subo holds the anonymous booth's curtain and theatrically looks away; the
+blob peeks out in novelty disguise glasses (fake nose and mustache). The joke is "no one
+can see, including you." **Deep teal is the privacy hue** (the velvet curtain). Distinct
+from the poll desk (no studio, no results board): it is about *who can see*, not the vote.
+
+### Espresso bar (AI Text Analysis / open-text summaries)
+See [examples/espresso-bar.md](examples/espresso-bar.md). A cozy espresso bar: warm wood
+counter, a retro brass-and-chrome machine. A big hopper on top overflows with hundreds of
+small speech bubbles (squiggles only, no words); Subo the barista slides **one tiny
+espresso cup** to the blob, and its steam curls into **three small theme icons**. The joke
+is "1,000 responses, one shot," so **the size contrast between hopper and cup is the
+whole image**. Distinct from the factory (nothing is manufactured or handed out as a
+reward) and the control room (no monitoring screens). Covers summarizing; AI *drafting*
+(`/draft`) would need its own metaphor.
 
 ### Painting workshop (invitation customization)
 Paint palette, brush, paint swatches / color chips. A Discord embed card floating

@@ -66,8 +66,8 @@ the shared look itself needs to change.
 **How it differs from the standard illustration:**
 
 - **Persona exception.** Subo is an **investigative journalist / researcher of truth**,
-  not the cheerful host: serious and thoughtful, with the canon-allowed **neutral
-  straight-line mouth** (not the grin). He is still *active* (investigating, weighing
+  not the cheerful host: serious and thoughtful, with his **resting straight-line mouth**
+  (no grin). He is still *active* (investigating, weighing
   the evidence) and still hands the honest finding to the blob, so the "Subo enables,
   the blob discovers" principle holds. This is the **one sanctioned exception** to the
   cheerful-host default.
@@ -89,6 +89,8 @@ posts live in the `blog-writing` skill's alternative-series template.
 
 **Character**
 - [ ] Head, bar-charts, and eyes match the canon
+- [ ] Expression fits the scene (not a reflex grin or wink)
+- [ ] Any 2D logo in the scene: straight mouth + checkmark wink, strictly
 - [ ] Hands complete, no merged limbs, mouth present
 - [ ] Every tiny background character inspected (miniatures break first)
 
