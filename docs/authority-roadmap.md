@@ -4,7 +4,10 @@ Living plan to build authority and high-value backlinks for **subo.gg** without
 the SearchAtlas model (~$3.5k/yr platform + per-link/per-PR fees). Ordered
 **highest ROI first**. Everything here is free or near-free.
 
-## ▶ RESUME HERE — state as of 2026-10-15 (read this first, then the shortlist below)
+## ▶ RESUME HERE — state as of 2026-10-21 (read this first, then the shortlist below)
+
+**2026-10-21:** ChatGPT decisions taken (thread 1). It is parked on an app-side reviewer login,
+so the next site-side work is threads 2 onward.
 
 **Sessions 2026-10-01 → 10-15 ran the MCP directory play; Claude's directory was submitted
 2026-10-15. The next session starts ChatGPT (thread 1 below, written to start cold).** Full
@@ -35,22 +38,26 @@ into each portal's reviewer field.
    **Status 2026-10-15:** steps a and b are done. OpenAI's docs were read first-hand, and the
    answers, package layout, listing copy and 5 + 3 test cases are in the kit's *ChatGPT
    Plugins Directory* section. What's left, in order:
-   - **User decisions:** (i) **reviewer sign-in**: OpenAI rejects any sign-in that needs an
-     email or SMS code, and Discord can ask a new login location to verify by email. Options:
-     sign the test account in once from a clean network to see whether Discord asks; or an
-     app-side reviewer login that skips Discord. (ii) **Publisher identity**: individual or
-     business (`ClearSwell LLC`) verification on the OpenAI Platform org, which decides the
-     name the directory shows. (iii) **The ChatGPT test server's name** under
-     `connect_the_connectors`, seeded with a **Server feedback** project (open-text answers
-     plus a finished analysis), a few members with XP, and the prediction contest template
-     available.
+   - **User decisions, taken 2026-10-21:** (i) **Reviewer sign-in: an app-side login that
+     skips Discord** (a reviewer login or an account/password flow on `app.subo.gg`), built
+     when the user next works on the app. The "try Discord from a clean network" option was
+     rejected as unreliable. **⏸ This blocks the submission:** thread 1 is parked until it
+     ships. (ii) **Publisher: business verification as `ClearSwell LLC`** on the OpenAI
+     Platform org (needs company documents; start it early, it can run while the login is
+     built). (iii) **ChatGPT test server: `Plugged In`** under `connect_the_connectors`,
+     seeded with a **Server feedback** project (open-text answers plus a finished analysis),
+     a few members with XP, and the prediction contest template available.
+   - **Checked 2026-10-21:** none of the app-side items below has shipped yet (`registry.py`
+     tiers unchanged, no challenge route, `api.subo.ai/favicon.ico` still 302s to HTML).
    - **App-side (hand over, don't ship from here):** fix the annotations in
      `mcp_server/registry.py`: an explicit `destructive_hint=False` on read tools,
      `destructive_hint=True` on Outward tools, and `open_world_hint=True` on `test_webhook`.
      Also serve the domain-verification token at
      `https://api.subo.ai/.well-known/openai-apps-challenge`, settable without a release.
      Changing the annotations also changes what Claude's reviewers see; harmless, since it
-     only makes Claude more cautious.
+     only makes Claude more cautious. **Plus the reviewer login from decision (i):** it must
+     end in the same OAuth consent as a Discord sign-in, land on the `Plugged In` community,
+     and need no email or SMS code.
    - **Then:** the user tests in ChatGPT (step c), we build the ZIP in
      `Code/subo-mcp/chatgpt-plugin/`, the user records the video from the test-case runs,
      uploads, verifies the domain, connects and scans, and submits.
