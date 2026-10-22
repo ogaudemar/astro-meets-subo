@@ -3375,6 +3375,15 @@ everything else in the workspace is **private team docs and stays in Notion**.
       with screenshots, then republish under Tutorials; (3) send Skip Logic to an on-domain page
       if the GEO data supports it; (4) fold Cloning into the existing Clone tutorial.
 
+      **2026-10-22: hidden, and Settings rewritten.** The user moved the 8 drafts under an
+      unpublished *Working drafts* page (`4019cc7293ce80738069f505a8581aae`); all 9 now return
+      `publicAccessRole: "none"`. **Server Settings is rewritten** as *Settings: configure Subo
+      for your community*, built from `pages/Settings.tsx` and `defaultMessages.py`. It leads with
+      the dashboard (`https://app.subo.gg/app/settings`) and follows the real 8 tabs, with
+      Premium gating taken from `hasPremiumAccess` and the 10 real languages. It keeps one
+      screenshot placeholder per tab. Next: screenshots (user), then a read-through and
+      republish under Tutorials. Then Members, Subscription and Results, the same way.
+
       **subo.ai re-check 2026-10-21:** the whole Tutorials tree is clean. Searched the subtree
       and read the 6 pages whose last edit falls outside the July sweep. The only hit was the
       (restricted) Tutorial template's Support Server link, now fixed to `subo.gg/support`, so new
