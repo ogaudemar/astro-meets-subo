@@ -124,9 +124,12 @@ into each portal's reviewer field.
    connect, so *"How do I connect Subo to Claude?"* is worth adding.
 7. **Monthly FR indexation check** (user, Search Console; was due ~2026-10-08): has any `/fr/` URL
    left "Crawled - currently not indexed"? Add `/de/*` and `/es/*` to the same check.
-8. **The next-crawl scoreboard is PARTLY runnable.** `CC-MAIN-2026-39` (Sep 4-17) captured
-   `/survey-convos/` on 09-16. Before the AI-generator row, confirm `/features/` and `/` were
-   captured. `/forms/` and `/fr/forms/` wait for the October index.
+8. **Next-crawl scoreboard: RUN 2026-10-21** against `CC-MAIN-2026-43`, which captured every
+   page involved. Results are in the scoreboard block. No answer cited any `subo.gg` URL, so the
+   verdict waits on **the user's signed-out cross-engine re-run** (ChatGPT, Perplexity, Google
+   AI Mode) of the four scoreboard queries. `/ai-survey-generator/` stays unbuilt (query kept).
+   Proposed fix, the user's call: refresh the public 2023 Notion `/draft` tutorial, which answer
+   engines quote for the AI-generator query.
 9. **P5 outreach** on the user's cadence. Links, not pages, are what indexation needs.
 10. **Carried over from 2026-09-28:** a native German read of `/de/forms/` and `/de/survey-convos/`
     if a reviewer appears; re-test the ES and DE door words against the first Spanish/German
@@ -282,6 +285,38 @@ against the August index to feel productive; it predates every change being meas
 `/forms/` and `/fr/forms/` returned **no captures**, so their rows still wait for the October
 index. The AI-generator row depends on `/features/` and `/` copy from 09-08: check those two URLs
 in the new index before running it.
+
+✅ **Re-checked 2026-10-21: `CC-MAIN-2026-43` (Oct 5-18) is published** and captured `/`,
+`/features/`, `/forms/` and `/fr/forms/` (all 2026-10-12, status 200). **All three rows ran the
+same day.** Results:
+
+| Row | Query | Subo? | Cited for Subo | Verdict |
+|---|---|---|---|---|
+| `/forms/` | *google forms alternative for Discord collect responses without leaving the server* | **No** | (Formcord's top.gg page only) | ❌ Unchanged from 09-07 |
+| `/survey-convos/` | *best Discord survey bot* | **Yes, #1** | top.gg, G2 | ❌ on the pass criterion: no subo.gg URL at all |
+| `/survey-convos/` | *Discord survey app for my server* | **Yes, #1** | top.gg, `blog.communityone.io` (third-party review) | ❌ same |
+| AI generator | *AI survey generator for Discord* | **Yes, #1** | top.gg, **`suboai.notion.site` /draft tutorial (2023)**, G2, discordbotlist | 🟡 query kept; answer still says `/draft` only |
+| (09-07 baseline) | *best Discord poll bot 2026* | No | EasyPoll, Simple Poll, Dyno, PollBot | Unchanged (item 2's row) |
+| (09-07 baseline) | *meilleur bot sondage Discord* | **No** (was #4 via `subo.ai/fr/`) | native polls, Simple Poll, Sondage-Bot | ⚠️ Dropped |
+
+**How to read it:**
+- **⚠️ The instrument is suspect, so don't act on the ❌s alone.** Not one answer cited any
+  `subo.gg` URL. On 09-07 *best Discord survey bot* cited `subo.gg/`, and the brand still
+  ranks #1 here, so the engine today is answering from directories (top.gg, G2), not from our
+  pages. This was Claude Code's search tool; whether it is the same engine as on 09-07 can't
+  be verified. **Before any verdict, the user re-runs the four scoreboard queries signed out
+  in ChatGPT search, Perplexity and Google AI Mode** (the 2026-10-02 cross-engine method).
+  If those cite `subo.gg/survey-convos/` and `/forms/`, the rows pass and today's run is engine
+  noise. If they also skip `/forms/`, the form row has a real problem: two crawls and a
+  landing page, and still zero Subo.
+- **The AI-generator decision rule holds: we kept the query, so `/ai-survey-generator/`
+  stays unbuilt.** The half that failed, "still `/draft` only", has a visible cause: the
+  answer is built from the **2023 Notion `/draft` tutorial**, which predates the web app and
+  the API. That's a cheaper fix than a page. Update that Notion page (it's public, Bucket B)
+  to name the web app and the API and link `subo.gg/features/`, then re-test. It's outward
+  and the user's call.
+- **French dropping out** fits the same directory-first engine (no French directory carries
+  Subo). Re-test it with the cross-engine run before reading anything into it.
 
 | Shipped | Query to re-run | What a pass looks like |
 |---|---|---|
