@@ -128,8 +128,10 @@ into each portal's reviewer field.
    page involved. Results are in the scoreboard block. No answer cited any `subo.gg` URL, so the
    verdict waits on **the user's signed-out cross-engine re-run** (ChatGPT, Perplexity, Google
    AI Mode) of the four scoreboard queries. `/ai-survey-generator/` stays unbuilt (query kept).
-   Proposed fix, the user's call: refresh the public 2023 Notion `/draft` tutorial, which answer
-   engines quote for the AI-generator query.
+   ✅ The public 2023 Notion `/draft` tutorial, which answer engines quote for the AI-generator
+   query, got a dated callout naming all three surfaces (2026-10-21); re-test that row later.
+   The same session audited the 8 Notion "working drafts": **they are publicly readable**, see
+   the audit under *Bring the public Tutorials on-domain*.
 9. **P5 outreach** on the user's cadence. Links, not pages, are what indexation needs.
 10. **Carried over from 2026-09-28:** a native German read of `/de/forms/` and `/de/survey-convos/`
     if a reviewer appears; re-test the ES and DE door words against the first Spanish/German
@@ -313,8 +315,10 @@ same day.** Results:
   stays unbuilt.** The half that failed, "still `/draft` only", has a visible cause: the
   answer is built from the **2023 Notion `/draft` tutorial**, which predates the web app and
   the API. That's a cheaper fix than a page. Update that Notion page (it's public, Bucket B)
-  to name the web app and the API and link `subo.gg/features/`, then re-test. It's outward
-  and the user's call.
+  to name the web app and the API and link `subo.gg/features/`, then re-test. **✅ Done
+  2026-10-21:** date set to October 21, 2026, and a callout at the top names `/draft`,
+  *Let Subo draft it* and the API `intent`, linking `/blog/ai-powered-survey-summaries-subo/`
+  and `/features/` (no "AI" in the link text, per the glossary's 10-08 rule).
 - **French dropping out** fits the same directory-first engine (no French directory carries
   Subo). Re-test it with the cross-engine run before reading anything into it.
 
@@ -3340,6 +3344,43 @@ everything else in the workspace is **private team docs and stays in Notion**.
       they're the current-product docs and should be *finished and made public*.
       Proof → edit → publish (decide per page whether it's Bucket A search-intent,
       in which case migrate on-domain instead of publishing to Notion).
+
+      **⚠️ AUDIT 2026-10-21: the drafts are already public.** They sit directly under the
+      published Tutorials page and inherit its sharing: `suboai.notion.site`'s
+      `getPublicPageData` returns `publicAccessRole: "reader"` for them, the same as for
+      `/draft`. (The Tutorial template returns `none`, as does a private HQ page.) Anyone with
+      the link, and any crawler that finds it, reads ~35 "📸 Screenshot needed" placeholders and
+      the claims below. All 8 date from 2026-07-25 (the subo.ai sweep), were written when the
+      web app launched in March, and have not been touched since. Checked against
+      `surveyLib/model/defaultMessages.py` (the English source of the web app's strings):
+
+      | Draft | Verdict | What's wrong / what holds |
+      |---|---|---|
+      | Viewing Results & Analytics | Rewrite | No "Summarize with AI" button exists: summaries are a per-project **Summarize / Don't summarize** toggle (`Web_ProjectDetails_TextAnalysis_*`). Export and chart claims unverified |
+      | Browsing Individual Responses | Light edit | Sidebar **Award XP** / **Give Role** exist (`Web_Responses_Sidebar_*`). Bulk actions and "Delete (Premium)" unverified |
+      | Respondent guide | Edit | Mostly plausible. Privacy list says "Semi-private"; check against the current three modes. "Cannot go back" and "progress may be lost" unverified |
+      | Server Settings | Rewrite from the real page | "Spam mode / Auto-spam", "Participant role", "Temporary channel category", a "Test mode" setting: **none exist** as web strings. The language list adds **Ukrainian**, which Subo does not support. Reads as written from a spec, not the product |
+      | Skip Logic: Web App | Verify, then likely fold on-domain | The "Simple / Advanced" mode labels aren't web strings. The expression syntax may hold (the `in` operator was fixed 10-17). Search intent → candidate to merge into an on-domain skip-logic page, not Notion |
+      | Managing Members & Access | Rewrite | "Promote to Creator" / "Remove Creator access" don't exist; access is set through a set-access flow, with roles that come from Discord kept (`Web_Members_SetAccess_KeptByDiscord`). "Mini-Admin" / "Mini-Mod" aren't current terms |
+      | Managing your subscription | Rewrite | Tiers are Free / Premium / VIP (+ the B2B shelf), credits are "AI Credits/month", not "Bot credits". The Premium table (unlimited projects, Custom Bot) is unverified and contradicts the pricing page's model |
+      | Cloning: Web App | Edit | The dialog now asks **"Clone into which server?"** (cross-community clone); the draft describes a name + channel dialog. Could merge into the existing Clone tutorial instead |
+
+      **House-style debt in all 8:** em dashes throughout; "server" for the tenant (glossary:
+      community); "questionnaire" for the script; "question" for any block.
+
+      **Recommended order (the user decides):** (1) **take them out of public view now**: move
+      the 8 under a private "Tutorial drafts" page (the Notion MCP can move pages, or untick
+      sharing on each), since a public page with placeholders and invented settings is worse
+      than none; (2) rewrite Settings, Members, Subscription and Results from the live web app,
+      with screenshots, then republish under Tutorials; (3) send Skip Logic to an on-domain page
+      if the GEO data supports it; (4) fold Cloning into the existing Clone tutorial.
+
+      **subo.ai re-check 2026-10-21:** the whole Tutorials tree is clean. Searched the subtree
+      and read the 6 pages whose last edit falls outside the July sweep. The only hit was the
+      (restricted) Tutorial template's Support Server link, now fixed to `subo.gg/support`, so new
+      tutorials stop inheriting it. Private workspace pages still carry `subo.ai` ("Important
+      links", "Security Questionnaire", old backlog items); they're internal and not public,
+      so they were left alone, same as the July call.
 - [x] **Scrub every `subo.ai` link → `subo.gg` — DONE (2026-07)** via Notion MCP
       (`notion-update-page` search-and-replace). Swept all ~40 Tutorials pages
       (published + the 8 drafts); **38 had `subo.ai` links and were fixed**
