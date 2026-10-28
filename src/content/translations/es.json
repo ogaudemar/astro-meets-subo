@@ -1628,7 +1628,7 @@
   },
   "formsPage": {
     "pageTitle": "Formulario de Discord: la alternativa a Google Forms pensada para servidores | Subo",
-    "pageDescription": "Crea un formulario de Discord para candidaturas, inscripciones, reportes de bugs y feedback. Subo hace tus preguntas de una en una dentro del servidor, así que tus miembros nunca salen de Discord para responder. Plan gratuito, modo web para quien no es miembro, exportación a CSV y Google Sheets.",
+    "pageDescription": "Crea un formulario de Discord para candidaturas, inscripciones, reportes de bugs y feedback. Subo hace tus preguntas de una en una dentro del servidor, así que tus miembros nunca salen de Discord para responder. Plan gratuito, enlace web para quien no es miembro, exportación a CSV y Google Sheets.",
     "hero": {
       "title": "El formulario de Discord que tus miembros <strong class=\"accent\">sí terminan</strong>",
       "subtitle": "Las mismas preguntas estructuradas que un Google Form, hechas de una en una dentro de tu servidor. Y Subo ya sabe quién responde: miembros verificados, sus roles y cuándo llegaron, sin un solo campo de nombre de usuario.",
@@ -1871,10 +1871,10 @@
         [
           "Personas sin Discord",
           "Cualquiera con el enlace",
-          "Modo web: un enlace, sin necesidad de cuenta"
+          "Un enlace web, junto a la publicación en Discord o por sí solo"
         ]
       ],
-      "footnote": "El modo web y el modo Discord son excluyentes: un proyecto funciona de una forma o de la otra, y lo duplicas para cambiar."
+      "footnote": "La publicación en Discord y el enlace web son accesos separados: activa uno, el otro o ambos en el mismo proyecto."
     },
     "faqTitle": "Formularios de Discord: las respuestas",
     "faq": [
@@ -1892,7 +1892,7 @@
       },
       {
         "q": "¿Cómo me aseguro de que solo los miembros de mi servidor rellenen un formulario?",
-        "a": "Lánzalo en modo Discord. Discord autentica a los miembros al abrir el formulario, así que cada respuesta viene de forma demostrable de alguien de tu servidor, y cada miembro solo puede responder una vez. También puedes reservar el formulario a uno o varios roles, para que una candidatura o un formulario de staff solo se abra para quien los tenga. Un formulario en modo web puede protegerse en su lugar con una verificación: pertenencia al servidor de Discord, un juego en Steam, seguir en Twitch o una suscripción en YouTube."
+        "a": "Usa la publicación en Discord. Discord autentica a los miembros cuando pulsan su botón, así que cada respuesta viene de forma demostrable de alguien de tu servidor, y cada miembro solo puede responder una vez. También puedes reservar el formulario a uno o varios roles, para que una candidatura o un formulario de staff solo se abra para quien los tenga. El enlace web puede protegerse en su lugar con una verificación: pertenencia al servidor de Discord (roles incluidos), seguir en Twitch, una suscripción en YouTube o un juego en Steam; con una basta."
       },
       {
         "q": "¿Tienen que escribir su nombre de usuario de Discord?",
@@ -1900,7 +1900,7 @@
       },
       {
         "q": "¿Pueden rellenar el formulario personas sin cuenta de Discord?",
-        "a": "Sí, si lo creas en modo web. Un proyecto funciona en modo Discord, donde los miembros responden dentro de tu servidor, o en modo web, donde vive en un enlace abierto a cualquiera, sin cuenta de Discord. Es una cosa o la otra: duplica el proyecto si más adelante quieres una versión web pública."
+        "a": "Sí, con su enlace web. La publicación en Discord y el enlace web son accesos separados, y un mismo proyecto puede tener ambos: tus miembros responden desde la publicación en tu servidor y el enlace llega a todos los demás. Tú eliges a quién deja entrar el enlace: a cualquiera que lo tenga, a quien inicie sesión con Discord, Twitch, Google o Steam, o solo a quien se verifique como miembro de tu servidor de Discord, seguidor en Twitch, suscriptor en YouTube o propietario de tu juego."
       },
       {
         "q": "¿Es gratis un bot de formularios para Discord?",

@@ -1176,7 +1176,7 @@
 
 "formsPage": {
   "pageTitle": "Discord Forms: The Google Forms Alternative Built for Servers | Subo",
-  "pageDescription": "Build a Discord form for applications, sign-ups, bug reports and feedback. Subo asks your questions one at a time inside the server, so members never leave Discord to answer. Free tier, web mode for non-members, CSV and Google Sheets export.",
+  "pageDescription": "Build a Discord form for applications, sign-ups, bug reports and feedback. Subo asks your questions one at a time inside the server, so members never leave Discord to answer. Free tier, a web link for non-members, CSV and Google Sheets export.",
   "hero": {
     "title": "The Discord form your members <strong class=\"accent\">actually finish</strong>",
     "subtitle": "The same structured questions as a Google Form, asked one at a time inside your server. And Subo already knows who is answering: verified members, their roles and when they joined, without a single username field.",
@@ -1338,9 +1338,9 @@
       ["Irrelevant questions", "Everyone reads all of them", "Skip logic drops them"],
       ["Reward for finishing", "A thank-you page", "XP, a role or an achievement"],
       ["Anonymous option", "Anonymous to you and to itself", "Anonymous by design, still one response per member"],
-      ["People without Discord", "Anyone with the link", "Web mode: one link, no account needed"]
+      ["People without Discord", "Anyone with the link", "A web link, beside the Discord post or on its own"]
     ],
-    "footnote": "Web mode and Discord mode are exclusive: a project runs one way or the other, and you clone it to switch."
+    "footnote": "The Discord post and the web link are separate ways in: switch on either one, or both for the same project."
   },
   "faqTitle": "Discord forms, answered",
   "faq": [
@@ -1358,7 +1358,7 @@
     },
     {
       "q": "How do I make sure only members of my server fill in a form?",
-      "a": "Run it in Discord mode. Members are authenticated by Discord when they open the form, so every response provably comes from someone in your server, and each member can answer only once. You can also restrict the form to one or more roles, so an application or a staff form only opens for the people who hold them. A web-mode form can sit behind a verification gate instead: Discord server membership, a game on Steam, a Twitch follow or a YouTube subscription."
+      "a": "Answer it from the Discord post. Members are authenticated by Discord when they press its button, so every response provably comes from someone in your server, and each member can answer only once. You can also restrict the form to one or more roles, so an application or a staff form only opens for the people who hold them. A web link can sit behind a verification gate instead: Discord server membership (roles included), a Twitch follow, a YouTube subscription or a game on Steam, with any one of them enough."
     },
     {
       "q": "Do respondents have to type their Discord username?",
@@ -1366,7 +1366,7 @@
     },
     {
       "q": "Can people without a Discord account fill in the form?",
-      "a": "Yes, if you build it in web mode. A project runs either in Discord mode, where members answer inside your server, or in web mode, where it lives at a link you can open to anyone with no Discord account needed. It is one mode or the other, so clone the project if you later want a public web version."
+      "a": "Yes, through its web link. The Discord post and the web link are separate ways in, and one project can have both: members answer from the post in your server while the link reaches everyone else. You choose who the link admits: anyone with the link, anyone who signs in with Discord, Twitch, Google or Steam, or only people verified as your Discord members, Twitch followers, YouTube subscribers or game owners."
     },
     {
       "q": "Is a Discord form bot free?",

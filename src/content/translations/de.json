@@ -1629,7 +1629,7 @@
   },
   "formsPage": {
     "pageTitle": "Discord-Formular: die Google-Forms-Alternative für Server | Subo",
-    "pageDescription": "Erstelle ein Discord-Formular für Bewerbungen, Anmeldungen, Bug-Reports und Feedback. Subo stellt deine Fragen einzeln direkt im Server, sodass deine Mitglieder Discord zum Antworten nie verlassen. Kostenloser Plan, Web-Modus für Nicht-Mitglieder, Export als CSV und nach Google Sheets.",
+    "pageDescription": "Erstelle ein Discord-Formular für Bewerbungen, Anmeldungen, Bug-Reports und Feedback. Subo stellt deine Fragen einzeln direkt im Server, sodass deine Mitglieder Discord zum Antworten nie verlassen. Kostenloser Plan, Weblink für Nicht-Mitglieder, Export als CSV und nach Google Sheets.",
     "hero": {
       "title": "Das Discord-Formular, das deine Mitglieder <strong class=\"accent\">wirklich ausfüllen</strong>",
       "subtitle": "Dieselben strukturierten Fragen wie in Google Forms, einzeln gestellt, direkt in deinem Server. Und Subo weiß schon, wer antwortet: verifizierte Mitglieder, ihre Rollen und wann sie beigetreten sind, ganz ohne Feld für den Benutzernamen.",
@@ -1872,10 +1872,10 @@
         [
           "Leute ohne Discord",
           "Jeder mit dem Link",
-          "Web-Modus: ein Link, kein Konto nötig"
+          "Ein Weblink, neben dem Discord-Post oder allein"
         ]
       ],
-      "footnote": "Web-Modus und Discord-Modus schließen sich aus: Ein Projekt läuft auf die eine oder die andere Art, und zum Wechseln duplizierst du es."
+      "footnote": "Der Discord-Post und der Weblink sind getrennte Zugänge: Schalte einen davon ein oder beide für dasselbe Projekt."
     },
     "faqTitle": "Discord-Formulare: die Antworten",
     "faq": [
@@ -1893,7 +1893,7 @@
       },
       {
         "q": "Wie stelle ich sicher, dass nur Mitglieder meines Servers ein Formular ausfüllen?",
-        "a": "Starte es im Discord-Modus. Mitglieder werden beim Öffnen des Formulars von Discord authentifiziert, sodass jede Antwort nachweislich von jemandem aus deinem Server stammt, und jedes Mitglied kann nur einmal antworten. Du kannst das Formular auch auf eine oder mehrere Rollen beschränken, damit sich eine Bewerbung oder ein Staff-Formular nur für die öffnet, die sie haben. Ein Formular im Web-Modus lässt sich stattdessen mit einer Verifizierung absichern: Mitgliedschaft im Discord-Server, ein Spiel auf Steam, Twitch-Follow oder YouTube-Abo."
+        "a": "Nutze den Discord-Post. Mitglieder werden von Discord authentifiziert, wenn sie seinen Button drücken, sodass jede Antwort nachweislich von jemandem aus deinem Server stammt, und jedes Mitglied kann nur einmal antworten. Du kannst das Formular auch auf eine oder mehrere Rollen beschränken, damit sich eine Bewerbung oder ein Staff-Formular nur für die öffnet, die sie haben. Der Weblink lässt sich stattdessen mit einer Verifizierung absichern: Mitgliedschaft im Discord-Server (Rollen inklusive), Twitch-Follow, YouTube-Abo oder ein Spiel auf Steam; eine davon reicht."
       },
       {
         "q": "Müssen Befragte ihren Discord-Namen eintippen?",
@@ -1901,7 +1901,7 @@
       },
       {
         "q": "Können Leute ohne Discord-Konto das Formular ausfüllen?",
-        "a": "Ja, wenn du es im Web-Modus erstellst. Ein Projekt läuft entweder im Discord-Modus, in dem Mitglieder direkt in deinem Server antworten, oder im Web-Modus, in dem es unter einem Link lebt, den jeder ohne Discord-Konto öffnen kann. Es ist das eine oder das andere: Dupliziere das Projekt, wenn du später eine öffentliche Web-Version willst."
+        "a": "Ja, über seinen Weblink. Der Discord-Post und der Weblink sind getrennte Zugänge, und ein Projekt kann beide haben: Deine Mitglieder antworten über den Post in deinem Server, der Link erreicht alle anderen. Du entscheidest, wen der Link hereinlässt: alle mit dem Link, alle, die sich mit Discord, Twitch, Google oder Steam anmelden, oder nur Leute, die als Mitglieder deines Discord-Servers, Twitch-Follower, YouTube-Abonnenten oder Besitzer deines Spiels verifiziert sind."
       },
       {
         "q": "Ist ein Discord-Formular-Bot kostenlos?",

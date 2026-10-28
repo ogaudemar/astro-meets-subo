@@ -16,7 +16,7 @@ faq:
   - q: "Is Typeform's conditional logic free?"
     a: "No. Typeform lists logic as a paid feature, and its free tier is capped to a limited number of responses per month. If branching is the reason you were considering Typeform, budget for a paid plan."
   - q: "Can Subo collect responses from people outside Discord?"
-    a: "Yes. A survey runs either in Discord mode or in web mode. In web mode it lives at a link you can open to anyone with no Discord account required, or restrict to your members. It is one mode or the other, so you clone a survey to make a web version of it."
+    a: "Yes. Every project can have a web link, on its own or beside the Discord post. You choose who the link admits: anyone with no Discord account required, anyone who signs in, or only people verified against your Discord server, Twitch channel, YouTube channel or Steam game."
   - q: "How do you make sure only real community members answer a survey?"
     a: "In Discord, members are authenticated by Discord when they click the invite, so every response is provably from a member and duplicates are blocked. A web-mode survey can sit behind a verification gate instead: verify Discord membership, Steam ownership of a specific game, a Twitch follow, or a YouTube subscription before the first question."
   - q: "Can a survey be anonymous and still verified?"
@@ -62,7 +62,7 @@ The part worth sitting with: **this still holds when the survey is anonymous.** 
 
 That is also what makes results safe to publish. You can post the totals back to the channel as a community moment, because "62% of the server thinks X" is a claim your members can believe. Post the results of an open form link and the first reply is someone asking whether it got brigaded.
 
-It extends past Discord, too. A survey running in web mode can sit behind a verification gate before the first question: verify Discord membership, verify you own a specific game on Steam, verify you follow a Twitch channel, or verify you subscribe to a YouTube channel. Which means a web survey can reach people who are not in your Discord server and still only collect answers from a community you can define. Steam and YouTube and Twitch sources are connected from the dashboard.
+It extends past Discord, too. A project's web link can sit behind a verification gate before the first question: verify Discord membership, verify you own a specific game on Steam, verify you follow a Twitch channel, or verify you subscribe to a YouTube channel. Which means a web survey can reach people who are not in your Discord server and still only collect answers from a community you can define. Steam and YouTube and Twitch sources are connected from the dashboard.
 
 ## What else being inside Discord changes
 
@@ -96,12 +96,12 @@ Two different things get lumped together here, so it is worth separating them.
 | Cost to start | Free | Free tier, capped responses/month | Free tier |
 | Design customization / embedding | Basic | Strong | In-Discord, or hosted web link |
 | Asked inside Discord | No | No | Yes |
-| Web link option | Yes | Yes | Yes (web mode) |
+| Web link option | Yes | Yes | Yes, beside the Discord post or on its own |
 | Respondents authenticated | No | No | Yes, by the platform |
 | Proof the respondent is a member | No | No | Yes |
 | Verified even when anonymous | No | No | Yes |
 | One response per member enforced | Sign-in required | Limited | Yes |
-| Gate by Steam / Twitch / YouTube | No | No | Yes (web mode) |
+| Gate by Steam / Twitch / YouTube | No | No | Yes (on the web link) |
 | Question types | Many | Many | 5, expanding |
 | Branching / skip logic | Yes (choice + dropdown) | Yes (paid tiers) | Yes (advanced on VIP) |
 | Anonymous responses | Yes (don't collect emails) | Yes | Yes, 3 modes, anonymous by default |

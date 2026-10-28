@@ -11,7 +11,7 @@ faq:
   - q: "Is there a Google Forms for Discord?"
     a: "You can paste a Google Form link into a channel, but it sends people out of Discord to a separate page, which is where most of the drop-off happens. The closer fit is an app that asks the same questions inside the server as a structured conversation, then hands you the same exportable results."
   - q: "Can people without a Discord account fill in the form?"
-    a: "Yes, if you build it in web mode. A survey runs either in Discord mode, where members answer inside your server, or in web mode, where it lives at a link you can open to anyone with no Discord account needed. It is one mode or the other, so clone the survey if you later want a public web version."
+    a: "Yes, through its web link. The Discord post and the web link are separate ways in, and one project can have both: members answer from the post in your server while the link reaches everyone else. The link can be open to anyone, ask people to sign in, or admit only people verified as your Discord members, Twitch followers, YouTube subscribers or game owners."
   - q: "What can you use a Discord form for?"
     a: "The common ones are moderator and staff applications, event sign-ups, bug reports, order or request intake, and feedback on a recent change. Anything where you need the same set of answers from a lot of people rather than a thread full of free-form replies."
 draft: false
@@ -74,9 +74,9 @@ Once it's live, Subo posts an invite in your server. Members click it and answer
 
 ## Discord or the web
 
-Every survey runs in one of two modes, and you choose which when you build it. In Discord mode, members answer inside your server. In web mode, it lives at a link, and you can open that link to anyone (no Discord account needed) or keep it restricted to your members. Web mode is how you reach an audience that isn't in your server yet.
+A form has two ways in, and you switch each one on separately on the project's Invite tab. The Discord post is where members of your server start. The web link works anywhere, and you decide who it lets in: anyone with the link (no Discord account needed), anyone who signs in with Discord, Twitch, Google or Steam, or only people verified against your Discord server, Twitch channel, YouTube channel or Steam game. The web link is how you reach people who aren't in your server yet.
 
-It's one mode or the other, not both at once. If you build a survey in Discord and later want a public web version, you clone it and switch the copy to web mode. Either way, you manage every survey and read all the results from one place.
+You can run both at once: members answer from the post while the link collects everyone else, and all the responses land in the same project.
 
 ## The short version
 
