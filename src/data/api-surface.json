@@ -30,6 +30,31 @@
   "anonymousRedactedFields": ["user_id", "platform_id", "session_number"],
   "anonymousRefusedFilters": ["user_id", "platform_id", "session_number"],
 
+  "entryPoints": [
+    {
+      "type": "discord_post",
+      "readOnly": false,
+      "fields": ["enabled", "answers_on", "required_role_ids"],
+      "desc": "Members of the community's Discord server press the post. On when the project has delivery.invitation.post_channel_id."
+    },
+    {
+      "type": "web_link",
+      "readOnly": false,
+      "fields": ["enabled", "who", "sign_in_with", "verified_source_ids", "verified_sources", "url"],
+      "desc": "Anyone who has the link (url, same as delivery.share_url). who anyone: no sign-in. who signed_in: a sign-in with one of sign_in_with, the person is named and nothing is checked. who verified: a sign-in with one of verified_source_ids, membership checked."
+    },
+    {
+      "type": "invitation",
+      "readOnly": true,
+      "fields": ["source", "campaign_id", "name", "step_name", "status"],
+      "desc": "Read-only, on GET project: a journey step or a campaign that invites to the project. The invitation admits its member, whatever the post and the link say."
+    }
+  ],
+  "entryPointAnswersOn": ["discord", "web"],
+  "entryPointWho": ["anyone", "signed_in", "verified"],
+  "entryPointSignInWith": ["discord", "twitch", "google", "steam"],
+  "responseProviders": ["discord", "youtube", "twitch", "steam", "patreon", "google", "web"],
+
   "rateLimits": [
     { "tier": "Free", "tierKey": "Basic", "rpm": 60 },
     { "tier": "Premium", "tierKey": "Premium", "rpm": 300 },
@@ -62,6 +87,7 @@
     { "status": 402, "code": "payment_required", "cause": "Out of bot credits for an AI call, or a feature above your tier." },
     { "status": 403, "code": "forbidden", "cause": "A Creator-scoped key reaching for a project it does not own." },
     { "status": 404, "code": "not_found", "cause": "Wrong community or project id for this key." },
+    { "status": 422, "code": "channel_required", "cause": "Opening a project nobody can reach: no Discord post, no web link and no journey or campaign inviting to it." },
     { "status": 429, "code": "rate_limit_exceeded", "cause": "Over the tier limit. Wait Retry-After seconds." }
   ],
 
@@ -77,6 +103,8 @@
     "/communities/{communityId}/projects/{projectId}/responses",
     "/communities/{communityId}/projects/{projectId}/responses/{responseId}",
     "/communities/{communityId}/projects/{projectId}/analysis",
+    "/communities/{communityId}/sources",
+    "/communities/{communityId}/sources/{sourceId}",
     "/communities/{communityId}/webhooks",
     "/communities/{communityId}/webhooks/{webhookId}/test",
     "/communities/{communityId}/webhooks/{webhookId}/deliveries",

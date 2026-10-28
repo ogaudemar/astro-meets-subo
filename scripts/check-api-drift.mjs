@@ -188,6 +188,66 @@ compareSets(
   { file: SURFACE_FILE }
 );
 
+// 2a. Entry points. `delivery.entry_points` replaced the participation /
+// response_channel pair, and that pair sat in /api and llms.txt for weeks after it
+// was deprecated because nothing here looked at delivery. The writable types and
+// their enums come from EntryPointRequest; the read-only `invitation` type and the
+// read-side fields exist only in the OpenAPI read schema.
+{
+  const classBody = (src, name) => {
+    const start = src.indexOf(`class ${name}(`);
+    if (start === -1) return null;
+    const next = src.indexOf('\nclass ', start + 1);
+    return src.slice(start, next === -1 ? undefined : next);
+  };
+  const literalOf = (body, field) => {
+    const m = body && body.match(new RegExp(`\\n\\s+${field}:[^\\n]*?Literal\\[([^\\]]+)\\]`));
+    return m ? [...m[1].matchAll(/["']([^"']+)["']/g)].map((x) => x[1]) : null;
+  };
+  const entryReq = classBody(projectPy, 'EntryPointRequest');
+  compareSets(
+    'Entry point types (writable)',
+    surface.entryPoints.filter((e) => !e.readOnly).map((e) => e.type),
+    literalOf(entryReq, 'type'),
+    { file: SURFACE_FILE }
+  );
+  compareSets('Entry point answers_on', surface.entryPointAnswersOn, literalOf(entryReq, 'answers_on'), { file: SURFACE_FILE });
+  compareSets('Entry point who', surface.entryPointWho, literalOf(entryReq, 'who'), { file: SURFACE_FILE });
+  compareSets('Entry point sign_in_with', surface.entryPointSignInWith, literalOf(entryReq, 'sign_in_with'), { file: SURFACE_FILE });
+
+  // A response's `provider`: who admitted the respondent. The enum is spec-only.
+  const provAt = openapiPy.indexOf('Which connected source admitted');
+  const provEnum = provAt === -1 ? null : openapiPy.slice(Math.max(0, provAt - 400), provAt).match(/"enum":\s*\[([^\]]+)\][^[]*$/);
+  compareSets(
+    'Response provider values',
+    surface.responseProviders,
+    provEnum ? [...provEnum[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]) : null,
+    { file: SURFACE_FILE }
+  );
+
+  const readStart = openapiPy.indexOf('def _entry_points_read_schema');
+  const readBody = readStart === -1 ? null : openapiPy.slice(readStart, openapiPy.indexOf('\ndef ', readStart + 1));
+  const readTypes = readBody && readBody.match(/"type":\s*\{"type":\s*"string",\s*"enum":\s*\[([^\]]+)\]/);
+  compareSets(
+    'Entry point types (read)',
+    surface.entryPoints.map((e) => e.type),
+    readTypes ? [...readTypes[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]) : null,
+    { file: SURFACE_FILE }
+  );
+  // Field names: what we document per type must exist on the read schema or the
+  // request model. A field the API adds is not caught here; only a rename or removal.
+  if (readBody && entryReq) {
+    const known = new Set([
+      ...[...readBody.matchAll(/^\s+"([a-z_]+)":\s*\{/gm)].map((x) => x[1]),
+      ...[...entryReq.matchAll(/^\s{4}([a-z_]+):/gm)].map((x) => x[1]),
+    ]);
+    for (const e of surface.entryPoints) {
+      const stale = e.fields.filter((f) => !known.has(f));
+      if (stale.length) fail(`Entry point ${e.type}: we document fields the API no longer has — ${stale.join(', ')}. Fix ${SURFACE_FILE}.`);
+    }
+  }
+}
+
 // 2b. The privacy mode a survey gets when `privacy_mode` is omitted on create.
 // This one is prose on the site, and it drifted silently once already: the route
 // used to hardcode a mode, ignoring the community's own setting. It now reads

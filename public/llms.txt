@@ -35,7 +35,7 @@ Subo runs an MCP (Model Context Protocol) server over the same API, so an AI app
 - [OpenAPI Spec](https://api.subo.ai/v1/openapi.json): Raw OpenAPI 3.1.0 JSON spec — machine-readable
 - [Get an API Key](https://app.subo.gg/app/account): Generate keys in the Community account tab, under API Access
 - [Subo Homepage](https://subo.gg/): Product overview and feature list
-- [Discord Forms](https://subo.gg/forms/): How Subo replaces a Google Form or Typeform link in a Discord server: applications, sign-ups, bug reports and feedback asked one question at a time, with skip logic, three privacy modes, role targeting, and a web mode for people without a Discord account.
+- [Discord Forms](https://subo.gg/forms/): How Subo replaces a Google Form or Typeform link in a Discord server: applications, sign-ups, bug reports and feedback asked one question at a time, with skip logic, three privacy modes, role targeting, and a web link for people without a Discord account, beside the Discord post or on its own.
 - [Pricing](https://subo.gg/pricing): Plans (FREE, PREMIUM, VIP, CUSTOM) and rate limits per tier
 - [Blog](https://subo.gg/blog): News and updates
 
@@ -89,17 +89,77 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
 
 3. **Open Project**
    - `POST /communities/{communityId}/projects/{projectId}/open`
-   - Makes the survey live. `delivery.audience` picks the channel:
-     `private`+`discord` (answer in Discord), `private`+`web` (members-only link),
-     `open_web`+`web` (open link, no Discord account needed)
-   - `delivery.answer_surfaces` orders WHERE a Discord audience answers, as a
+   - Makes the survey live. `delivery.entry_points` lists the ways into the
+     project, each with its own rule; the Discord post and the web link are on
+     independently. It is a list matched on `type`: send only the entry points you
+     change, and an omitted field keeps its value. It is read back on create,
+     update, open and every project read.
+     - `discord_post`: members of the community's Discord server press the post.
+       `enabled` is on when the project has `delivery.invitation.post_channel_id`.
+       `answers_on` `discord`: they answer in Discord (thread or DM, see
+       `answer_surfaces`); `web`: the post hands each of them a personal link and
+       they answer on the web as themselves, even with the web link off.
+       `required_role_ids` (any-of) gates every Discord check: where a member
+       presses the post, and where someone verifies with Discord on a `verified`
+       web link (checked live). Not checked on an `anyone` or `signed_in` link,
+       nor for Twitch, YouTube or Steam sources.
+     - `web_link`: anyone who has the link (`url`, same as `delivery.share_url`).
+       `enabled`; `url` is read-only, null while the link is off.
+       - `who` `anyone`: no sign-in. Identifies only respondents already signed
+         in to Subo with Discord; set `privacy_mode: "anonymous"` to identify
+         nobody.
+       - `who` `signed_in`: a sign-in with one of `sign_in_with` (`discord`,
+         `twitch`, `google`, `steam`; a platform Subo cannot offer yet is a 400
+         listing the available ones). The person is named and nothing is checked;
+         nothing to connect first. `google` is a Google account, not a YouTube
+         channel. A new `signed_in` link without `sign_in_with` offers `discord`.
+         One answer per account. Rewards (XP, roles, achievements) reach only
+         Discord sign-ins.
+       - `who` `verified`: a sign-in with one of `verified_source_ids`
+         (`verified_sources` on read), membership checked, any one is enough. A
+         Discord source checks server membership, Twitch checks follows, YouTube
+         checks subscriptions, Steam checks that the person owns the game.
+       - Turning the link on without `who` means `verified` with the community's
+         Discord server.
+     - `invitation`: read-only, on GET project: a journey step or a campaign that
+       invites to the project (`source`, `campaign_id`, `name`, `step_name`,
+       `status`). The invitation admits its member, whatever the post and the
+       link say.
+     - Example, Discord post in Discord plus an open link:
+       `[{"type": "discord_post", "answers_on": "discord"}, {"type": "web_link", "enabled": true, "who": "anyone"}]`
+     - A signed-in link with Twitch and Google:
+       `{"type": "web_link", "enabled": true, "who": "signed_in", "sign_in_with": ["discord", "twitch", "google"]}`
+     - A link for Discord members and Twitch followers:
+       `{"type": "web_link", "enabled": true, "who": "verified", "verified_source_ids": [12, 34]}`
+     - Polls have the Discord post only, answered in Discord.
+   - `delivery.share_url` is the web link while `web_link` is on, and `null`
+     while it is off, whatever the Discord post does.
+   - Audience Sources (what a `verified` link checks against):
+     `GET /communities/{communityId}/sources` lists them (`id`, `provider`
+     discord/twitch/youtube/steam, `external_id`, `display_name`, `status`,
+     `connected_at`); the `id` is what `verified_source_ids` takes. The
+     community's Discord server is always there.
+     `POST /communities/{communityId}/sources` connects a Steam game
+     (`{"provider": "steam", "app_id": 1145360}`, Admin key). Twitch and YouTube
+     need an Admin's browser sign-in in the dashboard (Settings > Networks) and
+     cannot be connected through the API.
+     `DELETE /communities/{communityId}/sources/{sourceId}` disconnects one.
+   - Open refuses a project nobody can reach: with no post channel it opens
+     without posting when its web link is on or a journey or campaign invites to
+     it; with no post, no link and no invitation it returns `422 channel_required`.
+   - Deprecated, still working: `delivery.audience` (`participation` /
+     `response_channel`). Sending back the pair you read changes nothing; it
+     cannot describe a post answered in Discord beside a web link. Never send it
+     together with `entry_points` (that is a 400).
+   - `delivery.answer_surfaces` orders WHERE a Discord post answered in Discord is answered, as a
      fallback chain tried first to last: `["dm","thread","web"]`. `dm` is a direct
      message from the bot, `thread` is a private thread in the server, `web` is
      a browser link. Each surface may appear once. `web` ends the chain: it
      cannot fail, so any surface listed after it is never reached (the API
      accepts such a chain rather than rejecting it — put `web` last).
-     Only meaningful for `response_channel: discord`; stored but never consulted
-     on a web project. Avoid `thread` on an anonymous project — a thread is
+     Only meaningful for a `discord_post` with `answers_on: discord`; stored but
+     never consulted on the web. `answers_on: discord` with a chain that starts
+     with `web` is refused (400). Avoid `thread` on an anonymous project — a thread is
      readable by anyone with Manage Threads.
    - `answer_surfaces` defaults to `null`, which is NOT an empty chain: it means
      no override, and Subo resolves the chain per press from the privacy mode.
@@ -121,6 +181,11 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
    - `GET /communities/{communityId}/projects/{projectId}/responses` (paginated; `per_page` max 100)
    - `GET /communities/{communityId}/projects/{projectId}/responses/{responseId}`
    - Join on `user_id` (globally unique); `platform_id` is only unique within its `provider` namespace
+   - `provider` is WHO admitted the respondent: `discord`, `youtube`, `twitch`,
+     `steam`, `patreon`, `google` or `web`. Verified respondents carry their
+     platform, and so do respondents who signed in on a `signed_in` link (e.g.
+     `google`); sessions from the Discord post are `discord`, unidentified
+     `anyone`-link sessions are `web`.
    - `answered_in` is WHERE the session was answered: `thread`, `dm`, `web`, or
      `null`. A different axis from `provider`, which is WHO admitted the
      respondent, so a `youtube` respondent can answer on any of the three.

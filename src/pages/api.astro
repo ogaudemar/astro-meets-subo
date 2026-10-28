@@ -31,6 +31,9 @@ const {
   privacyModes,
   privacyFallbackOnCreate,
   answeredInValues,
+  entryPoints,
+  entryPointSignInWith,
+  responseProviders,
   rateLimits,
   webhookEvents,
   webhookHeaders,
@@ -461,8 +464,8 @@ const toc = [
           <section id="open" class="api-section">
             <h2 class="mono">Recipe: open the project to an audience</h2>
             <p>
-              Opening is what makes a project live. It is also where you choose whether
-              this runs inside Discord or as a web link.
+              Opening is what makes a project live. It is also where you choose the ways
+              in: a post in a Discord channel, a web link, or both.
             </p>
             <pre><code>{`curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/projects/$PROJECT_ID/open" \\
   -H "X-API-Key: $SUBO_API_KEY" \\
@@ -470,10 +473,10 @@ const toc = [
   -H "Idempotency-Key: $(uuidgen)" \\
   -d '{
     "delivery": {
-      "audience": {
-        "participation": "private",
-        "response_channel": "discord"
-      },
+      "entry_points": [
+        { "type": "discord_post", "answers_on": "discord" },
+        { "type": "web_link", "enabled": true, "who": "anyone" }
+      ],
       "invitation": {
         "post_channel_id": "123456789012345678",
         "message": "Two minutes of your time, and you get the role."
@@ -484,35 +487,122 @@ const toc = [
       }
     }
   }'`}</code></pre>
-            <p>The audience combination decides who can answer and where:</p>
+            <p>
+              That is a Discord post answered in Discord, plus an open link.
+              <code>delivery.entry_points</code> lists the ways into a project. Each has its
+              own rule, and the Discord post and the web link are on independently:
+            </p>
             <div class="table-wrap">
               <table>
                 <thead>
-                  <tr><th>participation</th><th>response_channel</th><th>What you get</th></tr>
+                  <tr><th><code>type</code></th><th>Fields</th><th>Who gets in, and how</th></tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td><code>private</code></td>
-                    <td><code>discord</code></td>
-                    <td>Members answer in your Discord server, as a conversation with the bot.</td>
-                  </tr>
-                  <tr>
-                    <td><code>private</code></td>
-                    <td><code>web</code></td>
-                    <td>A link, but only your verified members can complete it.</td>
-                  </tr>
-                  <tr>
-                    <td><code>open_web</code></td>
-                    <td><code>web</code></td>
-                    <td>An open link anyone can answer, no Discord account needed.</td>
-                  </tr>
+                  {entryPoints.map((e) => (
+                    <tr>
+                      <td><code>{e.type}</code></td>
+                      <td>{e.fields.map((f, i) => <>{i > 0 && ', '}<code>{f}</code></>)}</td>
+                      <td>{e.desc}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
             <p>
-              Add <code>required_role_ids</code> under <code>audience</code> to restrict a
-              Discord audience to specific roles. To close early, call
-              <code>POST .../projects/&#123;projectId&#125;/close</code>.
+              Send only the entry points you change, matched on <code>type</code>; an omitted
+              field keeps its value. Projects read back the same list on create, update,
+              open and every project read, with <code>verified_sources</code> in place of
+              <code>verified_source_ids</code>.
+            </p>
+            <ul>
+              <li>
+                <strong><code>answers_on</code> on the Discord post.</strong>
+                <code>discord</code>: members answer in Discord (thread or DM, see
+                <code>answer_surfaces</code> below). <code>web</code>: the post hands each of
+                them a personal link and they answer on the web as themselves, even with the
+                web link off. Polls have the Discord post only, answered in Discord.
+              </li>
+              <li>
+                <strong><code>who: "verified"</code> checks membership.</strong> A Discord
+                source checks server membership live, Twitch checks follows, YouTube checks
+                subscriptions, Steam checks that the person owns the game (any-of: one is
+                enough). Get the ids from <code>GET /communities/&#123;communityId&#125;/sources</code>
+                (see Audience Sources below). Turning the link on without <code>who</code> means
+                <code>verified</code> with the community&rsquo;s Discord server.
+              </li>
+              <li>
+                <strong><code>who: "signed_in"</code> names everyone, checks nothing.</strong>
+                The respondent signs in with one of <code>sign_in_with</code>
+                ({entryPointSignInWith.map((p, i) => <>{i > 0 && ', '}<code>{p}</code></>)})
+                and answers as themselves; no server, follow or role is required, and nothing
+                needs connecting first. <code>google</code> is a Google account, not a YouTube
+                channel. A platform Subo cannot offer yet is a <code>400</code> that lists the
+                available ones. A new <code>signed_in</code> link without
+                <code>sign_in_with</code> offers <code>discord</code>. One answer per account:
+                someone with two accounts can answer twice. Rewards (XP, roles, achievements)
+                reach only respondents who sign in with Discord.
+              </li>
+              <li>
+                <strong><code>who: "anyone"</code> identifies only some respondents.</strong>
+                Anyone already signed in to Subo with Discord is named, member of the server or
+                not, and can be rewarded; everyone else is unidentified and cannot be. If nobody
+                should be named, set <code>privacy_mode: "anonymous"</code>, which covers the
+                Discord post too.
+              </li>
+              <li>
+                <strong>Required roles gate every Discord check.</strong>
+                <code>required_role_ids</code> (any-of, set on <code>discord_post</code>) is
+                checked where a member presses the post and where someone verifies with
+                Discord on a <code>verified</code> web link. It does not apply on an
+                <code>anyone</code> or <code>signed_in</code> link, nor to Twitch, YouTube or
+                Steam sources.
+              </li>
+              <li>
+                <strong>Someone must be able to get in.</strong> A project with no post channel
+                opens without posting when its web link is on, or when a journey or campaign
+                invites to it. With no post, no link and no invitation, open returns
+                <code>422 channel_required</code>. With only the web link, nothing is posted:
+                share <code>delivery.share_url</code>.
+              </li>
+              <li>
+                <strong><code>delivery.share_url</code></strong> is the web link while
+                <code>web_link</code> is on, and <code>null</code> while it is off.
+              </li>
+              <li>
+                <strong><code>delivery.audience</code> is deprecated.</strong> Its
+                <code>participation</code> / <code>response_channel</code> pair still works, and
+                sending back the pair you read changes nothing, but it cannot describe a post
+                answered in Discord beside a web link. Use <code>entry_points</code>, and never
+                send both: that is a <code>400</code>.
+              </li>
+            </ul>
+            <p>Two more <code>web_link</code> entries: a signed-in link offering Discord, Twitch and Google, and a link for your Discord members and Twitch followers:</p>
+            <pre><code>{`{ "type": "web_link", "enabled": true, "who": "signed_in", "sign_in_with": ["discord", "twitch", "google"] }
+
+{ "type": "web_link", "enabled": true, "who": "verified", "verified_source_ids": [12, 34] }`}</code></pre>
+            <p>
+              To close early, call <code>POST .../projects/&#123;projectId&#125;/close</code>.
+            </p>
+
+            <h3>Audience Sources</h3>
+            <p>
+              A community&rsquo;s connected sources are what a <code>verified</code> link
+              checks against. The community&rsquo;s Discord server is always there.
+              <code>GET /communities/&#123;communityId&#125;/sources</code> lists them, each with
+              <code>id</code>, <code>provider</code> (<code>discord</code>, <code>twitch</code>,
+              <code>youtube</code> or <code>steam</code>), <code>external_id</code>,
+              <code>display_name</code>, <code>status</code> and <code>connected_at</code>. The
+              <code>id</code> is what <code>verified_source_ids</code> takes.
+            </p>
+            <pre><code>{`curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/sources" \\
+  -H "X-API-Key: $SUBO_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{ "provider": "steam", "app_id": 1145360 }'`}</code></pre>
+            <p>
+              Only a Steam game (its App ID, from the store page URL) can be connected through
+              the API, with an Admin key. Twitch and YouTube need an Admin to sign in with the
+              channel in the dashboard, under Settings &gt; Networks. Disconnect a source with
+              <code>DELETE /communities/&#123;communityId&#125;/sources/&#123;sourceId&#125;</code>.
             </p>
             <p>
               Colors are 6-digit hex <strong>without</strong> the <code>#</code>:
@@ -535,7 +625,8 @@ const toc = [
 
             <h3>Choosing where the Convo happens</h3>
             <p>
-              A Discord audience answers in one of three places, and Subo tries them in
+              A member who presses a Discord post answered in Discord can answer in one of
+              three places, and Subo tries them in
               order until one works. <code>delivery.answer_surfaces</code> sets that order:
             </p>
             <pre><code>{`{
@@ -582,9 +673,11 @@ const toc = [
                 treated as a clear, as is a repeated surface.
               </li>
               <li>
-                <strong>It only applies to a Discord audience.</strong> A project with
-                <code>response_channel: "web"</code> answers on the web by definition; a
-                chain set on one is stored, but nothing consults it.
+                <strong>It only applies to the Discord post answered in Discord.</strong> A
+                post with <code>answers_on: "web"</code> and the web link answer on the web by
+                definition; a chain set for them is stored, but nothing consults it. The
+                reverse is refused: <code>answers_on: "discord"</code> with a chain that starts
+                with <code>web</code> is a <code>400</code>.
               </li>
               <li>
                 An anonymous project should not use <code>thread</code>: a thread is not
@@ -625,6 +718,15 @@ const toc = [
                 <code>platform_id</code> is the account id inside its platform namespace, so
                 it is only meaningful paired with <code>provider</code>. Join on
                 <code>user_id</code>.
+              </li>
+              <li>
+                <code>provider</code> is who admitted the respondent:
+                {' '}{responseProviders.map((p, i) => <>{i > 0 && ', '}<code>{p}</code></>)}.
+                A verified respondent carries the platform they verified with, and so does
+                one who signed in on a <code>signed_in</code> link (for example
+                <code>google</code>). Sessions started from the Discord post are
+                <code>discord</code>, and unidentified sessions on an <code>anyone</code> link
+                are <code>web</code>.
               </li>
               <li>
                 One respondent can appear more than once when a project allows repeat
