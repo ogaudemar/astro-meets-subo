@@ -6,8 +6,8 @@ Written 2026-09-03.
 Order is the canonical one from the `feature-launch` skill, warmest audience to coldest:
 **blog post → Support Server → X thread → top.gg.** Everything here links to the
 announcement post, so do not post any of it until that post is deployed to production.
-Pushing a branch does not publish it: this repo has no deploy workflow, and the site goes
-live only when someone runs `npm run deploy`.
+The site goes live when `main` is pushed (Cloudflare Workers Builds); pushing any other
+branch publishes nothing.
 
 - Announcement post: `/blog/convos-in-your-dms/`
 
