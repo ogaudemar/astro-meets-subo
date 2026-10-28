@@ -22,6 +22,7 @@ visual metaphor. Use exactly one metaphor per image.**
 | Rating / scale / NPS / ranking questions (the scale family) | Scoring bench (judging table, score cards, a 1-2-3 rostrum) | Cheerful score-keeper who hands the paddle over |
 | Privacy modes (Transparent / Semi-Private / Anonymous) | Three voting booths: glass, half curtain, full curtain | Polling-hall host who holds the curtain and pointedly looks away |
 | AI Text Analysis (open-text summaries) | Espresso bar: a hopper of responses pulled into one tiny shot | Barista who slides the cup across the counter |
+| Ways in (Discord post + web link + invitations, each switched on separately) | Two doors into one cozy room, each with its own lit switch | Host who flips the second switch and waves the new guests in |
 
 When a **new** feature needs an image, first ask: *what everyday place or role
 makes this feature obvious in one glance?* Add the new pairing to this table so
@@ -141,3 +142,14 @@ brief (real-feel reasons, ideally summing to the footer total as an easter egg);
 keep to ~5 to 7 short rows so it stays legible, not noisy. Distinct from the
 control room (warm, not neon monitoring) and the factory (a record handed over,
 not rewards being manufactured).
+
+### Two doors, one room (Ways in / several ways into one project)
+See [examples/ways-in-doors.md](examples/ways-in-doors.md). A cozy round clubhouse lounge
+seen from inside. Two open doors on the back wall: a rounded wooden one (speech-bubble icon,
+the Discord post) and a glowing aqua arch (chain-link icon, the web link), **each with its
+own big lime-green rocker switch, both on**. Subo, the host, has just flipped the second
+switch and sweeps the newcomers in. The Discord blob, already inside, waves at small guests
+arriving through the arch, each with an icon badge (heart, play triangle, game controller)
+and a tiny verified checkmark. Optional small mail slot with an envelope for journeys and
+campaigns. Distinct from the masquerade door (one door, one members-only check) and the
+teleporter (sending out, not coming in). **No real platform logos**, icons only.
