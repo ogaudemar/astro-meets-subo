@@ -55,7 +55,7 @@ So one link can admit your Discord members and your Twitch followers together, w
 
 ## Audience Sources, properly introduced
 
-We never announced it, but verification has worked quietly since August. Under **Settings > Networks > Audience Sources** you connect more places where your community lives (beside your Discord). Every Convo can use them from then on:
+We never announced it, but verification has been working quietly for a few weeks. Under **Settings > Networks > Audience Sources** you connect more places where your community lives (beside your Discord). Every Convo can use them from then on:
 
 - **Discord** is always there. It comes with the bot.
 - **YouTube:** sign in with the Google account that owns your channel. It admits your subscribers.
