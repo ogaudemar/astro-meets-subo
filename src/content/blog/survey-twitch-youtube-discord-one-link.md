@@ -66,6 +66,8 @@ Want to connect other platforms? Let us know in our [Support Server](https://sub
 
 A channel can be connected to one community only, and you can disconnect a source at any time.
 
+![Settings > Networks > Audience Sources: a Twitch channel connected, with YouTube and Steam ready to connect](/images/blog/ways-in/ways-in-audience-sources.png)
+
 ## What respondents see
 
 On a **Verified only** link, the page says "This Convo is for verified members only" and shows one button per source the link accepts, such as "Verify you follow [channel] on Twitch". A passed check is remembered for 30 days, so someone who comes back for your next Convo is not asked again. If a check fails, they can try another option on the same page. For Steam, their "Game details" must be public while Subo checks; if they are private, the page says so, links to the Steam privacy settings, and reminds them they can make them private again afterward.
