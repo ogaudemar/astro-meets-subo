@@ -66,7 +66,7 @@ Want to connect other platforms? Let us know in our [Support Server](https://sub
 
 A channel can be connected to one community only, and you can disconnect a source at any time.
 
-![Settings > Networks > Audience Sources: a Twitch channel connected, with YouTube and Steam ready to connect](/images/blog/ways-in/ways-in-audience-sources.png)
+![Settings > Networks > Audience Sources: a Twitch channel and a YouTube channel connected, with Steam ready to connect](/images/blog/ways-in/ways-in-audience-sources.png)
 
 ## What respondents see
 
