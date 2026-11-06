@@ -73,6 +73,19 @@ A platform user (Discord account) linked to a community, with an access level
   anyone who answers; a member is enrolled in the community).
 - Public API: `member` / `memberId`; look up by `platform_id` (Discord snowflake).
 
+## Quick / Deep (AI draft quality)
+The two qualities of an AI draft, chosen before drafting. **Quick** is the fast, low-cost
+draft; **Deep** is the careful draft from a stronger model, at a higher credit cost (the
+default on any paid plan). Never ranked as "basic/premium" in copy.
+- Write "a Quick draft", "draft it with Deep"; the picker label is **Quick** / **Deep**.
+- **Descriptive, not branding: translate them, by meaning, not literally** (operator,
+  2026-10-06). Use the market's natural word for fast vs thorough; a noun is fine, the way
+  Mistral's French UI says *Réflexion*. Shipped: FR Rapide / Réflexion, ES Rápido / A fondo,
+  DE Schnell / Gründlich. Locales render `Web_NewProject_DraftChoice` with the label in
+  parentheses (FR *Brouillon en [Language] ([Quality])*), so it never has to agree with *draft*.
+- **Never write** "standard"/"superior" (internal workload names) or the model names in copy.
+- Decided by the operator 2026-10-05 (GenAI Phase 1, Q4).
+
 ## Audit / Drafting (name the utility, not the AI)
 **Audit** is the review of a project's script for personal data, privacy mode and block types,
 run from the Script tab and when the project opens. **Drafting** is Subo writing a project from
@@ -82,5 +95,10 @@ the admin's request (`/draft`, "Let Subo draft it" in the web app, API `generate
   it is not automatically a selling point, and the utility is what sells (operator, 2026-10-08).
 - Where the reader needs to know a model is involved (the privacy policy's AI section, a data
   notice), say so plainly there: that is disclosure, not positioning.
-- Existing strings that still say AI ("AI credits", "AI Summary", "What gets sent to the AI?")
-  are not decided yet: ask before changing them.
+- **Credits, never "AI credits"** (operator, 2026-10-29). The currency is **credits**: the
+  credit system is moving to cover many actions, not only model calls, and "AI" is said only
+  where it is necessary. Write "your credits cover it", "5,000 credits". Existing UI strings
+  that still say "AI credits" get renamed in a translation pass; until then, new copy says
+  "credits".
+- Other existing strings that still say AI ("AI Summary", "What gets sent to the AI?") are not
+  decided yet: ask before changing them.
