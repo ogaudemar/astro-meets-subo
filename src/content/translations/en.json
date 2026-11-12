@@ -1253,7 +1253,7 @@
         {
           "emoji": "🐛",
           "title": "Bug reports and intake",
-          "desc": "A member picks a category, describes the issue, and it lands as structured data instead of a thread nobody can search. <a href=\"/templates/bug-report-form/\">See the bug report form →</a>"
+          "desc": "A member picks a category, describes the issue, attaches a screenshot or a log, and it lands as structured data instead of a thread nobody can search. <a href=\"/templates/bug-report-form/\">See the bug report form →</a>"
         },
         {
           "emoji": "📣",
@@ -1263,7 +1263,7 @@
         {
           "emoji": "🧾",
           "title": "Orders, claims and requests",
-          "desc": "Drops, commissions, role requests. Scheduled open and close dates mean a request window shuts itself on the deadline."
+          "desc": "Drops, commissions, role requests, with a receipt or a reference image attached where you need one. Scheduled open and close dates mean a request window shuts itself on the deadline."
         },
         {
           "emoji": "👋",
@@ -1290,12 +1290,12 @@
       "id": "questions",
       "label": "QUESTION TYPES",
       "title": "The fields you would have built, and a few you could not",
-      "sub": "Eleven block types, mixed in any order, are what a Convo is built from. Nine of them ask something; two of them do something.",
+      "sub": "Twelve block types, mixed in any order, are what a Convo is built from. Ten of them ask something; two of them do something.",
       "cards": [
         {
           "emoji": "✅",
           "title": "Choice and text",
-          "desc": "Single choice (including yes/no), multiple choice, free text and numeric. Free text answers are what the AI summaries read."
+          "desc": "Single choice (including yes/no), multiple choice, free text and numeric. Free text answers are what the AI summaries read. Any question can be required or optional: an optional one gets a Skip button."
         },
         {
           "emoji": "⭐",
@@ -1306,6 +1306,11 @@
           "emoji": "🥇",
           "title": "Ranking",
           "desc": "Make people put options in order instead of approving everything. Ask for a full ranking or just a top few. <a href=\"/blog/discord-ranking-questions-rank-what-you-build-next/\">See ranking questions →</a>"
+        },
+        {
+          "emoji": "📎",
+          "title": "File uploads",
+          "desc": "Ask for the screenshot, the clip, the PDF or the résumé. Members attach files to their reply in Discord or drop them in on the web, and they arrive with the rest of the answers, stored privately: only your admins and the project's creator can open them."
         },
         {
           "emoji": "🔀",
@@ -1379,6 +1384,7 @@
       ["Irrelevant questions", "Everyone reads all of them", "Skip logic drops them"],
       ["Reward for finishing", "A thank-you page", "XP, a role or an achievement"],
       ["Anonymous option", "Anonymous to you and to itself", "Anonymous by design, still one response per member"],
+      ["Screenshots and files", "An upload field on the web page", "Attached in Discord or dropped in on the web, opened only by your admins"],
       ["People without Discord", "Anyone with the link", "A web link, beside the Discord post or on its own"]
     ],
     "footnote": "The Discord post and the web link are separate ways in: switch on either one, or both for the same project."
@@ -1412,6 +1418,10 @@
     {
       "q": "Is a Discord form bot free?",
       "a": "Subo has a free tier that covers 250 respondents per project and includes skip logic and the XP system. Paid tiers raise the respondent limit and add credits, more customization and new-response notifications."
+    },
+    {
+      "q": "Can members upload files or screenshots in a Discord form?",
+      "a": "Yes. Add a File Upload block and members attach images, documents, audio, video or zip files to their reply in Discord, or drop them in on the web. You choose which kinds of file are accepted and how many. Files are stored privately and only open for your community's admins and the project's creator. It works on every plan; storing a file uses credits, by size."
     },
     {
       "q": "Can a Discord form be anonymous?",
