@@ -138,7 +138,7 @@ In claude.ai, ask: "List my Subo projects." In Claude Code, type `/mcp`. You sho
 
 ![Claude Code's /mcp screen showing the Subo connection as connected with its tools](/images/blog/subo-mcp-server/claude-code-mcp-connected.png)
 
-The count is the number of operations Subo offers your agent: 44 today, and it grows as we add to the API, so it may be higher than in the screenshot. If Subo shows as failed instead:
+The count is the number of operations Subo offers your agent: 45 today, and it grows as we add to the API, so it may be higher than in the screenshot. If Subo shows as failed instead:
 
 - **Signed in with OAuth:** the sign-in may not have finished. Type `/mcp`, choose `subo` and authenticate again. If the Subo page said you are not an Admin of any community, see the FAQ below.
 - **With a key:** the most likely cause is the key itself: a typo, a leftover `YOUR_KEY`, or a key that has since been revoked. Copy the config again from the Account page (regenerate the key if you no longer have it) and re-add the connection.

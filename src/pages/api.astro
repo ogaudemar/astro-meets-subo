@@ -84,7 +84,7 @@ const faqs = [
   },
   {
     q: 'Does Subo have an MCP server?',
-    a: 'Yes, at https://api.subo.ai/mcp. AI apps that support MCP sign-in, such as claude.ai and Claude Code, connect with OAuth: a community Admin signs in with Discord, picks the community and an access level, and approves, with no key to copy. Other apps send Authorization: Bearer with an API key of type Bot or agent. It exposes 44 operations over the same API, bound to one community, and labels each one read-only, normal change, Outward (reaches real people) or Destructive (deletes), so an AI app knows which to confirm with you first. It cannot manage API keys, change access levels or connect a verified-audience source.',
+    a: 'Yes, at https://api.subo.ai/mcp. AI apps that support MCP sign-in, such as claude.ai and Claude Code, connect with OAuth: a community Admin signs in with Discord, picks the community and an access level, and approves, with no key to copy. Other apps send Authorization: Bearer with an API key of type Bot or agent. It exposes 45 operations over the same API, bound to one community, and labels each one read-only, normal change, Outward (reaches real people) or Destructive (deletes), so an AI app knows which to confirm with you first. It cannot manage API keys, change access levels or connect a verified-audience source.',
   },
   {
     q: 'How do I verify a Subo webhook signature?',
@@ -125,6 +125,7 @@ const toc = [
   { href: '#quickstart', label: 'Quickstart' },
   { href: '#generate', label: 'Generate a survey with AI' },
   { href: '#script', label: 'Write the script yourself' },
+  { href: '#images', label: 'Upload an image' },
   { href: '#scales', label: 'Rating, scale, NPS and ranking' },
   { href: '#open', label: 'Open it to an audience' },
   { href: '#responses', label: 'Pull the responses' },
@@ -342,12 +343,101 @@ const toc = [
               <code>DELETE</code> to drop it.
             </p>
             <p>
+              <strong>Required and optional questions.</strong> Every question block takes
+              <code>required</code>, <code>true</code> by default. <code>required: false</code>
+              gives the respondent a <strong>Skip</strong> button, on the web and in Discord. It
+              is ignored on content, action and calculated blocks, which take no answer, and
+              refused on <code>file_upload</code>, where <code>upload.min_files: 0</code> does the
+              same job. (The field was accepted and ignored before November 2026; it now takes
+              effect.)
+            </p>
+            <p>
+              <strong>Asking for files.</strong> A <code>file_upload</code> block takes an optional
+              <code>upload</code> object: <code>categories</code> (any of <code>images</code>,
+              <code>documents</code>, <code>audio</code>, <code>video</code>,
+              <code>archives</code>), <code>min_files</code> (<code>0</code> makes it optional),
+              <code>max_files</code> (1 to 10) and <code>max_bytes</code> per file (omitted means
+              the plan's limit). Without <code>upload</code> the block takes one image or
+              document and is required. Sending <code>upload</code> on another block type is a
+              <code>400</code>. Storing a file uses the community's credits, paid by the
+              respondent's upload, never by an API call; see
+              <a href="/pricing/#credits">how credits work</a>.
+            </p>
+            <pre><code>{`{
+  "type": "file_upload",
+  "title": "Attach a screenshot of the bug",
+  "upload": { "categories": ["images"], "min_files": 0, "max_files": 3 }
+}`}</code></pre>
+            <p>
               Skip logic is worth calling out. You can hand-write the raw
               <code>precondition</code> mini-language, but the API also accepts a structured
               <code>show_when</code> / <code>hide_when</code> object and compiles it into a
               correct precondition for you. Prefer the structured form: it removes a
               whole class of quoting and inversion mistakes.
             </p>
+          </section>
+
+          <!-- ── Images ─────────────────────────────────────────────────── -->
+          <section id="images" class="api-section">
+            <h2 class="mono">Recipe: upload an image for a block or an invitation</h2>
+            <p>
+              Image fields (a block's <code>image_url</code> and <code>thumbnail_url</code>,
+              the invitation image) take any https image link, as they always have. When you
+              have a file instead, or a link that will not last (a Discord attachment link
+              stops working after about a day), upload it and Subo hosts its own copy:
+            </p>
+            <pre><code>{`curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/images" \\
+  -H "X-API-Key: $SUBO_API_KEY" \\
+  -H "Idempotency-Key: $(uuidgen)" \\
+  -F "file=@banner.png"`}</code></pre>
+            <p>Or send a link as JSON, and Subo downloads the image:</p>
+            <pre><code>{`curl -X POST "${API_BASE}/communities/$COMMUNITY_ID/images" \\
+  -H "X-API-Key: $SUBO_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{ "url": "https://example.com/banner.png" }'`}</code></pre>
+            <p>Either way you get a <code>201</code>:</p>
+            <pre><code>{`{
+  "data": {
+    "url": "https://...",
+    "content_type": "image/png",
+    "bytes": 184213,
+    "width": 1600,
+    "height": 900,
+    "frames": 1
+  }
+}`}</code></pre>
+            <p>Put <code>data.url</code> in a block's <code>image_url</code> or anywhere else an image goes.</p>
+            <ul>
+              <li>Creator role, like other script writes. <code>Idempotency-Key</code> is supported.</li>
+              <li>
+                PNG, JPEG, GIF or WebP. Static images are resized to at most 2048&nbsp;px on
+                the longest side and their metadata is removed; animations are kept.
+              </li>
+              <li>
+                The size limit depends on the community's plan. A file over it gets
+                <code>413 too_large</code> with <code>max_bytes</code> and, when a bigger plan
+                exists, <code>upgrade: &#123;plan, max_bytes&#125;</code>.
+              </li>
+              <li>
+                A <code>url</code> must be https on the public internet (default port, no
+                credentials), with up to 3 redirects. KLIPY links are refused: put a KLIPY
+                GIF's link in the image field as it is.
+              </li>
+              <li>
+                On top of the key's <a href="#reference">rate limit</a>, one person can upload
+                30 images per 10 minutes (<code>429 rate_limited</code> with
+                <code>Retry-After</code>).
+              </li>
+              <li>
+                Refusals carry a stable <code>reason</code>: <code>too_large</code>,
+                <code>empty</code>, <code>not_an_image</code>, <code>unsupported_type</code>,
+                <code>too_many_pixels</code>, <code>too_many_frames</code>,
+                <code>url_not_allowed</code>, <code>url_klipy</code>, <code>fetch_failed</code>.
+                <code>503 unavailable</code> means uploads are switched off, and
+                <code>502 upstream_error</code> that storing the image failed (retry).
+              </li>
+              <li>An uploaded image is deleted about 7 days after no project uses it.</li>
+            </ul>
           </section>
 
           <!-- ── Scale family ───────────────────────────────────────────── -->
@@ -704,8 +794,26 @@ const toc = [
       "provider": "discord",
       "answered_in": "dm",
       "answers": [
-        { "block_id": 1, "option_id": 2, "value": "A few times a week" },
-        { "block_id": 2, "value": "More events in EU hours." }
+        { "block_id": 1, "option_id": 2, "value": "A few times a week", "display": null },
+        { "block_id": 2, "value": "More events in EU hours.", "display": null },
+        { "block_id": 3, "option_id": 8769, "value": null, "display": "Minecraft" },
+        { "block_id": 4, "value": "", "option_id": null, "skipped": true },
+        {
+          "block_id": 5,
+          "value": "[41]",
+          "display": null,
+          "files": [
+            {
+              "id": 41,
+              "name": "bug.png",
+              "category": "images",
+              "content_type": "image/png",
+              "bytes": 182044,
+              "url": "https://app.subo.gg/...",
+              "download_url": "${API_BASE}/communities/.../projects/.../responses/files/41"
+            }
+          ]
+        }
       ]
     }
   ],
@@ -727,6 +835,31 @@ const toc = [
                 <code>google</code>). Sessions started from the Discord post are
                 <code>discord</code>, and unidentified sessions on an <code>anyone</code> link
                 are <code>web</code>.
+              </li>
+              <li>
+                <code>display</code> is the people-readable form of an answer that holds a
+                Discord mention. Answer options and question text can contain members, roles,
+                games and dates in Discord's own format (<code>&lt;@id&gt;</code> member,
+                <code>&lt;@&amp;id&gt;</code> role, <code>&lt;@$id&gt;</code> game,
+                <code>&lt;t:unix:style&gt;</code> date and time). <code>value</code> keeps that
+                raw form; <code>display</code> reads <code>"Minecraft"</code> or
+                <code>"2026-11-07 06:00 UTC"</code> (dates are always UTC). For a picked option
+                it is computed from the option's text. It is <code>null</code> when there is
+                nothing to make readable.
+              </li>
+              <li>
+                <code>skipped: true</code> marks a question the respondent skipped with the Skip
+                button (its <code>value</code> is <code>""</code>, its <code>option_id</code>
+                <code>null</code>). A block the respondent never reached has no answer at all.
+              </li>
+              <li>
+                Answers to a <code>file_upload</code> block carry <code>files</code>, one entry per
+                file; <code>files</code> is <code>null</code> on every other block. Their
+                <code>value</code> is the stored list of file ids as a string, not text a person
+                reads. Each file has two links that never expire: <code>url</code> opens in a
+                browser for someone signed in to Subo as an admin of the community or the
+                project's creator (it takes no API key), and <code>download_url</code> is for code
+                holding an API key, below.
               </li>
               <li>
                 One respondent can appear more than once when a project allows repeat
@@ -770,6 +903,23 @@ const toc = [
               </li>
             </ul>
             <p>
+              To download a file with an API key, request its <code>download_url</code>. It answers
+              with a <code>302</code> to a signed link that works for five minutes, so follow
+              redirects (<code>curl -L</code>, or "follow redirects" in Postman) and save the body,
+              or you save nothing. The signed link needs no key, and curl does not send your key
+              to it. <code>?thumb=1</code> returns an image's thumbnail.
+            </p>
+            <pre><code>{`curl -L -o evidence.png \\
+  -H "X-API-Key: $SUBO_API_KEY" \\
+  "${API_BASE}/communities/$COMMUNITY_ID/projects/$PROJECT_ID/responses/files/$FILE_ID"`}</code></pre>
+            <p>
+              A file the key cannot see answers <code>404</code>, whether it belongs to another
+              project, was deleted, never finished uploading, or the key is a Creator key on a
+              project someone else created. Files answer <code>404</code> rather than
+              <code>403</code> on purpose, so an id never reveals that a file exists. Reading and
+              downloading files costs no credits.
+            </p>
+            <p>
               Polling this endpoint on a timer works, but <a href="#webhooks">webhooks</a>
               are the better pipeline.
             </p>
@@ -806,6 +956,18 @@ const toc = [
               for "how many people answered." <code>total_responses</code> counts individual
               answers across all blocks, so one person who answered six blocks counts six.
               That second number is the one your plan's response limit counts.
+            </p>
+            <p>
+              Each block also carries <code>skipped_count</code>, the respondents who skipped an
+              optional question. <code>response_count</code> and every distribution percentage
+              leave skips out, so a skip never dilutes a chart.
+            </p>
+            <p>
+              Each distribution and ranking entry carries <code>display</code> and each block
+              carries <code>prompt_display</code>: the readable form of an option or a question
+              that holds a member, role, game or date mention, with dates in UTC. Both are
+              <code>null</code> when there is nothing to make readable; the raw text stays in
+              the original fields.
             </p>
           </section>
 
@@ -947,7 +1109,7 @@ Auth:      OAuth 2.1 (sign in), or
             <pre><code>{`claude mcp add --transport http --scope user subo ${MCP_URL} --header "Authorization: Bearer $SUBO_API_KEY"`}</code></pre>
             <p>
               Each connection is bound to one community, so no operation takes a
-              community id. Its 44 operations each carry one of four labels your AI app can read:
+              community id. Its 45 operations each carry one of four labels your AI app can read:
             </p>
             <div class="table-wrap">
               <table>
@@ -970,6 +1132,16 @@ Auth:      OAuth 2.1 (sign in), or
               <code>goal</code> as a field. Its resources include the script authoring guide
               (<code>subo://guide/authoring</code>), the <a href="/recipes/">recipes</a> and the
               OpenAPI spec, so an agent can read them before it writes.
+            </p>
+            <p>
+              <code>upload_image</code> takes an image link and returns a Subo-hosted URL for
+              any image field, the same as <a href="#images">the upload endpoint</a>. An agent
+              cannot pass a file on, so the tool takes a link only.
+            </p>
+            <p>
+              An agent can add and edit <code>file_upload</code> blocks and sees each answer's
+              file list, but cannot download the files themselves: the download returns the raw
+              file, not data an assistant reads.
             </p>
             <p>
               Three things are deliberately left out: creating, rotating or deleting API keys,

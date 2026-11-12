@@ -15,6 +15,10 @@
     { "type": "opinion_scale", "desc": "Agreement or satisfaction between two named ends. Label every point for a Likert item." },
     { "type": "nps", "desc": "The standard 0-10 recommendation question. Range and anchors are locked." },
     { "type": "ranking", "desc": "Put options in order, best first. rank_top_n asks for a partial ranking." },
+    {
+      "type": "file_upload",
+      "desc": "Members send files as their answer: attached in Discord or dropped in on the web. Rules in upload."
+    },
     { "type": "content_block", "desc": "Says something without asking anything." },
     { "type": "action_block", "desc": "Grants XP, a role or an achievement mid-conversation." },
     { "type": "calculated_block", "desc": "Computes a value from earlier answers." }
@@ -102,7 +106,9 @@
     "/communities/{communityId}/projects/{projectId}/script/blocks/{blockId}",
     "/communities/{communityId}/projects/{projectId}/responses",
     "/communities/{communityId}/projects/{projectId}/responses/{responseId}",
+    "/communities/{communityId}/projects/{projectId}/responses/files/{fileId}",
     "/communities/{communityId}/projects/{projectId}/analysis",
+    "/communities/{communityId}/images",
     "/communities/{communityId}/sources",
     "/communities/{communityId}/sources/{sourceId}",
     "/communities/{communityId}/webhooks",

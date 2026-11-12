@@ -22,8 +22,10 @@ Subo runs an MCP (Model Context Protocol) server over the same API, so an AI app
   - **API key header**, for clients that cannot sign in: `Authorization: Bearer sbo_live_…`, using an API key of type "Bot or agent" created by a community Admin on the Account page under API Access (https://app.subo.gg/app/account). The confirmation panel shows a ready-to-paste config. Claude Code: `claude mcp add --transport http --scope user subo https://api.subo.ai/mcp --header "Authorization: Bearer sbo_live_…"` (run in a terminal, then restart Claude Code).
   - Either way, the access level (admin or creator) caps what the agent can do. Only community Admins can connect an app.
 - One connection = one community. No operation takes a community id; the key's community is implied. The key acts with its owner's current access and loses it within about ten minutes of the owner losing it.
-- 44 operations, each labeled with one of four tiers. Read-only and normal changes need no special care. **Outward** operations reach real people (opening or closing a project, granting XP or accomplishments, firing a test webhook); **Destructive** operations delete data or invalidate a secret. Confirm both with the human before calling them.
+- 45 operations, each labeled with one of four tiers. Read-only and normal changes need no special care. **Outward** operations reach real people (opening or closing a project, granting XP or accomplishments, firing a test webhook); **Destructive** operations delete data or invalidate a secret. Confirm both with the human before calling them.
 - Prompts (workflows the server ships, shown as slash commands in Claude Code, e.g. `/subo:weekly_review`): `weekly_review` (optional `days`, default 14) reviews recent projects, responses and analysis and proposes the next project, read-only until approved; `build_from_goal` (`goal`) clones or drafts a script, validates it, and stops before `open_project`. Claude Code passes only the first whitespace-separated word as a prompt argument, so a multi-word `goal` arrives truncated there.
+- `upload_image(url)` hosts an image from a link and returns a Subo URL for any image field (`image_url`, `thumbnail_url`, the invitation image). An agent cannot pass a file, so the tool takes a link. Use it for links that expire (a Discord attachment link stops working in about a day); any lasting https image link can go in an image field as it is.
+- File Upload blocks: an agent can add and edit them and sees each answer's `files` list, but cannot download file contents (the download returns raw bytes).
 - Resources: `subo://guide/authoring` (read before writing a script: block types, scales, piping, scoring), `subo://recipes` and `subo://recipes/{slug}`, `subo://openapi`, `subo://community`.
 - Deliberately not available through MCP: creating, rotating or deleting API keys; changing a member's access level; connecting a new verified-audience source (it requires a human browser sign-in).
 - Setup guide: https://subo.gg/blog/connect-discord-community-to-ai-agent/
@@ -86,6 +88,8 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
    - `PUT /communities/{communityId}/projects/{projectId}/script`
    - Replace entire script when project is inactive
    - Per-block edits: `POST|PUT|DELETE .../script/blocks[/{blockId}]`
+   - `required` (default `true`) on question blocks: `required: false` gives respondents a Skip button on the web and in Discord. Ignored on content, action and calculated blocks; refused on `file_upload` (use `upload.min_files: 0`). Accepted but ignored before November 2026, it now takes effect
+   - `file_upload` blocks take an optional `upload` object: `categories` (any of `images`, `documents`, `audio`, `video`, `archives`), `min_files` (`0` = optional), `max_files` (1-10), `max_bytes` per file (omitted = the plan's limit). Default: images and documents, one file, required. `upload` on any other block type is a 400. Respondents' uploads spend the community's credits (200 per MB, at least 10 per file, see https://subo.gg/pricing/#credits); API calls never do
 
 3. **Open Project**
    - `POST /communities/{communityId}/projects/{projectId}/open`
@@ -193,6 +197,15 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
      field existed reads `null`, so treating it as a default surface miscounts
      history. Returned on anonymous projects too, since where an interview
      happened is not respondent-identifying.
+   - Answer options and question text can hold Discord mentions in Discord's own
+     format: `<@id>` member, `<@&id>` role, `<@$id>` game, `<t:unix:style>` date and
+     time. `value` keeps that raw form; read `display` for people-readable text
+     (e.g. `"Minecraft"`, `"2026-11-07 06:00 UTC"`; dates are always UTC). For a
+     picked option `display` is computed from the option's text. `display` is
+     `null` when there is nothing to make readable.
+   - A skipped optional question comes back as `value: ""`, `option_id: null`, `skipped: true`. A block the respondent never reached has no answer at all
+   - Answers to a `file_upload` block carry `files` (`null` on every other block): one entry per file with `id`, `name`, `category`, `content_type`, `bytes`, `url` and `download_url`. `value` is the stored list of file ids as a string; read `files` instead. `url` opens in a browser for a signed-in admin or the project's creator (no API key); `download_url` is for code with a key. Neither expires
+   - `GET /communities/{communityId}/projects/{projectId}/responses/files/{fileId}` downloads one file with an API key: a `302` to a signed link valid 5 minutes, so follow redirects (`curl -L -o file`). `?thumb=1` gives an image's thumbnail. Any file the key cannot see is a `404` (never `403`), so an id never reveals that a file exists. Downloads cost no credits
    - `privacy_mode: anonymous` redacts this endpoint: `user_id`, `platform_id` and
      `session_number` come back `null`, and the `response.submitted` webhook nulls the
      same three (matching the app's Responses tab and XLSX export). Respondent filters
@@ -207,9 +220,23 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
    - `total_sessions` = respondents (same as `pagination.total` on list responses); use it
      for "how many people answered". `total_responses` = individual answers across all
      blocks (one person answering 6 blocks counts 6); it is what the plan's response limit counts
+   - Each block carries `skipped_count`; `response_count` and every distribution percentage exclude skips
+   - Distribution and ranking entries carry `display`, and each block carries
+     `prompt_display` for its question text: the readable form of a member, role,
+     game or date mention (UTC for dates), `null` when there is nothing to make readable
    - Summaries are on/off per community, per project (`settings.text_analysis`) and per `open_text` block (`text_analysis`); a block that asks for personal data is off unless turned on explicitly
    - Respondents are sent to the model as codes (e.g. `R-7K3QXA`), never by name, and emails, phone numbers and similar data are removed first
    - `summary_status` can be `failed` (request again) or `skipped` (not enough credits; `text_analysis.credits_short_by` says how many)
+
+5b. **Upload an Image**
+   - `POST /communities/{communityId}/images`: multipart `file`, or JSON `{"url": "https://..."}` (Subo downloads it)
+   - Returns `201` with `data: {url, content_type, bytes, width, height, frames}`; put `data.url` in `image_url`, `thumbnail_url` or the invitation image
+   - Image fields still accept any https image link; upload for files and for links that won't last
+   - Creator role; `Idempotency-Key` supported; 30 uploads per person per 10 minutes on top of the key's rate limit (`429 rate_limited`, `Retry-After`)
+   - PNG, JPEG, GIF, WebP. Size limit by plan: `413 too_large` carries `max_bytes` and, when a bigger plan exists, `upgrade: {plan, max_bytes}`
+   - `url` must be https on the public internet (default port, no credentials), up to 3 redirects; KLIPY links are refused
+   - Refusals carry `reason`: `too_large`, `empty`, `not_an_image`, `unsupported_type`, `too_many_pixels`, `too_many_frames`, `url_not_allowed`, `url_klipy`, `fetch_failed`. `503 unavailable` = uploads off; `502 upstream_error` = storage failed, retry
+   - Static images are resized to at most 2048 px on the longest side, metadata removed, animations kept; an image is deleted about 7 days after no project uses it
 
 6. **Webhooks** (Highly recommended for agents)
    - `POST /communities/{communityId}/webhooks` with `{url, name, events[]}`
@@ -253,7 +280,7 @@ for agents but NOT canonical:
 ## Key Features Agents Love
 - **AI Script Generation**: Turn a plain-text goal into a complete multi-block survey script in one call.
 - **Real-time Webhooks**: Get notified instantly when new responses arrive or analysis is ready.
-- **Rich Script System**: Supports single/multiple choice, open text, numeric, rating, opinion scale, NPS, ranking, conditional logic (structured `show_when` / `hide_when`, compiled to a precondition), and content, action and calculated blocks. The block-type list at the bottom of this file is the complete set the API accepts; a Discord-only question type such as yes/no is sent as `single_punch`.
+- **Rich Script System**: Supports single/multiple choice, open text, numeric, rating, opinion scale, NPS, ranking, file uploads, required or optional questions, conditional logic (structured `show_when` / `hide_when`, compiled to a precondition), and content, action and calculated blocks. The block-type list at the bottom of this file is the complete set the API accepts; a Discord-only question type such as yes/no is sent as `single_punch`.
 - **Ordered question types that store numbers**: `rating`, `opinion_scale` and `nps` store the picked integer, so analysis returns a real average and distribution rather than option counts. `ranking` stores one row per ranked item, `value` = the rank position.
 - **Analysis**: Built-in AI summarization of qualitative answers.
 
@@ -266,7 +293,7 @@ for agents but NOT canonical:
 Base URL: https://api.subo.ai
 Version: /v1/ (non-breaking changes in-place; breaking changes under /v2/)
 Idempotency: Pass `Idempotency-Key` (UUID v4) header on write operations.
-Block types: `single_punch`, `multi_punch`, `open_text`, `open_numeric`, `rating`, `opinion_scale`, `nps`, `ranking`, `content_block`, `action_block`, `calculated_block`.
+Block types: `single_punch`, `multi_punch`, `open_text`, `open_numeric`, `rating`, `opinion_scale`, `nps`, `ranking`, `file_upload`, `content_block`, `action_block`, `calculated_block`.
 Scale family: point range is the block's `min` / `max`; whole-scale presentation is the `scale` object (`icon`, `label_left`, `label_center`, `label_right`). On a scale, `options[].value` is the point number as a string and carries that point's `emoji` or `label` — a plain star or number scale sends no options at all. `answer_style` is `buttons` | `select_menu` on the three scales, `full_text` | `emoji_only` on `ranking`; `rank_top_n` (ranking only) asks for a partial ranking.
 Privacy modes: `transparent`, `semi-private`, `anonymous` (omitting `privacy_mode` inherits the community's configured default, `anonymous` for a community that never changed it — set it explicitly when anonymity matters).
 Errors: `400 invalid_request`, `402 payment_required` (out of bot credits / tier-gated), `403 forbidden`, `404 not_found`, `429 rate_limit_exceeded` (honor `Retry-After`).
