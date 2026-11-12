@@ -14,7 +14,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 
 				<h1 class="title-text heading">Privacy Policy</h1>
 
-			<div class="subtitle-text title-box__text content_box"><p>&nbsp;Last updated: <em>October 8, 2026.</em>&nbsp;</p>
+			<div class="subtitle-text title-box__text content_box"><p>&nbsp;Last updated: <em>November 10, 2026.</em>&nbsp;</p>
 </div>
 
 		</div>
@@ -105,6 +105,8 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <li>Recurring and scheduled surveys: automated delivery on creator-configured schedules. Participation remains voluntary. Response data is handled identically to single-instance surveys.</li>
 <li>Creator Network: as part of our own market research, we may contact Subo survey creators (server owners) to invite them to participate in surveys conducted by Subo/ClearSwell. This uses contact information (Discord username, server association) already held as part of your creator account. You may opt out at any time on your account page at <a href="https://app.subo.gg/app/account" target="_blank">app.subo.gg/app/account</a>, or by contacting hello@subo.ai.</li>
 <li>Service providers: we may work with trusted service providers to help us run our business, for example cloud data storage, survey/data collection technology, validation and anti-fraud services.</li>
+<li>Uploaded images: when a creator uploads an image to a project (for example a poll image, an invitation image or an achievement badge), the file is stored with Cloudflare and served through Cloudflare from Subo's own media domain. Embedded metadata, such as the GPS location a phone camera records, is removed on upload, and photos are resized. We record which community the image belongs to and who uploaded it. When someone views the image, their browser or Discord app requests it from Cloudflare, which receives the usual request data, such as the IP address. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare's privacy policy</a>.</li>
+<li>Files sent by respondents: when a project asks for a file (for example a screenshot, a document or a video), the files a respondent sends are stored privately with Cloudflare, separately from the images used in projects. They have no public address: only the community's admins and the project's creator can open them, after signing in to Subo. Photos up to about 15 MB sent on the web, or 20 MB in Discord, are re-saved without their embedded metadata, such as the camera details and GPS location a phone records; larger files are stored as sent. Files are deleted when their response is deleted, including when the project is deleted or the community's data retention settings remove it.</li>
 <li>AI features: some features use AI models from OpenAI, Anthropic and Google, which we reach through OpenRouter. See "AI Features and AI Providers" below for what each feature sends, and how long each provider keeps it.</li>
 <li>Payment processing (Stripe): subscription payments are processed by Stripe, Inc. Subo does not store full payment card details. We receive subscription status (tier, renewal date, server association) from Stripe. <a href="https://stripe.com/privacy" target="_blank">Stripe's privacy policy</a> applies to payment data.</li>
 <li>We may also provide links to third-party bots, websites and apps, which are independent from Subo and have their own separate privacy policies. We are not responsible for the privacy practices or content of such third-party websites or apps. We recommend that you carefully read the privacy policies of each site or app.</li>
@@ -160,6 +162,8 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <tr><td>AI requests at OpenRouter</td><td>Content not stored; request metadata (model, tokens, timing) kept per OpenRouter's policy</td></tr>
 <tr><td>AI requests at the model providers</td><td>OpenAI: up to 30 days; Anthropic: deleted within 30 days (longer only for requests flagged for policy violations); Google: up to 55 days. Abuse monitoring only; no model training</td></tr>
 <tr><td>Drafting sessions</td><td>7 days if no project was created (30 days on paid plans); 90 days if a project was created (18 months on paid plans)</td></tr>
+<tr><td>Files sent by respondents</td><td>Deleted with their response (response, project or test-answer deletion, or the community's data retention settings), within a day</td></tr>
+<tr><td>Uploaded images</td><td>Deleted automatically about 7 days after no project uses them (the project was deleted, or the image was replaced or removed)</td></tr>
 <tr><td>AI summaries and audit results</td><td>Stored with the project and deleted with it</td></tr>
 <tr><td>Stripe billing data</td><td>Per Stripe's policy and applicable financial law</td></tr>
 <tr><td>Google Analytics data</td><td>Per GA4 data retention settings (configurable in GA4 Admin &gt; Data Settings)</td></tr>
@@ -212,7 +216,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <tr><td>Legal obligation</td><td>Financial records and compliance obligations</td></tr>
 </tbody>
 </table>
-<p><strong>International data transfers:</strong> Data is stored in the United States. Transfers from the EEA/UK rely on the Standard Contractual Clauses (SCCs) in our data processing agreements with our sub-processors (OpenRouter, OpenAI, Stripe, Google), and/or the EU-US Data Privacy Framework where applicable. Requests to AI model providers that we reach only through OpenRouter, such as Anthropic, are passed to them by OpenRouter under its own agreements with those providers. Contact hello@subo.ai for details.</p>
+<p><strong>International data transfers:</strong> Data is stored in the United States. Uploaded images and respondent files are stored with Cloudflare in western North America. Transfers from the EEA/UK rely on the Standard Contractual Clauses (SCCs) in our data processing agreements with our sub-processors (OpenRouter, OpenAI, Stripe, Google, Cloudflare), and/or the EU-US Data Privacy Framework where applicable. Requests to AI model providers that we reach only through OpenRouter, such as Anthropic, are passed to them by OpenRouter under its own agreements with those providers. Contact hello@subo.ai for details.</p>
 <p>Our service lets you directly access, rectify, delete your Personal Data or export it in a commonly used format. Please use the <code>/help</code> command for more information about the different data control commands available through our service. If you are unable to perform these actions yourself, or for other requests related to exercising your rights, please contact us at hello@subo.ai.</p>
 </div>
 						</div>
@@ -294,7 +298,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 							</div>
 						</h3>
 						<div class="content_box">
-							<div class="content-text"><p>Subo data storage is located in the United States. If you are accessing the Service from outside the United States, please be aware that your information may be transferred to, stored, and processed in the United States. See the EEA and UK Residents section above for information on international transfer mechanisms.</p>
+							<div class="content-text"><p>Subo data storage is located in the United States. Uploaded images and respondent files are stored with Cloudflare in western North America. If you are accessing the Service from outside the United States, please be aware that your information may be transferred to, stored, and processed in the United States. See the EEA and UK Residents section above for information on international transfer mechanisms.</p>
 </div>
 						</div>
 					</div>
