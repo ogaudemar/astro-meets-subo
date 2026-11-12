@@ -77,9 +77,9 @@ Example: _Thanks for taking part. The next three questions are about the new eve
 Example: ⚪ _Margarita;_ 🍍 _Hawaiian;_ 🔴 _Pepperoni;_ 🍄 _Regina_
 ![How to write answer options separated by a semi-colon](/images/blog/survey-tuto/survey8-daoa4.png)
 
-8. Add an image (optional) by pasting the image's URL
+8. Add an image (optional): paste the image's link, or attach the image to your reply straight from your device. PNG, JPG, GIF and WebP all work.
 ![Click Yes to add an image to the question](/images/blog/survey-tuto/survey9-0bz3g.png)
-![Pas the image link of the image you want to add to the question](/images/blog/survey-tuto/survey10-zb8cl.png)
+![Paste the image link of the image you want to add to the question](/images/blog/survey-tuto/survey10-zb8cl.png)
 
 9. Add more questions if needed, by repeating steps 5 to 8 for each new question. Add as many questions as your survey needs (see [pricing](/pricing/) for what each plan includes).
 ![Repeat the process for as many questions as you want in the Convo](/images/blog/survey-tuto/survey11-oiqb0.png)

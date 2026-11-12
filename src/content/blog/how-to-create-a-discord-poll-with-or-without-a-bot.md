@@ -2,7 +2,7 @@
 title: "How to Make a Poll or a Vote on Discord (Native or with Subo)"
 description: "How to make a poll or run a vote on Discord: the quick native way with no bot, and the fuller way with a survey bot like Subo (anonymous voting, roles, scoring, scheduling, API)."
 pubDate: "May 07 2023"
-updatedDate: "Sep 08 2026"
+updatedDate: "Nov 06 2026"
 tags: ["tutorial", "discord", "polls", "vote", "how-to"]
 author: "Subo Team"
 heroImage: "/images/blog/poll-tuto/poll-tuto-hero.webp"
@@ -102,7 +102,8 @@ That's the whole flow for a basic poll. But this is where Subo pulls ahead of a 
 
 **Quiz and scoring** (turn a poll into a graded quiz)
 
-- **`scoring`**: switch scoring on.
+Scoring switches on by itself as soon as you set `correct` or `scores`.
+
 - **`correct`**: mark the correct answer(s), shown with a ✓ once the poll closes.
 - **`scores`**: give each option its own points, and pipe the total with `[score]`.
 
@@ -114,18 +115,22 @@ That's the whole flow for a basic poll. But this is where Subo pulls ahead of a 
 **Appearance and branding**
 
 - **`chart_emoji`**: pick the emoji used to draw the result chart.
-- **`image`**: add an image to the poll.
-- **`thumbnail`** *(Premium)*: add a thumbnail (small image) to the invitation embed.
+- **`image`**: add an image to the poll from a link.
+- **`image_upload`**: upload an image file from your device instead. Discord opens its file picker, and drag and drop works.
+- **`thumbnail`** *(Premium)*: add a thumbnail (small image) to the invitation embed from a link.
+- **`thumbnail_upload`** *(Premium)*: upload the thumbnail file instead.
+
+If you give both a link and a file for the same image, the uploaded file is used.
+
 - **`color_open`** / **`color_closed`**: set the invitation's border color while open, and *(Premium)* a different color once it closes so a finished poll looks visibly different.
 - **`call_to_action`**: the invitation message shown above the poll (ping a role, set the scene, motivate people to vote).
-- **`info_display`**: decide whether to show poll details inside the invitation embed or tucked into an ephemeral to keep the embed clean. To choose which info rows to show/hide inside the poll details, use the web app
 
 **Organization**
 
 - **`name`**: give the poll a memorable name so it's easy to find later.
 - **`channel`**: pick the channel or thread to post in.
 
-After you hit Enter, Subo shows a summary before anything goes live. Click **Edit** to fine-tune further: set multiple required roles, auto-post results to a channel when the poll closes, tweak the invitation, or [clone the poll](/blog/clone-surveys-across-servers/) for repeated use.
+After you hit Enter, Subo shows a summary before anything goes live. Click **Edit** to fine-tune further: set multiple required roles, auto-post results to a channel when the poll closes, tweak the invitation, tuck the poll details behind an ℹ️ button to keep the embed clean (the web app also lets you choose which info rows show), or [clone the poll](/blog/clone-surveys-across-servers/) for repeated use.
 
 ![Example of a community using Subo polls with no vote change allowed](/images/blog/poll-tuto/5-o00pt.png)
 

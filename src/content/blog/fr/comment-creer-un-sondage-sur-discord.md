@@ -2,6 +2,7 @@
 title: "Comment faire un sondage ou un vote sur Discord (sans bot ou avec Subo)"
 description: "Créer un sondage ou lancer un vote sur Discord : la méthode native sans bot en quelques clics, et la méthode complète avec un bot comme Subo (vote anonyme, rôles, notation, API)."
 pubDate: "Aug 25 2026"
+updatedDate: "Nov 06 2026"
 tags: ["tutoriel", "discord", "sondages", "vote", "how-to"]
 author: "Subo Team"
 locale: "fr"
@@ -104,7 +105,8 @@ Voilà pour un sondage de base. C'est ensuite que l'écart se creuse avec un son
 
 **Quiz et notation** (transformer un sondage en quiz noté)
 
-- **`scoring`** : active la notation.
+La notation s'active toute seule dès que tu renseignes `correct` ou `scores`.
+
 - **`correct`** : marque la ou les bonnes réponses, affichées avec un ✓ à la fermeture.
 - **`scores`** : attribue des points à chaque option, et affiche le total avec `[score]`.
 
@@ -116,18 +118,22 @@ Voilà pour un sondage de base. C'est ensuite que l'écart se creuse avec un son
 **Apparence et personnalisation**
 
 - **`chart_emoji`** : l'emoji utilisé pour dessiner le graphique des résultats.
-- **`image`** : ajoute une image au sondage.
-- **`thumbnail`** *(Premium)* : ajoute une vignette à l'embed d'invitation.
+- **`image`** : ajoute une image au sondage à partir d'un lien.
+- **`image_upload`** : envoie plutôt un fichier image depuis ton appareil. Discord ouvre son sélecteur de fichiers, et le glisser-déposer fonctionne.
+- **`thumbnail`** *(Premium)* : ajoute une vignette à l'embed d'invitation à partir d'un lien.
+- **`thumbnail_upload`** *(Premium)* : envoie plutôt le fichier de la vignette.
+
+Si tu donnes à la fois un lien et un fichier pour la même image, c'est le fichier qui est utilisé.
+
 - **`color_open`** / **`color_closed`** : la couleur de bordure de l'invitation pendant le vote, et *(Premium)* une couleur différente une fois fermé, pour qu'un sondage terminé se repère au premier coup d'œil.
 - **`call_to_action`** : le message d'invitation affiché au-dessus du sondage (mentionner un rôle, poser le contexte, donner envie de voter).
-- **`info_display`** : affiche les détails du sondage dans l'embed, ou range-les dans un message éphémère pour garder l'embed propre. Le choix des lignes d'infos à montrer ou masquer se fait dans l'app web.
 
 **Organisation**
 
 - **`name`** : donne un nom au sondage pour le retrouver facilement.
 - **`channel`** : choisis le salon ou le fil de publication.
 
-Après avoir validé, Subo affiche un récapitulatif avant que quoi que ce soit ne parte. Clique sur **Edit** pour aller plus loin : plusieurs rôles requis, publication automatique des résultats dans un salon à la fermeture, retouche de l'invitation, ou duplication du sondage pour le réutiliser.
+Après avoir validé, Subo affiche un récapitulatif avant que quoi que ce soit ne parte. Clique sur **Edit** pour aller plus loin : plusieurs rôles requis, publication automatique des résultats dans un salon à la fermeture, retouche de l'invitation, détails du sondage rangés derrière un bouton ℹ️ pour garder l'embed propre (l'app web permet aussi de choisir les lignes d'infos affichées), ou duplication du sondage pour le réutiliser.
 
 ![Exemple de communauté utilisant un sondage Subo sans changement de vote autorisé](/images/blog/poll-tuto/5-o00pt.png)
 
