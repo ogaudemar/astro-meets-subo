@@ -6,21 +6,31 @@ import { SITE_TITLE, SITE_DESCRIPTION, DISCORD_STORE_URL } from '../consts';
 
 import PriceTable from '../components/PriceTable.astro';
 import BusinessPlans from '../components/BusinessPlans.astro';
+import Credits from '../components/Credits.astro';
+import { fileCreditVars, fillVars } from '../data/credits';
 import translations from '../content/translations/en.json';
 
 import Footer from '../components/Footer.astro';
 
 const { pricingPage } = translations;
 
+// FAQ answers may quote credit rates as {placeholders}; the numbers come from
+// src/data/credits.ts so the FAQ, its JSON-LD and the Credits section agree.
+const creditVars = fileCreditVars('en');
+const faqs = (pricingPage.faqs ?? []).map((f) => ({
+  question: fillVars(f.question, creditVars),
+  answer: fillVars(f.answer, creditVars),
+}));
+
 // FAQPage schema (AEO) — marks up the on-page pricing FAQ so it's eligible for
 // rich results and citation by answer engines. Built from the same source data
 // the page renders, so markup and visible content never drift.
 const stripTags = (s) => s.replace(/<[^>]+>/g, '');
-const faqJsonLd = pricingPage.faqs?.length
+const faqJsonLd = faqs.length
   ? {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: pricingPage.faqs.map((f) => ({
+      mainEntity: faqs.map((f) => ({
         '@type': 'Question',
         name: stripTags(f.question),
         acceptedAnswer: { '@type': 'Answer', text: stripTags(f.answer) },
@@ -65,13 +75,19 @@ const faqJsonLd = pricingPage.faqs?.length
     </div>
   </section>
 
+  <Credits
+    credits={pricingPage.credits}
+    tierNames={translations.priceTable.tiers.map((t) => t.name)}
+    lang="en"
+  />
+
   <BusinessPlans business={pricingPage.business} />
 
   <section class="faq-section">
     <div class="container">
     <h2 class="faq-title">{pricingPage.faqSectionTitle}</h2>
     <ul class="faq-list">
-      {pricingPage.faqs.map(faq => (
+      {faqs.map(faq => (
         <li class="faq-item">
           <h3 class="faq-question">{faq.question}</h3>
           <p class="faq-answer">{faq.answer}</p>

@@ -1,0 +1,319 @@
+---
+// The Credits section on /pricing (#credits). The app's "See pricing" link (Script Editor,
+// File Upload Settings) lands here, so the anchor is a contract with the app: keep `credits`.
+//
+// Numbers: src/data/credits.ts (one place, every locale, with the reasoning for the pricing
+// model this is built to grow into). Copy: `pricingPage.credits` in the translations file.
+// A locale with no `credits` key renders nothing, same convention as BusinessPlans.
+import {
+	planAllowances, fileStorage, usageKinds, fileCreditVars, typicalCostVars, allowanceCoverage,
+	fillVars as fill,
+} from '../data/credits';
+
+const { credits, tierNames = [], lang = 'en' } = Astro.props;
+
+const nf = new Intl.NumberFormat(lang);
+
+const tierOrder = ['free', 'premium', 'vip', 'custom'];
+const allowances = planAllowances.map((a) => ({
+	name: tierNames[tierOrder.indexOf(a.tier)] ?? a.tier,
+	amount: fill(credits?.periods?.[a.period] ?? '{credits}', { credits: nf.format(a.credits) }),
+	// What the allowance covers if spent on one thing. Computed, so it follows the
+	// allowances and rates in credits.ts without a copy edit.
+	coverage: credits?.coverage ? fill(credits.coverage, allowanceCoverage(a.credits, lang)) : null,
+}));
+
+const fileVars = fileCreditVars(lang);
+const aiVars = typicalCostVars(lang);
+
+const kinds = usageKinds
+	.filter((k) => k.live && credits?.kinds?.[k.id])
+	.map((k) => {
+		const copy = credits.kinds[k.id];
+		const isFiles = k.id === 'files';
+		const vars = isFiles ? fileVars : k.id === 'ai' ? aiVars : {};
+		return {
+			id: k.id,
+			name: copy.name,
+			body: fill(copy.body, vars),
+			rate: copy.rate ? fill(copy.rate, vars) : null,
+			examplesLabel: copy.examplesLabel,
+			examples: isFiles
+				? fileStorage.examples.map((_, i) => ({
+						label: fill(copy.examples?.[i] ?? '{size}', { size: fileVars[`ex${i}size`] }),
+						cost: fill(copy.exampleCost, { credits: fileVars[`ex${i}`] }),
+					}))
+				: [],
+			notes: (copy.notes ?? []).map((n: string) => fill(n, vars)),
+		};
+	});
+---
+
+{credits && (
+<section class="credits" id="credits">
+	<div class="container">
+		<div class="credits__head">
+			<p class="credits__eyebrow">{credits.eyebrow}</p>
+			<h2 class="credits__title">{credits.title}</h2>
+			<p class="credits__intro" set:html={credits.intro}></p>
+		</div>
+
+		<div class="credits__allowances">
+			<h3 class="credits__subhead">{credits.allowanceTitle}</h3>
+			{credits.allowanceNote && <p class="credits__allowance-note">{credits.allowanceNote}</p>}
+			<ul class="credits__plans">
+				{allowances.map((a) => (
+					<li class="credits__plan">
+						<span class="credits__plan-name">{a.name}</span>
+						<span class="credits__plan-amount">{a.amount}</span>
+						{a.coverage && <span class="credits__plan-coverage">{a.coverage}</span>}
+					</li>
+				))}
+			</ul>
+		</div>
+
+		<h3 class="credits__subhead">{credits.usageTitle}</h3>
+		<div class="credits__kinds">
+			{kinds.map((k) => (
+				<div class={`credits-kind credits-kind--${k.id}`}>
+					<h4 class="credits-kind__name">{k.name}</h4>
+					<p class="credits-kind__body" set:html={k.body}></p>
+					{k.rate && <p class="credits-kind__rate">{k.rate}</p>}
+					{k.examples.length > 0 && (
+						<div class="credits-kind__examples">
+							{k.examplesLabel && <p class="credits-kind__examples-label">{k.examplesLabel}</p>}
+							<ul>
+								{k.examples.map((e) => (
+									<li><span>{e.label}</span><span class="credits-kind__cost">{e.cost}</span></li>
+								))}
+							</ul>
+						</div>
+					)}
+					{k.notes.length > 0 && (
+						<ul class="credits-kind__notes">
+							{k.notes.map((n: string) => <li set:html={n}></li>)}
+						</ul>
+					)}
+				</div>
+			))}
+		</div>
+
+		{credits.footnote && <p class="credits__footnote" set:html={credits.footnote}></p>}
+	</div>
+</section>
+)}
+
+<style>
+	.credits {
+		padding: 4.5rem 0 4rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		scroll-margin-top: 90px;
+	}
+	.credits__head {
+		max-width: 760px;
+		margin: 0 auto 2.5rem;
+		text-align: center;
+	}
+	.credits__eyebrow {
+		font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+		color: var(--accent);
+		margin: 0 0 0.9rem;
+	}
+	.credits__title {
+		font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+		letter-spacing: -0.01em;
+		font-size: 2rem;
+		font-weight: 700;
+		color: #fff;
+		margin: 0 0 1rem;
+		line-height: 1.2;
+	}
+	.credits__intro {
+		font-size: 1.05rem;
+		color: #e8e8ea;
+		line-height: 1.6;
+		margin: 0;
+	}
+	.credits__intro :global(a),
+	.credits__footnote :global(a),
+	.credits-kind__body :global(a),
+	.credits-kind__notes :global(a) {
+		color: var(--accent);
+	}
+
+	.credits__subhead {
+		font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--grey-light);
+		text-align: center;
+		margin: 0 0 1rem;
+	}
+
+	.credits__allowances {
+		margin-bottom: 2.75rem;
+	}
+	.credits__plans {
+		list-style: none;
+		margin: 0 auto;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 0.75rem;
+		max-width: 900px;
+	}
+	.credits__plan {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		padding: 1rem 1.1rem;
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 12px;
+		text-align: center;
+	}
+	.credits__plan-name {
+		font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		color: var(--accent);
+	}
+	.credits__plan-amount {
+		font-size: 0.95rem;
+		color: #fff;
+	}
+	.credits__plan-coverage {
+		font-size: 0.8rem;
+		color: var(--grey-light);
+		line-height: 1.45;
+		margin-top: 0.35rem;
+		padding-top: 0.55rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+	}
+	.credits__allowance-note {
+		max-width: 640px;
+		margin: -0.4rem auto 1.1rem;
+		text-align: center;
+		font-size: 0.88rem;
+		color: var(--grey-light);
+		line-height: 1.5;
+	}
+
+	.credits__kinds {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.25rem;
+		max-width: 1000px;
+		margin: 0 auto;
+		align-items: start;
+	}
+	.credits-kind {
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-top: 3px solid var(--primary);
+		border-radius: 16px;
+		padding: 1.5rem 1.5rem 1.25rem;
+	}
+	.credits-kind--files {
+		border-top-color: var(--accent);
+	}
+	.credits-kind__name {
+		font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+		font-size: 1.05rem;
+		font-weight: 700;
+		color: #fff;
+		margin: 0 0 0.6rem;
+	}
+	.credits-kind__body {
+		font-size: 0.92rem;
+		color: #e8e8ea;
+		line-height: 1.55;
+		margin: 0 0 0.9rem;
+	}
+	.credits-kind__rate {
+		font-size: 1.15rem;
+		font-weight: 700;
+		color: var(--accent);
+		margin: 0 0 0.9rem;
+	}
+	.credits-kind__examples-label {
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--grey-light);
+		margin: 0 0 0.4rem;
+	}
+	.credits-kind__examples ul,
+	.credits-kind__notes {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.credits-kind__examples li {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		font-size: 0.9rem;
+		color: #e8e8ea;
+		padding: 0.35rem 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	}
+	.credits-kind__cost {
+		color: #fff;
+		font-weight: 600;
+		white-space: nowrap;
+	}
+	.credits-kind__notes {
+		margin-top: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	.credits-kind__notes li {
+		font-size: 0.85rem;
+		color: var(--grey-light);
+		line-height: 1.5;
+		padding-left: 1rem;
+		position: relative;
+	}
+	.credits-kind__notes li::before {
+		content: "·";
+		position: absolute;
+		left: 0.2rem;
+		color: var(--accent);
+		font-weight: 700;
+	}
+
+	.credits__footnote {
+		max-width: 640px;
+		margin: 2rem auto 0;
+		text-align: center;
+		font-size: 0.88rem;
+		color: var(--grey-light);
+		line-height: 1.55;
+	}
+
+	@media (max-width: 768px) {
+		.credits {
+			padding: 3rem 0;
+		}
+		.credits__title {
+			font-size: 1.6rem;
+		}
+		.credits__plans {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media (max-width: 380px) {
+		.credits-kind {
+			padding: 1.25rem 1rem;
+		}
+	}
+</style>

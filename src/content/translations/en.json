@@ -373,8 +373,8 @@
     "inheritsLabel": "Everything in {tier}, plus:",
     "cardFeatures": [
         ["250 respondents / project", "Surveys, polls & quizzes", "XP system & skip logic"],
-        ["1,000 respondents / project", "More customization", "New-response notifications", "AI credits for drafts & summaries"],
-        ["10,000 respondents / project", "Advanced script building & logic", "Higher AI credit allowance"],
+        ["1,000 respondents / project", "More customization", "New-response notifications", "Credits for drafts, summaries & file uploads"],
+        ["10,000 respondents / project", "Advanced script building & logic", "Higher credit allowance"],
         ["Your own bot name, avatar & bio"]
     ],
     "tiers": [
@@ -517,7 +517,7 @@
         "✓"
         ],
         [
-        "AI credits<br><small>Credits are needed to generate survey drafts (in Discord with /draft, in the web app, or through the API) and to summarize open-ended responses</small>",
+        "Credits<br><small>Used for project drafts, open-text summaries and storing uploaded files. <a href=\"#credits\">How credits work</a></small>",
         "10k one-off trial",
         "✓<br>500k / mo",
         "✓<br>1 million / mo",
@@ -810,8 +810,49 @@
       "teamNote": "Subo is <a href=\"/about/\">built by experts</a> in research and communities, from recruitment and engagement to the respondent experience."
     }
   },
+  "credits": {
+    "eyebrow": "CREDITS",
+    "title": "How credits work",
+    "intro": "Credits are your community's balance for the work Subo does on your behalf beyond running your projects: drafting a project, summarizing open answers, and storing the files your members send. Every plan includes some, and each item below says what it costs.",
+    "allowanceTitle": "Credits included",
+    "allowanceNote": "Here is what each plan's credits cover if you spend them all on one thing. In practice you mix them.",
+    "coverage": "About {convoDrafts} Convo drafts, {summaries} summaries or {screenshots} screenshots",
+    "periods": {
+      "once": "{credits} once, to get started",
+      "monthly": "{credits} every month"
+    },
+    "usageTitle": "What uses credits",
+    "kinds": {
+      "ai": {
+        "name": "Drafts and summaries",
+        "body": "Let Subo draft it (<code>/draft</code> in Discord) writes a project from your request, and open-text summaries read your members' written answers for you. Like any AI tool, the cost follows the size of the job: a poll draft can take as little as {pollDraft} credits, a typical Convo draft around {convoDraft}, and a long or complex one more. A Deep draft costs more than a Quick one, and a summary of many answers more than a summary of a few."
+      },
+      "files": {
+        "name": "File uploads",
+        "body": "When members answer a File Upload block, storing their files uses your community's credits, charged once when each file is uploaded. That covers {months} months of storage.",
+        "rate": "{perMB} credits per MB, at least {min} per file",
+        "examplesLabel": "For example",
+        "examples": [
+          "A {size} photo",
+          "A {size} document",
+          "A {size} screenshot"
+        ],
+        "exampleCost": "about {credits} credits",
+        "notes": [
+          "A file a member removes before sending their answer is refunded. A file deleted later is not.",
+          "If your community runs out of credits, members can skip the upload, even on a required question, so nobody gets stuck halfway through.",
+          "Opening, exporting or downloading files costs nothing."
+        ]
+      }
+    },
+    "footnote": "Need more credits than your plan includes? <a href=\"/support/\">Ask us in the Support Server</a>."
+  },
   "faqSectionTitle": "Frequently Asked Questions",
   "faqs": [
+    {
+      "question": "How much does it cost to collect files?",
+      "answer": "File uploads work on every plan. Storing a file uses your community's credits: {perMB} credits per MB, at least {min} credits per file, charged once at upload for {months} months of storage. A {ex0size} photo costs about {ex0} credits, a {ex1size} document {ex1}. A file the member removes before sending is refunded."
+    },
     {
       "question": "What happens if I cancel my premium subscription?",
       "answer": "Once the end of your subscription period (month, year) comes, your bot will be switched back to the free version of Subo. You will still be able to use Subo, but with the limitations of the free tier.  If you have a project live, it may stop if you reach your maximum allowance for respondents or responses. If you have too many projects on your account, you may have to delete some before you are allowed to create new ones."
@@ -1006,7 +1047,7 @@
         "items": [
           "All Subo features, hosting and support",
           "All enhancements: when Subo gets better, so does your custom bot",
-          "Limits and AI credits at the VIP tier, the highest tier available"
+          "Limits and credits at the VIP tier, the highest tier available"
         ]
       },
       {
@@ -1370,7 +1411,7 @@
     },
     {
       "q": "Is a Discord form bot free?",
-      "a": "Subo has a free tier that covers 250 respondents per project and includes skip logic and the XP system. Paid tiers raise the respondent limit and add AI credits, more customization and new-response notifications."
+      "a": "Subo has a free tier that covers 250 respondents per project and includes skip logic and the XP system. Paid tiers raise the respondent limit and add credits, more customization and new-response notifications."
     },
     {
       "q": "Can a Discord form be anonymous?",
