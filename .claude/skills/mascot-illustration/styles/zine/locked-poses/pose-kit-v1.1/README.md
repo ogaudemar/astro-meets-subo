@@ -31,6 +31,10 @@ This kit contains the approved locked character poses for the first production-r
   starting inside the torso. As stroked lines, their square-cut ends had no ink on the end
   face, and the right jumping boot is narrower than the leg, so a bare lime cut showed below
   the torso and beside the boot. P02 and P04 are unchanged.
+- **Head and torso: pink outline only** (operator, 2026-11-12). The head master had a 15px
+  black stroke around its pink, and the torso a 21px black stroke under a 13px pink one. Both
+  black strokes are gone and the torso's pink is 37px, the logo's border at the head's scale.
+  Limbs, hands and boots keep their thin black outline. Applies to all three poses.
 - **Shared files are not duplicated:** `system.md`, `references/` and `examples/` live two
   levels up in `styles/zine/`, and the build script reads the logo from there.
 - **Windows:** CairoSVG needs the Cairo library, which Windows lacks. `windows-render/cairosvg.py`

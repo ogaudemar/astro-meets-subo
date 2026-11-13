@@ -143,8 +143,9 @@ def torso():
     d='M418,700 L600,700 L606,930 L410,930 Z'
     return (f'<g id="torso" data-shoulder-left="{coord(LEFT_SHOULDER)}" '
             f'data-shoulder-right="{coord(RIGHT_SHOULDER)}">'
-            f'<path d="{d}" fill="{LIME}" stroke="{INK}" stroke-width="21" stroke-linejoin="bevel"/>'
-            f'<path d="{d}" fill="none" stroke="{PINK}" stroke-width="13" stroke-linejoin="bevel"/>'
+            # Pink outline only, as on the 2D logo: no black ink around the torso (operator,
+            # 2026-11-12). 37px = the logo's 55px pink border at the head's 0.68 scale.
+            f'<path d="{d}" fill="{LIME}" stroke="{PINK}" stroke-width="37" stroke-linejoin="miter"/>'
             '</g>')
 
 

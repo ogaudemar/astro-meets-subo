@@ -69,6 +69,10 @@ pose as it is.
   body architecture may not.
 - **Contour:** bold neon-pink/magenta boundary on the mascot, like a highlighter drawn over a
   black-ink photocopy. Keep its placement and thickness recognizable.
+  - **Head and torso: pink outline only, at the 2D logo's width,** with no black line around
+    it (operator, 2026-11-12). In the pose kit that is the logo's 55px border at the head's
+    0.68 scale: 37px.
+  - **Arms, hands, legs and boots: a thin black outline** and no pink, as in the 3D reference.
 - **No invented additions:** no chest badge, initials, clothes, unnecessary face changes, or
   extra antennae unless explicitly approved for a specific scene.
 - **Expressions** come from body language, tilt, action and nearby monochrome symbols, not
@@ -280,7 +284,7 @@ The copy/paste prompt for a fresh conversation lives in
 ## 9. Acceptance and versioning
 
 **Hard-fail conditions, reject the illustration:** incorrect eyes or mouth; altered head,
-ears or bars; purple outside the left head bar; any colored prop or decoration; a new chest
+ears or bars; a black outline around the head or torso; purple outside the left head bar; any colored prop or decoration; a new chest
 logo; text not explicitly authorized.
 
 **Quality check (pass before publishing):**
@@ -321,6 +325,10 @@ kit v1.1. Next: the first scene plates (the November posts), then props worth re
   as authority #2 (§0), the scene-plate workflow where the generator never draws Subo and
   new poses are built in the vector kit (§7), the pose approval list (§9). Reason: a locked
   character cannot be kept consistent by redrawing it in every scene.
+- 2026-11-12 · v1.1 · Head and torso lose the black outline ChatGPT's kit had added around
+  their pink; the torso's pink is widened to the logo's width (37px in the kit). Black stays
+  on the limbs only. Reason: the 2D logo has no black outline (operator). Affects all three
+  poses and the head master.
 
 - 2026-11-12 · v1.0 · The two character references added to `references/` (operator).
 - 2026-11-12 · v1.0 · Converted from the ChatGPT .docx to Markdown, made the source of truth
