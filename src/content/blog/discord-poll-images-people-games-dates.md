@@ -3,6 +3,7 @@ title: Upload Images and Vote on People, Games and Dates in Discord
 description: Add your own images to polls, surveys and invitations straight from your device or from Discord, and type @ to put members, roles, games and dates in a poll, shown in each member's own time zone.
 pubDate: Nov 12 2026
 author: Subo Team
+heroImage: /images/blog/images-vote/images-vote-hero.webp
 tags:
   - announcement
   - features

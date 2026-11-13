@@ -3,6 +3,7 @@ title: "Optional Questions: Let Members Skip in Discord Surveys"
 description: "Any question in a Convo can now be optional. Members get a Skip button on the web and in Discord, and your results count skips separately so they never dilute a chart."
 pubDate: Nov 11 2026
 author: Subo Team
+heroImage: /images/blog/optional-questions/optional-questions-hero.webp
 tags:
   - announcement
   - features
