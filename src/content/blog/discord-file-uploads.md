@@ -1,8 +1,9 @@
 ---
 title: "File Uploads in Discord: Collect Screenshots, Clips and PDFs"
 description: "A new File Upload block lets members send screenshots, clips, documents and logs as their answer, attached in Discord or dropped in on the web. Files are stored privately and arrive with the rest of the answers."
-pubDate: Nov 11 2026
+pubDate: Nov 13 2026
 author: Subo Team
+heroImage: /images/blog/file-uploads/file-uploads-hero.webp
 tags:
   - announcement
   - features
@@ -20,14 +21,14 @@ faq:
     a: "File uploads work on every plan, Free included. Storing a file uses your community's credits: 200 credits per MB, at least 10 per file, charged once at upload for 12 months of storage. A 5 MB photo costs about 1,000 credits."
   - q: What happens if a member sends the wrong kind of file?
     a: "It is refused with a one-sentence reason, such as the file being too large or not an accepted kind. Programs and scripts are always refused, and Subo checks what a file actually contains, not only its name, so a program renamed photo.jpg is refused too. In Discord, good files in the same reply are kept."
-draft: true
+draft: false
 ---
 
 Some answers are not words. The bug report needs the screenshot, the fan-art contest needs the art, the staff application needs the résumé, the giveaway claim needs the proof of purchase. Until now those arrived somewhere else: a busy channel, someone's DMs, a shared folder, and then a long evening matching files to names.
 
 A Convo can now ask for the file itself. The new **File Upload** block lets members send screenshots, clips, PDFs and logs as their answer, in Discord or on the web, and they land with the rest of that member's answers, stored privately.
 
-<!-- SCREENSHOT 2: A web Convo answering the block: two files uploading, one with its progress bar. -->
+![A bug report Convo on the web at phone width: after the category and the description, the File Upload question shows its Choose files button, "Up to 3 files, 20 MB each", one screenshot already uploaded and a second one still uploading with its progress bar](/images/blog/file-uploads/file-uploads-web-convo.png)
 
 ---
 
@@ -39,7 +40,7 @@ A Convo can now ask for the file itself. The new **File Upload** block lets memb
 
 When a file is refused, the member is told why in one sentence: the file is too large, it is not a kind this question accepts, or it does not match its name. In Discord the bot answers with a receipt, ✅ for each file kept and ❌ with the reason for each one refused. A good file is never thrown away because another one in the same reply was refused.
 
-<!-- SCREENSHOT 3: A Discord thread: a reply with two attachments and the bot's ✅ / ❌ receipt. -->
+![In Discord, the bot asks for a screenshot or a log with its hint and a Skip button; the member replies with a screenshot and an MP3; the bot's receipt keeps the screenshot with a green check and refuses the MP3 with a red cross: "This kind of file isn't accepted here."](/images/blog/file-uploads/file-uploads-discord-receipt.png)
 
 ## Setting it up
 
@@ -72,19 +73,20 @@ In Discord, Subo takes files up to 20 MB, which is about what Discord lets most 
 
 Like any answer, a File Upload block works with [skip logic](/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo/) and piping, which see the number of files sent. A bug report can ask "Anything else we should know?" only when no screenshot came in.
 
-<!-- SCREENSHOT 1: The File Upload Settings panel in the Script Editor (kinds of file, Min/Max files, the cost line). -->
+![The File Upload Settings panel: Images and Documents ticked among the five kinds of file, Min files 0, Max files 3, the default 20 MB size with "Your plan allows up to 100 MB per file", the link to Discord's limits, and "Uploads use credits. See pricing"](/images/blog/file-uploads/file-uploads-settings.png)
 
 ## Reading the answers
 
 - **Responses tab:** each file answer shows up to three thumbnails and "+N" for the rest. The response's details panel shows every file as a tile with its name and size. Images, audio and video open in the browser; other files download. Search matches file names.
-- **Results tab:** a card per File Upload block with the totals (for example "12 file(s) from 9 response(s), 48 MB in all"), a count per kind of file, and a gallery of the newest files.
+- **Analysis tab:** a card per File Upload block with the totals (for example "12 file(s) from 9 response(s), 48 MB in all"), a count per kind of file, and a gallery of the newest files.
 - **Exports:** the CSV, the Google Sheets export and the Full Report spreadsheet carry one link per file. The links never expire, and they only open for someone signed in to Subo as an admin of your community or the project's creator. A spreadsheet forwarded too widely does not share the files with it.
 - **Discord `/results`** and the Full Report's summary count the files per kind.
 
 AI summaries skip File Upload blocks: they read written answers only.
 
-<!-- SCREENSHOT 4: The Responses tab with thumbnails in the cells and the details panel's file tiles. -->
-<!-- SCREENSHOT 5: The Results tab's file card with its gallery. -->
+![The Responses tab of a bug report project: thumbnails of the uploaded files in each row, "Skipped" for one response, and the details panel open with three file tiles: two screenshots and a crash log, each with its name and size](/images/blog/file-uploads/file-uploads-responses.png)
+
+![The File Upload card in the Analysis tab: "8 file(s) from 4 response(s), 734 KB in all · Skipped: 1", a count per kind (Images 6, Documents 2) and a gallery of the newest files](/images/blog/file-uploads/file-uploads-results.png)
 
 ## Private by design
 

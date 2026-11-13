@@ -1,7 +1,7 @@
 ---
 title: "Optional Questions: Let Members Skip in Discord Surveys"
 description: "Any question in a Convo can now be optional. Members get a Skip button on the web and in Discord, and your results count skips separately so they never dilute a chart."
-pubDate: Nov 11 2026
+pubDate: Nov 13 2026
 author: Subo Team
 heroImage: /images/blog/optional-questions/optional-questions-hero.webp
 tags:
@@ -18,14 +18,14 @@ faq:
     a: "No. Results show \"Skipped: N\" next to the response count, and percentages are worked out over the people who answered, so skips never dilute a chart. In exports a skipped answer is an empty cell."
   - q: Can members skip a poll?
     a: "Polls are not affected: not voting is how you skip a poll. The Required switch is for questions in a Convo."
-draft: true
+draft: false
 ---
 
 A Convo has no Next button. Each question waits for an answer before the next one arrives, so until now every question was effectively mandatory. A member who had nothing to say about the event they missed, or no file to attach, had two choices: make something up or stop answering.
 
 Now any question can be optional. An optional question shows a **Skip** button, on the web and in Discord, and a skipped question is saved with no answer.
 
-<!-- SCREENSHOT 1: Script Editor, a block's settings with the Required switch turned off and its help text, and the block card showing "· Optional". -->
+![An open-text block in the Script Editor, "Anything we should change next time?", labeled "Open text · Optional", with its Required switch turned off and the help text "Respondents see a Skip button. A skipped question is saved with no answer."](/images/blog/optional-questions/optional-required-switch.png)
 
 ---
 
@@ -42,8 +42,9 @@ Turn it off and the help text reads "Respondents see a Skip button. A skipped qu
 - **On the web**, an optional question shows a **Skip** button under it. Skipping posts a "Skipped" bubble, so the conversation still reads naturally.
 - **In Discord**, the Skip button sits in the button row of a choice or scale question, or on the message of a question answered by a reply. Answering instead greys the button out. It works in threads, DMs and journey threads.
 
-<!-- SCREENSHOT 2: A web Convo with an optional question: the Skip button under it, and a "Skipped" bubble from an earlier question. -->
-<!-- SCREENSHOT 3: The same optional question in Discord, with Skip in the button row. -->
+![A tournament feedback Convo on the web at phone width: a rating answered, the next question answered with a "Skipped" bubble, and the day question showing Friday, Saturday and Sunday with a Skip button](/images/blog/optional-questions/optional-web-skip.png)
+
+![The same Convo in a Discord DM: the open-text question skipped with its Skip button, and the day question with Friday, Saturday, Sunday and Skip in one button row](/images/blog/optional-questions/optional-discord-skip.png)
 
 A multi-select or a ranking with a minimum can be skipped as a whole. If the member does answer, the minimum still applies.
 
@@ -51,13 +52,13 @@ A multi-select or a ranking with a minimum can be skipped as a whole. If the mem
 
 A skipped question is counted, but never as an answer:
 
-- **Results tab:** each card says "Skipped: N" next to the response count, and percentages are worked out over the people who answered. Ten skips on a rating question do not drag its average down or shrink every bar.
+- **Analysis tab:** each card says "Skipped: N" next to the response count, and percentages are worked out over the people who answered. Ten skips on a rating question do not drag its average down or shrink every bar.
 - **Responses tab:** the cell and the response's details say "Skipped".
 - **Full Report and Discord `/results`:** a "Skipped: N" line under the question.
 - **CSV and spreadsheet exports:** an empty cell.
 - **AI summaries** ignore skipped answers.
 
-<!-- SCREENSHOT 4: A Results tab card showing "Skipped: N" next to the response count. -->
+![The Analysis tab card for "Which day suits you for the next one?": "4 responses · Skipped: 2", with bars for Friday, Saturday and Sunday counted over the four who answered](/images/blog/optional-questions/optional-results-skipped.png)
 
 In [skip logic](/blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo/), a skipped question counts as "not answered", and it pipes as nothing. So "if they skipped the feedback question, thank them anyway" is one condition.
 
