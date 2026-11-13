@@ -40,12 +40,22 @@ PLATE FOR: blog post "File Uploads in Discord: Collect Screenshots, Clips and PD
 SCENE: Subo hauls on a rope to lift a heavy crate of files up into the conversation.
 SUBO (added later, do not draw): bottom left, leaning back and pulling, feet on a ground line at 95% down. He grips the rope at 21% across, 74% down and at 26% across, 66% down.
 RESERVED ZONE: 4-30% across, 27-97% down, empty paper only, except the rope passing through the grip points.
-ROPE: one thick black-ink rope in a straight line from 18% across, 79% down, through both grip points, rising to a pulley at 45% across, 35% down. Over the pulley it drops straight down on the pulley's right side to the crate. Keep it taut and straight.
-MAIN PROP: a pulley wheel (black ink, with its hook) hanging from the underside of a large R02 speech bubble that spans 42-94% across and 4-30% down, with a small padlock drawn inside the bubble. A wooden-look crate, black ink, hanging from the rope at 48-70% across, 44-72% down, packed so the tops of three file cards stick out: an image card (mountain-and-sun), a document card with a folded corner and plain lines, a video card with a play triangle.
+ROPE: one thick black-ink rope in a straight line from 18% across, 79% down, through both grip points, rising to a pulley at 45% across, 35% down. Below the lower grip it continues down to the ground and touches it. Over the pulley it drops straight down on the pulley's right side to the crate. Keep it taut and straight.
+MAIN PROP: a pulley wheel (black ink, with its hook) hanging from the underside of a large R02 speech bubble that spans 42-94% across and 4-30% down, with a black-ink paperclip (the attachment icon) drawn inside the bubble. A wooden-look crate, black ink, hanging from the rope at 48-70% across, 44-72% down, packed so the tops of three file cards stick out: an image card (mountain-and-sun), a document card with a folded corner and plain lines, a video card with a play triangle.
 SUPPORT SYMBOLS: 1) two small ink sweat drops just right of Subo's head, at about 30% across, 26-32% down; 2) two or three short upward motion strokes beside the crate, at about 73% across, 50-65% down.
 TEXTURE: one light halftone patch on the ground under the crate's shadow; nothing else.
 NO TEXT: no file names, no extensions, no lines that look like words, nothing written on the crate.
 ```
+
+**Result (2026-11-13): composited, awaiting approval.** Plate good on the first try. Two
+edits made in the repo rather than regenerating: the padlock in the bubble became a paperclip
+(a padlock said "private"; the post is about attachments), and the rope was extended down to
+the floor by repeating its own texture along its line, so it reads as a rope Subo is hauling
+rather than one ending in his hands. ChatGPT's rope was about 47 degrees against P13's grip
+line of about 40: centering the grips on the rope left each hand about 7px off it, inside its
+block, which is fine. The plate filled its full height, so it was widened to 2:1 with matching
+paper instead of cropped. The brief above now asks for the paperclip and a rope that reaches
+the ground.
 
 ## 3. Optional Questions
 
