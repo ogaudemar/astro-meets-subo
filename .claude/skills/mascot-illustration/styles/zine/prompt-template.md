@@ -1,9 +1,19 @@
 # Zine prompt template
 
-For a fresh image-tool conversation (ChatGPT has been the tool so far). Attach first:
+For a fresh image-tool conversation (ChatGPT has been the tool so far).
 
-1. `logo_2d_authoritative.png` (the official 2D logo)
-2. `mascot_3d_body_reference.png` (the 3D mascot, for body shape only)
+**Recommended setup:** a ChatGPT Project (or Custom GPT) named "Subo Zine". Upload as
+project files: [system.md](system.md), the two references and the two anchors listed below.
+Paste the prompt block below, up to the `SCENE:` line, as the project instructions, plus:
+"The attached system.md is the full specification; follow it, including its §9 hard-fail
+checks." Each new image is then a new chat in that project with only the slot lines filled
+in. **After any edit to system.md here, re-upload it to the project:** this repo is the
+master, the project holds a copy.
+
+Without a project, attach these first:
+
+1. [references/logo_2d_authoritative.png](references/logo_2d_authoritative.png) (the official 2D logo)
+2. [references/mascot_3d_body_reference.png](references/mascot_3d_body_reference.png) (the 3D mascot, for body shape only)
 3. One or two approved Zine examples: start with [examples/anchor-toolkit.png](examples/anchor-toolkit.png)
    and [examples/anchor-welcome.png](examples/anchor-welcome.png)
 

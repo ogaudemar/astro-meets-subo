@@ -196,8 +196,9 @@ black, gray and off-white only, supplied on a separate layer.
 
 ## 7. Workflow: consistent across new chats and tools
 
-1. **Start from the kit:** attach `logo_2d_authoritative.png`, `mascot_3d_body_reference.png`
-   and 1-2 approved zine examples. Include this spec or the condensed prompt in
+1. **Start from the kit:** attach [references/logo_2d_authoritative.png](references/logo_2d_authoritative.png),
+   [references/mascot_3d_body_reference.png](references/mascot_3d_body_reference.png)
+   and 1-2 approved zine examples from [examples/](examples/). Include this spec or the condensed prompt in
    [prompt-template.md](prompt-template.md).
 2. **Brief the scene:** choose the use case, a one-sentence message, density, pose ID, prop ID,
    layout ID and output crop. Say whether any text is intentionally permitted.
@@ -249,6 +250,7 @@ anchor scenes as layered compositions. This is the smallest reliable production-
 
 ## Changelog
 
+- 2026-11-12 · v1.0 · The two character references added to `references/` (operator).
 - 2026-11-12 · v1.0 · Converted from the ChatGPT .docx to Markdown, made the source of truth
   (operator). Added: §6 site specifics for blog heroes; proposed props R13 and R14 for the
   November posts. No rule changed.
