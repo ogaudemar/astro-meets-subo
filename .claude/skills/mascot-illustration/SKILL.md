@@ -1,113 +1,51 @@
 ---
 name: mascot-illustration
-description: Art-direct and brief feature illustrations starring Subo, the Survey Bot mascot, for the Subo marketing site (blog hero images, feature announcements, social visuals). Use when asked to create, brief, or refine an image/illustration/hero/visual that features the mascot, or to write an image-generation prompt in Subo's house style. Encodes the character canon, art direction, visual metaphors, prompt skeleton, and review checklist so every image stays on-brand.
+description: Art-direct and brief illustrations starring Subo, the Survey Bot mascot, for the Subo marketing site and social channels (blog heroes, feature announcements, social visuals, UI art). Use when asked to create, brief, or refine an image/illustration/hero/visual that features the mascot, or to write an image-generation prompt for one. Holds several named illustration styles (Zine, the current default; Studio, the 3D style), each with its own character rules, prompt template, review checklist and examples.
 ---
 
 # Subo Mascot Illustration
 
-The reusable visual language for illustrating Subo product features. This is a
-**style bible, not a prompt archive.** Individual prompts age out; the language
-below is what keeps every image recognizably Subo.
+Subo is illustrated in **named styles**. Each style is a complete system in its own folder:
+art direction, prompt template, review checklist and the briefs shipped with it. This file
+says which one to use and holds the few rules every style shares.
 
-## The one principle that unifies everything
+## Which style
 
-> **Subo never "does work." Subo makes work easier for someone else.**
+| Style | Look | Folder | Status |
+|---|---|---|---|
+| **Zine** | Photocopied black-and-white zine; only Subo is colored, like neon highlighter | [styles/zine/](styles/zine/) | **Default since 2026-11-12** |
+| **Studio** | Polished 3D animated-film look; Subo as the cheerful host, a Discord "blob" reacting | [styles/studio/](styles/studio/) | Available |
 
-Across every illustration Subo is a cheerful **host**: curator, engineer,
-game-show MC, artist, librarian, factory operator, spaceship captain. He
-presents, demonstrates, builds, automates, and hands things over. The **user**,
-usually a Discord "blob," has the **"aha!"** moment. That constant dynamic (Subo
-enables, the blob discovers) is the through-line that makes very different scenes
-feel like one brand.
+- **Use the default** unless the user names a style.
+- **Match the series.** An image that belongs to a set already drawn in one style stays in
+  it. The alternative-series hero base (`public/images/blog/alternative-series/`) is Studio.
+- **Never mix styles in one image**, and don't borrow one style's rules into the other
+  (Studio's lighting, Zine's monochrome rule).
+- **Changing the default** is an operator decision: edit the table above with the date. A
+  new style gets its own folder under `styles/` with at least a system file, a prompt
+  template and an `examples/` folder, and a row here.
 
-Subo is a host, never a spectator. The blob is always reacting: wonder,
-excitement, a learning moment.
+Start with the style's entry file: [styles/zine/system.md](styles/zine/system.md) or
+[styles/studio/README.md](styles/studio/README.md).
 
-## How to brief a new illustration (the 5-step loop)
+## Rules every style shares
 
-1. **Pick the metaphor.** One product idea maps to one visual metaphor. See
-   [recurring-metaphors.md](recurring-metaphors.md). Use exactly **one** metaphor
-   per image.
-2. **Lock the canon.** Subo's design never drifts. Read
-   [subo-character-sheet.md](subo-character-sheet.md) before writing anything.
-3. **Fill the prompt skeleton.** Use [prompt-template.md](prompt-template.md);
-   apply the art direction in [style-guide.md](style-guide.md).
-4. **Run the review checklist below** before shipping.
+- **The official 2D logo is the authority on Subo's character:** head silhouette, ears, the
+  three top bars (purple, gray, cyan), the square-in-square left eye and checkmark right eye,
+  the magenta contour. A style changes the world around Subo and how Subo is rendered, never
+  that geometry. Each style's own character section adds detail, never contradicts this.
+- **One idea per image**, readable at thumbnail size.
+- **No baked-in text in heroes.** Headings, captions and alt text live in the page, where
+  they can be translated.
+- **The heart is green 💚, never red,** if a heart appears at all (`subo-glossary`).
+- **Blog hero format:** 2:1, 1200×600 WebP in `public/images/blog/<slug>/`. The same file
+  is the Discord and X preview card at about 1.91:1, so keep everything important inside a
+  centered 1.91:1 area.
+- **Never depict a competitor's logo, mascot or interface** (`blog-writing`,
+  alternative-series template).
 
-## Files in this skill
+## Recording a result
 
-| File | What it holds |
-|------|---------------|
-| [subo-character-sheet.md](subo-character-sheet.md) | The immutable character canon + acting rules |
-| [style-guide.md](style-guide.md) | Art direction: lighting, rendering, materials, composition, camera, UI language |
-| [recurring-metaphors.md](recurring-metaphors.md) | Product idea to metaphor map + per-environment language |
-| [prompt-template.md](prompt-template.md) | The fill-in prompt skeleton |
-| [photopea-workflow.md](photopea-workflow.md) | Post-generation editing + export for the blog |
-| [gotchas.md](gotchas.md) | Known failure modes and their fixes |
-| [examples/](examples/) | Full briefs for every illustration shipped so far |
-
-## Fixed defaults (unless a task overrides them)
-
-- **Aspect ratio: 2:1**, fixed.
-- **Render:** Pixar / WALL-E / modern high-end 3D animation. Never photoreal,
-  painterly, anime, or flat.
-- **Keep it uncluttered:** one clear focal action, 2 to 3 readable background
-  elements, generous breathing room.
-
-## Alternative-series heroes (a template mode, not a bespoke illustration)
-
-**When to use:** hero images for *"[competitor] alternative"* blog posts
-(`/blog/<competitor>-alternative`, e.g. EasyPoll, Simple Poll). These do **not** get
-a bespoke per-article render. There is one **reusable base image**, produced once, and
-the article's headline is overlaid on it as live text:
-`public/images/blog/alternative-series/alt-hero-base.webp`. Reuse it; only re-brief if
-the shared look itself needs to change.
-
-**How it differs from the standard illustration:**
-
-- **Persona exception.** Subo is an **investigative journalist / researcher of truth**,
-  not the cheerful host: serious and thoughtful, with his **resting straight-line mouth**
-  (no grin). He is still *active* (investigating, weighing
-  the evidence) and still hands the honest finding to the blob, so the "Subo enables,
-  the blob discovers" principle holds. This is the **one sanctioned exception** to the
-  cheerful-host default.
-- **Reserved text zone.** The **left third is deliberately kept as calm, dark,
-  low-detail negative space.** The post's `heroHeadline` (e.g. "EasyPoll alternative")
-  is rendered there as **live HTML text** by `BlogPost.astro`, never baked into the art.
-  Keep that zone empty of detail so overlaid light text stays legible.
-- **Never depict the competitor.** No competitor logo, mascot, or UI, ever. At most a
-  single generic, unbranded "basic" object to imply "more than the basic version." The
-  feature board uses **icons, not words** (language-neutral, and it doesn't fight the
-  text overlay or future localization).
-
-**When NOT to use:** every standard feature, announcement, or use-case illustration.
-Those keep the cheerful-host canon and a single bespoke metaphor (see
-[recurring-metaphors.md](recurring-metaphors.md)). The prose-side conventions for these
-posts live in the `blog-writing` skill's alternative-series template.
-
-## Review checklist (run before shipping)
-
-**Character**
-- [ ] Head, bar-charts, and eyes match the canon
-- [ ] Expression fits the scene (not a reflex grin or wink)
-- [ ] Any 2D logo in the scene: straight mouth + checkmark wink, strictly
-- [ ] Hands complete, no merged limbs, mouth present
-- [ ] Every tiny background character inspected (miniatures break first)
-
-**Composition**
-- [ ] 2:1 ratio
-- [ ] Subo dominant, supporting character second, feature third
-- [ ] Background secondary and slightly blurred, empty breathing room
-
-**Readability**
-- [ ] Only the text we requested (no invented names or paragraphs)
-- [ ] Signs large, simple, readable; cartoony type
-
-**Color**
-- [ ] Correct Subo body color + pink outlines
-- [ ] Category hue used correctly; purple only where intended
-
-**Story**
-- [ ] The joke reads in one glance
-- [ ] The product feature is obvious
-- [ ] Exactly one visual metaphor
+When an image is approved or rejected, add the outcome to the brief in that style's
+`examples/` folder: what worked, what drifted, what the fix was. That record is how each
+style sharpens.

@@ -52,4 +52,4 @@ NEGATIVE
   question) into the relevant field. Keep it sparse; text is a prop, not decoration.
 - Image size and format may be edited in Photopea afterward
   ([photopea-workflow.md](photopea-workflow.md)); Photopea is for crop/export, not text.
-- Run the review checklist in [SKILL.md](SKILL.md) before shipping.
+- Run the review checklist in [README.md](README.md) before shipping.

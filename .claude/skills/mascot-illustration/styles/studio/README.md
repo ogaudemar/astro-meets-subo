@@ -1,0 +1,115 @@
+# Studio style
+
+The polished 3D animated-film look: lit sets, glossy materials, Subo as the cheerful
+host and a Discord "blob" having the "aha!" moment. The style of the blog heroes briefed
+in [examples/](examples/) and of the alternative-series base image.
+
+**Status:** available, not the default since 2026-11-12 (see `../../SKILL.md`). Use it
+when asked for, or to match an image series already drawn in it.
+
+The reusable visual language for illustrating Subo product features. This is a
+**style bible, not a prompt archive.** Individual prompts age out; the language
+below is what keeps every image recognizably Subo.
+
+## The one principle that unifies everything
+
+> **Subo never "does work." Subo makes work easier for someone else.**
+
+Across every illustration Subo is a cheerful **host**: curator, engineer,
+game-show MC, artist, librarian, factory operator, spaceship captain. He
+presents, demonstrates, builds, automates, and hands things over. The **user**,
+usually a Discord "blob," has the **"aha!"** moment. That constant dynamic (Subo
+enables, the blob discovers) is the through-line that makes very different scenes
+feel like one brand.
+
+Subo is a host, never a spectator. The blob is always reacting: wonder,
+excitement, a learning moment.
+
+## How to brief a new illustration (the 5-step loop)
+
+1. **Pick the metaphor.** One product idea maps to one visual metaphor. See
+   [recurring-metaphors.md](recurring-metaphors.md). Use exactly **one** metaphor
+   per image.
+2. **Lock the canon.** Subo's design never drifts. Read
+   [subo-character-sheet.md](subo-character-sheet.md) before writing anything.
+3. **Fill the prompt skeleton.** Use [prompt-template.md](prompt-template.md);
+   apply the art direction in [style-guide.md](style-guide.md).
+4. **Run the review checklist below** before shipping.
+
+## Files in this skill
+
+| File | What it holds |
+|------|---------------|
+| [subo-character-sheet.md](subo-character-sheet.md) | The immutable character canon + acting rules |
+| [style-guide.md](style-guide.md) | Art direction: lighting, rendering, materials, composition, camera, UI language |
+| [recurring-metaphors.md](recurring-metaphors.md) | Product idea to metaphor map + per-environment language |
+| [prompt-template.md](prompt-template.md) | The fill-in prompt skeleton |
+| [photopea-workflow.md](photopea-workflow.md) | Post-generation editing + export for the blog |
+| [gotchas.md](gotchas.md) | Known failure modes and their fixes |
+| [examples/](examples/) | Full briefs for every illustration shipped so far |
+
+## Fixed defaults (unless a task overrides them)
+
+- **Aspect ratio: 2:1**, fixed.
+- **Render:** Pixar / WALL-E / modern high-end 3D animation. Never photoreal,
+  painterly, anime, or flat.
+- **Keep it uncluttered:** one clear focal action, 2 to 3 readable background
+  elements, generous breathing room.
+
+## Alternative-series heroes (a template mode, not a bespoke illustration)
+
+**When to use:** hero images for *"[competitor] alternative"* blog posts
+(`/blog/<competitor>-alternative`, e.g. EasyPoll, Simple Poll). These do **not** get
+a bespoke per-article render. There is one **reusable base image**, produced once, and
+the article's headline is overlaid on it as live text:
+`public/images/blog/alternative-series/alt-hero-base.webp`. Reuse it; only re-brief if
+the shared look itself needs to change.
+
+**How it differs from the standard illustration:**
+
+- **Persona exception.** Subo is an **investigative journalist / researcher of truth**,
+  not the cheerful host: serious and thoughtful, with his **resting straight-line mouth**
+  (no grin). He is still *active* (investigating, weighing
+  the evidence) and still hands the honest finding to the blob, so the "Subo enables,
+  the blob discovers" principle holds. This is the **one sanctioned exception** to the
+  cheerful-host default.
+- **Reserved text zone.** The **left third is deliberately kept as calm, dark,
+  low-detail negative space.** The post's `heroHeadline` (e.g. "EasyPoll alternative")
+  is rendered there as **live HTML text** by `BlogPost.astro`, never baked into the art.
+  Keep that zone empty of detail so overlaid light text stays legible.
+- **Never depict the competitor.** No competitor logo, mascot, or UI, ever. At most a
+  single generic, unbranded "basic" object to imply "more than the basic version." The
+  feature board uses **icons, not words** (language-neutral, and it doesn't fight the
+  text overlay or future localization).
+
+**When NOT to use:** every standard feature, announcement, or use-case illustration.
+Those keep the cheerful-host canon and a single bespoke metaphor (see
+[recurring-metaphors.md](recurring-metaphors.md)). The prose-side conventions for these
+posts live in the `blog-writing` skill's alternative-series template.
+
+## Review checklist (run before shipping)
+
+**Character**
+- [ ] Head, bar-charts, and eyes match the canon
+- [ ] Expression fits the scene (not a reflex grin or wink)
+- [ ] Any 2D logo in the scene: straight mouth + checkmark wink, strictly
+- [ ] Hands complete, no merged limbs, mouth present
+- [ ] Every tiny background character inspected (miniatures break first)
+
+**Composition**
+- [ ] 2:1 ratio
+- [ ] Subo dominant, supporting character second, feature third
+- [ ] Background secondary and slightly blurred, empty breathing room
+
+**Readability**
+- [ ] Only the text we requested (no invented names or paragraphs)
+- [ ] Signs large, simple, readable; cartoony type
+
+**Color**
+- [ ] Correct Subo body color + pink outlines
+- [ ] Category hue used correctly; purple only where intended
+
+**Story**
+- [ ] The joke reads in one glance
+- [ ] The product feature is obvious
+- [ ] Exactly one visual metaphor

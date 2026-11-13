@@ -106,7 +106,7 @@ heroHeadline: "EasyPoll alternative"                              # rendered as 
 `heroHeadline` is a real field on the blog collection; `BlogPost.astro` overlays it
 on the reserved left zone of the shared illustration. The competitor name lives in
 that text (and in the prose), never in the artwork. The base image itself is briefed
-via the `mascot-illustration` skill's alternative-series mode. Marginal cost of a new
+via the `mascot-illustration` skill's alternative-series mode (Studio style). Marginal cost of a new
 alt post = reuse the base image + write one `heroHeadline` line.
 
 **Tone and content conventions:**

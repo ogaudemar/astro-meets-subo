@@ -80,7 +80,7 @@ magnifying glass + notepad. Subo as **investigative journalist** (serious, neutr
 mouth), a blob taking in the honest verdict. **Left third kept dark/empty** for the
 live `heroHeadline` overlay. No named competitor; icons not words; not a red-string
 conspiracy wall. This is a reusable base template, not a bespoke render (see
-[SKILL.md](SKILL.md) → Alternative-series heroes).
+[README.md](README.md) → Alternative-series heroes).
 
 ### Conversation-vs-form intake (data-collection / "Discord form" posts)
 Warm, cozy welcome nook (soft rounded surfaces, gentle pink/cyan accents, not a neon

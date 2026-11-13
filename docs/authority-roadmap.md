@@ -4893,7 +4893,7 @@ on Post 1 existing.
       competitor can produce) and **Post 1 gets a bespoke mascot illustration**.
       **Brief written and canon updated:** new metaphor **scoring bench** added to
       `recurring-metaphors.md` (table + environment language), full fill-in brief at
-      `.claude/skills/mascot-illustration/examples/scoring-bench.md`. Subo is the cheerful
+      `.claude/skills/mascot-illustration/styles/studio/examples/scoring-bench.md`. Subo is the cheerful
       score-keeper who **hands the score card to the blob** rather than judging, which keeps
       the "Subo enables, the blob discovers" dynamic on a feature that is literally about
       scoring. Deliberately **not** the game-show stage, which is already canon for quizzes
