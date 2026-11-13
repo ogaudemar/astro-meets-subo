@@ -69,9 +69,13 @@ pose as it is.
   body architecture may not.
 - **Contour:** bold neon-pink/magenta boundary on the mascot, like a highlighter drawn over a
   black-ink photocopy. Keep its placement and thickness recognizable.
-  - **Head and torso: pink outline only, at the 2D logo's width,** with no black line around
-    it (operator, 2026-11-12). In the pose kit that is the logo's 55px border at the head's
-    0.68 scale: 37px.
+  - **Head and torso: pink outline only,** with no black line around it (operator,
+    2026-11-12). The head keeps the 2D logo's border (55px on the logo, 37px in the pose kit).
+    The torso's is thin, like the 3D reference's (15px in the kit, about 40% of the head's),
+    with softly rounded corners.
+  - **Hidden neck.** The torso's top is tucked behind the head, so only the head's pink shows
+    where they meet, as on the 3D rig. Two pink edges stacked under the head (a "double
+    neck") is a fault.
   - **Arms, hands, legs and boots: a thin black outline** and no pink, as in the 3D reference.
 - **No invented additions:** no chest badge, initials, clothes, unnecessary face changes, or
   extra antennae unless explicitly approved for a specific scene.
@@ -284,7 +288,7 @@ The copy/paste prompt for a fresh conversation lives in
 ## 9. Acceptance and versioning
 
 **Hard-fail conditions, reject the illustration:** incorrect eyes or mouth; altered head,
-ears or bars; a black outline around the head or torso; purple outside the left head bar; any colored prop or decoration; a new chest
+ears or bars; a black outline around the head or torso; a visible double neck; purple outside the left head bar; any colored prop or decoration; a new chest
 logo; text not explicitly authorized.
 
 **Quality check (pass before publishing):**
@@ -329,6 +333,10 @@ kit v1.1. Next: the first scene plates (the November posts), then props worth re
   their pink; the torso's pink is widened to the logo's width (37px in the kit). Black stays
   on the limbs only. Reason: the 2D logo has no black outline (operator). Affects all three
   poses and the head master.
+- 2026-11-12 · v1.1 · Torso: thin pink outline (15px) with rounded corners, top tucked
+  behind the head (hidden neck). Reason: the logo-width border looked too heavy on the body,
+  and the torso's top pink showed under the head's as a double neck (operator, from the 3D
+  rig). All three poses.
 
 - 2026-11-12 · v1.0 · The two character references added to `references/` (operator).
 - 2026-11-12 · v1.0 · Converted from the ChatGPT .docx to Markdown, made the source of truth

@@ -138,14 +138,37 @@ def jumping_boots():
             f'<path id="boot-right" d="M640,994 L690,1018 L718,1058 L661,1093 L619,1052 Z" fill="{LIME}" stroke="{INK}" stroke-width="10" stroke-linejoin="bevel"/>')
 
 
+def rounded_polygon(points, r):
+    """Closed path through `points` with every corner rounded by radius `r`."""
+    n = len(points)
+    def towards(p, q, d):
+        L = math.hypot(q[0] - p[0], q[1] - p[1])
+        return (p[0] + (q[0] - p[0]) * d / L, p[1] + (q[1] - p[1]) * d / L)
+    parts = []
+    for i in range(n):
+        prev, cur, nxt = points[i - 1], points[i], points[(i + 1) % n]
+        a, c = towards(cur, prev, r), towards(cur, nxt, r)
+        parts.append(('M ' if i == 0 else 'L ') + coord(a) + ' Q ' + coord(cur) + ' ' + coord(c))
+    return ' '.join(parts) + ' Z'
+
+
+# The head's bottom edge sits at y=691 (translate 50 + 943 x 0.68). The torso's top is
+# tucked behind it at y=672, so only the head's pink shows where they meet: an invisible
+# neck, as on the 3D rig (operator, 2026-11-12). Its top used to sit at y=700, below the
+# head, and its pink band showed under the head's as a "double neck".
+TORSO_TOP = 672
+
+
 def torso():
-    # Explicitly anchored at x=418 and x=600, y=700 for every pose.
-    d='M418,700 L600,700 L606,930 L410,930 Z'
+    # Shoulder anchors stay at (418,700) and (600,700): they now sit on the torso's sides,
+    # just under the head, which is where the arms already started.
+    d = rounded_polygon([(418, TORSO_TOP), (600, TORSO_TOP), (606, 930), (410, 930)], 18)
     return (f'<g id="torso" data-shoulder-left="{coord(LEFT_SHOULDER)}" '
             f'data-shoulder-right="{coord(RIGHT_SHOULDER)}">'
-            # Pink outline only, as on the 2D logo: no black ink around the torso (operator,
-            # 2026-11-12). 37px = the logo's 55px pink border at the head's 0.68 scale.
-            f'<path d="{d}" fill="{LIME}" stroke="{PINK}" stroke-width="37" stroke-linejoin="miter"/>'
+            # Pink outline only, no black (operator, 2026-11-12), and thin like the 3D
+            # reference's torso (about 40% of the head's 37px border), not the logo-width
+            # border, which looked too heavy on the body.
+            f'<path d="{d}" fill="{LIME}" stroke="{PINK}" stroke-width="15" stroke-linejoin="round"/>'
             '</g>')
 
 
