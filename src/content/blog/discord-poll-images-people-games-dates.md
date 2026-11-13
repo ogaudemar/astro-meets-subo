@@ -1,7 +1,7 @@
 ---
 title: Upload Images and Vote on People, Games and Dates in Discord
 description: Add your own images to polls, surveys and invitations straight from your device or from Discord, and type @ to put members, roles, games and dates in a poll, shown in each member's own time zone.
-pubDate: Nov 6 2026
+pubDate: Nov 12 2026
 author: Subo Team
 tags:
   - announcement
@@ -24,7 +24,7 @@ faq:
     a: "Yes. A date added with Date & time shows in each member's own language, date format and time zone, in Discord messages and in the Convo on the web. The one exception is a Discord button or drop-down menu, which shows the same text to everyone: there the time reads in UTC, while the question above it shows the local time."
   - q: Does this cost extra?
     a: No. Both work on every plan, Free included, and uploading an image uses no credits. Thumbnails are a Premium option, as before.
-draft: true
+draft: false
 ---
 
 Two things slowed down setting up a poll in Subo. The image had to be a link to a picture already hosted somewhere, and the choices could only be plain text. This release removes both: you add your own picture from your device, and the options can be real members, roles, games and dates.
