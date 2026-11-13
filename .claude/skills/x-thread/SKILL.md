@@ -73,6 +73,10 @@ n  Closer: the tier line if it is good news, and one link.
 - Number the releases (`1.`, `2.`) inside the posts so a reader landing mid-thread has
   their bearings.
 - Six posts is a comfortable ceiling for a recap. Past that, split the topic.
+- **Several independent releases: prefer standalone posts over one long thread** (operator,
+  2026-11-13). Give each release its own post with its own hook, image and link, spaced a
+  day or two apart, biggest first. A stranger who sees only one of them still gets the whole
+  point. Keep the thread shape for one release that needs several steps, or a recap.
 
 ## The 280 math
 

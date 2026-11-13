@@ -60,85 +60,88 @@ The `/poll` heads-up breaks the "no caveats" rule on purpose: admins who type
 
 ---
 
-## 2. X thread (`x-thread`)
+## 2. X: three standalone posts (`x-thread`)
 
-Four posts, all under 280 with each URL counted as 23 characters.
+Rewritten 2026-11-13 to cover all three releases. **Three separate posts, not one thread**
+(operator): each release gets its own hook, image and link, and stands alone for someone who
+never sees the other two. Space them out, biggest first: file uploads, then images and votes
+a day or two later, then optional questions. All under 280 with each URL counted as 23
+characters. Every plan line confirmed by the operator (file uploads 2026-11-11, the others
+2026-11-06 and 2026-11-11).
 
-**1/4** (no link, image: screenshot 3, the poll in Discord with an uploaded image)
+**Post 1: file uploads** (image: the hero, the hoist; or `file-uploads-discord-receipt.png`,
+which reads well small)
 ```
-Every Discord server votes on the same three things: who leads, what we play, and when we meet. 🧵
+A bug report without the screenshot is a guessing game.
 
-Subo now sets up each of those polls in about a minute, with your own picture on top.
+Subo can now ask for it: members attach screenshots, clips or PDFs to their reply in Discord, or drop them in on the web. Files stay private, next to the rest of their answers.
+
+https://subo.gg/blog/discord-file-uploads/
 ```
 
-**2/4** (image: screenshot 1, the Upload tab with a preview)
+**Post 2: images and votes** (image: the hero, or `images-vote-game-poll.png`)
 ```
-1. Upload your own images.
+Every Discord server votes on the same things: who leads, what we play, when we meet.
 
-Drop, paste or attach a picture in polls, Convos and invitations, in the web app or right from Discord. No more hunting for an image's address.
+Subo polls now take members, roles, games and dates as options, with avatars, game icons and every date in each member's own time zone. Plus your own images.
 
 https://subo.gg/blog/discord-poll-images-people-games-dates/
 ```
 
-**3/4** (image: screenshot 5, the @ picker with avatars and game icons)
+**Post 3: optional questions** (image: `optional-web-skip.png`, or the hero)
 ```
-2. Type @ in a poll option to pick a member, a role, a game or a date.
+Force people to answer every question and some will make answers up.
 
-Members see names, avatars and game icons. Dates show in each member's own time zone, so a player in Paris and one in Los Angeles both read their local time.
-```
+Any question in your Subo surveys can now be optional, with a Skip button in Discord and on the web. Skips are counted apart, so they never skew your charts.
 
-**4/4** (no image)
-```
-Works in polls and Convos, in your server, in DMs and on the web. Every plan, Free included.
+Free on every plan.
 
-https://subo.gg/blog/discord-poll-images-people-games-dates/
+https://subo.gg/blog/discord-survey-optional-questions/
 ```
 
 ---
 
-## 3. top.gg news post (feature-launch, ~380 words)
+## 3. top.gg news post (feature-launch, ~400 words)
 
-Hero image: the post's hero (not briefed yet; screenshot 3 until there is one).
+Rewritten 2026-11-13 to cover all three releases. Hero image:
+`public/images/blog/file-uploads/file-uploads-hero.webp` (the hoist), the most distinctive of
+the three and the biggest release.
 
 ```markdown
-# Discord polls with your own images, members, games and dates
+# Ask for the screenshot: file uploads, optional questions and smarter polls in Discord
 
-Most of the polls a Discord server runs answer one of three questions. Who should lead the
-raid, or become the next moderator? Which game do we play on Friday? What time does the
-event start? Subo the Survey Bot now sets up each of those in about a minute, with your
-own picture on top.
+Subo the Survey Bot runs surveys, polls and quizzes inside Discord as a conversation: one
+question at a time, in a DM, a private thread or on the web. Three new things make it
+handle more of what a community actually collects.
 
-## Upload an image the way you would in a chat
+## Members can send files as their answer
 
-Every image field in Subo takes a file straight from your device. In the web app, drop a
-file in, paste a screenshot from your clipboard, or click to choose one. In Discord,
-`/poll` has an `image_upload` option that opens Discord's file picker, and whenever Subo
-asks you for an image you can attach it to your reply. PNG, JPG, GIF and WebP all work,
-animations stay animated, and Subo keeps its own copy, so the picture does not break when
-the original post is deleted.
+A bug report needs the screenshot, a fan-art contest needs the art, a staff application
+needs the résumé. A new File Upload block asks for them: members attach images, documents,
+audio, video or zip files to a normal reply in Discord, or drop them in on the web. You
+choose which kinds are accepted and how many. If a file is refused, the member is told why
+in one sentence, and good files in the same reply are kept. Files are stored privately and
+open only for your admins and the project's creator, including from your exports.
 
-## Pick a member, a role or a game with @
+## Any question can be optional
 
-In Subo's Script Editor, type `@` in an answer option and pick from Date & time, Members,
-Roles and Games. A member shows with their name, and their avatar on the web; a game shows
-with its icon. A mod election is one poll with one option per candidate; game night is one
-poll with one option per game.
+A chat has no "Next" button, so until now every question in a Subo survey had to be
+answered. Turn off **Required** on a question and members get a Skip button, in Discord
+and on the web. Skips are counted separately, so a skipped question never drags down an
+average or shrinks a chart.
 
-## Dates in everyone's own time zone
+## Polls about people, games and dates
 
-Pick a date and time once and choose how it reads: "November 4, 2026 at 5:00 PM",
-"Wednesday, November 4", or "in 3 days". Every member then sees that moment in their own
-language, date format and time zone, in Discord and on the web. A member in Paris and one
-in Los Angeles each read the event on their local clock.
+Most server votes are about who leads, what we play or when we meet. Type `@` in a poll
+option to pick a member, a role, a game or a date: members see names, avatars and game
+icons, and each member sees the date in their own time zone. Polls also take your own
+images now, dropped in from your device or attached in Discord.
 
-## Works wherever your members answer
+All three work on every plan, Free included. Storing uploaded files uses credits, by size.
 
-Polls and conversational surveys (Convos) alike, in a server channel, in a DM or on the web,
-with buttons, emoji buttons or drop-down menus. Results and exports show names instead of
-Discord's raw codes.
-
-Both work on every plan, Free included.
-
-[Read how it works on the Subo blog](https://subo.gg/blog/discord-poll-images-people-games-dates/),
-or [add Subo to your server](https://subo.gg/invite/).
+Read more on the Subo blog:
+[file uploads](https://subo.gg/blog/discord-file-uploads/),
+[optional questions](https://subo.gg/blog/discord-survey-optional-questions/),
+[polls about people, games and dates](https://subo.gg/blog/discord-poll-images-people-games-dates/).
+Or [add Subo to your server](https://subo.gg/invite/).
 ```
