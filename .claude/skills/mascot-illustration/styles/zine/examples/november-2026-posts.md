@@ -31,7 +31,7 @@ plate was good (the paperclip needed one redo, as "the standard attachment icon"
 by side with post 1 on the homepage the two read as the same picture: Subo presenting a big
 object on the right. Lesson: check a new hero against the heroes it will sit next to.
 
-**v2: the hoist.** Pose **P13 haul** (kit v1.1, proposed). Subo hauls a rope over a pulley
+**v2: the hoist.** Pose **P13 haul** (kit v1.1, locked). Subo hauls a rope over a pulley
 and lifts a crate of media up toward the conversation: uploading as upward effort. Output:
 `public/images/blog/file-uploads/file-uploads-hero.webp`.
 

@@ -187,7 +187,7 @@ locked or proposed are planned, not built: build one when a brief needs it (§7)
 | P10 | Work at simple desk | Builder, editing |
 | P11 | Walk / move | Journey, getting started |
 | P12 | Thank / acknowledge, open arms | Completion, gratitude |
-| P13 | Haul / pull a rope (leans back 12°, legs braced) | Uploading, effort, lifting something up · **proposed, kit v1.1, pending approval** |
+| P13 | Haul / pull a rope (leans back 12°, legs braced) | Uploading, effort, lifting something up · **locked, kit v1.1** |
 
 ### Monochrome props
 
@@ -321,8 +321,7 @@ deprecations.
 
 **Production status:** the head vector master and three poses (P02, P04, P05) are locked in
 kit v1.1. Next: the first scene plates (the November posts), then props worth reusing
-(R01, R05, R09 first) and new poses as briefs need them. P13 (haul) is built and awaiting
-approval.
+(R01, R05, R09 first) and new poses as briefs need them. P13 (haul) is locked.
 
 ## Changelog
 
@@ -340,7 +339,7 @@ approval.
   behind the head (hidden neck). Reason: the logo-width border looked too heavy on the body,
   and the torso's top pink showed under the head's as a double neck (operator, from the 3D
   rig). All three poses.
-- 2026-11-13 · v1.1 · P13 haul added to the kit (proposed): upper body leans back 12° as one
+- 2026-11-13 · v1.1 · P13 haul added to the kit, approved and locked by the operator: upper body leans back 12° as one
   unit, legs braced and drawn outside the rotation so the feet stay planted, both hands on a
   rope rising at about 39° to the right, left arm's crossing start inked. Reason: the file
   uploads hero needed upward effort, not another P04 presentation (operator).
