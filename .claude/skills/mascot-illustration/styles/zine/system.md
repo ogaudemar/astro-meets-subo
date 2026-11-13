@@ -1,13 +1,13 @@
 # Zine style: Subo Illustration System
 
-- **Version:** 1.0 · **Status:** working standard · **Date:** 12 November 2026
+- **Version:** 1.1 · **Status:** working standard · **Date:** 12 November 2026
 - **Visual direction:** indie comic × punk-rock zine.
 - **Principle:** imagine a photocopied, black-and-white fanzine in which only Subo has been
   colored in afterward with neon highlighters.
 
 > **Source of truth.** This Markdown file is the maintained version (operator, 2026-11-12).
-> It was converted from `docs/subo_illustration_system_v1.0.docx`, written with ChatGPT,
-> which is kept as the original and is no longer edited. Change this file, bump the version
+> It was converted from `subo_illustration_system_v1.0.docx`, written with ChatGPT; that
+> original now lives outside the repo and is no longer edited. Change this file, bump the version
 > (§9), and record the decision in the changelog at the bottom.
 
 ## 0. How to use this specification
@@ -21,16 +21,39 @@ preserve character geometry.
 
 1. **Official 2D logo:** exact head silhouette, ears, three top bars, facial geometry, color
    placement, magenta contour.
-2. **Official 3D mascot:** torso, angular arms and legs, feet, character proportions and
-   pose possibilities. Use its shape, not its rendering style.
-3. **This spec:** monochrome world, linework, composition, props, text and review rules.
-4. **Approved example scenes:** mood, energy, texture and scene arrangement only; they do not
+2. **The locked pose kit** ([locked-poses/pose-kit-v1.1/](locked-poses/pose-kit-v1.1/)): approved poses as vector files. An approved pose
+   is used as it is, never redrawn.
+3. **Official 3D mascot:** torso, angular arms and legs, feet, character proportions and
+   pose possibilities, for building new poses. Use its shape, not its rendering style.
+4. **This spec:** monochrome world, linework, composition, props, text and review rules.
+5. **Approved example scenes:** mood, energy, texture and scene arrangement only; they do not
    override the character references.
 
 **Non-negotiable:** Subo is a fixed character inside a flexible illustration language. Never
 redesign Subo to match a scene.
 
 ## 1. Character lock: do not improvise
+
+### Three levels of lock
+
+| Level | What it covers | Status |
+|---|---|---|
+| **1. Character identity** | Head silhouette, eyes, ears, mouth, three bars, magenta contour, palette, fundamental body architecture | **Permanently locked** |
+| **2. Character pose** | Head orientation, arm angles, leg positions, torso tilt, overall body language | Flexible until approved, then locked in the pose kit |
+| **3. Illustration scene** | Props, backgrounds, compositions, textures, crops, supporting symbols | Always flexible |
+
+A new pose never changes Level 1. A scene never changes Levels 1 or 2: it places an approved
+pose as it is.
+
+### Three production layers
+
+| Layer | What it is | Where it comes from |
+|---|---|---|
+| **1. Locked character** | An approved pose from the kit; its geometry, colors and face never change | `locked-poses/pose-kit-v1.1/poses/` |
+| **2. Reusable props** | Black-and-white objects (toolbox, chart, envelope, medal, cards...), mixed across scenes | Generated per scene; approved ones become R-numbered assets (§4) |
+| **3. Scene composition** | Paper, halftone, ink strokes, arrangement, crop | Generated per scene; this is where creative variation happens |
+
+### Identity
 
 - **Head:** wide, rectangular, near-flat front face with gently rounded outer corners; larger
   than the narrow rectangular torso. Small rectangular side ears, not round discs.
@@ -50,6 +73,22 @@ redesign Subo to match a scene.
   extra antennae unless explicitly approved for a specific scene.
 - **Expressions** come from body language, tilt, action and nearby monochrome symbols, not
   from altering the face.
+
+### Pose rules (Level 2)
+
+The head is large relative to the body and the arms keep the 3D reference's length, so
+gestures are drawn within what that body can do:
+
+- **No limb passes behind the head.** Arms start at the two shared shoulder points, the
+  torso's top corners.
+- **Every hand ends outside the head's silhouette**, with a visible gap, even if that means
+  it stays below the head line. Hands are small square blocks.
+- **Arms keep the reference length.** Never lengthen limbs to reach a gesture.
+- **Gestures may be finished in the scene layer.** A pose only has to place the hands
+  clearly; motion ticks for a wave or an ink burst for a celebration are added in the scene
+  (Level 3), never baked into the pose file.
+- **Never mirror a pose.** Flipping swaps the square and checkmark eyes and the bar order.
+  A pose facing the other way is a new pose.
 
 ### Mascot palette: color is reserved for Subo
 
@@ -115,20 +154,23 @@ the illustration must be understandable at thumbnail size, without language.
 **Do** crop or move reusable elements for each format. **Do not** regenerate a subtly
 different Subo head each time.
 
-## 4. Reusable asset catalog (planned for the v1 kit)
+## 4. Reusable asset catalog
 
-These are production targets, not a claim that editable pose or prop assets already exist.
 Every approved asset gets a stable ID, a transparent source (ideally SVG) and a PNG preview.
+The pose kit's `manifest.json` holds each locked pose's hand positions, ground line,
+bounding box and facing, in its 1000×1200 coordinate space.
 
 ### Twelve poses
+
+The other nine are planned, not built. Build one when a brief needs it (§7).
 
 | ID | Pose | Typical use |
 |---|---|---|
 | P01 | Neutral front view | Empty states, overview |
-| P02 | Wave / greet | Welcome, onboarding |
+| P02 | Wave / greet | Welcome, onboarding · **locked, kit v1.1** |
 | P03 | Present left | Feature highlight |
-| P04 | Present right | Feature highlight |
-| P05 | Jump / celebrate | Success, reward |
+| P04 | Present right | Feature highlight · **locked, kit v1.1** |
+| P05 | Jump / celebrate | Success, reward · **locked, kit v1.1** |
 | P06 | Hold or offer card | Templates, invitations |
 | P07 | Point / beckon with blocky arm | Calls to action |
 | P08 | Think / head tilt | Questions, AI, planning |
@@ -194,28 +236,41 @@ black, gray and off-white only, supplied on a separate layer.
 - **Accessibility:** write localizable alt text and captions outside the image. Test
   important symbols for cultural ambiguity.
 
-## 7. Workflow: consistent across new chats and tools
+## 7. Workflow: the image generator never draws Subo
 
-1. **Start from the kit:** attach [references/logo_2d_authoritative.png](references/logo_2d_authoritative.png),
-   [references/mascot_3d_body_reference.png](references/mascot_3d_body_reference.png)
-   and 1-2 approved zine examples from [examples/](examples/). Include this spec or the condensed prompt in
-   [prompt-template.md](prompt-template.md).
-2. **Brief the scene:** choose the use case, a one-sentence message, density, pose ID, prop ID,
-   layout ID and output crop. Say whether any text is intentionally permitted.
-3. **Generate a rough composition:** prioritize prop and story clarity without touching the
-   approved head or face. If possible, compose with existing vector mascot pieces rather than
-   asking AI to redraw them.
-4. **Brand QA:** reject any face, ear, bar or mouth drift, extra colors outside the mascot,
-   excess decoration, or embedded wording.
-5. **Assemble and export:** combine approved mascot artwork, monochrome props and texture as
-   independent layers. Export the crops needed, with accessibility copy outside the art.
-6. **Curate:** approve only assets that add something reusable; register IDs and record the
-   version of this spec that created them.
+Image generation is not a deterministic character rig: even with the poses attached, a
+generator *redraws* the character, and that is where drift comes from. So production images
+are assembled, not generated whole.
 
-**Reliability note:** image generation is not a deterministic character rig. Prompts plus
-reference PNGs reduce drift but cannot guarantee exact geometry. For truly consistent
-production, create a reusable vector mascot and pose library, then use AI mainly for
-composition and prop concepts, not for reconstructing Subo's face in every scene.
+1. **Decide the pose first.** Every brief starts with one of:
+   - **Existing pose:** `POSE: P04 (kit v1.1)`. Go to step 2.
+   - **New pose:** `NEW POSE: P07 beckon`. Build it before the scene (see "New poses" below).
+2. **Generate a scene plate** (Layers 2 and 3) with the prompt in
+   [prompt-template.md](prompt-template.md): props, paper and texture, with **an empty area
+   reserved where Subo will stand**, and no character in it. Describe where the pose's hand
+   and feet will be (from `manifest.json`) so the props line up with them.
+   - ChatGPT's landscape images are 3:2, not 2:1. A blog hero is cropped from the middle, so
+     plates keep everything important out of the top and bottom 12%.
+3. **Composite** (Claude does this in the repo): place the pose's clean transparent PNG on
+   the plate, scaled and positioned from its manifest data, then run
+   `locked-poses/pose-kit-v1.1/finish_scene.py` **once on the whole image**, so the ink roughening and grain cover
+   Subo and the props alike. Export the 1200×600 WebP.
+4. **Brand QA** (§9): reject any face, ear, bar or mouth drift, extra colors outside the
+   mascot, excess decoration, or embedded wording.
+5. **Curate:** an approved prop worth reusing gets an R-number and is saved as a transparent
+   asset. Record the outcome in the brief in [examples/](examples/).
+
+### New poses
+
+1. **Build it in the vector kit, never from a raster image.** Edit only the body geometry in
+   `locked-poses/pose-kit-v1.1/build_subo_poses.py`: arm and leg end points, hand positions, torso tilt. The head goes
+   in through its transform, untouched. ChatGPT can do this with the kit attached (see its
+   `creative-brief-template.md`), as it did for v1.1.
+2. **Check it** against the pose rules (§1) and the pose approval list (§9), and run
+   `verify_kit.py`.
+3. **Approve and lock it:** give it its P-number in `manifest.json` and this file's table, and
+   bump the kit's version. An approved pose is never edited in place; a changed pose is a
+   new kit version.
 
 ## 8. Prompt
 
@@ -244,11 +299,28 @@ language. Never silently change logo geometry. Record each decision below as
 date · change · reason · example · affected assets. Keep older approved assets and note
 deprecations.
 
-**Next production milestone:** create the character vector master and three locked poses
-(P02, P04, P05) before expanding to all 12 poses. Then build R01, R05, R09 and the three
-anchor scenes as layered compositions. This is the smallest reliable production-ready kit.
+**Pose approval (before a pose is locked):**
+
+- [ ] The gesture reads at thumbnail size, before any scene marks are added
+- [ ] No limb passes behind the head; every hand ends outside the head's silhouette
+- [ ] Arms start at the two shared shoulder points and keep the reference length
+- [ ] Hands are square blocks; limbs are as thick as the 3D reference's
+- [ ] Feet sit on the ground line, or the pose is marked airborne in the manifest
+- [ ] Every limb is outlined on every visible side: no bare cut ends
+- [ ] `verify_kit.py` passes
+
+**Production status:** the head vector master and three poses (P02, P04, P05) are locked in
+kit v1.1. Next: the first scene plates (the November posts), then props worth reusing
+(R01, R05, R09 first) and new poses as briefs need them (P07 is the likely next one).
 
 ## Changelog
+
+- 2026-11-12 · v1.1 · Locked pose kit v1.1 (P02, P04, P05) added under `locked-poses/pose-kit-v1.1/`, approved by
+  the operator; P05's legs fixed in the repo (closed outlined shapes, no bare cut ends).
+  Added: the three levels of lock and three production layers (§1), pose rules (§1), the kit
+  as authority #2 (§0), the scene-plate workflow where the generator never draws Subo and
+  new poses are built in the vector kit (§7), the pose approval list (§9). Reason: a locked
+  character cannot be kept consistent by redrawing it in every scene.
 
 - 2026-11-12 · v1.0 · The two character references added to `references/` (operator).
 - 2026-11-12 · v1.0 · Converted from the ChatGPT .docx to Markdown, made the source of truth

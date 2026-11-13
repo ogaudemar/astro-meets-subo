@@ -1,0 +1,191 @@
+{
+  "kit_version": "1.1",
+  "spec_version": "1.0",
+  "kit_status": "approved_locked",
+  "approval_note": "Approved 2026-11-12 after gesture/proportion revisions: shorter reference-length arms, clear hand separation from head silhouette, scene-layer motion marks.",
+  "canvas": {
+    "width": 1000,
+    "height": 1200,
+    "units": "viewBox_px",
+    "origin": "top-left"
+  },
+  "head_master": "masters/subo-head-vector.svg",
+  "source_logo": "references/logo_2d_authoritative.png",
+  "source_logo_sha256": "da32a6fed86be95a5998ecfd8217eb973a9223b5e82cc3ce171f1ab7c00817a6",
+  "shoulder_anchor_model": {
+    "shared_local_left": {
+      "x": 418,
+      "y": 700
+    },
+    "shared_local_right": {
+      "x": 600,
+      "y": 700
+    },
+    "note": "Exactly identical in local torso coordinates; transformed together with torso for P05."
+  },
+  "hand_anchor_semantics": "Center of square block hand; use as prop attachment point in the unscaled 1000x1200 SVG coordinate system.",
+  "bounding_box_semantics": "Tight alpha bounds of rasterized clean SVG, including ink outer stroke; x/y/width/height in 1000x1200 viewBox units.",
+  "direction_semantics": "Facing denotes orientation of face (front). Gesture direction is separate. Do not mirror the face.",
+  "ground_line_semantics": "Common scene ground baseline. For jumping pose, contact=false and feet_bottom_y is the airborne foot extent.",
+  "poses": [
+    {
+      "id": "P02",
+      "name": "Wave / greet",
+      "file": "poses/P02-wave.svg",
+      "clean_png": "previews/P02-wave-transparent.png",
+      "inked_png": "previews/P02-wave-inked-transparent.png",
+      "facing": "front",
+      "gesture_direction": "up-right",
+      "head_angle_degrees": 0.0,
+      "torso_angle_degrees": 0.0,
+      "shoulder_anchors": {
+        "left": {
+          "x": 418.0,
+          "y": 700.0
+        },
+        "right": {
+          "x": 600.0,
+          "y": 700.0
+        }
+      },
+      "hands": {
+        "left": {
+          "x": 288.0,
+          "y": 880.0,
+          "units": "viewBox_px"
+        },
+        "right": {
+          "x": 780.0,
+          "y": 606.0,
+          "units": "viewBox_px"
+        }
+      },
+      "prop_anchor": {
+        "hand": "right",
+        "x": 780.0,
+        "y": 606.0,
+        "units": "viewBox_px"
+      },
+      "bounding_box": {
+        "x": 199,
+        "y": 83,
+        "width": 624,
+        "height": 1061
+      },
+      "ground_line": {
+        "y": 1145,
+        "units": "viewBox_px",
+        "contact": true,
+        "feet_bottom_y": 1144,
+        "note": "Feet align with scene baseline (stroke included)"
+      }
+    },
+    {
+      "id": "P04",
+      "name": "Present right",
+      "file": "poses/P04-present-right.svg",
+      "clean_png": "previews/P04-present-right-transparent.png",
+      "inked_png": "previews/P04-present-right-inked-transparent.png",
+      "facing": "front",
+      "gesture_direction": "right",
+      "head_angle_degrees": 0.0,
+      "torso_angle_degrees": 0.0,
+      "shoulder_anchors": {
+        "left": {
+          "x": 418.0,
+          "y": 700.0
+        },
+        "right": {
+          "x": 600.0,
+          "y": 700.0
+        }
+      },
+      "hands": {
+        "left": {
+          "x": 288.0,
+          "y": 880.0,
+          "units": "viewBox_px"
+        },
+        "right": {
+          "x": 902.0,
+          "y": 747.0,
+          "units": "viewBox_px"
+        }
+      },
+      "prop_anchor": {
+        "hand": "right",
+        "x": 902.0,
+        "y": 747.0,
+        "units": "viewBox_px"
+      },
+      "bounding_box": {
+        "x": 199,
+        "y": 83,
+        "width": 737,
+        "height": 1061
+      },
+      "ground_line": {
+        "y": 1145,
+        "units": "viewBox_px",
+        "contact": true,
+        "feet_bottom_y": 1144,
+        "note": "Feet align with scene baseline (stroke included)"
+      }
+    },
+    {
+      "id": "P05",
+      "name": "Jump / celebrate",
+      "file": "poses/P05-celebrate.svg",
+      "clean_png": "previews/P05-celebrate-transparent.png",
+      "inked_png": "previews/P05-celebrate-inked-transparent.png",
+      "facing": "front",
+      "gesture_direction": "up-outward",
+      "head_angle_degrees": 6.0,
+      "torso_angle_degrees": 6.0,
+      "shoulder_anchors": {
+        "left": {
+          "x": 428.93,
+          "y": 691.45
+        },
+        "right": {
+          "x": 609.93,
+          "y": 710.48
+        }
+      },
+      "hands": {
+        "left": {
+          "x": 249.38,
+          "y": 620.3,
+          "units": "viewBox_px"
+        },
+        "right": {
+          "x": 825.21,
+          "y": 661.71,
+          "units": "viewBox_px"
+        }
+      },
+      "prop_anchor": {
+        "hand": "right",
+        "x": 825.21,
+        "y": 661.71,
+        "units": "viewBox_px"
+      },
+      "bounding_box": {
+        "x": 213,
+        "y": 84,
+        "width": 655,
+        "height": 1029
+      },
+      "ground_line": {
+        "y": 1145,
+        "units": "viewBox_px",
+        "contact": false,
+        "feet_bottom_y": 1113,
+        "note": "Scene baseline; character is airborne in P05"
+      }
+    }
+  ],
+  "finish": "Use clean SVG assets when composing scenes, then run finish_scene.py once on entire composite PNG. Standalone inked PNGs are convenience one-character exports; do not re-grain them.",
+  "character_only": true,
+  "uncolored_world_required": true
+}
