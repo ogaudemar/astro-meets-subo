@@ -183,6 +183,58 @@
         "feet_bottom_y": 1113,
         "note": "Scene baseline; character is airborne in P05"
       }
+    },
+    {
+      "id": "P13",
+      "name": "Haul / pull a rope",
+      "file": "poses/P13-haul.svg",
+      "clean_png": "previews/P13-haul-transparent.png",
+      "inked_png": "previews/P13-haul-inked-transparent.png",
+      "facing": "front",
+      "gesture_direction": "pull-down-left",
+      "head_angle_degrees": -12.0,
+      "torso_angle_degrees": -12.0,
+      "shoulder_anchors": {
+        "left": {
+          "x": 399.11,
+          "y": 720.27
+        },
+        "right": {
+          "x": 577.13,
+          "y": 682.43
+        }
+      },
+      "hands": {
+        "left": {
+          "x": 616.02,
+          "y": 817.3,
+          "units": "viewBox_px"
+        },
+        "right": {
+          "x": 781.08,
+          "y": 679.98,
+          "units": "viewBox_px"
+        }
+      },
+      "prop_anchor": {
+        "hand": "right",
+        "x": 781.08,
+        "y": 679.98,
+        "units": "viewBox_px"
+      },
+      "bounding_box": {
+        "x": 146,
+        "y": 100,
+        "width": 680,
+        "height": 1044
+      },
+      "ground_line": {
+        "y": 1145,
+        "units": "viewBox_px",
+        "contact": true,
+        "feet_bottom_y": 1144,
+        "note": "Feet align with scene baseline (stroke included)"
+      }
     }
   ],
   "finish": "Use clean SVG assets when composing scenes, then run finish_scene.py once on entire composite PNG. Standalone inked PNGs are convenience one-character exports; do not re-grain them.",

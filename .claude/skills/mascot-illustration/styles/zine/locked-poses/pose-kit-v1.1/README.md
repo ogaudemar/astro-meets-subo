@@ -37,6 +37,10 @@ This kit contains the approved locked character poses for the first production-r
   and its top moved up behind the head (y 672, the head's bottom edge is at 691) so only the
   head's pink shows where they meet: no double neck.
   Limbs, hands and boots keep their thin black outline. Applies to all three poses.
+- **P13 haul** (2026-11-13, proposed): upper body leans back 12° as one unit; legs and boots
+  are drawn outside that rotation (`legs_world`) so the feet stay planted and braced; both
+  hands grip a rope line rising at about 39° to the right; the left arm crosses the torso and
+  its start is inked (`arm_start_cap`). `verify_kit.py` now expects four poses.
 - **Shared files are not duplicated:** `system.md`, `references/` and `examples/` live two
   levels up in `styles/zine/`, and the build script reads the logo from there.
 - **Windows:** CairoSVG needs the Cairo library, which Windows lacks. `windows-render/cairosvg.py`

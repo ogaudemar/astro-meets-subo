@@ -10,7 +10,7 @@ from PIL import Image
 ROOT=Path(__file__).resolve().parent
 man=json.loads((ROOT/'manifest.json').read_text())
 assert man['kit_version']=='1.1'
-assert len(man['poses'])==3
+assert len(man['poses'])==4
 shoulders=man['shoulder_anchor_model']
 left=(shoulders['shared_local_left']['x'],shoulders['shared_local_left']['y'])
 right=(shoulders['shared_local_right']['x'],shoulders['shared_local_right']['y'])
@@ -50,9 +50,14 @@ for p in man['poses']:
     if p['id']=='P04':
         g=re.search(r'<g id="arm-right".*?</g>',svgtext,re.S).group(0)
         assert re.search(r'd="M [^\"]+"',g).group(0).count(' L ')==1, 'presenting arm kink'
+    if p['id']=='P13':
+        # Leans back away from the rope; feet stay planted on the ground line.
+        assert p['torso_angle_degrees']<0
+        assert p['ground_line']['contact'] is True
+        assert p['hands']['right']['x'] > p['hands']['left']['x'] and p['hands']['right']['y'] < p['hands']['left']['y'], 'rope grips: right hand higher and further right'
     if p['id']=='P05':
         assert p['torso_angle_degrees']!=0
         assert p['head_angle_degrees']==p['torso_angle_degrees']
         assert p['ground_line']['contact'] is False
         assert p['shoulder_anchors']['left']['x']!=418
-print('QA PASS: 3 approved locked poses, shared shoulder anchors, block hands, clean + inked exports, metadata, and no clipping.')
+print('QA PASS: 4 locked poses, shared shoulder anchors, block hands, clean + inked exports, metadata, and no clipping.')

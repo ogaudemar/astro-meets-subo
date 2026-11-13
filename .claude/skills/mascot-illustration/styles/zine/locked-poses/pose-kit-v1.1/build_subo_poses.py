@@ -80,6 +80,22 @@ POSES = [
          # stroke end is covered by the torso; starting at its edge left the cut visible.
          leg_left=[(506, 887), (342, 1015)],
          leg_right=[(502, 887), (660, 1011)]),
+    # P13 haul (added 2026-11-13 for the file uploads hero): both hands on a rope that runs
+    # diagonally up to the right, toward a pulley drawn in the scene. The upper body leans
+    # back 12 degrees as one unit (head, torso, arms); the legs are drawn outside that
+    # rotation so the feet stay planted on the ground line, braced apart. Arms keep the
+    # reference length: the left arm crosses in front of the torso to the lower grip, and
+    # the right hand holds the rope below and clear of the head's corner.
+    dict(id='P13', slug='haul', name='Haul / pull a rope', facing='front', gesture='pull-down-left',
+         head_angle=0.0, body_angle=-12.0,  # 8 did not read as effort
+         arm_left=[LEFT_SHOULDER, (610, 840)],
+         arm_right=[RIGHT_SHOULDER, (800, 740)],
+         hand_left=(610, 840), hand_right=(800, 740),
+         hand_left_angle=-28, hand_right_angle=-28,
+         legs_world=True,  # legs and boots ignore body_angle
+         leg_left=[(480, 900), (400, 1081)],   # back leg, braced behind
+         leg_right=[(560, 890), (650, 1081)],  # front leg, braced toward the rope
+         boot_shift=(-57, 88)),
 ]
 
 
@@ -119,6 +135,17 @@ def closed_limb(points, ident, width):
             '</g>')
 
 
+def arm_start_cap(points, width):
+    """An ink line across an arm's starting end. P13's left arm crosses the torso, so its
+    square-cut start sits in plain view; this inks the end face like the rest of the limb."""
+    (x1, y1), (x2, y2) = points[0], points[1]
+    L = math.hypot(x2 - x1, y2 - y1)
+    px, py = -(y2 - y1) / L, (x2 - x1) / L
+    h = width / 2 + 8
+    return (f'<path d="M {coord((x1 + px * h, y1 + py * h))} L {coord((x1 - px * h, y1 - py * h))}" '
+            f'fill="none" stroke="{INK}" stroke-width="8" stroke-linecap="square"/>')
+
+
 def hand(pt, ident, angle):
     x,y=pt
     return (f'<g id="{ident}" data-hand-anchor="{coord(pt)}" '
@@ -131,6 +158,12 @@ def hand(pt, ident, angle):
 def standing_boots():
     return (f'<path id="boot-left" d="M424,1064 L495,1064 L498,1139 L416,1139 L416,1103 Z" fill="{LIME}" stroke="{INK}" stroke-width="10" stroke-linejoin="bevel"/>'
             f'<path id="boot-right" d="M519,1064 L590,1064 L605,1139 L523,1139 L523,1103 Z" fill="{LIME}" stroke="{INK}" stroke-width="10" stroke-linejoin="bevel"/>')
+
+
+def shifted_boots(dx_left, dx_right):
+    # The standing boots, moved sideways to sit under braced legs.
+    return (f'<path id="boot-left" transform="translate({dx_left} 0)" d="M424,1064 L495,1064 L498,1139 L416,1139 L416,1103 Z" fill="{LIME}" stroke="{INK}" stroke-width="10" stroke-linejoin="bevel"/>'
+            f'<path id="boot-right" transform="translate({dx_right} 0)" d="M519,1064 L590,1064 L605,1139 L523,1139 L523,1103 Z" fill="{LIME}" stroke="{INK}" stroke-width="10" stroke-linejoin="bevel"/>')
 
 
 def jumping_boots():
@@ -174,9 +207,15 @@ def torso():
 
 def pose_svg(p):
     is_jump=p['id']=='P05'
-    limb = closed_limb if is_jump else thick_limb
+    legs_world = p.get('legs_world', False)
+    limb = closed_limb if (is_jump or legs_world) else thick_limb
     legs=limb(p['leg_left'],'leg-left',58)+limb(p['leg_right'],'leg-right',58)
-    boots=jumping_boots() if is_jump else standing_boots()
+    if is_jump:
+        boots=jumping_boots()
+    elif legs_world:
+        boots=shifted_boots(*p['boot_shift'])
+    else:
+        boots=standing_boots()
     arms=(thick_limb(p['arm_left'],'arm-left',56)
           +thick_limb(p['arm_right'],'arm-right',56))
     hands=(hand(p['hand_left'],'hand-left',p['hand_left_angle'])
@@ -187,11 +226,12 @@ def pose_svg(p):
 <title>{p['id']}: Subo {p['name']}</title>
 <desc>Editable front-facing Subo pose. Canonical face locked. Two constant-width arms with distinct square block hands. Both arms start at the same two torso-top shoulder anchors. Transparent background, no props.</desc>
 <metadata>Subo zine pose kit v1.1; approved locked clean master; head reference: logo_2d_authoritative.png; editable SVG.</metadata>
+{'<g id="legs-and-feet">' + legs + boots + '</g>' if legs_world else ''}
 <g id="character"{whole}>
- <g id="legs-and-feet">{legs}{boots}</g>
+ {'' if legs_world else '<g id="legs-and-feet">' + legs + boots + '</g>'}
  {torso()}
  {head}
- <g id="arms-front">{arms}</g>
+ <g id="arms-front">{arms}{arm_start_cap(p['arm_left'], 56) if legs_world else ''}</g>
  {hands}
 </g>
 </svg>'''

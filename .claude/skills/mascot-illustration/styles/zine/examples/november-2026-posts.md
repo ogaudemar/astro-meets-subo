@@ -26,18 +26,25 @@ NO TEXT: the calendar page is blank; no numbers, dates or letters anywhere.
 
 ## 2. File Uploads in Discord
 
-Pose **P04** (kit v1.1), the same as post 1. If P07 (beckon) is built first, it replaces P04
-here and the SUBO line changes. Output: `public/images/blog/file-uploads/file-uploads-hero.webp`.
+**v1 (2026-11-13), replaced:** P04 presenting a speech bubble that files slide into. The
+plate was good (the paperclip needed one redo, as "the standard attachment icon"), but side
+by side with post 1 on the homepage the two read as the same picture: Subo presenting a big
+object on the right. Lesson: check a new hero against the heroes it will sit next to.
+
+**v2: the hoist.** Pose **P13 haul** (kit v1.1, proposed). Subo hauls a rope over a pulley
+and lifts a crate of media up toward the conversation: uploading as upward effort. Output:
+`public/images/blog/file-uploads/file-uploads-hero.webp`.
 
 ```
 PLATE FOR: blog post "File Uploads in Discord: Collect Screenshots, Clips and PDFs"
-SCENE: Subo asks for the screenshot, and members' files arrive straight into the conversation.
-SUBO (added later, do not draw): standing on the left, presenting with the right arm; hand at 34% across, 59% down; feet on a ground line at 88% down.
-RESERVED ZONE: 6-37% across, 8-90% down, empty paper only.
-MAIN PROP: an R02 speech bubble, black ink, centered at 64% across, 42% down, about 34% wide and 48% tall, its tail pointing down-left toward Subo's hand. A large black-ink paperclip clipped on its top edge. Three file cards sliding into the bubble from the right, fanned, the last one entering from about 93% across: an image card (mountain-and-sun symbol), a document card with a folded corner and plain lines, a video card with a play triangle.
-SUPPORT SYMBOLS: 1) a small padlock under the bubble, at 64% across, 80% down (files stay private); 2) two or three short movement strokes behind the incoming cards.
-TEXTURE: one light halftone patch behind the bubble only.
-NO TEXT: no file names, no extensions such as PDF or PNG, no lines that look like words.
+SCENE: Subo hauls on a rope to lift a heavy crate of files up into the conversation.
+SUBO (added later, do not draw): bottom left, leaning back and pulling, feet on a ground line at 95% down. He grips the rope at 21% across, 74% down and at 26% across, 66% down.
+RESERVED ZONE: 4-30% across, 27-97% down, empty paper only, except the rope passing through the grip points.
+ROPE: one thick black-ink rope in a straight line from 18% across, 79% down, through both grip points, rising to a pulley at 45% across, 35% down. Over the pulley it drops straight down on the pulley's right side to the crate. Keep it taut and straight.
+MAIN PROP: a pulley wheel (black ink, with its hook) hanging from the underside of a large R02 speech bubble that spans 42-94% across and 4-30% down, with a small padlock drawn inside the bubble. A wooden-look crate, black ink, hanging from the rope at 48-70% across, 44-72% down, packed so the tops of three file cards stick out: an image card (mountain-and-sun), a document card with a folded corner and plain lines, a video card with a play triangle.
+SUPPORT SYMBOLS: 1) two small ink sweat drops just right of Subo's head, at about 30% across, 26-32% down; 2) two or three short upward motion strokes beside the crate, at about 73% across, 50-65% down.
+TEXTURE: one light halftone patch on the ground under the crate's shadow; nothing else.
+NO TEXT: no file names, no extensions, no lines that look like words, nothing written on the crate.
 ```
 
 ## 3. Optional Questions

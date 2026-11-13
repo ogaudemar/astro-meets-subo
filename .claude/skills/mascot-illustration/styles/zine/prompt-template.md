@@ -71,6 +71,10 @@ placements in a 1200×600 hero. Claude composites at exactly these, so the plate
 | P04 present right | Left side, height 78% of the image | 8-35%, 10-88% | 34% across, 59% down | 88% |
 | P02 wave | Left side, height 78% | 8-31%, 10-88% | 29% across, 49% down | 88% |
 | P05 celebrate | Centered, height 56%, airborne | 41-59%, 12-68% | 42% and 58% across, about 42% down | feet at 68% |
+| P13 haul | Left side, height 66% | 6-28%, 29-95% | lower grip 21% across, 74% down; upper grip 26%, 66% | 95% |
+
+P13's rope passes through both grips and rises at about 39° to the right: from the upper grip
+it reaches about 45% across at 35% down. Put the pulley on that line.
 
 Other placements are fine: work them out from the manifest and write them in the brief.
 
