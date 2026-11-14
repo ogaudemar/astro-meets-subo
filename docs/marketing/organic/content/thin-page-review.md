@@ -2,6 +2,9 @@
 
 **Question:** are weak pages holding back indexation of `subo.gg`, and should any be noindexed?
 
+**Status: approved and implemented 2026-11-13** (user: delete the scheduling draft outright,
+noindex `new-blog`; #1, #3 and #4 as proposed). See [log.md](log.md).
+
 **Answer: no, with two small exceptions.** By every measure we can compute, the site is not
 thin. This weakens the "thin pages are a liability" hypothesis raised on 2026-11-13 and
 strengthens the authority diagnosis in [../search/README.md](../search/README.md).

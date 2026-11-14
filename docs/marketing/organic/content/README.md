@@ -29,16 +29,24 @@ channel copy in [../../launches/](../../launches/)).
 
 ## Next actions
 
-1. **Thin-page review: DONE 2026-11-13, awaiting approval.** The site is not thin (no
-   near-duplicates; templates 65-84% unique). Proposed: noindex 2 posts (the unreviewed draft,
-   plus drafts in general; `new-blog`), expand the cloning post, add internal links to ~9
-   weakly linked pages. [thin-page-review.md](thin-page-review.md)
+1. **Cloning guide: text shipped 2026-11-13, screenshots pending (user).** Nine slots are
+   marked `<!-- SCREENSHOT n -->` in `src/content/blog/clone-surveys-across-servers.md`;
+   images go in `public/images/blog/cloning/`. Once it's live, retire the Notion "Cloning:
+   Web App" draft. (Thin-page review done and implemented: [thin-page-review.md](thin-page-review.md).)
 2. **Notion tutorial drafts** (hidden since 2026-10-22): Settings is rewritten and waits for
    screenshots, then republish. Members, Subscription and Results next, rewritten from the
    live web app. Skip Logic is a candidate for an on-domain page; Cloning folds into the
    existing Clone tutorial.
 3. **Native read** of `/de/forms/` and `/es/survey-convos/` if a reviewer ever appears (copy
    is LLM-only, accepted by the user).
+
+## App-side item found while writing the cloning guide (hand over, don't ship from here)
+
+`Web_Settings_AllowCloning_Help` says *"When off, none of this server's projects can be copied
+into other servers, even if a project allows cloning."* The code says otherwise: the server
+setting is only the default new projects inherit, and the project switch decides
+(`web2/app.py` clone route, `discordSurvey/main.py` clone command). The guide follows the
+code. Either fix the string or change the behavior to match it.
 
 ## Open, gated
 
