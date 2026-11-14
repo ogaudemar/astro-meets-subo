@@ -55,8 +55,11 @@ Findings:
   more keywords, not more money. Utility lost its auction position on 2026-10-21 (CPM about
   €4.30 against a €5 cap).
 - Best keywords by CTR: `vote` (search, 8.3%), `poll` (dropdown, 5.3%), `quiz` (dropdown, 3.3%).
-- `appy` was half the impressions at 0.37% CTR. Competitor names attract people who already
-  chose another tool: **we don't bid on competitor names.**
+- `appy` was half the impressions at 0.37% CTR. Searching a rival bot's name means the person
+  already chose that bot: **we don't bid on competing Discord bots** (Appy, EasyPoll…). Names of
+  survey and form tools outside Discord (Google Forms, Typeform, SurveyMonkey, Tally, Fillout,
+  Jotform) are fair game: someone searching those on top.gg wants that kind of tool in Discord,
+  which is what we are.
 - Keyword matching is loose: `apollo` matched without being on the list.
 - Traffic is too thin for parallel A/B tests (~5,000 impressions per arm to read a 50% lift
   at 1.5% CTR). Test sequentially, one variable at a time, big differences only.
@@ -69,6 +72,7 @@ Findings:
 | 2026-11-13 | Keywords search | Description → "Polls, quizzes, forms and surveys that run right inside Discord. Now with file uploads and times based on your members' time zone." | pending |
 | 2026-11-13 | Utility | Title → "Subo: polls, forms, surveys, quizzes"; budget €5 → €1/day; max bid €5 → €10 CPM (to win back position) | pending |
 | 2026-11-13 | Theme tests | Created, copy reviewed, launched | pending |
+| 2026-11-13 | Keywords search | Removed `easypoll` (competing Discord bot); added Google Form(s), Tally, Fillout, Jotform | pending |
 | 2026-11-20 (planned) | Keywords search | Title "Subo the Survey Bot" → "Subo: polls, quizzes & forms". Pull the 7-day baseline first. | |
 
 ## Theme tests: how to read them
