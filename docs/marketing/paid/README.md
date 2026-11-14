@@ -1,6 +1,6 @@
 # Paid acquisition
 
-The paid half of the marketing plan. [authority-roadmap.md](../authority-roadmap.md) covers what
+The paid half of the [marketing plan](../README.md). [../organic/](../organic/README.md) covers what
 we earn (SEO, AEO, GEO, directories, PR). This folder covers what we buy: which channels, what
 we test on each, and what we learned. Organic builds the base; paid is how we scale it once we
 know what a customer costs.

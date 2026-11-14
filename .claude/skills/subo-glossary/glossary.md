@@ -63,7 +63,7 @@ The conversational survey experience itself — the respondent-facing chat (Conv
   glossary — `subo-site/src/data/lexicon.json` and
   `subo/.claude/skills/subo-localization/lexicon.json`. **Edit one, copy to the other in the same
   change.** Enforced by `npm run check:lexicon` in `subo-site`; rulings T1..T10 in
-  `subo-site/docs/authority-roadmap.md`. Prefer it over the `subo-localization` table, which is a
+  `subo-site/docs/marketing/organic/terminology.md`. Prefer it over the `subo-localization` table, which is a
   human-readable mirror and has drifted before.
 
 ## member

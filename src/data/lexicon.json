@@ -8,7 +8,7 @@
     "rounds and nobody noticed, because nothing could check it. This file is checkable:",
     "`npm run check:lexicon` enforces the parts a machine can enforce.",
     "",
-    "Reasoning lives in docs/authority-roadmap.md (TERMINOLOGY ARCHITECTURE). Rulings referenced",
+    "Reasoning lives in docs/marketing/organic/terminology.md (subo-site). Rulings referenced",
     "here as T1..T10 are defined there. Do not restate the reasoning in this file; it will drift."
   ],
   "version": 1,

@@ -2,7 +2,7 @@
 #
 # Intent (user, 2026-08-04): all crawlers welcome, AI included. This is a
 # marketing site — being read, indexed, cited and trained on is the point, not a
-# cost. The GEO/AEO pillar in docs/authority-roadmap.md depends on it, and
+# cost. The GEO/AEO work in docs/marketing/organic/geo/ depends on it, and
 # llms.txt and /api are written specifically for that audience.
 #
 # Abuse is handled at the network layer (Cloudflare's always-on DDoS protection

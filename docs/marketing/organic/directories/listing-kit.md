@@ -3,7 +3,7 @@
 Single source of truth for **Subo**'s bot-directory listings. Paste from here so
 every directory carries the **same name, domain, and description** — entity
 consistency reinforces the Organization schema (see
-[authority-roadmap.md](authority-roadmap.md) P1).
+[README.md](README.md)).
 
 **Replaces** the stale 2023 block in Notion ("0xSurvey" / "SurveyBot", subo.ai,
 10-question cap, old support link). Keep this file authoritative; sync Notion to

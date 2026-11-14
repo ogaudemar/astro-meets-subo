@@ -2,7 +2,7 @@
 /**
  * check-lexicon.mjs
  *
- * Guards the terminology architecture (docs/authority-roadmap.md, rulings T1..T10)
+ * Guards the terminology architecture (docs/marketing/organic/terminology.md, rulings T1..T10)
  * against the failure that opened it: the markdown skill DRIFTED. The FR poll row
  * went stale across two naming rounds and nobody noticed, because nothing could
  * check it. src/data/lexicon.json is checkable; this enforces the checkable half.
@@ -507,6 +507,6 @@ console.error(
   '\nTerminology problems are invisible the way hreflang is: nothing renders wrong,\n' +
   'the build is green, and you find out when two of your own pages compete for the\n' +
   'same query or a French user types /sondage and the app calls the result a vote.\n' +
-  'Rulings T1..T10 are in docs/authority-roadmap.md.\n',
+  'Rulings T1..T10 are in docs/marketing/organic/terminology.md.\n',
 );
 process.exit(1);

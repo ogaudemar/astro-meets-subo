@@ -1,6 +1,6 @@
 # Roundup Outreach Kit — get Subo into "best Discord bots" listicles (P5)
 
-Operational kit for the **P5** lever in [authority-roadmap.md](authority-roadmap.md):
+Operational kit for the outreach lever in [README.md](README.md):
 get Subo into third-party "best Discord bots / poll bots / survey bots" roundups.
 These already rank for the high-intent discovery queries our own comparison page
 targets, so inclusion = an **editorial backlink + referral traffic without writing
@@ -9,7 +9,7 @@ also help Google finish re-associating equity to the new domain.
 
 **How to use:** pick a target from the list, grab the matching pitch below, paste
 the ready-to-paste Subo entry so the author has zero work, send. Reuse the
-[directory-listing-kit.md](directory-listing-kit.md) copy for entity consistency
+[listing-kit.md](../directories/listing-kit.md) copy for entity consistency
 (same name/domain/claims everywhere).
 
 > **Rule (from the roadmap):** pitch **honest, accurate** entries only. Watch
@@ -108,7 +108,7 @@ Ranked by relevance × authority × warmth. Status column tracks outreach.
 SurveySparrow, forms.app, NativeForms and **Formeer, a direct competitor** — on a high-authority
 domain, in our exact category, with a free self-serve **"Add Your Software"** submission. This is
 **P1 (directories), not P5**, so it belongs in
-[directory-listing-kit.md](directory-listing-kit.md) — but it is the cheapest link found on
+[listing-kit.md](../directories/listing-kit.md) — but it is the cheapest link found on
 2026-09-08 and needs no pitch, no author, and no reply.
 
 **Finding contacts:** most of these have a byline (name above), a `/contact` or
@@ -141,7 +141,7 @@ etc.) are flagged **[unverified]** — confirm on the outlet's own site before u
 
 Give the author copy they can drop in with **zero editing**, in roundup voice
 (third person, "best for" framing), matching how these listicles format entries.
-All claims verified in [directory-listing-kit.md](directory-listing-kit.md) /
+All claims verified in [listing-kit.md](../directories/listing-kit.md) /
 `content.md`.
 
 ### One-liner (dense roundups / comparison tables)

@@ -1,3 +1,10 @@
+> **ARCHIVED 2026-11-13. Read-only history, do not add to this file.** Current state lives in
+> [../README.md](../README.md) and the workstream READMEs under `../organic/` and `../paid/`;
+> strategic calls in [../decisions.md](../decisions.md). The terminology section and the
+> locale-parity playbook were moved out verbatim (`../organic/terminology.md`,
+> `../organic/content/locale-parity.md`); their copies below are frozen. Some advice here was
+> later reversed: check decisions.md before acting on anything in this file.
+
 # Authority / SEO / GEO / AEO Roadmap
 
 Living plan to build authority and high-value backlinks for **subo.gg** without

@@ -35,7 +35,7 @@ grep -rl '^draft: true' src/content/blog/
 out of the *listing*, but `getStaticPaths` maps every entry, so each draft is built at its
 public URL and lands in the sitemap. Treat drafts as live pages that are merely unlinked.
 Whether to change that is an open decision in
-[authority-roadmap.md](authority-roadmap.md) (it would deindex real URLs), not a hygiene fix.
+[marketing/organic/content/](marketing/organic/content/README.md) (it would deindex real URLs), not a hygiene fix.
 
 **Ruled since this list was written**, each worth more revised than deleted:
 - `content-blocks-new-way-to-design-survey-flows` — rewritten and published (2026-08-13).

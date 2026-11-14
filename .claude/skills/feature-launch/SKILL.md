@@ -131,7 +131,7 @@ the same release gets shorter and more self-contained as the reader gets colder.
 listing blurb, so it takes full Markdown and a designated hero image. Write it as a short
 guest post (~350 words), assume the reader has never heard of Subo, and lead with capability
 rather than release news. Link deliberately to `subo.gg`: a topical link from a Discord-tools
-context is the highest-value kind per P1 in `docs/authority-roadmap.md`. Pairs with the P1
+context is the highest-value kind per `docs/marketing/organic/directories/README.md`. Pairs with the P1
 listing refresh, which is a separate manual edit.
 
 **Never skip a channel silently.** Nothing fails a build when one is missed, which is exactly

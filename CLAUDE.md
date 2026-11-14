@@ -27,7 +27,7 @@ Marketing/landing page site for **Subo** (a Discord survey and poll bot) deploye
   to the other in the same change.** Unlike the glossary it is **machine-checked** —
   `npm run check:lexicon` (part of `npm run check`) enforces the checkable rulings and carries a
   `knownViolations` baseline that is meant to be emptied, not grown. Rulings and reasoning:
-  [docs/authority-roadmap.md](docs/authority-roadmap.md) § TERMINOLOGY ARCHITECTURE.
+  [docs/marketing/organic/terminology.md](docs/marketing/organic/terminology.md).
 - **The rulings T1-T11 are canonical here; the per-cell app-string migration is not.** It lives in
   the app repo at `subo/docs/terminology-migration.md` (moved 2026-09-05) and advances there
   alongside translation work, because `user_messages` rows are Discord runtime strings with no URL.
@@ -64,7 +64,7 @@ See detailed docs:
 - **[docs/i18n.md](docs/i18n.md)** — languages (EN/FR/ES/DE), translation file structure, add-language checklist, BaseHead redirect logic pitfalls
 - **[docs/components.md](docs/components.md)** — component guide, page notes, styling, layouts, constants
 - **[docs/content.md](docs/content.md)** — blog posts (draft status), Subo product facts, content collections
-- **[docs/paid/](docs/paid/README.md)** — paid acquisition: one folder per channel (top.gg live; Google, Meta, AI assistants planned), UTM convention and paid funnel in `tracking.md`. The counterpart to `authority-roadmap.md`, which covers organic.
+- **[docs/marketing/](docs/marketing/README.md)** — user acquisition. **Start every marketing session at `docs/marketing/README.md`**, then read only the README of the workstream in play: `organic/` (search, GEO, directories, links, content, terminology) or `paid/` (one folder per channel, UTM convention in `tracking.md`). Strategic calls go in `decisions.md`. The old `authority-roadmap.md` is frozen in `docs/marketing/archive/`: history only, don't add to it.
 - **[docs/analytics.md](docs/analytics.md)** — conversion funnel (PostHog system-of-record + GA4/GTM baseline), events, cross-subdomain stitching with app.subo.gg, structured-data maintenance
 
 ## Homepage Sections (index.astro)
