@@ -8,7 +8,7 @@ bestFor: "servers with members in multiple regions or languages, or servers that
 dimension: "understand"
 features: ["skip logic", "achievements", "roles", "XP"]
 relatedSlugs: ["member-segmentation", "volunteer-moderator-funnel", "event-rsvp-streak"]
-templateSlugs: ["player-onboarding-profiler"]
+templateSlugs: ["welcome-new-members", "player-onboarding-profiler"]
 faq:
   - q: "How do you automatically give someone a role in Discord when they join?"
     a: "Ask for what you need in a short onboarding survey, then attach an action block to the answer. When a member picks \"Americas\", the matching action block fires and Subo grants the role without a moderator touching anything. This recipe wires three notification roles that way."

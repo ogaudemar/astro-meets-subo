@@ -16,7 +16,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
 	alternates?: Array<{ lang: string; href: string }>;
 };
 
-const { title, description, pubDate, updatedDate, heroImage, heroHeadline, tags, author, draft, faq, posts, locale = 'en', alternates = [] } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroHeadline, tags, author, draft, noindex, faq, posts, locale = 'en', alternates = [] } = Astro.props;
 
 // The layout is shared by every language, so its chrome comes from the post's
 // own locale file rather than being hardcoded English. `posts` is already
@@ -68,7 +68,7 @@ const jsonLd = [
 
 <html lang={htmlLang}>
 	<head>
-		<BaseHead title={title} description={description} image={heroImage} publishedDate={pubDate} jsonLd={jsonLd} alternates={alternates} />
+		<BaseHead title={title} description={description} image={heroImage} publishedDate={pubDate} jsonLd={jsonLd} alternates={alternates} noindex={Boolean(draft || noindex)} />
 		<style>
 			main {
 				width: 100%; /*calc(100% - 2em)*/

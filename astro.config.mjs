@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 import cloudflare from "@astrojs/cloudflare";
 
 import { trackedRedirects } from "./src/config/redirects.js";
-import { buildLastmodLookup } from "./src/config/sitemap-lastmod.js";
+import { buildLastmodLookup, unindexedBlogUrls } from "./src/config/sitemap-lastmod.js";
 
 // Real per-URL <lastmod>, from frontmatter for content pages and from git for
 // static ones. See src/config/sitemap-lastmod.js for why it is not just the
@@ -20,6 +20,9 @@ const NOINDEX_PATHS = new Set([
   ...Object.keys(trackedRedirects).map((key) => `https://subo.gg/${key}/`),
   "https://subo.gg/success/",
   "https://subo.gg/subscriptions/",
+  // Blog posts with `draft: true` or `noindex: true` (they also carry a
+  // robots noindex meta, see BlogPost.astro).
+  ...unindexedBlogUrls(),
 ]);
 
 // Retired content URLs live in `public/_redirects`, not in a `redirects` block

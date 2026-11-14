@@ -24,7 +24,7 @@ For years Discord was the odd one out. Reddit, Telegram, WhatsApp, X, Guilded, F
 
 So the question isn't "which poll bot should I install?" anymore. It's "when is the built-in feature enough, and when do I still want a bot like Subo?" This post answers exactly that, head to head.
 
-If you want the wider field (Simple Poll, MEE6, EasyPoll, and where each one stops), read the [best Discord poll bots comparison](/blog/best-discord-poll-bots/). This page stays focused on native polls versus Subo.
+If you want the wider field (Simple Poll, MEE6, EasyPoll, and where each one stops), read the [best Discord poll bots comparison](/blog/best-discord-poll-bots/). Moving off a specific bot? See the [EasyPoll alternative](/blog/easypoll-alternative/) and [Simple Poll alternative](/blog/simple-poll-alternative/) guides. This page stays focused on native polls versus Subo.
 
 ## Discord's native polls
 

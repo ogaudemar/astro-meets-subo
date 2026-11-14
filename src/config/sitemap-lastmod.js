@@ -95,6 +95,27 @@ function collection(dir) {
   return found;
 }
 
+/**
+ * Blog URLs that must stay out of the sitemap: posts marked `draft: true` or
+ * `noindex: true`. BlogPost.astro emits `<meta name="robots" content="noindex">`
+ * for the same two flags, so the page and the sitemap never disagree.
+ * A draft is still built at its URL (so it can be previewed and shared for
+ * review); it is just not offered to search engines.
+ */
+export function unindexedBlogUrls() {
+  const urls = new Set();
+  for (const [slug, file] of collection("blog")) {
+    const source = readFileSync(file, "utf8");
+    const end = source.indexOf("\n---", 3);
+    const head = end === -1 ? source : source.slice(0, end);
+    if (!/^(draft|noindex):\s*true\s*$/m.test(head)) continue;
+    const parts = slug.split("/");
+    const path = parts.length > 1 ? `/${parts[0]}/blog/${parts.slice(1).join("/")}/` : `/blog/${slug}/`;
+    urls.add(`${SITE}${path}`);
+  }
+  return urls;
+}
+
 export function buildLastmodLookup() {
   const git = gitDates();
   const map = new Map();

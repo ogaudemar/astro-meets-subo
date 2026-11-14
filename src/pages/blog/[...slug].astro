@@ -8,9 +8,9 @@ import { getBlogPosts, postSlug, postAlternates } from '../../utils/blog';
 // without the locale filter a French post would also be built at /blog/<slug>/,
 // i.e. at an English URL. The /fr twin of this file serves the French ones.
 //
-// Drafts are deliberately still mapped here: `draft: true` currently hides a
-// post from the listing but keeps its public URL live, which is a standing
-// open decision about four indexed URLs, not something to settle in passing.
+// Drafts are still built here, so a draft can be previewed at its URL, but
+// since 2026-11-13 they carry robots noindex and stay out of the sitemap
+// (BlogPost.astro + astro.config.mjs). Same for `noindex: true` posts.
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts

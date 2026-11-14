@@ -4,7 +4,7 @@
 
 Blog posts live in `src/content/blog/`. The collection is defined in `src/content.config.ts`.
 
-**Frontmatter schema:** `title`, `description`, `pubDate`, `author` (required); `updatedDate`, `heroImage`, `heroHeadline`, `tags`, `draft`, `faq`, `locale`, `translationOf` (optional).
+**Frontmatter schema:** `title`, `description`, `pubDate`, `author` (required); `updatedDate`, `heroImage`, `heroHeadline`, `tags`, `draft`, `noindex`, `faq`, `locale`, `translationOf` (optional).
 
 **The collection holds every language** (since 2026-08-25). `locale` defaults to `"en"`;
 non-English posts live in `src/content/blog/{locale}/` and are served from
@@ -21,23 +21,24 @@ HTML (links, `<code>`); it is stripped for the JSON-LD.
 
 ### Draft Posts (review before publishing)
 
-**One draft left** (verified 2026-08-25 by grepping `^draft: true`):
-
-- `scheduling-recurring-surveys-community-pulse.md` — never read, never ruled on.
-
-Don't maintain this list by hand; it went stale twice. Re-derive it:
+**No drafts left** (2026-11-13). Re-derive rather than keeping a list by hand:
 
 ```bash
 grep -rl '^draft: true' src/content/blog/
 ```
 
-**⚠️ `draft: true` does NOT deindex a post.** `src/pages/blog/index.astro` filters drafts
-out of the *listing*, but `getStaticPaths` maps every entry, so each draft is built at its
-public URL and lands in the sitemap. Treat drafts as live pages that are merely unlinked.
-Whether to change that is an open decision in
-[marketing/organic/content/](marketing/organic/content/README.md) (it would deindex real URLs), not a hygiene fix.
+**What `draft: true` does (since 2026-11-13):** the post is still built at its public URL,
+so it can be previewed or shared for review, but it is left out of the blog listing, the RSS
+feed, "Read more", and the sitemap, and the page carries `<meta name="robots"
+content="noindex, follow">`. Before 2026-11-13 drafts were indexable and in the sitemap.
+
+**`noindex: true`** is for a published post with no search value left: it stays listed on
+the blog but gets the same robots meta and leaves the sitemap. Used on `new-blog` (the 2025
+site-launch note). Both flags feed `unindexedBlogUrls()` in `src/config/sitemap-lastmod.js`.
 
 **Ruled since this list was written**, each worth more revised than deleted:
+- `scheduling-recurring-surveys-community-pulse` — **deleted** unreviewed (user, 2026-11-13),
+  301 to `/blog/` via `public/_redirects`.
 - `content-blocks-new-way-to-design-survey-flows` — rewritten and published (2026-08-13).
 - `5-discord-community-types-surveys-they-should-run` — rebuilt as a three-pillar hub and
   published (2026-08-13).

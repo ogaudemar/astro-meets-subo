@@ -25,7 +25,10 @@ const blog = defineCollection({
     })).optional(),
   author: z.string(), // <-- Add this line
   tags: z.array(z.string()).optional(), // <-- Add this line for tags
-  draft: z.boolean().optional(), // <-- Add this line for draft status
+  draft: z.boolean().optional(), // hidden from listings, feeds, sitemap; page carries robots noindex
+  // Published and listed, but kept out of search: robots noindex + out of the
+  // sitemap. For posts with no search value left (e.g. the 2025 site-launch note).
+  noindex: z.boolean().optional(),
 
   // Language of the post. One collection holds every locale; the
   // locale-specific routes filter on this. Defaulting to "en" is deliberate:

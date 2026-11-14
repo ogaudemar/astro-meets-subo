@@ -80,6 +80,7 @@
         { "text": "Tutorials", "href": "/tutorials/" },
         { "text": "Blog", "href": "/blog/" },
         { "text": "Changelog", "href": "/changelog/" },
+        { "text": "What's New", "href": "/whats-new/" },
         { "text": "Stripe billing portal", "href": "/portal/", "external": true },
         { "text": "Discord App Store", "href": "/discordstore/", "external": true },
         { "text": "API Quickstart", "href": "/api/" },
@@ -943,7 +944,7 @@
       "title": "Make participation worth something",
       "sub": "Recognition is what brings members back. Subo hands it out automatically.",
       "cards": [
-        { "emoji": "⭐", "title": "XP rewards", "desc": "Every completed project earns XP. Available on all plans, even free." },
+        { "emoji": "⭐", "title": "XP rewards", "desc": "Every completed project earns XP. Available on all plans, even free. <a href=\"/blog/gamify-discord-community-xp-survey-rewards/\">How to gamify your server with XP →</a>" },
         { "emoji": "🏆", "title": "Monthly leaderboard", "desc": "An automatic monthly XP leaderboard posted in Discord, ranking your most engaged members." },
         { "emoji": "🎭", "title": "Role rewards", "desc": "Grant or remove Discord roles based on participation, scores, or XP thresholds." },
         { "emoji": "🏷️", "title": "Custom XP name", "desc": "Rename XP to match your brand: \"Stars\", \"Coins\", \"Rep\". Make it feel like yours." },
@@ -994,7 +995,7 @@
       "sub": "From live charts to AI-synthesized summaries, your data does the heavy lifting.",
       "cards": [
         { "emoji": "📊", "title": "Live results dashboard", "desc": "Aggregated responses as they arrive: charts for closed questions, response lists for open text." },
-        { "emoji": "📉", "title": "Measure it, don't tally it", "desc": "Rating, Opinion Scale and NPS questions store the number your member picked, so satisfaction comes back as an average with a distribution behind it, and the same question run next quarter is comparable. <a href=\"/blog/discord-rating-scale-nps-ranking-questions/\">How scales and NPS work →</a>" },
+        { "emoji": "📉", "title": "Measure it, don't tally it", "desc": "Rating, Opinion Scale and NPS questions store the number your member picked, so satisfaction comes back as an average with a distribution behind it, and the same question run next quarter is comparable. <a href=\"/blog/discord-rating-scale-nps-ranking-questions/\">How scales and NPS work →</a> Asking agreement? Read <a href=\"/blog/discord-likert-scale-one-statement-at-a-time/\">Likert scales, one statement at a time →</a>" },
         { "emoji": "✨", "title": "AI open-text summaries", "desc": "Subo reads every open answer and writes a concise synthesis. The gist of 500 responses in seconds." },
         { "emoji": "📥", "title": "CSV export", "desc": "Take the full dataset into Excel, Google Sheets, or your own tooling for deeper analysis." },
         { "emoji": "🔗", "title": "Share findings", "desc": "Post a results summary back into Discord to close the feedback loop with your community." }

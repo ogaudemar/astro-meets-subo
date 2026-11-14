@@ -51,10 +51,9 @@ export function postUrl(post: BlogPost): string {
  * posts in the English listing, the English feed and the changelog. Centralizing
  * it means that filter can't be forgotten at one call site out of six.
  *
- * Drafts are excluded by default. Note this does NOT change the standing
- * behavior that draft posts still get built and are reachable at their public
- * URL (`getStaticPaths` maps them) — that is a separate, deliberate open
- * decision, not something this helper silently settles.
+ * Drafts are excluded by default. Draft posts are still built at their URL
+ * (`getStaticPaths` maps them) for preview, but carry robots noindex and stay
+ * out of the sitemap (2026-11-13).
  */
 export async function getBlogPosts(
   locale: BlogLocale,

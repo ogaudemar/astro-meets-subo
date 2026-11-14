@@ -6,6 +6,7 @@ heroImage: "/images/hero-survey.webp"
 tags: ["announcement", "website", "astro"]
 author: "Subo Team"
 draft: false
+noindex: true
 
 ---
 

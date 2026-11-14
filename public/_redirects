@@ -15,3 +15,8 @@
 # the other).
 /blog/how-to-use-skip-logic-smarter-discord-surveys   /blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo/   301
 /blog/how-to-use-skip-logic-smarter-discord-surveys/  /blog/mastering-skip-logic-how-to-make-your-discord-surveys-smarter-with-subo/  301
+
+# Unreviewed draft, deleted 2026-11-13. It was built publicly and listed in the
+# sitemap, so Google had discovered it.
+/blog/scheduling-recurring-surveys-community-pulse   /blog/   301
+/blog/scheduling-recurring-surveys-community-pulse/  /blog/   301
