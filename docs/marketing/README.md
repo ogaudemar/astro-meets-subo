@@ -52,8 +52,8 @@ system of record), [../content.md](../content.md) (blog mechanics, product facts
 
 1. **Earn links to `subo.gg`**: outreach on the user's cadence, and repoint every listing we
    control. [organic/links/](organic/links/README.md)
-2. **Thin-page review**: decide noindex vs improve for the weakest pages.
-   [organic/content/](organic/content/README.md)
+2. **Thin-page review** (done 2026-11-13, found the site is not thin): approve the small
+   noindex / internal-link list. [organic/content/thin-page-review.md](organic/content/thin-page-review.md)
 3. **Agent directories**: ChatGPT once the reviewer login ships, Claude review follow-up.
 4. **Monthly Search Console reading** on both properties, logged in `organic/search/log.md`.
 5. **Paid**: per-channel next actions in [paid/](paid/README.md).

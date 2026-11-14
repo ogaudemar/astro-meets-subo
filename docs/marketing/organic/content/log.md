@@ -7,6 +7,7 @@ scale-family launch, tutorials, backlog).
 
 | Date | Entry |
 |---|---|
+| 2026-11-13 | Thin-page review of all 142 sitemap URLs: no near-duplicates (max overlap 19%), templates 65-84% unique. Only 2 weak posts. Thin content is not what's holding indexation back. |
 | 2026-10-22 | 8 Notion tutorial drafts moved under a private page (were publicly readable with placeholders and invented settings). Settings rewritten from the real web app. |
 | 2026-09-28 | DE and ES to French parity: `/forms/` and `/changelog/` in both (12 pages each). |
 | 2026-09-14 | `/fr/forms/` shipped. |

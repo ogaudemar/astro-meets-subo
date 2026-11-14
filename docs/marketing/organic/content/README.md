@@ -29,10 +29,10 @@ channel copy in [../../launches/](../../launches/)).
 
 ## Next actions
 
-1. **Thin-page review.** List every sitemap URL with its word count, unique content and
-   Search Console status, then mark each **keep / improve / noindex** for the user to approve.
-   Likely candidates to examine first: the IT and PT-BR stubs, templates whose page is mostly
-   shared boilerplate, near-duplicate recipes. noindex is reversible; deleting URLs is not.
+1. **Thin-page review: DONE 2026-11-13, awaiting approval.** The site is not thin (no
+   near-duplicates; templates 65-84% unique). Proposed: noindex 2 posts (the unreviewed draft,
+   plus drafts in general; `new-blog`), expand the cloning post, add internal links to ~9
+   weakly linked pages. [thin-page-review.md](thin-page-review.md)
 2. **Notion tutorial drafts** (hidden since 2026-10-22): Settings is rewritten and waits for
    screenshots, then republish. Members, Subscription and Results next, rewritten from the
    live web app. Skip Logic is a candidate for an on-domain page; Cloning folds into the
