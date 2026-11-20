@@ -61,6 +61,10 @@ code. Either fix the string or change the behavior to match it.
 
 - Compress heavy images in `public/images`.
 - Remove legacy pages: `success.astro`, `subscriptions.astro`, `StripeSub.astro`.
+- Blog post or X thread: three ways to score a prediction poll (market odds, equal points,
+  tiered favorite / underdog / dark horse), and why the choice belongs to the community.
+  Wait for the app-side ruling to ship (`subo/docs/specs/authoring-playbook-alignment.md` §5),
+  so the post matches what the drafter and MCP do.
 
 ## Files
 
