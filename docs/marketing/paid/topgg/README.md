@@ -24,6 +24,10 @@ surveys, Utility. Votes: 97 (Tickety, which comes first when searching "poll", h
 | Subo Utility Category | `874714077068410880` | `874714076992913408` | Tag `utility` | €1/day, max €10 CPM | Active |
 | Theme test: Potter (sorting quiz) | `909218891559874560` | `909218852636733440` | Potter keywords, any project type | €1/day, max €5 CPM, ends 2026-12-04 | Active since 2026-11-13 |
 | Theme test: fandom probe | `909218892285489152` | `909218853626589184` | 19 fandom keywords, any project type | €1/day, max €5 CPM, ends 2026-12-04 | **Paused 2026-11-17** (conclusions below) |
+| Theme test: K-pop (group member quiz) | `911792129697832960` | `911792076862185472` | 20 K-pop keywords (kpop, groups, idol) | €1/day, max €5 CPM, ends 2026-12-18 | Active since 2026-11-21 |
+| Theme test: Pokémon (personality quiz) | `911792130754797568` | `911792077835264000` | pokemon, pokémon, pikachu, pokedex | €1/day, max €5 CPM, ends 2026-12-18 | Active since 2026-11-21 |
+| Theme test: Minecraft (hard trivia) | `911792131560103936` | `911792078904811520` | minecraft, minecraft quiz, mc | €1/day, max €5 CPM, ends 2026-12-18 | Active since 2026-11-21 |
+| Theme test: Anime (theme song quiz) | `911792132436713472` | `911792079907250176` | anime, manga, anime quiz/music/opening + 35 shows from the quiz + Re:Zero | €1/day, max €5 CPM, ends 2026-12-18 | Active since 2026-11-21 |
 
 Current ad copy:
 
@@ -75,6 +79,7 @@ Findings:
 | 2026-11-13 | Keywords search | Removed `easypoll` (competing Discord bot); added Google Form(s), Tally, Fillout, Jotform | pending |
 | 2026-11-17 | Theme tests | Interim read, 4 days (see below) | Fandom: 1,113 impr, 5 clicks (0.45%), €2.17, avg rank 1.50. Potter: 11 impr, 1 click, €0.02 |
 | 2026-11-17 | Fandom probe | Paused. Six themed templates built on Stage to replace it (see below) | |
+| 2026-11-21 | Fandom campaigns | Four created from the Subo project (icon), custom copy ending "Free template, ready to share in your server.", learn_more to the template page, `utm_campaign=topgg-theme-<kpop\|pokemon\|minecraft\|anime>`, `utm_content=v1`. Created Paused by top.gg, set Active by hand. Anime runs the theme song ad first; light novel and Ghibli ads to rotate in | pending (estimates/day: K-pop 12-59, Pokémon 14-69, Minecraft 24-120, Anime 31-160, slot 1-2) |
 | 2026-11-20 (planned) | Keywords search | Title "Subo the Survey Bot" → "Subo: polls, quizzes & forms". Pull the 7-day baseline first. | |
 
 ## Theme tests: how to read them
@@ -166,7 +171,12 @@ to €2/day. Top up before starting the tests.
       (109052 to 109057), pages set live (2026-11-20).
 - [ ] Run `reports/publish_templates_batch7_prod.sql` (app repo, pgAdmin), then push `main`
       so the six pages deploy.
-- [ ] Create the four fandom campaigns (ads, keywords, budget to approve).
+- [x] Create the four fandom campaigns (2026-11-21, ids in the table above).
+- [ ] 2026-11-28: first read of the four (stats by keyword: prune loose matches like `mc`,
+      `txt`, `exo`, `nct`, `idol` if they show views without clicks; PostHog by
+      `$initial_utm_campaign`). Wallet €19.35 on 2026-11-21: about 4 days at full budget,
+      8 to 9 at the probe's pace; top up about €20 to cover the 4 weeks.
+- [ ] Anime: rotate in the light novel and Ghibli ads after the first read.
 - [ ] Fandom probe: delete or leave paused once the four fandom campaigns are live.
 - [ ] 2026-11-26: read the Potter test (stats by keyword + PostHog by campaign); it stops on 2026-12-04.
 - [ ] 2026-11-20: title test on the keywords campaign (see the log).
