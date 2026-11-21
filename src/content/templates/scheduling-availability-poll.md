@@ -6,7 +6,7 @@ templateId: 102156
 kind: "hub"
 dimension: "get-things-done"
 audiences: ["Communities", "Gamers"]
-features: ["Multi-select", "Availability grid", "Timezones", "Per-option emoji"]
+features: ["Multi-select", "Availability grid", "Timezones", "Per-option emoji", "Optional questions"]
 eyebrow: "Organize · Scheduling"
 heroTitle: "Find a time the whole community can make"
 heroSubtitle: "Members tick every day and slot that works, across two axes, and you get an availability heatmap instead of an endless does-8pm-work thread."
@@ -40,12 +40,13 @@ faq:
   - q: "Does it handle timezones?"
     a: "Yes. A quick region question means a global community is not guessing whether 8pm means your evening or theirs. Adjust the regions to your audience."
   - q: "Can members flag a conflict?"
-    a: "An optional note field catches the constraints a grid cannot: a date to avoid, a hard cutoff time, a recurring conflict."
+    a: "An optional note field catches the constraints a grid cannot: a date to avoid, a hard cutoff time, a recurring conflict. Members see a Skip button, and skips are counted apart from answers. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
   - q: "Does it book the event for me?"
     a: "It surfaces the best slot to you. It does not send calendar invites or hold time, so pair it with your calendar tool for the actual booking."
 recipeUrl: "/recipes/event-rsvp-streak/"
 relatedSlugs: ["community-health-engagement", "suggestion-box", "governance-proposal-vote"]
 pubDate: 2026-07-03
+updatedDate: 2026-11-11
 draft: false
 ---
 

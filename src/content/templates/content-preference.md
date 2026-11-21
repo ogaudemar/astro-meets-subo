@@ -6,7 +6,7 @@ templateId: 102158
 kind: "hub"
 dimension: "engage"
 audiences: ["Communities", "Creators"]
-features: ["Answer piping", "Multi-select", "Per-option emoji", "Open feedback"]
+features: ["Answer piping", "Multi-select", "Per-option emoji", "Open feedback", "Optional questions"]
 eyebrow: "Connect · Content planning"
 heroTitle: "Make the content your community actually wants"
 heroSubtitle: "Ask what to make more of, echo their top pick to dig into why, learn which formats they consume, and collect one concrete idea. A 60-second poll that becomes a content plan."
@@ -40,12 +40,13 @@ faq:
   - q: "Why ask about formats?"
     a: "Knowing people want more tutorials is only half the picture. Knowing they want them as short clips rather than long videos tells you how to actually make them."
   - q: "Are the open questions required?"
-    a: "No. The two open fields are optional, so the poll stays a fast tap-through for anyone who does not want to type, while capturing detail from those who do."
+    a: "No. The two open fields are optional, so the poll stays a fast tap-through for anyone who does not want to type, while capturing detail from those who do. Members see a Skip button, and skips are counted apart from answers. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
   - q: "Who is it for?"
     a: "Any creator, server, studio, or brand making content for an audience who would rather ask than guess."
 recipeUrl: "/recipes#engage"
 relatedSlugs: ["this-or-that-poll", "community-health-engagement", "pick-favorite-poll"]
 pubDate: 2026-07-03
+updatedDate: 2026-11-11
 draft: false
 ---
 

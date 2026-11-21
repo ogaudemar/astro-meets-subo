@@ -6,7 +6,7 @@ templateId: 102104
 kind: "hub"
 dimension: "get-things-done"
 audiences: ["Gamers", "Businesses"]
-features: ["Calculated field", "Auto-priority scoring", "Skip logic", "Answer piping"]
+features: ["Calculated field", "Auto-priority scoring", "File upload", "Skip logic", "Answer piping"]
 eyebrow: "Organize · Bug intake"
 heroTitle: "A bug form that triages itself"
 heroSubtitle: "Reporters answer a few structured questions. Subo weighs severity against frequency, computes a triage priority on the spot, and shows it back to them, so the important bugs surface the moment they land."
@@ -25,6 +25,9 @@ featureCallouts:
   - emoji: "🗂️"
     title: "Structured, not a chat blob"
     desc: "Summary, area, severity, frequency, platform and steps come back as fields, so your team reads a triaged queue instead of scrolling a channel."
+  - emoji: "📎"
+    title: "Screenshots attached"
+    desc: "An optional File Upload question takes up to 3 screenshots, right in the report. Reporters with nothing to show tap Skip."
 steps:
   - title: "Clone and set your areas"
     desc: "Swap in the parts of your game or product a bug could hit (UI, gameplay, performance, and so on) as the affected-area options."
@@ -41,17 +44,20 @@ faq:
     a: "Yes. The calculated field is just a formula over the score, so you can move where MEDIUM becomes HIGH or add tiers to match how your team works."
   - q: "What are calculated fields?"
     a: "They derive a new value from earlier answers, like turning severity and frequency into a priority label. Almost nobody discovers this feature on their own, which is exactly why this template shows it off."
+  - q: "Can reporters attach screenshots?"
+    a: "Yes. Before the priority is computed, an optional question asks for up to 3 screenshots, images only, 5 MB each. In Discord they attach them to a reply, on the web they choose or drop them in. Storing files uses your community's credits (200 credits per MB), so a typical screenshot costs 200 credits or less. <a href=\"/blog/discord-file-uploads/\">How file uploads work</a>."
   - q: "Does it work for support tickets, not just game bugs?"
     a: "Yes. It's a self-triaging issue intake for any product or SaaS team. Rename the areas and severity levels and it becomes a support-ticket form."
 recipeUrl: "/recipes#get-things-done"
 relatedSlugs: ["feature-roadmap-vote", "playtester-beta-recruitment", "playtest-beta-feedback"]
 pubDate: 2026-07-02
+updatedDate: 2026-11-11
 draft: false
 ---
 
 A `#bugs` channel is a scroll of half-formed reports someone has to triage by hand. This form captures what your team needs to reproduce and prioritize, then does the first pass of triage itself, before a human ever reads it.
 
-Use it as your community's front door for bugs: a `#report-a-bug` channel, a QA intake during a beta, or a support form. It asks for a one-line summary, the affected area, severity, frequency, whether it reproduces, and platform, then computes a priority and shows it back to the reporter.
+Use it as your community's front door for bugs: a `#report-a-bug` channel, a QA intake during a beta, or a support form. It asks for a one-line summary, the affected area, severity, frequency, whether it reproduces, platform, and up to 3 screenshots if the reporter has any, then computes a priority and shows it back to the reporter.
 
 ## It prioritizes for you
 

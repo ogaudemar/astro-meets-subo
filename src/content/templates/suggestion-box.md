@@ -6,7 +6,7 @@ templateId: 102157
 kind: "hub"
 dimension: "understand"
 audiences: ["Communities"]
-features: ["Category routing", "Skip logic", "Answer piping", "Unlimited responses"]
+features: ["Category routing", "Skip logic", "Answer piping", "Unlimited responses", "Optional questions"]
 eyebrow: "Discover · Suggestion box"
 heroTitle: "A suggestion box that sorts itself"
 heroSubtitle: "Members pick what their idea is about, then answer a follow-up matched to that category. You get sorted, triage-ready ideas instead of a noisy channel."
@@ -43,9 +43,12 @@ faq:
     a: "Skip logic reads the category and shows the matching follow-up. An event idea and a feature idea each get a relevant question; other categories skip straight to the free-form idea and priority read."
   - q: "Can I make it anonymous?"
     a: "Yes. Switch to anonymous mode for sensitive feedback, which is a good fit for a 'report a problem' variant."
+  - q: "Do members have to answer the routed follow-up?"
+    a: "No. The event and feature follow-ups are optional, with a Skip button, because the idea itself is already captured. Skips are counted apart from answers. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
 recipeUrl: "/recipes#understand"
 relatedSlugs: ["governance-proposal-vote", "feature-roadmap-vote", "content-preference"]
 pubDate: 2026-07-03
+updatedDate: 2026-11-11
 draft: false
 ---
 

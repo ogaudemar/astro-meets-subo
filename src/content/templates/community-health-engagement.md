@@ -6,7 +6,7 @@ templateId: 102159
 kind: "hub"
 dimension: "understand"
 audiences: ["Communities"]
-features: ["Rating scales", "Calculated field", "Multi-select", "Open feedback"]
+features: ["Rating scales", "Calculated field", "Multi-select", "Open feedback", "Optional questions"]
 eyebrow: "Discover · Community health"
 heroTitle: "Measure how your community actually feels"
 heroSubtitle: "Two one-tap rating scales average into a belonging and value health score between 1.0 and 5.0, one you can trend over time, plus what members want more of and the one thing they would change."
@@ -45,10 +45,12 @@ faq:
     a: "Quarterly, or after a major change. Trending the score over time is where the value is, so a consistent cadence matters more than any single run."
   - q: "Can I make it anonymous?"
     a: "Yes. Switch to anonymous for franker answers on a sensitive community. The score still aggregates."
+  - q: "Is the \"change one thing\" box required?"
+    a: "No. It's optional, with a Skip button, so the two ratings alone are a complete response. Skips are counted apart from answers. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
 recipeUrl: "/recipes/pre-post-assessment/"
 relatedSlugs: ["nps-reason-followup", "suggestion-box", "content-preference"]
 pubDate: 2026-07-03
-updatedDate: 2026-08-16
+updatedDate: 2026-11-11
 draft: false
 ---
 

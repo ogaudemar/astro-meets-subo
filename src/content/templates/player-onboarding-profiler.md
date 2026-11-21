@@ -6,7 +6,7 @@ templateId: 102102
 kind: "hub"
 dimension: "understand"
 audiences: ["Gamers", "Communities"]
-features: ["Skip logic", "Member segmentation", "Answer piping", "Multi-select interests"]
+features: ["Skip logic", "Member segmentation", "Answer piping", "Multi-select interests", "Optional questions"]
 eyebrow: "Discover · Onboarding survey"
 heroTitle: "An onboarding survey that adapts to who's joining"
 heroSubtitle: "New members and long-time regulars answer different questions, so the welcome feels like a conversation that's listening. You learn who just joined, and everyone lands in the right place."
@@ -43,9 +43,12 @@ faq:
     a: "Yes. Run it as the step before a member gets access, ending with a rules confirmation. On Discord you can pair it with a role that unlocks the server."
   - q: "Does it work for non-gaming communities?"
     a: "Absolutely. It's a member onboarding profiler for any Discord or web community, and reframes cleanly as a new-user activation survey for a product."
+  - q: "Do new members have to answer every question?"
+    a: "No. The newcomer and veteran follow-ups are optional, with a Skip button. The handle stays required, because the welcome message uses it. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
 recipeUrl: "/recipes/member-segmentation/"
 relatedSlugs: ["feature-roadmap-vote", "playtest-beta-feedback", "lore-trivia-quiz"]
 pubDate: 2026-07-02
+updatedDate: 2026-11-11
 draft: false
 ---
 

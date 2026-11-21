@@ -6,7 +6,7 @@ templateId: 102110
 kind: "hub"
 dimension: "get-things-done"
 audiences: ["Gamers", "Businesses"]
-features: ["Action block", "Give-achievement on qualify", "Skip logic", "Answer piping"]
+features: ["Action block", "Give-achievement on qualify", "Skip logic", "File upload", "Answer piping"]
 eyebrow: "Organize · Recruitment"
 heroTitle: "Recruit beta testers who'll actually show up"
 heroSubtitle: "Applicants answer a few quick questions, and Subo tells them right away if they're in. It filters hardest on who can commit each week, then grants a 'Beta Tester' achievement to everyone who qualifies, automatically."
@@ -25,6 +25,9 @@ featureCallouts:
   - emoji: "✍️"
     title: "A built-in effort filter"
     desc: "A short writing prompt near the end quietly filters out low-effort applicants and gives you something real to read when you pick from the qualified pool."
+  - emoji: "📎"
+    title: "Room for past work"
+    desc: "An optional File Upload question takes a resume, a portfolio, or feedback they've written before. Applicants with nothing to attach tap Skip."
 steps:
   - title: "Create the achievement first"
     desc: "Make a 'Beta Tester' achievement in your community, then point the reward at it. On Discord you can link it to a role that unlocks the tester channel."
@@ -41,17 +44,20 @@ faq:
     a: "No, and that's deliberate. A recruitment survey should run on the real motivation, getting into the beta, not an XP payout that would attract people applying just to farm points. The only reward is the achievement, earned by qualifiers."
   - q: "How does the availability gate work?"
     a: "Skip logic reads the availability answer. Applicants who can commit weekly are routed to the achievement; everyone else sees the waitlist message. Exactly one path fires."
+  - q: "Can applicants send a portfolio or past feedback?"
+    a: "Yes, if they have one. An optional File Upload question takes one document or image, up to 5 MB: a resume, a portfolio, or feedback they've written for another game. Files are stored privately and storing them uses your community's credits. <a href=\"/blog/discord-file-uploads/\">How file uploads work</a>."
   - q: "Can I use it beyond playtesting?"
     a: "Yes. It's a general screen-and-reward intake: an early-access list, a moderator or volunteer application, or any signup where you qualify people and grant a credential on the spot."
 recipeUrl: "/recipes/playtester-selection/"
 relatedSlugs: ["playtest-beta-feedback", "bug-report-form", "player-onboarding-profiler"]
 pubDate: 2026-07-02
+updatedDate: 2026-11-11
 draft: false
 ---
 
 Open a `#beta-signups` channel and you get a flood of "me!" with no way to tell who'll actually show up on test day. This template screens applicants as they apply, filters hardest on weekly availability, and grants a reward to everyone who qualifies, all in one flow.
 
-Applicants answer a few quick questions (handle, availability, platforms, and a short writing prompt), and Subo tells them immediately whether they're in. Qualifiers earn a "Beta Tester" achievement automatically; everyone else lands on a graceful waitlist you can pull from next round.
+Applicants answer a few quick questions (handle, availability, platforms, a short writing prompt, and an optional file such as a portfolio), and Subo tells them immediately whether they're in. Qualifiers earn a "Beta Tester" achievement automatically; everyone else lands on a graceful waitlist you can pull from next round.
 
 ## It recruits and rewards in one pass
 

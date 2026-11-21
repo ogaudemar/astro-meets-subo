@@ -6,7 +6,7 @@ templateId: 102155
 kind: "hub"
 dimension: "engage"
 audiences: ["Communities", "Gamers"]
-features: ["Tell-us-why follow-up", "Answer piping", "Tier list", "Per-option emoji"]
+features: ["Tell-us-why follow-up", "Answer piping", "Tier list", "Per-option emoji", "Optional questions"]
 eyebrow: "Connect · Debate poll"
 heroTitle: "The debate poll that starts a conversation"
 heroSubtitle: "A two-option showdown, then defend your pick in one line, plus a tier-list round. It is the fun poll your server actually argues in, not the one they scroll past."
@@ -43,9 +43,12 @@ faq:
     a: "Yes. Run it weekly with last week's winner facing a new challenger and tally it into a season bracket."
   - q: "Does it work for gaming communities?"
     a: "Perfectly. Character versus character, weapon versus weapon, map versus map. Same structure, your options."
+  - q: "Do voters have to defend their pick?"
+    a: "No. The defend-your-choice follow-up is optional, with a Skip button, so a quick vote still counts. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
 recipeUrl: "/recipes#engage"
 relatedSlugs: ["this-or-that-quick-poll", "content-preference", "governance-proposal-vote"]
 pubDate: 2026-07-03
+updatedDate: 2026-11-11
 draft: false
 ---
 

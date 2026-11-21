@@ -6,7 +6,7 @@ templateId: 102101
 kind: "hub"
 dimension: "understand"
 audiences: ["Gamers", "Businesses"]
-features: ["Rating scales", "Calculated field", "Satisfaction score", "Open-ended follow-ups"]
+features: ["Rating scales", "Calculated field", "Satisfaction score", "Open-ended follow-ups", "Optional questions"]
 eyebrow: "Discover · Feedback survey"
 heroTitle: "A playtest survey that scores itself"
 heroSubtitle: "Four one-tap rating scales tell you how much players enjoyed the build. Two open questions tell you why. Subo averages the four ratings into a single satisfaction score between 1.0 and 5.0, so you can compare this playtest to the last one at a glance."
@@ -38,7 +38,7 @@ faq:
   - q: "Is this an NPS survey?"
     a: "No, it's a satisfaction survey. The recommend question is a 1-to-5 rating like the other three, not the 0-to-10 NPS instrument, which keeps all four dimensions on one comparable scale. If you want NPS specifically, the <a href=\"/templates/nps-reason-followup/\">NPS template</a> uses the native NPS question and branches on the score."
   - q: "Do players have to type?"
-    a: "Only if they want to. The four ratings are one-tap emoji answers, and the two open questions are optional depth. Most players finish in under a minute."
+    a: "Only if they want to. The four ratings are one-tap emoji answers, and the two open questions are optional depth. Most players finish in under a minute. Members see a Skip button, and skips are counted apart from answers. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
   - q: "Can I use it outside of games?"
     a: "Yes. It works as a product or beta CSAT survey, an event or workshop feedback form, or a post-purchase check-in. Rename the four dimensions to fit what you're measuring."
   - q: "Where does the satisfaction score come from?"
@@ -48,7 +48,7 @@ faq:
 recipeUrl: "/recipes#understand"
 relatedSlugs: ["feature-roadmap-vote", "player-onboarding-profiler", "playtester-beta-recruitment"]
 pubDate: 2026-07-02
-updatedDate: 2026-08-16
+updatedDate: 2026-11-11
 draft: false
 ---
 

@@ -6,7 +6,7 @@ templateId: 102100
 kind: "hub"
 dimension: "engage"
 audiences: ["Gamers", "Communities"]
-features: ["Scoring & odds", "Grading", "Score-based XP", "Answer piping", "Scheduled close"]
+features: ["Scoring & odds", "Grading", "Score-based XP", "Answer piping", "Scheduled close", "Optional questions"]
 eyebrow: "Connect · Prediction game"
 heroTitle: "Turn any event into a prediction contest"
 heroSubtitle: "Members lock in their picks before the match, tournament, or awards night. You reveal the results afterward, and XP rewards the boldest correct calls, so calling the upset is worth more than picking the favorite."
@@ -41,8 +41,11 @@ faq:
     a: "For popular events, look the outcome up on a public prediction market like Kalshi or Polymarket and use each option's payout multiplier. When no market exists, such as MVP picks, in-game events, or silly props, just reward every correct answer equally. Precision doesn't matter; it's for fun."
   - q: "Can predictions be anonymous?"
     a: "Yes. Respondents are still signed in, so XP and the leaderboard keep working in Anonymous mode, which is where new servers start. Semi-Private hides picks from other members while leaving you able to see who called what. The one thing to weigh: paying out XP reveals who scored, so on a small contest the payout itself narrows down the picks."
+  - q: "Do members have to make their case?"
+    a: "No. The \"make your case\" follow-up is optional, with a Skip button, so a member can lock in a prediction in one tap and still argue for it if they want to. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
 recipeUrl: "/recipes/prediction-poll/"
 pubDate: 2026-07-01
+updatedDate: 2026-11-11
 draft: false
 ---
 

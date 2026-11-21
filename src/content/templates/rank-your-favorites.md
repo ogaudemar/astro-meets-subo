@@ -6,7 +6,7 @@ templateId: 103931
 kind: "hub"
 dimension: "engage"
 audiences: ["Gamers", "Creators", "Communities"]
-features: ["Ranking", "Top-N ranking", "Answer piping", "Randomized items"]
+features: ["Ranking", "Top-N ranking", "Answer piping", "Randomized items", "Optional questions"]
 eyebrow: "Connect · Ranking"
 heroTitle: "Settle the argument with an actual ranking"
 heroSubtitle: "Members tap their top three in order and say why their number one earned it. You get average ranks, first-choice counts, and the reasoning behind them."
@@ -47,8 +47,11 @@ faq:
     a: "Up to twenty, but we warn you above seven. People rank long lists badly, and the honest fix is asking for a top three instead."
   - q: "Can I use it for a tournament bracket?"
     a: "That is one of the best uses. Run the ranking, take the highest average ranks as your seeds, then run head-to-head polls from there."
+  - q: "Is every question required?"
+    a: "Defending their number one stays required, since that's the argument the poll is for. \"Anything missing from the list?\" is optional, with a Skip button. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
 relatedSlugs: ["this-or-that-poll", "content-preference", "feature-prioritization"]
 pubDate: 2026-08-16
+updatedDate: 2026-11-11
 draft: false
 ---
 

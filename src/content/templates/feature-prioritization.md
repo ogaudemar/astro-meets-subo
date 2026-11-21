@@ -6,7 +6,7 @@ templateId: 102135
 kind: "hub"
 dimension: "get-things-done"
 audiences: ["Businesses", "Product teams", "Communities"]
-features: ["MoSCoW framework", "Scoring", "Score piping", "Forced-choice vote"]
+features: ["MoSCoW framework", "Scoring", "Score piping", "Forced-choice vote", "Optional questions"]
 eyebrow: "Organize · Roadmap"
 heroTitle: "Let demand rank your roadmap"
 heroSubtitle: "More good ideas than you can build? Members sort every candidate into Must have, Should have, Could have or Won't have this time, cast one forced 'ship this first' vote, and tell you what's missing, so you sequence the roadmap on evidence rather than the loudest voice."
@@ -45,10 +45,12 @@ faq:
     a: "Yes. The what's-missing box captures ideas outside your candidate list, so the survey doubles as a request board."
   - q: "Does it work for a community, not just a product?"
     a: "Yes. Reframe the candidates as community additions (events, channels, activities) for a 'what should we add?' board."
+  - q: "What if members have nothing to add to the list?"
+    a: "The what's-missing box is optional. Members tap Skip, and skips are counted apart from answers, so an empty box never reads as a missing response. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
 recipeUrl: "/recipes#get-things-done"
 relatedSlugs: ["feature-roadmap-vote", "pricing-willingness-to-pay", "nps-reason-followup"]
 pubDate: 2026-07-03
-updatedDate: 2026-08-16
+updatedDate: 2026-11-11
 draft: false
 ---
 

@@ -6,7 +6,7 @@ templateId: 108019
 kind: "hub"
 dimension: "engage"
 audiences: ["Communities", "Gamers"]
-features: ["Answer piping", "Participation XP", "Skip logic", "Text Analysis"]
+features: ["Answer piping", "Participation XP", "Skip logic", "Text Analysis", "Optional questions"]
 eyebrow: "Connect · Welcome"
 heroTitle: "A warm welcome that turns into an introduction"
 heroSubtitle: "Four light questions, two minutes, and a welcome that sends new members to your introductions channel with an icebreaker built from their own answer."
@@ -43,9 +43,12 @@ faq:
     a: "Not from this template; posting or pinning it is the way today."
   - q: "What if my server doesn't use XP?"
     a: "Turn it off and change the welcome's button (\"Collect your welcome XP\") to something like \"See you there!\"."
+  - q: "Can a new member skip a question?"
+    a: "The follow-up after \"something else\" is optional, with a Skip button. The game recommendation stays required, because the welcome message is built from it. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
 recipeUrl: "/recipes/welcome-quiz/"
 relatedSlugs: ["player-onboarding-profiler", "community-health-engagement", "staff-application"]
 pubDate: 2026-10-28
+updatedDate: 2026-11-11
 draft: false
 ---
 

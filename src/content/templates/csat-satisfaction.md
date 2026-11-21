@@ -6,7 +6,7 @@ templateId: 103932
 kind: "hub"
 dimension: "understand"
 audiences: ["Businesses", "Communities"]
-features: ["Star rating", "Skip logic", "Calculated field", "Benchmark instrument"]
+features: ["Star rating", "Skip logic", "Calculated field", "Benchmark instrument", "Optional questions"]
 eyebrow: "Discover · Customer satisfaction"
 heroTitle: "Ask the satisfaction question people already understand"
 heroSubtitle: "One five star rating and one follow-up that changes depending on the answer. Short enough that people finish it, standard enough that the number means something."
@@ -42,13 +42,14 @@ faq:
   - q: "How is it different from CES?"
     a: "CSAT asks whether the experience was good. CES asks how much work it took. They often disagree, and the disagreement is the useful bit: people can be satisfied with an outcome that cost them far too much effort."
   - q: "Does everyone get the same follow-up question?"
-    a: "No, and that is the point. Three or below gets asked what went wrong; four or five gets asked what went right. Both are optional, so a one-tap answer is still a complete response."
+    a: "No, and that is the point. Three or below gets asked what went wrong; four or five gets asked what went right. Both are optional, so a one-tap answer is still a complete response. Members see a Skip button, and skips are counted apart from answers. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
   - q: "Can I use emoji faces instead of stars?"
     a: "Yes. Swap the icon and give each point its own glyph. The scale keeps its named ends and the follow-up logic keeps working."
   - q: "How often should I run it?"
     a: "After the moment you care about, every time. CSAT is most useful as a running measure rather than an annual survey, because the trend and the comments are where the signal is."
 relatedSlugs: ["ces-customer-effort", "nps-reason-followup", "playtest-beta-feedback"]
 pubDate: 2026-08-16
+updatedDate: 2026-11-11
 draft: false
 ---
 

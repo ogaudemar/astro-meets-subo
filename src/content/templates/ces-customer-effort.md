@@ -6,7 +6,7 @@ templateId: 103933
 kind: "hub"
 dimension: "understand"
 audiences: ["Businesses", "Communities"]
-features: ["Opinion scale", "Seven point Likert", "Dropdown scale", "Benchmark instrument"]
+features: ["Opinion scale", "Seven point Likert", "Dropdown scale", "Benchmark instrument", "Optional questions"]
 eyebrow: "Discover · Customer effort"
 heroTitle: "Find out how hard you made people work"
 heroSubtitle: "One seven point agreement statement, asked the standard way, plus the reason behind the score and what the contact was about."
@@ -47,8 +47,11 @@ faq:
     a: "Many support teams do, on alternating contacts rather than in the same survey. Both are in the template library and each is short enough to send on its own."
   - q: "Can I change the statement?"
     a: "Yes. Any agreement statement works with the same seven points, so you can ask whether the docs answered the question or whether setup was straightforward. Keep the answer set running from disagree up to agree."
+  - q: "Do members have to explain their score?"
+    a: "No. The open question, what made it easy or what got in the way, is optional: members see a Skip button, and the effort score alone is a complete answer. Skips are counted apart from answers, so they never dilute the open-text results. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
 relatedSlugs: ["csat-satisfaction", "nps-reason-followup", "churn-cancellation"]
 pubDate: 2026-08-16
+updatedDate: 2026-11-11
 draft: false
 ---
 

@@ -6,7 +6,7 @@ templateId: 108018
 kind: "hub"
 dimension: "get-things-done"
 audiences: ["Communities", "Gamers"]
-features: ["Skip logic", "Opinion scale", "Multi-select", "Age gate"]
+features: ["Skip logic", "Opinion scale", "File upload", "Optional questions", "Multi-select", "Age gate"]
 eyebrow: "Organize · Staff application"
 heroTitle: "A mod application that does the screening for you"
 heroSubtitle: "Every applicant answers the same questions: when they're online, how much time they really have, whether they've moderated before, and how they'd handle a conflict involving a friend."
@@ -28,6 +28,9 @@ featureCallouts:
   - emoji: "🔞"
     title: "Optional age gate"
     desc: "Applicants under 16 get a polite decline and skip the rest. Change the age or remove the gate to fit your server."
+  - emoji: "📎"
+    title: "Proof of past work"
+    desc: "An optional File Upload question takes a resume or screenshots of mod work they've done. Applicants with nothing to attach tap Skip."
 steps:
   - title: "Clone it and make it yours"
     desc: "Adjust the age gate (or remove it) and the conflict scenario to fit your server."
@@ -44,11 +47,14 @@ faq:
     a: "No, on purpose: accepting a mod is a human decision. Participation XP is off too, so nobody applies just to farm points."
   - q: "Can I change the minimum age?"
     a: "Yes. The gate is a visual condition on the age question; change which age option declines, or delete the decline and its conditions."
-  - q: "Why is \"Anything else?\" a Yes/No first?"
-    a: "A question can't be skipped in a Subo conversation, so a Yes/No lets people with nothing to add move on in one tap."
+  - q: "Can applicants attach a resume or screenshots?"
+    a: "Yes, if they want to. A File Upload question near the end takes one document or image, up to 5 MB, and it's optional. Files are stored privately and show up with the rest of the application. Storing them uses your community's credits. <a href=\"/blog/discord-file-uploads/\">How file uploads work</a>."
+  - q: "Do applicants have to answer \"Anything else?\""
+    a: "No. It's an optional question: applicants see \"(optional)\" and a Skip button, and a skip is counted apart from the answers. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
 recipeUrl: "/recipes/volunteer-moderator-funnel/"
 relatedSlugs: ["playtester-beta-recruitment", "onboarding-certification", "welcome-new-members"]
 pubDate: 2026-10-28
+updatedDate: 2026-11-11
 draft: false
 ---
 
@@ -60,7 +66,8 @@ draft: false
 - **How much time they really have,** on a 4-point scale from "Under 2" to "More than 10" hours a week.
 - **Their experience:** a mod somewhere now, in the past, or for the first time. Only those with experience get asked where, and what they were responsible for.
 - **A conflict involving a friend:** an argument in a public channel turning into insults, with a long-time regular they get along with on one side. How someone answers this tells you more than any list of past servers.
-- **Anything else,** asked as a Yes/No first, so people with nothing to add move on.
+- **A resume or screenshots of mod work,** as an optional file. Applicants with nothing to show skip it.
+- **Anything else,** as one optional question with a Skip button, so people with nothing to add move on.
 
 An optional age gate at the start politely declines applicants under 16 and skips the rest.
 

@@ -6,7 +6,7 @@ templateId: 102103
 kind: "hub"
 dimension: "understand"
 audiences: ["Gamers", "Businesses"]
-features: ["Skip logic", "Tell-us-why follow-up", "Opinion scale", "Answer piping", "Single-choice vote"]
+features: ["Skip logic", "Tell-us-why follow-up", "Opinion scale", "Answer piping", "Single-choice vote", "Optional questions"]
 eyebrow: "Discover · Roadmap vote"
 heroTitle: "A roadmap vote that asks why, not just what"
 heroSubtitle: "Members pick what to build next, then Subo asks why, and the follow-up adapts to their vote. You learn the reasoning that actually drives a roadmap, not just a tally."
@@ -46,10 +46,12 @@ faq:
     a: "That's the write-in branch. Instead of a dead end, they tell you what they'd build instead, so you catch the idea that wasn't on your shortlist."
   - q: "Is this just for game studios?"
     a: "No. It's a roadmap or prioritization vote for any product team, and reframes as a 'what should we do next' vote for any Discord community."
+  - q: "Can members skip the why?"
+    a: "For a listed feature, yes: that follow-up is optional, with a Skip button. Members who write in their own idea are still asked what to build instead, since that answer is the idea itself. <a href=\"/blog/discord-survey-optional-questions/\">How optional questions work</a>."
 recipeUrl: "/recipes#understand"
 relatedSlugs: ["playtest-beta-feedback", "bug-report-form", "player-onboarding-profiler"]
 pubDate: 2026-07-02
-updatedDate: 2026-08-16
+updatedDate: 2026-11-11
 draft: false
 ---
 
