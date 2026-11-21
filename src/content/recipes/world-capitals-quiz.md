@@ -8,7 +8,7 @@ bestFor: "any community that runs recurring knowledge competitions or wants to i
 dimension: "engage"
 features: ["scoring", "grading", "XP", "quizzes"]
 relatedSlugs: ["study-quiz", "hogwarts-house-sorting-quiz", "prediction-poll"]
-templateSlugs: ["lore-trivia-quiz", "onboarding-certification"]
+templateSlugs: ["lore-trivia-quiz", "onboarding-certification", "hard-minecraft-trivia-quiz", "anime-theme-song-quiz", "light-novel-real-or-fake-quiz"]
 faq:
   - q: "How do you make a graded quiz in Discord?"
     a: "Mark the right option with correct_answer_id and put the points on that option with score_values. Subo grades each answer as it comes in and can explain the correct answer straight away."
@@ -494,6 +494,26 @@ respondent who takes it four weeks in a row earns XP four times and can
 improve their score week-over-week.
 
 ---
+
+### Result tiers instead of one score line
+
+Rather than one closing block that pipes the score, show one of several result blocks,
+each gated on a range of `correct_answers` (the Hard Minecraft, Anime Theme and Light
+Novel templates use it):
+
+```json
+{ "type": "content_block", "prompt": "# 🪵 Wooden pickaxe, [UserName]
+
+You scored **[correct_answers]/[max_correct_answers]**.",
+  "show_when": { "variable": "correct_answers", "op": "lt", "value": 5 } },
+{ "type": "content_block", "prompt": "# ⚙️ Iron pickaxe, [UserName] ...",
+  "show_when": { "all": [ { "variable": "correct_answers", "op": "gte", "value": 5 },
+                          { "variable": "correct_answers", "op": "lte", "value": 7 } ] } }
+```
+
+Make the ranges cover every possible score with no overlap, give each tier its own image,
+and keep the score line inside each tier so nobody misses it. If you change the number of
+questions, move the ranges with it.
 
 ## When this recipe doesn't fit
 

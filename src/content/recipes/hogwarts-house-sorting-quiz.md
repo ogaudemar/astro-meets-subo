@@ -8,7 +8,7 @@ bestFor: "fan communities, onboarding quizzes, seasonal events"
 dimension: "engage"
 features: ["scoring", "calculated block", "skip logic", "quizzes"]
 relatedSlugs: ["member-segmentation", "world-capitals-quiz", "welcome-quiz"]
-templateSlugs: ["hogwarts-house-sorting"]
+templateSlugs: ["hogwarts-house-sorting", "kpop-group-member-quiz", "pokemon-personality-quiz", "studio-ghibli-dish-quiz"]
 faq:
   - q: "How do you make a personality quiz for Discord?"
     a: "Put score weights on every answer so each option feeds one or more personality buckets, then use a calculated block to pick the highest-scoring bucket and skip logic to show the matching reveal."
@@ -429,6 +429,27 @@ a different House.
 > outro block for this reason.
 
 ---
+
+### Six results instead of four
+
+The same shape scales to six results (the K-pop, Pokémon and Studio Ghibli templates
+use it): six questions, six shuffled options each. Each option gives **3 points to its
+own result and 1 to another**, and the "1" moves by a different offset on each question,
+so no result is favored:
+
+| Question | The 1 point goes to the result... |
+|---|---|
+| 1 and 6 | next in the list (offset 1) |
+| 2 | two along (offset 2) |
+| 3 | three along (offset 3) |
+| 4 | four along (offset 4) |
+| 5 | five along (offset 5) |
+
+Every result can then reach exactly 18, and `argmax` over the six scores picks the
+winner (a tie goes to the first one listed). Six options need `emoji_only` or a select
+menu rather than full-text buttons. `argmax` returns the bucket name as stored, which is
+lowercase when the `score_values` keys are; skip-logic comparisons ignore case, so
+`{"block": "partner", "op": "eq", "value": "pikachu"}` matches either way.
 
 ## When this recipe doesn't fit
 
