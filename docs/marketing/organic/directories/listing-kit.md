@@ -328,23 +328,18 @@ the registry files in `Code/subo-mcp/chatgpt-plugin/`):
 ```
 plugin.json
 mcp.json
-assets/logo.png          ← subo-512.png (square, ≥48 px, ≤5 MiB)
-assets/composer-icon.png ← same file
+assets/logo.png          ← subo-512.png (square, ≥48 px, ≤5 MiB); also used as composerIcon
 ```
 
-**`mcp.json`:**
-```json
-{
-  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
-  "mcpServers": {
-    "subo": {
-      "type": "streamable-http",
-      "url": "https://api.subo.ai/mcp",
-      "extensions": { "com.openai": { "auth": { "type": "oauth", "client": { "mode": "cimd" } } } }
-    }
-  }
-}
-```
+**Built 2026-11-15** in `Code/subo-mcp/chatgpt-plugin/` (`subo-chatgpt-plugin-1.0.0.zip`).
+That folder is the source of truth for the fields below; this section is the reasoning.
+
+**`mcp.json`** declares `extensions["com.openai"].auth = {type: oauth, client: {mode: cimd}}`
+on the server. The generic agent-plugins 1.0.0 schema forbids that key, but OpenAI's build guide
+(`/plugins/build/plugins#configure-mcp-authentication`) requires it there, and the portal has
+no OAuth editor: it only displays what `mcp.json` declares. OpenAI's docs win.
+**Domain verification** happens in the portal under MCPs → the server → **Connect**: the drawer
+shows the token to serve at `https://api.subo.ai/.well-known/openai-apps-challenge`.
 
 **Listing fields** (`extensions.com.openai.interface`, limits as of 2026-10-15):
 

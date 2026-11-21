@@ -43,7 +43,7 @@ system of record), [../content.md](../content.md) (blog mechanics, product facts
 - **AI answers already name us.** Subo is cited first for *best Discord survey bot*, through
   directories (top.gg, G2) more than through our own pages. Details: [organic/geo/](organic/geo/README.md).
 - **Agent directories are the most active thread:** MCP registry live, Claude Connectors
-  Directory in review, ChatGPT parked on an app-side reviewer login. Details:
+  Directory in review, ChatGPT package ready to submit. Details:
   [organic/directories/](organic/directories/README.md).
 - **Paid:** top.gg ads live at about €15/month, cost per install around €0.45.
 - **Content cadence:** up to ~5 posts a month, driven by feature releases.
@@ -54,7 +54,7 @@ system of record), [../content.md](../content.md) (blog mechanics, product facts
    control. [organic/links/](organic/links/README.md)
 2. **Cloning guide screenshots** (user), then publish. The thin-page review is done and
    implemented: the site is not thin. [organic/content/](organic/content/README.md)
-3. **Agent directories**: ChatGPT once the reviewer login ships, Claude review follow-up.
+3. **Agent directories**: submit ChatGPT (package ready), Claude review follow-up.
 4. **Monthly Search Console reading** on both properties, logged in `organic/search/log.md`.
 5. **Paid**: per-channel next actions in [paid/](paid/README.md).
 

@@ -6,6 +6,7 @@ Newest first. Detail before 2026-11-13 is in
 
 | Date | Entry |
 |---|---|
+| 2026-11-16 | ChatGPT package built and dry-run (8/8 pass); demo recorded and uploaded unlisted. Ready to submit. |
 | 2026-10-21 | ChatGPT decisions taken (reviewer login, ClearSwell LLC publisher, `Plugged In` test server). Parked on the app-side login. |
 | 2026-10-15 | Claude Connectors Directory submitted. ChatGPT requirements read; listing drafted in the kit. |
 | 2026-10-14 | OAuth live on the MCP server. Registry v1.1.0 published; site and listing repo updated. Meta application switched to OAuth. |

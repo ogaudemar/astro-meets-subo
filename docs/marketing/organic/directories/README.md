@@ -26,25 +26,24 @@ Disforge** (now discordbots.net).
 | awesome-remote-mcp-servers PR #1210 | 🟡 Open, CI clean, waiting on the maintainer |
 | Claude Connectors Directory | 🟡 Submitted 2026-10-15, in review. Status `https://claude.ai/directory/manage`; replies go to the contact email. Keep the `Connecting` server's test data until live |
 | Meta Muse Platform Connector | 🟡 Application switched to OAuth, not yet reviewed. Risk: DCR clients with no grant are pruned after 30 days |
-| ChatGPT Plugins Directory | ⏸ Listing drafted in the kit. **Parked on an app-side reviewer login** (see below) |
+| ChatGPT Plugins Directory | 🟡 Package ready 2026-11-16: `Code/subo-mcp/chatgpt-plugin/subo-chatgpt-plugin-1.0.0.zip` (EN + FR/ES/DE translations, 5 + 3 test cases, demo `https://youtu.be/KGhazaHcBK0`, unlisted). All 8 cases pass with `reviewer` on `Plugin FTW`. Pick **CIMD** in the portal |
 | mcp.directory, mcpservers.com | Only if it's a five-minute form; many pick up registry entries on their own |
 
 **Reviewer identity:** Discord account `connect_the_connectors`, one test server per directory
-(`Connecting` for Claude, `Muse_Connector_Test` for Meta, `Plugged In` for ChatGPT). **Never
-ask for or store its credentials**: the user types them into each portal.
+(`Connecting` for Claude, `Muse_Connector_Test` for Meta, `Plugin FTW` for ChatGPT). ChatGPT
+reviewers sign in as the Subo password account `reviewer` ("Sign in another way" on
+`/app/login`). **Never ask for or store its credentials**: the user types them into each portal.
 
 ## Next actions
 
-1. **ChatGPT**, once the app ships the items below: user tests in ChatGPT developer mode, we
-   build the ZIP in `Code/subo-mcp/chatgpt-plugin/`, user records the demo, verifies the
-   domain, submits. Start **ClearSwell LLC business verification** on the OpenAI Platform now;
-   it can run in parallel.
+1. **ChatGPT:** upload the ZIP, verify the domain (token into prod `.env`), fill Review details
+   (sign-in steps, no mailbox fallback), submit. `developerName` must match the verified identity
+   (ClearSwell LLC business verification). Shipped app-side 2026-11-16: password reviewer login,
+   tool annotations, domain-token route, `api.subo.ai` icons.
 2. **App-side items to hand over** (edit-only from here; the app session ships them):
-   - Reviewer login that skips Discord, ending in the same OAuth consent, landing on `Plugged In`.
-   - Tool annotations in `mcp_server/registry.py`: explicit `destructive_hint` on read and
-     Outward tools, `open_world_hint=True` on `test_webhook`.
-   - Domain-verification token at `https://api.subo.ai/.well-known/openai-apps-challenge`.
-   - Favicon on `api.subo.ai` (`/favicon.ico` currently 302s to HTML, so Claude shows a globe).
+   - Projects created or cloned through the API don't inherit the community's default
+     participant channel (`post_channel_id: null`). Seen in Plugin FTW and ExtraSwell 108857.
+   - Server instructions: say API keys are made on the Account page, so agents can point there.
    - DCR pruning: exempt never-used clients or lengthen the window (Meta risk).
    - Answer `tools/list` without a key, so Glama and Smithery can inspect the server.
    - Account page `Web_ApiKeys_Mcp_Desc`: one line saying claude.ai can sign in without a key.
