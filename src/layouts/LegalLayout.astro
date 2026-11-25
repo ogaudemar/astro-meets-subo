@@ -57,6 +57,93 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
   margin-bottom: 0.5rem;
 }
 
+/* Reading width and rhythm (2026-11-24). The site's .container--small (800px, 48px
+   padding) left ~700px for text and the two-column tables cramped. 920px at 17px keeps
+   prose near 85 characters a line, the comfortable end for long legal text. Scoped to
+   these pages only: other pages use .container--small too. */
+.legal-main :global(.container--small) {
+  max-width: 920px;
+}
+
+.legal-main :global(.content-text) {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+/* Sections had no space between them, so a heading sat right under the paragraph
+   above it ("Who This Policy Applies To" under the intro). */
+.legal-main :global(.text-08__item + .text-08__item) {
+  margin-top: 2.75rem;
+}
+
+.legal-main :global(.content-text p) {
+  margin: 0 0 1em;
+}
+
+.legal-main :global(.content-text ul) {
+  margin: 0 0 1.25em;
+  padding-left: 1.5em;
+}
+
+.legal-main :global(.content-text li) {
+  margin-bottom: 0.6em;
+}
+
+.legal-main :global(.content-text li:last-child) {
+  margin-bottom: 0;
+}
+
+/* Tables (data retention, legal bases): thin rules, shaded header, roomy cells. */
+.legal-main :global(table) {
+  border-collapse: collapse;
+  margin: 1.5rem 0 1.75rem;
+  font-size: 0.97rem;
+  line-height: 1.55;
+}
+
+.legal-main :global(th),
+.legal-main :global(td) {
+  border: 1px solid #dcdcdc;
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.legal-main :global(th) {
+  background: #f3f3f3;
+  font-weight: 700;
+  color: #111;
+}
+
+.legal-main :global(td:first-child) {
+  width: 34%;
+  font-weight: 600;
+  color: #111;
+}
+
+.legal-main :global(tbody tr:nth-child(even)) {
+  background: #fafafa;
+}
+
+/* The global code style is a faint white tint, invisible on this white page. */
+.legal-main :global(code) {
+  background: #f1f1f1;
+  color: #222;
+}
+
+@media (max-width: 640px) {
+  .legal-main :global(.content-text) {
+    font-size: 1rem;
+  }
+  .legal-main :global(td:first-child) {
+    width: 40%;
+  }
+  .legal-main :global(th),
+  .legal-main :global(td) {
+    padding: 0.5rem 0.6rem;
+  }
+}
+
 /* Override white link color (invisible on white bg) and lime hover */
 .legal-main :global(a) {
   color: #e1287e;
