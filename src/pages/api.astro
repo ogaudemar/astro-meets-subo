@@ -692,7 +692,9 @@ const toc = [
               Only a Steam game (its App ID, from the store page URL) can be connected through
               the API, with an Admin key. Twitch and YouTube need an Admin to sign in with the
               channel in the dashboard, under Settings &gt; Networks. Disconnect a source with
-              <code>DELETE /communities/&#123;communityId&#125;/sources/&#123;sourceId&#125;</code>.
+              <code>DELETE /communities/&#123;communityId&#125;/sources/&#123;sourceId&#125;</code>; for Twitch and
+              YouTube this also deletes the connecting Admin's stored tokens, so reconnecting needs
+              that dashboard sign-in again.
             </p>
             <p>
               Colors are 6-digit hex <strong>without</strong> the <code>#</code>:

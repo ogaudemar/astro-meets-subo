@@ -147,7 +147,9 @@ nested under a community: resolve `{communityId}` first with `GET /communities`.
      (`{"provider": "steam", "app_id": 1145360}`, Admin key). Twitch and YouTube
      need an Admin's browser sign-in in the dashboard (Settings > Networks) and
      cannot be connected through the API.
-     `DELETE /communities/{communityId}/sources/{sourceId}` disconnects one.
+     `DELETE /communities/{communityId}/sources/{sourceId}` disconnects one; for
+     Twitch and YouTube it also deletes the connecting Admin's stored tokens, so
+     reconnecting needs that dashboard sign-in again.
    - Open refuses a project nobody can reach: with no post channel it opens
      without posting when its web link is on or a journey or campaign invites to
      it; with no post, no link and no invitation it returns `422 channel_required`.
