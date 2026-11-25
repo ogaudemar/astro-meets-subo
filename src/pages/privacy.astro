@@ -61,7 +61,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 							<div class="content-text"><p>The data relationship differs by role:</p>
 <ul>
 <li><strong>Creators</strong> (server owners and admins): access Subo via Discord commands and the web admin. For survey results and response data collected on their behalf, Subo acts as a <strong>data processor</strong> and creators are the <strong>data controllers</strong>. Creators are responsible for the lawful collection of their community members' survey responses.</li>
-<li><strong>Participants</strong> (survey respondents): respond to surveys invited by creators. For profile data, XP, and participation history, Subo acts as the <strong>data controller</strong>. For response content collected on behalf of a creator, Subo acts as a <strong>data processor</strong>.</li>
+<li><strong>Participants</strong> (survey respondents): respond to surveys invited by creators. For identity data, XP, and participation history, Subo acts as the <strong>data controller</strong>. For response content collected on behalf of a creator, Subo acts as a <strong>data processor</strong>.</li>
 </ul>
 <p>If you are a participant and have questions about how a specific survey handles your data, please contact the server admin who ran the survey.</p>
 </div>
@@ -77,7 +77,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 						<div class="content_box">
 							<div class="content-text"><p>We are the controller and responsible for your data. Here is the Personal Data we collect:</p>
 <ul>
-<li><strong>Profile Data</strong>: by accessing and using the Service, we will receive from Discord your Discord ID, username, and the name and identifier of the Discord server you come from. This information will be associated with a unique identifier that we generate for you. You may also be asked to provide Personal Data such as your email address, age, gender, language or location.</li>
+<li><strong>Identity data from Discord</strong>: by accessing and using the Service, we will receive from Discord your Discord ID, username, avatar, and the name and identifier of the Discord server you come from. This information will be associated with a unique identifier that we generate for you. You may also be asked to provide Personal Data such as your email address, age, gender, language or location.</li>
 <li><strong>Account and login data</strong>: when a server owner or admin signs in to the Subo web app with Discord, or installs Subo from it, Discord shares your email address, whether Discord has verified that address, and the language preference set on your Discord account. The address is kept on your Discord identity record. It becomes the address we write to only if Discord has verified it and you have not already set a contact address yourself: one you enter on your account page is a deliberate choice and always takes precedence. We also store the access tokens Discord issues at sign-in, encrypted, so the web app can re-check which servers you administer without asking you to sign in again. Your language preference is used to show Subo to you in your own language. Members who only answer surveys are not asked for an email address at sign-in.</li>
 <li><strong>Survey data</strong>: when you create a questionnaire on our platform, we collect the content of the questionnaire and its attributes. We also collect metadata such as the date and time of creation.</li>
 <li><strong>Respondent Data</strong>: when you participate and answer questions from our surveys, we will also collect your answers such as personal opinions on the topic of the research (products and services, brands and companies), declared behaviors, demographic information (including marital status, family details, occupation, education, media usage, income bracket, home ownership). In some cases, you may be asked to voluntarily provide Personal Data which may be considered "sensitive", including racial and ethnic origin, political and religious beliefs, sexual orientation and health or disability status. You may refuse to answer these or any other questions or discontinue participation at any time.</li>
@@ -181,7 +181,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <tbody>
 <tr><td>Survey responses</td><td>Kept while the community uses Subo. Deleted with the survey, when a creator on a paid plan deletes them, when you delete your answers on your account page, when you delete your account, or when the community's data is deleted (inactive community or owner's request)</td></tr>
 <tr><td>Membership, XP and achievements in a community</td><td>Kept while you are a member; deleted 12 months after you leave the community (your answers stay), or with your account. Monthly leaderboard scores reset, the underlying history does not</td></tr>
-<tr><td>User profile</td><td>Until you delete your account; identity removed after 3 years without activity (see above)</td></tr>
+<tr><td>Identity data (Discord ID, username, avatar)</td><td>Until you delete your account; identity removed after 3 years without activity (see above)</td></tr>
 <tr><td>Account login data (email address, language preference, encrypted Discord access tokens)</td><td>Retained while the account exists; tokens are replaced at each sign-in and deleted with the account</td></tr>
 <tr><td>Community data (surveys, responses, members' XP, settings)</td><td>Deleted after 180 days without activity once Subo was removed, after 24 months without activity while Subo is installed, or 7 days after the owner asks (see above)</td></tr>
 <tr><td>Record of a deleted community (no names)</td><td>3 years after the deletion, 10 years if the community paid; then anonymous monthly totals only</td></tr>
@@ -247,7 +247,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <table>
 <thead><tr><th>Legal basis</th><th>Data and purposes covered</th></tr></thead>
 <tbody>
-<tr><td>Contract performance</td><td>Profile data, account login data, survey responses: core service delivery and transactional messages about your own account</td></tr>
+<tr><td>Contract performance</td><td>Identity data, account login data, survey responses: core service delivery and transactional messages about your own account</td></tr>
 <tr><td>Legitimate interests</td><td>XP/leaderboard data, usage analytics, Creator Network outreach, optional product and research messages to creators (opt out at any time)</td></tr>
 <tr><td>Consent</td><td>Sensitive personal information voluntarily provided in survey responses; can be withdrawn at any time</td></tr>
 <tr><td>Legal obligation</td><td>Financial records and compliance obligations</td></tr>
