@@ -14,7 +14,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 
 				<h1 class="title-text heading">Privacy Policy</h1>
 
-			<div class="subtitle-text title-box__text content_box"><p>&nbsp;Last updated: <em>November 10, 2026.</em>&nbsp;</p>
+			<div class="subtitle-text title-box__text content_box"><p>&nbsp;Last updated: <em>November 24, 2026.</em>&nbsp;</p>
 </div>
 
 		</div>
@@ -76,9 +76,9 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 						<div class="content_box">
 							<div class="content-text"><p>The anonymity mode for each survey is set by the creator. There are three modes:</p>
 <ul>
-<li><strong>Transparent</strong>: individual votes and responses are shared with the survey creator and made visible to the community (other server members). Both the creator and other participants can see who answered what.</li>
-<li><strong>Semi-private</strong>: individual votes and responses are shared with the survey creator only, and are not made public to the community.</li>
-<li><strong>Anonymous (Full Anonymous)</strong>: no identity link is created or retained at any point: Subo cannot attribute the response to any specific user. Because no identity link exists, anonymous responses cannot be deleted via <code>/profile</code> or by individual request. Anonymous responses may still be sent to an AI provider for Text Analysis (see "AI Features and AI Providers" below); no identity information is included in those requests.</li>
+<li><strong>Transparent</strong>: individual votes and answers can be seen by other members of the community in the results, as well as by the survey's creator and the community's admins. Exports include each participant's Discord identifier.</li>
+<li><strong>Semi-private</strong>: individual votes and answers, and who gave them, can be seen only by the survey's creator and the community's admins. They are not shown to other members. Exports include each participant's Discord identifier.</li>
+<li><strong>Anonymous (Full Anonymous)</strong>: nobody in the community, the creator and admins included, can see who gave which answer: results show answers without names, and exports contain no Discord identifier. This mode cannot be switched off once the first person has answered. Subo itself keeps the link between an answer and the account that gave it, and never shows it to the community. We keep it so that you can delete your own answers, so that a survey can count one response per person and award XP, and so that a follow-up survey can reach the same participants, for example in a later wave of the same study. Anonymous answers may be sent to an AI provider for Text Analysis (see "AI Features and AI Providers" below); no identity information is included in those requests.</li>
 </ul>
 <p>Participants should contact the server admin if uncertain about how a specific survey handles their data, as the anonymity mode is determined by the creator.</p>
 </div>
@@ -92,23 +92,22 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 							</div>
 						</h3>
 						<div class="content_box">
-							<div class="content-text"><p>We use the data you share with us to give you a good experience and to provide information and insights to our research clients.</p>
+							<div class="content-text"><p>We use the data you share with us to run the Service for creators and their communities. We do not sell survey data or Personal Data to anyone.</p>
 <p>We use Personal Data to:</p>
 <ul>
-<li>Provide anonymized data to our clients: we will generally provide data sets in an aggregated form, such as reports showing the total number and percentage of respondents having given a certain answer to a question. In some cases, we may share topline results with the press or on our own website and social media.</li>
-<li>Provide our clients with entire or partial non-aggregated data sets which do not reveal your identity. For example, text answers to open-ended questions will generally be anonymized, then transferred in full.</li>
-<li>Verify your identity and prevent fraudulent activity: we may use a combination of questions, location data, IP address and digital fingerprinting techniques to identify participants we do not want to access certain surveys.</li>
+<li>Deliver surveys and their results to the creators who run them, in the anonymity mode they chose (see "Survey Anonymity Modes" above).</li>
+<li>Check who may answer a survey and prevent abuse: creators can limit a survey to members with certain Discord roles or to people who connect an account (for example a Steam account that owns a game), and web sessions use the technical data described above.</li>
 <li>Manage your account (if you contact us, we can associate your user identifier to your account details to better support you).</li>
-<li>Communicate with you regarding your participation in the program.</li>
 <li>Notifications and service messages: we write to creators about their own account and communities. Messages about your account itself, such as a project that failed to open, an export that is ready, or a subscription that needs attention, are transactional and are always sent. Product updates, tips and occasional check-ins, and invitations to help with Subo's own research, are optional: you can turn either category off at any time on your account page at <a href="https://app.subo.gg/app/account" target="_blank">app.subo.gg/app/account</a>. These messages reach you on whichever surface we can use, which may be Discord, email, or the notifications area of the web app.</li>
-<li>Establish a leaderboard ranking different users for the servers you belong to. XP tracking requires persistent participation history; monthly leaderboard scores reset but the underlying history is retained. Role reward eligibility requires storing qualifying actions permanently.</li>
+<li>Establish a leaderboard ranking different users for the servers you belong to. XP tracking requires participation history; monthly leaderboard scores reset but the underlying history is kept for as long as described in "Data Retention" below.</li>
+<li>Study how Subo is used: when a community's data is deleted, we keep a de-identified copy of its surveys' questions and answer options (never the answers) to understand what kinds of questions communities ask. See "Data Retention" below.</li>
 <li>Recurring and scheduled surveys: automated delivery on creator-configured schedules. Participation remains voluntary. Response data is handled identically to single-instance surveys.</li>
 <li>Creator Network: as part of our own market research, we may contact Subo survey creators (server owners) to invite them to participate in surveys conducted by Subo/ClearSwell. This uses contact information (Discord username, server association) already held as part of your creator account. You may opt out at any time on your account page at <a href="https://app.subo.gg/app/account" target="_blank">app.subo.gg/app/account</a>, or by contacting hello@subo.ai.</li>
 <li>Service providers: we may work with trusted service providers to help us run our business, for example cloud data storage, survey/data collection technology, validation and anti-fraud services.</li>
 <li>Uploaded images: when a creator uploads an image to a project (for example a poll image, an invitation image or an achievement badge), the file is stored with Cloudflare and served through Cloudflare from Subo's own media domain. Embedded metadata, such as the GPS location a phone camera records, is removed on upload, and photos are resized. We record which community the image belongs to and who uploaded it. When someone views the image, their browser or Discord app requests it from Cloudflare, which receives the usual request data, such as the IP address. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare's privacy policy</a>.</li>
-<li>Files sent by respondents: when a project asks for a file (for example a screenshot, a document or a video), the files a respondent sends are stored privately with Cloudflare, separately from the images used in projects. They have no public address: only the community's admins and the project's creator can open them, after signing in to Subo. Photos up to about 15 MB sent on the web, or 20 MB in Discord, are re-saved without their embedded metadata, such as the camera details and GPS location a phone records; larger files are stored as sent. Files are deleted when their response is deleted, including when the project is deleted or the community's data retention settings remove it.</li>
+<li>Files sent by respondents: when a project asks for a file (for example a screenshot, a document or a video), the files a respondent sends are stored privately with Cloudflare, separately from the images used in projects. They have no public address: only the community's admins and the project's creator can open them, after signing in to Subo. Photos up to about 15 MB sent on the web, or 20 MB in Discord, are re-saved without their embedded metadata, such as the camera details and GPS location a phone records; larger files are stored as sent. Files are deleted when their response is deleted, including when the project is deleted or the community's data is deleted (see "Data Retention").</li>
 <li>AI features: some features use AI models from OpenAI, Anthropic and Google, which we reach through OpenRouter. See "AI Features and AI Providers" below for what each feature sends, and how long each provider keeps it.</li>
-<li>Payment processing (Stripe): subscription payments are processed by Stripe, Inc. Subo does not store full payment card details. We receive subscription status (tier, renewal date, server association) from Stripe. <a href="https://stripe.com/privacy" target="_blank">Stripe's privacy policy</a> applies to payment data.</li>
+<li>Payment processing (Stripe): subscription payments are processed by Stripe, Inc. Subo does not store full payment card details. We receive subscription status (tier, renewal date, server association) from Stripe, and Stripe calculates and collects sales tax and VAT where it applies, using your billing address. <a href="https://stripe.com/privacy" target="_blank">Stripe's privacy policy</a> applies to payment data.</li>
 <li>We may also provide links to third-party bots, websites and apps, which are independent from Subo and have their own separate privacy policies. We are not responsible for the privacy practices or content of such third-party websites or apps. We recommend that you carefully read the privacy policies of each site or app.</li>
 <li>In rare instances, we may be required by law to share Personal Data with public authorities, or we may share data to defend our rights, including with legal advisors.</li>
 <li>If our business gets acquired, merges, or in case of bankruptcy, your data will be considered an asset and may be transferred to the acquirer. In this case, we will require the other party to agree in writing to respect this Privacy Policy.</li>
@@ -151,21 +150,33 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 						</h3>
 						<div class="content_box">
 							<div class="content-text">
+<p>We keep data only as long as it serves the community it belongs to or the person it is about. The rules below run automatically every night.</p>
+<p><strong>Inactive communities.</strong> When a community has had no activity (no new survey, no answers, no admin using the web app) for <strong>180 days after Subo was removed from its server</strong>, or for <strong>24 months while Subo is still installed</strong>, we delete its data: surveys, responses, members' XP and achievements, and settings. Its admins are told 30, 7 and 1 days before, in Discord or by email, and any activity before the date keeps everything as it is. When Subo has been removed and we have no way to reach any of its admins, the data is deleted without notice once the 180 days have passed. A community with a paid plan is never deleted for inactivity.</p>
+<p><strong>Deleting a community's data on request.</strong> The owner of a Discord server can ask us to delete the community's data from the Settings page of the web app. It is deleted 7 days later, with the same steps as an inactive community, and Subo then leaves the server. The community's admins are told right away and the day before, and the owner can cancel until then. This is not available while the community has a paid plan.</p>
+<p><strong>What stays after a community's data is deleted.</strong> A small record without any names: the server's identifier, the dates Subo was installed and removed, a few technical settings and its credit balance, the number of surveys, responses and participants it had, and its billing records. Once Subo is no longer in the server, this record is deleted 3 years after the community's data, or 10 years after if the community paid for a plan (tax records). Only anonymous totals per month remain after that. We also keep a de-identified copy of the deleted surveys' questions and answer options for 5 years, with no answers, no identifiers and no names: mentions, links, email addresses and the community's own name are removed from the text.</p>
+<p><strong>Your account.</strong> You can delete your whole Subo account at any time on your account page (see "Your Rights"). It is immediate and covers every community, including your anonymous answers. If you have not used Subo for <strong>3 years</strong>, we remove your identity: your Discord identifier, username, avatar, email addresses, connected accounts, memberships and XP. Your answers stay with the communities that collected them, without anything that identifies you, and if you come back you start with a new account. This does not apply while you pay for a plan, help run an active community, or own an API key or webhook.</p>
+<p><strong>Backups.</strong> We keep encrypted daily backups of our database for 7 days, so data deleted under these rules may remain in a backup for up to 7 days.</p>
 <table>
 <thead><tr><th>Data type</th><th>Retention</th></tr></thead>
 <tbody>
-<tr><td>Survey responses</td><td>Duration of server's use of the Service; Premium+ creators can delete individual responses</td></tr>
-<tr><td>XP and participation history</td><td>Retained until profile deletion; monthly leaderboard scores reset but underlying history persists</td></tr>
-<tr><td>User profile</td><td>Until deletion via /profile or email request; Full Anonymous responses cannot be attributed and are not deleted individually</td></tr>
-<tr><td>Creator account data</td><td>Duration of subscription + up to 90 days post-closure</td></tr>
+<tr><td>Survey responses</td><td>Kept while the community uses Subo. Deleted with the survey, when a creator on a paid plan deletes them, when you delete your answers on your account page, when you delete your account, or when the community's data is deleted (inactive community or owner's request)</td></tr>
+<tr><td>Membership, XP and achievements in a community</td><td>Kept while you are a member; deleted 12 months after you leave the community (your answers stay), or with your account. Monthly leaderboard scores reset, the underlying history does not</td></tr>
+<tr><td>User profile</td><td>Until you delete your account; identity removed after 3 years without activity (see above)</td></tr>
 <tr><td>Account login data (email address, language preference, encrypted Discord access tokens)</td><td>Retained while the account exists; tokens are replaced at each sign-in and deleted with the account</td></tr>
+<tr><td>Community data (surveys, responses, members' XP, settings)</td><td>Deleted after 180 days without activity once Subo was removed, after 24 months without activity while Subo is installed, or 7 days after the owner asks (see above)</td></tr>
+<tr><td>Record of a deleted community (no names)</td><td>3 years after the deletion, 10 years if the community paid; then anonymous monthly totals only</td></tr>
+<tr><td>De-identified questions of deleted surveys (no answers)</td><td>5 years</td></tr>
+<tr><td>Activity log (what was done in Subo, by whom and when)</td><td>24 months; after that, only a summary per person and community: the first and last time, and how many times</td></tr>
+<tr><td>Messages we sent you (who, where and when)</td><td>24 months; for notices about a community's data deletion, 30 days after the deletion</td></tr>
+<tr><td>Report files generated for download</td><td>Deleted within 24 hours</td></tr>
 <tr><td>AI requests at OpenRouter</td><td>Content not stored; request metadata (model, tokens, timing) kept per OpenRouter's policy</td></tr>
 <tr><td>AI requests at the model providers</td><td>OpenAI: up to 30 days; Anthropic: deleted within 30 days (longer only for requests flagged for policy violations); Google: up to 55 days. Abuse monitoring only; no model training</td></tr>
 <tr><td>Drafting sessions</td><td>7 days if no project was created (30 days on paid plans); 90 days if a project was created (18 months on paid plans)</td></tr>
-<tr><td>Files sent by respondents</td><td>Deleted with their response (response, project or test-answer deletion, or the community's data retention settings), within a day</td></tr>
+<tr><td>Files sent by respondents</td><td>Deleted with their response (response, project, test-answer, account or community data deletion), within a day</td></tr>
 <tr><td>Uploaded images</td><td>Deleted automatically about 7 days after no project uses them (the project was deleted, or the image was replaced or removed)</td></tr>
 <tr><td>AI summaries and audit results</td><td>Stored with the project and deleted with it</td></tr>
-<tr><td>Stripe billing data</td><td>Per Stripe's policy and applicable financial law</td></tr>
+<tr><td>Billing data</td><td>Stripe keeps payment data per Stripe's policy and applicable financial law. Our own subscription records are kept with the community, and for 10 years after its data is deleted</td></tr>
+<tr><td>Backups</td><td>Encrypted daily backups kept 7 days</td></tr>
 <tr><td>Google Analytics data</td><td>Per GA4 data retention settings (configurable in GA4 Admin &gt; Data Settings)</td></tr>
 </tbody>
 </table>
@@ -181,7 +192,13 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 						</h3>
 						<div class="content_box">
 							<div class="content-text"><p>You have the right to request access to Personal Data, the correction or deletion of any Personal Data we hold about you.</p>
-<p>We give you access and the ability to correct or delete your data directly through our service on Discord by using the <code>/profile</code> command. Please note that Full Anonymous responses are unattributable: because no identity link was created, these responses cannot be individually deleted. If you are unable to perform these actions yourself, please contact us to assist you at hello@subo.ai.</p>
+<p>You can do most of this yourself on your account page at <a href="https://app.subo.gg/app/account" target="_blank">app.subo.gg/app/account</a> (the <code>/profile</code> command in Discord links there), after signing in with Discord:</p>
+<ul>
+<li>review and export the answers you gave in each community, and delete some or all of them, anonymous answers included;</li>
+<li>delete your whole Subo account, in every community, immediately. If you pay for a Subo subscription, cancel it first, so the community it pays for does not lose its plan without notice;</li>
+<li>choose which messages you receive from us and from your communities.</li>
+</ul>
+<p>The owner of a Discord server can also delete all of the community's data from the Settings page of the web app (see "Data Retention"). If you are unable to perform these actions yourself, please contact us to assist you at hello@subo.ai.</p>
 <p>In addition, you can also simply exercise your rights by contacting us at hello@subo.ai. To protect your privacy and security, we take reasonable measures to verify your identity before granting you such access.</p>
 <p>You also have the right to be free from discrimination for exercising your rights.</p>
 </div>
@@ -217,7 +234,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 </tbody>
 </table>
 <p><strong>International data transfers:</strong> Data is stored in the United States. Uploaded images and respondent files are stored with Cloudflare in western North America. Transfers from the EEA/UK rely on the Standard Contractual Clauses (SCCs) in our data processing agreements with our sub-processors (OpenRouter, OpenAI, Stripe, Google, Cloudflare), and/or the EU-US Data Privacy Framework where applicable. Requests to AI model providers that we reach only through OpenRouter, such as Anthropic, are passed to them by OpenRouter under its own agreements with those providers. Contact hello@subo.ai for details.</p>
-<p>Our service lets you directly access, rectify, delete your Personal Data or export it in a commonly used format. Please use the <code>/help</code> command for more information about the different data control commands available through our service. If you are unable to perform these actions yourself, or for other requests related to exercising your rights, please contact us at hello@subo.ai.</p>
+<p>Our service lets you directly access, rectify, delete your Personal Data or export it in a commonly used format. See "Your Rights" above for what your account page lets you do. If you are unable to perform these actions yourself, or for other requests related to exercising your rights, please contact us at hello@subo.ai.</p>
 </div>
 						</div>
 					</div>
@@ -236,7 +253,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <li><strong>Correct inaccurate personal information</strong> we hold about you (CPRA right).</li>
 <li><strong>Limit the use of sensitive personal information</strong> (e.g., racial or ethnic origin, health information, sexual orientation) that you may have voluntarily provided in survey responses (CPRA right).</li>
 <li><strong>Know about automated decision-making</strong>: survey targeting in Subo is role- and rules-based, not based on machine-learning profiling (CPRA right).</li>
-<li>Opt out of the sale of your personal information. As stated in this Privacy Policy, we will never disclose Personal Data to third parties in exchange for monetary consideration without your consent. However, under the CCPA's broad definition of "sale," certain transfers in connection with services provided to our clients could arguably qualify.</li>
+<li>Opt out of the sale of your personal information. As stated in this Privacy Policy, we will never disclose Personal Data to third parties in exchange for monetary consideration without your consent, and we do not sell personal information.</li>
 </ul>
 <p>If you reside in California and would like to exercise any of these rights, please send us an email at hello@subo.ai. You have the right to designate an authorized agent to make a request on your behalf; we will require a signed, written authorization from you to verify the authorization.</p>
 </div>
@@ -286,7 +303,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 							</div>
 						</h3>
 						<div class="content_box">
-							<div class="content-text"><p>We use reasonable security measures to protect your Personal Data from unauthorized access or loss, misuse and alteration of data. Only the employees whose function requires it have access to your data, and we are doing a thorough due diligence to only work with trustworthy service providers.</p>
+							<div class="content-text"><p>We use reasonable security measures to protect your Personal Data from unauthorized access or loss, misuse and alteration of data. Our database and its backups are encrypted at rest, and the Discord access tokens we store are encrypted separately. Only the employees whose function requires it have access to your data, and we are doing a thorough due diligence to only work with trustworthy service providers.</p>
 </div>
 						</div>
 					</div>

@@ -18,7 +18,7 @@ faq:
   - q: "Where does an anonymous survey actually take place in Discord?"
     a: "In a direct message from Subo, falling back to a web link if the member has DMs turned off. An Anonymous project never runs its Convo in a private thread, because a thread is readable by anyone with the Manage Threads permission and appears in the Discord audit log, which would leave a trace the anonymity promise does not allow."
   - q: "Can a survey be anonymous and still limited to my members?"
-    a: "Yes, and this is hard to do on a general-purpose form platform. Subo authenticates each respondent through their Discord account, so it knows they are a real member of your server and can block a second submission, then discards the link between that account and their answers. An open web form is anonymous but unverified; a signed-in web form is verified but no longer anonymous."
+    a: "Yes, and this is hard to do on a general-purpose form platform. Subo authenticates each respondent through their Discord account, so it knows they are a real member of your server and can block a second submission, and it never shows you or anyone in your server which account gave which answer. An open web form is anonymous but unverified; a signed-in web form is verified but no longer anonymous."
   - q: "Do XP or role rewards break anonymity?"
     a: "Rewards work in every mode, Anonymous included, because Subo authenticates each respondent without tying their identity to their answers. The trade-off is that a completion reward is visible, so you can see who took part, never what they said. In a large server that is harmless. If anonymity is critical and only a few people will respond, skip the reward."
 draft: false
@@ -78,7 +78,7 @@ No one can see individual answers, not even you, the creator. Only aggregated to
 - Feedback on server policies or moderation decisions.
 - Any situation where you genuinely want the most honest possible responses.
 
-**What respondents see:** a clear statement on the invitation that responses are fully anonymous and cannot be traced.
+**What respondents see:** a clear statement on the invitation that responses are fully anonymous: nobody in the server, you included, can see who answered what.
 
 **Two important notes on Anonymous mode:**
 
@@ -103,9 +103,9 @@ This is the part that is genuinely hard to do anywhere else, and it is worth und
 
 On a general-purpose form platform you get to pick one of two things. Leave the form open to anyone with the link and it is anonymous, but you have no idea whether the people answering are your members, whether one person answered forty times, or whether a link that leaked to another server is now shaping your results. Turn on sign-in to fix that and the platform records an identity against every submission, which means your "anonymous" survey has a name attached to each row and your members are right not to believe you.
 
-Subo does both at once. It authenticates each respondent through their Discord account, so it knows the answer came from a real member of your server (and can gate it further by role), and it blocks a second submission from the same account. Then it discards the link between that account and the answers before anything reaches you. What you receive is the answers, with no author, from a verified population.
+Subo does both at once. It authenticates each respondent through their Discord account, so it knows the answer came from a real member of your server (and can gate it further by role), and it blocks a second submission from the same account. It keeps the link between that account and the answers to itself, so nothing that identifies the author ever reaches you. What you receive is the answers, with no author, from a verified population.
 
-The practical effect is that you can say two things to your community in the same breath, and have both be true: only members can answer this, and nobody can see who said what. That combination is also why role and XP rewards still work in Anonymous mode: Subo knows enough to hand out the reward, and not enough to attribute the answers. See the [comparison with Google Forms and Typeform](/blog/subo-vs-google-forms-typeform-discord-communities/) for the rest of that trade-off.
+The practical effect is that you can say two things to your community in the same breath, and have both be true: only members can answer this, and nobody can see who said what. That combination is also why role and XP rewards still work in Anonymous mode: Subo knows who answered, so it can hand out the reward, and it never tells you who said what. See the [comparison with Google Forms and Typeform](/blog/subo-vs-google-forms-typeform-discord-communities/) for the rest of that trade-off.
 
 ## How to set the privacy mode
 

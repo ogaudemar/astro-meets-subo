@@ -20,7 +20,7 @@ faq:
   - q: "How do you make sure only real community members answer a survey?"
     a: "In Discord, members are authenticated by Discord when they click the invite, so every response is provably from a member and duplicates are blocked. A web-mode survey can sit behind a verification gate instead: verify Discord membership, Steam ownership of a specific game, a Twitch follow, or a YouTube subscription before the first question."
   - q: "Can a survey be anonymous and still verified?"
-    a: "Yes, and this is the part a form link cannot do. Authentication and identification are separate. Subo verifies that each respondent is a distinct real member, then discards the link between them and their answers. You get results you can vouch for without anyone, including you, being able to see who said what."
+    a: "Yes, and this is the part a form link cannot do. Authentication and identification are separate. Subo verifies that each respondent is a distinct real member, and keeps the link between them and their answers to itself. You get results you can vouch for without anyone, including you, being able to see who said what."
   - q: "Do I need a Discord server to use Subo?"
     a: "To build surveys, yes for now: creator and admin onboarding is Discord-gated. To answer one, no. A web-mode survey can be answered by anyone, with or without a Discord account."
 draft: false
